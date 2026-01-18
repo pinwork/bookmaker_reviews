@@ -11,6 +11,7 @@ import { guides } from './guides';
 import { sports } from './sports';
 import { staticPages } from './staticPages';
 import { faqs } from './faqs';
+import { events as allGbEvents } from './events';
 
 const gbReviews: Record<string, BookmakerReview> = {
   bet365: reviewsList.bet365Review,
@@ -43,6 +44,8 @@ export {
   extraPromotions,
   siteConfig,
 };
+
+export const events = allGbEvents;
 
 export const reviews = gbReviews;
 

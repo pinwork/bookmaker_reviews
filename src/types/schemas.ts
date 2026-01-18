@@ -127,14 +127,23 @@ export const CompetitionSchema = z.object({
   }),
 });
 
-export const SportEventStatusSchema = z.enum(['upcoming', 'live', 'finished']);
 export const SportEventSchema = z.object({
-  id: z.string().min(1), competitionId: z.string().min(1), slug: z.string().min(1), name: z.string().min(3),
-  startTime: z.string(), status: SportEventStatusSchema, venue: z.string().optional(),
+  id: z.string().min(1),
+  slug: z.string().min(1),
+  startTime: z.string(),
+  sportSlug: z.string().min(1),
+  competitionId: z.string().min(1),
+  title: z.string().min(1),
+  shortNote: z.string().min(1),
+  promotionIds: z.array(z.string()),
   content: z.object({
-    h1: z.string().optional(), previewText: z.string().optional(), prediction: z.string().optional(),
-    metaTitle: z.string().optional(), metaDescription: z.string().optional(),
+    h1: z.string(),
+    metaTitle: z.string(),
+    metaDescription: z.string(),
+    excerpt: z.string(),
+    body: z.string(),
   }).optional(),
+  isActive: z.boolean().default(true),
 });
 
 export function validateWelcomeOffers(offers: unknown[]): z.infer<typeof WelcomeOfferSchema>[] {

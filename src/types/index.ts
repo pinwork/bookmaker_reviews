@@ -28,7 +28,6 @@ export type Author = z.infer<typeof schemas.AuthorSchema>;
 export type SiteConfig = z.infer<typeof schemas.SiteConfigSchema>;
 export type SportCategory = z.infer<typeof schemas.SportCategorySchema>;
 export type Competition = z.infer<typeof schemas.CompetitionSchema>;
-export type SportEventStatus = z.infer<typeof schemas.SportEventStatusSchema>;
 export type SportEvent = z.infer<typeof schemas.SportEventSchema>;
 
 export interface BookmakerComplete extends Bookmaker, RegionalBookmakerData {
