@@ -137,7 +137,7 @@ export const welcomeOffers: WelcomeOffer[] = [
     isExclusive: true,
     qualifying: {
       depositMin: 10, betMin: 10, minOdds: 1.5, daysToQualify: 30,
-      allowedBetTypes: ['single'], mobileOnly: false, sportRequired: 'soccer',
+      allowedBetTypes: ['single'], mobileOnly: false, sportRequired: 'football',
     },
     reward: {
       totalValue: 50,

@@ -12,6 +12,9 @@ import { sports } from './sports';
 import { staticPages } from './staticPages';
 import { faqs } from './faqs';
 import { events as allGbEvents } from './events';
+import { ultimateBonusGuide as bonusGuideData } from './promoGuides/ultimate-bonus-guide';
+import { responsibleGamblingBible as responsibleGamblingData } from './promoGuides/responsible-gambling-bible';
+import { bettingShopsBible as bettingShopsData } from './promoGuides/betting-shops-guide';
 
 const gbReviews: Record<string, BookmakerReview> = {
   bet365: reviewsList.bet365Review,
@@ -46,6 +49,9 @@ export {
 };
 
 export const events = allGbEvents;
+export const ultimateBonusGuide = bonusGuideData;
+export const responsibleGamblingBible = responsibleGamblingData;
+export const bettingShopsBible = bettingShopsData;
 
 export const reviews = gbReviews;
 

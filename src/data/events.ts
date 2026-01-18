@@ -3,6 +3,7 @@ import { adaptObjectToRegion } from './utils';
 import { DEFAULT_REGION } from './constants';
 import { getExtraPromotions } from './extraPromotions';
 import { events as gbEvents } from './regions/gb/en';
+import { getReviewBySlug } from './regions/gb/en/reviews';
 
 export const getAllEvents = (region: string = DEFAULT_REGION): SportEvent[] => {
   return adaptObjectToRegion(gbEvents, region);
@@ -24,8 +25,22 @@ export const getEventWithPromotions = (slug: string, region: string = DEFAULT_RE
 
   const allPromotions = getExtraPromotions(region);
   const promotions = event.promotionIds
-    .map((id) => allPromotions.find((p) => p.id === id))
-    .filter((p): p is NonNullable<typeof p> => p !== undefined && p.isActive);
+    .map((id) => {
+      const promo = allPromotions.find((p) => p.id === id);
+      if (!promo || !promo.isActive) return null;
+
+      const review = getReviewBySlug(promo.bookmakerSlug, region);
+
+      return {
+        ...promo,
+        bookmaker: review ? {
+          slug: promo.bookmakerSlug,
+          tagline: review.editorial.tagline,
+          verdict: review.editorial.verdict
+        } : undefined
+      };
+    })
+    .filter((p): p is NonNullable<typeof p> => p !== null);
 
   return {
     ...event,

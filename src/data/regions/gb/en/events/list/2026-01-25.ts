@@ -8,8 +8,10 @@ export const events: SportEvent[] = [
     sportSlug: 'football',
     competitionId: 'pl',
     title: 'Arsenal vs Liverpool',
-    shortNote: 'Top-of-the-table clash with Early Payout & Acca Boosts.',
-    promotionIds: ['b365-soccer-early-payout', 'betway-free-bet-club'],
+    featuredOdds: '2.10',
+    isFeatured: true,
+    shortNote: 'Title race showdown with Early Payout.',
+    promotionIds: ['b365-football-early-payout'],
     content: {
       h1: 'Arsenal vs Liverpool Betting Offers: Preview & Best Odds',
       metaTitle: 'Arsenal vs Liverpool Betting Offers | Premier League 2026',

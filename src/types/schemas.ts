@@ -134,6 +134,9 @@ export const SportEventSchema = z.object({
   sportSlug: z.string().min(1),
   competitionId: z.string().min(1),
   title: z.string().min(1),
+  featuredOdds: z.string().optional(),
+  isFeatured: z.boolean().default(false),
+  eventLink: z.string().url().optional(),
   shortNote: z.string().min(1),
   promotionIds: z.array(z.string()),
   content: z.object({
