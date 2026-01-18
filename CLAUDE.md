@@ -4,25 +4,118 @@ This file provides guidance to Claude (claude.ai and Claude Code) when working w
 
 ## Project Overview
 
-This is a Next.js application template designed for rapid website development with AI assistance.
+UK Betting Affiliate Review Site — content-focused affiliate platform for UK punters seeking bookmaker reviews, welcome bonuses, and betting guides. Mid-tier positioning: professional but simple, competing through content quality rather than feature complexity.
 
 ### Project Description
 
-<!--
-Add your project description here in free form:
-- What is this project
-- Target audience
-- Key features and pages
-- Data entities and structure
-- Business logic and rules
-- Any other relevant context
+**What:** Affiliate review site for UK licensed bookmakers. Displays bookmaker cards with welcome offers, ratings, features, and affiliate CTAs. Monetization via affiliate commissions when users sign up through our links.
 
-Example:
-"Affiliate review site for bookmakers. Target: gamblers looking for best bookmaker.
-Pages: Home, Reviews, Comparison, Bonuses.
-Bookmaker entity: name, rating, bonus, affiliate link, pros, cons.
-Monetization via affiliate links."
--->
+**Target Audience:** UK-based sports bettors (18+) looking for:
+- Best welcome bonuses and free bets
+- Bookmaker comparisons and reviews
+- Betting guides and educational content
+- Payment method filtering (PayPal, Apple Pay, etc.)
+
+**Business Goal:** Get approved by bookmaker affiliate programs by presenting a professional, active-looking site with quality content and proper UKGC compliance messaging.
+
+**Design Philosophy:**
+- Mobile-first, clean, minimal design
+- Content-heavy, feature-light (no calculators, odds comparison, user accounts)
+- Card-based bookmaker displays with prominent green CTAs
+- Trust signals throughout (18+, BeGambleAware, UKGC licenses, author attribution)
+
+**Color Scheme:**
+- Primary: Trust blue (#007bff) or Betting green (#28a745)
+- CTA buttons: Green (#28a745)
+- Backgrounds: White (#ffffff), Light grey (#f8f9fa)
+- Text: Dark grey (#212529)
+- T&Cs/Fine print: Muted grey (#6c757d)
+
+**Pages:**
+1. **Homepage** — Hero + featured bookmakers (5-10) + full comparison list (15-20) + FAQ + trust section
+2. **Reviews** `/reviews/[slug]` — Individual bookmaker review pages (bet365, Betfair, William Hill, etc.)
+3. **Free Bets** `/free-bets` — Aggregated welcome offers list
+4. **Sports** `/sports/[sport]` — Sport-specific bookmaker recommendations (football, horse-racing)
+5. **Guides** `/guides/[slug]` — Educational content (How Free Bets Work, Betting Odds Explained)
+6. **Static pages** — About, Contact, Privacy Policy, Terms, Responsible Gambling, Affiliate Disclosure
+
+**Navigation:**
+- Primary: Betting Sites | Free Bets | Reviews | Sports | Guides
+- Footer: About | Contact | Privacy | T&Cs | Responsible Gambling | Affiliate Disclosure
+
+**Core Components:**
+- `BookmakerCard` — Logo, name, rating (stars), welcome offer, features, payment icons, CTA button, T&Cs
+- `BookmakerList` — Grid/list of BookmakerCards with optional filtering
+- `ComparisonTable` — Sortable table view (desktop) converting to cards (mobile)
+- `RatingStars` — Visual star rating (X/5 format)
+- `CTAButton` — Green "Claim Offer" button (min 44px height for touch)
+- `FAQAccordion` — Expandable FAQ section
+- `TrustFooter` — Compliance badges (BeGambleAware, GamCare, GamStop, 18+)
+- `ReviewSection` — Reusable content block for review pages
+
+**Data Entity — Bookmaker:**
+```typescript
+interface Bookmaker {
+  id: string;
+  slug: string;                    // "bet365"
+  name: string;                    // "bet365"
+  logo: string;                    // URL to logo image
+  
+  welcomeOffer: {
+    title: string;                 // "Bet £10 Get £30 in Free Bets"
+    depositRequired: number;       // 10
+    bonusAmount: number;           // 30
+    promoCode: string | null;      // "CODE" or null
+    termsShort: string;            // "18+. New customers only..."
+  };
+  
+  features: {
+    cashOut: boolean;
+    liveStreaming: boolean;
+    betBuilder: boolean;
+    mobileApp: boolean;
+  };
+  
+  payments: string[];              // ["Visa", "PayPal", "Apple Pay"]
+  minDeposit: number;              // 5
+  
+  rating: number;                  // 4.8 (out of 5)
+  ukgcLicense: string;             // "044107"
+  
+  pros: string[];
+  cons: string[];
+  
+  affiliateLink: string;           // Tracking URL
+  isActive: boolean;
+  isFeatured: boolean;
+  displayOrder: number;
+}
+```
+
+**Initial Bookmakers (15-20):**
+Tier 1: bet365, Betfair, William Hill, Ladbrokes, Coral, Paddy Power, Sky Bet, Betfred, 888sport, Unibet
+Tier 2: BetVictor, Betway, BoyleSports, LiveScore Bet, Kwiff, Virgin Bet, Spreadex
+
+**Trust Signals (REQUIRED on every page):**
+- Header: "18+ | T&Cs Apply | BeGambleAware.org"
+- Per bookmaker: UKGC license number, full T&Cs expandable
+- Footer: GambleAware, GamCare, GamStop logos with links
+- Content: Author name, "Last Updated" timestamp
+
+**SEO Patterns:**
+- URL: `/reviews/bet365`, `/free-bets`, `/guides/how-free-bets-work`
+- Meta title: "[Bookmaker] Review UK 2026 – Bonus, Features & Verdict"
+- Include current month/year in homepage H1
+
+**What We DON'T Build:**
+- No live odds comparison
+- No bet calculators
+- No user accounts or login
+- No community/forum features
+- No native mobile app
+- No complex filtering (basic only)
+
+**Reference Documentation:** See `/docs/research.md` for detailed competitor analysis, bookmaker data, visual specifications, and content examples.
 
 ## Tech Stack
 
