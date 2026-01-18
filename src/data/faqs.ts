@@ -1,3 +1,4 @@
+// src/data/faqs.ts
 import { faqs as gbFaqs } from './regions/gb/en/faqs';
 import { FAQ } from '@/types';
 import { adaptObjectToRegion } from './utils';

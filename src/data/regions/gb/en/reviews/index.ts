@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/reviews/index.ts
 import { BookmakerReview } from './types';
 import { adaptObjectToRegion } from '../../../../utils';
 

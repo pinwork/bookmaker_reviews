@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/reviews/betway.ts
 import { BookmakerReview } from './types';
 
 export const betwayReview: BookmakerReview = {

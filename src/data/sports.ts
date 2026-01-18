@@ -1,3 +1,4 @@
+// src/data/sports.ts
 import { sports as gbSports } from './regions/gb/en/sports';
 import { SportCategory } from '@/types';
 import { adaptObjectToRegion } from './utils';

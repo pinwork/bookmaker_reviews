@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/reviews/_template.ts
 import { BookmakerReview } from './types';
 
 export const templateReview: BookmakerReview = {

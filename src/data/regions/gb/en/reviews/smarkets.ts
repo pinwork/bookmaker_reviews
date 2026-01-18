@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/reviews/smarkets.ts
 import { BookmakerReview } from './types';
 
 export const smarketsReview: BookmakerReview = {

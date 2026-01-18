@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/sports.ts
 import { SportCategory } from '@/types';
 
 export const sports: SportCategory[] = [

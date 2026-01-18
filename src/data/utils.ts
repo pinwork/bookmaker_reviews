@@ -1,24 +1,24 @@
-import { regionRegistry } from './regions';
+// src/data/utils.ts
+import { getRegion, DEFAULT_REGION, getCurrencySymbol as getRegionCurrencySymbol } from './regions';
 
-export const adaptTextToRegion = (text: string, region: string = 'gb'): string => {
-  const config = regionRegistry[region];
-  if (!config || region === 'gb' || !text) return text;
-
+export const adaptTextToRegion = (text: string, region: string = DEFAULT_REGION): string => {
+  const config = getRegion(region);
+  if (!config || region === DEFAULT_REGION || !text) return text;
   return text
     .replace(/£/g, config.currencySymbol)
     .replace(/GBP/g, config.currency)
-    .replace(/UK/g, config.name)
+    .replace(/UK(?!\w)/g, config.name)
     .replace(/British/g, region === 'ie' ? 'Irish' : config.name)
-    .replace(/UKGC/g, region === 'ie' ? 'Irish Revenue' : 'Local Regulator');
+    .replace(/UKGC/g, config.legalInfo.regulator);
 };
 
 export const adaptObjectToRegion = <T>(obj: T, region: string): T => {
-  if (region === 'gb') return obj;
+  if (region === DEFAULT_REGION) return obj;
   const json = JSON.stringify(obj);
   const adaptedJson = adaptTextToRegion(json, region);
   return JSON.parse(adaptedJson);
 };
 
-export const getCurrencySymbol = (region: string = 'gb'): string => {
-  return regionRegistry[region]?.currencySymbol || '£';
+export const getCurrencySymbol = (region: string = DEFAULT_REGION): string => {
+  return getRegionCurrencySymbol(region);
 };

@@ -1,3 +1,4 @@
+// src/data/guides.ts
 import { guides as gbGuides } from './regions/gb/en/guides';
 import { Guide } from '@/types';
 import { adaptObjectToRegion } from './utils';

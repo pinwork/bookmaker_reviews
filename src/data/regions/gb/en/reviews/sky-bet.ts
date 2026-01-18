@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/reviews/sky-bet.ts
 import { BookmakerReview } from './types';
 
 export const skyBetReview: BookmakerReview = {

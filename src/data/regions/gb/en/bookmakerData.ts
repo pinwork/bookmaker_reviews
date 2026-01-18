@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/bookmakerData.ts
 import { RegionalBookmakerData } from '../../../../types';
 
 export const gbBookmakerData: Record<string, RegionalBookmakerData> = {

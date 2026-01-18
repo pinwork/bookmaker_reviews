@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/competitions/premier-league.ts
 import { Competition } from '@/types';
 
 export const premierLeague: Competition = {

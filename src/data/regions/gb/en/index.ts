@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/index.ts
 import { BookmakerReview } from './reviews/types';
 import * as reviewsList from './reviews';
 
@@ -11,7 +12,7 @@ import { sports } from './sports';
 import { staticPages } from './staticPages';
 import { faqs } from './faqs';
 
-const gbReviews: Record<string, any> = {
+const gbReviews: Record<string, BookmakerReview> = {
   bet365: reviewsList.bet365Review,
   betfair: reviewsList.betfairReview,
   'william-hill': reviewsList.williamHillReview,
@@ -32,24 +33,25 @@ const gbReviews: Record<string, any> = {
   bwin: reviewsList.bwinReview,
 };
 
-// Експортуємо ВСЕ одним махом
-export { 
-  guides, 
-  sports, 
-  staticPages, 
-  faqs, 
-  gbBookmakerData, 
-  welcomeOffers, 
-  extraPromotions, 
-  siteConfig 
+export {
+  guides,
+  sports,
+  staticPages,
+  faqs,
+  gbBookmakerData,
+  welcomeOffers,
+  extraPromotions,
+  siteConfig,
 };
 
 export const reviews = gbReviews;
 
-export const getReviewBySlug = (slug: string): any | undefined => {
+export const getReviewBySlug = (slug: string): BookmakerReview | undefined => {
   return gbReviews[slug];
 };
 
-export const getAllReviews = (): any[] => {
+export const getAllReviews = (): BookmakerReview[] => {
   return Object.values(gbReviews);
 };
+
+export type { BookmakerReview } from './reviews/types';

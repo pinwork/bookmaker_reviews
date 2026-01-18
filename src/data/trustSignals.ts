@@ -1,6 +1,4 @@
 // src/data/trustSignals.ts
-// Trust & Compliance badges configuration
-
 export interface TrustBadge {
   slug: string;
   name: string;
@@ -16,7 +14,6 @@ export const trustBadges: TrustBadge[] = [
   { slug: '18plus', name: '18+', url: '#' },
 ];
 
-// Helper функції
 export function getTrustBadgePath(slug: string): string {
   return `/images/trust/${slug}.svg`;
 }

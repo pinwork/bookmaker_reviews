@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/staticPages.ts
 import { StaticPage } from '../../../../types';
 
 export const staticPages: StaticPage[] = [

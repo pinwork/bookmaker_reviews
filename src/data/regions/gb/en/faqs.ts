@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/faqs.ts
 import { FAQ } from '../../../../types';
 
 export const faqs: FAQ[] = [

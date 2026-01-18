@@ -1,7 +1,4 @@
 // src/data/logos.ts
-// Конфігурація логотипів букмекерів
-// SVG файли в папці: public/images/bookmakers/
-
 export interface LogoConfig {
   slug: string;
   backgroundColor: string;
@@ -28,7 +25,6 @@ export const bookmakerLogos: LogoConfig[] = [
   { slug: 'bwin', backgroundColor: '#000000' },
 ];
 
-// Helper функції
 export function getLogoPath(slug: string): string {
   return `/images/bookmakers/${slug}.svg`;
 }

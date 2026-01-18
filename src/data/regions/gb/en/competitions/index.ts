@@ -1,5 +1,5 @@
+// src/data/regions/gb/en/competitions/index.ts
 import { premierLeague } from './premier-league';
-// Сюди будете додавати нові імпорти (champions-league, cheltenham тощо)
 
 export const competitions = [
   premierLeague,

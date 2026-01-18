@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/reviews/paddy-power.ts
 import { BookmakerReview } from './types';
 
 export const paddyPowerReview: BookmakerReview = {

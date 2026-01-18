@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/reviews/bwin.ts
 import { BookmakerReview } from './types';
 
 export const bwinReview: BookmakerReview = {

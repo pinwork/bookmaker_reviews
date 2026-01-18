@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/reviews/types.ts
 export interface BookmakerReview {
   bookmakerSlug: string;
 

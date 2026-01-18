@@ -1,179 +1,95 @@
 // src/data/index.ts
-import { BookmakerWithOffer, WelcomeOffer, Bookmaker } from '@/types';
-import { 
-  getActiveBookmakers, 
-  getFeaturedBookmakers, 
-  getBookmakerBySlug,
-  getBookmakersByPayment,
-  getBookmakersByFeature,
-  getEditorsChoiceBookmakers,
-  getBookmakersSortedByRating
-} from './bookmakers';
-import { 
-  getOfferByBookmaker, 
-  getValidatedOffers 
-} from './welcomeOffers';
+import { BookmakerComplete, PaymentMethodSlug, OfferType } from '@/types';
+import { getActiveBookmakers } from './bookmakers';
+import { DEFAULT_REGION } from './constants';
 
-// Re-export base functions
-export { 
-  getActiveBookmakers, 
-  getFeaturedBookmakers, 
-  getBookmakerBySlug, 
-  getBookmakersByPayment, 
-  getBookmakersByFeature, 
-  getEditorsChoiceBookmakers, 
-  getBookmakersSortedByRating 
+export {
+  getActiveBookmakers, getFeaturedBookmakers, getBookmakerBySlug, getBookmakersByPayment,
+  getBookmakersByFeature, getEditorsChoiceBookmakers, getBookmakersSortedByRating,
+  getBaseBookmaker, getAllBookmakerSlugs,
 } from './bookmakers';
 
-export { 
-  getOfferByBookmaker, 
-  getBestValueOffers 
+export {
+  getOffersByBookmaker, getPrimaryOffer, getValidatedOffers, getActiveOffers,
+  getBestValueOffers, getFeaturedOffers, getOffersByType, getLowStakeOffers,
+  getNoCodeOffers, getPromoCodeOffers, getOffersAcceptingPayment, getOffersStats,
 } from './welcomeOffers';
 
-export { 
-  getExtraPromotions, 
-  getPromotionsByBookmaker, 
-  getPromotionsByCategory, 
-  getPromotionsBySport 
+export {
+  getExtraPromotions, getPromotionsByBookmaker, getPromotionsByCategory, getPromotionsBySport,
 } from './extraPromotions';
 
-/**
- * Get a single bookmaker with its welcome offer
- */
-export function getBookmakerWithOffer(slug: string, region: string = 'gb'): BookmakerWithOffer | undefined {
-  const bookmaker = getBookmakerBySlug(slug, region);
-  if (!bookmaker) return undefined;
+export {
+  DEFAULT_REGION, getRegion, isValidRegion, getAllRegions, getRegionOrDefault,
+  getCurrencySymbol, isBookmakerEnabledInRegion,
+  type RegionCode, type RegionConfig, type LegalInfo,
+} from './regions';
 
-  const offer = getOfferByBookmaker(slug, region);
-  return { ...bookmaker, welcomeOffer: offer };
+export {
+  BOOKMAKER_SLUGS, PAYMENT_METHOD_SLUGS, OFFER_TYPES, EXTRA_PROMO_CATEGORIES,
+  PARTNERSHIP_TYPES, REGION_CODES, type BookmakerSlug,
+} from './constants';
+
+export { clearCache, clearRegionCache, getCacheStats } from './cache';
+
+export function getBookmakersSortedByOfferValue(region: string = DEFAULT_REGION): BookmakerComplete[] {
+  return getActiveBookmakers(region).sort((a, b) =>
+    (b.primaryOffer?.reward.totalValue ?? 0) - (a.primaryOffer?.reward.totalValue ?? 0));
 }
 
-/**
- * Get all active bookmakers with their offers
- */
-export function getActiveBookmakersWithOffers(region: string = 'gb'): BookmakerWithOffer[] {
-  return getActiveBookmakers(region).map((bookmaker) => ({
-    ...bookmaker,
-    welcomeOffer: getOfferByBookmaker(bookmaker.slug, region),
-  }));
+export function getBookmakersSortedByMinBet(region: string = DEFAULT_REGION): BookmakerComplete[] {
+  return getActiveBookmakers(region).sort((a, b) =>
+    (a.primaryOffer?.qualifying.betMin ?? Infinity) - (b.primaryOffer?.qualifying.betMin ?? Infinity));
 }
 
-/**
- * Get featured bookmakers with their offers
- */
-export function getFeaturedBookmakersWithOffers(region: string = 'gb'): BookmakerWithOffer[] {
-  return getFeaturedBookmakers(region).map((bookmaker) => ({
-    ...bookmaker,
-    welcomeOffer: getOfferByBookmaker(bookmaker.slug, region),
-  }));
+export function getBookmakersAcceptingPaymentForBonus(
+  method: PaymentMethodSlug, region: string = DEFAULT_REGION
+): BookmakerComplete[] {
+  return getActiveBookmakers(region).filter(b =>
+    b.primaryOffer && !b.primaryOffer.excludedPayments.includes(method));
 }
 
-/**
- * Sort bookmakers by the total value of their welcome offer
- */
-export function getBookmakersSortedByOfferValue(region: string = 'gb'): BookmakerWithOffer[] {
-  return getActiveBookmakersWithOffers(region).sort((a, b) => {
-    const aValue = a.welcomeOffer?.reward.totalValue ?? 0;
-    const bValue = b.welcomeOffer?.reward.totalValue ?? 0;
-    return bValue - aValue;
-  });
+export function getBookmakersByOfferType(type: OfferType, region: string = DEFAULT_REGION): BookmakerComplete[] {
+  return getActiveBookmakers(region).filter(b => b.primaryOffer?.type === type);
 }
 
-/**
- * Sort bookmakers by the minimum bet required for the offer
- */
-export function getBookmakersSortedByMinBet(region: string = 'gb'): BookmakerWithOffer[] {
-  return getActiveBookmakersWithOffers(region).sort((a, b) => {
-    const aMin = a.welcomeOffer?.qualifying.betMin ?? Infinity;
-    const bMin = b.welcomeOffer?.qualifying.betMin ?? Infinity;
-    return aMin - bMin;
-  });
+export function getBookmakersWithPromoCode(region: string = DEFAULT_REGION): BookmakerComplete[] {
+  return getActiveBookmakers(region).filter(b => b.primaryOffer?.promoCode !== null);
 }
 
-/**
- * Filter bookmakers that allow a specific payment method for their bonus
- */
-export function getBookmakersAcceptingPaymentForBonus(method: string, region: string = 'gb'): BookmakerWithOffer[] {
-  return getActiveBookmakersWithOffers(region).filter((bookie) => {
-    if (!bookie.welcomeOffer) return false;
-    return !bookie.welcomeOffer.excludedPayments.includes(method as any);
-  });
+export function getBookmakersWithoutPromoCode(region: string = DEFAULT_REGION): BookmakerComplete[] {
+  return getActiveBookmakers(region).filter(b => b.primaryOffer?.promoCode === null);
 }
 
-/**
- * Filter bookmakers by welcome offer type
- */
-export function getBookmakersByOfferType(type: string, region: string = 'gb'): BookmakerWithOffer[] {
-  return getActiveBookmakersWithOffers(region).filter((bookie) => bookie.welcomeOffer?.type === type);
-}
-
-/**
- * Get bookmakers that require a promo code
- */
-export function getBookmakersWithPromoCode(region: string = 'gb'): BookmakerWithOffer[] {
-  return getActiveBookmakersWithOffers(region).filter((bookie) => bookie.welcomeOffer?.promoCode !== null);
-}
-
-/**
- * Get bookmakers that DON'T require a promo code
- */
-export function getBookmakersWithoutPromoCode(region: string = 'gb'): BookmakerWithOffer[] {
-  return getActiveBookmakersWithOffers(region).filter((bookie) => bookie.welcomeOffer?.promoCode === null);
-}
-
-/**
- * Calculate value ratio (Reward / Stake) and sort
- */
-export function getBestValueBookmakers(region: string = 'gb'): BookmakerWithOffer[] {
-  return getActiveBookmakersWithOffers(region)
-    .filter((bookie) => {
-      const offer = bookie.welcomeOffer;
-      return offer && offer.qualifying.betMin > 0;
-    })
-    .map((bookie) => ({
-      ...bookie,
-      valueRatio: (bookie.welcomeOffer?.reward.totalValue ?? 0) / (bookie.welcomeOffer?.qualifying.betMin ?? 1),
+export function getBestValueBookmakers(region: string = DEFAULT_REGION): (BookmakerComplete & { valueRatio: number })[] {
+  return getActiveBookmakers(region)
+    .filter(b => b.primaryOffer && b.primaryOffer.qualifying.betMin > 0)
+    .map(b => ({
+      ...b,
+      valueRatio: (b.primaryOffer?.reward.totalValue ?? 0) / (b.primaryOffer?.qualifying.betMin ?? 1),
     }))
-    .sort((a, b) => (b as any).valueRatio - (a as any).valueRatio);
+    .sort((a, b) => b.valueRatio - a.valueRatio);
 }
 
-/**
- * Search across bookmakers
- */
-export function searchBookmakers(query: string, region: string = 'gb'): BookmakerWithOffer[] {
-  const lowerQuery = query.toLowerCase();
-  return getActiveBookmakersWithOffers(region).filter(
-    (bookie) =>
-      bookie.name.toLowerCase().includes(lowerQuery) ||
-      bookie.slug.toLowerCase().includes(lowerQuery) ||
-      bookie.content.tagline.toLowerCase().includes(lowerQuery)
-  );
+export function searchBookmakers(query: string, region: string = DEFAULT_REGION): BookmakerComplete[] {
+  const q = query.toLowerCase();
+  return getActiveBookmakers(region).filter(b =>
+    b.name.toLowerCase().includes(q) || b.slug.includes(q) || b.content.tagline.toLowerCase().includes(q));
 }
 
-// Comparison structure
 export interface BookmakerComparisonData {
-  slug: string;
-  name: string;
-  offerTitle: string;
-  offerValue: number;
-  minBet: number;
-  hasLiveStreaming: boolean;
-  hasBetBuilder: boolean;
-  promoCode: string | null;
+  slug: string; name: string; offerTitle: string; offerValue: number;
+  minBet: number; hasLiveStreaming: boolean; hasBetBuilder: boolean; promoCode: string | null;
 }
 
-/**
- * Get simplified comparison data
- */
-export function getBookmakerComparisonData(region: string = 'gb'): BookmakerComparisonData[] {
-  return getActiveBookmakersWithOffers(region).map((bookie) => ({
-    slug: bookie.slug,
-    name: bookie.name,
-    offerTitle: bookie.welcomeOffer?.shortTitle ?? 'No offer',
-    offerValue: bookie.welcomeOffer?.reward.totalValue ?? 0,
-    minBet: bookie.welcomeOffer?.qualifying.betMin ?? 0,
-    hasLiveStreaming: bookie.features.liveStreaming,
-    hasBetBuilder: bookie.features.betBuilder,
-    promoCode: bookie.welcomeOffer?.promoCode ?? null,
+export function getBookmakerComparisonData(region: string = DEFAULT_REGION): BookmakerComparisonData[] {
+  return getActiveBookmakers(region).map(b => ({
+    slug: b.slug, name: b.name,
+    offerTitle: b.primaryOffer?.shortTitle ?? 'No offer',
+    offerValue: b.primaryOffer?.reward.totalValue ?? 0,
+    minBet: b.primaryOffer?.qualifying.betMin ?? 0,
+    hasLiveStreaming: b.features.liveStreaming,
+    hasBetBuilder: b.features.betBuilder,
+    promoCode: b.primaryOffer?.promoCode ?? null,
   }));
 }

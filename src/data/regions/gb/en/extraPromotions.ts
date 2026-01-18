@@ -1,8 +1,8 @@
+// src/data/regions/gb/en/extraPromotions.ts
 import { ExtraPromotion } from '../../../../types';
 
 export const extraPromotions: ExtraPromotion[] = [
-  // === BET365 ===
-  {
+    {
     id: 'b365-soccer-early-payout',
     bookmakerSlug: 'bet365',
     title: 'Soccer Early Payout Offer',
@@ -89,8 +89,7 @@ export const extraPromotions: ExtraPromotion[] = [
     details: { keyCondition: 'Higher SP' }
   },
 
-  // === BETFAIR ===
-  {
+    {
     id: 'betfair-refer-friend',
     bookmakerSlug: 'betfair',
     title: 'Refer and Earn: £10 Cash per Friend',
@@ -116,8 +115,7 @@ export const extraPromotions: ExtraPromotion[] = [
     details: { keyCondition: 'Exchange vs Sportsbooks' }
   },
 
-  // === SKY BET ===
-  {
+    {
     id: 'skybet-accafreeze',
     bookmakerSlug: 'sky-bet',
     title: 'Sky Bet AccaFreeze',
@@ -131,8 +129,7 @@ export const extraPromotions: ExtraPromotion[] = [
     promoPageUrl: 'https://promos.skybet.com/sport/accafreeze'
   },
 
-  // === WILLIAM HILL ===
-  {
+    {
     id: 'wh-impact-sub',
     bookmakerSlug: 'william-hill',
     title: 'Impact Sub',
@@ -169,8 +166,7 @@ export const extraPromotions: ExtraPromotion[] = [
     details: { keyCondition: 'Free to Play' }
   },
 
-  // === BOYLESPORTS ===
-  {
+    {
     id: 'boyle-sub-swap',
     bookmakerSlug: 'boylesports',
     title: 'Sub Swap',
@@ -195,8 +191,7 @@ export const extraPromotions: ExtraPromotion[] = [
     details: { keyCondition: '2 Goals Ahead' }
   },
 
-  // === BETFRED ===
-  {
+    {
     id: 'betfred-dd-hh',
     bookmakerSlug: 'betfred',
     title: 'Double Delight & Hat-Trick Heaven',
@@ -221,8 +216,7 @@ export const extraPromotions: ExtraPromotion[] = [
     details: { maxBoost: '100%' }
   },
 
-  // === UNIBET ===
-  {
+    {
     id: 'unibet-uniboost-daily',
     bookmakerSlug: 'unibet',
     title: 'Daily Uniboost',
@@ -235,8 +229,7 @@ export const extraPromotions: ExtraPromotion[] = [
     details: { keyCondition: 'Single Bets Only' }
   },
 
-  // === PADDY POWER ===
-  {
+    {
     id: 'pp-super-sub',
     bookmakerSlug: 'paddy-power',
     title: 'Super Sub: Player Protection',
@@ -249,8 +242,7 @@ export const extraPromotions: ExtraPromotion[] = [
     details: { keyCondition: 'Substitute Replacement' }
   },
 
-  // === VIRGIN BET ===
-  {
+    {
     id: 'vb-var-payout',
     bookmakerSlug: 'virgin-bet',
     title: 'VAR Goalscorer Payout',
@@ -263,8 +255,7 @@ export const extraPromotions: ExtraPromotion[] = [
     details: { keyCondition: 'Disallowed Goal' }
   },
 
-  // === CORAL ===
-  {
+    {
     id: 'coral-pipped-post',
     bookmakerSlug: 'coral',
     title: 'Pipped at the post',
@@ -277,8 +268,7 @@ export const extraPromotions: ExtraPromotion[] = [
     details: { keyCondition: 'Finish 2nd in Close Finish' }
   },
 
-  // === BETVICTOR ===
-  {
+    {
     id: 'bv-run-for-money',
     bookmakerSlug: 'betvictor',
     title: 'Run For Your Money',
@@ -291,8 +281,7 @@ export const extraPromotions: ExtraPromotion[] = [
     details: { keyCondition: 'Failure to start' }
   },
 
-  // === BETWAY ===
-  {
+    {
     id: 'betway-free-bet-club',
     bookmakerSlug: 'betway',
     title: 'Free Bet Club',

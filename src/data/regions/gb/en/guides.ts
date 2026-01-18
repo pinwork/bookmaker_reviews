@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/guides.ts
 import { Guide } from '../../../../types';
 
 export type GuideCategory = 'basics' | 'bet-types' | 'features' | 'strategy' | 'sports';
@@ -1408,7 +1409,7 @@ export const getGuidesByCategory = (category: GuideCategory): Guide[] => {
 export const getRelatedGuides = (slug: string): Guide[] => {
   const guide = getGuideBySlug(slug);
   if (!guide) return [];
-  
+
   return guide.relatedGuides
     .map(relatedSlug => getGuideBySlug(relatedSlug))
     .filter((g): g is Guide => g !== undefined);

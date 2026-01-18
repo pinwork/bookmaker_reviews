@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/welcomeOffers.ts
 import { WelcomeOffer } from '../../../../types';
 
 export const welcomeOffers: WelcomeOffer[] = [

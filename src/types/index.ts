@@ -1,295 +1,42 @@
-export type PaymentMethodSlug =
-  | 'debit-cards'
-  | 'credit-cards'
-  | 'apple-pay'
-  | 'google-pay'
-  | 'paypal'
-  | 'skrill'
-  | 'neteller'
-  | 'bank-transfer'
-  | 'instant-bank-transfer'
-  | 'trustly'
-  | 'klarna'
-  | 'paysafecard'
-  | 'disposable-cards'
-  | 'apple-pay-verified'
-  | 'pay-by-bank';
+// src/types/index.ts
+import { z } from 'zod';
+import * as schemas from './schemas';
 
-export type PartnershipType = 
-  | 'club'
-  | 'league'
-  | 'broadcast'
-  | 'other'
-  | 'stadium'
-  | 'shirt'
-  | 'official_partner';
+export type {
+  BookmakerSlug, RegionCode, PaymentMethodSlug, OfferType,
+  ExtraPromoCategory, PartnershipType, RewardRestriction, QualifyingBetType,
+} from '@/data/constants';
 
-export interface Partnership {
-  name: string;
-  slug: string;
-  type: PartnershipType;
+export type Partnership = z.infer<typeof schemas.PartnershipSchema>;
+export type RewardToken = z.infer<typeof schemas.RewardTokenSchema>;
+export type QualifyingRequirements = z.infer<typeof schemas.QualifyingRequirementsSchema>;
+export type OfferReward = z.infer<typeof schemas.OfferRewardSchema>;
+export type WelcomeOffer = z.infer<typeof schemas.WelcomeOfferSchema>;
+export type BookmakerFeatures = z.infer<typeof schemas.BookmakerFeaturesSchema>;
+export type RegionalBookmakerData = z.infer<typeof schemas.RegionalBookmakerDataSchema>;
+export type BookmakerDisplay = z.infer<typeof schemas.BookmakerDisplaySchema>;
+export type BookmakerContent = z.infer<typeof schemas.BookmakerContentSchema>;
+export type BookmakerBrandData = z.infer<typeof schemas.BookmakerBrandDataSchema>;
+export type Bookmaker = z.infer<typeof schemas.BookmakerSchema>;
+export type ExtraPromotion = z.infer<typeof schemas.ExtraPromotionSchema>;
+export type FAQCategory = z.infer<typeof schemas.FAQCategorySchema>;
+export type FAQ = z.infer<typeof schemas.FAQSchema>;
+export type GuideCategory = z.infer<typeof schemas.GuideCategorySchema>;
+export type Guide = z.infer<typeof schemas.GuideSchema>;
+export type StaticPage = z.infer<typeof schemas.StaticPageSchema>;
+export type Author = z.infer<typeof schemas.AuthorSchema>;
+export type SiteConfig = z.infer<typeof schemas.SiteConfigSchema>;
+export type SportCategory = z.infer<typeof schemas.SportCategorySchema>;
+export type Competition = z.infer<typeof schemas.CompetitionSchema>;
+export type SportEventStatus = z.infer<typeof schemas.SportEventStatusSchema>;
+export type SportEvent = z.infer<typeof schemas.SportEventSchema>;
+
+export interface BookmakerComplete extends Bookmaker, RegionalBookmakerData {
+  welcomeOffers: WelcomeOffer[];
+  extraPromotions: ExtraPromotion[];
+  primaryOffer?: WelcomeOffer;
 }
 
-export type AffiliateLinkType = 'default' | 'welcome-bonus' | 'free-bet' | 'casino' | string;
+export type BookmakerListItem = BookmakerComplete;
 
-export interface AffiliateLink {
-  url: string;
-  type: AffiliateLinkType;
-  country?: string; 
-}
-
-export type OfferType = 
-  | 'free_bet' 
-  | 'bet_credits' 
-  | 'commission_free' 
-  | 'deposit_bonus' 
-  | 'bet_get' 
-  | 'risk_free_bet';
-
-export type RewardRestriction =
-  | 'any'
-  | 'bet-builder'
-  | 'acca'
-  | 'acca-3+'
-  | 'acca-4+'
-  | 'in-play'
-  | 'football'
-  | 'horse-racing'
-  | 'tennis'
-  | 'exchange'
-  | 'multiples'
-  | 'singles';
-
-export type QualifyingBetType = 'single' | 'acca' | 'each-way' | 'any';
-
-export interface RewardToken {
-  amount: number;
-  count: number;
-  restriction: RewardRestriction;
-  minOdds?: number;
-  minSelections?: number;
-}
-
-export interface QualifyingRequirements {
-  depositMin: number;
-  betMin: number;
-  minOdds: number;
-  daysToQualify: number;
-  allowedBetTypes: QualifyingBetType[];
-  mobileOnly: boolean;
-  sportRequired?: string;
-}
-
-export interface OfferReward {
-  totalValue: number;
-  structure: RewardToken[];
-  validityDays: number;
-}
-
-export interface WelcomeOffer {
-  bookmakerSlug: string;
-  title: string;
-  shortTitle: string;
-  type: OfferType | string;
-  bonusPercentage?: number; 
-  wageringRequirement: number;
-  isExclusive: boolean;
-  claimUrl?: string; 
-  qualifying: QualifyingRequirements;
-  reward: OfferReward;
-  excludedPayments: PaymentMethodSlug[];
-  promoCode: string | null;
-  termsShort: string;
-  termsFull: string;
-  highlights: string[];
-  lastVerified: string;
-  validUntil?: string;
-  isActive: boolean;
-}
-
-export type ExtraPromoCategory = 
-  | 'early_payout'
-  | 'acca_boost'
-  | 'player_protection'
-  | 'odds_guarantee' 
-  | 'insurance'
-  | 'bet_boost'
-  | 'refer_a_friend'
-  | 'loyalty_program';
-
-export interface ExtraPromotion {
-  id: string;
-  bookmakerSlug: string;
-  title: string;
-  shortDescription: string;
-  type: ExtraPromoCategory;
-  sports: string[];
-  isActive: boolean;
-  validUntil?: string;
-  lastVerified: string;
-  tags: string[];
-  details: {
-    keyCondition?: string;
-    maxBoost?: string;
-  };
-  promoPageUrl?: string;
-  competitionId?: string;
-  eventId?: string;
-}
-
-export interface Competition {
-  id: string;
-  slug: string;
-  sportSlug: string;
-  name: string;
-  isMajor: boolean;
-  order: number;            
-  promotionalTags: string[];
-  content: {
-    h1: string;
-    excerpt: string;
-    body: string;
-    metaTitle: string;
-    metaDescription: string;
-  };
-}
-
-export interface SportEvent {
-  id: string;
-  competitionId: string;
-  slug: string;
-  name: string;
-  startTime: string;
-  status: 'upcoming' | 'live' | 'finished';
-  venue?: string;
-  content?: {
-    h1?: string;
-    previewText?: string;
-    prediction?: string;
-    metaTitle?: string;
-    metaDescription?: string;
-  };
-}
-
-export interface BookmakerFeatures {
-  cashOut: boolean;
-  liveStreaming: boolean;
-  betBuilder: boolean;
-  inPlayBetting: boolean;
-  mobileApp: boolean;
-  bestOddsGuaranteed: boolean;
-  earlyPayout: boolean;
-  accaBoost: boolean;
-}
-
-export interface RegionalBookmakerData {
-  website: string;
-  affiliateLink: string;
-  promotionsPage: string;
-  payments: PaymentMethodSlug[];
-  license: string;
-}
-
-export interface Bookmaker {
-  slug: string;
-  name: string;
-  features: BookmakerFeatures;
-  brandData: {
-    foundedYear: number;
-    parentCompany: string;
-    headquarters: string;
-  };
-  content: {
-    tagline: string;
-    summary: string;
-    h1: string;
-    metaTitle: string;
-    metaDescription: string;
-    pros: string[];
-    cons: string[];
-    highlights: string[];
-  };
-  display: {
-    isActive: boolean;
-    isFeatured: boolean;
-    displayOrder: number;
-    isEditorsChoice: boolean;
-  };
-  partnerships: Partnership[];
-  lastUpdated: string;
-}
-
-export interface BookmakerWithOffer extends Bookmaker, RegionalBookmakerData {
-  welcomeOffer?: WelcomeOffer;
-  extraPromotions?: ExtraPromotion[];
-}
-
-export interface FAQ {
-  slug: string;
-  question: string;
-  answer: string;
-  category: 'general' | 'bonuses' | 'deposits' | 'withdrawals' | 'betting' | 'account' | 'responsible_gambling' | 'technical';
-  bookmakerSlug?: string;
-  isPopular: boolean;
-  order: number;
-}
-
-export interface Guide {
-  slug: string;
-  title: string;
-  h1: string;
-  excerpt: string;
-  metaTitle: string;
-  metaDescription: string;
-  category: 'basics' | 'bet-types' | 'features' | 'strategy' | 'sports';
-  readingTime: number;
-  isFeatured: boolean;
-  order: number;
-  content: string;
-  relatedGuides: string[];
-  lastUpdated: string;
-}
-
-export interface StaticPage {
-  slug: string;
-  title: string;
-  h1: string;
-  metaTitle: string;
-  metaDescription: string;
-  content: string;
-  lastUpdated: string;
-}
-
-export interface Author {
-  slug: string;
-  name: string;
-  role: string;
-  bio: string;
-  avatar: string;
-  experienceYears: number;
-  social?: { twitter?: string; linkedin?: string; };
-}
-
-export interface SiteConfig {
-  name: string;
-  tagline: string;
-  description: string;
-  url: string;
-  copyrightYear: number;
-  foundedYear: number;
-  contactEmail: string;
-  defaultAuthor: Author;
-  fullDisclaimer: string;
-}
-
-export interface SportCategory {
-  slug: string;
-  name: string;
-  h1: string;
-  description: string;
-  metaTitle: string;
-  metaDescription: string;
-  recommendedBookmakers: string[];
-  isPopular: boolean;
-  order: number;
-}
+export { validateWelcomeOffers, validateBookmakers, validateExtraPromotions } from './schemas';

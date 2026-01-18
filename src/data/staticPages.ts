@@ -1,3 +1,4 @@
+// src/data/staticPages.ts
 import { staticPages as gbPages } from './regions/gb/en/staticPages';
 import { StaticPage } from '@/types';
 import { adaptObjectToRegion } from './utils';

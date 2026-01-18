@@ -1,3 +1,4 @@
+// src/data/regions/ie/en/index.ts
 import * as gbData from '../../gb/en';
 import { adaptObjectToRegion } from '../../../utils';
 import { ieBookmakerData } from './bookmakerData';

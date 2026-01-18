@@ -1,3 +1,4 @@
+// src/data/regions/gb/en/reviews/netbet.ts
 import { BookmakerReview } from './types';
 
 export const netbetReview: BookmakerReview = {
