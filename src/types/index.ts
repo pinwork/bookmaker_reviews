@@ -30,6 +30,8 @@ export type SportCategory = z.infer<typeof schemas.SportCategorySchema>;
 export type Competition = z.infer<typeof schemas.CompetitionSchema>;
 export type SportEvent = z.infer<typeof schemas.SportEventSchema>;
 
+export type IndustryReport = z.infer<typeof schemas.IndustryReportSchema>;
+
 export interface BookmakerComplete extends Bookmaker, RegionalBookmakerData {
   welcomeOffers: WelcomeOffer[];
   extraPromotions: ExtraPromotion[];

@@ -6,13 +6,14 @@ import { gbBookmakerData } from './bookmakerData';
 import { welcomeOffers } from './welcomeOffers';
 import { extraPromotions } from './extraPromotions';
 import { siteConfig } from './siteConfig';
-
 import { sports } from './sports';
 import { staticPages } from './staticPages';
 import { events as allGbEvents } from './events';
-import { ultimateBonusGuide as bonusGuideData } from './promoGuides/ultimate-bonus-guide';
-import { responsibleGamblingBible as responsibleGamblingData } from './promoGuides/responsible-gambling-bible';
-import { bettingShopsBible as bettingShopsData } from './promoGuides/betting-shops-guide';
+
+import { ultimateBonusGuide as bonusGuideData } from './promoGuides/uk-ultimate-bonus-guide';
+import { responsibleGamblingBible as responsibleGamblingData } from './promoGuides/responsible-gambling-uk-bible';
+import { bettingShopsBible as bettingShopsData } from './promoGuides/uk-betting-shops-bible';
+import { bettingIndustryBible as industryReportData } from './promoGuides/uk-betting-industry-report';
 
 const gbReviews: Record<string, BookmakerReview> = {
   bet365: reviewsList.bet365Review,
@@ -45,9 +46,11 @@ export {
 };
 
 export const events = allGbEvents;
+
 export const ultimateBonusGuide = bonusGuideData;
 export const responsibleGamblingBible = responsibleGamblingData;
 export const bettingShopsBible = bettingShopsData;
+export const bettingIndustryReport = industryReportData;
 
 export const reviews = gbReviews;
 

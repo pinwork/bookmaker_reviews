@@ -1,8 +1,15 @@
-export const bettingShopsBible = {
+import { BOOKMAKER_SLUGS } from '../../../../constants';
+import { IndustryReport } from '@/types';
+
+export const bettingShopsBible: IndustryReport = {
   slug: 'uk-betting-shops-guide',
   h1: 'The 2026 UK Betting Shop Bible: History, Stats & Store Locators',
   metaTitle: 'UK Betting Shops Guide 2026 | From 1961 Legalization to Digi-Hubs',
   metaDescription: 'Comprehensive guide to UK betting shops. 65 years of history, 5,789 active stores, store locators, Fred Done’s story, and why 13% of Brits still bet in cash.',
+
+  relatedBookmakers: [
+    'betfred', 'william-hill', 'ladbrokes', 'coral', 'paddy-power', 'boylesports'
+  ] as typeof BOOKMAKER_SLUGS[number][],
 
   intro: {
     title: 'More Than Just a High Street Store',
@@ -99,7 +106,7 @@ export const bettingShopsBible = {
         name: 'John Boyle',
         company: 'BoyleSports',
         story: 'Founded in 1982 in Markethill, Co. Armagh. John Boyle grew the company into Ireland’s largest independent bookmaker, expanding significantly into the UK Midlands and Northern Ireland.',
-        impact: 'Currently operates ~370 shops across the UK and Ireland.'
+        impact: 'Currently operates 277 shops in Ireland, 45 in Northern Ireland, and 46 in the UK mainland.'
       }
     ]
   },
@@ -165,4 +172,4 @@ export const bettingShopsBible = {
     helpline: 'If you need to talk, call the National Gambling Helpline: 0808 8020 133.',
     lastUpdated: 'January 2026'
   }
-} as const;
+};

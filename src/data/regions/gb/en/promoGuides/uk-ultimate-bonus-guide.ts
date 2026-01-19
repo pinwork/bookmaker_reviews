@@ -1,11 +1,19 @@
-export const ultimateBonusGuide = {
-  slug: 'betting-bonus-guide',
+import { BOOKMAKER_SLUGS } from '../../../../constants';
+import { IndustryReport } from '@/types';
+
+export const ultimateBonusGuide: IndustryReport = {
+  slug: 'uk-betting-bonus-guide-2026',
   h1: 'The Ultimate Betting Bonus Bible 2026: Master Every Offer',
   metaTitle: 'Betting Bonus Guide 2026 | Comprehensive Rules & Mechanics',
-  metaDescription: 'Complete masterclass on UK & Ireland betting bonuses. 14+ mechanics explained: Deposit offers, Free Bets, Early Payouts, BOG, and Acca Insurance.',
+  metaDescription: 'Complete masterclass on UK betting bonuses. 14+ mechanics explained: Deposit offers, Free Bets, Early Payouts, BOG, and Acca Insurance.',
+  lastUpdated: '2026-01-28',
+
+  relatedBookmakers: [
+    'bet365', 'sky-bet', 'paddy-power', 'william-hill', 'ladbrokes', 'betfred', 'unibet'
+  ] as typeof BOOKMAKER_SLUGS[number][],
 
   comparisonTable: {
-    title: 'Comprehensive Bonus Comparison: 2026 UK & Ireland Market',
+    title: 'Comprehensive Bonus Comparison: 2026 UK Market',
     headers: ['Bonus Type', 'Best For', 'Complexity', 'Key Benefit'],
     rows: [
       ['Deposit Bonus', 'New Players', 'Medium', 'Doubles starting bankroll (£10 to £50)'],

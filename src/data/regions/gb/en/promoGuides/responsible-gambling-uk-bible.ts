@@ -1,13 +1,11 @@
-import { trustBadges } from '../../../../trustSignals';
+import { IndustryReport } from '@/types'; 
 
-export const responsibleGamblingBible = {
+export const responsibleGamblingBible: IndustryReport = {
   slug: 'responsible-gambling-uk-guide',
   h1: 'The 2026 UK Responsible Gambling Bible: Tools, Data & Recovery',
   metaTitle: 'UK Responsible Gambling Guide 2026 | Complete Help, Stats & Recovery Tools',
   metaDescription: 'The definitive 2026 guide to UK gambling support. Real stories, NHS screening, GamStop mechanics, £19m fines exposed, and national statistics on harm.',
   
-  activeTrustBadges: trustBadges.map(b => b.slug),
-
   intro: {
     title: 'Why This Guide Exists',
     content: `In 2025, the UK Gambling Commission recorded 1.4 million problem gamblers—a number that doesn't include the millions more affected as family members, partners, and friends. This guide is not marketing material. It is a factual database of every tool, statistic, and support system available to anyone touched by gambling harm in the United Kingdom. We document real stories, expose industry fines, and explain the psychology behind addiction so you can make informed decisions.`
@@ -317,4 +315,4 @@ Triggered at **£150 net deposits** per 30 days. Uses public data (bankruptcies,
     helpline: 'National Gambling Helpline: 0808 8020 133 (24/7, free).',
     lastUpdated: 'January 2026'
   }
-} as const;
+};
