@@ -4,19 +4,19 @@ This file provides guidance to Claude (claude.ai and Claude Code) when working w
 
 ## Project Overview
 
-UK Betting Affiliate Review Site — content-focused affiliate platform for UK punters seeking bookmaker reviews, welcome bonuses, and betting guides. Mid-tier positioning: professional but simple, competing through content quality rather than feature complexity.
+FreeBetGeek — Multi-regional betting affiliate platform serving GB (United Kingdom) and IE (Ireland) markets. Content-focused affiliate site for sports bettors seeking bookmaker reviews, welcome bonuses, and betting guides. Mid-tier positioning: professional but simple, competing through content quality rather than feature complexity.
 
 ### Project Description
 
-**What:** Affiliate review site for UK licensed bookmakers. Displays bookmaker cards with welcome offers, ratings, features, and affiliate CTAs. Monetization via affiliate commissions when users sign up through our links.
+**What:** Affiliate review site for UKGC and Irish Revenue licensed bookmakers. Displays bookmaker cards with welcome offers, ratings, features, and affiliate CTAs. Monetization via affiliate commissions when users sign up through our links.
 
-**Target Audience:** UK-based sports bettors (18+) looking for:
+**Target Audience:** Sports bettors (18+) in GB and IE regions looking for:
 - Best welcome bonuses and free bets
 - Bookmaker comparisons and reviews
 - Betting guides and educational content
 - Payment method filtering (PayPal, Apple Pay, etc.)
 
-**Business Goal:** Get approved by bookmaker affiliate programs by presenting a professional, active-looking site with quality content and proper UKGC compliance messaging.
+**Business Goal:** Get approved by bookmaker affiliate programs by presenting a professional, active-looking site with quality content and proper regional compliance messaging (UKGC for GB, Revenue Commissioners for IE).
 
 **Design Philosophy:**
 - Mobile-first, clean, minimal design
@@ -32,12 +32,13 @@ UK Betting Affiliate Review Site — content-focused affiliate platform for UK p
 - T&Cs/Fine print: Muted grey (#6c757d)
 
 **Pages:**
-1. **Homepage** — Hero + featured bookmakers (5-10) + full comparison list (15-20) + FAQ + trust section
-2. **Reviews** `/reviews/[slug]` — Individual bookmaker review pages (bet365, Betfair, William Hill, etc.)
-3. **Free Bets** `/free-bets` — Aggregated welcome offers list
-4. **Sports** `/sports/[sport]` — Sport-specific bookmaker recommendations (football, horse-racing)
-5. **Guides** `/guides/[slug]` — Educational content (How Free Bets Work, Betting Odds Explained)
-6. **Static pages** — About, Contact, Privacy Policy, Terms, Responsible Gambling, Affiliate Disclosure
+All user-facing pages use dynamic routing via `src/app/[region]/`:
+1. **Homepage** `[region]/` — Hero + featured bookmakers + full comparison list + FAQ + trust section
+2. **Reviews** `[region]/reviews/[slug]` — Individual bookmaker review pages (bet365, betfair, william-hill, etc.)
+3. **Free Bets** `[region]/free-bets` — Aggregated welcome offers list
+4. **Sports** `[region]/sports/[sport]` — Sport-specific bookmaker recommendations (football, horse-racing, etc.)
+5. **Guides** `[region]/guides/[slug]` — Educational content and industry reports
+6. **Static pages** `[region]/about`, `[region]/contact`, etc. — About, Contact, Privacy Policy, Terms, Responsible Gambling, Affiliate Disclosure
 
 **Navigation:**
 - Primary: Betting Sites | Free Bets | Reviews | Sports | Guides
@@ -103,19 +104,11 @@ Tier 2: BetVictor, Betway, BoyleSports, LiveScore Bet, Kwiff, Virgin Bet, Spread
 - Content: Author name, "Last Updated" timestamp
 
 **SEO Patterns:**
-- URL: `/reviews/bet365`, `/free-bets`, `/guides/how-free-bets-work`
-- Meta title: "[Bookmaker] Review UK 2026 – Bonus, Features & Verdict"
+- URL structure: `[region]/reviews/bet365`, `[region]/free-bets`, `[region]/guides/how-free-bets-work`
+- Meta title: "[Bookmaker] Review [Region] 2026 – Bonus, Features & Verdict"
 - Include current month/year in homepage H1
 
-**What We DON'T Build:**
-- No live odds comparison
-- No bet calculators
-- No user accounts or login
-- No community/forum features
-- No native mobile app
-- No complex filtering (basic only)
-
-**Reference Documentation:** See `/docs/research.md` for detailed competitor analysis, bookmaker data, visual specifications, and content examples.
+**Reference Documentation:** See `/docs/research.md` for detailed competitor analysis, bookmaker data, visual specifications, and content examples. See `/docs/DATA_STRUCTURE_MAP.md` for complete `src/data` architecture and regional data flow.
 
 ## Tech Stack
 
@@ -138,10 +131,46 @@ npm run lint     # Run linter
 
 ## Project Structure
 
-- `src/app/` - Next.js App Router pages and layouts
+### Routing
+- `src/app/[region]/` - All user-facing pages with dynamic region routing (gb, ie)
+- `src/app/api/` - API routes (if needed)
+
+### Data Layer (Inherit & Transform Architecture)
+- `src/data/index.ts` - **Public API** (components must import from here only)
+- `src/data/regions/gb/en/` - **Master Data** (Single Source of Truth)
+  - `reviews/` - 18 bookmaker review files
+  - `welcomeOffers.ts` - Welcome offers array
+  - `extraPromotions.ts` - Extra promotions array
+  - `siteConfig.ts` - Site configuration
+  - `sports.ts` - Sport categories
+  - `events/` - Sport events by date
+  - `promoGuides/` - Industry reports and guides
+- `src/data/regions/ie/en/` - Ireland overrides
+  - `bookmakerData.ts` - Technical overrides (affiliate links, licenses)
+  - `promoGuides/` - Ireland-specific guides
+  - `index.ts` - Inherits GB data via `adaptObjectToRegion()`
+- `src/data/bookmakers.ts` - Bookmaker assembly logic
+- `src/data/welcomeOffers.ts` - Offer validation and filtering
+- `src/data/cache.ts` - In-memory caching system
+
+### Utilities
+- `src/utils/` - Shared utilities
+  - `localization.ts` - Regional text adaptation (£→€, UK→Ireland, etc.)
+  - `seo.ts` - Schema.org JSON-LD generators
+
+### Types
+- `src/types/` - TypeScript types and Zod schemas
+  - `index.ts` - All type exports
+  - `schemas.ts` - Zod validation schemas
+
+### Components
 - `src/components/` - React components
 - `src/components/ui/` - shadcn/ui components
-- `src/lib/` - Utility functions and helpers
+- `src/lib/` - Utility functions (cn, etc.)
+
+### Branding
+- `public/images/branding/` - Logo and brand assets
+- `public/favicon.ico`, `public/apple-touch-icon.png` - Site icons
 
 ## Import Aliases
 
@@ -149,6 +178,26 @@ npm run lint     # Run linter
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 ```
+
+## Data Access Rules
+
+**CRITICAL:** Components must **only** import data through the public API:
+
+```typescript
+// ✅ Correct - Public API
+import { getActiveBookmakers, getBestValueOffers } from '@/data'
+import { adaptObjectToRegion } from '@/utils'
+
+// ❌ Wrong - Direct imports forbidden
+import { bookmakers } from '@/data/bookmakers'
+import { welcomeOffers } from '@/data/regions/gb/en/welcomeOffers'
+```
+
+**Regional Data Flow:**
+1. GB (`src/data/regions/gb/en/`) is Master Data
+2. Other regions (IE) inherit via `adaptObjectToRegion()` utility
+3. Regional folders contain only technical overrides (affiliate links, licenses)
+4. All data functions accept `region` parameter (defaults to 'gb')
 
 ---
 
