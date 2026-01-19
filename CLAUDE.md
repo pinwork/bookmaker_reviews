@@ -17,8 +17,6 @@ FreeBetGeek — Multi-regional betting affiliate platform serving GB (United Kin
 - Content-heavy, feature-light
 - Trust signals throughout (18+, BeGambleAware, licenses)
 
-**Reference Documentation:** See `/docs/research.md` for competitor analysis and visual specifications. See `/docs/DATA_STRUCTURE_MAP.md` for data architecture.
-
 ---
 
 ## Tech Stack
