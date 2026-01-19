@@ -12,4 +12,4 @@ export const bettingShopsBible = adaptObjectToRegion(gbData.bettingShopsBible, '
 
 export const bookmakerData = ieBookmakerData;
 
-export { faqs, guides, sports, staticPages, siteConfig } from '../../gb/en';
+export { sports, staticPages, siteConfig } from '../../gb/en';

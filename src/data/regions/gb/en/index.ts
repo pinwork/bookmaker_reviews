@@ -7,10 +7,8 @@ import { welcomeOffers } from './welcomeOffers';
 import { extraPromotions } from './extraPromotions';
 import { siteConfig } from './siteConfig';
 
-import { guides } from './guides';
 import { sports } from './sports';
 import { staticPages } from './staticPages';
-import { faqs } from './faqs';
 import { events as allGbEvents } from './events';
 import { ultimateBonusGuide as bonusGuideData } from './promoGuides/ultimate-bonus-guide';
 import { responsibleGamblingBible as responsibleGamblingData } from './promoGuides/responsible-gambling-bible';
@@ -38,10 +36,8 @@ const gbReviews: Record<string, BookmakerReview> = {
 };
 
 export {
-  guides,
   sports,
   staticPages,
-  faqs,
   gbBookmakerData,
   welcomeOffers,
   extraPromotions,
