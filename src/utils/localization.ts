@@ -1,5 +1,5 @@
-// src/data/utils.ts
-import { getRegion, DEFAULT_REGION, getCurrencySymbol as getRegionCurrencySymbol } from './regions';
+// src/utils/localization.ts
+import { getRegion, DEFAULT_REGION, getCurrencySymbol as getRegionCurrencySymbol } from '@/data/regions';
 
 export const adaptTextToRegion = (text: string, region: string = DEFAULT_REGION): string => {
   const config = getRegion(region);

@@ -1,7 +1,7 @@
 // src/data/extraPromotions.ts
 import { ExtraPromotion, ExtraPromoCategory } from '@/types';
 import { extraPromotions as gbPromos } from './regions/gb/en/extraPromotions';
-import { adaptObjectToRegion } from './utils';
+import { adaptObjectToRegion } from '@/utils';
 import { DEFAULT_REGION } from './constants';
 
 export const getExtraPromotions = (region: string = DEFAULT_REGION): ExtraPromotion[] => {

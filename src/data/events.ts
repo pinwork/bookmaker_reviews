@@ -1,5 +1,5 @@
 import { SportEvent } from '@/types';
-import { adaptObjectToRegion } from './utils';
+import { adaptObjectToRegion } from '@/utils';
 import { DEFAULT_REGION } from './constants';
 import { getExtraPromotions } from './extraPromotions';
 import { events as gbEvents } from './regions/gb/en';

@@ -1,5 +1,5 @@
 import * as gbData from '../../gb/en';
-import { adaptObjectToRegion } from '../../../utils';
+import { adaptObjectToRegion } from '@/utils';
 import { ieBookmakerData } from './bookmakerData';
 import { ieBonusGuide } from './promoGuides/ie-ultimate-bonus-guide';
 import { responsibleGamblingIrelandBible } from './promoGuides/responsible-gambling-ie-bible';

@@ -1,6 +1,6 @@
 // src/data/regions/gb/en/reviews/index.ts
 import { BookmakerReview } from './types';
-import { adaptObjectToRegion } from '../../../../utils';
+import { adaptObjectToRegion } from '@/utils';
 
 import { bet365Review } from './bet365';
 import { betfairReview } from './betfair';

@@ -1,7 +1,7 @@
 // src/data/sports.ts
 import { sports as gbSports } from './regions/gb/en/sports';
 import { SportCategory } from '@/types';
-import { adaptObjectToRegion } from './utils';
+import { adaptObjectToRegion } from '@/utils';
 
 export const getSports = (region: string = 'gb'): SportCategory[] => {
   return adaptObjectToRegion(gbSports, region);

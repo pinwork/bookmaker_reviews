@@ -8,6 +8,7 @@ export const events: SportEvent[] = [
     sportSlug: 'horse-racing',
     competitionId: 'cheltenham-festival',
     title: 'Cheltenham Trials Day',
+    isFeatured: false,
     shortNote: 'Key races for the upcoming Festival with BOG & Extra Places.',
     promotionIds: ['coral-pipped-post', 'bv-run-for-money'],
     content: {

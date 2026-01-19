@@ -1,6 +1,6 @@
 // src/data/siteConfig.ts
 import { siteConfig as gbConfig, defaultAuthor, socialLinks, featureFlags } from './regions/gb/en/siteConfig';
-import { adaptObjectToRegion } from './utils';
+import { adaptObjectToRegion } from '@/utils';
 
 export { defaultAuthor, socialLinks, featureFlags };
 

@@ -1,7 +1,7 @@
 // src/data/welcomeOffers.ts
 import { WelcomeOffer, PaymentMethodSlug } from '@/types';
 import { welcomeOffers as gbOffers } from './regions/gb/en/welcomeOffers';
-import { adaptObjectToRegion } from './utils';
+import { adaptObjectToRegion } from '@/utils';
 import { DEFAULT_REGION, BOOKMAKER_SLUGS } from './constants';
 import { setOffersIndex, getCachedOffers, isOffersCacheReady } from './cache';
 
