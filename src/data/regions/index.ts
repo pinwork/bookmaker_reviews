@@ -1,5 +1,8 @@
 // src/data/regions/index.ts
 import { DEFAULT_REGION, RegionCode, BOOKMAKER_SLUGS } from '../constants';
+import { SiteConfig } from '@/types';
+import { adaptObjectToRegion } from '@/utils';
+import { siteConfig as gbSiteConfig } from './gb/en/siteConfig';
 
 export { DEFAULT_REGION };
 export type { RegionCode };
@@ -75,4 +78,14 @@ export function getCurrencySymbol(region: string = DEFAULT_REGION): string {
 
 export function isBookmakerEnabledInRegion(slug: string, region: string = DEFAULT_REGION): boolean {
   return getRegion(region)?.enabledBookmakers.includes(slug) ?? false;
+}
+
+export function getSiteConfig(region: string): SiteConfig | null {
+  if (region === 'gb') return gbSiteConfig;
+  
+  if (region === 'ie') {
+    return adaptObjectToRegion(gbSiteConfig, 'ie');
+  }
+  
+  return null;
 }

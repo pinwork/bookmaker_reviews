@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60" fill="none">
+  <rect x="0" y="5" width="50" height="50" rx="10" fill="#0F172A" />
+  <path d="M10 25 C 10 25, 12 35, 25 35 C 38 35, 40 25, 40 25" stroke="#16A34A" stroke-width="4" stroke-linecap="round" />
+  <circle cx="17" cy="22" r="5" fill="#16A34A" />
+  <circle cx="33" cy="22" r="5" fill="#16A34A" />
+  <path d="M25 35 L 25 30" stroke="#16A34A" stroke-width="2" />
+  
+  <text x="65" y="42" font-family="Arial, sans-serif" font-weight="900" font-size="32" fill="#0F172A" letter-spacing="-1">FREEBET</text>
+  <text x="212" y="42" font-family="Arial, sans-serif" font-weight="900" font-size="32" fill="#16A34A" letter-spacing="-1">GEEK</text>
+</svg>
