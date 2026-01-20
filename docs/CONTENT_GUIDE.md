@@ -61,15 +61,15 @@ externalLinks: [
   {
     id: 'service-name',
     name: 'Service Name',
-    url: 'https://example.com',
-    logoSlug: 'service-name'  // → /images/partners/service-name.png
+    url: 'https://example.com'
   }
 ]
 ```
 
 **Логотипи:**
-- Шлях: `public/images/partners/{logoSlug}.png`
-- Формат: PNG або SVG
+- Шлях: `public/images/partners/{id}.*` (автопошук)
+- Формат: будь-який (SVG, PNG, WebP, JPG) — утиліта знайде автоматично
+- `id` = ім'я файлу без розширення
 - Розмір: будь-який — CSS адаптує
 
 ---

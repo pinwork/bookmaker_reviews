@@ -251,7 +251,6 @@ export const ExternalLinkSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
   url: z.string().url(),
-  logoSlug: z.string().min(1),
 });
 
 export const IndustryReportSchema = z.object({
