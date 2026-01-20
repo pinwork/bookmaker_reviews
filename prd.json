@@ -94,10 +94,15 @@
         "npm run build passes"
       ],
       "priority": 2,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/data/regions/gb/en/articles/best-live-score-stats-apps.ts"]
     }
   ],
-  "postFeatureReview": null
+  "postFeatureReview": {
+    "summary": "Додано externalLinks в схему, створено папку для партнерських логотипів, оновлено статтю Live Score Apps з 13 до 10 сервісів, створено CONTENT_GUIDE.md",
+    "impact": "Types (schemas.ts, index.ts), Article data (best-live-score-stats-apps.ts), Documentation (CONTENT_GUIDE.md, CLAUDE.md)",
+    "issues": "Логотипи для партнерів потрібно завантажити вручну в public/images/partners/",
+    "recommendations": "Створити компонент ExternalLinkCard для відображення партнерських посилань з логотипами"
+  }
 }

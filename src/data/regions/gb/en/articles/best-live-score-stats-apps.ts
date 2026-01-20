@@ -3,6 +3,18 @@ import { IndustryReport } from '@/types';
 export const liveScoreAppsGuide: IndustryReport = {
   slug: 'best-live-score-stats-apps-2026',
   collections: ['guides', 'bettor-resources'],
+  externalLinks: [
+    { id: 'flashscore', name: 'Flashscore', url: 'https://www.flashscore.com', logoSlug: 'flashscore' },
+    { id: 'sofascore', name: 'SofaScore', url: 'https://www.sofascore.com', logoSlug: 'sofascore' },
+    { id: 'fotmob', name: 'FotMob', url: 'https://www.fotmob.com', logoSlug: 'fotmob' },
+    { id: 'fbref', name: 'FBref', url: 'https://fbref.com', logoSlug: 'fbref' },
+    { id: 'understat', name: 'Understat', url: 'https://understat.com', logoSlug: 'understat' },
+    { id: 'footystats', name: 'FootyStats', url: 'https://footystats.org', logoSlug: 'footystats' },
+    { id: 'racing-post', name: 'Racing Post', url: 'https://www.racingpost.com', logoSlug: 'racing-post' },
+    { id: 'timeform', name: 'Timeform', url: 'https://www.timeform.com', logoSlug: 'timeform' },
+    { id: 'tennis-explorer', name: 'Tennis Explorer', url: 'https://www.tennisexplorer.com', logoSlug: 'tennis-explorer' },
+    { id: 'basketball-reference', name: 'Basketball Reference', url: 'https://www.basketball-reference.com', logoSlug: 'basketball-reference' },
+  ],
   h1: 'Best Live Score & Stats Apps for Sports Bettors (2026)',
   metaTitle: 'Best Live Score Apps 2026 | Flashscore, SofaScore & More',
   metaDescription: 'Compare the best live score and statistics apps for betting. Flashscore, SofaScore, FotMob, Racing Post reviewed with pros, cons, and pricing.',
@@ -23,7 +35,6 @@ This guide compares the most popular live score apps, statistics platforms, and 
       ['Flashscore', 'Live betting speed', 'Free', '38 sports', 'Fastest updates (5-20s)'],
       ['SofaScore', 'Statistical research', 'Free', '20+ sports', 'Live xG, dropping odds'],
       ['FotMob', 'Football experience', 'Free/£9.99yr', 'Football only', 'Best UX, Apple Watch'],
-      ['LiveScore', 'Betting ecosystem', 'Free', 'Multi-sport', 'Owns betting brands'],
       ['FootyStats', 'Niche leagues', 'Free/£19.99mo', 'Football', '1,500+ leagues, backtesting'],
       ['Racing Post', 'Horse racing', '£19.95/mo', 'Racing', 'Industry standard'],
       ['Understat', 'xG analysis', 'Free', 'Big 5 leagues', 'Best free xG data']
@@ -134,38 +145,6 @@ Football purists who want the best overall experience. If you only bet on footba
 
 ### Price
 Free with ads. **FotMob Pro: £9.99/year** removes ads and provides faster updates.`
-        },
-        {
-          id: 'livescore',
-          title: 'LiveScore',
-          quickVerdict: 'The original live score service, now part of a betting ecosystem.',
-          content: `### Overview
-LiveScore is the original live score service, operating since **1998**. Now owned by Anzo Group, it's part of a broader betting ecosystem that includes LiveScore Bet and Virgin Bet.
-
-### Key Features
-- **Integrated Betting:** Links directly to LiveScore Bet
-- **AI Partnership:** Uses X/Twitter AI for enhanced content
-- **News Integration:** Editorial content alongside scores
-- **Multi-Sport Coverage:** Football, cricket, tennis, basketball, hockey
-
-### Who Owns It
-Anzo Group (valued at **£500M** after **£50M investment from Ringier**). They own LiveScore Bet and Virgin Bet — so scores and betting are unified.
-
-### Pros
-- Seamless betting integration if you use LiveScore Bet
-- Clean, familiar interface (unchanged for years)
-- Reliable and stable platform
-
-### Cons
-- Pushes own betting products aggressively
-- Statistics less detailed than competitors
-- Speed not as fast as Flashscore
-
-### Best For
-Those who want scores and betting in one ecosystem. If you already use LiveScore Bet, this makes sense. Otherwise, Flashscore or SofaScore are better standalone options.
-
-### Price
-Free.`
         }
       ]
     },
@@ -272,38 +251,6 @@ Bettors who focus on niche leagues where bookmaker lines are soft. Essential for
 
 ### Price
 Free basic tier. **Premium: £19.99/month** for full features.`
-        },
-        {
-          id: 'whoscored',
-          title: 'WhoScored',
-          quickVerdict: 'Quick pre-match research with Opta data.',
-          content: `### Overview
-WhoScored provides **Opta-powered statistics** across **500+ leagues**. Known for player ratings and match previews that give a quick snapshot before betting.
-
-### Key Features
-- **Player Ratings:** 1-10 scale based on Opta data
-- **Match Previews:** AI-generated analysis
-- **Telegram Tips:** Paid tip service (£9.99/month)
-- **Heat Maps:** Player positioning data
-
-### Coverage
-500+ leagues with Opta data. Strong on major competitions, thinner on lower leagues.
-
-### Pros
-- Quick player form assessment
-- Match previews save research time
-- Opta data is reliable
-
-### Cons
-- Less detailed than FBref
-- Telegram tips are hit-and-miss
-- Interface feels dated
-
-### Best For
-Quick pre-match research when you need a fast overview of player form and team statistics.
-
-### Price
-Free basic. **Telegram tips: £9.99/month.**`
         }
       ]
     },
@@ -376,37 +323,6 @@ Professional racing bettors and exchange traders. If you're betting at this leve
 
 ### Price
 **Race Pass: £30/month.**`
-        },
-        {
-          id: 'at-the-races',
-          title: 'At The Races',
-          quickVerdict: 'Free alternative with replays and streaming.',
-          content: `### Overview
-At The Races (ATR) offers a free alternative to Racing Post with race replays, basic statistics, and live streaming for subscribers.
-
-### Key Features
-- **Race Replays:** Watch past races free
-- **Speed/Form Ratings:** Basic rating system
-- **Market Movers:** Track betting market changes
-- **US Racing:** Coverage of American meetings
-- **Live Streaming:** Watch races live (premium)
-
-### Pros
-- Free basic access
-- Race replays are valuable for research
-- Market movers help identify smart money
-- US racing coverage unique
-
-### Cons
-- Data less detailed than Racing Post
-- Streaming requires subscription (£9.99/month)
-- Interface less polished
-
-### Best For
-Casual racing bettors who want free access to replays and basic data. Good supplement to Racing Post rather than replacement.
-
-### Price
-Free basic. **Streaming: £9.99/month.**`
         }
       ]
     },
