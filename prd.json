@@ -148,9 +148,9 @@
         "npm run build passes"
       ],
       "priority": 1,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/app/[region]/guides/[slug]/page.tsx"]
     },
     {
       "id": 4,

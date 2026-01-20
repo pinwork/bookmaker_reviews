@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isValidRegion, getArticleBySlug } from '@/data';
+import { getSiteConfig } from '@/data/regions';
+import { generateArticleSchema } from '@/utils/seo';
 
 interface PageProps {
   params: Promise<{ region: string; slug: string }>;
@@ -38,10 +40,22 @@ export default async function ArticlePage({ params }: PageProps) {
     return notFound();
   }
 
+  const siteConfig = getSiteConfig(region);
+  const articleUrl = siteConfig ? `${siteConfig.url}/${region}/guides/${slug}` : '';
+  const jsonLd = siteConfig ? generateArticleSchema(article, articleUrl, siteConfig) : null;
+
   return (
-    <main className="max-w-4xl mx-auto p-8 font-sans">
-      <h1 className="text-4xl font-black text-gray-900 mb-4">{article.h1}</h1>
-      <p className="text-xl text-gray-600">{article.intro.content}</p>
-    </main>
+    <>
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+      <main className="max-w-4xl mx-auto p-8 font-sans">
+        <h1 className="text-4xl font-black text-gray-900 mb-4">{article.h1}</h1>
+        <p className="text-xl text-gray-600">{article.intro.content}</p>
+      </main>
+    </>
   );
 }
