@@ -1,0 +1,203 @@
+{
+  "featureName": "SEO Schemas Refactor & SiteFooter",
+  "branchName": "feat/seo-footer",
+  "description": "Рефакторинг SEO утиліт для автоматичного збору всіх schemas (Article + FAQ). Створення SiteFooter компонента з trust badges та посиланнями на static pages.",
+
+  "part1_seo": {
+    "problem": "Зараз треба вручну викликати generateArticleSchema, потім перевіряти чи є FAQ і додавати окремо. Непрофесійно, легко забути.",
+    "solution": "Одна функція generateArticleSchemas() яка автоматично збирає всі релевантні schemas в масив.",
+    "benefits": [
+      "Один виклик замість кількох",
+      "Автоматично додає FAQ schema якщо є faq",
+      "Легко розширити (Review, HowTo, Table...)",
+      "Менше коду в page.tsx"
+    ]
+  },
+
+  "part2_footer": {
+    "problem": "Немає єдиного футера на сайті. Trust badges і посилання на static pages мають бути на кожній сторінці.",
+    "solution": "SiteFooter компонент який показує trust badges по регіону + посилання на static pages + copyright.",
+    "content": {
+      "trustBadges": "BeGambleAware, GAMSTOP, GamCare (GB) / GamblingCare.ie (IE)",
+      "staticPages": "About, Terms, Privacy, Contact, Responsible Gambling, Affiliate Disclosure",
+      "copyright": "© 2026 FreeBetGeek. 18+ Please gamble responsibly."
+    }
+  },
+
+  "technicalDesign": {
+    "seoRefactor": {
+      "file": "src/utils/seo.ts",
+      "newFunction": {
+        "name": "generateArticleSchemas",
+        "signature": "(article: IndustryReport, url: string, config: SiteConfig) => object[]",
+        "logic": [
+          "1. Створити Article schema (завжди)",
+          "2. Якщо article.faq?.length — додати FAQPage schema",
+          "3. Повернути масив schemas"
+        ]
+      },
+      "keepExisting": "generateArticleSchema, generateBookmakerSchema, generateReviewSchema — залишити для backward compatibility"
+    },
+
+    "siteFooter": {
+      "file": "src/components/SiteFooter.tsx",
+      "props": "{ region: string }",
+      "imports": [
+        "getTrustBadgesByRegion з @/data/trustSignals",
+        "getFooterPages з @/data/regions/gb/en/staticPages або створити в @/data/staticPages",
+        "getTrustBadgeImagePath з @/utils/images"
+      ],
+      "sections": [
+        {
+          "name": "Trust Row",
+          "description": "Trust badges + короткий текст '18+ Gamble responsibly' в один рядок"
+        },
+        {
+          "name": "Links Row",
+          "description": "Посилання на static pages + contactEmail з siteConfig"
+        },
+        {
+          "name": "Copyright Row",
+          "description": "© [year] FreeBetGeek"
+        }
+      ],
+      "notes": [
+        "НЕ виділяти disclaimer окремо — просто текст поруч з badges",
+        "Contact — це mailto посилання з config.contactEmail, без форми"
+      ]
+    },
+
+    "dataFunctions": {
+      "getFooterPages": {
+        "location": "src/data/staticPages.ts",
+        "note": "Функція вже існує в regions/gb/en/staticPages.ts — потрібно експортувати через src/data/staticPages.ts",
+        "returns": "Array<{ slug: string, title: string }>"
+      }
+    }
+  },
+
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Рефакторинг SEO — generateArticleSchemas",
+      "acceptanceCriteria": [
+        "В src/utils/seo.ts додати функцію generateArticleSchemas",
+        "Приймає: article (IndustryReport), url (string), config (SiteConfig)",
+        "Повертає: масив schema objects",
+        "Завжди включає Article schema",
+        "Якщо article.faq існує і не пустий — додає FAQPage schema",
+        "FAQPage schema: @type FAQPage, mainEntity з Questions і Answers",
+        "Існуючі функції НЕ видаляти (backward compatibility)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/utils/seo.ts"]
+    },
+    {
+      "id": 2,
+      "title": "Оновити article page.tsx на generateArticleSchemas",
+      "acceptanceCriteria": [
+        "В src/app/[region]/guides/[slug]/page.tsx",
+        "Замінити generateArticleSchema на generateArticleSchemas",
+        "Один <script type='application/ld+json'> з JSON.stringify(schemas)",
+        "Видалити старий окремий виклик якщо був",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/app/[region]/guides/[slug]/page.tsx"]
+    },
+    {
+      "id": 3,
+      "title": "Експортувати getFooterPages",
+      "acceptanceCriteria": [
+        "В src/data/staticPages.ts",
+        "Імпортувати getFooterPages з regions/gb/en/staticPages",
+        "Експортувати getFooterPages",
+        "Функція повертає масив { slug, title } для footer посилань",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/data/staticPages.ts"]
+    },
+    {
+      "id": 4,
+      "title": "Створити SiteFooter компонент",
+      "acceptanceCriteria": [
+        "Створити src/components/SiteFooter.tsx",
+        "Props: { region: string }",
+        "Імпортувати getSiteConfig з @/data/siteConfig для contactEmail",
+        "Row 1 — Trust: getTrustBadgesByRegion(region) логотипи + текст '18+ Gamble responsibly'",
+        "Використати getTrustBadgeImagePath з @/utils/images для шляхів логотипів",
+        "Row 2 — Links: getFooterPages() як посилання /{region}/{slug} + mailto:contactEmail",
+        "Row 3 — Copyright: © {currentYear} FreeBetGeek",
+        "Простий дизайн, без зайвих секцій",
+        "Responsive: badges wrap на mobile",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/components/SiteFooter.tsx"]
+    },
+    {
+      "id": 5,
+      "title": "Додати SiteFooter в region layout",
+      "acceptanceCriteria": [
+        "В src/app/[region]/layout.tsx (якщо існує) або створити",
+        "Додати <SiteFooter region={region} /> після {children}",
+        "Якщо layout не існує — додати SiteFooter в головні pages: home, guides/[slug], guides, bonuses, тощо",
+        "Перевірити що footer відображається на всіх сторінках регіону",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/app/[region]/layout.tsx"]
+    },
+    {
+      "id": 6,
+      "title": "Створити route для static pages",
+      "acceptanceCriteria": [
+        "Створити src/app/[region]/[slug]/page.tsx для static pages",
+        "Або окремі routes: /[region]/terms, /[region]/privacy-policy, тощо",
+        "generateMetadata з статичної сторінки",
+        "Рендерити content через react-markdown",
+        "404 якщо сторінка не знайдена",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/app/[region]/[slug]/page.tsx", "src/components/StaticPageContent.tsx", "src/data/staticPages.ts"]
+    }
+  ],
+
+  "testingChecklist": [
+    "Відкрити /gb/guides/best-live-score-stats-apps-2026",
+    "View Page Source — перевірити що є і Article і FAQPage schemas",
+    "Перевірити що footer відображається внизу",
+    "Trust badges показуються з логотипами",
+    "Клік на Terms → відкриває /gb/terms",
+    "Перейти на /ie — footer показує Ireland trust badges",
+    "Клік на BeGambleAware → відкриває зовнішній сайт"
+  ],
+
+  "postFeatureReview": {
+    "summary": "Реалізовано generateArticleSchemas для автоматичного збору всіх schemas (Article + FAQPage). Створено SiteFooter з trust badges та посиланнями на статичні сторінки. Додано route для статичних сторінок.",
+    "impact": "SEO: src/utils/seo.ts, src/app/[region]/guides/[slug]/page.tsx. Footer: src/components/SiteFooter.tsx, src/app/[region]/layout.tsx. Static pages: src/app/[region]/[slug]/page.tsx, src/components/StaticPageContent.tsx, src/data/staticPages.ts",
+    "issues": "Static page route [slug] ловить тільки відомі slugs. Невідомі slugs повертають 404. Trust badge images мають бути в public/images/trust/.",
+    "recommendations": "Додати JSON-LD schemas для статичних сторінок (Organization для About, WebPage для інших). Розглянути можливість region-specific контенту для статичних сторінок."
+  }
+}
