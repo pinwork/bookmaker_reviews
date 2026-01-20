@@ -81,3 +81,43 @@ export const generateReviewSchema = (
     dateModified: lastUpdated
   };
 };
+
+/**
+ * Generate FAQPage schema from article FAQ
+ */
+const generateFAQSchema = (faq: Array<{ q: string; a: string }>) => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a
+      }
+    }))
+  };
+};
+
+/**
+ * Generate all relevant schemas for an article
+ * Returns array: [Article schema, FAQPage schema (if faq exists)]
+ */
+export const generateArticleSchemas = (
+  article: IndustryReport,
+  url: string,
+  config: SiteConfig
+): object[] => {
+  const schemas: object[] = [];
+
+  // Always include Article schema
+  schemas.push(generateArticleSchema(article, url, config));
+
+  // Add FAQPage schema if article has FAQ
+  if (article.faq && article.faq.length > 0) {
+    schemas.push(generateFAQSchema(article.faq));
+  }
+
+  return schemas;
+};
