@@ -1,9 +1,10 @@
+import { getTrustBadgeImagePath } from '@/utils/images';
+
 export interface TrustBadge {
   slug: string;
   name: string;
   url: string;
   regions: string[];
-  ext?: 'svg' | 'png';
 }
 
 export const trustBadges: TrustBadge[] = [
@@ -30,7 +31,6 @@ export const trustBadges: TrustBadge[] = [
     name: 'GamblingCare.ie',
     url: 'https://gamblingcare.ie',
     regions: ['ie'],
-    ext: 'png',
   },
   {
     slug: 'gambling-therapy',
@@ -53,8 +53,7 @@ export const trustBadges: TrustBadge[] = [
 ];
 
 export function getTrustBadgePath(badge: TrustBadge): string {
-  const extension = badge.ext || 'svg';
-  return `/images/trust/${badge.slug}.${extension}`;
+  return getTrustBadgeImagePath(badge.slug) || `/images/trust/${badge.slug}.svg`;
 }
 
 export function getTrustBadgeBySlug(slug: string): TrustBadge | undefined {

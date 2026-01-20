@@ -1,102 +1,170 @@
 {
-  "featureName": "Partner Logo Auto-Discovery",
-  "branchName": "feat/partner-logo-utility",
-  "description": "Спростити роботу з логотипами партнерів: замість вказування розширення файлу вручну — автоматичний пошук по id.",
+  "featureName": "Universal Image Auto-Discovery",
+  "branchName": "feat/image-auto-discovery",
+  "description": "Універсальна утиліта для автопошуку зображень по імені, без вказування розширення. Застосовується до partners і trust badges.",
 
   "problem": {
-    "description": "Зараз в externalLinks треба вказувати logoSlug, а потім вручну стежити щоб файл був .png. Але логотипи приходять в різних форматах (svg, png, webp, jpg) і це створює зайву роботу.",
-    "currentFlow": [
-      "1. Завантажую логотип (наприклад flashscore.svg)",
-      "2. Мушу пам'ятати що в схемі очікується .png",
-      "3. Або конвертувати, або міняти код",
-      "4. Легко помилитись і отримати 404"
-    ]
+    "description": "В двох місцях вручну вказуємо розширення файлів:",
+    "cases": [
+      {
+        "where": "externalLinks (партнери)",
+        "issue": "logoSlug передбачає .png, але логотипи бувають .svg, .webp, .jpg"
+      },
+      {
+        "where": "trustBadges",
+        "issue": "ext?: 'svg' | 'png' — треба пам'ятати і вказувати вручну"
+      }
+    ],
+    "result": "Зайва робота, легко помилитись, код дублюється"
   },
 
   "solution": {
-    "description": "Утиліта яка автоматично знаходить файл логотипу по id, незалежно від розширення.",
-    "newFlow": [
-      "1. Завантажую логотип як є (flashscore.svg)",
-      "2. В даних вказую тільки id: 'flashscore'",
-      "3. Утиліта сама знаходить flashscore.svg",
-      "4. Працює з будь-яким форматом"
+    "description": "Одна універсальна утиліта findImagePath(folder, name) яка шукає файл з будь-яким розширенням",
+    "benefits": [
+      "Завантажую файл як є — працює",
+      "Не треба пам'ятати/вказувати розширення",
+      "Один код для всіх випадків"
     ]
   },
 
   "technicalDesign": {
     "utility": {
-      "path": "src/utils/partners.ts",
-      "description": "Утиліта для роботи з партнерськими логотипами",
-      "function": {
-        "name": "getPartnerLogoPath",
-        "purpose": "Знаходить шлях до логотипу по id",
-        "input": "id: string (наприклад 'flashscore')",
-        "output": "string | null (наприклад '/images/partners/flashscore.svg' або null якщо не знайдено)",
-        "algorithm": [
-          "1. Визначаємо директорію: public/images/partners/",
-          "2. Список можливих розширень: ['.svg', '.png', '.webp', '.jpg', '.jpeg']",
-          "3. Перебираємо розширення по порядку пріоритету",
-          "4. Повертаємо перший знайдений файл",
-          "5. Якщо нічого не знайдено — повертаємо null"
-        ],
-        "priorityOrder": "SVG перший бо векторний і найкращий для логотипів"
-      }
+      "path": "src/utils/images.ts",
+      "description": "Універсальна утиліта для пошуку зображень",
+      "functions": [
+        {
+          "name": "findImagePath",
+          "signature": "findImagePath(folder: string, name: string): string | null",
+          "purpose": "Знаходить зображення в public/images/{folder}/{name}.* з будь-яким розширенням",
+          "params": {
+            "folder": "Підпапка в images (partners, trust, тощо)",
+            "name": "Ім'я файлу без розширення"
+          },
+          "returns": "Шлях '/images/{folder}/{name}.{ext}' або null",
+          "priority": [".svg", ".png", ".webp", ".jpg", ".jpeg"],
+          "example": "findImagePath('partners', 'flashscore') → '/images/partners/flashscore.svg'"
+        },
+        {
+          "name": "getPartnerLogoPath",
+          "signature": "getPartnerLogoPath(id: string): string | null",
+          "purpose": "Shortcut для партнерів",
+          "implementation": "return findImagePath('partners', id)"
+        },
+        {
+          "name": "getTrustBadgeImagePath",
+          "signature": "getTrustBadgeImagePath(slug: string): string | null",
+          "purpose": "Shortcut для trust badges",
+          "implementation": "return findImagePath('trust', slug)"
+        }
+      ]
     },
 
     "schemaChanges": {
-      "file": "src/types/schemas.ts",
-      "description": "Прибрати logoSlug з ExternalLinkSchema — більше не потрібен",
-      "before": "{ id, name, url, logoSlug }",
-      "after": "{ id, name, url }"
+      "ExternalLinkSchema": {
+        "file": "src/types/schemas.ts",
+        "action": "Видалити поле logoSlug",
+        "before": "{ id, name, url, logoSlug }",
+        "after": "{ id, name, url }"
+      }
+    },
+
+    "trustBadgesChanges": {
+      "file": "src/data/trustSignals.ts",
+      "changes": [
+        {
+          "action": "Видалити ext з TrustBadge interface",
+          "before": "ext?: 'svg' | 'png'",
+          "after": "// видалено"
+        },
+        {
+          "action": "Видалити ext з об'єкта gamblingcare-ie",
+          "before": "{ slug: 'gamblingcare-ie', ..., ext: 'png' }",
+          "after": "{ slug: 'gamblingcare-ie', ... }"
+        },
+        {
+          "action": "Оновити getTrustBadgePath функцію",
+          "before": "const extension = badge.ext || 'svg'; return `/images/trust/${badge.slug}.${extension}`;",
+          "after": "import { getTrustBadgeImagePath } from '@/utils/images'; return getTrustBadgeImagePath(badge.slug) || `/images/trust/${badge.slug}.svg`;"
+        }
+      ]
+    },
+
+    "articleChanges": {
+      "file": "src/data/regions/gb/en/articles/best-live-score-stats-apps.ts",
+      "action": "Видалити logoSlug з кожного елемента externalLinks"
     },
 
     "documentationChanges": {
       "file": "docs/CONTENT_GUIDE.md",
-      "description": "Оновити: id = ім'я файлу, формат будь-який"
+      "action": "Оновити секцію партнерських посилань — прибрати logoSlug, описати автопошук"
     }
   },
 
-  "usageExample": {
-    "description": "Як буде використовуватись в компоненті",
-    "comment": "import { getPartnerLogoPath } from '@/utils/partners'; const logo = getPartnerLogoPath('flashscore'); // → '/images/partners/flashscore.svg'"
+  "fileStructure": {
+    "images": {
+      "description": "Структура папок для зображень",
+      "layout": [
+        "public/images/partners/  → логотипи партнерів (flashscore.svg, sofascore.svg...)",
+        "public/images/trust/     → trust badges (gamstop.svg, gamblingcare-ie.png...)"
+      ]
+    }
   },
 
   "userStories": [
     {
       "id": 1,
-      "title": "Створити утиліту getPartnerLogoPath",
+      "title": "Створити утиліту src/utils/images.ts",
       "acceptanceCriteria": [
-        "Створити файл src/utils/partners.ts",
-        "Функція getPartnerLogoPath(id: string): string | null",
-        "Шукає файл в public/images/partners/",
-        "Пріоритет розширень: .svg, .png, .webp, .jpg, .jpeg",
-        "Повертає шлях '/images/partners/{id}.{ext}' або null",
-        "Експортувати функцію",
+        "Створити файл src/utils/images.ts",
+        "Функція findImagePath(folder: string, name: string): string | null",
+        "Шукає файл в public/images/{folder}/",
+        "Пріоритет: .svg, .png, .webp, .jpg, .jpeg",
+        "Повертає '/images/{folder}/{name}.{ext}' або null",
+        "Функція getPartnerLogoPath(id) — shortcut для findImagePath('partners', id)",
+        "Функція getTrustBadgeImagePath(slug) — shortcut для findImagePath('trust', slug)",
+        "Експортувати всі функції",
         "npm run lint passes",
         "npm run build passes"
       ],
       "priority": 1,
       "passes": true,
       "completedAt": "2026-01-20",
-      "filesChanged": ["src/utils/partners.ts", "src/utils/index.ts"]
+      "filesChanged": ["src/utils/images.ts"]
     },
     {
       "id": 2,
-      "title": "Прибрати logoSlug зі схеми",
+      "title": "Прибрати logoSlug з ExternalLinkSchema",
       "acceptanceCriteria": [
         "В src/types/schemas.ts знайти ExternalLinkSchema",
-        "Видалити поле logoSlug з схеми",
-        "Оновити тип ExternalLink в src/types/index.ts якщо потрібно",
+        "Видалити поле logoSlug",
+        "Оновити тип в src/types/index.ts якщо потрібно",
         "npm run lint passes",
         "npm run build passes"
       ],
       "priority": 1,
       "passes": true,
       "completedAt": "2026-01-20",
-      "filesChanged": ["src/types/schemas.ts"]
+      "filesChanged": ["src/types/schemas.ts"],
+      "note": "Done in previous PRD"
     },
     {
       "id": 3,
+      "title": "Спростити TrustBadge",
+      "acceptanceCriteria": [
+        "Файл: src/data/trustSignals.ts",
+        "Видалити ext?: 'svg' | 'png' з interface TrustBadge",
+        "Видалити ext: 'png' з об'єкта gamblingcare-ie",
+        "Оновити функцію getTrustBadgePath — використати getTrustBadgeImagePath з utils/images",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/data/trustSignals.ts"]
+    },
+    {
+      "id": 4,
       "title": "Оновити статтю Live Score Apps",
       "acceptanceCriteria": [
         "Файл: src/data/regions/gb/en/articles/best-live-score-stats-apps.ts",
@@ -108,28 +176,30 @@
       "priority": 1,
       "passes": true,
       "completedAt": "2026-01-20",
-      "filesChanged": ["src/data/regions/gb/en/articles/best-live-score-stats-apps.ts"]
+      "filesChanged": ["src/data/regions/gb/en/articles/best-live-score-stats-apps.ts"],
+      "note": "Done in previous PRD"
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Оновити CONTENT_GUIDE.md",
       "acceptanceCriteria": [
         "Файл: docs/CONTENT_GUIDE.md",
-        "Знайти секцію 'Партнерські посилання'",
-        "Прибрати logoSlug з прикладу коду",
-        "Оновити опис: id = ім'я файлу без розширення, формат будь-який (автопошук)"
+        "В секції 'Партнерські посилання' прибрати logoSlug з прикладу",
+        "Оновити опис логотипів: id = ім'я файлу, формат будь-який, автопошук",
+        "Приклад: id='racing-post' → система знайде racing-post.svg або .png або .webp"
       ],
       "priority": 2,
       "passes": true,
       "completedAt": "2026-01-20",
-      "filesChanged": ["docs/CONTENT_GUIDE.md"]
+      "filesChanged": ["docs/CONTENT_GUIDE.md"],
+      "note": "Done in previous PRD"
     }
   ],
 
   "postFeatureReview": {
-    "summary": "Створено утиліту getPartnerLogoPath для автоматичного пошуку логотипів партнерів по id. Видалено logoSlug зі схеми та статей.",
-    "impact": "src/utils/partners.ts (нова), src/types/schemas.ts, article data, docs/CONTENT_GUIDE.md",
-    "issues": "Утиліта server-only (використовує fs). Для client-side потрібен інший підхід.",
-    "recommendations": "Для клієнтських компонентів використовувати Image fallback або генерувати маніфест логотипів при build"
+    "summary": "Створено універсальну утиліту findImagePath для автопошуку зображень. TrustBadge спрощено — видалено ext поле. Замінено partners.ts на images.ts.",
+    "impact": "src/utils/images.ts (нова), src/utils/partners.ts (видалено), src/data/trustSignals.ts",
+    "issues": "Утиліта server-only (використовує fs). Файл gamblingcare-ie.png має помилку в імені: 'amblingcare-ie.png' (відсутня 'g').",
+    "recommendations": "Перейменувати файл amblingcare-ie.png на gamblingcare-ie.png для коректної роботи автопошуку"
   }
 }
