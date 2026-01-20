@@ -119,45 +119,75 @@ linkedResources: [
 
 ---
 
-## Auto-generated Tables
+## Table-First Content Philosophy
 
-Для статей з `type='external'` ресурсами, таблиця порівняння генерується автоматично з `tableData` в registry.
+Завжди шукай можливості представити контент у вигляді таблиць:
 
-### Як це працює
+- **Порівняння** → таблиця (не bullet list)
+- **Список опцій з характеристиками** → таблиця
+- **Дані, цифри, статистика** → таблиця
+- **Features різних продуктів** → таблиця
 
-1. Стаття містить `linkedResources` з `type: 'external'`
-2. `resolveExternalResources()` отримує повні дані з registry
-3. `AutoComparisonTable` генерує рядки з `resource.tableData`
+Таблиці сканабельні, SEO-friendly (schema.org ItemList), та краще конвертують користувачів.
 
-### Конфігурація таблиці
+---
+
+## Table Structure Standards
+
+**Максимум 4 колонки** (1 основна + 3 додаткових). Без винятків.
+
+| Колонка | Призначення |
+|---------|-------------|
+| 1 (Name) | Назва елемента, клікабельна якщо є linkedResourceType |
+| 2-4 | Ключові характеристики для порівняння |
+
+Якщо потрібно більше даних — розбий на кілька таблиць або винеси в окремі секції.
+
+---
+
+## Table Cell Limits
+
+UI truncate як safety net, але контент має бути в межах:
+
+| Поле | Ліміт символів |
+|------|----------------|
+| Name | 20 |
+| Best For | 25 |
+| Price | 15 |
+| Key Feature | 35 |
+
+Validation в `getExternalAppById()` попереджає в development mode якщо tableData перевищує ліміти.
+
+---
+
+## Content Sorting
+
+- **Таблиці**: сортуй за якістю/популярністю (найкращий перший)
+- **FAQ**: сортуй за важливістю питання
+- **Groups/Items**: сортуй за relevance до теми статті
+
+---
+
+## Resource Linking
+
+Якщо таблиця має `linkedResourceType`, перша колонка автоматично стає клікабельною:
 
 ```typescript
-comparisonTable: {
-  title: 'Quick Comparison: Live Score Apps',
-  headers: ['App', 'Best For', 'Price', 'Sports', 'Key Feature']
-  // rows НЕ потрібні — генеруються автоматично
-}
-```
-
-### Приклади
-
-**Bookmaker article:**
-```typescript
-linkedResources: [
-  { id: 'bet365', type: 'bookmaker', active: true },
-  { id: 'paddy-power', type: 'bookmaker', active: true },
-  { id: 'sky-bet', type: 'bookmaker', active: false }  // hidden
+comparisonTables: [
+  {
+    id: 'apps-comparison',
+    title: 'Live Score Apps',
+    headers: ['App', 'Best For', 'Price'],
+    linkedResourceType: 'external'  // ← перша колонка клікабельна
+    // rows генеруються автоматично з registry
+  }
 ]
 ```
 
-**External apps article:**
-```typescript
-linkedResources: [
-  { id: 'flashscore', type: 'external', active: true },
-  { id: 'sofascore', type: 'external', active: true },
-  { id: 'fotmob', type: 'external', active: true }
-]
-```
+Типи resource linking:
+- `external` → посилання на зовнішні сервіси (Flashscore, SofaScore)
+- `bookmaker` → посилання на букмекерів (bet365, Paddy Power)
+- `payment` → посилання на платіжні системи
 
 ---
 
@@ -179,20 +209,44 @@ linkedResources: [
 
 ## Comparison Tables
 
-Для швидкого порівняння опцій:
+Використовуй масив `comparisonTables[]` для всіх таблиць порівняння:
+
+### Manual rows (статичні дані)
 
 ```typescript
-comparisonTable: {
-  title: 'Quick Comparison: [Topic]',
-  headers: ['Name', 'Best For', 'Price', 'Key Feature'],
-  rows: [
-    ['Item A', 'Use case', 'Free/£X', 'Differentiator'],
-  ]
-}
+comparisonTables: [
+  {
+    id: 'betting-chains-2026',
+    title: 'Major Betting Chains',
+    headers: ['Chain', 'Shops', 'HQ', 'Notes'],
+    rows: [
+      ['BoyleSports', '277', 'Dundalk', 'Largest independent'],
+      ['Paddy Power', '202', 'Dublin', 'Flutter owned'],
+    ]
+  }
+]
 ```
 
-- Максимум 5-7 колонок
-- Best For: 2-4 слова
+### Auto-generated rows (з registry)
+
+```typescript
+comparisonTables: [
+  {
+    id: 'live-score-apps',
+    title: 'Best Live Score Apps',
+    headers: ['App', 'Best For', 'Price'],
+    linkedResourceType: 'external'
+    // rows генеруються автоматично з linkedResources
+  }
+]
+```
+
+### Правила
+
+- **Максимум 4 колонки** (див. Table Structure Standards)
+- **id**: унікальний kebab-case ідентифікатор
+- **title**: заголовок таблиці (H3)
+- **linkedResourceType**: 'external' | 'bookmaker' | 'payment' (опціонально)
 
 ---
 
