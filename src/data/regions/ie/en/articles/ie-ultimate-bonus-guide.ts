@@ -18,20 +18,23 @@ export const ieBonusGuide: IndustryReport = {
     { id: 'betfair', type: 'bookmaker', active: true },
   ],
 
-  comparisonTable: {
-    title: 'Bonus Comparison: Ireland (GRAI Rules)',
-    headers: ['Bonus Type', 'Status (2026)', 'Tax', 'Key Benefit'],
-    rows: [
-      ['Welcome Offer', '✅ Legal (Public)', '0%', 'Standard "Bet €10 Get €30" deals'],
-      ['Cashback (Universal)', '✅ Legal', '0%', 'Same % for all customers (e.g., QuinnBet 25%)'],
-      ['Cashback (Tiered/VIP)', '❌ BANNED', 'N/A', 'Varies by betting history/losses'],
-      ['Targeted Reloads', '❌ BANNED', 'N/A', 'Offers based on individual losses are illegal'],
-      ['Refer a Friend', '✅ Legal', '0%', 'General public offer available to all'],
-      ['Early Payout', '✅ Legal', '0%', 'Product feature (2-up you win)'],
-      ['Loyalty (Universal)', '⚠️ Grey Area', '0%', 'Awaiting specific GRAI guidance'],
-      ['Free-to-Play', '✅ Legal', '0%', 'Super 6, 6 Scores Challenge'],
-    ]
-  },
+  comparisonTables: [
+    {
+      id: 'ie-bonus-legality-2026',
+      title: 'Bonus Comparison: Ireland (GRAI Rules)',
+      headers: ['Bonus Type', 'Status', 'Tax', 'Key Benefit'],
+      rows: [
+        ['Welcome Offer', '✅ Legal', '0%', 'Bet €10 Get €30 deals'],
+        ['Cashback', '✅ Legal', '0%', 'Same % for all (QuinnBet 25%)'],
+        ['Tiered/VIP Cashback', '❌ BANNED', 'N/A', 'Based on betting history'],
+        ['Targeted Reloads', '❌ BANNED', 'N/A', 'Individual loss-based offers'],
+        ['Refer a Friend', '✅ Legal', '0%', 'Public offer available to all'],
+        ['Early Payout', '✅ Legal', '0%', '2-up you win feature'],
+        ['Universal Loyalty', '⚠️ Grey', '0%', 'Awaiting GRAI guidance'],
+        ['Free-to-Play', '✅ Legal', '0%', 'Super 6, Score Challenge'],
+      ]
+    }
+  ],
 
   intro: {
     title: 'The End of "Secret" Bonuses in Ireland',

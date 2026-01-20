@@ -13,18 +13,21 @@ export const responsibleGamblingIrelandBible: IndustryReport = {
     content: `Ireland is undergoing its most significant gambling reform since 1926. With the Gambling Regulation Act 2024, the landscape has shifted from outdated 20th-century laws to a modern framework under the Gambling Regulatory Authority of Ireland (GRAI). However, the transition is ongoing. While new protections like the credit card ban are written in law, the National Exclusion Register is still in development. This guide provides verified data on Ireland’s €5.5bn gambling spend, real stories of recovery, and the clinical support systems now available via the HSE.`
   },
 
-  toolsComparison: {
-    title: 'Exclusion vs Software vs Bank Blocks: Ireland Edition',
-    headers: ['Feature', 'National Registry (GRAI)', 'Gamban', 'Irish Bank Blocks'],
-    rows: [
-      ['Status', '⚠️ In Development (Expected 2026+)', '✅ Operational', '✅ Operational'],
-      ['What It Blocks', 'All GRAI-Licensed Operators', '100,000+ Global Gambling Sites', 'Direct Debit & Card Payments'],
-      ['Legal Basis', 'Gambling Regulation Act 2024', 'Private Software', 'Bank Voluntary Policy'],
-      ['Cost', 'Free', 'Free via GamblingCare.ie', 'Free'],
-      ['Technical Layer', 'Operator Database', 'Device/Software Level', 'Payment/Banking Layer'],
-      ['Best For', 'Total ban on legal Irish sites', 'Blocking offshore & apps', 'Adding financial friction']
-    ]
-  },
+  comparisonTables: [
+    {
+      id: 'ie-exclusion-tools-comparison',
+      title: 'Exclusion vs Software vs Bank Blocks',
+      headers: ['Feature', 'GRAI Registry', 'Gamban', 'Bank Blocks'],
+      rows: [
+        ['Status', '⚠️ Coming 2026+', '✅ Operational', '✅ Operational'],
+        ['Blocks', 'GRAI-Licensed Sites', '100k+ Global Sites', 'Card & DD Payments'],
+        ['Legal Basis', 'GRA Act 2024', 'Private Software', 'Bank Policy'],
+        ['Cost', 'Free', 'Free (GamblingCare.ie)', 'Free'],
+        ['Tech Layer', 'Operator Database', 'Device/Software', 'Payment Layer'],
+        ['Best For', 'Legal Irish sites', 'Offshore & apps', 'Financial friction']
+      ]
+    }
+  ],
 
   bankBlocks: {
     title: 'Irish Banks: Gambling Blocks & Cooling-Off Periods',

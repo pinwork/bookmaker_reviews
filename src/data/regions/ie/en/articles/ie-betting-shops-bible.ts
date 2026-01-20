@@ -28,17 +28,20 @@ export const ieBettingShopsBible: IndustryReport = {
     ]
   },
 
-  chainsComparison: {
-    title: 'The Big Three & Independents (2026 Status)',
-    headers: ['Chain', 'ROI Shops', 'HQ', 'Recent News (2025/26)'],
-    rows: [
-      ['BoyleSports', '277', 'Dundalk', 'Aggressive acquirer. Bought Bruce, Wm Hill NI, & Tully.'],
-      ['Paddy Power', '202', 'Dublin', 'Closed 28 shops in Oct 2025 (119 jobs lost).'],
-      ['Ladbrokes', '108', 'London', 'Entain in talks to sell Irish estate to Bar One (July 2025).'],
-      ['Bar One Racing', '~57', 'Dundalk', 'Posted €17m profit. Growing independent.'],
-      ['Independents', '~330', 'Various', 'Family-run model facing "existential threat".']
-    ]
-  },
+  comparisonTables: [
+    {
+      id: 'ie-betting-chains-2026',
+      title: 'The Big Three & Independents (2026)',
+      headers: ['Chain', 'ROI Shops', 'HQ', 'Recent News'],
+      rows: [
+        ['BoyleSports', '277', 'Dundalk', 'Bought Bruce, WH NI, Tully'],
+        ['Paddy Power', '202', 'Dublin', 'Closed 28 shops (Oct 2025)'],
+        ['Ladbrokes', '108', 'London', 'May sell to Bar One'],
+        ['Bar One Racing', '~57', 'Dundalk', '€17m profit, growing'],
+        ['Independents', '~330', 'Various', 'Facing existential threat']
+      ]
+    }
+  ],
 
   statistics: {
     title: 'The Numbers: A Steep Decline',
