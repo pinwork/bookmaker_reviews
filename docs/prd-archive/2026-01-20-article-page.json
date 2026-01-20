@@ -301,9 +301,9 @@
         "npm run build passes"
       ],
       "priority": 3,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/components/article/index.ts", "src/app/[region]/guides/[slug]/page.tsx"]
     }
   ],
 
@@ -318,5 +318,10 @@
     "Перевірити що meta title/description правильні"
   ],
 
-  "postFeatureReview": null
+  "postFeatureReview": {
+    "summary": "Реалізовано повноцінну сторінку для статей (IndustryReport) з 6 компонентами: ArticleHeader, ComparisonTable, ArticleGroups, ArticleFAQ, ExternalLinksGrid, ArticleFooter. Сторінка підтримує SEO (meta tags + JSON-LD schema), Markdown rendering через react-markdown, автоматичне визначення логотипів партнерів, та responsive design.",
+    "impact": "Нова route /[region]/guides/[slug]. Нові файли: src/app/[region]/guides/[slug]/page.tsx, src/components/article/ (6 компонентів + index.ts). Додана залежність react-markdown.",
+    "issues": "ExternalLinksGrid використовує <img> замість Next.js Image — викликає lint warning. Можна виправити пізніше переключившись на next/image з loader.",
+    "recommendations": "1. Додати SiteHeader обгортку для консистентного вигляду з іншими сторінками. 2. Розглянути lazy loading для ArticleGroups при великій кількості items. 3. Додати SEO FAQ schema для питань."
+  }
 }
