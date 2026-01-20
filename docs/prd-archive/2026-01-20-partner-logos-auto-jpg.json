@@ -1,0 +1,142 @@
+{
+  "featureName": "Partner Logos Background Config + Auto JPG",
+  "branchName": "fix/partner-logos-background",
+  "description": "Додати bgColor для логотипів партнерів. Для JPG — автоматичне визначення з пікселя. Для інших форматів — вручну або білий.",
+
+  "problem": {
+    "issues": [
+      "Деякі логотипи білі — невидимі на білому фоні",
+      "Різна висота рядів",
+      "Треба вручну визначати фон для кожного логотипу"
+    ]
+  },
+
+  "solution": {
+    "bgColor": {
+      "description": "Опціональне поле bgColor в ExternalLink",
+      "forJpg": "Автоматично визначається з кутового пікселя",
+      "forOthers": "Вручну вказати або білий за замовчуванням"
+    },
+    "fixedHeight": {
+      "description": "Фіксована висота картки h-16"
+    }
+  },
+
+  "autoDetectionLogic": {
+    "jpg": "Читаємо правий нижній піксель → конвертуємо в HEX → використовуємо як фон",
+    "png_svg_webp": "Якщо bgColor вказано — використати, інакше білий"
+  },
+
+  "logosNeedingDarkBg": {
+    "note": "Ці логотипи НЕ JPG, тому потребують bgColor вручну",
+    "list": [
+      { "id": "flashscore", "format": "svg", "bgColor": "#000000" },
+      { "id": "timeform", "format": "png", "bgColor": "#000000" },
+      { "id": "footystats", "format": "webp", "bgColor": "#000000" }
+    ]
+  },
+
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Встановити sharp",
+      "acceptanceCriteria": [
+        "npm install sharp",
+        "Перевірити що package.json оновився",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": [],
+      "note": "sharp was already installed"
+    },
+    {
+      "id": 2,
+      "title": "Додати bgColor в ExternalLinkSchema",
+      "acceptanceCriteria": [
+        "В src/types/schemas.ts знайти ExternalLinkSchema",
+        "Додати поле bgColor: z.string().optional()",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/types/schemas.ts"],
+      "note": "Already completed in previous PRD"
+    },
+    {
+      "id": 3,
+      "title": "Створити функцію getJpgBackgroundColor",
+      "acceptanceCriteria": [
+        "В src/utils/images.ts додати функцію getJpgBackgroundColor",
+        "Приймає: imagePath (string) — повний шлях до файлу",
+        "Використовує sharp для читання пікселя з правого нижнього кута",
+        "Повертає: hex колір (наприклад '#1a4d2e')",
+        "Експортувати функцію",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/utils/images.ts"]
+    },
+    {
+      "id": 4,
+      "title": "Додати bgColor для логотипів в статті",
+      "acceptanceCriteria": [
+        "Файл: src/data/regions/gb/en/articles/best-live-score-stats-apps.ts",
+        "Додати bgColor: '#000000' для: flashscore, timeform, footystats",
+        "НЕ додавати bgColor для tennis-explorer (JPG — автоматично)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/data/regions/gb/en/articles/best-live-score-stats-apps.ts"],
+      "note": "Already completed in previous PRD"
+    },
+    {
+      "id": 5,
+      "title": "Оновити ExternalLinksGrid компонент",
+      "acceptanceCriteria": [
+        "Файл: src/components/article/ExternalLinksGrid.tsx",
+        "Імпортувати getJpgBackgroundColor з @/utils/images",
+        "Для кожного link визначити фон:",
+        "  - Якщо link.bgColor вказано → використати",
+        "  - Якщо файл .jpg/.jpeg → викликати getJpgBackgroundColor",
+        "  - Інакше → білий (#ffffff)",
+        "Застосувати колір як inline style backgroundColor",
+        "Фіксована висота картки: h-16",
+        "Компонент може бути async або використати useEffect для JPG",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/components/article/ExternalLinksGrid.tsx"]
+    }
+  ],
+
+  "testingChecklist": [
+    "Відкрити /gb/guides/best-live-score-stats-apps-2026",
+    "Flashscore — чорний фон (bgColor вручну)",
+    "Timeform — чорний фон (bgColor вручну)",
+    "FootyStats — чорний фон (bgColor вручну)",
+    "Tennis Explorer — автоматичний фон з JPG (зелений?)",
+    "SofaScore — білий фон (default)",
+    "Всі ряди однакової висоти"
+  ],
+
+  "postFeatureReview": {
+    "summary": "Implemented auto-detection of background colors for JPG partner logos using sharp. Non-JPG logos with white backgrounds require manual bgColor specification.",
+    "impact": "ExternalLinksGrid component now async, uses sharp for image processing",
+    "issues": "None",
+    "recommendations": "Consider caching getJpgBackgroundColor results if performance becomes an issue with many JPG logos"
+  }
+}
