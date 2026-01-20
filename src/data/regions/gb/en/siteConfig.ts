@@ -51,9 +51,10 @@ export const mainNavigation: NavItem[] = [
     label: 'Guides',
     href: '/guides',
     children: [
-      { label: 'Betting Odds Explained', href: '/guides/betting-odds-explained' },
-      { label: 'How Free Bets Work', href: '/guides/how-free-bets-work' },
-      { label: 'Accumulator Guide', href: '/guides/accumulator-betting-guide' },
+      { label: 'Bonus Guide', href: '/guides/uk-betting-bonus-guide-2026' },
+      { label: 'Betting Shops', href: '/guides/uk-betting-shops-guide' },
+      { label: 'Industry Report', href: '/guides/uk-betting-industry-report-2026' },
+      { label: 'Responsible Gambling', href: '/guides/responsible-gambling-uk-guide' },
       { label: 'All Guides', href: '/guides' },
     ],
   },
