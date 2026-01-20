@@ -52,25 +52,112 @@
 
 ---
 
-## Партнерські посилання
+## Linked Resources
 
-Для статей з оглядом зовнішніх сервісів використовувати `externalLinks`:
+Уніфікована система посилань на ресурси в статтях. Замість окремих `relatedBookmakers` та `externalLinks`, використовуємо єдиний масив `linkedResources`:
 
 ```typescript
-externalLinks: [
-  {
-    id: 'service-name',
-    name: 'Service Name',
-    url: 'https://example.com'
-  }
+linkedResources: [
+  { id: 'bet365', type: 'bookmaker', active: true },
+  { id: 'flashscore', type: 'external', active: true },
+  { id: 'paypal', type: 'payment', active: false }
 ]
 ```
 
-**Логотипи:**
-- Шлях: `public/images/partners/{id}.*` (автопошук)
-- Формат: будь-який (SVG, PNG, WebP, JPG) — утиліта знайде автоматично
-- `id` = ім'я файлу без розширення
-- Розмір: будь-який — CSS адаптує
+### Структура LinkedResource
+
+| Поле | Тип | Опис |
+|------|-----|------|
+| `id` | string | Унікальний ідентифікатор ресурсу (slug) |
+| `type` | 'bookmaker' \| 'external' \| 'payment' | Тип ресурсу |
+| `active` | boolean | Чи показувати в UI статті |
+
+### Типи ресурсів
+
+| Type | Опис | Registry |
+|------|------|----------|
+| `bookmaker` | Букмекери (bet365, paddy-power...) | `src/data/bookmakers.ts` |
+| `external` | Зовнішні сервіси (Flashscore, SofaScore...) | `src/data/resources/externalApps.ts` |
+| `payment` | Платіжні методи (PayPal, Skrill...) | `src/data/constants.ts` |
+
+### Active toggle
+
+- `active: true` — ресурс відображається в UI статті (таблиці, картки, лого)
+- `active: false` — ресурс прихований з UI, але посилання зберігається в даних
+
+Це дозволяє тимчасово приховати ресурс без видалення з коду.
+
+---
+
+## Resource Registry
+
+Дані про ресурси зберігаються централізовано:
+
+### External Apps Registry
+
+Файл: `src/data/resources/externalApps.ts`
+
+```typescript
+{
+  id: 'flashscore',
+  name: 'Flashscore',
+  url: 'https://www.flashscore.com',
+  bgColor: '#000000',  // optional
+  logo: '/images/partners/flashscore.svg',  // optional
+  tableData: {
+    bestFor: 'Live betting speed',
+    price: 'Free',
+    sports: '38 sports',
+    keyFeature: 'Fastest updates (5-20s)'
+  }
+}
+```
+
+### Bookmakers
+
+Використовується існуючий `getBookmakerBySlug(id, region)` з `@/data`.
+
+---
+
+## Auto-generated Tables
+
+Для статей з `type='external'` ресурсами, таблиця порівняння генерується автоматично з `tableData` в registry.
+
+### Як це працює
+
+1. Стаття містить `linkedResources` з `type: 'external'`
+2. `resolveExternalResources()` отримує повні дані з registry
+3. `AutoComparisonTable` генерує рядки з `resource.tableData`
+
+### Конфігурація таблиці
+
+```typescript
+comparisonTable: {
+  title: 'Quick Comparison: Live Score Apps',
+  headers: ['App', 'Best For', 'Price', 'Sports', 'Key Feature']
+  // rows НЕ потрібні — генеруються автоматично
+}
+```
+
+### Приклади
+
+**Bookmaker article:**
+```typescript
+linkedResources: [
+  { id: 'bet365', type: 'bookmaker', active: true },
+  { id: 'paddy-power', type: 'bookmaker', active: true },
+  { id: 'sky-bet', type: 'bookmaker', active: false }  // hidden
+]
+```
+
+**External apps article:**
+```typescript
+linkedResources: [
+  { id: 'flashscore', type: 'external', active: true },
+  { id: 'sofascore', type: 'external', active: true },
+  { id: 'fotmob', type: 'external', active: true }
+]
+```
 
 ---
 
