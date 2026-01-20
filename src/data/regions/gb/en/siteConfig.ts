@@ -58,6 +58,14 @@ export const mainNavigation: NavItem[] = [
       { label: 'All Guides', href: '/guides' },
     ],
   },
+  {
+    label: 'Bettor Resources',
+    href: '/bettor-resources',
+    children: [
+      { label: 'Live Score Apps', href: '/guides/best-live-score-stats-apps-2026' },
+      { label: 'All Resources', href: '/bettor-resources' },
+    ],
+  },
 ];
 
 export const footerNavigation = {
