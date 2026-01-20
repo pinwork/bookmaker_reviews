@@ -225,19 +225,6 @@ Betfred remains one of the few large independent operators, with over **1,300 sh
     }
   ],
 
-  tooltips: {
-    ggy: "Gross Gambling Yield: The amount the operator keeps. (Total Staked - Total Won by Players). This is what is taxed.",
-    rgd: "Remote Gaming Duty: The specific tax applied to online casino, slots, and bingo. Rising to 40% in 2026.",
-    gbd: "General Betting Duty: The tax on sports betting profits. Currently 15%, rising to 25% for online in 2027.",
-    affordability_check: "A background check on a player's financial health. 'Light touch' at £150 loss/month.",
-    white_label: "A company that rents the license and tech from another operator. Most at risk of closure due to new taxes.",
-    rtp: "Return to Player: The percentage of stakes a game pays back over time. The 40% tax will likely force RTPs down.",
-    fobt: "Fixed Odds Betting Terminal: The controversial touch-screen machines in betting shops, now limited to £2 stakes.",
-    gamstop: "The national self-exclusion scheme. It blocks you from ALL UK-licensed sites at once.",
-    omnichannel: "A system linking your online, mobile, and physical shop accounts (e.g., Ladbrokes Grid, Coral Connect).",
-    kyc: "Know Your Customer: The mandatory ID verification process before withdrawals."
-  },
-
   footer: {
     helpline: 'If gambling stops being fun, stop. National Gambling Helpline: 0808 8020 133 (24/7, Free).',
     dataSource: 'Data sourced from UK Gambling Commission Industry Statistics FY 2024-25 and Regulus Partners Analysis.',

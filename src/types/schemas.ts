@@ -243,7 +243,6 @@ export const IndustryReportSchema = z.object({
   author: z.string().optional(),
   groups: z.array(BonusGroupSchema).optional(),
   faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
-  tooltips: z.record(z.string(), z.string()).optional(),
   footer: z.object({
     helpline: z.string().optional(),
     lastUpdated: z.string().optional(),

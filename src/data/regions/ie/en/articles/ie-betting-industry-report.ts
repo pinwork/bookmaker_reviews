@@ -192,19 +192,6 @@ From 8% of the Irish market in 1988 to the **world's largest online betting comp
     }
   ],
 
-  tooltips: {
-    grai: "Gambling Regulatory Authority of Ireland: The official watchdog established in 2025.",
-    turnover_tax: "2% tax on every bet placed, paid by the bookmaker to the Irish Revenue.",
-    gaa: "Gaelic Athletic Association: Governing body for Hurling and Gaelic Football.",
-    bog: "Best Odds Guaranteed: Essential for racing value; you get the higher odds if the SP is better.",
-    inducement: "Targeted offers like personal free bets, now prohibited to prevent addiction.",
-    exclusion_register: "National Gambling Exclusion Register: Ireland's pending centralized system for self-exclusion.",
-    sp: "Starting Price: The official odds at the start of a race.",
-    each_way: "Two bets in one: one for the win and one for the horse to place.",
-    mabs: "Money Advice & Budgeting Service: State agency providing free debt support.",
-    watershed: "The 5:30am - 9:00pm ban on gambling advertisements on TV and radio."
-  },
-
   footer: {
     helpline: 'HSE Gambling Support Line: 1800 936 725 or visit gamblingcare.ie.',
     dataSource: 'Data: IBA (July 2025), ESRI (Oct 2023), HRI (2024), and GRAI Operational Updates.',

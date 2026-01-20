@@ -183,16 +183,6 @@ With independent shops facing profit margins of just **€7k**, further consolid
     { q: 'Who is Bar One Racing?', a: 'A rapidly growing independent bookmaker based in Dundalk (50+ shops). Reports in 2025 suggest they may acquire Ladbrokes\' Irish estate.' }
   ],
 
-  tooltips: {
-    grai: "Gambling Regulatory Authority of Ireland: Established March 2025.",
-    ssbt: "Self-Service Betting Terminal: Touchscreen for sports bets (legal).",
-    fobt: "Fixed Odds Betting Terminal: Casino-style machine (ILLEGAL in Ireland).",
-    yellow_sam: "The horse involved in the famous 1975 betting coup.",
-    turnover_tax: "The 2% duty on stakes that has impacted shop profitability.",
-    revenue_commissioners: "Currently still issuing bookmaker licenses during the transition to GRAI.",
-    think_21: "The age verification policy used in Ireland (vs Think 25 in the UK)."
-  },
-
   footer: {
     helpline: 'GamblingCare.ie: 1800 936 725. Please gamble responsibly.',
     lastUpdated: '2026-01-20'

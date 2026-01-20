@@ -313,23 +313,6 @@ Triggered at **£150 net deposits** per 30 days. Uses public data (bankruptcies,
     { q: 'Are gambling fines public?', a: 'Yes. The UKGC has issued £76m in fines since 2022 to improve industry safety.' }
   ],
 
-  tooltips: {
-    gamstop: "UK national self-exclusion for all licensed online operators.",
-    gamban: "Software blocking 100,000+ gambling sites globally.",
-    gamcare: "UK's primary support charity. Free 24/7 helpline: 0808 8020 133.",
-    gordon_moody: "The UK's only residential provider for severe gambling addiction.",
-    cooling_off: "Mandatory 24-72h wait before restrictions or bank blocks can be lifted.",
-    fobt: "Fixed Odds Betting Terminal. High-stakes machines now limited to £2 max stake.",
-    ggy: "Gross Gambling Yield: Total amount retained by operators after paying out winnings.",
-    ukgc: "United Kingdom Gambling Commission: The official industry regulator.",
-    statutory_levy: "Mandatory 1.1% tax on operators (starting 2025) to fund recovery.",
-    article_2_inquest: "A coroner's inquest examining the state's role in a death (e.g. Jack Ritchie case).",
-    affordability_check: "Checks triggered at £150 net deposits per 30 days to identify financial risk.",
-    mcc_code: "Merchant Category Code (7995) used by banks to identify gambling payments.",
-    snr: "Stake Not Returned: You keep the winnings but not the original stake of a free bet.",
-    self_exclusion: "A voluntary process where you ask a provider to exclude you from gambling for a set time."
-  },
-
   footer: {
     helpline: 'National Gambling Helpline: 0808 8020 133 (24/7, free).',
     lastUpdated: '2026-01-20'

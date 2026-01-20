@@ -200,15 +200,6 @@ Now an ambassador for Extern Problem Gambling, focusing on youth education.`
     { q: 'Does MABS help with gambling debt?', a: 'Yes, MABS provides specialized budgeting for gambling-related insolvency, though they do not track these cases separately in public data.' }
   ],
 
-  tooltips: {
-    grai: "Gambling Regulatory Authority of Ireland: The official watchdog established in 2025.",
-    hse: "Health Service Executive: Ireland's public health provider.",
-    pgsi: "Problem Gambling Severity Index: The clinical gold standard for measuring harm.",
-    mabs: "Money Advice & Budgeting Service: The state agency for debt support.",
-    watershed: "The 5:30 AM – 9:00 PM ban on gambling advertisements.",
-    inducement: "Any offer like a 'free bet' used to encourage gambling—now restricted by GRAI."
-  },
-
   footer: {
     helpline: 'Free National Gambling Helpline (IE): 1800 936 725.',
     dataSource: 'Data from ESRI Oct 2023 Study, IPH Jan 2025 Suicide Report, and GRAI 2025 Operational Updates.',

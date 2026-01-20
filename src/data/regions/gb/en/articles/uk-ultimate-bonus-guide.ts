@@ -274,19 +274,5 @@ Predict 6 scores (Super 6) for a **£250k-£1m jackpot**. **Ladbrokes 1-2-Free**
       q: 'Why was my bonus rejected?',
       a: 'Common reasons include using an excluded payment method (PayPal/Skrill), depositing below the minimum (£5-£10), or having a duplicate account at the same address.'
     }
-  ],
-
-  tooltips: {
-    free_bet: "A token for a wager. You keep the profit, but the stake is not returned (SNR).",
-    bet_boost: "Artificially increased odds on selected events to provide better value.",
-    early_payout: "Win instantly if your team goes 2-0 up, regardless of the final score.",
-    acca_insurance: "Get your stake back as a free bet if exactly one leg of your 5+ fold acca loses.",
-    bog: "Best Odds Guaranteed: Always get paid at the higher price if the SP drifts.",
-    cashback: "Receive 10-25% of your weekly net losses back as cash or free bets.",
-    snr: "Stake Not Returned: You keep the profit from a free bet, but the token itself is not cash.",
-    wagering: "The total amount you must bet before bonus funds convert to withdrawable cash.",
-    void: "When a selection is cancelled (e.g. postponed) and the stake is returned or odds adjusted.",
-    sp: "Starting Price: The final official odds of a runner when the race begins.",
-    ante_post: "Bets placed well in advance of an event, often before the final participants are confirmed."
-  }
+  ]
 };

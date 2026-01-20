@@ -207,24 +207,6 @@ Category B2 machines are now limited to £2 spins, significantly reducing indust
     { q: 'Who invented the Lucky 15 bet?', a: 'Betfred founder Fred Done invented the Lucky 15 bet in 1984.' }
   ],
 
-  tooltips: {
-    ssbt: "Self-Service Betting Terminal: Touchscreens for placing bets without a paper slip.",
-    fobt: "Fixed Odds Betting Terminal: Electronic gaming machines, now limited to £2 stakes.",
-    moses: "Multi-Operator Self-Exclusion Scheme: The system for excluding from physical shops.",
-    ggy: "Gross Gambling Yield: Total amount retained by operators after payouts.",
-    ukgc: "United Kingdom Gambling Commission: The official industry regulator.",
-    omnichannel: "A system linking your online, mobile, and physical shop accounts and balances.",
-    sis: "Sports Information Services: The provider of live data and TV feeds to UK bookmakers.",
-    bog: "Best Odds Guaranteed: Get paid at the higher price if the SP drifts in your favour.",
-    lucky_15: "A bet invented by Betfred consisting of 15 bets across 4 selections.",
-    sp: "Starting Price: The final official odds of a horse when the race starts.",
-    otc: "Over-The-Counter: Traditional betting by handing a slip to a staff member.",
-    kyc: "Know Your Customer: Identity verification required by law for gambling.",
-    aml: "Anti-Money Laundering: Regulations to prevent criminal funds from entering the industry.",
-    category_b2: "The technical classification for FOBT gaming machines.",
-    think_25: "The industry standard for age verification in physical retail stores."
-  },
-
   footer: {
     helpline: 'If you need to talk, call the National Gambling Helpline: 0808 8020 133.',
     lastUpdated: '2026-01-20'

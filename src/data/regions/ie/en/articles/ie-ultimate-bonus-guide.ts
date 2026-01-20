@@ -139,14 +139,6 @@ export const ieBonusGuide: IndustryReport = {
     { q: 'How is Ireland different from the UK?', a: 'In the UK, targeted inducements are allowed WITH consent. In Ireland, they are BANNED entirely regardless of consent, making Ireland one of the strictest markets in Europe.' }
   ],
 
-  tooltips: {
-    inducement: "A targeted offer (like a free bet) designed to encourage a specific person to gamble. Now banned under Section 157.",
-    grai: "Gambling Regulatory Authority of Ireland.",
-    turnover_tax: "The 2% tax paid by the bookie on every bet placed.",
-    bog: "Best Odds Guaranteed. You get the higher odds if the SP drifts.",
-    early_payout: "Win instantly if your team leads by 2 goals."
-  },
-
   footer: {
     helpline: 'GamblingCare.ie: 1800 936 725. Bonuses are for 18+ only.',
     lastUpdated: 'January 2026'
