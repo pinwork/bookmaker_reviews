@@ -3,6 +3,7 @@ import { z } from 'zod';
 import {
   PAYMENT_METHOD_SLUGS, PARTNERSHIP_TYPES, OFFER_TYPES,
   REWARD_RESTRICTIONS, QUALIFYING_BET_TYPES, EXTRA_PROMO_CATEGORIES,
+  RESOURCE_TYPES,
 } from '@/data/constants';
 
 export const PaymentMethodSlugSchema = z.enum(PAYMENT_METHOD_SLUGS);
@@ -254,6 +255,13 @@ export const ExternalLinkSchema = z.object({
   bgColor: z.string().optional(),
 });
 
+export const ResourceTypeSchema = z.enum(RESOURCE_TYPES);
+export const LinkedResourceSchema = z.object({
+  id: z.string().min(1),
+  type: ResourceTypeSchema,
+  active: z.boolean(),
+});
+
 export const IndustryReportSchema = z.object({
   slug: z.string().min(1),
   h1: z.string().min(1),
@@ -315,4 +323,5 @@ export const IndustryReportSchema = z.object({
   relatedBookmakers: z.array(z.string()).optional(),
   collections: z.array(z.enum(['guides', 'bettor-resources', 'featured', 'responsible-gambling'])).optional(),
   externalLinks: z.array(ExternalLinkSchema).optional(),
+  linkedResources: z.array(LinkedResourceSchema).optional(),
 }).passthrough();

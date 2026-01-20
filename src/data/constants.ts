@@ -40,3 +40,6 @@ export type RewardRestriction = (typeof REWARD_RESTRICTIONS)[number];
 
 export const QUALIFYING_BET_TYPES = ['single', 'acca', 'each-way', 'any'] as const;
 export type QualifyingBetType = (typeof QUALIFYING_BET_TYPES)[number];
+
+export const RESOURCE_TYPES = ['bookmaker', 'external', 'payment'] as const;
+export type ResourceType = (typeof RESOURCE_TYPES)[number];

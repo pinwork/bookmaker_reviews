@@ -5,6 +5,7 @@ import * as schemas from './schemas';
 export type {
   BookmakerSlug, RegionCode, PaymentMethodSlug, OfferType,
   ExtraPromoCategory, PartnershipType, RewardRestriction, QualifyingBetType,
+  ResourceType,
 } from '@/data/constants';
 
 export type Partnership = z.infer<typeof schemas.PartnershipSchema>;
@@ -32,6 +33,7 @@ export type SportEvent = z.infer<typeof schemas.SportEventSchema>;
 
 export type IndustryReport = z.infer<typeof schemas.IndustryReportSchema>;
 export type ExternalLink = z.infer<typeof schemas.ExternalLinkSchema>;
+export type LinkedResource = z.infer<typeof schemas.LinkedResourceSchema>;
 
 export interface BookmakerComplete extends Bookmaker, RegionalBookmakerData {
   welcomeOffers: WelcomeOffer[];
