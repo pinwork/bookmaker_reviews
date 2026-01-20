@@ -110,6 +110,7 @@ export default async function ArticlePage({ params }: PageProps) {
             title={article.comparisonTable.title}
             headers={article.comparisonTable.headers}
             rows={article.comparisonTable.rows}
+            externalLinks={processedLinks}
           />
         )}
 
