@@ -6,7 +6,6 @@ export const ultimateBonusGuide: IndustryReport = {
   h1: 'The Ultimate Betting Bonus Bible 2026: Master Every Offer',
   metaTitle: 'Betting Bonus Guide 2026 | Comprehensive Rules & Mechanics',
   metaDescription: 'Complete masterclass on UK betting bonuses. 14+ mechanics explained: Deposit offers, Free Bets, Early Payouts, BOG, and Acca Insurance.',
-  lastUpdated: '2026-01-28',
 
   linkedResources: [
     { id: 'bet365', type: 'bookmaker', active: true },

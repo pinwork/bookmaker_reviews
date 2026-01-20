@@ -189,12 +189,6 @@ export function validateExtraPromotions(promos: unknown[]): z.infer<typeof Extra
   });
 }
 
-const LocatorSchema = z.object({
-  name: z.string(),
-  url: z.string().url(),
-  brand: z.string()
-});
-
 const KeyStatSchema = z.object({
   label: z.string(),
   value: z.string(),
@@ -216,44 +210,6 @@ export const BonusGroupItemSchema = z.object({
 const BonusGroupSchema = z.object({
   groupName: z.string(),
   items: z.array(BonusGroupItemSchema)
-});
-
-const ReportStatItemSchema = z.object({
-  label: z.string(),
-  value: z.string(),
-  source: z.string().optional(),
-  note: z.string().optional(),
-  change: z.string().optional()
-});
-
-const ReportStatsSectionSchema = z.object({
-  category: z.string().optional(),
-  title: z.string().optional(),
-  stats: z.array(ReportStatItemSchema).optional(),
-  mainStats: z.array(ReportStatItemSchema).optional(),
-  demographics: z.object({
-    title: z.string(),
-    data: z.array(z.object({ group: z.string(), value: z.string(), note: z.string().optional() }))
-  }).optional(),
-});
-
-const RealStorySchema = z.object({
-  name: z.string(),
-  role: z.string().optional(),
-  years: z.string().optional(),
-  age: z.number().optional(),
-  story: z.string(),
-  outcome: z.string().optional(),
-  impact: z.string().optional(),
-  source: z.string().optional(),
-  quote: z.string().optional(),
-  company: z.string().optional()
-});
-
-const BankBlockSchema = z.object({
-  bank: z.string(),
-  coolingOff: z.string(),
-  note: z.string(),
 });
 
 export const ExternalLinkSchema = z.object({
@@ -285,40 +241,7 @@ export const IndustryReportSchema = z.object({
   metaDescription: z.string().min(1),
   intro: z.object({ title: z.string(), content: z.string() }),
   author: z.string().optional(),
-  statistics: z.any().optional(),
-  ukStatistics: z.any().optional(),
-  irelandStatistics: z.any().optional(),
-  majorFines: z.any().optional(),
-  psychology: z.any().optional(),
-  nhsScreening: z.any().optional(),
-  hseScreening: z.any().optional(),
-  suicideStudy: z.any().optional(),
-  locators: z.object({
-    title: z.string(),
-    links: z.array(LocatorSchema)
-  }).optional(),
-  history: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    timeline: z.array(z.any())
-  }).optional(),
-  employment: z.any().optional(),
-  whyVisit: z.any().optional(),
-  technology: z.any().optional(),
-  future: z.any().optional(),
   groups: z.array(BonusGroupSchema).optional(),
-  realStories: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    stories: z.array(RealStorySchema)
-  }).optional(),
-  bankBlocks: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    coverage: z.string().optional(),
-    list: z.array(BankBlockSchema),
-    limitation: z.string().optional()
-  }).optional(),
   faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
   tooltips: z.record(z.string(), z.string()).optional(),
   footer: z.object({
@@ -329,4 +252,4 @@ export const IndustryReportSchema = z.object({
   collections: z.array(z.enum(['guides', 'bettor-resources', 'featured', 'responsible-gambling'])).optional(),
   linkedResources: z.array(LinkedResourceSchema).optional(),
   comparisonTables: z.array(ComparisonTableSchema).optional(),
-}).passthrough();
+});

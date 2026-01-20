@@ -6,7 +6,6 @@ export const ieBonusGuide: IndustryReport = {
   h1: 'Ireland Betting Bonus Guide 2026: What is Legal Under GRAI?',
   metaTitle: 'Ireland Betting Bonuses 2026 | Free Bets, GRAI Rules & Tax Free Winnings',
   metaDescription: 'The complete guide to Irish betting offers under the new Gambling Regulation Act. Find out why "Targeted Inducements" are banned and which bonuses remain legal.',
-  lastUpdated: '2026-01-30',
 
   linkedResources: [
     { id: 'boylesports', type: 'bookmaker', active: true },
@@ -120,15 +119,16 @@ export const ieBonusGuide: IndustryReport = {
           title: '⚠️ Loyalty Clubs (Grey Area)',
           content: 'GRAI has not issued specific guidance yet. **Likely Legal:** Programs with identical rewards for ALL who opt-in. **Likely Banned:** Tiered programs based on spend.',
           recommendedBookmakers: []
+        },
+        {
+          id: 'grai_timeline',
+          title: 'GRAI Enforcement Timeline (2025-2026)',
+          content: 'While the Act is passed, full enforcement is phased. B2C license applications opened in Dec 2025. **Compliance monitoring is scheduled to begin in July 2026**, with the full enforcement framework operational by **Q3 2026**. Currently, no fines have been issued, but operators are already removing targeted VIP schemes to ensure compliance.',
+          recommendedBookmakers: []
         }
       ]
     }
   ],
-
-  future: {
-    title: 'GRAI Enforcement Timeline (2025-2026)',
-    content: 'While the Act is passed, full enforcement is phased. B2C license applications opened in Dec 2025. **Compliance monitoring is scheduled to begin in July 2026**, with the full enforcement framework operational by **Q3 2026**. Currently, no fines have been issued, but operators are already removing targeted VIP schemes to ensure compliance.'
-  },
 
   faq: [
     { q: 'Why did I stop getting emails with free bets?', a: 'Under Section 157 of the 2024 Act, targeted inducements based on your activity are banned. Bookies can no longer email you personally to encourage betting.' },
