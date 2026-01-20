@@ -1,5 +1,9 @@
 // src/data/staticPages.ts
-import { staticPages as gbPages, getFooterPages as gbGetFooterPages } from './regions/gb/en/staticPages';
+import {
+  staticPages as gbPages,
+  getFooterPages as gbGetFooterPages,
+  getAllStaticPageSlugs as gbGetAllStaticPageSlugs,
+} from './regions/gb/en/staticPages';
 import { StaticPage } from '@/types';
 import { adaptObjectToRegion } from '@/utils';
 
@@ -10,4 +14,8 @@ export const getStaticPageBySlug = (slug: string, region: string = 'gb'): Static
 
 export const getFooterPages = (): Pick<StaticPage, 'slug' | 'title'>[] => {
   return gbGetFooterPages();
+};
+
+export const getAllStaticPageSlugs = (): string[] => {
+  return gbGetAllStaticPageSlugs();
 };
