@@ -1,0 +1,322 @@
+{
+  "featureName": "Article Page (Guides)",
+  "branchName": "feat/article-page",
+  "description": "Повноцінна сторінка для відображення статей (IndustryReport). Включає SEO metadata, schema.org, Markdown рендеринг, компоненти для всіх секцій статті.",
+
+  "context": {
+    "currentState": [
+      "Дані статей існують в src/data/regions/gb/en/articles/",
+      "Bettor Resources page існує і лінкує на /[region]/guides/[slug]",
+      "Route /[region]/guides/[slug] НЕ існує — дає 404",
+      "SEO утиліта generateArticleSchema() існує в src/utils/seo.ts",
+      "Images утиліта getPartnerLogoPath() існує в src/utils/images.ts"
+    ],
+    "goal": "Користувач може відкрити статтю, прочитати контент, бачити партнерські посилання"
+  },
+
+  "technicalDesign": {
+    "route": {
+      "path": "src/app/[region]/guides/[slug]/page.tsx",
+      "description": "Dynamic route для статей",
+      "features": [
+        "generateMetadata() для SEO",
+        "generateArticleSchema() для JSON-LD",
+        "Отримання статті через getArticleBySlug()",
+        "404 якщо статті не існує"
+      ]
+    },
+
+    "markdownRendering": {
+      "library": "react-markdown",
+      "install": "npm install react-markdown",
+      "purpose": "Рендерити Markdown контент (groups.items.content, intro.content) як HTML",
+      "features": [
+        "### headers → <h3>",
+        "**bold** → <strong>",
+        "- lists → <ul><li>",
+        "[link](url) → <a href>"
+      ]
+    },
+
+    "components": {
+      "ArticleHeader": {
+        "path": "src/components/article/ArticleHeader.tsx",
+        "props": "{ h1, introTitle, introContent, lastUpdated }",
+        "renders": "h1, підзаголовок, intro текст, дата оновлення"
+      },
+      "ComparisonTable": {
+        "path": "src/components/article/ComparisonTable.tsx",
+        "props": "{ title, headers, rows }",
+        "renders": "Таблиця порівняння сервісів"
+      },
+      "ArticleGroups": {
+        "path": "src/components/article/ArticleGroups.tsx",
+        "props": "{ groups, externalLinks }",
+        "renders": "Групи з items, Markdown контент, посилання на партнерів"
+      },
+      "ArticleFAQ": {
+        "path": "src/components/article/ArticleFAQ.tsx",
+        "props": "{ faq }",
+        "renders": "FAQ секція з питаннями/відповідями"
+      },
+      "ExternalLinksGrid": {
+        "path": "src/components/article/ExternalLinksGrid.tsx",
+        "props": "{ links }",
+        "renders": "Grid логотипів партнерів з посиланнями",
+        "uses": "getPartnerLogoPath() з src/utils/images.ts"
+      },
+      "ArticleFooter": {
+        "path": "src/components/article/ArticleFooter.tsx",
+        "props": "{ lastUpdated, dataSource }",
+        "renders": "Дата оновлення, джерело даних"
+      }
+    },
+
+    "dataAccess": {
+      "function": "getArticleBySlug(slug, region)",
+      "file": "src/data/index.ts або src/data/articles.ts",
+      "note": "Якщо функція не існує — створити"
+    }
+  },
+
+  "pageStructure": {
+    "layout": [
+      "SiteHeader (вже існує)",
+      "ArticleHeader (h1, intro)",
+      "ComparisonTable (якщо є)",
+      "ArticleGroups (основний контент)",
+      "ExternalLinksGrid (партнери)",
+      "ArticleFAQ (якщо є)",
+      "ArticleFooter",
+      "SiteFooter (якщо існує)"
+    ]
+  },
+
+  "seoRequirements": {
+    "metadata": {
+      "title": "article.metaTitle",
+      "description": "article.metaDescription"
+    },
+    "jsonLd": {
+      "type": "Article",
+      "generator": "generateArticleSchema() з src/utils/seo.ts"
+    }
+  },
+
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Встановити react-markdown",
+      "acceptanceCriteria": [
+        "npm install react-markdown",
+        "Перевірити що package.json оновився",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 2,
+      "title": "Створити функцію getArticleBySlug",
+      "acceptanceCriteria": [
+        "В src/data/articles.ts або src/data/index.ts",
+        "Функція getArticleBySlug(slug: string, region: string): IndustryReport | undefined",
+        "Шукає статтю по slug в даних регіону",
+        "Повертає undefined якщо не знайдено",
+        "Експортувати з src/data/index.ts",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 3,
+      "title": "Створити базову route page.tsx",
+      "acceptanceCriteria": [
+        "Створити src/app/[region]/guides/[slug]/page.tsx",
+        "generateMetadata() повертає title і description з статті",
+        "Отримує статтю через getArticleBySlug()",
+        "Якщо статті немає — notFound()",
+        "Поки що рендерить просто h1 і intro.content як текст",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 4,
+      "title": "Додати JSON-LD schema",
+      "acceptanceCriteria": [
+        "В page.tsx імпортувати generateArticleSchema з src/utils/seo.ts",
+        "Імпортувати getSiteConfig з src/data/regions",
+        "Додати <script type='application/ld+json'> в компонент",
+        "Передати правильний url (config.url + /region/guides/slug)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 5,
+      "title": "Компонент ArticleHeader",
+      "acceptanceCriteria": [
+        "Створити src/components/article/ArticleHeader.tsx",
+        "Props: h1, introTitle, introContent, lastUpdated (всі string)",
+        "Рендерить h1 як <h1>",
+        "introTitle як підзаголовок",
+        "introContent через react-markdown",
+        "lastUpdated як 'Last updated: [date]'",
+        "Стилі: чистий, читабельний дизайн",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 6,
+      "title": "Компонент ComparisonTable",
+      "acceptanceCriteria": [
+        "Створити src/components/article/ComparisonTable.tsx",
+        "Props: title (string), headers (string[]), rows (string[][])",
+        "Рендерить HTML таблицю з headers і rows",
+        "Responsive: горизонтальний scroll на mobile",
+        "Стилі: zebra stripes, hover effect",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 7,
+      "title": "Компонент ArticleGroups",
+      "acceptanceCriteria": [
+        "Створити src/components/article/ArticleGroups.tsx",
+        "Props: groups (з IndustryReport), externalLinks (опціонально)",
+        "Рендерить кожну групу з groupName як заголовок",
+        "Кожен item: title, quickVerdict (якщо є), content через react-markdown",
+        "Якщо externalLinks передано — лінкувати title на відповідний url (по id)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 8,
+      "title": "Компонент ArticleFAQ",
+      "acceptanceCriteria": [
+        "Створити src/components/article/ArticleFAQ.tsx",
+        "Props: faq ({ q: string, a: string }[])",
+        "Рендерить питання як заголовки, відповіді як текст",
+        "Можна використати shadcn/ui Accordion або простий список",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 9,
+      "title": "Компонент ExternalLinksGrid",
+      "acceptanceCriteria": [
+        "Створити src/components/article/ExternalLinksGrid.tsx",
+        "Props: links ({ id, name, url }[])",
+        "Імпортувати getPartnerLogoPath з src/utils/images",
+        "Grid логотипів (3-4 колонки desktop, 2 mobile)",
+        "Кожен логотип — посилання на url",
+        "Fallback якщо логотип не знайдено — показати name текстом",
+        "target='_blank' rel='noopener noreferrer' для зовнішніх посилань",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 10,
+      "title": "Компонент ArticleFooter",
+      "acceptanceCriteria": [
+        "Створити src/components/article/ArticleFooter.tsx",
+        "Props: lastUpdated (string), dataSource (string, optional)",
+        "Рендерить дату оновлення",
+        "Рендерить джерело даних якщо є",
+        "Мінімалістичний стиль",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 11,
+      "title": "Зібрати всі компоненти в page.tsx",
+      "acceptanceCriteria": [
+        "В src/app/[region]/guides/[slug]/page.tsx",
+        "Імпортувати всі article компоненти",
+        "Рендерити в правильному порядку: Header, ComparisonTable (якщо є), Groups, ExternalLinksGrid (якщо є), FAQ (якщо є), Footer",
+        "Обгорнути в SiteHeader якщо потрібно",
+        "Перевірити що сторінка відкривається без помилок",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 12,
+      "title": "Створити barrel export для article компонентів",
+      "acceptanceCriteria": [
+        "Створити src/components/article/index.ts",
+        "Експортувати всі article компоненти",
+        "Оновити імпорти в page.tsx на import { ... } from '@/components/article'",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    }
+  ],
+
+  "testingChecklist": [
+    "Відкрити /gb/guides/best-live-score-stats-apps-2026",
+    "Перевірити що h1 відображається",
+    "Перевірити що ComparisonTable рендериться",
+    "Перевірити що groups з Markdown рендеряться (### headers, **bold**)",
+    "Перевірити що FAQ відображається",
+    "Перевірити що ExternalLinksGrid показує логотипи",
+    "Перевірити View Page Source — JSON-LD schema присутня",
+    "Перевірити що meta title/description правильні"
+  ],
+
+  "postFeatureReview": null
+}
