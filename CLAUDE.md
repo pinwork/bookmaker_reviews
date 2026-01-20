@@ -4,7 +4,7 @@ This file provides guidance to Claude when working with code in this repository.
 
 ## Project Overview
 
-FreeBetGeek — Multi-regional betting affiliate platform serving GB (United Kingdom) and IE (Ireland) markets. Content-focused affiliate site for sports bettors seeking bookmaker reviews, welcome bonuses, and betting guides.
+FreeBetGeek — Multi-regional betting affiliate platform. Currently serving GB (United Kingdom) and IE (Ireland) markets, with architecture designed for expansion to additional European markets. Content-focused affiliate site for sports bettors seeking bookmaker reviews, welcome bonuses, and betting guides.
 
 **What:** Affiliate review site for UKGC and Irish Revenue licensed bookmakers. Monetization via affiliate commissions when users sign up through our links.
 
