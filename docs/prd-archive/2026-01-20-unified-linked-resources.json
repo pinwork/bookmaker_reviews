@@ -211,10 +211,19 @@
         "npm run build passes"
       ],
       "priority": 3,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": [
+        "src/types/schemas.ts",
+        "src/app/[region]/guides/[slug]/page.tsx",
+        "src/data/regions/gb/en/articles/best-live-score-stats-apps.ts"
+      ]
     }
   ],
-  "postFeatureReview": null
+  "postFeatureReview": {
+    "summary": "Implemented unified linkedResources system replacing separate relatedBookmakers and externalLinks fields. Created External Apps Registry with auto-generating ComparisonTable. Migrated all GB and IE articles to new system.",
+    "impact": "Articles, schemas (types/schemas.ts), article page (guides/[slug]/page.tsx), ArticleGroups component, new utilities (utils/linkedResources.ts), new registry (data/resources/externalApps.ts), new component (AutoComparisonTable.tsx), documentation (CONTENT_GUIDE.md)",
+    "issues": "None. All articles compile and build passes. The ExternalLinkSchema is kept in schemas.ts but no longer used by IndustryReport - could be removed if not used elsewhere.",
+    "recommendations": "1) Consider adding more resource types (payment) when needed. 2) The resolveBookmakerResources utility is ready but not yet used - integrate when bookmaker cards need linkedResources. 3) Add logo field to ExternalAppResource registry if needed for direct logo references."
+  }
 }
