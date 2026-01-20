@@ -124,6 +124,8 @@ Default to Server Components unless you need:
 - Articles stored in `src/data/regions/[region]/en/articles/`
 - Use `git mv` to rename folders to preserve git history
 
+**Articles:** See `docs/CONTENT_GUIDE.md` for article structure, collections, SEO requirements.
+
 ---
 
 ## PRD-Driven Development
