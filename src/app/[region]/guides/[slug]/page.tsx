@@ -97,6 +97,15 @@ export default async function ArticlePage({ params }: PageProps) {
   const activeResources = getActiveLinkedResources(article.linkedResources);
   const externalResources = resolveExternalResources(activeResources);
 
+  // Pre-process external resources with logo paths for client components
+  const processedExternalResources = externalResources.map((resource) => ({
+    id: resource.id,
+    name: resource.name,
+    url: resource.url,
+    logoPath: getPartnerLogoPath(resource.id),
+    bgColor: resource.bgColor || '#ffffff',
+  }));
+
   // Process legacy externalLinks (backward compatibility)
   const processedLinks = await processExternalLinks(article.externalLinks);
 
@@ -142,6 +151,7 @@ export default async function ArticlePage({ params }: PageProps) {
           <ArticleGroups
             groups={article.groups}
             externalLinks={processedLinks}
+            externalResources={processedExternalResources}
           />
         )}
 

@@ -24,15 +24,50 @@ interface ProcessedExternalLink {
   resolvedBgColor: string;
 }
 
-interface ArticleGroupsProps {
-  groups: Group[];
-  externalLinks?: ProcessedExternalLink[];
+export interface ProcessedExternalResource {
+  id: string;
+  name: string;
+  url: string;
+  logoPath: string | null;
+  bgColor: string;
 }
 
-export function ArticleGroups({ groups, externalLinks }: ArticleGroupsProps) {
-  const getExternalLink = (id: string): ProcessedExternalLink | null => {
-    if (!externalLinks) return null;
-    return externalLinks.find((l) => l.id === id) || null;
+export interface ArticleGroupsProps {
+  groups: Group[];
+  externalLinks?: ProcessedExternalLink[];
+  externalResources?: ProcessedExternalResource[];
+}
+
+export function ArticleGroups({ groups, externalLinks, externalResources }: ArticleGroupsProps) {
+  // Get resource data - prefer externalResources (new system) over externalLinks (legacy)
+  const getResourceData = (id: string): { url: string; name: string; logoPath: string | null; bgColor: string } | null => {
+    // Try new externalResources first
+    if (externalResources) {
+      const resource = externalResources.find((r) => r.id === id);
+      if (resource) {
+        return {
+          url: resource.url,
+          name: resource.name,
+          logoPath: resource.logoPath,
+          bgColor: resource.bgColor,
+        };
+      }
+    }
+
+    // Fall back to legacy externalLinks
+    if (externalLinks) {
+      const link = externalLinks.find((l) => l.id === id);
+      if (link) {
+        return {
+          url: link.url,
+          name: link.name,
+          logoPath: link.logoPath,
+          bgColor: link.resolvedBgColor,
+        };
+      }
+    }
+
+    return null;
   };
 
   return (
@@ -45,7 +80,7 @@ export function ArticleGroups({ groups, externalLinks }: ArticleGroupsProps) {
 
           <div className="space-y-8">
             {group.items.map((item, itemIndex) => {
-              const externalLink = getExternalLink(item.id);
+              const resourceData = getResourceData(item.id);
 
               return (
                 <article
@@ -55,9 +90,9 @@ export function ArticleGroups({ groups, externalLinks }: ArticleGroupsProps) {
                   {/* Service Header: Tagline left, Logo right */}
                   <header className="flex items-center justify-between p-4 border-b border-gray-100 bg-gray-50">
                     <div className="flex-1 min-w-0 pr-4">
-                      {externalLink ? (
+                      {resourceData ? (
                         <a
-                          href={externalLink.url}
+                          href={resourceData.url}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 text-xl font-bold text-blue-600 hover:text-blue-800 transition-colors"
@@ -79,18 +114,18 @@ export function ArticleGroups({ groups, externalLinks }: ArticleGroupsProps) {
                     </div>
 
                     {/* Logo */}
-                    {externalLink?.logoPath && (
+                    {resourceData?.logoPath && (
                       <a
-                        href={externalLink.url}
+                        href={resourceData.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-shrink-0 w-24 h-12 flex items-center justify-center rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
-                        style={{ backgroundColor: externalLink.resolvedBgColor }}
+                        style={{ backgroundColor: resourceData.bgColor }}
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={externalLink.logoPath}
-                          alt={externalLink.name}
+                          src={resourceData.logoPath}
+                          alt={resourceData.name}
                           className="max-h-8 max-w-20 object-contain"
                         />
                       </a>
