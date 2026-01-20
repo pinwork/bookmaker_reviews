@@ -1,0 +1,104 @@
+{
+  "featureName": "Partner Logos Background Config",
+  "branchName": "fix/partner-logos-config",
+  "description": "Додати можливість вказувати колір фону для кожного логотипу партнера. Виправити різну висоту рядів.",
+
+  "problem": {
+    "issues": [
+      "Деякі логотипи білі — невидимі на білому фоні",
+      "Різна висота рядів через max-h-12 замість фіксованої висоти"
+    ]
+  },
+
+  "solution": {
+    "bgColor": {
+      "description": "Додати опціональне поле bgColor в ExternalLink",
+      "default": "Білий (#ffffff або bg-white)",
+      "usage": "Вказувати тільки для логотипів які потребують інший фон"
+    },
+    "fixedHeight": {
+      "description": "Фіксована висота картки (h-16 або h-20) замість max-h-12",
+      "result": "Всі ряди однакової висоти"
+    }
+  },
+
+  "dataExample": {
+    "before": "{ id: 'flashscore', name: 'Flashscore', url: '...' }",
+    "after": "{ id: 'flashscore', name: 'Flashscore', url: '...', bgColor: '#000000' }"
+  },
+
+  "logosNeedingDarkBg": [
+    { "id": "flashscore", "bgColor": "#000000", "reason": "Білий логотип" },
+    { "id": "timeform", "bgColor": "#000000", "reason": "Білий логотип" },
+    { "id": "footystats", "bgColor": "#000000", "reason": "Білий логотип" }
+  ],
+
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Додати bgColor в ExternalLinkSchema",
+      "acceptanceCriteria": [
+        "В src/types/schemas.ts знайти ExternalLinkSchema",
+        "Додати поле bgColor: z.string().optional()",
+        "Оновити тип ExternalLink в src/types/index.ts якщо потрібно",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/types/schemas.ts"]
+    },
+    {
+      "id": 2,
+      "title": "Додати bgColor для логотипів в статті",
+      "acceptanceCriteria": [
+        "Файл: src/data/regions/gb/en/articles/best-live-score-stats-apps.ts",
+        "Додати bgColor: '#000000' для: flashscore, timeform, footystats",
+        "Інші логотипи без bgColor (буде білий за замовчуванням)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/data/regions/gb/en/articles/best-live-score-stats-apps.ts"]
+    },
+    {
+      "id": 3,
+      "title": "Оновити ExternalLinksGrid компонент",
+      "acceptanceCriteria": [
+        "Файл: src/components/article/ExternalLinksGrid.tsx",
+        "Читати bgColor з кожного link",
+        "Якщо bgColor є — використати як inline style background-color",
+        "Якщо bgColor немає — білий фон (bg-white)",
+        "Фіксована висота картки: h-16 (64px) замість max-h-12",
+        "Логотип всередині: object-contain щоб не розтягувався",
+        "Всі ряди мають бути однакової висоти",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/components/article/ExternalLinksGrid.tsx"]
+    }
+  ],
+
+  "testingChecklist": [
+    "Відкрити /gb/guides/best-live-score-stats-apps-2026",
+    "Flashscore — чорний фон, білий логотип видно",
+    "Timeform — чорний фон, білий логотип видно",
+    "FootyStats — чорний фон, білий логотип видно",
+    "SofaScore — білий фон (за замовчуванням)",
+    "Всі ряди однакової висоти",
+    "Hover ефект працює"
+  ],
+
+  "postFeatureReview": {
+    "summary": "Додано bgColor поле в ExternalLinkSchema для гнучкого налаштування фону логотипів. Фіксована висота h-16 для однакових рядів.",
+    "impact": "Types: src/types/schemas.ts. Data: src/data/regions/gb/en/articles/best-live-score-stats-apps.ts. Component: src/components/article/ExternalLinksGrid.tsx",
+    "issues": "Немає.",
+    "recommendations": "При додаванні нових партнерів з білими логотипами — вказувати bgColor: '#000000'."
+  }
+}
