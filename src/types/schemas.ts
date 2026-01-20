@@ -195,12 +195,22 @@ const LocatorSchema = z.object({
   brand: z.string()
 });
 
-const BonusGroupItemSchema = z.object({
+const KeyStatSchema = z.object({
+  label: z.string(),
+  value: z.string(),
+});
+
+export const BonusGroupItemSchema = z.object({
   id: z.string(),
   title: z.string(),
   quickVerdict: z.string().optional(),
+  rating: z.number().min(1).max(5).optional(),
+  badge: z.string().optional(),
+  pros: z.array(z.string()).optional(),
+  cons: z.array(z.string()).optional(),
+  keyStats: z.array(KeyStatSchema).optional(),
   recommendedBookmakers: z.array(z.string()).optional(),
-  content: z.string()
+  content: z.string(),
 });
 
 const BonusGroupSchema = z.object({
