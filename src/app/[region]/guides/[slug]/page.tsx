@@ -7,7 +7,6 @@ import {
   ArticleHeader,
   ComparisonTable,
   ArticleGroups,
-  ExternalLinksGrid,
   ArticleFAQ,
   ArticleFooter,
 } from '@/components/article';
@@ -81,10 +80,6 @@ export default async function ArticlePage({ params }: PageProps) {
             groups={article.groups}
             externalLinks={article.externalLinks}
           />
-        )}
-
-        {article.externalLinks && article.externalLinks.length > 0 && (
-          <ExternalLinksGrid links={article.externalLinks} />
         )}
 
         {article.faq && article.faq.length > 0 && (
