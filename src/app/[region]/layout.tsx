@@ -1,4 +1,5 @@
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export default async function RegionLayout({
   children,
@@ -13,11 +14,14 @@ export default async function RegionLayout({
     <div className="min-h-screen flex flex-col bg-slate-50">
       {/* Меню зверху (Лого + Навігація + Прапорці) */}
       <SiteHeader region={region} />
-      
+
       {/* Контент сторінки */}
       <div className="flex-1">
         {children}
       </div>
+
+      {/* Футер */}
+      <SiteFooter region={region} />
     </div>
   );
 }
