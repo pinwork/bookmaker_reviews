@@ -20,6 +20,10 @@ export {
 } from './extraPromotions';
 
 export {
+  getArticlesByCollection, getAllArticlesForRegion, getArticleBySlug, getFeaturedArticles,
+} from './articles';
+
+export {
   DEFAULT_REGION, getRegion, isValidRegion, getAllRegions, getRegionOrDefault,
   getCurrencySymbol, isBookmakerEnabledInRegion,
   type RegionCode, type RegionConfig, type LegalInfo,
