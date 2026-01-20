@@ -15,6 +15,7 @@ export const ultimateBonusGuide = ieBonusGuide;
 export const responsibleGamblingBible = responsibleGamblingIrelandBible;
 export const bettingShopsBible = ieBettingShopsBible;
 export const bettingIndustryReport = ieBettingIndustryReport;
+export const liveScoreAppsGuide = gbData.liveScoreAppsGuide; // Universal content, no IE adaptation needed
 
 export const bookmakerData = ieBookmakerData;
 
