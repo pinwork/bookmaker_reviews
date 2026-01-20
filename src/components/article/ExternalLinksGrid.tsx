@@ -1,4 +1,5 @@
-import { getPartnerLogoPath } from '@/utils/images';
+import path from 'path';
+import { getPartnerLogoPath, getJpgBackgroundColor } from '@/utils/images';
 
 interface ExternalLink {
   id: string;
@@ -11,8 +12,40 @@ interface ExternalLinksGridProps {
   links: ExternalLink[];
 }
 
-export function ExternalLinksGrid({ links }: ExternalLinksGridProps) {
+interface ProcessedLink extends ExternalLink {
+  logoPath: string | null;
+  resolvedBgColor: string;
+}
+
+async function processLinks(links: ExternalLink[]): Promise<ProcessedLink[]> {
+  return Promise.all(
+    links.map(async (link) => {
+      const logoPath = getPartnerLogoPath(link.id);
+
+      let resolvedBgColor = '#ffffff';
+
+      if (link.bgColor) {
+        // Use explicitly specified bgColor
+        resolvedBgColor = link.bgColor;
+      } else if (logoPath && (logoPath.endsWith('.jpg') || logoPath.endsWith('.jpeg'))) {
+        // Auto-detect from JPG
+        const fullPath = path.join(process.cwd(), 'public', logoPath);
+        resolvedBgColor = await getJpgBackgroundColor(fullPath);
+      }
+
+      return {
+        ...link,
+        logoPath,
+        resolvedBgColor,
+      };
+    })
+  );
+}
+
+export async function ExternalLinksGrid({ links }: ExternalLinksGridProps) {
   if (links.length === 0) return null;
+
+  const processedLinks = await processLinks(links);
 
   return (
     <section className="mb-10">
@@ -21,33 +54,29 @@ export function ExternalLinksGrid({ links }: ExternalLinksGridProps) {
       </h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        {links.map((link) => {
-          const logoPath = getPartnerLogoPath(link.id);
-
-          return (
-            <a
-              key={link.id}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center h-16 p-3 border border-slate-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all"
-              style={{ backgroundColor: link.bgColor || '#ffffff' }}
-            >
-              {logoPath ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={logoPath}
-                  alt={link.name}
-                  className="max-h-full max-w-full object-contain"
-                />
-              ) : (
-                <span className="text-sm font-medium text-gray-700 text-center">
-                  {link.name}
-                </span>
-              )}
-            </a>
-          );
-        })}
+        {processedLinks.map((link) => (
+          <a
+            key={link.id}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center h-16 p-3 border border-slate-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all"
+            style={{ backgroundColor: link.resolvedBgColor }}
+          >
+            {link.logoPath ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={link.logoPath}
+                alt={link.name}
+                className="max-h-full max-w-full object-contain"
+              />
+            ) : (
+              <span className="text-sm font-medium text-gray-700 text-center">
+                {link.name}
+              </span>
+            )}
+          </a>
+        ))}
       </div>
     </section>
   );
