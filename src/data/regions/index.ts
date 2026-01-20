@@ -1,7 +1,6 @@
 // src/data/regions/index.ts
 import { DEFAULT_REGION, RegionCode, BOOKMAKER_SLUGS } from '../constants';
 import { SiteConfig } from '@/types';
-import { adaptObjectToRegion } from '@/utils';
 import { siteConfig as gbSiteConfig } from './gb/en/siteConfig';
 
 export { DEFAULT_REGION };
@@ -82,10 +81,19 @@ export function isBookmakerEnabledInRegion(slug: string, region: string = DEFAUL
 
 export function getSiteConfig(region: string): SiteConfig | null {
   if (region === 'gb') return gbSiteConfig;
-  
+
   if (region === 'ie') {
-    return adaptObjectToRegion(gbSiteConfig, 'ie');
+    // Inline adaptation to avoid circular dependency with @/utils/localization
+    const config = getRegion('ie');
+    if (!config) return null;
+    const json = JSON.stringify(gbSiteConfig)
+      .replace(/£/g, config.currencySymbol)
+      .replace(/GBP/g, config.currency)
+      .replace(/UK(?!\w)/g, config.name)
+      .replace(/British/g, 'Irish')
+      .replace(/UKGC/g, config.legalInfo.regulator);
+    return JSON.parse(json);
   }
-  
+
   return null;
 }

@@ -1,9 +1,10 @@
+import path from 'path';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isValidRegion, getArticleBySlug } from '@/data';
 import { getSiteConfig } from '@/data/regions';
 import { generateArticleSchemas } from '@/utils/seo';
-import { getPartnerLogoPath } from '@/utils/images';
+import { getPartnerLogoPath, getJpgBackgroundColor } from '@/utils/images';
 import {
   getActiveLinkedResources,
   resolveExternalResources,
@@ -60,14 +61,27 @@ export default async function ArticlePage({ params }: PageProps) {
   const activeResources = getActiveLinkedResources(article.linkedResources);
   const externalResources = resolveExternalResources(activeResources);
 
-  // Pre-process external resources with logo paths for client components
-  const processedExternalResources = externalResources.map((resource) => ({
-    id: resource.id,
-    name: resource.name,
-    url: resource.url,
-    logoPath: getPartnerLogoPath(resource.id),
-    bgColor: resource.bgColor || '#ffffff',
-  }));
+  // Pre-process external resources with logo paths and auto-detect JPG background colors
+  const processedExternalResources = await Promise.all(
+    externalResources.map(async (resource) => {
+      const logoPath = getPartnerLogoPath(resource.id);
+      let bgColor = resource.bgColor || '#ffffff';
+
+      // Auto-detect background color from JPG if not specified
+      if (!resource.bgColor && logoPath && (logoPath.endsWith('.jpg') || logoPath.endsWith('.jpeg'))) {
+        const fullPath = path.join(process.cwd(), 'public', logoPath);
+        bgColor = await getJpgBackgroundColor(fullPath);
+      }
+
+      return {
+        id: resource.id,
+        name: resource.name,
+        url: resource.url,
+        logoPath,
+        bgColor,
+      };
+    })
+  );
 
   return (
     <>
