@@ -38,7 +38,6 @@ export function SiteFooter({ region }: SiteFooterProps) {
               </a>
             );
           })}
-          <span className="text-sm text-gray-400">18+ Gamble responsibly</span>
         </div>
 
         {/* Links Row */}
