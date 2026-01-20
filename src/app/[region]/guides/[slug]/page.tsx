@@ -3,12 +3,14 @@ import { notFound } from 'next/navigation';
 import { isValidRegion, getArticleBySlug } from '@/data';
 import { getSiteConfig } from '@/data/regions';
 import { generateArticleSchema } from '@/utils/seo';
-import { ArticleHeader } from '@/components/article/ArticleHeader';
-import { ComparisonTable } from '@/components/article/ComparisonTable';
-import { ArticleGroups } from '@/components/article/ArticleGroups';
-import { ExternalLinksGrid } from '@/components/article/ExternalLinksGrid';
-import { ArticleFAQ } from '@/components/article/ArticleFAQ';
-import { ArticleFooter } from '@/components/article/ArticleFooter';
+import {
+  ArticleHeader,
+  ComparisonTable,
+  ArticleGroups,
+  ExternalLinksGrid,
+  ArticleFAQ,
+  ArticleFooter,
+} from '@/components/article';
 
 interface PageProps {
   params: Promise<{ region: string; slug: string }>;
