@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isValidRegion, getArticleBySlug } from '@/data';
 import { getSiteConfig } from '@/data/regions';
-import { generateArticleSchema } from '@/utils/seo';
+import { generateArticleSchemas } from '@/utils/seo';
 import {
   ArticleHeader,
   ComparisonTable,
@@ -50,14 +50,14 @@ export default async function ArticlePage({ params }: PageProps) {
 
   const siteConfig = getSiteConfig(region);
   const articleUrl = siteConfig ? `${siteConfig.url}/${region}/guides/${slug}` : '';
-  const jsonLd = siteConfig ? generateArticleSchema(article, articleUrl, siteConfig) : null;
+  const schemas = siteConfig ? generateArticleSchemas(article, articleUrl, siteConfig) : [];
 
   return (
     <>
-      {jsonLd && (
+      {schemas.length > 0 && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
         />
       )}
       <main className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8 font-sans">
