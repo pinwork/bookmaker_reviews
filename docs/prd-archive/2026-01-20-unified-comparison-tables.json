@@ -161,10 +161,15 @@
         "npm run build passes"
       ],
       "priority": 3,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/types/schemas.ts", "src/components/article/index.ts", "src/components/article/ComparisonTable.tsx", "src/components/article/AutoComparisonTable.tsx", "src/utils/seo.ts"]
     }
   ],
-  "postFeatureReview": null
+  "postFeatureReview": {
+    "summary": "Implemented unified comparison tables system replacing multiple legacy table formats (comparisonTable, chainsComparison, toolsComparison) with a single comparisonTables[] array. Added auto-generation of table rows from linked resources with clickable links.",
+    "impact": "Changes affected types/schemas, article data files (8 articles migrated), page rendering, SEO utilities, and documentation. Removed 2 deprecated components (ComparisonTable, AutoComparisonTable) in favor of UnifiedComparisonTable.",
+    "issues": "None identified. All articles compile and render correctly with the new system.",
+    "recommendations": "Consider adding support for linkedResourceType='bookmaker' row auto-generation in UnifiedComparisonTable when bookmaker comparison tables are needed."
+  }
 }
