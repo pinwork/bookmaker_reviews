@@ -45,7 +45,7 @@ export const mainNavigation: NavItem[] = [
     label: 'Guides',
     href: '/guides',
     children: [
-      { label: 'Bonus Guide', href: '/guides/ireland-betting-bonus-guide-2026' },
+      { label: 'Bonus Guide', href: '/guides/ie-betting-bonus-guide-2026' },
       { label: 'Betting Shops', href: '/guides/ireland-betting-shops-guide' },
       { label: 'Industry Report', href: '/guides/ireland-betting-market-analysis-2026' },
       { label: 'Responsible Gambling', href: '/guides/responsible-gambling-ireland-guide' },
