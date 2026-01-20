@@ -10,12 +10,11 @@ import {
 } from '@/utils/linkedResources';
 import {
   ArticleHeader,
-  ComparisonTable,
+  UnifiedComparisonTable,
   ArticleGroups,
   ArticleFAQ,
   ArticleFooter,
 } from '@/components/article';
-import { AutoComparisonTable } from '@/components/article/AutoComparisonTable';
 
 interface PageProps {
   params: Promise<{ region: string; slug: string }>;
@@ -70,11 +69,6 @@ export default async function ArticlePage({ params }: PageProps) {
     bgColor: resource.bgColor || '#ffffff',
   }));
 
-  // Determine if we should use AutoComparisonTable (has external resources and empty rows)
-  const hasExternalResources = externalResources.length > 0;
-  const hasManualRows = article.comparisonTable?.rows && article.comparisonTable.rows.length > 0;
-  const useAutoTable = hasExternalResources && !hasManualRows;
-
   return (
     <>
       {schemas.length > 0 && (
@@ -91,21 +85,13 @@ export default async function ArticlePage({ params }: PageProps) {
           lastUpdated={article.footer?.lastUpdated}
         />
 
-        {article.comparisonTable && useAutoTable && (
-          <AutoComparisonTable
-            title={article.comparisonTable.title}
-            resources={externalResources}
-            columns={article.comparisonTable.headers}
+        {article.comparisonTables?.map((table) => (
+          <UnifiedComparisonTable
+            key={table.id}
+            table={table}
+            resources={table.linkedResourceType === 'external' ? externalResources : undefined}
           />
-        )}
-
-        {article.comparisonTable && !useAutoTable && hasManualRows && (
-          <ComparisonTable
-            title={article.comparisonTable.title}
-            headers={article.comparisonTable.headers}
-            rows={article.comparisonTable.rows!}
-          />
-        )}
+        ))}
 
         {article.groups && (
           <ArticleGroups
