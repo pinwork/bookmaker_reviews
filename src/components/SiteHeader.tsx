@@ -12,6 +12,7 @@ export function SiteHeader({ region }: SiteHeaderProps) {
     { name: "Bonuses", href: `/${region}/bonuses` },
     { name: "Daily Boosts", href: `/${region}/daily-boosts` },
     { name: "Guides", href: `/${region}/guides` },
+    { name: "Bettor Resources", href: `/${region}/bettor-resources` },
   ];
 
   return (
