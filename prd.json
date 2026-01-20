@@ -146,9 +146,13 @@
         "npm run build passes"
       ],
       "priority": 2,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": [
+        "src/data/regions/ie/en/articles/ie-betting-industry-report.ts",
+        "src/data/regions/ie/en/articles/ie-betting-shops-bible.ts",
+        "src/data/regions/ie/en/articles/ie-ultimate-bonus-guide.ts"
+      ]
     },
     {
       "id": 8,

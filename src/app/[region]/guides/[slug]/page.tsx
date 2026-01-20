@@ -6,12 +6,17 @@ import { getSiteConfig } from '@/data/regions';
 import { generateArticleSchemas } from '@/utils/seo';
 import { getPartnerLogoPath, getJpgBackgroundColor } from '@/utils/images';
 import {
+  getActiveLinkedResources,
+  resolveExternalResources,
+} from '@/utils/linkedResources';
+import {
   ArticleHeader,
   ComparisonTable,
   ArticleGroups,
   ArticleFAQ,
   ArticleFooter,
 } from '@/components/article';
+import { AutoComparisonTable } from '@/components/article/AutoComparisonTable';
 
 export interface ProcessedExternalLink {
   id: string;
@@ -87,7 +92,18 @@ export default async function ArticlePage({ params }: PageProps) {
   const siteConfig = getSiteConfig(region);
   const articleUrl = siteConfig ? `${siteConfig.url}/${region}/guides/${slug}` : '';
   const schemas = siteConfig ? generateArticleSchemas(article, articleUrl, siteConfig) : [];
+
+  // Process linkedResources (new system)
+  const activeResources = getActiveLinkedResources(article.linkedResources);
+  const externalResources = resolveExternalResources(activeResources);
+
+  // Process legacy externalLinks (backward compatibility)
   const processedLinks = await processExternalLinks(article.externalLinks);
+
+  // Determine if we should use AutoComparisonTable (has external resources and empty rows)
+  const hasExternalResources = externalResources.length > 0;
+  const hasManualRows = article.comparisonTable?.rows && article.comparisonTable.rows.length > 0;
+  const useAutoTable = hasExternalResources && !hasManualRows;
 
   return (
     <>
@@ -105,7 +121,15 @@ export default async function ArticlePage({ params }: PageProps) {
           lastUpdated={article.footer?.lastUpdated}
         />
 
-        {article.comparisonTable && (
+        {article.comparisonTable && useAutoTable && (
+          <AutoComparisonTable
+            title={article.comparisonTable.title}
+            resources={externalResources}
+            columns={article.comparisonTable.headers}
+          />
+        )}
+
+        {article.comparisonTable && !useAutoTable && hasManualRows && (
           <ComparisonTable
             title={article.comparisonTable.title}
             headers={article.comparisonTable.headers}
