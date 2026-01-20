@@ -135,16 +135,13 @@ Default to Server Components unless you need:
 1. Читаю `prd.json` → знаходжу story з найвищим пріоритетом де `passes: false`
 2. Реалізую **ОДНУ** story
 3. Запускаю `npm run lint` і `npm run build`
-4. Якщо passed → commit
-5. Оновлюю `prd.json`:
-   - `passes: true`
-   - `completedAt: "YYYY-MM-DD"`
-   - `filesChanged: [...]`
-
-### Git
-
-- Формат коміту: `feat: Story [ID] - [Title]`
-- НЕ пушу — тільки commit
+4. Якщо passed → commit: `feat: Story [ID] - [Title]`
+5. Оновлюю `prd.json`: `passes: true`, `completedAt`, `filesChanged`
+6. Повторюю кроки 1-5 поки всі stories не `passes: true`
+7. **Завершення PRD (ОБОВ'ЯЗКОВО):**
+   - Додаю `postFeatureReview` в prd.json
+   - Переміщую: `mv prd.json docs/prd-archive/YYYY-MM-DD-[feature-name].json`
+   - Commit: `chore: archive PRD - [featureName]`
 
 ### PRD формат
 
@@ -166,9 +163,7 @@ Default to Server Components unless you need:
 }
 ```
 
-### Post-Feature Review
-
-Коли всі stories `passes: true`, додаю в prd.json:
+### postFeatureReview
 
 ```json
 "postFeatureReview": {
@@ -178,13 +173,6 @@ Default to Server Components unless you need:
   "recommendations": "Пропозиції по покращенню"
 }
 ```
-
-### PRD Lifecycle
-
-1. `prd.json` — один активний PRD
-2. Коли всі stories `passes: true` + Post-Feature Review готовий:
-   - Переміщую в `docs/prd-archive/YYYY-MM-DD-[feature-name].json`
-   - Готовий до нового PRD
 
 ---
 
