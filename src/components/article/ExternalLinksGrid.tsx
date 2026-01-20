@@ -4,6 +4,7 @@ interface ExternalLink {
   id: string;
   name: string;
   url: string;
+  bgColor?: string;
 }
 
 interface ExternalLinksGridProps {
@@ -29,14 +30,15 @@ export function ExternalLinksGrid({ links }: ExternalLinksGridProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center p-4 bg-slate-100 border border-slate-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-center h-16 p-3 border border-slate-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all"
+              style={{ backgroundColor: link.bgColor || '#ffffff' }}
             >
               {logoPath ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={logoPath}
                   alt={link.name}
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-full max-w-full object-contain"
                 />
               ) : (
                 <span className="text-sm font-medium text-gray-700 text-center">
