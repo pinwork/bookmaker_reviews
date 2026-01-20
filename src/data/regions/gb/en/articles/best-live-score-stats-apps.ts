@@ -30,7 +30,6 @@ This guide compares the most popular live score apps, statistics platforms, and 
   comparisonTable: {
     title: 'Quick Comparison: Live Score & Stats Apps',
     headers: ['App', 'Best For', 'Price', 'Sports', 'Key Feature'],
-    rows: [], // Auto-generated from linkedResources
   },
 
   groups: [

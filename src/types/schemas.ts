@@ -298,7 +298,7 @@ export const IndustryReportSchema = z.object({
   comparisonTable: z.object({
     title: z.string(),
     headers: z.array(z.string()),
-    rows: z.array(ComparisonRowSchema)
+    rows: z.array(ComparisonRowSchema).optional()
   }).optional(),
   groups: z.array(BonusGroupSchema).optional(),
   realStories: z.object({
@@ -320,8 +320,6 @@ export const IndustryReportSchema = z.object({
     lastUpdated: z.string().optional(),
     dataSource: z.string().optional()
   }).optional(),
-  relatedBookmakers: z.array(z.string()).optional(),
   collections: z.array(z.enum(['guides', 'bettor-resources', 'featured', 'responsible-gambling'])).optional(),
-  externalLinks: z.array(ExternalLinkSchema).optional(),
   linkedResources: z.array(LinkedResourceSchema).optional(),
 }).passthrough();
