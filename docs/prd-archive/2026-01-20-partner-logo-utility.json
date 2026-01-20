@@ -1,0 +1,135 @@
+{
+  "featureName": "Partner Logo Auto-Discovery",
+  "branchName": "feat/partner-logo-utility",
+  "description": "Спростити роботу з логотипами партнерів: замість вказування розширення файлу вручну — автоматичний пошук по id.",
+
+  "problem": {
+    "description": "Зараз в externalLinks треба вказувати logoSlug, а потім вручну стежити щоб файл був .png. Але логотипи приходять в різних форматах (svg, png, webp, jpg) і це створює зайву роботу.",
+    "currentFlow": [
+      "1. Завантажую логотип (наприклад flashscore.svg)",
+      "2. Мушу пам'ятати що в схемі очікується .png",
+      "3. Або конвертувати, або міняти код",
+      "4. Легко помилитись і отримати 404"
+    ]
+  },
+
+  "solution": {
+    "description": "Утиліта яка автоматично знаходить файл логотипу по id, незалежно від розширення.",
+    "newFlow": [
+      "1. Завантажую логотип як є (flashscore.svg)",
+      "2. В даних вказую тільки id: 'flashscore'",
+      "3. Утиліта сама знаходить flashscore.svg",
+      "4. Працює з будь-яким форматом"
+    ]
+  },
+
+  "technicalDesign": {
+    "utility": {
+      "path": "src/utils/partners.ts",
+      "description": "Утиліта для роботи з партнерськими логотипами",
+      "function": {
+        "name": "getPartnerLogoPath",
+        "purpose": "Знаходить шлях до логотипу по id",
+        "input": "id: string (наприклад 'flashscore')",
+        "output": "string | null (наприклад '/images/partners/flashscore.svg' або null якщо не знайдено)",
+        "algorithm": [
+          "1. Визначаємо директорію: public/images/partners/",
+          "2. Список можливих розширень: ['.svg', '.png', '.webp', '.jpg', '.jpeg']",
+          "3. Перебираємо розширення по порядку пріоритету",
+          "4. Повертаємо перший знайдений файл",
+          "5. Якщо нічого не знайдено — повертаємо null"
+        ],
+        "priorityOrder": "SVG перший бо векторний і найкращий для логотипів"
+      }
+    },
+
+    "schemaChanges": {
+      "file": "src/types/schemas.ts",
+      "description": "Прибрати logoSlug з ExternalLinkSchema — більше не потрібен",
+      "before": "{ id, name, url, logoSlug }",
+      "after": "{ id, name, url }"
+    },
+
+    "documentationChanges": {
+      "file": "docs/CONTENT_GUIDE.md",
+      "description": "Оновити: id = ім'я файлу, формат будь-який"
+    }
+  },
+
+  "usageExample": {
+    "description": "Як буде використовуватись в компоненті",
+    "comment": "import { getPartnerLogoPath } from '@/utils/partners'; const logo = getPartnerLogoPath('flashscore'); // → '/images/partners/flashscore.svg'"
+  },
+
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Створити утиліту getPartnerLogoPath",
+      "acceptanceCriteria": [
+        "Створити файл src/utils/partners.ts",
+        "Функція getPartnerLogoPath(id: string): string | null",
+        "Шукає файл в public/images/partners/",
+        "Пріоритет розширень: .svg, .png, .webp, .jpg, .jpeg",
+        "Повертає шлях '/images/partners/{id}.{ext}' або null",
+        "Експортувати функцію",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/utils/partners.ts", "src/utils/index.ts"]
+    },
+    {
+      "id": 2,
+      "title": "Прибрати logoSlug зі схеми",
+      "acceptanceCriteria": [
+        "В src/types/schemas.ts знайти ExternalLinkSchema",
+        "Видалити поле logoSlug з схеми",
+        "Оновити тип ExternalLink в src/types/index.ts якщо потрібно",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/types/schemas.ts"]
+    },
+    {
+      "id": 3,
+      "title": "Оновити статтю Live Score Apps",
+      "acceptanceCriteria": [
+        "Файл: src/data/regions/gb/en/articles/best-live-score-stats-apps.ts",
+        "В externalLinks прибрати logoSlug з кожного елемента",
+        "Залишити тільки: id, name, url",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/data/regions/gb/en/articles/best-live-score-stats-apps.ts"]
+    },
+    {
+      "id": 4,
+      "title": "Оновити CONTENT_GUIDE.md",
+      "acceptanceCriteria": [
+        "Файл: docs/CONTENT_GUIDE.md",
+        "Знайти секцію 'Партнерські посилання'",
+        "Прибрати logoSlug з прикладу коду",
+        "Оновити опис: id = ім'я файлу без розширення, формат будь-який (автопошук)"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["docs/CONTENT_GUIDE.md"]
+    }
+  ],
+
+  "postFeatureReview": {
+    "summary": "Створено утиліту getPartnerLogoPath для автоматичного пошуку логотипів партнерів по id. Видалено logoSlug зі схеми та статей.",
+    "impact": "src/utils/partners.ts (нова), src/types/schemas.ts, article data, docs/CONTENT_GUIDE.md",
+    "issues": "Утиліта server-only (використовує fs). Для client-side потрібен інший підхід.",
+    "recommendations": "Для клієнтських компонентів використовувати Image fallback або генерувати маніфест логотипів при build"
+  }
+}
