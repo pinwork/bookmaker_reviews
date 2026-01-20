@@ -1,4 +1,3 @@
-import { BOOKMAKER_SLUGS } from '../../../../constants';
 import { IndustryReport } from '@/types';
 
 export const bettingIndustryBible: IndustryReport = {
@@ -9,9 +8,14 @@ export const bettingIndustryBible: IndustryReport = {
   metaDescription: 'The definitive report on the £16.8bn UK betting market. Analysis of the 40% tax hike, dominance of Flutter & bet365, and new affordability checks.',
   lastUpdated: '2026-01-27',
 
-  relatedBookmakers: [
-    'bet365', 'paddy-power', 'sky-bet', 'william-hill', 'ladbrokes', 'betfred'
-  ] as typeof BOOKMAKER_SLUGS[number][],
+  linkedResources: [
+    { id: 'bet365', type: 'bookmaker', active: true },
+    { id: 'paddy-power', type: 'bookmaker', active: true },
+    { id: 'sky-bet', type: 'bookmaker', active: true },
+    { id: 'william-hill', type: 'bookmaker', active: true },
+    { id: 'ladbrokes', type: 'bookmaker', active: true },
+    { id: 'betfred', type: 'bookmaker', active: true },
+  ],
 
   intro: {
     title: 'A £16.8 Billion Industry at a Crossroads',

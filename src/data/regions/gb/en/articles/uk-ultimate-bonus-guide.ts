@@ -1,4 +1,3 @@
-import { BOOKMAKER_SLUGS } from '../../../../constants';
 import { IndustryReport } from '@/types';
 
 export const ultimateBonusGuide: IndustryReport = {
@@ -9,9 +8,15 @@ export const ultimateBonusGuide: IndustryReport = {
   metaDescription: 'Complete masterclass on UK betting bonuses. 14+ mechanics explained: Deposit offers, Free Bets, Early Payouts, BOG, and Acca Insurance.',
   lastUpdated: '2026-01-28',
 
-  relatedBookmakers: [
-    'bet365', 'sky-bet', 'paddy-power', 'william-hill', 'ladbrokes', 'betfred', 'unibet'
-  ] as typeof BOOKMAKER_SLUGS[number][],
+  linkedResources: [
+    { id: 'bet365', type: 'bookmaker', active: true },
+    { id: 'sky-bet', type: 'bookmaker', active: true },
+    { id: 'paddy-power', type: 'bookmaker', active: true },
+    { id: 'william-hill', type: 'bookmaker', active: true },
+    { id: 'ladbrokes', type: 'bookmaker', active: true },
+    { id: 'betfred', type: 'bookmaker', active: true },
+    { id: 'unibet', type: 'bookmaker', active: true },
+  ],
 
   comparisonTable: {
     title: 'Comprehensive Bonus Comparison: 2026 UK Market',

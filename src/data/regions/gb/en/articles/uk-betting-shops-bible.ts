@@ -1,4 +1,3 @@
-import { BOOKMAKER_SLUGS } from '../../../../constants';
 import { IndustryReport } from '@/types';
 
 export const bettingShopsBible: IndustryReport = {
@@ -6,11 +5,16 @@ export const bettingShopsBible: IndustryReport = {
   collections: ['guides'],
   h1: 'The 2026 UK Betting Shop Bible: History, Stats & Store Locators',
   metaTitle: 'UK Betting Shops Guide 2026 | From 1961 Legalization to Digi-Hubs',
-  metaDescription: 'Comprehensive guide to UK betting shops. 65 years of history, 5,789 active stores, store locators, Fred Done’s story, and why 13% of Brits still bet in cash.',
+  metaDescription: "Comprehensive guide to UK betting shops. 65 years of history, 5,789 active stores, store locators, Fred Done's story, and why 13% of Brits still bet in cash.",
 
-  relatedBookmakers: [
-    'betfred', 'william-hill', 'ladbrokes', 'coral', 'paddy-power', 'boylesports'
-  ] as typeof BOOKMAKER_SLUGS[number][],
+  linkedResources: [
+    { id: 'betfred', type: 'bookmaker', active: true },
+    { id: 'william-hill', type: 'bookmaker', active: true },
+    { id: 'ladbrokes', type: 'bookmaker', active: true },
+    { id: 'coral', type: 'bookmaker', active: true },
+    { id: 'paddy-power', type: 'bookmaker', active: true },
+    { id: 'boylesports', type: 'bookmaker', active: true },
+  ],
 
   intro: {
     title: 'More Than Just a High Street Store',

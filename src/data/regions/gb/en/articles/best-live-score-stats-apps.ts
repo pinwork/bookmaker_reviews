@@ -3,16 +3,16 @@ import { IndustryReport } from '@/types';
 export const liveScoreAppsGuide: IndustryReport = {
   slug: 'best-live-score-stats-apps-2026',
   collections: ['guides', 'bettor-resources'],
-  externalLinks: [
-    { id: 'flashscore', name: 'Flashscore', url: 'https://www.flashscore.com', bgColor: '#000000' },
-    { id: 'sofascore', name: 'SofaScore', url: 'https://www.sofascore.com', bgColor: '#374DF5' },
-    { id: 'fotmob', name: 'FotMob', url: 'https://www.fotmob.com' },
-    { id: 'fbref', name: 'FBref', url: 'https://fbref.com' },
-    { id: 'footystats', name: 'FootyStats', url: 'https://footystats.org', bgColor: '#000000' },
-    { id: 'racing-post', name: 'Racing Post', url: 'https://www.racingpost.com' },
-    { id: 'timeform', name: 'Timeform', url: 'https://www.timeform.com', bgColor: '#000000' },
-    { id: 'tennis-explorer', name: 'Tennis Explorer', url: 'https://www.tennisexplorer.com' },
-    { id: 'basketball-reference', name: 'Basketball Reference', url: 'https://www.basketball-reference.com' },
+  linkedResources: [
+    { id: 'flashscore', type: 'external', active: true },
+    { id: 'sofascore', type: 'external', active: true },
+    { id: 'fotmob', type: 'external', active: true },
+    { id: 'fbref', type: 'external', active: true },
+    { id: 'footystats', type: 'external', active: true },
+    { id: 'racing-post', type: 'external', active: true },
+    { id: 'timeform', type: 'external', active: true },
+    { id: 'tennis-explorer', type: 'external', active: true },
+    { id: 'basketball-reference', type: 'external', active: true },
   ],
   h1: 'Best Live Score & Stats Apps for Sports Bettors (2026)',
   metaTitle: 'Best Live Score Apps 2026 | Flashscore, SofaScore & More',
@@ -30,13 +30,7 @@ This guide compares the most popular live score apps, statistics platforms, and 
   comparisonTable: {
     title: 'Quick Comparison: Live Score & Stats Apps',
     headers: ['App', 'Best For', 'Price', 'Sports', 'Key Feature'],
-    rows: [
-      ['Flashscore', 'Live betting speed', 'Free', '38 sports', 'Fastest updates (5-20s)'],
-      ['SofaScore', 'Statistical research', 'Free', '20+ sports', 'Live xG, dropping odds'],
-      ['FotMob', 'Football experience', 'Free/£9.99yr', 'Football only', 'Best UX, Apple Watch'],
-      ['FootyStats', 'Niche leagues', 'Free/£19.99mo', 'Football', '1,500+ leagues, backtesting'],
-      ['Racing Post', 'Horse racing', '£19.95/mo', 'Racing', 'Industry standard']
-    ]
+    rows: [], // Auto-generated from linkedResources
   },
 
   groups: [
