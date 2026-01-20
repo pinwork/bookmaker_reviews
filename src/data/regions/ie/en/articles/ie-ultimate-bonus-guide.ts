@@ -1,4 +1,3 @@
-import { BOOKMAKER_SLUGS } from '../../../../constants';
 import { IndustryReport } from '@/types';
 
 export const ieBonusGuide: IndustryReport = {
@@ -9,9 +8,15 @@ export const ieBonusGuide: IndustryReport = {
   metaDescription: 'The complete guide to Irish betting offers under the new Gambling Regulation Act. Find out why "Targeted Inducements" are banned and which bonuses remain legal.',
   lastUpdated: '2026-01-30',
 
-  relatedBookmakers: [
-    'boylesports', 'paddy-power', 'bet365', 'quinnbet', 'sky-bet', 'ladbrokes', 'betfair'
-  ] as typeof BOOKMAKER_SLUGS[number][],
+  linkedResources: [
+    { id: 'boylesports', type: 'bookmaker', active: true },
+    { id: 'paddy-power', type: 'bookmaker', active: true },
+    { id: 'bet365', type: 'bookmaker', active: true },
+    { id: 'quinnbet', type: 'bookmaker', active: true },
+    { id: 'sky-bet', type: 'bookmaker', active: true },
+    { id: 'ladbrokes', type: 'bookmaker', active: true },
+    { id: 'betfair', type: 'bookmaker', active: true },
+  ],
 
   comparisonTable: {
     title: 'Bonus Comparison: Ireland (GRAI Rules)',

@@ -123,9 +123,14 @@
         "npm run build passes"
       ],
       "priority": 2,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": [
+        "src/data/regions/gb/en/articles/uk-betting-industry-report.ts",
+        "src/data/regions/gb/en/articles/uk-betting-shops-bible.ts",
+        "src/data/regions/gb/en/articles/uk-ultimate-bonus-guide.ts",
+        "src/data/regions/gb/en/articles/best-live-score-stats-apps.ts"
+      ]
     },
     {
       "id": 7,

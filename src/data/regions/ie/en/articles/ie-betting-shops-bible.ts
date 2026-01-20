@@ -1,4 +1,3 @@
-import { BOOKMAKER_SLUGS } from '../../../../constants';
 import { IndustryReport } from '@/types';
 
 export const ieBettingShopsBible: IndustryReport = {
@@ -6,12 +5,14 @@ export const ieBettingShopsBible: IndustryReport = {
   collections: ['guides'],
   h1: 'The 2026 Ireland Betting Shop Bible: Closures, Laws & The GRAI Era',
   metaTitle: 'Ireland Betting Shops 2026 | 721 Remaining Stores & New GRAI Rules',
-  metaDescription: 'Expert analysis of Ireland’s retail betting sector. Why 134 shops closed since 2019, the 94-year-old Sunday ban, the Yellow Sam coup, and why FOBTs are banned.',
+  metaDescription: "Expert analysis of Ireland's retail betting sector. Why 134 shops closed since 2019, the 94-year-old Sunday ban, the Yellow Sam coup, and why FOBTs are banned.",
   lastUpdated: '2026-01-30',
 
-  relatedBookmakers: [
-    'boylesports', 'paddy-power', 'ladbrokes'
-  ] as typeof BOOKMAKER_SLUGS[number][],
+  linkedResources: [
+    { id: 'boylesports', type: 'bookmaker', active: true },
+    { id: 'paddy-power', type: 'bookmaker', active: true },
+    { id: 'ladbrokes', type: 'bookmaker', active: true },
+  ],
 
   intro: {
     title: 'An Industry Halved: The Reality of Irish Retail',

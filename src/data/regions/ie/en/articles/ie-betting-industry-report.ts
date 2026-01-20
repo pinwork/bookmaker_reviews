@@ -1,4 +1,3 @@
-import { BOOKMAKER_SLUGS } from '../../../../constants';
 import { IndustryReport } from '@/types';
 
 export const ieBettingIndustryReport: IndustryReport = {
@@ -9,9 +8,14 @@ export const ieBettingIndustryReport: IndustryReport = {
   metaDescription: 'The definitive report on the €5.5bn Irish gambling market. We analyze GRAI regulations, the targeted inducement ban, and Irish bookmaking history.',
   lastUpdated: '2026-01-27',
 
-  relatedBookmakers: [
-    'paddy-power', 'boylesports', 'bet365', 'betfair', 'ladbrokes', 'coral'
-  ] as typeof BOOKMAKER_SLUGS[number][],
+  linkedResources: [
+    { id: 'paddy-power', type: 'bookmaker', active: true },
+    { id: 'boylesports', type: 'bookmaker', active: true },
+    { id: 'bet365', type: 'bookmaker', active: true },
+    { id: 'betfair', type: 'bookmaker', active: true },
+    { id: 'ladbrokes', type: 'bookmaker', active: true },
+    { id: 'coral', type: 'bookmaker', active: true },
+  ],
 
   intro: {
     title: 'Ireland\'s Gambling Revolution: From 1926 to 2026',
