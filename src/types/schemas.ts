@@ -262,6 +262,14 @@ export const LinkedResourceSchema = z.object({
   active: z.boolean(),
 });
 
+export const ComparisonTableSchema = z.object({
+  id: z.string().min(1),
+  title: z.string().min(1),
+  headers: z.array(z.string()).max(4),
+  rows: z.array(z.array(z.string())).optional(),
+  linkedResourceType: ResourceTypeSchema.optional(),
+});
+
 export const IndustryReportSchema = z.object({
   slug: z.string().min(1),
   h1: z.string().min(1),
@@ -322,4 +330,5 @@ export const IndustryReportSchema = z.object({
   }).optional(),
   collections: z.array(z.enum(['guides', 'bettor-resources', 'featured', 'responsible-gambling'])).optional(),
   linkedResources: z.array(LinkedResourceSchema).optional(),
+  comparisonTables: z.array(ComparisonTableSchema).optional(),
 }).passthrough();

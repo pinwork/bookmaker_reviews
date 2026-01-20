@@ -1,0 +1,170 @@
+{
+  "featureName": "Unified Comparison Tables System",
+  "branchName": "feat/unified-comparison-tables",
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Define ComparisonTable type and update schema",
+      "acceptanceCriteria": [
+        "Create ComparisonTable type in src/types/index.ts: { id: string; title: string; headers: string[]; rows?: string[][]; linkedResourceType?: 'bookmaker' | 'external' | 'payment' }",
+        "Update IndustryReportSchema in src/types/schemas.ts: add comparisonTables: z.array(ComparisonTableSchema).optional()",
+        "Keep old fields (comparisonTable, toolsComparison, chainsComparison) temporarily for migration",
+        "Max 4 headers enforced in schema (z.array().max(4))",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 2,
+      "title": "Add tableData validation to External Apps Registry",
+      "acceptanceCriteria": [
+        "Update src/data/resources/externalApps.ts",
+        "Add TABLE_CELL_LIMITS constant: { name: 20, bestFor: 25, price: 15, keyFeature: 35 }",
+        "Add validateTableData() function that warns if any field exceeds limit",
+        "Call validateTableData() in getExternalAppById() during development (console.warn)",
+        "All 9 existing apps have tableData within limits",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 3,
+      "title": "Create UnifiedComparisonTable component with truncate and resource linking",
+      "acceptanceCriteria": [
+        "Create src/components/article/UnifiedComparisonTable.tsx",
+        "Props: { table: ComparisonTable; resources?: ExternalAppResource[] | BookmakerComplete[] }",
+        "Auto-generates rows from resources if table.linkedResourceType is set and rows is empty",
+        "If resources provided: first column shows link icon (ExternalLink from lucide) + clickable link",
+        "Cell styling: max-w-[200px] truncate with title attribute for full text on hover",
+        "Reuses styling from existing ComparisonTable (same visual design)",
+        "Empty resources array renders nothing",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 4,
+      "title": "Add ItemList schema generator for comparison tables",
+      "acceptanceCriteria": [
+        "Update src/utils/seo.ts",
+        "Add generateItemListSchema(title: string, items: Array<{name, url, category?, price?}>) function",
+        "Returns schema.org ItemList with ListItem entries",
+        "For external apps: @type SoftwareApplication with applicationCategory and offers",
+        "Update generateArticleSchemas() to include ItemList when article has linkedResources with type='external'",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 5,
+      "title": "Migrate GB articles to comparisonTables array",
+      "acceptanceCriteria": [
+        "Update src/data/regions/gb/en/articles/uk-betting-industry-report.ts: convert any comparison table to comparisonTables[]",
+        "Update src/data/regions/gb/en/articles/uk-betting-shops-bible.ts: convert chainsComparison to comparisonTables[]",
+        "Update src/data/regions/gb/en/articles/uk-ultimate-bonus-guide.ts: convert comparisonTable to comparisonTables[]",
+        "Update src/data/regions/gb/en/articles/responsible-gambling-uk-bible.ts: convert toolsComparison to comparisonTables[]",
+        "Update src/data/regions/gb/en/articles/best-live-score-stats-apps.ts: convert to comparisonTables[] with linkedResourceType='external'",
+        "All tables have max 4 columns (1 main + 3 additional)",
+        "Remove old field names from migrated articles",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 6,
+      "title": "Migrate IE articles to comparisonTables array",
+      "acceptanceCriteria": [
+        "Update src/data/regions/ie/en/articles/ie-betting-industry-report.ts: convert to comparisonTables[]",
+        "Update src/data/regions/ie/en/articles/ie-betting-shops-bible.ts: convert chainsComparison to comparisonTables[]",
+        "Update src/data/regions/ie/en/articles/ie-ultimate-bonus-guide.ts: convert to comparisonTables[]",
+        "Update src/data/regions/ie/en/articles/ie-responsible-gambling-bible.ts: convert toolsComparison to comparisonTables[] (if exists)",
+        "All tables have max 4 columns",
+        "Remove old field names from migrated articles",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 7,
+      "title": "Update article page to render comparisonTables with UnifiedComparisonTable",
+      "acceptanceCriteria": [
+        "Update src/app/[region]/guides/[slug]/page.tsx",
+        "Import UnifiedComparisonTable component",
+        "Render all tables from article.comparisonTables[] array",
+        "For tables with linkedResourceType='external': pass resolved external resources",
+        "For tables with linkedResourceType='bookmaker': pass resolved bookmaker resources",
+        "For tables without linkedResourceType: render with manual rows",
+        "Include ItemList schema in JSON-LD when external resources present",
+        "Remove old ComparisonTable imports and rendering logic",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 8,
+      "title": "Update CONTENT_GUIDE.md with table standards",
+      "acceptanceCriteria": [
+        "Add section '## Table-First Content Philosophy': always look for opportunities to present content as tables",
+        "Add section '## Table Structure Standards': max 4 columns (1 main + 3 additional), no exceptions",
+        "Add section '## Table Cell Limits': Name 20 chars, Best For 25, Price 15, Key Feature 35; UI truncates as safety net",
+        "Add section '## Content Sorting': tables sorted by quality/popularity (best first), FAQ sorted by importance",
+        "Add section '## Resource Linking': first column auto-links to resource if linkedResourceType is set",
+        "Update comparison table examples to show new comparisonTables[] format",
+        "Remove old comparisonTable/toolsComparison/chainsComparison references",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 9,
+      "title": "Cleanup deprecated table fields from schema",
+      "acceptanceCriteria": [
+        "Remove comparisonTable (singular) from IndustryReportSchema",
+        "Remove toolsComparison from IndustryReportSchema",
+        "Remove chainsComparison from IndustryReportSchema",
+        "Update IndustryReport type in src/types/index.ts to match",
+        "Remove old ComparisonTable component if no longer used",
+        "Verify all articles compile without deprecated fields",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    }
+  ],
+  "postFeatureReview": null
+}
