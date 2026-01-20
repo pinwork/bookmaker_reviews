@@ -80,17 +80,20 @@ export const bettingIndustryBible: IndustryReport = {
     ]
   },
 
-  comparisonTable: {
-    title: 'UK Operators at a Glance 2026',
-    headers: ['Operator', 'Brands', 'Market Share', 'Outlook'],
-    rows: [
-      ['Flutter', 'Paddy Power, Sky Bet, Betfair', '~30%', '🟢 Dominant'],
-      ['bet365', 'bet365', '~20%', '🟢 Stable'],
-      ['Entain', 'Ladbrokes, Coral', '~15%', '🟡 Stagnant'],
-      ['Evoke', 'William Hill, 888', '~8%', '🔴 Distressed'],
-      ['Betfred', 'Betfred', '~5%', '🟡 Independent'],
-    ]
-  },
+  comparisonTables: [
+    {
+      id: 'uk-operators-2026',
+      title: 'UK Operators at a Glance 2026',
+      headers: ['Operator', 'Brands', 'Market Share', 'Outlook'],
+      rows: [
+        ['Flutter', 'Paddy Power, Sky Bet, Betfair', '~30%', '🟢 Dominant'],
+        ['bet365', 'bet365', '~20%', '🟢 Stable'],
+        ['Entain', 'Ladbrokes, Coral', '~15%', '🟡 Stagnant'],
+        ['Evoke', 'William Hill, 888', '~8%', '🔴 Distressed'],
+        ['Betfred', 'Betfred', '~5%', '🟡 Independent'],
+      ]
+    }
+  ],
 
   realStories: {
     title: 'The People Behind the Billions',

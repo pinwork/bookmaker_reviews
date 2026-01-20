@@ -18,27 +18,30 @@ export const ultimateBonusGuide: IndustryReport = {
     { id: 'unibet', type: 'bookmaker', active: true },
   ],
 
-  comparisonTable: {
-    title: 'Comprehensive Bonus Comparison: 2026 UK Market',
-    headers: ['Bonus Type', 'Best For', 'Complexity', 'Key Benefit'],
-    rows: [
-      ['Deposit Bonus', 'New Players', 'Medium', 'Doubles starting bankroll (£10 to £50)'],
-      ['No Deposit', 'Risk-free Testing', 'Low', 'No financial commitment, £200 max cap'],
-      ['Free Bet (SNR)', 'Daily Betting', 'Low', 'Wager without risking cash'],
-      ['Refer a Friend', 'Social Bettors', 'Low', '£20-£50 cash per successful referral'],
-      ['Reload Bonus', 'Active Players', 'Medium', 'Bonus on subsequent deposits'],
-      ['Cashback', 'Regular Players', 'Low', '10-25% refund on weekly net losses'],
-      ['Loyalty Club', 'Consistent Punters', 'Medium', 'Weekly £5-£10 free bets'],
-      ['Price Boost', 'Value Hunters', 'Low', 'Artificially inflated odds'],
-      ['Early Payout', 'Football & NBA', 'Low', 'Win even if team loses late (2-goal lead)'],
-      ['Acca Insurance', 'Multi-bettors', 'High', 'Refund if 1 leg of 5+ fails'],
-      ['Player Protection', 'Goalscorer Bets', 'Medium', 'Bet transfers to sub (Super Sub)'],
-      ['Acca Boost', 'High Returns', 'Medium', 'Up to 70-100% extra cash profit'],
-      ['Bet Builder', 'Match Specialists', 'High', 'Multiplied odds within one game'],
-      ['BOG', 'Horse Racing', 'Low', 'Guaranteed highest SP from 8:00 AM'],
-      ['Free-to-Play', 'Casual Fans', 'Zero', 'Win up to £250k-£1m for free']
-    ]
-  },
+  comparisonTables: [
+    {
+      id: 'bonus-comparison-2026',
+      title: 'Bonus Comparison: 2026 UK Market',
+      headers: ['Bonus Type', 'Best For', 'Complexity', 'Key Benefit'],
+      rows: [
+        ['Deposit Bonus', 'New Players', 'Medium', 'Doubles bankroll (£10→£50)'],
+        ['No Deposit', 'Risk-free Testing', 'Low', 'Zero commitment, £200 cap'],
+        ['Free Bet (SNR)', 'Daily Betting', 'Low', 'Wager without risking cash'],
+        ['Refer a Friend', 'Social Bettors', 'Low', '£20-£50 per referral'],
+        ['Reload Bonus', 'Active Players', 'Medium', 'Subsequent deposit bonus'],
+        ['Cashback', 'Regular Players', 'Low', '10-25% weekly refund'],
+        ['Loyalty Club', 'Consistent Punters', 'Medium', 'Weekly £5-£10 free bets'],
+        ['Price Boost', 'Value Hunters', 'Low', 'Artificially inflated odds'],
+        ['Early Payout', 'Football & NBA', 'Low', 'Win on 2-goal lead'],
+        ['Acca Insurance', 'Multi-bettors', 'High', 'Refund if 1 leg fails'],
+        ['Super Sub', 'Goalscorer Bets', 'Medium', 'Bet transfers to sub'],
+        ['Acca Boost', 'High Returns', 'Medium', 'Up to 100% extra profit'],
+        ['Bet Builder', 'Match Specialists', 'High', 'Same-game multis'],
+        ['BOG', 'Horse Racing', 'Low', 'Best SP guaranteed'],
+        ['Free-to-Play', 'Casual Fans', 'Zero', 'Win £250k-£1m free']
+      ]
+    }
+  ],
 
   intro: {
     title: 'Navigating the 2026 Betting Bonus Landscape',

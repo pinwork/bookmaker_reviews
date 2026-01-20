@@ -12,19 +12,22 @@ export const responsibleGamblingBible: IndustryReport = {
     content: `In 2025, the UK Gambling Commission recorded 1.4 million problem gamblers—a number that doesn't include the millions more affected as family members, partners, and friends. This guide is not marketing material. It is a factual database of every tool, statistic, and support system available to anyone touched by gambling harm in the United Kingdom. We document real stories, expose industry fines, and explain the psychology behind addiction so you can make informed decisions.`
   },
 
-  toolsComparison: {
-    title: 'GamStop vs Gamban vs Bank Blocks: Complete Technical Comparison',
-    headers: ['Feature', 'GamStop', 'Gamban', 'Bank Blocks'],
-    rows: [
-      ['What It Blocks', 'All UK-Licensed Operators', '100,000+ Global Gambling Sites', 'Card Transactions to Gambling Merchants'],
-      ['Offshore/Unlicensed Sites', '❌ Not Blocked', '✅ Blocked Globally', '⚠️ Partial (MCC dependent)'],
-      ['Land-Based Venues', '❌ Not Covered', '❌ Not Covered', '✅ Blocks Debit Card Use'],
-      ['Cost', 'Free', '£24.99/year (Free via TalkBanStop)', 'Free'],
-      ['Reversibility', 'After minimum period + 24h cooling-off', 'Extremely Difficult', '48–72h Cooling-off'],
-      ['Technical Layer', 'Operator Database (ID Matching)', 'Device/Software Level', 'Payment/Banking Layer'],
-      ['Best For', 'Blocking all legal UK sites', 'Blocking offshore & apps', 'Adding financial friction']
-    ]
-  },
+  comparisonTables: [
+    {
+      id: 'gamstop-gamban-comparison',
+      title: 'GamStop vs Gamban vs Bank Blocks',
+      headers: ['Feature', 'GamStop', 'Gamban', 'Bank Blocks'],
+      rows: [
+        ['What It Blocks', 'UK-Licensed Sites', '100k+ Global Sites', 'Card Transactions'],
+        ['Offshore Sites', '❌ Not Blocked', '✅ Blocked', '⚠️ Partial'],
+        ['Land-Based', '❌ Not Covered', '❌ Not Covered', '✅ Blocks Cards'],
+        ['Cost', 'Free', '£24.99/yr', 'Free'],
+        ['Reversibility', 'Min period + 24h', 'Very Difficult', '48–72h'],
+        ['Tech Layer', 'Operator Database', 'Device/Software', 'Payment Layer'],
+        ['Best For', 'UK legal sites', 'Offshore & apps', 'Financial friction']
+      ]
+    }
+  ],
 
   bankBlocks: {
     title: 'UK Banks with Gambling Blocks (2025/26)',

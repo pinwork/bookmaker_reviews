@@ -27,10 +27,14 @@ This guide compares the most popular live score apps, statistics platforms, and 
 **Power user tip:** Most serious bettors combine 2-3 apps: Flashscore for speed, SofaScore for stats, and a sport-specific tool like Racing Post or FBref for deep research.`
   },
 
-  comparisonTable: {
-    title: 'Quick Comparison: Live Score & Stats Apps',
-    headers: ['App', 'Best For', 'Price', 'Sports', 'Key Feature'],
-  },
+  comparisonTables: [
+    {
+      id: 'live-score-apps-comparison',
+      title: 'Quick Comparison: Live Score & Stats Apps',
+      headers: ['App', 'Best For', 'Price', 'Key Feature'],
+      linkedResourceType: 'external',
+    }
+  ],
 
   groups: [
     {

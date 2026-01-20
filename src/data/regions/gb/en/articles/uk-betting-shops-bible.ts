@@ -33,17 +33,20 @@ export const bettingShopsBible: IndustryReport = {
     ]
   },
 
-  chainsComparison: {
-    title: 'UK Betting Chains at a Glance 2026',
-    headers: ['Chain', 'Shops', 'Parent', 'Unique Feature'],
-    rows: [
-      ['William Hill', '~1,350', 'Evoke plc', 'Vegas Gaming Machines & Plus Card'],
-      ['Ladbrokes', '~1,400', 'Entain', 'The Grid Partner Discounts & Payouts'],
-      ['Coral', '~1,350', 'Entain', 'Connect Rewards & BOG up to £10,000'],
-      ['Betfred', '~1,300', 'Private (Done family)', 'Inventors of Lucky 15 & Double Delight'],
-      ['Paddy Power', '~550', 'Flutter', 'Humorous Markets & Instant Cash Card']
-    ]
-  },
+  comparisonTables: [
+    {
+      id: 'uk-betting-chains-2026',
+      title: 'UK Betting Chains at a Glance 2026',
+      headers: ['Chain', 'Shops', 'Parent', 'Unique Feature'],
+      rows: [
+        ['William Hill', '~1,350', 'Evoke plc', 'Vegas Gaming & Plus Card'],
+        ['Ladbrokes', '~1,400', 'Entain', 'Grid Partner Discounts'],
+        ['Coral', '~1,350', 'Entain', 'Connect Rewards & BOG'],
+        ['Betfred', '~1,300', 'Done family', 'Lucky 15 & Double Delight'],
+        ['Paddy Power', '~550', 'Flutter', 'Humorous Markets']
+      ]
+    }
+  ],
 
   statistics: {
     title: 'UK Betting Shops by the Numbers (2025/26)',
