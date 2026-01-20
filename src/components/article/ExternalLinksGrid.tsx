@@ -29,7 +29,7 @@ export function ExternalLinksGrid({ links }: ExternalLinksGridProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center p-4 bg-white border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all"
+              className="flex items-center justify-center p-4 bg-slate-100 border border-slate-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all"
             >
               {logoPath ? (
                 // eslint-disable-next-line @next/next/no-img-element
