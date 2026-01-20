@@ -19,4 +19,5 @@ export const liveScoreAppsGuide = gbData.liveScoreAppsGuide; // Universal conten
 
 export const bookmakerData = ieBookmakerData;
 
-export { sports, staticPages, siteConfig } from '../../gb/en';
+export { sports, staticPages } from '../../gb/en';
+export { siteConfig, mainNavigation } from './siteConfig';
