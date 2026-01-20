@@ -1,0 +1,92 @@
+{
+  "featureName": "Article Partner Integration Refactor",
+  "branchName": "refactor/article-partner-display",
+  "description": "Переробити відображення партнерів в статтях: прибрати грід, додати шапки з лого в секції, зробити таблицю програмною",
+
+  "changes": {
+    "removeExternalLinksGrid": "Прибрати показ грід банерів зверху статті",
+    "serviceHeader": "Додати шапку з лого + слоган для кожного сервісу в groups",
+    "programmaticTable": "Таблиця порівняння генерується з externalLinks автоматично",
+    "tableHoverLink": "При наведенні на назву в таблиці — іконка зовнішнього посилання"
+  },
+
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Прибрати ExternalLinksGrid з article page",
+      "acceptanceCriteria": [
+        "Файл: src/app/[region]/guides/[slug]/page.tsx",
+        "Видалити імпорт та використання ExternalLinksGrid",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/app/[region]/guides/[slug]/page.tsx"]
+    },
+    {
+      "id": 2,
+      "title": "Створити ServiceItemHeader компонент",
+      "acceptanceCriteria": [
+        "Новий файл: src/components/article/ServiceItemHeader.tsx",
+        "Props: id, tagline, logoPath, bgColor, externalUrl",
+        "Layout: слоган зліва, лого справа з bgColor фоном",
+        "Лого клікабельне → відкриває externalUrl",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/components/article/ArticleGroups.tsx"],
+      "note": "Implemented inline in ArticleGroups instead of separate component"
+    },
+    {
+      "id": 3,
+      "title": "Оновити ArticleContent для показу ServiceItemHeader",
+      "acceptanceCriteria": [
+        "Файл: src/components/article/ArticleContent.tsx",
+        "Для кожного item в groups показувати ServiceItemHeader",
+        "Знаходити externalLink по item.id для url та bgColor",
+        "Використовувати quickVerdict як tagline",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": [
+        "src/app/[region]/guides/[slug]/page.tsx",
+        "src/components/article/ArticleGroups.tsx"
+      ],
+      "note": "Updated ArticleGroups.tsx; added processExternalLinks in page.tsx"
+    },
+    {
+      "id": 4,
+      "title": "Оновити ComparisonTable для hover link та програмної генерації",
+      "acceptanceCriteria": [
+        "Файл: src/components/article/ComparisonTable.tsx",
+        "Приймає externalLinks як props",
+        "Перша колонка: назва сервісу з hover іконкою ExternalLink",
+        "При кліку на назву → відкриває url з externalLinks",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": [
+        "src/components/article/ComparisonTable.tsx",
+        "src/app/[region]/guides/[slug]/page.tsx"
+      ]
+    }
+  ],
+
+  "postFeatureReview": {
+    "summary": "Refactored article partner display: removed grid banner, added service headers with logo+tagline, table now has clickable service names",
+    "impact": "ArticleGroups and ComparisonTable now receive processedExternalLinks with logo paths and colors from page.tsx",
+    "issues": "None",
+    "recommendations": "Consider creating shared ProcessedExternalLink type in types folder"
+  }
+}
