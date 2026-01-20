@@ -306,4 +306,5 @@ export const IndustryReportSchema = z.object({
     dataSource: z.string().optional()
   }).optional(),
   relatedBookmakers: z.array(z.string()).optional(),
+  collections: z.array(z.enum(['guides', 'bettor-resources', 'featured', 'responsible-gambling'])).optional(),
 }).passthrough();
