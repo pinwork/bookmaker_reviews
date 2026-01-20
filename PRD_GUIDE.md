@@ -198,9 +198,12 @@ Use **exact format** from `CLAUDE.md`:
         "npm run build passes"
       ],
       "priority": 1,
-      "passes": false
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
     }
-  ]
+  ],
+  "postFeatureReview": null
 }
 ```
 
@@ -208,6 +211,9 @@ Use **exact format** from `CLAUDE.md`:
 - `featureName` — human-readable project name
 - `branchName` — feature identifier (for reference, work happens in main)
 - `passes` — always `false`, agent sets `true` after implementation
+- `completedAt` — date when story was completed (set by agent)
+- `filesChanged` — list of files modified (set by agent)
+- `postFeatureReview` — added when all stories complete (summary, impact, issues, recommendations)
 
 **Always add to criteria:**
 - `npm run lint passes`
@@ -304,7 +310,9 @@ File must be ready to save as `prd.json`.
         "npm run build passes"
       ],
       "priority": 1,
-      "passes": false
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
     },
     {
       "id": 2,
@@ -319,7 +327,9 @@ File must be ready to save as `prd.json`.
         "npm run build passes"
       ],
       "priority": 1,
-      "passes": false
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
     },
     {
       "id": 3,
@@ -334,7 +344,9 @@ File must be ready to save as `prd.json`.
         "npm run build passes"
       ],
       "priority": 2,
-      "passes": false
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
     },
     {
       "id": 4,
@@ -349,7 +361,9 @@ File must be ready to save as `prd.json`.
         "npm run build passes"
       ],
       "priority": 2,
-      "passes": false
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
     },
     {
       "id": 5,
@@ -363,7 +377,9 @@ File must be ready to save as `prd.json`.
         "npm run build passes"
       ],
       "priority": 2,
-      "passes": false
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
     },
     {
       "id": 6,
@@ -376,8 +392,11 @@ File must be ready to save as `prd.json`.
         "npm run build passes"
       ],
       "priority": 3,
-      "passes": false
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
     }
-  ]
+  ],
+  "postFeatureReview": null
 }
 ```

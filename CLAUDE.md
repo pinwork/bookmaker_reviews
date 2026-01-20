@@ -117,6 +117,15 @@ Default to Server Components unless you need:
 
 ---
 
+## Codebase Patterns
+
+- Use `cn()` for conditional classNames
+- Always use `@/` import aliases
+- Articles stored in `src/data/regions/[region]/en/articles/`
+- Use `git mv` to rename folders to preserve git history
+
+---
+
 ## PRD-Driven Development
 
 Коли в кореневій папці є `prd.json`, працюю в режимі PRD:
@@ -124,29 +133,18 @@ Default to Server Components unless you need:
 ### Workflow
 
 1. Читаю `prd.json` → знаходжу story з найвищим пріоритетом де `passes: false`
-2. Читаю `progress.txt` → перевіряю Codebase Patterns
-3. Реалізую **ОДНУ** story
-4. Запускаю `npm run lint` і `npm run build`
-5. Якщо passed → commit
-6. Оновлюю `prd.json` → `passes: true`
-7. Дописую в `progress.txt`
+2. Реалізую **ОДНУ** story
+3. Запускаю `npm run lint` і `npm run build`
+4. Якщо passed → commit
+5. Оновлюю `prd.json`:
+   - `passes: true`
+   - `completedAt: "YYYY-MM-DD"`
+   - `filesChanged: [...]`
 
 ### Git
 
 - Формат коміту: `feat: Story [ID] - [Title]`
 - НЕ пушу — тільки commit
-
-### progress.txt
-
-Codebase Patterns — на початку файлу. Після кожної story дописую:
-
-```
-## [Дата] - Story [ID]
-- Що реалізовано
-- Файли змінені
-- **Learnings:** патерни, gotchas
----
-```
 
 ### PRD формат
 
@@ -159,35 +157,34 @@ Codebase Patterns — на початку файлу. Після кожної st
       "title": "Story title",
       "acceptanceCriteria": ["...", "npm run lint passes"],
       "priority": 1,
-      "passes": false
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
     }
-  ]
+  ],
+  "postFeatureReview": null
 }
 ```
 
 ### Post-Feature Review
 
-Коли всі stories `passes: true`, дописую фінальний огляд в progress.txt:
+Коли всі stories `passes: true`, додаю в prd.json:
 
+```json
+"postFeatureReview": {
+  "summary": "Що реалізовано в цілому",
+  "impact": "Які частини проекту зачепило",
+  "issues": "Можливі проблеми",
+  "recommendations": "Пропозиції по покращенню"
+}
 ```
-## [Дата] - Feature Complete: [featureName]
 
-### Summary
-- Що реалізовано в цілому
+### PRD Lifecycle
 
-### Impact Analysis
-- Які частини проекту зачепило
-- Чи є breaking changes
-
-### Potential Issues
-- Можливі проблеми які помітив
-- TODO items на майбутнє
-
-### Recommendations
-- Пропозиції по покращенню
-- Що варто зробити наступним
----
-```
+1. `prd.json` — один активний PRD
+2. Коли всі stories `passes: true` + Post-Feature Review готовий:
+   - Переміщую в `docs/prd-archive/YYYY-MM-DD-[feature-name].json`
+   - Готовий до нового PRD
 
 ---
 
