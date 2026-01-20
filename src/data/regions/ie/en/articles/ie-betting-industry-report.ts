@@ -3,6 +3,7 @@ import { IndustryReport } from '@/types';
 
 export const ieBettingIndustryReport: IndustryReport = {
   slug: 'ireland-betting-market-analysis-2026',
+  collections: ['guides'],
   h1: 'The 2026 Ireland Betting Report: GRAI, Taxes & A New Era',
   metaTitle: 'Ireland Betting Industry 2026 | GRAI Rules, GAA & Market Analysis',
   metaDescription: 'The definitive report on the €5.5bn Irish gambling market. We analyze GRAI regulations, the targeted inducement ban, and Irish bookmaking history.',

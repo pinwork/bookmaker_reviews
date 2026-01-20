@@ -3,6 +3,7 @@ import { IndustryReport } from '@/types';
 
 export const bettingShopsBible: IndustryReport = {
   slug: 'uk-betting-shops-guide',
+  collections: ['guides'],
   h1: 'The 2026 UK Betting Shop Bible: History, Stats & Store Locators',
   metaTitle: 'UK Betting Shops Guide 2026 | From 1961 Legalization to Digi-Hubs',
   metaDescription: 'Comprehensive guide to UK betting shops. 65 years of history, 5,789 active stores, store locators, Fred Done’s story, and why 13% of Brits still bet in cash.',

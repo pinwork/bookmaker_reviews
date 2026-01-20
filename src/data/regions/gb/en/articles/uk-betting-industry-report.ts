@@ -3,6 +3,7 @@ import { IndustryReport } from '@/types';
 
 export const bettingIndustryBible: IndustryReport = {
   slug: 'uk-betting-market-analysis-2026',
+  collections: ['guides'],
   h1: 'The 2026 UK Betting Industry Report: Money, Power & Regulation',
   metaTitle: 'UK Betting Industry Analysis 2026 | Market Share, Taxes & Trends',
   metaDescription: 'The definitive report on the £16.8bn UK betting market. Analysis of the 40% tax hike, dominance of Flutter & bet365, and new affordability checks.',

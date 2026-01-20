@@ -3,6 +3,7 @@ import { IndustryReport } from '@/types';
 
 export const ultimateBonusGuide: IndustryReport = {
   slug: 'uk-betting-bonus-guide-2026',
+  collections: ['guides', 'featured'],
   h1: 'The Ultimate Betting Bonus Bible 2026: Master Every Offer',
   metaTitle: 'Betting Bonus Guide 2026 | Comprehensive Rules & Mechanics',
   metaDescription: 'Complete masterclass on UK betting bonuses. 14+ mechanics explained: Deposit offers, Free Bets, Early Payouts, BOG, and Acca Insurance.',

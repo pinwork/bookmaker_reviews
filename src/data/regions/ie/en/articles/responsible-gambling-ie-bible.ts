@@ -2,6 +2,7 @@ import { IndustryReport } from '@/types';
 
 export const responsibleGamblingIrelandBible: IndustryReport = {
   slug: 'responsible-gambling-ireland-guide',
+  collections: ['guides', 'responsible-gambling'],
   h1: 'The 2026 Ireland Responsible Gambling Bible: Tools, Data & Recovery',
   metaTitle: 'Ireland Responsible Gambling Guide 2026 | ESRI Stats, GRAI & HSE Support',
   metaDescription: 'The definitive 2026 guide to Irish gambling support. 3.3% problem gambling rate, HSE screening, Oisín McConville’s story, and 2025 suicide study findings.',

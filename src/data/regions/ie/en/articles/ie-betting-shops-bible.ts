@@ -3,6 +3,7 @@ import { IndustryReport } from '@/types';
 
 export const ieBettingShopsBible: IndustryReport = {
   slug: 'ireland-betting-shops-guide',
+  collections: ['guides'],
   h1: 'The 2026 Ireland Betting Shop Bible: Closures, Laws & The GRAI Era',
   metaTitle: 'Ireland Betting Shops 2026 | 721 Remaining Stores & New GRAI Rules',
   metaDescription: 'Expert analysis of Ireland’s retail betting sector. Why 134 shops closed since 2019, the 94-year-old Sunday ban, the Yellow Sam coup, and why FOBTs are banned.',
