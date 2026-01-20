@@ -195,8 +195,6 @@ const LocatorSchema = z.object({
   brand: z.string()
 });
 
-const ComparisonRowSchema = z.array(z.string());
-
 const BonusGroupItemSchema = z.object({
   id: z.string(),
   title: z.string(),
@@ -289,11 +287,6 @@ export const IndustryReportSchema = z.object({
     title: z.string(),
     links: z.array(LocatorSchema)
   }).optional(),
-  chainsComparison: z.object({
-    title: z.string(),
-    headers: z.array(z.string()),
-    rows: z.array(ComparisonRowSchema)
-  }).optional(),
   history: z.object({
     title: z.string(),
     description: z.string().optional(),
@@ -303,11 +296,6 @@ export const IndustryReportSchema = z.object({
   whyVisit: z.any().optional(),
   technology: z.any().optional(),
   future: z.any().optional(),
-  comparisonTable: z.object({
-    title: z.string(),
-    headers: z.array(z.string()),
-    rows: z.array(ComparisonRowSchema).optional()
-  }).optional(),
   groups: z.array(BonusGroupSchema).optional(),
   realStories: z.object({
     title: z.string(),

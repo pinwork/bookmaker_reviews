@@ -172,10 +172,13 @@ export const generateArticleSchemas = (
       price: resource.tableData.price,
     }));
 
-    schemas.push(generateItemListSchema(
-      article.comparisonTable?.title || `${article.h1} - Apps`,
-      items
-    ));
+    // Find the comparison table with external resources, or use first table title
+    const externalTable = article.comparisonTables?.find(
+      (t) => t.linkedResourceType === 'external'
+    );
+    const tableTitle = externalTable?.title || article.comparisonTables?.[0]?.title || `${article.h1} - Apps`;
+
+    schemas.push(generateItemListSchema(tableTitle, items));
   }
 
   return schemas;
