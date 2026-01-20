@@ -114,9 +114,9 @@
         "npm run build passes"
       ],
       "priority": 1,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["package.json", "package-lock.json"]
     },
     {
       "id": 2,
@@ -131,9 +131,9 @@
         "npm run build passes"
       ],
       "priority": 1,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/data/articles.ts (already existed)"]
     },
     {
       "id": 3,
