@@ -1,8 +1,9 @@
 // src/utils/images.ts
 // Server-side only - uses Node.js fs module
-// Import directly: import { findImagePath, getPartnerLogoPath, getTrustBadgeImagePath } from '@/utils/images'
+// Import directly: import { findImagePath, getPartnerLogoPath, getTrustBadgeImagePath, getJpgBackgroundColor } from '@/utils/images'
 import fs from 'fs';
 import path from 'path';
+import sharp from 'sharp';
 
 const IMAGES_DIR = path.join(process.cwd(), 'public/images');
 const SUPPORTED_EXTENSIONS = ['.svg', '.png', '.webp', '.jpg', '.jpeg'];
@@ -43,4 +44,41 @@ export function getPartnerLogoPath(id: string): string | null {
  */
 export function getTrustBadgeImagePath(slug: string): string | null {
   return findImagePath('trust', slug);
+}
+
+/**
+ * Gets background color from bottom-right pixel of a JPG image.
+ * Used for auto-detecting appropriate background color for logo display.
+ *
+ * @param imagePath - Full filesystem path to the JPG file
+ * @returns Hex color string (e.g., '#1a4d2e') or '#ffffff' on error
+ */
+export async function getJpgBackgroundColor(imagePath: string): Promise<string> {
+  try {
+    const image = sharp(imagePath);
+    const metadata = await image.metadata();
+
+    if (!metadata.width || !metadata.height) {
+      return '#ffffff';
+    }
+
+    // Extract 1x1 pixel from bottom-right corner
+    const { data } = await image
+      .extract({
+        left: metadata.width - 1,
+        top: metadata.height - 1,
+        width: 1,
+        height: 1,
+      })
+      .raw()
+      .toBuffer({ resolveWithObject: true });
+
+    const r = data[0];
+    const g = data[1];
+    const b = data[2];
+
+    return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+  } catch {
+    return '#ffffff';
+  }
 }
