@@ -8,7 +8,6 @@ export const liveScoreAppsGuide: IndustryReport = {
     { id: 'sofascore', name: 'SofaScore', url: 'https://www.sofascore.com', logoSlug: 'sofascore' },
     { id: 'fotmob', name: 'FotMob', url: 'https://www.fotmob.com', logoSlug: 'fotmob' },
     { id: 'fbref', name: 'FBref', url: 'https://fbref.com', logoSlug: 'fbref' },
-    { id: 'understat', name: 'Understat', url: 'https://understat.com', logoSlug: 'understat' },
     { id: 'footystats', name: 'FootyStats', url: 'https://footystats.org', logoSlug: 'footystats' },
     { id: 'racing-post', name: 'Racing Post', url: 'https://www.racingpost.com', logoSlug: 'racing-post' },
     { id: 'timeform', name: 'Timeform', url: 'https://www.timeform.com', logoSlug: 'timeform' },
@@ -36,8 +35,7 @@ This guide compares the most popular live score apps, statistics platforms, and 
       ['SofaScore', 'Statistical research', 'Free', '20+ sports', 'Live xG, dropping odds'],
       ['FotMob', 'Football experience', 'Free/£9.99yr', 'Football only', 'Best UX, Apple Watch'],
       ['FootyStats', 'Niche leagues', 'Free/£19.99mo', 'Football', '1,500+ leagues, backtesting'],
-      ['Racing Post', 'Horse racing', '£19.95/mo', 'Racing', 'Industry standard'],
-      ['Understat', 'xG analysis', 'Free', 'Big 5 leagues', 'Best free xG data']
+      ['Racing Post', 'Horse racing', '£19.95/mo', 'Racing', 'Industry standard']
     ]
   },
 
@@ -151,39 +149,6 @@ Free with ads. **FotMob Pro: £9.99/year** removes ads and provides faster updat
     {
       groupName: 'Statistics Platforms',
       items: [
-        {
-          id: 'understat',
-          title: 'Understat',
-          quickVerdict: 'The best free xG data for Big 5 leagues.',
-          content: `### Overview
-Understat is the go-to free resource for expected goals data. It covers the **Big 5 European leagues** (Premier League, La Liga, Bundesliga, Serie A, Ligue 1) with detailed xG breakdowns.
-
-### Key Features
-- **xG, xGA, xPoints:** Full expected metrics for every team
-- **Shot Maps:** Every shot visualized with xG values
-- **Player xG:** Individual player expected goals data
-- **Neural Network Algorithm:** Trained on 100k+ shots for accuracy
-
-### Coverage
-Big 5 European leagues only. No lower divisions, no cups, no other sports.
-
-### Pros
-- Best free xG data available
-- Clean, no-frills interface
-- No registration required
-- Neural network model is highly accurate
-
-### Cons
-- Limited to Big 5 leagues only
-- No app — website only
-- No live data during matches
-
-### Best For
-xG-based betting strategies, especially regression betting (backing teams underperforming their xG, fading teams overperforming).
-
-### Price
-**Free.** No premium tier.`
-        },
         {
           id: 'fbref',
           title: 'FBref',
@@ -409,7 +374,7 @@ NBA betting research, especially player props. Essential for anyone betting Amer
     },
     {
       q: 'Can I get reliable xG data for free?',
-      a: 'Yes. Understat provides excellent free xG data for the Big 5 European leagues. FBref also includes StatsBomb xG data completely free.'
+      a: 'Yes. FBref includes StatsBomb xG data completely free across 48 countries and 152 competitions. SofaScore also provides live xG during matches.'
     },
     {
       q: 'Which app is best for in-play betting?',
@@ -421,7 +386,7 @@ NBA betting research, especially player props. Essential for anyone betting Amer
     },
     {
       q: 'What\'s the best free football statistics site?',
-      a: 'FBref. It provides StatsBomb-level data (progressive passes, defensive pressures, xG) completely free. Understat is better specifically for xG analysis.'
+      a: 'FBref. It provides StatsBomb-level data (progressive passes, defensive pressures, xG) completely free across 48 countries and 152 competitions.'
     }
   ],
 
