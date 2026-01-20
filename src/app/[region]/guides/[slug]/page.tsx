@@ -3,6 +3,12 @@ import { notFound } from 'next/navigation';
 import { isValidRegion, getArticleBySlug } from '@/data';
 import { getSiteConfig } from '@/data/regions';
 import { generateArticleSchema } from '@/utils/seo';
+import { ArticleHeader } from '@/components/article/ArticleHeader';
+import { ComparisonTable } from '@/components/article/ComparisonTable';
+import { ArticleGroups } from '@/components/article/ArticleGroups';
+import { ExternalLinksGrid } from '@/components/article/ExternalLinksGrid';
+import { ArticleFAQ } from '@/components/article/ArticleFAQ';
+import { ArticleFooter } from '@/components/article/ArticleFooter';
 
 interface PageProps {
   params: Promise<{ region: string; slug: string }>;
@@ -52,9 +58,41 @@ export default async function ArticlePage({ params }: PageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       )}
-      <main className="max-w-4xl mx-auto p-8 font-sans">
-        <h1 className="text-4xl font-black text-gray-900 mb-4">{article.h1}</h1>
-        <p className="text-xl text-gray-600">{article.intro.content}</p>
+      <main className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8 font-sans">
+        <ArticleHeader
+          h1={article.h1}
+          introTitle={article.intro.title}
+          introContent={article.intro.content}
+          lastUpdated={article.footer?.lastUpdated}
+        />
+
+        {article.comparisonTable && (
+          <ComparisonTable
+            title={article.comparisonTable.title}
+            headers={article.comparisonTable.headers}
+            rows={article.comparisonTable.rows}
+          />
+        )}
+
+        {article.groups && (
+          <ArticleGroups
+            groups={article.groups}
+            externalLinks={article.externalLinks}
+          />
+        )}
+
+        {article.externalLinks && article.externalLinks.length > 0 && (
+          <ExternalLinksGrid links={article.externalLinks} />
+        )}
+
+        {article.faq && article.faq.length > 0 && (
+          <ArticleFAQ faq={article.faq} />
+        )}
+
+        <ArticleFooter
+          lastUpdated={article.footer?.lastUpdated}
+          dataSource={article.footer?.dataSource}
+        />
       </main>
     </>
   );
