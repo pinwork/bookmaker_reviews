@@ -1,0 +1,50 @@
+{
+  "featureName": "Partner Logos Neutral Background",
+  "branchName": "fix/partner-logos-background",
+  "description": "Додати нейтральний фон для контейнерів логотипів партнерів, щоб і темні, і світлі логотипи були видимі.",
+
+  "problem": {
+    "description": "Деякі логотипи партнерів (FootyStats, можливо інші) — білі на прозорому фоні. На білому тлі сайту вони невидимі.",
+    "example": "FootyStats.webp — білий текст, на сторінці показується як порожній квадрат"
+  },
+
+  "solution": {
+    "description": "Додати світло-сірий фон до контейнера кожного логотипу в ExternalLinksGrid. Працює для всіх логотипів без додаткових налаштувань.",
+    "visual": "Кожен логотип в картці з bg-slate-100 + border + rounded corners"
+  },
+
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Додати нейтральний фон для логотипів партнерів",
+      "acceptanceCriteria": [
+        "В src/components/article/ExternalLinksGrid.tsx",
+        "Контейнер кожного логотипу має мати: bg-slate-100 (або bg-slate-50)",
+        "Додати border border-slate-200 для чіткості",
+        "Додати rounded-lg для заокруглення",
+        "Додати padding (p-3 або p-4) щоб логотип не прилипав до країв",
+        "Перевірити що і темні, і світлі логотипи видно",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/components/article/ExternalLinksGrid.tsx"]
+    }
+  ],
+
+  "testingChecklist": [
+    "Відкрити /gb/guides/best-live-score-stats-apps-2026",
+    "FootyStats логотип видно (білий на сірому фоні)",
+    "Flashscore логотип видно (темний на сірому фоні)",
+    "Всі логотипи мають однаковий стиль контейнера"
+  ],
+
+  "postFeatureReview": {
+    "summary": "Змінено bg-white на bg-slate-100 для контейнерів логотипів партнерів. Білі логотипи тепер видимі на сірому фоні.",
+    "impact": "src/components/article/ExternalLinksGrid.tsx — візуальна зміна для partner logos grid.",
+    "issues": "Немає.",
+    "recommendations": "Немає."
+  }
+}
