@@ -4,7 +4,7 @@ export const liveScoreAppsGuide: IndustryReport = {
   slug: 'best-live-score-stats-apps-2026',
   collections: ['guides', 'bettor-resources'],
   linkedResources: [
-    { id: 'flashscore', type: 'external', active: true },
+    { id: 'flashscore', type: 'external', active: false },
     { id: 'sofascore', type: 'external', active: true },
     { id: 'fotmob', type: 'external', active: true },
     { id: 'fbref', type: 'external', active: true },

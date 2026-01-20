@@ -60,6 +60,7 @@ export default async function ArticlePage({ params }: PageProps) {
   // Process linkedResources
   const activeResources = getActiveLinkedResources(article.linkedResources);
   const externalResources = resolveExternalResources(activeResources);
+  const activeResourceIds = new Set(activeResources.map((r) => r.id));
 
   // Pre-process external resources with logo paths and auto-detect JPG background colors
   const processedExternalResources = await Promise.all(
@@ -109,7 +110,16 @@ export default async function ArticlePage({ params }: PageProps) {
 
         {article.groups && (
           <ArticleGroups
-            groups={article.groups}
+            groups={article.groups
+              .map((group) => ({
+                ...group,
+                // Filter items: show if active OR not linked to any resource
+                items: group.items.filter((item) => {
+                  const linkedResource = article.linkedResources?.find((r) => r.id === item.id);
+                  return !linkedResource || activeResourceIds.has(item.id);
+                }),
+              }))
+              .filter((group) => group.items.length > 0)}
             externalResources={processedExternalResources}
           />
         )}
