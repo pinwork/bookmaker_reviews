@@ -1,5 +1,12 @@
 // src/data/resources/externalApps.ts
 
+export const TABLE_CELL_LIMITS = {
+  name: 20,
+  bestFor: 25,
+  price: 15,
+  keyFeature: 35,
+} as const;
+
 export interface ExternalAppTableData {
   bestFor: string;
   price: string;
@@ -14,6 +21,29 @@ export interface ExternalAppResource {
   bgColor?: string;
   logo?: string;
   tableData: ExternalAppTableData;
+}
+
+function validateTableData(app: ExternalAppResource): void {
+  if (process.env.NODE_ENV !== 'development') return;
+
+  const warnings: string[] = [];
+
+  if (app.name.length > TABLE_CELL_LIMITS.name) {
+    warnings.push(`name: ${app.name.length}/${TABLE_CELL_LIMITS.name}`);
+  }
+  if (app.tableData.bestFor.length > TABLE_CELL_LIMITS.bestFor) {
+    warnings.push(`bestFor: ${app.tableData.bestFor.length}/${TABLE_CELL_LIMITS.bestFor}`);
+  }
+  if (app.tableData.price.length > TABLE_CELL_LIMITS.price) {
+    warnings.push(`price: ${app.tableData.price.length}/${TABLE_CELL_LIMITS.price}`);
+  }
+  if (app.tableData.keyFeature.length > TABLE_CELL_LIMITS.keyFeature) {
+    warnings.push(`keyFeature: ${app.tableData.keyFeature.length}/${TABLE_CELL_LIMITS.keyFeature}`);
+  }
+
+  if (warnings.length > 0) {
+    console.warn(`[ExternalApps] "${app.id}" exceeds cell limits: ${warnings.join(', ')}`);
+  }
 }
 
 const externalAppsRegistry: ExternalAppResource[] = [
@@ -123,7 +153,11 @@ const externalAppsRegistry: ExternalAppResource[] = [
 ];
 
 export function getExternalAppById(id: string): ExternalAppResource | undefined {
-  return externalAppsRegistry.find((app) => app.id === id);
+  const app = externalAppsRegistry.find((app) => app.id === id);
+  if (app) {
+    validateTableData(app);
+  }
+  return app;
 }
 
 export function getAllExternalApps(): ExternalAppResource[] {
