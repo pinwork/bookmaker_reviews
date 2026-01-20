@@ -1,0 +1,103 @@
+{
+  "featureName": "Content Architecture & Article Update",
+  "branchName": "feat/content-architecture",
+  "description": "Додати externalLinks в схему, створити папку для партнерських логотипів, оновити статтю Live Score Apps до 10 сервісів з посиланнями, додати CONTENT_GUIDE.md",
+  "externalLinksData": {
+    "note": "URL для 10 сервісів - використовувати в статті",
+    "links": [
+      { "id": "flashscore", "name": "Flashscore", "url": "https://www.flashscore.com", "logoSlug": "flashscore" },
+      { "id": "sofascore", "name": "SofaScore", "url": "https://www.sofascore.com", "logoSlug": "sofascore" },
+      { "id": "fotmob", "name": "FotMob", "url": "https://www.fotmob.com", "logoSlug": "fotmob" },
+      { "id": "fbref", "name": "FBref", "url": "https://fbref.com", "logoSlug": "fbref" },
+      { "id": "understat", "name": "Understat", "url": "https://understat.com", "logoSlug": "understat" },
+      { "id": "footystats", "name": "FootyStats", "url": "https://footystats.org", "logoSlug": "footystats" },
+      { "id": "racing-post", "name": "Racing Post", "url": "https://www.racingpost.com", "logoSlug": "racing-post" },
+      { "id": "timeform", "name": "Timeform", "url": "https://www.timeform.com", "logoSlug": "timeform" },
+      { "id": "tennis-explorer", "name": "Tennis Explorer", "url": "https://www.tennisexplorer.com", "logoSlug": "tennis-explorer" },
+      { "id": "basketball-reference", "name": "Basketball Reference", "url": "https://www.basketball-reference.com", "logoSlug": "basketball-reference" }
+    ]
+  },
+  "removedServices": {
+    "note": "Видалити з статті - дублюють функціонал",
+    "list": [
+      { "name": "LiveScore", "reason": "Дублює Flashscore, немає унікальних фіч" },
+      { "name": "WhoScored", "reason": "FBref і SofaScore покривають ту ж функціональність" },
+      { "name": "At The Races", "reason": "Racing Post має free tier, ATR не додає цінності" }
+    ]
+  },
+  "contentGuideText": "# Content Guide\n\nДокументація для створення статей на FreeBetGeek.\n\n---\n\n## Типи статей\n\nВсі статті використовують тип `IndustryReport` з `@/types`. Тип визначає мету та тон, а не конкретні поля — поля обираються під контент.\n\n| Тип | Мета | Тон |\n|-----|------|-----|\n| **Industry Report** | Аналіз ринку, статистика, тренди | Аналітичний, data-driven |\n| **Partner Roundup** | Порівняння сервісів, інструментів | Експертний, чесний |\n| **Educational** | Навчання, пояснення концепцій | Дружній, supportive |\n| **Regional** | Локальна інформація | Інформаційний, практичний |\n\n---\n\n## Обов'язкові поля\n\n| Поле | Вимоги | Для чого |\n|------|--------|----------|\n| `slug` | kebab-case, унікальний | URL статті |\n| `h1` | Чіткий заголовок | Головний заголовок сторінки |\n| `metaTitle` | ≤60 символів | SEO title tag |\n| `metaDescription` | ≤160 символів | SEO meta description |\n| `intro.title` | Короткий hook | Підзаголовок |\n| `intro.content` | 2-4 абзаци | Вступ, встановлює контекст |\n| `footer.lastUpdated` | YYYY-MM-DD | Дата оновлення |\n\n---\n\n## Collections\n\nСтатті можуть належати до кількох collections:\n\n| Collection | Призначення |\n|------------|-------------|\n| `guides` | Меню Guides |\n| `bettor-resources` | Меню Bettor Resources |\n| `featured` | Виділені на головній |\n| `responsible-gambling` | RG контент |\n\n---\n\n## SEO\n\n- `metaTitle`: primary keyword + рік якщо актуально\n- `metaDescription`: ключові теми, call-to-action\n- `footer.lastUpdated`: обов'язково для schema.org datePublished/dateModified\n\n---\n\n## Партнерські посилання\n\nДля статей з оглядом зовнішніх сервісів використовувати `externalLinks`:\n\n```typescript\nexternalLinks: [\n  {\n    id: 'service-name',\n    name: 'Service Name',\n    url: 'https://example.com',\n    logoSlug: 'service-name'  // → /images/partners/service-name.png\n  }\n]\n```\n\n**Логотипи:**\n- Шлях: `public/images/partners/{logoSlug}.png`\n- Формат: PNG або SVG\n- Розмір: будь-який — CSS адаптує\n\n---\n\n## Стиль написання\n\n| Робити | Не робити |\n|--------|-----------|\n| Конкретні цифри та факти | Вода, загальні фрази |\n| Чесні мінуси | Тільки позитив |\n| Короткі абзаци (3-4 речення) | Стіни тексту |\n| Active voice | Passive voice |\n\n**Форматування:**\n- `**bold**` для ключових цифр та назв\n- Bullet lists для переліків\n- Markdown headers (`###`) для структури\n\n---\n\n## Comparison Tables\n\nДля швидкого порівняння опцій:\n\n```typescript\ncomparisonTable: {\n  title: 'Quick Comparison: [Topic]',\n  headers: ['Name', 'Best For', 'Price', 'Key Feature'],\n  rows: [\n    ['Item A', 'Use case', 'Free/£X', 'Differentiator'],\n  ]\n}\n```\n\n- Максимум 5-7 колонок\n- Best For: 2-4 слова\n\n---\n\n## FAQ\n\nДодавати коли питання логічно випливають з контенту. Не вигадувати штучно.\n\n- 5-10 питань\n- Починати з \"Which\", \"What\", \"How\", \"Is\", \"Can\"\n- Відповіді 2-4 речення\n\n---\n\n## Обмеження Claude Code\n\nClaude Code **НЕ робить**:\n- Не перевіряє зовнішні URL\n- Не завантажує медіа файли\n- Не створює файли в `public/images/`\n\n---\n\n## Checklist\n\n- [ ] `metaTitle` ≤60 символів\n- [ ] `metaDescription` ≤160 символів\n- [ ] `footer.lastUpdated` заповнено\n- [ ] `collections` вказано\n- [ ] Експорт в `src/data/regions/[region]/en/index.ts`\n- [ ] `npm run lint` passes\n- [ ] `npm run build` passes",
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Додати CONTENT_GUIDE.md в проект",
+      "acceptanceCriteria": [
+        "Створити файл docs/CONTENT_GUIDE.md",
+        "Вміст взяти з поля contentGuideText цього PRD",
+        "Документ описує: типи статей, обов'язкові поля, collections, SEO, партнерські посилання, стиль, checklist"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["docs/CONTENT_GUIDE.md"]
+    },
+    {
+      "id": 2,
+      "title": "Додати externalLinks в IndustryReportSchema",
+      "acceptanceCriteria": [
+        "В src/types/schemas.ts додати ExternalLinkSchema",
+        "ExternalLinkSchema: { id: string, name: string, url: string (url), logoSlug: string }",
+        "В IndustryReportSchema додати поле externalLinks: z.array(ExternalLinkSchema).optional()",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["src/types/schemas.ts", "src/types/index.ts"]
+    },
+    {
+      "id": 3,
+      "title": "Створити папку для партнерських логотипів",
+      "acceptanceCriteria": [
+        "Створити public/images/partners/.gitkeep",
+        "Папка готова для майбутніх логотипів"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["public/images/partners/.gitkeep"]
+    },
+    {
+      "id": 4,
+      "title": "Оновити CLAUDE.md з референсом на CONTENT_GUIDE",
+      "acceptanceCriteria": [
+        "В секції ## Content додати: 'Before writing articles, read docs/CONTENT_GUIDE.md'",
+        "Якщо секції Content немає - створити після Code Quality"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-20",
+      "filesChanged": ["CLAUDE.md"]
+    },
+    {
+      "id": 5,
+      "title": "Оновити статтю Live Score Apps",
+      "acceptanceCriteria": [
+        "Файл: src/data/regions/gb/en/articles/best-live-score-stats-apps.ts",
+        "Скоротити до 10 сервісів (видалити: LiveScore, WhoScored, At The Races - див. removedServices)",
+        "Додати поле externalLinks з 10 сервісами (URL з externalLinksData в цьому PRD)",
+        "Оновити comparisonTable - видалити LiveScore рядок",
+        "Оновити groups - видалити відповідні items з Live Score Apps, Statistics, Horse Racing",
+        "Оновити FAQ якщо є згадки видалених сервісів",
+        "Залишити footer.lastUpdated як є",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    }
+  ],
+  "postFeatureReview": null
+}

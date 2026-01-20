@@ -247,6 +247,13 @@ const BankBlockSchema = z.object({
   note: z.string(),
 });
 
+export const ExternalLinkSchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  url: z.string().url(),
+  logoSlug: z.string().min(1),
+});
+
 export const IndustryReportSchema = z.object({
   slug: z.string().min(1),
   h1: z.string().min(1),
@@ -307,4 +314,5 @@ export const IndustryReportSchema = z.object({
   }).optional(),
   relatedBookmakers: z.array(z.string()).optional(),
   collections: z.array(z.enum(['guides', 'bettor-resources', 'featured', 'responsible-gambling'])).optional(),
+  externalLinks: z.array(ExternalLinkSchema).optional(),
 }).passthrough();

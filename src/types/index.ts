@@ -31,6 +31,7 @@ export type Competition = z.infer<typeof schemas.CompetitionSchema>;
 export type SportEvent = z.infer<typeof schemas.SportEventSchema>;
 
 export type IndustryReport = z.infer<typeof schemas.IndustryReportSchema>;
+export type ExternalLink = z.infer<typeof schemas.ExternalLinkSchema>;
 
 export interface BookmakerComplete extends Bookmaker, RegionalBookmakerData {
   welcomeOffers: WelcomeOffer[];
