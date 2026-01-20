@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { isValidRegion } from '@/data';
+import Link from 'next/link';
+import { isValidRegion, getArticlesByCollection } from '@/data';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Bettor Resources | FreeBetGeek',
@@ -18,6 +21,8 @@ export default async function BettorResourcesPage({
     return notFound();
   }
 
+  const articles = getArticlesByCollection('bettor-resources', region);
+
   return (
     <main className="max-w-4xl mx-auto p-8 font-sans">
       <div className="mb-8">
@@ -27,14 +32,43 @@ export default async function BettorResourcesPage({
         </p>
       </div>
 
-      <div className="p-8 bg-slate-50 rounded-2xl border border-dashed border-slate-300 text-center">
-        <p className="text-lg text-slate-500">
-          Coming soon — reviews of betting tools and services
-        </p>
-        <p className="text-sm text-slate-400 mt-2">
-          Odds comparison • Live scores • Calculators • Tipster platforms
-        </p>
-      </div>
+      {articles.length > 0 ? (
+        <div className="space-y-4">
+          {articles.map((article) => (
+            <Link
+              key={article.slug}
+              href={`/${region}/guides/${article.slug}`}
+              className="block group"
+            >
+              <Card className="transition-shadow hover:shadow-md">
+                <CardHeader>
+                  <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">
+                    {article.h1}
+                  </CardTitle>
+                  <CardDescription className="text-base">
+                    {article.metaDescription}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <span className="inline-flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-700">
+                    Read guide
+                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      ) : (
+        <div className="p-8 bg-slate-50 rounded-2xl border border-dashed border-slate-300 text-center">
+          <p className="text-lg text-slate-500">
+            Coming soon — reviews of betting tools and services
+          </p>
+          <p className="text-sm text-slate-400 mt-2">
+            Odds comparison • Live scores • Calculators • Tipster platforms
+          </p>
+        </div>
+      )}
     </main>
   );
 }
