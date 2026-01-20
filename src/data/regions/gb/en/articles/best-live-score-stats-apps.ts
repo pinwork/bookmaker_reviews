@@ -5,7 +5,7 @@ export const liveScoreAppsGuide: IndustryReport = {
   collections: ['guides', 'bettor-resources'],
   externalLinks: [
     { id: 'flashscore', name: 'Flashscore', url: 'https://www.flashscore.com', bgColor: '#000000' },
-    { id: 'sofascore', name: 'SofaScore', url: 'https://www.sofascore.com' },
+    { id: 'sofascore', name: 'SofaScore', url: 'https://www.sofascore.com', bgColor: '#374DF5' },
     { id: 'fotmob', name: 'FotMob', url: 'https://www.fotmob.com' },
     { id: 'fbref', name: 'FBref', url: 'https://fbref.com' },
     { id: 'footystats', name: 'FootyStats', url: 'https://footystats.org', bgColor: '#000000' },
