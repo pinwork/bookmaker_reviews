@@ -117,70 +117,47 @@ Default to Server Components unless you need:
 
 ---
 
-## Ralph Agent Mode
+## PRD-Driven Development
 
-When running autonomously via `./scripts/ralph/ralph.sh`:
+Коли в кореневій папці є `prd.json`, працюю в режимі PRD:
 
-### Each Iteration
+### Workflow
 
-1. Read `prd.json` → find highest priority story where `passes: false`
-2. Read `progress.txt` → check Codebase Patterns section first
-3. Implement ONE user story
-4. Run quality checks (`npm run lint`, `npm run build`)
-5. If checks pass → commit (do NOT push)
-6. Update `prd.json` → set `passes: true`
-7. Append to `progress.txt`
+1. Читаю `prd.json` → знаходжу story з найвищим пріоритетом де `passes: false`
+2. Читаю `progress.txt` → перевіряю Codebase Patterns
+3. Реалізую **ОДНУ** story
+4. Запускаю `npm run lint` і `npm run build`
+5. Якщо passed → commit
+6. Оновлюю `prd.json` → `passes: true`
+7. Дописую в `progress.txt`
 
-### Git Rules
+### Git
 
-- **Branch:** Always work in `main`
-- **Commit only:** Do NOT run `git push`
-- **Commit format:** `feat: Story [ID] - [Title]`
+- Формат коміту: `feat: Story [ID] - [Title]`
+- НЕ пушу — тільки commit
 
-### Progress Report Format
+### progress.txt
 
-APPEND to `progress.txt` (never replace):
+Codebase Patterns — на початку файлу. Після кожної story дописую:
 
 ```
-## [Date/Time] - [Story ID]
-- What was implemented
-- Files changed
-- **Learnings:**
-  - Patterns discovered
-  - Gotchas encountered
+## [Дата] - Story [ID]
+- Що реалізовано
+- Файли змінені
+- **Learnings:** патерни, gotchas
 ---
 ```
 
-### Codebase Patterns
-
-Reusable patterns go to `## Codebase Patterns` at TOP of `progress.txt`:
-
-```
-## Codebase Patterns
-- Use `cn()` for conditional classNames
-- Always use `@/` import aliases
-```
-
-### Stop Condition
-
-- If ALL stories `passes: true` → output `<promise>COMPLETE</promise>`
-- If stories remain → end normally (next iteration continues)
-
-### PRD Format
+### PRD формат
 
 ```json
 {
   "featureName": "Feature Name",
-  "branchName": "feat/feature-name",
   "userStories": [
     {
       "id": 1,
       "title": "Story title",
-      "acceptanceCriteria": [
-        "Specific acceptance criterion 1",
-        "Specific acceptance criterion 2",
-        "npm run lint passes"
-      ],
+      "acceptanceCriteria": ["...", "npm run lint passes"],
       "priority": 1,
       "passes": false
     }
@@ -188,12 +165,29 @@ Reusable patterns go to `## Codebase Patterns` at TOP of `progress.txt`:
 }
 ```
 
-### Rules
+### Post-Feature Review
 
-- ONE story per iteration
-- ALL commits must pass quality checks
-- Do NOT commit broken code
-- Keep changes focused and minimal
+Коли всі stories `passes: true`, дописую фінальний огляд в progress.txt:
+
+```
+## [Дата] - Feature Complete: [featureName]
+
+### Summary
+- Що реалізовано в цілому
+
+### Impact Analysis
+- Які частини проекту зачепило
+- Чи є breaking changes
+
+### Potential Issues
+- Можливі проблеми які помітив
+- TODO items на майбутнє
+
+### Recommendations
+- Пропозиції по покращенню
+- Що варто зробити наступним
+---
+```
 
 ---
 

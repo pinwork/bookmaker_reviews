@@ -1,0 +1,95 @@
+{
+  "featureName": "Bettor Resources Menu & Collections System",
+  "branchName": "feat/bettor-resources",
+  "description": "Додати нове меню 'Bettor Resources' для оглядів сторонніх сервісів та інструментів для беттерів. Впровадити систему collections для гнучкої категоризації статей (одна стаття може бути в кількох меню одночасно).",
+  "context": {
+    "whatIsBettorResources": "Секція з оглядами сторонніх сервісів і інструментів для беттерів — все що НЕ є букмекером, але допомагає робити ставки розумніше (odds comparison, live scores, calculators, tipster platforms).",
+    "businessGoal": "Cross-promotion — ми пишемо про партнерські сервіси, вони посилаються на нас. Backlinks та партнерства.",
+    "contentTone": "Чесний інформаційний огляд — що це, кому підходить, плюси/мінуси. Не рекламний.",
+    "existingArticlesFolder": "src/data/regions/gb/en/promoGuides/ — може бути перейменована на щось універсальніше (articles/content)"
+  },
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Перейменувати promoGuides на articles",
+      "acceptanceCriteria": [
+        "Папка src/data/regions/gb/en/promoGuides/ перейменована на src/data/regions/gb/en/articles/",
+        "Папка src/data/regions/ie/en/promoGuides/ перейменована на src/data/regions/ie/en/articles/",
+        "Всі імпорти оновлені у відповідних index.ts файлах",
+        "Всі інші файли що імпортують з promoGuides оновлені",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true
+    },
+    {
+      "id": 2,
+      "title": "Додати поле collections до IndustryReportSchema",
+      "acceptanceCriteria": [
+        "В src/types/schemas.ts до IndustryReportSchema додано поле: collections: z.array(z.enum(['guides', 'bettor-resources', 'featured', 'responsible-gambling'])).optional()",
+        "Тип IndustryReport в src/types/index.ts автоматично оновиться через z.infer",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true
+    },
+    {
+      "id": 3,
+      "title": "Додати collections до існуючих статей",
+      "acceptanceCriteria": [
+        "uk-ultimate-bonus-guide.ts має collections: ['guides', 'featured']",
+        "uk-betting-industry-report.ts має collections: ['guides']",
+        "uk-betting-shops-bible.ts має collections: ['guides']",
+        "responsible-gambling-uk-bible.ts має collections: ['guides', 'responsible-gambling']",
+        "Аналогічно для IE версій статей",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true
+    },
+    {
+      "id": 4,
+      "title": "Створити функції для отримання статей по collection",
+      "acceptanceCriteria": [
+        "В src/data/articles.ts створено функцію getArticlesByCollection(collection: string, region: string): IndustryReport[]",
+        "Функція повертає всі статті що мають вказану collection",
+        "Функція експортується через src/data/index.ts",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true
+    },
+    {
+      "id": 5,
+      "title": "Додати Bettor Resources в головну навігацію",
+      "acceptanceCriteria": [
+        "В компоненті SiteHeader (або відповідному navigation компоненті) додано пункт меню 'Bettor Resources'",
+        "Посилання веде на /[region]/bettor-resources",
+        "Меню відображається на desktop і mobile версіях",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true
+    },
+    {
+      "id": 6,
+      "title": "Створити сторінку Bettor Resources",
+      "acceptanceCriteria": [
+        "Створено src/app/[region]/bettor-resources/page.tsx",
+        "Сторінка має metadata: title='Bettor Resources | FreeBetGeek', description про сторонні інструменти для беттерів",
+        "Сторінка відображає заголовок H1: 'Bettor Resources'",
+        "Сторінка відображає короткий intro текст що пояснює секцію",
+        "Поки що placeholder: 'Coming soon - reviews of betting tools and services'",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true
+    }
+  ]
+}

@@ -50,21 +50,11 @@ npm run lint     # Перевірка коду
 
 ## Workflow
 
-### Ручна розробка
+### Розробка з Claude Code
 
-Працюй з Claude Code напряму — він читає `CLAUDE.md`.
-
-### Автономна розробка (Ralph)
-
-1. Згенеруй `prd.json` через чат з AI (використай `PRD_GUIDE.md`)
-2. Заповни Project Description в `CLAUDE.md`
-3. Запусти:
-
-```bash
-./scripts/ralph/ralph.sh
-```
-
-Claude Code автоматично реалізує stories одна за одною.
+1. Опиши проект в `CLAUDE.md` (Project Overview)
+2. Згенеруй `prd.json` через чат з AI (використай `PRD_GUIDE.md`)
+3. Запусти Claude Code — він автоматично читає prd.json і реалізує stories
 
 ---
 

@@ -1,0 +1,145 @@
+## Codebase Patterns
+- Use `cn()` for conditional classNames
+- Always use `@/` import aliases
+- Articles (previously promoGuides) are stored in `src/data/regions/[region]/en/articles/`
+- Use `git mv` to rename folders to preserve git history
+
+---
+
+## 2026-01-20 - Story 1
+**Title:** Перейменувати promoGuides на articles
+
+**What was implemented:**
+- Renamed `promoGuides/` folder to `articles/` in both GB and IE regions
+- Updated all imports in index.ts files to reference the new folder name
+
+**Files changed:**
+- `src/data/regions/gb/en/promoGuides/` → `src/data/regions/gb/en/articles/` (4 files renamed)
+- `src/data/regions/ie/en/promoGuides/` → `src/data/regions/ie/en/articles/` (4 files renamed)
+- `src/data/regions/gb/en/index.ts` - updated imports
+- `src/data/regions/ie/en/index.ts` - updated imports
+
+**Learnings:**
+- Only 2 files had promoGuides imports (gb/en/index.ts and ie/en/index.ts)
+- Build has 2 warnings about `<img>` usage but no errors
+- Git preserves rename history when using `git mv`
+
+---
+
+## 2026-01-20 - Story 2
+**Title:** Додати поле collections до IndustryReportSchema
+
+**What was implemented:**
+- Added `collections` field to IndustryReportSchema in src/types/schemas.ts
+- Type: `z.array(z.enum(['guides', 'bettor-resources', 'featured', 'responsible-gambling'])).optional()`
+
+**Files changed:**
+- `src/types/schemas.ts` - added collections field (line 309)
+
+**Learnings:**
+- IndustryReport type in index.ts auto-updates via `z.infer<typeof IndustryReportSchema>`
+- IDE shows deprecation hint for `.passthrough()` but it's not an error
+
+---
+
+## 2026-01-20 - Story 3
+**Title:** Додати collections до існуючих статей
+
+**What was implemented:**
+- Added collections field to all 8 article files (4 GB + 4 IE)
+- GB: bonus-guide ['guides','featured'], industry-report ['guides'], shops-bible ['guides'], responsible-gambling ['guides','responsible-gambling']
+- IE: same pattern mirrored
+
+**Files changed:**
+- `src/data/regions/gb/en/articles/uk-ultimate-bonus-guide.ts`
+- `src/data/regions/gb/en/articles/uk-betting-industry-report.ts`
+- `src/data/regions/gb/en/articles/uk-betting-shops-bible.ts`
+- `src/data/regions/gb/en/articles/responsible-gambling-uk-bible.ts`
+- `src/data/regions/ie/en/articles/ie-ultimate-bonus-guide.ts`
+- `src/data/regions/ie/en/articles/ie-betting-industry-report.ts`
+- `src/data/regions/ie/en/articles/ie-betting-shops-bible.ts`
+- `src/data/regions/ie/en/articles/responsible-gambling-ie-bible.ts`
+
+**Learnings:**
+- Collections use exact enum values from schema — TypeScript validates automatically
+- Pattern: add field right after `slug` for consistency
+
+---
+
+## 2026-01-20 - Story 4
+**Title:** Створити функції для отримання статей по collection
+
+**What was implemented:**
+- Created `src/data/articles.ts` with data access functions
+- Functions: `getArticlesByCollection`, `getAllArticlesForRegion`, `getArticleBySlug`, `getFeaturedArticles`
+- Exported through public API (`src/data/index.ts`)
+
+**Files changed:**
+- `src/data/articles.ts` - created (new file)
+- `src/data/index.ts` - added export
+
+**Learnings:**
+- Follow existing pattern: import from region files, filter/transform, export through index
+- Added bonus helper functions (getArticleBySlug, getFeaturedArticles) for future use
+
+---
+
+## 2026-01-20 - Story 5
+**Title:** Додати Bettor Resources в головну навігацію
+
+**What was implemented:**
+- Added "Bettor Resources" menu item to SiteHeader navItems array
+- Link: `/${region}/bettor-resources`
+
+**Files changed:**
+- `src/components/SiteHeader.tsx` - added navItem
+
+**Learnings:**
+- Menu only shows on desktop (hidden md:flex) — mobile hamburger menu not implemented yet
+- navItems array is the single source of truth for menu items
+
+---
+
+## 2026-01-20 - Story 6
+**Title:** Створити сторінку Bettor Resources
+
+**What was implemented:**
+- Created `src/app/[region]/bettor-resources/page.tsx`
+- Metadata with title and description
+- H1 + intro text + placeholder message
+
+**Files changed:**
+- `src/app/[region]/bettor-resources/page.tsx` - created (new file)
+
+**Learnings:**
+- Follow existing page pattern: async params, isValidRegion check, notFound()
+- Placeholder style matches other WIP pages
+
+---
+
+## 2026-01-20 - Feature Complete: Bettor Resources Menu & Collections System
+
+### Summary
+- Renamed articles folder structure (promoGuides → articles)
+- Implemented collections system for flexible article categorization
+- Added data access functions for filtering by collection
+- Added Bettor Resources to navigation
+- Created Bettor Resources placeholder page
+
+### Impact Analysis
+- **Types:** Added `collections` field to IndustryReportSchema
+- **Data layer:** New `src/data/articles.ts` with 4 functions
+- **Navigation:** SiteHeader now has 5 menu items
+- **Routes:** New `/[region]/bettor-resources` route
+- **Breaking changes:** None (collections field is optional)
+
+### Potential Issues
+- ⚠️ Mobile navigation not implemented (no hamburger menu) — 5 items may overflow
+- ⚠️ Collections are manually assigned — no validation that articles have collections
+
+### Recommendations
+- Add first real article to 'bettor-resources' collection for testing
+- Implement mobile hamburger menu before adding more nav items
+- Consider creating a visual articles list on the bettor-resources page
+
+---
