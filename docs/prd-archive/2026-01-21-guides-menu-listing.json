@@ -1,0 +1,118 @@
+{
+  "featureName": "Guides Menu and Listing Page",
+  "branchName": "feat/guides-menu-listing",
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Create Guides listing page",
+      "acceptanceCriteria": [
+        "Create src/app/[region]/guides/page.tsx",
+        "Use getArticlesByCollection('guides', region) to fetch articles",
+        "Import from '@/data': isValidRegion, getArticlesByCollection",
+        "Display articles as Card list (reuse exact style from src/app/[region]/bettor-resources/page.tsx)",
+        "Each card shows: article.h1 as CardTitle, article.metaDescription as CardDescription, 'Read guide' link with ArrowRight icon",
+        "Link format: /{region}/guides/{article.slug}",
+        "Metadata: title='Betting Guides | FreeBetGeek', description='Expert betting guides covering bonuses, betting shops, responsible gambling and more.'",
+        "Handle notFound() if region invalid",
+        "Handle empty state with placeholder message if no articles",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/app/[region]/guides/page.tsx"]
+    },
+    {
+      "id": 2,
+      "title": "Update GB Guides navigation menu",
+      "acceptanceCriteria": [
+        "Update src/data/regions/gb/en/siteConfig.ts mainNavigation array",
+        "Find 'Guides' item and replace children array with real article slugs",
+        "New children: { label: 'Bonus Guide', href: '/guides/uk-betting-bonus-guide-2026' }, { label: 'Betting Shops', href: '/guides/uk-betting-shops-guide' }, { label: 'Industry Report', href: '/guides/uk-betting-industry-report-2026' }, { label: 'Responsible Gambling', href: '/guides/responsible-gambling-uk-guide' }, { label: 'All Guides', href: '/guides' }",
+        "Keep 'All Guides' as last item",
+        "Guides parent href remains '/guides'",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/data/regions/gb/en/siteConfig.ts"]
+    },
+    {
+      "id": 3,
+      "title": "Create IE siteConfig with localized navigation",
+      "acceptanceCriteria": [
+        "Check if src/data/regions/ie/en/siteConfig.ts exists, if not create it",
+        "If IE inherits GB siteConfig, create override with IE-specific Guides menu",
+        "IE Guides children: { label: 'Bonus Guide', href: '/guides/ireland-betting-bonus-guide-2026' }, { label: 'Betting Shops', href: '/guides/ireland-betting-shops-guide' }, { label: 'Industry Report', href: '/guides/ireland-betting-market-analysis-2026' }, { label: 'Responsible Gambling', href: '/guides/responsible-gambling-ireland-guide' }, { label: 'All Guides', href: '/guides' }",
+        "Export siteConfig from src/data/regions/ie/en/index.ts (override GB)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/data/regions/ie/en/siteConfig.ts", "src/data/regions/ie/en/index.ts"]
+    },
+    {
+      "id": 4,
+      "title": "Verify all GB guide articles render correctly",
+      "acceptanceCriteria": [
+        "Run npm run dev",
+        "Navigate to http://localhost:3000/gb/guides/ - verify page loads and shows 5 article cards",
+        "Click 'uk-betting-bonus-guide-2026' - verify ArticleHeader, comparisonTables, ArticleGroups render",
+        "Click 'uk-betting-shops-guide' - verify ArticleHeader, comparisonTables, ArticleGroups render",
+        "Click 'uk-betting-industry-report-2026' - verify page renders without errors",
+        "Click 'responsible-gambling-uk-guide' - verify page renders without errors",
+        "Click 'best-live-score-stats-apps-2026' - verify comparisonTables with external links render",
+        "No console errors on any page",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/data/regions/gb/en/siteConfig.ts", "src/data/regions/ie/en/siteConfig.ts"]
+    },
+    {
+      "id": 5,
+      "title": "Verify all IE guide articles render correctly",
+      "acceptanceCriteria": [
+        "Navigate to http://localhost:3000/ie/guides/ - verify page loads and shows 5 article cards",
+        "Click each IE article link and verify page loads without errors",
+        "Verify IE-specific content renders (€ currency, Irish references)",
+        "Verify liveScoreAppsGuide works for IE (shared with GB)",
+        "No console errors on any page",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": []
+    },
+    {
+      "id": 6,
+      "title": "Add Bettor Resources to navigation menu",
+      "acceptanceCriteria": [
+        "Update src/data/regions/gb/en/siteConfig.ts mainNavigation",
+        "Add new top-level item after Guides: { label: 'Bettor Resources', href: '/bettor-resources', children: [{ label: 'Live Score Apps', href: '/guides/best-live-score-stats-apps-2026' }, { label: 'All Resources', href: '/bettor-resources' }] }",
+        "Apply same pattern to IE siteConfig if separate",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/data/regions/gb/en/siteConfig.ts", "src/data/regions/ie/en/siteConfig.ts"]
+    }
+  ],
+  "postFeatureReview": {
+    "summary": "Implemented Guides listing page and navigation menus for GB and IE regions. Created region-specific siteConfig for IE with localized article slugs. Added Bettor Resources navigation item to both regions.",
+    "impact": "Changed files: src/app/[region]/guides/page.tsx (new listing page), src/data/regions/gb/en/siteConfig.ts (GB navigation), src/data/regions/ie/en/siteConfig.ts (new IE-specific config), src/data/regions/ie/en/index.ts (exports). All guide articles verified working for both regions.",
+    "issues": "PRD article slugs didn't match actual data (e.g., 'uk-betting-industry-report-2026' vs actual 'uk-betting-market-analysis-2026', 'ireland-betting-bonus-guide-2026' vs actual 'ie-betting-bonus-guide-2026'). Fixed during verification. mainNavigation in siteConfig is not yet used by SiteHeader component (hardcoded navigation).",
+    "recommendations": "Consider integrating mainNavigation from siteConfig into SiteHeader component to enable region-specific navigation. Current SiteHeader uses hardcoded nav items that don't support dropdown menus."
+  }
+}
