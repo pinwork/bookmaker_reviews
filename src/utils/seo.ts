@@ -1,5 +1,6 @@
 // src/utils/seo.ts
 import { IndustryReport, SiteConfig } from '@/types';
+import { getActiveLinkedResources, resolveExternalResources } from '@/utils/linkedResources';
 
 /**
  * Generate Article schema for Industry Reports and Guides
@@ -100,9 +101,49 @@ const generateFAQSchema = (faq: Array<{ q: string; a: string }>) => {
   };
 };
 
+interface ItemListItem {
+  name: string;
+  url: string;
+  category?: string;
+  price?: string;
+}
+
+/**
+ * Generate ItemList schema for comparison tables
+ * For external apps: uses SoftwareApplication type
+ */
+export const generateItemListSchema = (
+  title: string,
+  items: ItemListItem[]
+) => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: title,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'SoftwareApplication',
+        name: item.name,
+        url: item.url,
+        applicationCategory: item.category || 'Sports',
+        ...(item.price && {
+          offers: {
+            '@type': 'Offer',
+            price: item.price === 'Free' ? '0' : item.price.replace(/[^0-9.]/g, ''),
+            priceCurrency: 'GBP'
+          }
+        })
+      }
+    }))
+  };
+};
+
 /**
  * Generate all relevant schemas for an article
- * Returns array: [Article schema, FAQPage schema (if faq exists)]
+ * Returns array: [Article schema, FAQPage schema (if faq exists), ItemList (if external resources)]
  */
 export const generateArticleSchemas = (
   article: IndustryReport,
@@ -117,6 +158,24 @@ export const generateArticleSchemas = (
   // Add FAQPage schema if article has FAQ
   if (article.faq && article.faq.length > 0) {
     schemas.push(generateFAQSchema(article.faq));
+  }
+
+  // Add ItemList schema if article has external resources
+  const activeResources = getActiveLinkedResources(article.linkedResources);
+  const externalResources = resolveExternalResources(activeResources);
+
+  if (externalResources.length > 0) {
+    const items = externalResources.map((resource) => ({
+      name: resource.name,
+      url: resource.url,
+      category: 'Sports',
+      price: resource.tableData.price,
+    }));
+
+    schemas.push(generateItemListSchema(
+      article.comparisonTable?.title || `${article.h1} - Apps`,
+      items
+    ));
   }
 
   return schemas;
