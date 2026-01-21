@@ -13,7 +13,6 @@ function getAllArticles(region: string): IndustryReport[] {
       ieArticles.bettingIndustryReport,
       ieArticles.bettingShopsBible,
       ieArticles.responsibleGamblingBible,
-      ieArticles.liveScoreAppsGuide,
     ];
   }
 
@@ -23,7 +22,6 @@ function getAllArticles(region: string): IndustryReport[] {
     gbArticles.bettingIndustryReport,
     gbArticles.bettingShopsBible,
     gbArticles.responsibleGamblingBible,
-    gbArticles.liveScoreAppsGuide,
   ];
 }
 

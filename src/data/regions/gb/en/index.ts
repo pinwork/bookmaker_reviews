@@ -14,7 +14,7 @@ import { ultimateBonusGuide as bonusGuideData } from './articles/uk-ultimate-bon
 import { responsibleGamblingBible as responsibleGamblingData } from './articles/responsible-gambling-uk-bible';
 import { bettingShopsBible as bettingShopsData } from './articles/uk-betting-shops-bible';
 import { bettingIndustryBible as industryReportData } from './articles/uk-betting-industry-report';
-import { liveScoreAppsGuide as liveScoreAppsData } from './articles/best-live-score-stats-apps';
+import { liveScoreAppsReview as liveScoreAppsData } from './reviews/tools';
 
 const gbReviews: Record<string, BookmakerReview> = {
   bet365: reviewsList.bet365Review,

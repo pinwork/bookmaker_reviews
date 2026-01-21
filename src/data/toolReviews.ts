@@ -1,17 +1,18 @@
 // src/data/toolReviews.ts
 import { ToolReview } from '@/types';
 import { DEFAULT_REGION } from './constants';
+import * as gbTools from './regions/gb/en/reviews/tools';
+import * as gbData from './regions/gb/en';
 
 type ToolsCollectionType = 'tools' | 'bettor-resources' | 'featured';
 
-// Tool reviews will be populated when files are added to reviews/tools/
 function getAllToolReviews(region: string): ToolReview[] {
-  // Placeholder: will be populated in Story 3 when liveScoreAppsGuide is migrated
   if (region === 'ie') {
-    return [];
+    // IE inherits GB tool reviews (universal content)
+    return [gbData.liveScoreAppsGuide as ToolReview];
   }
   // Default to GB
-  return [];
+  return [gbTools.liveScoreAppsReview];
 }
 
 export function getToolReviewsByCollection(

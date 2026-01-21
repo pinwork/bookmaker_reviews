@@ -1,8 +1,8 @@
-import { IndustryReport } from '@/types';
+import { ToolReview } from '@/types';
 
-export const liveScoreAppsGuide: IndustryReport = {
+export const liveScoreAppsReview: ToolReview = {
   slug: 'best-live-score-stats-apps-2026',
-  collections: ['guides', 'bettor-resources'],
+  collections: ['tools', 'bettor-resources'],
   linkedResources: [
     { id: 'flashscore', type: 'external', active: true },
     { id: 'sofascore', type: 'external', active: true },
