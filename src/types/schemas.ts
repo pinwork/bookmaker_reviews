@@ -201,6 +201,7 @@ export const BonusGroupItemSchema = z.object({
   bgColor: z.string().optional(), // Brand background color for logo
   quickVerdict: z.string().optional(),
   rating: z.number().min(1).max(5).optional(),
+  bestFor: z.string().optional(),
   badge: z.string().optional(),
   pros: z.array(z.string()).optional(),
   cons: z.array(z.string()).optional(),
