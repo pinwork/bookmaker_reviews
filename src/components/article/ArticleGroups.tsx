@@ -214,7 +214,7 @@ function CardItem({ item, logoPath, bgColor, defaultOpen }: CardItemProps) {
         </div>
 
         {/* === DETAILS SECTION (collapsible) === */}
-        <CollapsibleContent className="data-[state=closed]:animate-collapse-up data-[state=open]:animate-collapse-down">
+        <CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
           <div className="px-6 pb-6 pt-4 border-t border-gray-100">
             <div className="prose prose-sm prose-gray max-w-none prose-headings:text-lg prose-headings:font-semibold prose-headings:mt-4 prose-headings:mb-3">
               <ReactMarkdown>{item.content}</ReactMarkdown>
