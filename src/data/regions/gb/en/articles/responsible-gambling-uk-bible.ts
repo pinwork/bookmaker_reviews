@@ -2,7 +2,7 @@ import { IndustryReport } from '@/types';
 
 export const responsibleGamblingBible: IndustryReport = {
   slug: 'responsible-gambling-uk-guide',
-  collections: ['guides', 'responsible-gambling'],
+  collections: ['guides'],
   h1: 'The 2026 UK Responsible Gambling Bible: Tools, Data & Recovery',
   metaTitle: 'UK Responsible Gambling Guide 2026 | Complete Help, Stats & Recovery Tools',
   metaDescription: 'The definitive 2026 guide to UK gambling support. Real stories, NHS screening, GamStop mechanics, £19m fines exposed, and national statistics on harm.',

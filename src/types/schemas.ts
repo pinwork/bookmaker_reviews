@@ -249,7 +249,7 @@ export const BaseContentSchema = z.object({
     lastUpdated: z.string().optional(),
     dataSource: z.string().optional()
   }).optional(),
-  collections: z.array(z.enum(['guides', 'tools', 'bettor-resources', 'featured', 'responsible-gambling'])).optional(),
+  collections: z.array(z.enum(['guides', 'bettor-resources'])).optional(),
   linkedResources: z.array(LinkedResourceSchema).optional(),
   comparisonTables: z.array(ComparisonTableSchema).optional(),
 });

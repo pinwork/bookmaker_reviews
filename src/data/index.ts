@@ -20,11 +20,11 @@ export {
 } from './extraPromotions';
 
 export {
-  getArticlesByCollection, getAllArticlesForRegion, getArticleBySlug, getFeaturedArticles,
+  getArticlesByCollection, getAllArticlesForRegion, getArticleBySlug,
 } from './articles';
 
 export {
-  getToolReviewsByCollection, getAllToolReviewsForRegion, getToolReviewBySlug, getFeaturedToolReviews,
+  getToolReviewsByCollection, getAllToolReviewsForRegion, getToolReviewBySlug,
   getToolReviews,
 } from './toolReviews';
 

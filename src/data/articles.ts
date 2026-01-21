@@ -4,7 +4,7 @@ import { DEFAULT_REGION } from './constants';
 import * as gbArticles from './regions/gb/en';
 import * as ieArticles from './regions/ie/en';
 
-type CollectionType = 'guides' | 'tools' | 'bettor-resources' | 'featured' | 'responsible-gambling';
+type CollectionType = 'guides' | 'bettor-resources';
 
 function getAllArticles(region: string): IndustryReport[] {
   if (region === 'ie') {
@@ -39,8 +39,4 @@ export function getAllArticlesForRegion(region: string = DEFAULT_REGION): Indust
 
 export function getArticleBySlug(slug: string, region: string = DEFAULT_REGION): IndustryReport | undefined {
   return getAllArticles(region).find(article => article.slug === slug);
-}
-
-export function getFeaturedArticles(region: string = DEFAULT_REGION): IndustryReport[] {
-  return getArticlesByCollection('featured', region);
 }

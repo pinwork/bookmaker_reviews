@@ -4,7 +4,7 @@ import { DEFAULT_REGION } from './constants';
 import * as gbTools from './regions/gb/en/reviews/tools';
 import * as gbData from './regions/gb/en';
 
-type ToolsCollectionType = 'tools' | 'bettor-resources' | 'featured';
+type ToolsCollectionType = 'bettor-resources';
 
 function getAllToolReviews(region: string): ToolReview[] {
   if (region === 'ie') {
@@ -34,8 +34,4 @@ export function getToolReviews(region: string = DEFAULT_REGION): ToolReview[] {
 
 export function getToolReviewBySlug(slug: string, region: string = DEFAULT_REGION): ToolReview | undefined {
   return getAllToolReviews(region).find(tool => tool.slug === slug);
-}
-
-export function getFeaturedToolReviews(region: string = DEFAULT_REGION): ToolReview[] {
-  return getToolReviewsByCollection('featured', region);
 }

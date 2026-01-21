@@ -2,7 +2,7 @@ import { ToolReview } from '@/types';
 
 export const liveScoreAppsReview: ToolReview = {
   slug: 'best-live-score-stats-apps-2026',
-  collections: ['tools', 'bettor-resources'],
+  collections: ['bettor-resources'],
   linkedResources: [
     { id: 'flashscore', type: 'external', active: true },
     { id: 'sofascore', type: 'external', active: true },

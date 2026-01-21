@@ -1,191 +1,86 @@
-# Content Guide
+# Content Guide & Strategy
 
-Документація для створення статей на FreeBetGeek.
+## 1. Global Rules (Voice & Tone)
 
----
-
-## Quick Start
-
-Структура типової статті:
-
-```
-Article
-├── intro { title, content }         ← Вступ (обов'язковий)
-├── comparisonTables[]               ← Таблиці порівняння
-├── groups[]                         ← Секції контенту
-│   └── items[]                      ← Елементи в секції
-│       ├── title, content           ← Обов'язкові
-│       ├── rating, badge            ← Візуальні акценти
-│       ├── keyStats[]               ← Великі цифри
-│       └── pros[], cons[]           ← Плюси/мінуси
-├── faq[]                            ← Питання-відповіді
-├── linkedResources[]                ← Ресурси (букмекери, сервіси)
-└── footer { lastUpdated }           ← Метадані
-```
+* **Language:** British English (en-GB). Use terms like "Punter", "Bookie", "Accumulator", "Cheque".
+* **Tone:** Expert, "Geeky" but accessible. We are the "nerdy friend" who knows the math behind the bet.
+* **Formatting:**
+    * No "walls of text". Use bullet points every 2-3 paragraphs.
+    * Use **Bold** for key takeaways, not for entire sentences.
 
 ---
 
-## Обов'язкові поля
+## 2. Content Types Strategy & Data Map
 
-| Поле | Вимоги |
-|------|--------|
-| `slug` | kebab-case, унікальний |
-| `h1` | Головний заголовок |
-| `metaTitle` | ≤60 символів |
-| `metaDescription` | ≤160 символів |
-| `intro.title` + `intro.content` | Вступ |
-| `footer.lastUpdated` | YYYY-MM-DD |
+We distinguish between **Learning** and **Buying** intents.
 
----
+| Content Type | TypeScript Type | Route | Schema (SEO) | Intent |
+| :--- | :--- | :--- | :--- | :--- |
+| **Guide** | `IndustryReport` | `/guides/[slug]` | `Article` | Informational (Learning) |
+| **Tool Review** | `ToolReview` | `/tools/[slug]` | `SoftwareApplication` | Transactional (Buying) |
 
-## Collections
+### A. Guides Focus
+* **Focus:** Storytelling, strategies, psychology, explaining "How it works".
+* **SEO:** Target "How to...", "Strategy for...", "Meaning of..." keywords.
 
-| Collection | Де відображається |
-|------------|-------------------|
-| `guides` | Меню Guides |
-| `bettor-resources` | Меню Bettor Resources |
-| `featured` | Головна сторінка |
-| `responsible-gambling` | RG секція |
+### B. Tool Reviews Focus
+* **Focus:** Hard facts, comparisons, speed tests, pros/cons.
+* **Structure:** Hybrid (Intro + Table + Deep Dive).
+* **SEO:** Target "Best [App] for...", "Review", "Comparison".
 
 ---
 
-## Groups
+## 3. "Evergreen" Intro Strategy (CRITICAL)
 
-Основна структура контенту статті. Кожна `group` — це секція з заголовком та масивом `items`.
+**Rule:** Never mention dynamic rankings or specific brand names in the `intro.content` field.
 
-```typescript
-groups: [
-  {
-    groupName: 'UK Betting Shop Statistics',
-    items: [
-      {
-        id: 'industry-overview',
-        title: 'Industry Overview',
-        keyStats: [
-          { label: 'Total Shops', value: '6,440' },
-          { label: 'Employment', value: '41,000+' }
-        ],
-        content: 'Markdown content here...'
-      }
-    ]
-  }
-]
-```
-
-### Item Fields
-
-| Поле | Тип | Коли використовувати |
-|------|-----|---------------------|
-| `id` | string | Завжди (унікальний ідентифікатор) |
-| `title` | string | Завжди (заголовок картки) |
-| `content` | string | Завжди (markdown текст) |
-| `quickVerdict` | string | Коротка оцінка під заголовком |
-| `rating` | 1-5 | Рейтинг зірками (★★★★☆) |
-| `badge` | string | Лейбл в кутку ("Best Value", "Editor's Choice") |
-| `keyStats` | {label, value}[] | Великі цифри/статистика |
-| `pros` | string[] | Список переваг (✓) |
-| `cons` | string[] | Список недоліків (✗) |
-| `recommendedBookmakers` | string[] | Slug-и букмекерів |
-
-### Decision Tree: Який field обрати?
-
-```
-Потрібно показати числову статистику?
-  └─ Так → keyStats[]
-
-Потрібно швидко оцінити item?
-  └─ Так → rating (1-5)
-
-Є очевидні плюси/мінуси?
-  └─ Так → pros[], cons[]
-
-Потрібно виділити item серед інших?
-  └─ Так → badge
-
-Є коротка оцінка одним реченням?
-  └─ Так → quickVerdict
-```
+* **Bad:** *"Flashscore is the best app in 2026, followed by SofaScore..."*
+    * *Reason:* If rankings change next month, this text becomes outdated/false.
+* **Good:** *"Speed is the #1 factor for live betting. We tested 10 apps to find which API delivers data faster than the TV broadcast..."*
+    * *Reason:* This educational context remains valid regardless of which app is currently #1 in the table.
 
 ---
 
-## Linked Resources
+## 4. Editorial Rating System (E-E-A-T)
 
-Єдиний масив для всіх зовнішніх посилань:
+We use **ReviewRating** (Editorial), not AggregateRating. Be honest to build trust.
 
-```typescript
-linkedResources: [
-  { id: 'bet365', type: 'bookmaker', active: true },
-  { id: 'flashscore', type: 'external', active: true },
-  { id: 'paypal', type: 'payment', active: false }
-]
-```
+| Rating | Meaning | When to use |
+| :--- | :--- | :--- |
+| **5.0** | **Perfection** | Rare. Industry standard-setter (e.g., Bet365 in 2024). |
+| **4.5 - 4.9** | **Excellent** | Top-tier tools with minor flaws. Most "Recommended" apps fall here. |
+| **4.0 - 4.4** | **Good** | Solid choice, but has visible UX issues or missing features. |
+| **3.0 - 3.9** | **Average** | Usable but outdated. Only for niche needs. |
+| **< 3.0** | **Poor** | Do not review unless high search volume demands a warning. |
 
-| Поле | Опис |
-|------|------|
-| `id` | Slug ресурсу |
-| `type` | 'bookmaker' / 'external' / 'payment' |
-| `active` | true = показувати, false = приховати |
-
-**Якщо `active: false`** — ресурс прихований з UI (таблиці, groups), але залишається в даних.
+**Verdict Summary:**
+Must be 2-3 short sentences summarizing *why* the rating was given.
+* *Example:* "Unmatched speed for in-play betting. However, the lack of detailed player stats makes it less useful for pre-match research."
 
 ---
 
-## Comparison Tables
+## 5. Comparison Table Logic
 
-```typescript
-comparisonTables: [
-  {
-    id: 'live-score-apps',
-    title: 'Best Live Score Apps',
-    headers: ['App', 'Best For', 'Price'],
-    linkedResourceType: 'external',  // auto-link перша колонка
-    rows: [...]  // або генеруються з linkedResources
-  }
-]
-```
+Tables drive clicks. Optimize for scanning.
 
-### Table Standards
-
-- **Максимум 4 колонки** (без винятків)
-- **linkedResourceType** робить першу колонку клікабельною
-- Сортуй за якістю (найкращий перший)
-
-### Cell Limits
-
-| Колонка | Max символів |
-|---------|--------------|
-| Name | 20 |
-| Best For | 25 |
-| Price | 15 |
-| Key Feature | 35 |
+* **Best For:** Max 2-3 words. Use nouns.
+    * *Good:* "Live Betting", "Horse Racing".
+    * *Bad:* "Good for people who like to bet in play".
+* **Price:** Standardize format.
+    * *Examples:* "Free", "£10/mo", "Freemium", "Free (Ads)".
+* **Key Feature:** The single most unique selling point (USP).
 
 ---
 
-## FAQ
+## 6. Collections Strategy
 
-- 5-10 питань
-- Питання: "Which", "What", "How", "Is", "Can"
-- Відповіді: 2-4 речення
-- Сортуй за важливістю
+Use the `collections` array to control **which listing page** the content appears on.
 
----
+| Collection | Corresponding Listing Page | Intended Content |
+| :--- | :--- | :--- |
+| `guides` | `/guides/` | Guides only |
+| `bettor-resources` | `/bettor-resources/` | Tool Reviews only |
 
-## Content Sorting
-
-| Що | Як сортувати |
-|----|--------------|
-| Таблиці | Найкращий перший |
-| FAQ | Найважливіше перше |
-| Groups/Items | За relevance до теми |
-
----
-
-## Checklist
-
-- [ ] `metaTitle` ≤60 символів
-- [ ] `metaDescription` ≤160 символів
-- [ ] `footer.lastUpdated` заповнено
-- [ ] `collections` вказано
-- [ ] Експорт в `src/data/regions/[region]/en/index.ts`
-- [ ] `npm run lint` passes
-- [ ] `npm run build` passes
+**Simple Rule:**
+* If you write a Guide -> use `['guides']`.
+* If you write a Tool Review -> use `['bettor-resources']`.

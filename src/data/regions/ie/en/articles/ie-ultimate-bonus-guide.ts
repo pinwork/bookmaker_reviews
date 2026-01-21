@@ -2,7 +2,7 @@ import { IndustryReport } from '@/types';
 
 export const ieBonusGuide: IndustryReport = {
   slug: 'ie-betting-bonus-guide-2026',
-  collections: ['guides', 'featured'],
+  collections: ['guides'],
   h1: 'Ireland Betting Bonus Guide 2026: What is Legal Under GRAI?',
   metaTitle: 'Ireland Betting Bonuses 2026 | Free Bets, GRAI Rules & Tax Free Winnings',
   metaDescription: 'The complete guide to Irish betting offers under the new Gambling Regulation Act. Find out why "Targeted Inducements" are banned and which bonuses remain legal.',
