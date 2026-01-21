@@ -47,7 +47,7 @@ function StarRating({ rating }: { rating: number }) {
   const emptyStars = 5 - fullStars - (hasHalf ? 1 : 0);
 
   return (
-    <span className="inline-flex items-center ml-2" aria-label={`Rating: ${rating} out of 5`}>
+    <span className="inline-flex items-center" aria-label={`Rating: ${rating} out of 5`}>
       {Array.from({ length: fullStars }).map((_, i) => (
         <Star key={`full-${i}`} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
       ))}
@@ -87,27 +87,31 @@ function CardItem({ item, logoPath, bgColor }: CardItemProps) {
 
         {/* === SUMMARY SECTION (always visible) === */}
 
-        {/* Service Header: Tagline left, Logo right */}
-        <header className="flex items-center justify-between p-4 border-b border-gray-100 bg-gray-50">
-          <div className="flex-1 min-w-0 pr-4">
-            <div className="flex items-center">
-              {item.url ? (
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 text-xl font-bold text-blue-600 hover:text-blue-800 transition-colors"
-                >
-                  {item.title}
-                  <ExternalLinkIcon className="h-4 w-4 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-              ) : (
-                <h3 className="text-xl font-bold text-gray-900">
-                  {item.title}
-                </h3>
-              )}
-              {item.rating && <StarRating rating={item.rating} />}
-            </div>
+        {/* Service Header: Logo (left) | Title+Verdict (center) | Rating (right) */}
+        <header className="flex items-center gap-4 p-4 border-b border-gray-100 bg-gray-50">
+          {/* Logo (left) */}
+          {logoPath && (
+            <a
+              href={item.url || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 w-24 h-14 flex items-center justify-center rounded-lg border border-gray-200 hover:border-blue-300 transition-colors p-2"
+              style={{ backgroundColor: bgColor }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={logoPath}
+                alt={item.title}
+                className="max-h-10 max-w-20 object-contain"
+              />
+            </a>
+          )}
+
+          {/* Title + Verdict (center) */}
+          <div className="flex-1 min-w-0">
+            <h3 className="text-xl font-bold text-gray-900 truncate">
+              {item.title}
+            </h3>
 
             {item.quickVerdict && (
               <p className="mt-1 text-sm text-gray-600 italic truncate">
@@ -116,22 +120,11 @@ function CardItem({ item, logoPath, bgColor }: CardItemProps) {
             )}
           </div>
 
-          {/* Logo */}
-          {logoPath && (
-            <a
-              href={item.url || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-shrink-0 w-24 h-12 flex items-center justify-center rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
-              style={{ backgroundColor: bgColor }}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={logoPath}
-                alt={item.title}
-                className="max-h-8 max-w-20 object-contain"
-              />
-            </a>
+          {/* Rating (right) */}
+          {item.rating && (
+            <div className="flex-shrink-0">
+              <StarRating rating={item.rating} />
+            </div>
           )}
         </header>
 
