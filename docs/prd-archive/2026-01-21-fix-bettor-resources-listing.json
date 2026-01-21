@@ -1,0 +1,44 @@
+{
+  "featureName": "Fix Bettor Resources Listing Page",
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Expose getToolReviews in Data Layer",
+      "acceptanceCriteria": [
+        "Check src/data/toolReviews.ts (or src/data/index.ts)",
+        "Ensure there is a function 'getToolReviews(region: string)' that returns an array of ToolReview objects",
+        "If it doesn't exist, create it (it should read from src/data/regions/[region]/en/reviews/tools/)",
+        "Ensure the return type matches ToolReview[]",
+        "npm run lint passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/data/toolReviews.ts", "src/data/index.ts"]
+    },
+    {
+      "id": 2,
+      "title": "Update Bettor Resources Page",
+      "acceptanceCriteria": [
+        "Modify src/app/[region]/bettor-resources/page.tsx",
+        "Import getToolReviews from '@/data'",
+        "Fetch tool reviews alongside existing articles (if any)",
+        "Remove the 'Coming soon' placeholder logic if it hides active content",
+        "Render the tool reviews using a Grid layout (reuse ArticleCard or similar component if available)",
+        "IMPORTANT: Ensure links point to /[region]/tools/[slug] (not /guides/)",
+        "Verify that 'Best Live Score Apps' appears on the page",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/app/[region]/bettor-resources/page.tsx"]
+    }
+  ],
+  "postFeatureReview": {
+    "summary": "Fixed Bettor Resources page to properly display tool reviews. Added getToolReviews alias for cleaner API. Tool reviews now link correctly to /tools/ route.",
+    "impact": "bettor-resources page now shows Live Score Apps guide. Links route correctly: tools → /tools/, articles → /guides/.",
+    "issues": "None. 'Coming soon' placeholder only shows when both articles and toolReviews are empty.",
+    "recommendations": "Consider adding a visual distinction (badge/tag) between 'Tool Reviews' and 'Guides' on the listing page."
+  }
+}
