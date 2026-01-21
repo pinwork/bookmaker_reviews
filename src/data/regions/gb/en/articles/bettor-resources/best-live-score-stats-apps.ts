@@ -55,6 +55,8 @@ This guide compares the most popular live score apps, statistics platforms, and 
           url: 'https://www.flashscore.com',
           bgColor: '#000000',
           rating: 4.8,
+          bestFor: 'Multi-sport live bettors who prioritize speed above all else. Essential for in-play betting where seconds matter.',
+          badge: "Editor's Pick",
           quickVerdict: 'The fastest live score app with the widest sport coverage.',
           pros: [
             'Fastest update speed in the market (5-20 seconds)',
@@ -81,9 +83,6 @@ Flashscore is the dominant force in live scores with 155 million monthly users a
 - **Odds Comparison:** Built-in odds from major bookmakers, updated in real-time
 - **VAR Notifications:** Instant alerts for video review decisions
 
-### Best For
-Multi-sport live bettors who prioritize speed above all else. Essential for in-play betting where seconds matter.
-
 ### Price
 Free with ads. No premium tier.`
         },
@@ -93,6 +92,7 @@ Free with ads. No premium tier.`
           url: 'https://www.sofascore.com',
           bgColor: '#374DF5',
           rating: 4.7,
+          bestFor: 'Bettors who base decisions on statistics rather than gut feeling. Excellent for pre-match research and identifying value through dropping odds.',
           quickVerdict: 'The best free statistics app with live xG and dropping odds.',
           pros: [
             'Best free statistics available anywhere',
@@ -119,9 +119,6 @@ SofaScore serves 28 million monthly users with the deepest free statistics avail
 - **Player Heatmaps:** See exactly where players operate on the pitch
 - **Dropping Odds Tab:** Identify value by tracking odds movement
 
-### Best For
-Bettors who base decisions on statistics rather than gut feeling. Excellent for pre-match research and identifying value through dropping odds.
-
 ### Price
 Free with ads. SofaScore Club (premium) removes ads and adds some features.`
         },
@@ -131,6 +128,7 @@ Free with ads. SofaScore Club (premium) removes ads and adds some features.`
           url: 'https://www.fotmob.com',
           bgColor: '#ffffff',
           rating: 4.6,
+          bestFor: 'Football purists who want the best overall experience. If you only bet on football, this should be your primary app.',
           quickVerdict: 'The most polished football app — worth paying for.',
           pros: [
             'Best user interface of any live score app',
@@ -157,9 +155,6 @@ FotMob focuses exclusively on football, serving 20 million monthly users across 
 - **TV Schedule Integration:** Know when matches are televised
 - **Personalized Feed:** AI-curated based on your followed teams
 
-### Best For
-Football purists who want the best overall experience. If you only bet on football, this should be your primary app.
-
 ### Price
 Free with ads. **FotMob Pro: £9.99/year** removes ads and provides faster updates.`
         },
@@ -169,6 +164,7 @@ Free with ads. **FotMob Pro: £9.99/year** removes ads and provides faster updat
           url: 'https://fbref.com',
           bgColor: '#ffffff',
           rating: 4.7,
+          bestFor: 'Deep statistical research, player prop bets, and anyone who wants professional-level data without paying.',
           quickVerdict: 'Professional-grade statistics powered by StatsBomb.',
           pros: [
             'StatsBomb data is gold standard',
@@ -195,9 +191,6 @@ FBref is the most comprehensive free football statistics database, covering 48 c
 - **Goalkeeper xG:** Shot-stopping metrics beyond basic saves
 - **Player Comparison:** Compare any two players side-by-side
 
-### Best For
-Deep statistical research, player prop bets, and anyone who wants professional-level data without paying.
-
 ### Price
 **Free.** Powered by advertising.`
         },
@@ -207,6 +200,7 @@ Deep statistical research, player prop bets, and anyone who wants professional-l
           url: 'https://footystats.org',
           bgColor: '#000000',
           rating: 4.3,
+          bestFor: 'Bettors who focus on niche leagues where bookmaker lines are soft. Essential for corners/cards betting and strategy backtesting.',
           quickVerdict: 'Niche league coverage and backtesting for strategy builders.',
           pros: [
             'Unmatched coverage of 1,500+ lower leagues',
@@ -233,9 +227,6 @@ FootyStats covers an extraordinary 1,500+ leagues including obscure competitions
 - **Corners & Cards Data:** Detailed secondary market statistics
 - **League Tables:** Every stat imaginable per league
 
-### Best For
-Bettors who focus on niche leagues where bookmaker lines are soft. Essential for corners/cards betting and strategy backtesting.
-
 ### Price
 Free basic tier. **Premium: £19.99/month** for full features.`
         },
@@ -245,6 +236,7 @@ Free basic tier. **Premium: £19.99/month** for full features.`
           url: 'https://www.racingpost.com',
           bgColor: '#ffffff',
           rating: 4.8,
+          bestFor: 'Anyone betting seriously on horse racing. The cost is justified by the depth of data. No free alternative comes close.',
           quickVerdict: 'The industry standard — essential for serious racing bettors.',
           pros: [
             'Industry standard — used by professionals',
@@ -271,9 +263,6 @@ Racing Post is the industry standard for horse racing data. Professional punters
 - **RPR Ratings:** Racing Post Ratings — proprietary form metric
 - **Verdict:** Expert analysis for every race
 
-### Best For
-Anyone betting seriously on horse racing. The cost is justified by the depth of data. No free alternative comes close.
-
 ### Price
 **Essential: £19.95/month. Ultimate: £49.95/month.**`
         },
@@ -283,6 +272,7 @@ Anyone betting seriously on horse racing. The cost is justified by the depth of 
           url: 'https://www.timeform.com',
           bgColor: '#000000',
           rating: 4.6,
+          bestFor: 'Professional racing bettors and exchange traders. If you\'re betting at this level, Timeform ratings are essential intelligence.',
           quickVerdict: 'Gold-standard ratings used by professionals since 1948.',
           pros: [
             'Most respected ratings in the industry',
@@ -309,9 +299,6 @@ Timeform has been the gold standard in racing analysis since 1948. Their ratings
 - **Flags:** Indicators for improving horses, course specialists, etc.
 - **Pace Maps:** Visual representation of how races will unfold
 
-### Best For
-Professional racing bettors and exchange traders. If you're betting at this level, Timeform ratings are essential intelligence.
-
 ### Price
 **Race Pass: £30/month.**`
         },
@@ -321,6 +308,7 @@ Professional racing bettors and exchange traders. If you're betting at this leve
           url: 'https://www.tennisexplorer.com',
           bgColor: '#ffffff',
           rating: 4.2,
+          bestFor: 'Tennis betting research. The betting ranking feature alone makes it worth bookmarking.',
           quickVerdict: 'Comprehensive tennis statistics with unique betting metrics.',
           pros: [
             'Betting ranking is unique and useful',
@@ -347,9 +335,6 @@ Tennis Explorer covers 35,000+ players with detailed match statistics and a uniq
 - **Surface Statistics:** Performance by surface (clay, grass, hard)
 - **Live Scores:** Real-time updates during matches
 
-### Best For
-Tennis betting research. The betting ranking feature alone makes it worth bookmarking.
-
 ### Price
 **Free.**`
         },
@@ -359,6 +344,7 @@ Tennis betting research. The betting ranking feature alone makes it worth bookma
           url: 'https://www.basketball-reference.com',
           bgColor: '#ffffff',
           rating: 4.5,
+          bestFor: 'NBA betting research, especially player props. Essential for anyone betting American basketball seriously.',
           quickVerdict: 'The definitive NBA statistics database.',
           pros: [
             'Most comprehensive NBA data anywhere',
@@ -384,9 +370,6 @@ Basketball Reference is the authoritative source for NBA statistics from 1946 to
 - **True Shooting %:** Accounts for 2PT, 3PT, and FT
 - **Shot Finder:** Filter shots by location, time, defender
 - **Historical Data:** Complete NBA history since 1946
-
-### Best For
-NBA betting research, especially player props. Essential for anyone betting American basketball seriously.
 
 ### Price
 **Free.**`
