@@ -50,13 +50,12 @@ export function ArticleFAQ({ faq }: ArticleFAQProps) {
               )}
             >
               <AccordionTrigger className="w-full flex items-center justify-between gap-3 p-4 text-left hover:bg-gray-100 hover:no-underline transition-colors [&>svg]:text-gray-500">
-                <span className="flex items-start gap-3 text-base font-semibold text-gray-900">
-                  <HelpCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <span className="text-base font-semibold text-gray-900">
                   {item.q}
                 </span>
               </AccordionTrigger>
               <AccordionContent className="px-4 pb-4 pt-0">
-                <p className="text-gray-600 pl-7 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   {item.a}
                 </p>
               </AccordionContent>
