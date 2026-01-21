@@ -100,7 +100,6 @@ export default async function BettorResourcePage({ params }: PageProps) {
           h1={article.h1}
           introTitle={article.intro.title}
           introContent={article.intro.content}
-          lastUpdated={article.footer?.lastUpdated}
         />
 
         {article.comparisonTables?.map((table) => (

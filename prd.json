@@ -1,0 +1,161 @@
+{
+  "featureName": "Bettor Resources Card UX Improvements",
+  "branchName": "feat/card-ux-improvements",
+  "context": {
+    "description": "Покращення UX карток в bettor-resources на основі аудиту affiliate comparison сторінок. Зміни стосуються тільки ArticleGroups компонента та пов'язаних файлів.",
+    "component": "src/components/article/ArticleGroups.tsx",
+    "dataFile": "src/data/regions/gb/en/articles/bettor-resources/best-live-score-stats-apps.ts",
+    "techStack": "Next.js 15, Tailwind CSS v4, shadcn/ui, TypeScript"
+  },
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Add bestFor field to schema",
+      "acceptanceCriteria": [
+        "In src/types/schemas.ts find BonusGroupItemSchema (the one with rating, pros, cons, keyStats, content)",
+        "Add field: bestFor: z.string().optional()",
+        "Add after rating field, before pros field",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/types/schemas.ts"]
+    },
+    {
+      "id": 2,
+      "title": "Add reviewCount to SoftwareApplication schema",
+      "acceptanceCriteria": [
+        "In src/utils/seo.ts find generateSoftwareAppSchema function",
+        "In aggregateRating object, change reviewCount from ctx.reviewCount ?? 1 to always include reviewCount: ctx.reviewCount ?? 1",
+        "Ensure ratingCount is also present (Google requires both ratingValue and ratingCount)",
+        "The aggregateRating should have: ratingValue, bestRating, worstRating, ratingCount (same as reviewCount)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/utils/seo.ts"]
+    },
+    {
+      "id": 3,
+      "title": "Remove Last Updated from ArticleHeader",
+      "acceptanceCriteria": [
+        "In src/components/article/ArticleHeader.tsx remove lastUpdated prop from interface",
+        "Remove lastUpdated from destructured props",
+        "Remove the entire block that renders Calendar icon and 'Last updated: {lastUpdated}'",
+        "Remove Calendar import from lucide-react if no longer used",
+        "Update all files that pass lastUpdated to ArticleHeader - remove that prop",
+        "Check src/app/[region]/guides/[slug]/page.tsx",
+        "Check src/app/[region]/bettor-resources/[slug]/page.tsx",
+        "Last Updated stays ONLY in ArticleFooter (do not touch ArticleFooter)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 4,
+      "title": "Update ArticleGroups - Badge ribbon style",
+      "acceptanceCriteria": [
+        "In src/components/article/ArticleGroups.tsx find badge rendering block",
+        "Change from: absolute top-3 right-3 bg-blue-600...",
+        "Change to: absolute -top-3 left-4 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1.5 rounded-md shadow-sm z-10",
+        "Badge should visually 'overflow' above the card top edge (ribbon effect)",
+        "Add overflow-visible to parent article element if needed for badge to show",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 5,
+      "title": "Update ArticleGroups - Add bestFor rendering",
+      "acceptanceCriteria": [
+        "In src/components/article/ArticleGroups.tsx add bestFor to GroupItem interface: bestFor?: string",
+        "Render bestFor block AFTER Key Stats section, BEFORE Pros section",
+        "Render only if item.bestFor exists",
+        "Style: <p className='px-6 py-3 text-sm text-gray-700 bg-gray-50 border-b border-gray-100'><span className='font-semibold'>Best For:</span> {item.bestFor}</p>",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 6,
+      "title": "Update ArticleGroups - CTA button with two-column layout",
+      "acceptanceCriteria": [
+        "In src/components/article/ArticleGroups.tsx modify the content area (div with p-6 containing pros/cons)",
+        "Create two-column layout for DESKTOP (lg:): pros/cons LEFT, CTA button RIGHT",
+        "On MOBILE/TABLET: CTA falls below pros/cons (single column, CTA full width)",
+        "Use grid: className='grid grid-cols-1 lg:grid-cols-[1fr,auto] gap-6'",
+        "LEFT column: contains pros and cons lists",
+        "RIGHT column (desktop only): contains CTA button, vertically centered",
+        "CTA Button specs: only render if item.url exists",
+        "CTA Button: <a href={item.url} target='_blank' rel='noopener noreferrer' className='inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap'>Visit Site<ExternalLinkIcon className='h-4 w-4' /></a>",
+        "On mobile (below lg): CTA appears after cons, full width, centered",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 7,
+      "title": "Migrate article data - add bestFor and badge",
+      "acceptanceCriteria": [
+        "In src/data/regions/gb/en/articles/bettor-resources/best-live-score-stats-apps.ts",
+        "For EACH item in groups[0].items, extract 'Best For' content from markdown and move to new bestFor field",
+        "Remove '### Best For' section and its content from each item's content field",
+        "Add badge: \"Editor's Pick\" ONLY to flashscore item (id: 'flashscore') as it's #1",
+        "Example transformation for flashscore:",
+        "  ADD: bestFor: 'Multi-sport live bettors who prioritize speed above all else. Essential for in-play betting where seconds matter.'",
+        "  ADD: badge: \"Editor's Pick\"",
+        "  REMOVE from content: ### Best For section",
+        "Do same bestFor extraction for ALL items (sofascore, fotmob, fbref, footystats, racing-post, timeform, tennis-explorer, basketball-reference)",
+        "Only flashscore gets badge",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 8,
+      "title": "Update CONTENT_GUIDE.md documentation",
+      "acceptanceCriteria": [
+        "In docs/CONTENT_GUIDE.md section '### C. Editorial Minimums' table:",
+        "Add row: | `bestFor` | Required | Qualifying filter - user decides instantly if this is for them |",
+        "Add new subsection '#### bestFor Field' after quickVerdict section:",
+        "Content: 1-2 sentences describing the ideal user persona. Extract from content, do not duplicate in markdown.",
+        "Add new subsection '#### badge Field':",
+        "Content: Use sparingly — max 1-2 badges per article. Table with values: Editor's Pick (#1 overall), Best Free (best free option), Best Value (best price/quality)",
+        "In section '### E. Content Structure: Micro-Review Format' update template:",
+        "Remove '### Best For' from markdown template (it's now a separate field)",
+        "New template should be: ### Overview, ### Key Features, ### Price",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    }
+  ],
+  "postFeatureReview": null
+}
