@@ -78,9 +78,9 @@ function CardItem({ item, logoPath, bgColor }: CardItemProps) {
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
       <article className="bg-white border border-gray-200 rounded-xl overflow-visible shadow-sm relative">
-        {/* Badge ribbon above card */}
+        {/* Badge ribbon above card (centered) */}
         {item.badge && (
-          <div className="absolute -top-3 left-4 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1.5 rounded-md shadow-sm z-10">
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1.5 rounded-md shadow-sm z-10">
             {item.badge}
           </div>
         )}
