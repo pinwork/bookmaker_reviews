@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { ExternalLink as ExternalLinkIcon, Star, ChevronDown } from 'lucide-react';
+import { ExternalLink as ExternalLinkIcon, Star, ChevronDown, Quote } from 'lucide-react';
 import {
   Collapsible,
   CollapsibleContent,
@@ -114,9 +114,12 @@ function CardItem({ item, logoPath, bgColor }: CardItemProps) {
             </h3>
 
             {item.quickVerdict && (
-              <p className="mt-1 text-sm text-gray-600 italic truncate">
-                {item.quickVerdict}
-              </p>
+              <div className="flex items-start gap-1.5 mt-1">
+                <Quote className="h-3.5 w-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-gray-600 italic truncate">
+                  {item.quickVerdict}
+                </p>
+              </div>
             )}
           </div>
 
