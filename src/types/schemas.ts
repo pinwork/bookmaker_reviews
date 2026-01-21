@@ -194,11 +194,56 @@ const KeyStatSchema = z.object({
   value: z.string(),
 });
 
+// ============================================
+// REVIEW ITEM SCHEMA (for bettor-resources)
+// Strict schema for product/tool reviews
+// ============================================
+export const ReviewItemSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  url: z.string().url(), // Required: affiliate link
+  bgColor: z.string().optional(), // Brand background color for logo
+  quickVerdict: z.string().max(75), // Required: "[Best for] — [metric]" format
+  rating: z.number().min(1).max(5), // Required: editorial rating for Rich Snippets
+  bestFor: z.string(), // Required: 1-2 sentences describing ideal user persona
+  badge: z.string().optional(), // Editor's Pick, Best Free, Best Value, etc.
+  pros: z.array(z.string()).min(3), // Required: minimum 3 pros
+  cons: z.array(z.string()).min(1), // Required: minimum 1 con
+  keyStats: z.array(KeyStatSchema).min(2), // Required: minimum 2 key stats
+  content: z.string(), // Markdown: Overview, Key Features, Pricing
+});
+
+const ReviewGroupSchema = z.object({
+  groupName: z.literal('Reviews'), // bettor-resources use single "Reviews" group
+  items: z.array(ReviewItemSchema),
+});
+
+// ============================================
+// GUIDE ITEM SCHEMA (for guides)
+// Flexible schema for educational content
+// ============================================
+export const GuideItemSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  content: z.string(), // Markdown prose
+  keyStats: z.array(KeyStatSchema).optional(), // Optional stats display
+  badge: z.string().optional(), // Contextual label (e.g., "Age 24", "Founder")
+  quickVerdict: z.string().optional(), // Optional subtitle
+  pros: z.array(z.string()).optional(), // Rare, only for specific guide items
+  recommendedBookmakers: z.array(z.string()).optional(), // Links to bookmakers
+});
+
+const GuideSectionSchema = z.object({
+  groupName: z.string(), // Section title (e.g., "Part 1: The Kickstart")
+  items: z.array(GuideItemSchema),
+});
+
+// Legacy: flexible schema for backwards compatibility during migration
 export const BonusGroupItemSchema = z.object({
   id: z.string(),
   title: z.string(),
-  url: z.string().url().optional(), // Direct affiliate link
-  bgColor: z.string().optional(), // Brand background color for logo
+  url: z.string().url().optional(),
+  bgColor: z.string().optional(),
   quickVerdict: z.string().optional(),
   rating: z.number().min(1).max(5).optional(),
   bestFor: z.string().optional(),
@@ -286,7 +331,7 @@ export const BaseContentSchema = z.object({
   reviewContext: ReviewContextSchema.optional(),
 });
 
-// Tool Review schema - for app reviews, betting tools, etc.
+// Tool Review schema - for app reviews, betting tools, etc. (legacy)
 export const ToolReviewSchema = BaseContentSchema.extend({
   relatedAppId: z.string().optional(),
   verdict: z.string().optional(),
@@ -299,3 +344,44 @@ export const ContentGuideSchema = BaseContentSchema;
 
 // Legacy alias - IndustryReportSchema for backwards compatibility
 export const IndustryReportSchema = BaseContentSchema;
+
+// ============================================
+// STRICT ARTICLE SCHEMAS (new)
+// ============================================
+
+// Tool Review Article - strict schema for bettor-resources
+export const ToolReviewArticleSchema = z.object({
+  slug: z.string().min(1),
+  collections: z.tuple([z.literal('bettor-resources')]),
+  h1: z.string().min(1),
+  metaTitle: z.string().min(1),
+  metaDescription: z.string().min(1),
+  intro: z.object({ title: z.string(), content: z.string() }),
+  reviewContext: ReviewContextSchema, // Required for Rich Snippets
+  comparisonTables: z.array(ComparisonTableSchema).optional(),
+  groups: z.array(ReviewGroupSchema).length(1), // Single "Reviews" group
+  faq: z.array(z.object({ q: z.string(), a: z.string() })).min(3),
+  footer: z.object({
+    lastUpdated: z.string(),
+    dataSource: z.string().optional(),
+  }),
+});
+
+// Guide Article - flexible schema for educational guides
+export const GuideArticleSchema = z.object({
+  slug: z.string().min(1),
+  collections: z.tuple([z.literal('guides')]),
+  h1: z.string().min(1),
+  metaTitle: z.string().min(1),
+  metaDescription: z.string().min(1),
+  intro: z.object({ title: z.string(), content: z.string() }),
+  linkedResources: z.array(LinkedResourceSchema).optional(),
+  comparisonTables: z.array(ComparisonTableSchema).optional(),
+  groups: z.array(GuideSectionSchema).min(1), // One or more sections
+  faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
+  footer: z.object({
+    helpline: z.string().optional(),
+    lastUpdated: z.string().optional(),
+    dataSource: z.string().optional(),
+  }).optional(),
+});

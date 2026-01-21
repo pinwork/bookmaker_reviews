@@ -1,0 +1,106 @@
+{
+  "featureName": "Article Types Separation",
+  "description": "Separate ToolReviewArticle and GuideArticle types with distinct schemas and rendering components. Guides will use prose sections, bettor-resources will keep review cards.",
+  "affectedFiles": [
+    "src/types/schemas.ts",
+    "src/types/index.ts",
+    "src/components/article/ArticleGroups.tsx",
+    "src/components/article/GuideSections.tsx (new)",
+    "src/components/article/index.ts",
+    "src/app/[region]/guides/[slug]/page.tsx",
+    "docs/CONTENT_GUIDE.md"
+  ],
+  "constraints": [
+    "bettor-resources articles must NOT change (data or rendering)",
+    "guides data files will be updated separately by user",
+    "existing IndustryReport type kept as alias for backwards compatibility"
+  ],
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Create ToolReviewArticle schema with strict review fields",
+      "acceptanceCriteria": [
+        "ToolReviewArticleSchema in schemas.ts with required: reviewContext, groups with items having url/rating/pros/cons/bestFor/quickVerdict",
+        "BonusGroupItemSchema split into ReviewItemSchema (strict) and GuideItemSchema (flexible)",
+        "Type exported in index.ts",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/types/schemas.ts", "src/types/index.ts"]
+    },
+    {
+      "id": 2,
+      "title": "Create GuideArticle schema with flexible section fields",
+      "acceptanceCriteria": [
+        "GuideArticleSchema in schemas.ts with: sections array (title + items), items have id/title/content, optional keyStats/badge",
+        "No url/rating/pros/cons/bestFor/quickVerdict in guide items",
+        "Type exported in index.ts",
+        "IndustryReport kept as union type for backwards compatibility",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/types/schemas.ts", "src/types/index.ts"]
+    },
+    {
+      "id": 3,
+      "title": "Create GuideSections rendering component",
+      "acceptanceCriteria": [
+        "New component src/components/article/GuideSections.tsx",
+        "Renders sections with title as h2, items as prose cards",
+        "No collapsible, no 'Read full review' button, no Visit Site button",
+        "Shows: title, keyStats (if any), badge (as label not ribbon), markdown content",
+        "Exported from article/index.ts",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/components/article/GuideSections.tsx", "src/components/article/index.ts"]
+    },
+    {
+      "id": 4,
+      "title": "Update guides page to use GuideSections",
+      "acceptanceCriteria": [
+        "src/app/[region]/guides/[slug]/page.tsx uses GuideSections instead of ArticleGroups",
+        "No logo processing needed (guides don't have product logos)",
+        "Guides render as prose sections without review UI",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 4,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/app/[region]/guides/[slug]/page.tsx"]
+    },
+    {
+      "id": 5,
+      "title": "Clean up CONTENT_GUIDE.md documentation",
+      "acceptanceCriteria": [
+        "Remove field descriptions that are now enforced by Zod schema",
+        "Keep editorial guidelines that add context (voice/tone, examples, why)",
+        "Add section explaining two article types with their purposes",
+        "Keep quickVerdict formula, badge usage guidelines, keyStats examples",
+        "Remove redundant type definitions (refer to schemas.ts instead)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 5,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["docs/CONTENT_GUIDE.md"]
+    }
+  ],
+  "postFeatureReview": {
+    "summary": "Separated article types into ToolReviewArticle (strict, for bettor-resources) and GuideArticle (flexible, for guides). Created GuideSections component for prose rendering. Updated guides page to use new component.",
+    "impact": "Types: schemas.ts, index.ts. Components: GuideSections.tsx, index.ts. Pages: guides/[slug]/page.tsx. Docs: CONTENT_GUIDE.md. Bettor-resources articles unchanged.",
+    "issues": "Guides data files still use old IndustryReport structure - user will update separately. GuideArticle type is available but not enforced on existing data yet.",
+    "recommendations": "1) Update guides data files to match GuideArticle schema. 2) Consider runtime validation with GuideArticleSchema.parse() when loading guides. 3) Add visual tests for GuideSections component."
+  }
+}

@@ -10,23 +10,34 @@
 
 ---
 
-## 2. Content Types Strategy & Data Map
+## 2. Content Types Strategy
 
-We distinguish between **Learning** and **Buying** intents.
+We have **two distinct article types** for different user intents:
 
-| Content Type | TypeScript Type | Route | Schema (SEO) | Intent |
+| Content Type | TypeScript Type | Route | SEO Schema | User Intent |
 | :--- | :--- | :--- | :--- | :--- |
-| **Guide** | `IndustryReport` | `/guides/[slug]` | `Article` | Informational (Learning) |
-| **Tool Review** | `IndustryReport` | `/bettor-resources/[slug]` | `SoftwareApplication` | Transactional (Buying) |
+| **Guide** | `GuideArticle` | `/guides/[slug]` | `Article` | Informational (Learning) |
+| **Tool Review** | `ToolReviewArticle` | `/bettor-resources/[slug]` | `SoftwareApplication` | Transactional (Buying) |
 
-### A. Guides Focus
-* **Focus:** Storytelling, strategies, psychology, explaining "How it works".
-* **SEO:** Target "How to...", "Strategy for...", "Meaning of..." keywords.
+**Schema Reference:** See `src/types/schemas.ts` for field requirements and validation.
 
-### B. Tool Reviews Focus
-* **Focus:** Hard facts, comparisons, speed tests, pros/cons.
-* **Structure:** Hybrid (Intro + Table + Deep Dive).
-* **SEO:** Target "Best [App] for...", "Review", "Comparison".
+### A. Guides (GuideArticle)
+
+Educational content with flexible structure. No affiliate links or product ratings.
+
+* **Focus:** Storytelling, strategies, psychology, explaining "How it works"
+* **SEO:** Target "How to...", "Strategy for...", "Meaning of..." keywords
+* **Rendering:** Prose sections with h2 headers, no collapsible cards
+* **Structure:** Multiple `groups` (sections), each with `items` containing markdown `content`
+
+### B. Tool Reviews (ToolReviewArticle)
+
+Affiliate product reviews with strict structure. Each item requires rating, pros, cons, affiliate URL.
+
+* **Focus:** Hard facts, comparisons, speed tests, pros/cons
+* **SEO:** Target "Best [App] for...", "Review", "Comparison"
+* **Rendering:** Review cards with collapsible details, "Visit Site" buttons, star ratings
+* **Structure:** Single `groups` entry named "Reviews", items have strict required fields
 
 ---
 
@@ -105,19 +116,13 @@ Use the `collections` array to control **which listing page** the content appear
 
 ## 7. Bettor Resources: Editorial Standards
 
-**Schema reference:** `src/types/schemas.ts` → `BonusGroupItemSchema`, `ComparisonTableSchema`
+**Schema:** `src/types/schemas.ts` → `ToolReviewArticleSchema`, `ReviewItemSchema`
 
-Articles in `/bettor-resources/` are affiliate product reviews. This section covers **editorial minimums** not enforced by schema.
+Articles in `/bettor-resources/` are affiliate product reviews. Field requirements are enforced by Zod schema. This section covers **editorial guidance** beyond validation.
 
-### A. Structure
+### A. Item Count & Order
 
-* `groups`: use single group `{ groupName: 'Reviews', items: [...] }`
-* `comparisonTables`: use new format `{ id: 'item-id', cells: [...] }` for URL linking
-* `reviewContext`: required for Google Rich Snippets (star ratings)
-
-### B. Item Count & Order
-
-**Count:** 5-7 optimal. Min 2, max 10+.
+**Count:** 5-7 optimal.
 
 **Order:** Best first, weakest last. Based on editorial assessment (value, reliability, features), NOT on `rating` field or price.
 
@@ -125,18 +130,7 @@ Articles in `/bettor-resources/` are affiliate product reviews. This section cov
 * Last item = still worth mentioning, but has drawbacks
 * Equal quality? Better-value option first
 
-### C. Editorial Minimums
-
-| Field | Minimum | Why |
-| :--- | :--- | :--- |
-| `pros` | 3 items | Builds trust |
-| `cons` | 1 item | Honesty signal |
-| `keyStats` | 2 items | Quick scanning |
-| `faq` | 3 questions | SEO + user doubts |
-| `quickVerdict` | ≤75 chars | Fits header layout |
-| `bestFor` | Required | Qualifying filter - user decides instantly if this is for them |
-
-### D. Field Guidelines
+### B. Field Guidelines
 
 #### quickVerdict Formula
 
@@ -176,15 +170,17 @@ Editorial rating (1.0-5.0) for Google Rich Snippets. Never display as feature.
 
 #### badge Field
 
-Use sparingly — max 1-2 badges per article. Badges appear as yellow ribbon above the card.
+Use sparingly — max 2-3 badges per article. Badges appear as yellow ribbon above the card.
 
 | Badge Value | When to Use |
 | :--- | :--- |
 | `Editor's Pick` | #1 overall choice in the article |
 | `Best Free` | Best free option (when paid alternatives exist) |
-| `Best Value` | Best price/quality ratio |
+| `Best Value` | Best price/quality ratio (budget champion) |
+| `Best for Beginners` | Easiest onboarding, best support, gentlest learning curve |
+| `Upgrade Pick` | Premium option for power users who outgrow basics |
 
-### E. Content Structure: Micro-Review Format
+### C. Content Structure: Micro-Review Format
 
 Each `content` field is a **Micro-Review** (Wirecutter/TechRadar style). Target: **150-250 words**.
 
@@ -207,7 +203,7 @@ Each `content` field is a **Micro-Review** (Wirecutter/TechRadar style). Target:
 * *Good:* `"Three tiers: Lite (€17/mo), Deluxe (€37/mo), Platinum (€77/mo). 7-day free trial included."`
 * *Bad:* `"| Tier | Price |..."` (renders as raw text)
 
-### F. Editorial Style & Formatting
+### D. Editorial Style & Formatting
 
 **Clean Bold Rule:**
 * Bold only at the **start** of bullet points (feature names, labels)
@@ -229,7 +225,7 @@ Every Key Feature bullet must answer: "What does the user gain?"
 * *Good:* "**Live xG:** Expected goals updated in real-time during matches"
 * *Bad:* "**Live xG:** Shows xG data" (no benefit explained)
 
-### G. Logo & bgColor
+### E. Logo & bgColor
 
 * `id` matches filename: `public/images/partners/{id}.svg` or `.jpg`
 * JPG logos: bgColor auto-detected from edge pixel

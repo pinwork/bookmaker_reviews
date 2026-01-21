@@ -3,11 +3,10 @@ import { notFound } from 'next/navigation';
 import { isValidRegion, getGuideBySlug } from '@/data';
 import { getSiteConfig } from '@/data/regions';
 import { generateArticleSchemas } from '@/utils/seo';
-import { getPartnerLogoPath } from '@/utils/images';
 import {
   ArticleHeader,
   UnifiedComparisonTable,
-  ArticleGroups,
+  GuideSections,
   ArticleFAQ,
   ArticleFooter,
 } from '@/components/article';
@@ -52,16 +51,6 @@ export default async function GuidePage({ params }: PageProps) {
   const articleUrl = siteConfig ? `${siteConfig.url}/${region}/guides/${slug}` : '';
   const schemas = siteConfig ? generateArticleSchemas(article, articleUrl, siteConfig) : [];
 
-  // Build logo paths map from article groups
-  const logoPaths: Record<string, string | null> = {};
-  if (article.groups) {
-    for (const group of article.groups) {
-      for (const item of group.items) {
-        logoPaths[item.id] = getPartnerLogoPath(item.id);
-      }
-    }
-  }
-
   return (
     <>
       {schemas.length > 0 && (
@@ -85,10 +74,7 @@ export default async function GuidePage({ params }: PageProps) {
         ))}
 
         {article.groups && (
-          <ArticleGroups
-            groups={article.groups}
-            logoPaths={logoPaths}
-          />
+          <GuideSections sections={article.groups} />
         )}
 
         {article.faq && article.faq.length > 0 && (

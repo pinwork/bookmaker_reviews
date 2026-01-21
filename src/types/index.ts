@@ -40,6 +40,12 @@ export type LinkedResource = z.infer<typeof schemas.LinkedResourceSchema>;
 export type ComparisonTable = z.infer<typeof schemas.ComparisonTableSchema>;
 export type BonusGroupItem = z.infer<typeof schemas.BonusGroupItemSchema>;
 
+// New strict article types
+export type ReviewItem = z.infer<typeof schemas.ReviewItemSchema>;
+export type GuideItem = z.infer<typeof schemas.GuideItemSchema>;
+export type ToolReviewArticle = z.infer<typeof schemas.ToolReviewArticleSchema>;
+export type GuideArticle = z.infer<typeof schemas.GuideArticleSchema>;
+
 export interface BookmakerComplete extends Bookmaker, RegionalBookmakerData {
   welcomeOffers: WelcomeOffer[];
   extraPromotions: ExtraPromotion[];
