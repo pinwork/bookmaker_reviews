@@ -107,6 +107,7 @@ export const generateSoftwareAppSchema = (
       bestRating: ctx.bestRating ?? 5,
       worstRating: ctx.worstRating ?? 1,
       ratingCount: ctx.reviewCount ?? 1,
+      reviewCount: ctx.reviewCount ?? 1,
     },
     offers: {
       '@type': 'Offer',
