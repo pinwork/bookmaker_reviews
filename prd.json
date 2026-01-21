@@ -1,0 +1,106 @@
+{
+  "featureName": "Card Header Redesign + FAQ Polish",
+  "branchName": "feat/card-header-faq-polish",
+  "userStories": [
+    {
+      "id": 1,
+      "title": "First card collapsed by default",
+      "acceptanceCriteria": [
+        "Update src/components/article/ArticleGroups.tsx",
+        "Remove logic that expands first card by default",
+        "All cards start with Collapsible closed",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 2,
+      "title": "Center badge above card",
+      "acceptanceCriteria": [
+        "Update badge positioning in src/components/article/ArticleGroups.tsx",
+        "Badge centered horizontally: absolute left-1/2 -translate-x-1/2 -top-3",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 3,
+      "title": "Redesign card header with logo left layout",
+      "acceptanceCriteria": [
+        "Refactor header in src/components/article/ArticleGroups.tsx",
+        "Layout: Logo (left) | Title+Verdict (center) | Rating (right)",
+        "Logo: increase to h-14 w-24, proportional (not square), object-contain, p-2",
+        "Logo container: clickable, rounded-lg border border-gray-200",
+        "Title: text-xl font-bold text-gray-900, NOT clickable (remove link)",
+        "Rating: vertically centered to logo block (items-center on flex row)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 4,
+      "title": "QuickVerdict with Quote icon styling",
+      "acceptanceCriteria": [
+        "Update quickVerdict display in src/components/article/ArticleGroups.tsx",
+        "Add Quote icon (from lucide-react) before text",
+        "Icon: h-3.5 w-3.5 text-blue-500 flex-shrink-0",
+        "Text: text-sm text-gray-600 italic",
+        "Layout: flex items-start gap-1.5 mt-1",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 5,
+      "title": "Polish FAQ section header",
+      "acceptanceCriteria": [
+        "Update src/components/article/ArticleFAQ.tsx",
+        "Add HelpCircle icon before 'Frequently Asked Questions' title",
+        "Icon: h-6 w-6 text-blue-600 inline with title",
+        "Title: text-xl font-bold (reduce from text-2xl)",
+        "REMOVE border-b from h2 (pb-2 border-b border-gray-200)",
+        "Keep mb-6 spacing below title",
+        "Result: cleaner header without heavy underline",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 6,
+      "title": "Responsive adjustments",
+      "acceptanceCriteria": [
+        "Logo size on mobile: h-12 w-20 (slightly smaller)",
+        "Title truncate if too long",
+        "QuickVerdict: line-clamp-2 on mobile",
+        "Test at 375px width",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    }
+  ],
+  "postFeatureReview": null
+}

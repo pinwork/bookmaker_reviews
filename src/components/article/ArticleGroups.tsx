@@ -70,11 +70,10 @@ interface CardItemProps {
   item: GroupItem;
   logoPath: string | null;
   bgColor: string;
-  defaultOpen: boolean;
 }
 
-function CardItem({ item, logoPath, bgColor, defaultOpen }: CardItemProps) {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
+function CardItem({ item, logoPath, bgColor }: CardItemProps) {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
@@ -230,9 +229,6 @@ export function ArticleGroups({ groups, logoPaths, bgColors }: ArticleGroupsProp
   // Check if this is a flat list (single group with generic name like "Reviews")
   const isFlatList = groups.length === 1 && groups[0].groupName.toLowerCase() === 'reviews';
 
-  // Track first item globally for default expanded state
-  let globalItemIndex = 0;
-
   return (
     <div className="space-y-12">
       {groups.map((group, groupIndex) => (
@@ -249,8 +245,6 @@ export function ArticleGroups({ groups, logoPaths, bgColors }: ArticleGroupsProp
               const logoPath = logoPaths?.[item.id] ?? null;
               // Priority: bgColors map (includes auto-detected) > item.bgColor > default white
               const bgColor = bgColors?.[item.id] || item.bgColor || '#ffffff';
-              const isFirstItem = globalItemIndex === 0;
-              globalItemIndex++;
 
               return (
                 <CardItem
@@ -258,7 +252,6 @@ export function ArticleGroups({ groups, logoPaths, bgColors }: ArticleGroupsProp
                   item={item}
                   logoPath={logoPath}
                   bgColor={bgColor}
-                  defaultOpen={isFirstItem}
                 />
               );
             })}
