@@ -1,84 +1,115 @@
 # Article Data Template for Bettor Resources
 
-## What Are Bettor Resources Articles?
+## What This Template Produces
 
-Bettor Resources are **comparison/review articles** that help UK sports bettors discover and evaluate tools, apps, and services that improve their betting experience. Think Wirecutter-style reviews but for betting tools.
+Comparison/review articles (Wirecutter-style) for UK bettors evaluating tools, apps, and services.
 
-**Examples:**
-- Best Live Score Apps for UK Bettors
-- Best Betting Calculators for UK Bettors
-- Best Horse Racing Form Guides
-- Best Football Statistics Websites
-
-**Article Structure:**
-Each article reviews 6-12 tools/services with:
-- Quick verdict (one-line summary)
-- Who it's best for (target user)
-- Pros and cons
-- Key features with benefits
-- Pricing information
-- A mini-review (150-250 words)
+**Examples:** Best Live Score Apps, Best Betting Calculators, Best Horse Racing Form Guides
 
 ---
 
-## Data Format
+## Required Sections
 
-When providing research for a new article, please fill out this template for **each tool/service** you want included. **Be comprehensive** — provide full details and I will extract what's needed. Do not summarize.
-
-### Article Topic
+### 1. Article Topic
 
 ```
 Topic: [e.g., "Best Betting Calculators for UK Bettors"]
-Target audience: [Who will read this? What problem are they solving?]
+Target audience: [Who reads this? What problem are they solving?]
 ```
 
-### For Each Tool/Service
+### 2. Category Intro
+
+Explain to a newcomer (becomes article intro):
+
+```
+What is this category? [1-2 sentences — what these tools ARE]
+What problem does it solve? [The user's pain point]
+How is it different from alternatives? [What it's NOT — prevent confusion]
+Scope: [What qualifies? e.g., "must have X, Y, Z features"]
+```
+
+### 3. Niche-Specific Criteria
+
+Identify 3-5 **key decision factors** for this category. These become comparison table columns.
+
+```
+Example (for betting scanners):
+- Price
+- Backtesting depth
+- Alert speed
+- Trial availability
+```
+
+### 4. For Each Tool/Service
 
 ```
 ## [Tool Name]
 
 ### Basic Info
 - Official website URL:
-- Brand primary color (hex if known, or describe):
+- Brand primary color (hex or description):
+- Year founded:
 - Company/owner (if known):
-- Country of origin (if known):
 
 ### What It Is
-[Describe what this tool does. 3-5 sentences. What makes it different from alternatives? What's its reputation in the industry?]
+[3-5 sentences. What it does, reputation, key differentiator.]
 
 ### Target User
-[Who benefits most from this tool? Be specific about the type of bettor, their experience level, what they're trying to achieve. 2-3 sentences.]
+[2-3 sentences. Specific bettor type, experience level, use case.]
 
 ### Pricing
-[Full pricing details: Free? Freemium? Subscription cost? One-time purchase? Trial period? What do you get at each tier?]
+[Full details: Free/Freemium/Paid tiers, trial period, best value option.]
 
 ### Strengths (Pros)
-[List 3-5 genuine advantages. Be specific — not "good interface" but "clean interface that shows live odds without clutter"]
+[3-5 genuine advantages. Be specific, not generic.]
 
 ### Weaknesses (Cons)
-[List 1-3 honest drawbacks. Every tool has them. This builds trust with readers.]
+[1-3 honest drawbacks. Every tool has them.]
 
 ### Key Features
-[List 4-6 main features. For each one, explain the BENEFIT to the user, not just what it does.
-Example:
-- "Dutching Calculator: Spread your stake across multiple selections to guarantee equal profit regardless of winner"
-NOT just: "Has dutching calculator"]
+[4-6 features with BENEFITS, not just names.
+Good: "Dutching Calculator: Spread stake across selections to guarantee equal profit"
+Bad: "Has dutching calculator"]
 
-### Any Awards/Recognition
-[Industry awards, app store ratings, notable mentions, user base size if impressive]
+### Factual Metrics
+[User count, coverage stats, years in operation — no external review scores]
 
-### Your Overall Impression
-[If you've used it or researched it thoroughly: what stands out? Any dealbreakers? How does it compare to the others in this list?]
+### Overall Impression
+[Your editorial verdict. What stands out? Any dealbreakers?]
 ```
 
----
+### 5. Comparison Table
 
-## FAQ Ideas
-
-After all tools, provide 3-5 potential FAQ questions that readers might ask:
+Create table with niche criteria columns:
 
 ```
-### FAQ Ideas
+| Tool | [Criterion 1] | [Criterion 2] | [Criterion 3] | [Criterion 4] |
+|------|---------------|---------------|---------------|---------------|
+| Tool A | value | value | value | value |
+| Tool B | value | value | value | value |
+```
+
+### 6. Use Case Matching
+
+```
+| If You Need... | Best Choice | Why |
+|----------------|-------------|-----|
+| [Use case 1] | Tool X | [Brief reason] |
+| [Use case 2] | Tool Y | [Brief reason] |
+```
+
+### 7. Editorial Picks
+
+```
+Best Overall: [Tool] — [reason]
+Best Value: [Tool] — [reason]
+Best for Beginners: [Tool] — [reason]
+Best for [niche persona]: [Tool] — [reason]
+```
+
+### 8. FAQ Ideas
+
+```
 1. [Question a beginner might ask]
 2. [Question about choosing between tools]
 3. [Question about pricing/value]
@@ -87,103 +118,29 @@ After all tools, provide 3-5 potential FAQ questions that readers might ask:
 
 ---
 
-## What This Data Becomes
+## Important Notes
 
-Your detailed input will be transformed into:
+1. **Be comprehensive** — Too much detail is better than too little
+2. **Include URLs** — Every tool needs official website
+3. **Explain benefits** — "Live xG" means nothing; explain why it matters
+4. **Be honest about cons** — Reviews with no cons look fake
+5. **No external ratings** — Skip Trustpilot/G2 scores; we are the authority
+6. **UK focus** — Prices in GBP (£), UK availability, UK-relevant sports
+
+---
+
+## What Your Data Becomes
 
 | Your Input | Becomes | Purpose |
 |------------|---------|---------|
-| Tool name + URL | Card header with clickable logo | Brand recognition, easy access |
-| Brand color | Logo background | Professional appearance |
-| "What It Is" | Overview section in mini-review | Context and credibility |
-| "Target User" | "Best For" field | Helps reader self-qualify instantly |
-| Strengths | Pros list (✓ bullets) | Quick scanning, builds interest |
-| Weaknesses | Cons list (✗ bullets) | Trust signal, honest review |
-| Key Features | Feature list with benefits | Shows value proposition |
-| Pricing | Price section in review | Decision-making info |
-| Your impression | Quick verdict (one line) | TL;DR for skimmers |
-| FAQ Ideas | FAQ section at bottom | SEO + addresses reader doubts |
-
----
-
-## Important Notes
-
-1. **Be comprehensive, not brief** — Give me too much detail rather than too little. I will extract and condense.
-
-2. **Don't summarize** — If a tool has 10 features, list all 10. If pricing has 3 tiers, describe all 3.
-
-3. **Include URLs** — Every tool needs its official website URL. This is required.
-
-4. **Brand colors help** — If you can find the brand's primary color (from their logo or website), include it. Otherwise describe it ("dark blue", "bright green").
-
-5. **Be honest about cons** — A review with no cons looks fake. Every tool has weaknesses.
-
-6. **Explain benefits, not features** — "Live xG tracking" means nothing to most readers. "See expected goals update in real-time so you can spot when a team is dominating despite the scoreline" explains why it matters.
-
-7. **Target UK bettors** — Prices in GBP (£), mention UK availability, UK-relevant sports (football, horse racing, tennis).
-
----
-
-## Example Submission
-
-```
-Topic: Best Odds Comparison Tools for UK Bettors
-Target audience: Bettors who want to ensure they're getting the best price on their bets
-
-## Oddschecker
-
-### Basic Info
-- Official website URL: https://www.oddschecker.com
-- Brand primary color: #00A651 (bright green)
-- Company/owner: Flutter Entertainment (same company as Betfair, Paddy Power)
-- Country of origin: UK
-
-### What It Is
-Oddschecker is the UK's largest odds comparison website, showing real-time prices from 25+ bookmakers side by side. Founded in 1999, it's become the default starting point for price-conscious bettors. Unlike newer competitors, it covers every sport and market, not just popular events. The site also offers betting tools, tips, and promotional offers from partner bookmakers.
-
-### Target User
-Bettors who place bets across multiple sports and want to maximize value by always getting the best available odds. Essential for anyone who doesn't have loyalty to a single bookmaker. Particularly useful for accumulators where small price differences compound into significant value.
-
-### Pricing
-Completely free. Revenue comes from affiliate partnerships with bookmakers.
-
-### Strengths
-- Covers 25+ UK bookmakers in real-time
-- Includes best odds guaranteed tracking
-- Betting tools section (calculators, stats)
-- Promo code aggregation saves money
-- Mobile app works well
-
-### Weaknesses
-- Interface can feel cluttered with ads
-- Some bookmakers missing (smaller ones)
-- No historical odds data
-
-### Key Features
-- Best Odds Comparison: See prices from all major UK bookmakers instantly, highlighted when one offers significantly better value
-- Acca Calculator: Build accumulators and see combined odds across bookmakers
-- Dropping Odds: Track which selections are being heavily backed (prices shortening)
-- Free Bet Finder: Aggregates current promotions from all bookmakers in one place
-
-### Awards/Recognition
-- 10+ million monthly users
-- 4.5 stars on App Store
-- Official betting partner of Racing TV
-
-### Overall Impression
-The gold standard for odds comparison in the UK. Every serious bettor should check Oddschecker before placing a bet. The interface is busy but functional. Main limitation is it doesn't show historical odds movement over time.
-
----
-
-### FAQ Ideas
-1. Do odds comparison sites cost money to use?
-2. How much difference do odds really make to profits?
-3. Should I have accounts with multiple bookmakers?
-4. How quickly do odds comparison sites update?
-```
-
----
-
-## Ready to Submit?
-
-Copy the template above and fill it out for your chosen topic. The more detail you provide, the better the final article will be.
+| Category Intro | Article intro section | Context + SEO |
+| Tool name + URL | Card header with logo | Brand recognition |
+| "What It Is" | Overview in micro-review | Credibility |
+| "Target User" | `bestFor` field | User self-qualification |
+| Strengths/Weaknesses | Pros/Cons lists | Trust signals |
+| Key Features | Feature bullets | Value proposition |
+| Pricing | Pricing section | Decision info |
+| Overall Impression | `quickVerdict` | TL;DR for skimmers |
+| Comparison Table | `comparisonTables` | Quick scanning |
+| Use Case Matching | FAQ or intro callouts | Navigation aid |
+| Editorial Picks | Badges + ordering | Clear recommendations |

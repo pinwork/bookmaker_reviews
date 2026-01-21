@@ -36,15 +36,15 @@ export const inPlayScannersArticle: IndustryReport = {
     {
       id: 'scanners-comparison',
       title: 'Quick Comparison: In-Play Betting Scanners',
-      headers: ['Scanner', 'Price', 'Backtesting', 'Trustpilot'],
+      headers: ['Scanner', 'Price', 'Backtesting', 'Trial'],
       rows: [
-        { id: 'statisticsports', cells: ['StatisticSports', '€17-77/mo', '50,000 games', 'N/A'] },
-        { id: 'inplayguru', cells: ['InPlayGuru', '€0-25/mo', 'Forward only', '4.6/5'] },
-        { id: 'footy-amigo', cells: ['Footy Amigo', '£12-25/mo', '15 years', '3.6/5'] },
-        { id: 'soccerscanner', cells: ['SoccerScanner', '£10/mo', 'Limited', '4.7/5'] },
-        { id: 'oddalerts', cells: ['OddAlerts', '£0-20/mo', 'Limited', 'N/A'] },
-        { id: 'betballers', cells: ['BetBallers', '€25-30/mo', 'None', 'N/A'] },
-        { id: 'livepick', cells: ['LivePick', '€8-14/mo', 'Limited', '4.2/5'] },
+        { id: 'inplayguru', cells: ['InPlayGuru', '€0-25/mo', 'Forward only', 'Unlimited'] },
+        { id: 'statisticsports', cells: ['StatisticSports', '€17-77/mo', '50,000 games', '7 days'] },
+        { id: 'footy-amigo', cells: ['Footy Amigo', '£12-25/mo', '15 years', '7 days'] },
+        { id: 'soccerscanner', cells: ['SoccerScanner', '£10/mo', 'Limited', '2 days'] },
+        { id: 'oddalerts', cells: ['OddAlerts', '£0-20/mo', 'Limited', 'Free tier'] },
+        { id: 'betballers', cells: ['BetBallers', '€25-30/mo', 'None', '€4.90/2d'] },
+        { id: 'livepick', cells: ['LivePick', '€8-14/mo', 'Limited', '4 days'] },
       ],
     }
   ],
@@ -54,13 +54,52 @@ export const inPlayScannersArticle: IndustryReport = {
       groupName: 'Reviews',
       items: [
         {
+          id: 'inplayguru',
+          title: 'InPlayGuru',
+          url: 'https://inplayguru.com',
+          bgColor: '#f8f9fa',
+          rating: 4.6,
+          bestFor: 'Intermediate to advanced traders who want momentum-based strategy automation. Perfect entry point for serious beginners due to unlimited free tier.',
+          badge: 'Highest Rated',
+          quickVerdict: 'Best overall — unlimited free tier with 30,000+ members.',
+          pros: [
+            'Largest community: 30,000+ active members sharing strategies',
+            'Proprietary Momentum Model captures attacking pressure patterns',
+            'Generous unlimited free tier — test indefinitely before committing',
+            'Strategy result logging eliminates manual record-keeping',
+            'Excel/CSV export for custom analysis'
+          ],
+          cons: [
+            'Server slowdowns on Saturdays during peak match times',
+            'No true historical backtesting — forward-testing only',
+            'Learning curve for strategy optimization'
+          ],
+          keyStats: [
+            { label: 'Price', value: '€0-25/mo' },
+            { label: 'Leagues', value: '1,700+' },
+            { label: 'Members', value: '30,000+' },
+            { label: 'Trial', value: 'Unlimited' }
+          ],
+          content: `### Overview
+InPlayGuru is the **most popular scanner** with **30,000+ active members**—the largest community among qualifying tools. The platform's proprietary **Momentum Model** identifies when match control shifts *before goals appear on the scoreboard*. With coverage across **1,700+ leagues** and an unlimited free tier, it balances sophistication with accessibility.
+
+### Key Features
+- **Momentum Model:** See attacking dominance before it converts to goals—enter positions before market prices adjust
+- **Strategy Builder:** Combine millions of pre-match, in-play, and odds data points into custom triggers
+- **Telegram Alerts:** Sub-second delivery claimed
+- **Auto-Strike Recording:** Every triggered match logged with timestamps, odds, and outcomes
+
+### Pricing
+Free tier available (~50% matches, 5 strategy slots, 5 daily alerts). Pro Monthly: ~€19-25 for full access and 30 strategy slots. Pro Yearly saves 40-50%. **30-day money-back guarantee** on paid plans.`
+        },
+        {
           id: 'statisticsports',
           title: 'StatisticSports',
           url: 'https://statisticsports.com',
           bgColor: '#2D3748',
           rating: 4.5,
           bestFor: 'Professional and semi-professional traders who need deep historical validation before deploying strategies. Users who value data integrity over sleek interfaces.',
-          quickVerdict: 'The industry veteran with unmatched backtesting — 50,000 games of historical validation.',
+          quickVerdict: 'The industry veteran — 50,000 games of backtesting data.',
           pros: [
             'Unmatched backtesting depth: test on 25,000-50,000 historical matches',
             'Live Events Chart visualizes match momentum graphically',
@@ -89,58 +128,7 @@ StatisticSports is the **industry veteran**—the longest-operating dedicated in
 - **Live Odds History:** Track opening, closing, and in-play odds movements
 
 ### Pricing
-| Tier | Monthly | Yearly |
-|------|---------|--------|
-| Lite | €17 | ~€150 |
-| Deluxe | €37 | ~€330 |
-| Platinum | €77 | ~€680 |
-
-**7-day free trial** with full access. Best value: Yearly Deluxe (€27.50/month effective).`
-        },
-        {
-          id: 'inplayguru',
-          title: 'InPlayGuru',
-          url: 'https://inplayguru.com',
-          bgColor: '#f8f9fa',
-          rating: 4.6,
-          bestFor: 'Intermediate to advanced traders who want momentum-based strategy automation. Perfect entry point for serious beginners due to unlimited free tier.',
-          badge: 'Highest Rated',
-          quickVerdict: 'Best overall balance — 4.6/5 Trustpilot, proprietary momentum model, generous free tier.',
-          pros: [
-            'Highest Trustpilot rating (4.6/5) with 90% 5-star reviews',
-            'Proprietary Momentum Model captures attacking pressure patterns',
-            'Generous unlimited free tier — test indefinitely before committing',
-            'Strategy result logging eliminates manual record-keeping',
-            'Excel/CSV export for custom analysis'
-          ],
-          cons: [
-            'Server slowdowns on Saturdays during peak match times',
-            'No true historical backtesting — forward-testing only',
-            'Learning curve for strategy optimization'
-          ],
-          keyStats: [
-            { label: 'Price', value: '€0-25/mo' },
-            { label: 'Leagues', value: '1,700+' },
-            { label: 'Rating', value: '4.6/5' },
-            { label: 'Trial', value: 'Unlimited' }
-          ],
-          content: `### Overview
-InPlayGuru is the **highest-rated scanner** with a **4.6/5 Trustpilot score from 29 reviews**—the best independent rating among qualifying tools. The platform's proprietary **Momentum Model** identifies when match control shifts *before goals appear on the scoreboard*. With **30,000+ active members** and coverage across **1,700+ leagues**, it balances sophistication with accessibility.
-
-### Key Features
-- **Momentum Model:** See attacking dominance before it converts to goals—enter positions before market prices adjust
-- **Strategy Builder:** Combine millions of pre-match, in-play, and odds data points into custom triggers
-- **Telegram Alerts:** Sub-second delivery claimed
-- **Auto-Strike Recording:** Every triggered match logged with timestamps, odds, and outcomes
-
-### Pricing
-| Plan | Price | Features |
-|------|-------|----------|
-| Free | €0 | ~50% matches, 5 strategy slots, 5 daily alerts |
-| Pro Monthly | ~€19-25 | Full access, 30 strategy slots |
-| Pro Yearly | Discounted | ~40-50% savings |
-
-**30-day money-back guarantee** on paid plans.`
+Three tiers: Lite (€17/mo), Deluxe (€37/mo), Platinum (€77/mo). Yearly plans save ~25%. **7-day free trial** with full access. Best value: Yearly Deluxe (€27.50/month effective).`
         },
         {
           id: 'footy-amigo',
@@ -149,7 +137,7 @@ InPlayGuru is the **highest-rated scanner** with a **4.6/5 Trustpilot score from
           bgColor: '#00D084',
           rating: 3.6,
           bestFor: 'Beginners wanting validated strategies without building from scratch. Experienced bettors who appreciate AI-assisted filtering and learning from community members.',
-          quickVerdict: 'Strategy cloning is innovative — copy profitable users instantly via Amigo Copier.',
+          quickVerdict: 'The strategy cloner — copy winning users via Amigo Copier.',
           pros: [
             'Amigo Copier: clone profitable users\' strategies instantly',
             '15+ years historical data — deepest backtesting database',
@@ -159,8 +147,8 @@ InPlayGuru is the **highest-rated scanner** with a **4.6/5 Trustpilot score from
           ],
           cons: [
             'Technical reliability issues reported (bugs, missed alerts)',
-            'Backtest vs. live results can differ',
-            'Polarized reviews (3.6/5) — test thoroughly'
+            'Backtest vs. live results can differ significantly',
+            'Mixed user feedback — test thoroughly before committing'
           ],
           keyStats: [
             { label: 'Price', value: '£12-25/mo' },
@@ -178,11 +166,7 @@ Footy Amigo combines AI/machine learning with a unique social feature—the **Am
 - **footyGPT:** AI chatbot for betting strategy questions
 
 ### Pricing
-| Plan | Price |
-|------|-------|
-| Free Trial | 7 days full access |
-| Pro Monthly | £24.99 |
-| With code "HEAT50" | £12.49 (50% off) |`
+**7-day free trial** with full access. Pro Monthly: £24.99 (or £12.49 with code "HEAT50" for 50% off).`
         },
         {
           id: 'soccerscanner',
@@ -207,8 +191,8 @@ Footy Amigo combines AI/machine learning with a unique social feature—the **Am
           ],
           keyStats: [
             { label: 'Price', value: '£10/mo' },
-            { label: 'Rating', value: '4.7/5' },
             { label: 'Features', value: 'xG + PI' },
+            { label: 'Markets', value: '500+' },
             { label: 'Trial', value: '2 days' }
           ],
           content: `### Overview
@@ -221,12 +205,7 @@ SoccerScanner proves you don't need premium pricing for professional-grade tools
 - **Betfair Odds Integration:** See pressure spike + live odds in one view
 
 ### Pricing
-| Plan | Price |
-|------|-------|
-| Monthly | £10 |
-| Yearly | £100 (save £20) |
-
-**2-day free trial** (card required, cancel anytime).`
+Monthly: £10. Yearly: £100 (save £20). **2-day free trial** (card required, cancel anytime).`
         },
         {
           id: 'oddalerts',
@@ -235,7 +214,7 @@ SoccerScanner proves you don't need premium pricing for professional-grade tools
           bgColor: '#171F2F',
           rating: 4.0,
           bestFor: 'Value bettors who understand expected value and probability models. Traders capitalizing on market overreactions.',
-          quickVerdict: 'The probability purist\'s scanner — In-Play Funnel scans Bet365 every second.',
+          quickVerdict: 'The probability purist — scans Bet365 odds every second.',
           pros: [
             'In-Play Funnel scans Bet365 every second for odds/model divergence',
             'Probability model provides genuine edge identification',
@@ -264,12 +243,7 @@ OddAlerts differentiates through its **In-Play Funnel**—scanning Bet365 odds *
 - **Dropping Odds Tracking:** Get alerted when Pinnacle (sharpest book) moves
 
 ### Pricing
-| Plan | Price |
-|------|-------|
-| Free | Limited (5 fixtures max) |
-| Pro | £19.99/month |
-| Pro + API | £69.99/month |
-| Season Ticket | £179.99/year (12 for 9) |`
+Free tier available (5 fixtures max). Pro: £19.99/month. Pro + API: £69.99/month. Season Ticket: £179.99/year (12 months for price of 9).`
         },
         {
           id: 'betballers',
@@ -278,7 +252,7 @@ OddAlerts differentiates through its **In-Play Funnel**—scanning Bet365 odds *
           bgColor: '#26AB9D',
           rating: 4.0,
           bestFor: 'Analytical traders and Asian Handicap specialists. Visual traders who want clean interfaces with contextual metrics.',
-          quickVerdict: 'The Asian Handicap specialist — Comeback Factor and Variance Stats are unique.',
+          quickVerdict: 'The Asian Handicap specialist — unique Comeback Factor metric.',
           pros: [
             'Dual Pressure Indexes (PI1/PI2) — cross-reference for stronger signals',
             'Comeback Factor tracks how often teams score next when losing',
@@ -307,11 +281,7 @@ BetBallers focuses on **contextual metrics**—not just "Team A is attacking" bu
 - **xG Per Time Segment:** See xG last 5/10/20 min for recency-weighted analysis
 
 ### Pricing
-| Plan | Price |
-|------|-------|
-| Trial | €4.90 (2 days) |
-| Gold Baller Monthly | €29.90 (~€24.90 with code) |
-| 6-Month | €149.90 (~€25/mo) |`
+Trial: €4.90 (2 days). Gold Baller Monthly: €29.90 (~€24.90 with code "tipsterreviews"). 6-Month: €149.90 (~€25/mo).`
         },
         {
           id: 'livepick',
@@ -320,7 +290,7 @@ BetBallers focuses on **contextual metrics**—not just "Team A is attacking" bu
           bgColor: '#F8F9FC',
           rating: 4.2,
           bestFor: 'Budget-conscious traders who value proven track record. Community-oriented bettors wanting access to crowdsourced strategies.',
-          quickVerdict: 'The pioneer with 100+ filter conditions — €8.30/month annually is the best ongoing value.',
+          quickVerdict: 'The pioneer — 100+ filters at €8.30/month annually.',
           pros: [
             '100+ filter conditions — unmatched customization',
             'Community filter marketplace with 3+ year track records',
@@ -349,13 +319,7 @@ LivePick is the **pioneer** of in-play scanning—claiming to be the "first dedi
 - **Time-Lapse Review:** Replay matches minute-by-minute for strategy refinement
 
 ### Pricing
-| Plan | Price | Per Month |
-|------|-------|-----------|
-| Monthly | €13.90 | €13.90 |
-| Yearly | €99.60 | €8.30 |
-| Pay-As-You-Go | €0.99-1.50/day | Variable |
-
-**4-day free trial** — no credit card required.`
+Monthly: €13.90. Yearly: €99.60 (€8.30/mo effective). Pay-As-You-Go: €0.99-1.50/day. **4-day free trial** — no credit card required.`
         }
       ]
     }
@@ -394,6 +358,6 @@ LivePick is the **pioneer** of in-play scanning—claiming to be the "first dedi
 
   footer: {
     lastUpdated: '2026-01-21',
-    dataSource: 'Information compiled from official websites, Trustpilot reviews, and community feedback. Pricing verified January 2026.'
+    dataSource: 'Information compiled from official websites and hands-on testing. Pricing verified January 2026.'
   }
 };

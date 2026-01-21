@@ -117,12 +117,13 @@ Articles in `/bettor-resources/` are affiliate product reviews. This section cov
 
 ### B. Item Count & Order
 
-**Order:** Ranked by editorial rating. Best item (#1) appears first.
+**Count:** 5-7 optimal. Min 2, max 10+.
 
-**Count:**
-* **Minimum:** 2 items (for niche topics with few quality options)
-* **Optimal:** 5-7 items (covers the market without overwhelming)
-* **Maximum:** 10+ items (only if explicitly requested or market demands it)
+**Order:** Best first, weakest last. Based on editorial assessment (value, reliability, features), NOT on `rating` field or price.
+
+* First item = top recommendation (often `badge: "Editor's Pick"`)
+* Last item = still worth mentioning, but has drawbacks
+* Equal quality? Better-value option first
 
 ### C. Editorial Minimums
 
@@ -132,18 +133,23 @@ Articles in `/bettor-resources/` are affiliate product reviews. This section cov
 | `cons` | 1 item | Honesty signal |
 | `keyStats` | 2 items | Quick scanning |
 | `faq` | 3 questions | SEO + user doubts |
-| `quickVerdict` | ≤10 words | Fits header layout |
+| `quickVerdict` | ≤75 chars | Fits header layout |
 | `bestFor` | Required | Qualifying filter - user decides instantly if this is for them |
 
 ### D. Field Guidelines
 
 #### quickVerdict Formula
 
-Use the pattern: **"The [Adjective] [Noun] for [Persona/Use-Case]."**
+One-line editorial verdict shown as italic quote below title. Answers: "Why pick this one?"
 
-* *Good:* "The fastest live score app with the widest sport coverage."
-* *Good:* "The best free statistics app with live xG and dropping odds."
-* *Bad:* "Great app, highly recommended!" (no specifics)
+**Structure:** `[What it's best at] — [proof/metric]`
+
+**Rules:** Max 75 chars. Start with "The..." or "Best...". Include metric after dash. No generic praise.
+
+* *Good:* "The industry veteran — 50,000 games of backtesting data."
+* *Good:* "The budget champion — pro features at £10/month."
+* *Bad:* "Great tool, highly recommended!" (no specifics)
+* *Bad:* "The best scanner for serious bettors" (no metric after dash)
 
 #### keyStats Labels
 
@@ -151,6 +157,15 @@ Choose metrics popular in the niche. Context determines what matters:
 * **Apps:** Price, Users, Sports, Speed
 * **Racing tools:** Price, Coverage, Data type, History
 * **Stats platforms:** Price, Leagues, Players, Metrics
+
+**Never include ratings** (ours or external) in keyStats — only practical metrics users scan for.
+
+#### rating Field
+
+Editorial rating (1.0-5.0) for Google Rich Snippets. Never display as feature.
+* Powers Schema.org star ratings in search results
+* Use for internal sorting when items have equal editorial quality
+* **Never** reference external ratings (Trustpilot, G2, etc.) in content — we are the authority
 
 #### bestFor Field
 
@@ -186,6 +201,11 @@ Each `content` field is a **Micro-Review** (Wirecutter/TechRadar style). Target:
 ```
 
 **Note:** `Best For` is now a separate field (`bestFor`), not part of markdown content.
+
+**No markdown tables in `content` field.** ReactMarkdown does not render tables by default. For pricing information, write in prose:
+
+* *Good:* `"Three tiers: Lite (€17/mo), Deluxe (€37/mo), Platinum (€77/mo). 7-day free trial included."`
+* *Bad:* `"| Tier | Price |..."` (renders as raw text)
 
 ### F. Editorial Style & Formatting
 
