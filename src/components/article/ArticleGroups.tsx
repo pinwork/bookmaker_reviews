@@ -89,20 +89,20 @@ function CardItem({ item, logoPath, bgColor }: CardItemProps) {
 
         {/* Service Header: Logo (left) | Title+Verdict (center) | Rating (right) */}
         <header className="flex items-center gap-4 p-4 border-b border-gray-100 bg-gray-50">
-          {/* Logo (left) */}
+          {/* Logo (left) - smaller on mobile */}
           {logoPath && (
             <a
               href={item.url || '#'}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 w-24 h-14 flex items-center justify-center rounded-lg border border-gray-200 hover:border-blue-300 transition-colors p-2"
+              className="flex-shrink-0 w-20 h-12 sm:w-24 sm:h-14 flex items-center justify-center rounded-lg border border-gray-200 hover:border-blue-300 transition-colors p-2"
               style={{ backgroundColor: bgColor }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={logoPath}
                 alt={item.title}
-                className="max-h-10 max-w-20 object-contain"
+                className="max-h-8 sm:max-h-10 max-w-16 sm:max-w-20 object-contain"
               />
             </a>
           )}
@@ -116,7 +116,7 @@ function CardItem({ item, logoPath, bgColor }: CardItemProps) {
             {item.quickVerdict && (
               <div className="flex items-start gap-1.5 mt-1">
                 <Quote className="h-3.5 w-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
-                <p className="text-sm text-gray-600 italic truncate">
+                <p className="text-sm text-gray-600 italic line-clamp-2 sm:truncate sm:line-clamp-none">
                   {item.quickVerdict}
                 </p>
               </div>
