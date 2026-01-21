@@ -13,9 +13,9 @@
         "npm run build passes"
       ],
       "priority": 1,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-21T19:10:00Z",
+      "filesChanged": ["src/components/article/ArticleGroups.tsx"]
     },
     {
       "id": 2,
@@ -27,9 +27,9 @@
         "npm run build passes"
       ],
       "priority": 1,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-21T19:11:00Z",
+      "filesChanged": ["src/components/article/ArticleGroups.tsx"]
     },
     {
       "id": 3,
@@ -45,9 +45,9 @@
         "npm run build passes"
       ],
       "priority": 1,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-21T19:12:00Z",
+      "filesChanged": ["src/components/article/ArticleGroups.tsx"]
     },
     {
       "id": 4,
@@ -62,9 +62,9 @@
         "npm run build passes"
       ],
       "priority": 1,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-21T19:13:00Z",
+      "filesChanged": ["src/components/article/ArticleGroups.tsx"]
     },
     {
       "id": 5,
@@ -81,9 +81,9 @@
         "npm run build passes"
       ],
       "priority": 1,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-21T19:14:00Z",
+      "filesChanged": ["src/components/article/ArticleFAQ.tsx"]
     },
     {
       "id": 6,
@@ -97,10 +97,15 @@
         "npm run build passes"
       ],
       "priority": 2,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-21T19:15:00Z",
+      "filesChanged": ["src/components/article/ArticleGroups.tsx"]
     }
   ],
-  "postFeatureReview": null
+  "postFeatureReview": {
+    "summary": "Redesigned card header with logo on left, centered title/verdict, and rating on right. Added Quote icon to quickVerdict. Polished FAQ header with HelpCircle icon and removed border. All cards now start collapsed. Added responsive adjustments for mobile.",
+    "impact": "ArticleGroups.tsx (major header redesign), ArticleFAQ.tsx (header polish). Visual breaking change - cards now have different layout.",
+    "issues": "None encountered. All acceptance criteria passed.",
+    "recommendations": "Consider adding a 'View all expanded' toggle for users who prefer to see all content at once."
+  }
 }
