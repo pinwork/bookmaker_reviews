@@ -84,6 +84,46 @@ export const generateReviewSchema = (
 };
 
 /**
+ * Generate SoftwareApplication schema for Rich Snippets (star ratings in Google)
+ * Used when article has reviewContext with objectType: 'SoftwareApplication'
+ */
+export const generateSoftwareAppSchema = (
+  article: IndustryReport,
+  url: string,
+  config: SiteConfig
+) => {
+  const ctx = article.reviewContext!;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: article.h1,
+    description: article.metaDescription,
+    applicationCategory: ctx.applicationCategory,
+    operatingSystem: ctx.operatingSystem,
+    url: url,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: ctx.rating,
+      bestRating: ctx.bestRating ?? 5,
+      worstRating: ctx.worstRating ?? 1,
+      ratingCount: ctx.reviewCount ?? 1,
+    },
+    offers: {
+      '@type': 'Offer',
+      price: ctx.price === 'Free' ? '0' : (ctx.price?.replace(/[^0-9.]/g, '') ?? '0'),
+      priceCurrency: ctx.priceCurrency ?? 'GBP',
+    },
+    author: {
+      '@type': 'Organization',
+      name: config.name,
+      url: config.url
+    },
+    image: article.slug ? `${config.url}/images/${article.slug}.jpg` : undefined,
+  };
+};
+
+/**
  * Generate FAQPage schema from article FAQ
  */
 const generateFAQSchema = (faq: Array<{ q: string; a: string }>) => {
@@ -143,7 +183,7 @@ export const generateItemListSchema = (
 
 /**
  * Generate all relevant schemas for an article
- * Returns array: [Article schema, FAQPage schema (if faq exists), ItemList (if external resources)]
+ * Returns array: [Article/SoftwareApp schema, FAQPage schema (if faq exists), ItemList (if external resources)]
  */
 export const generateArticleSchemas = (
   article: IndustryReport,
@@ -152,8 +192,13 @@ export const generateArticleSchemas = (
 ): object[] => {
   const schemas: object[] = [];
 
-  // Always include Article schema
-  schemas.push(generateArticleSchema(article, url, config));
+  // Use SoftwareApplication schema if reviewContext exists (for Rich Snippets with stars)
+  // Otherwise fall back to standard Article schema
+  if (article.reviewContext?.objectType === 'SoftwareApplication') {
+    schemas.push(generateSoftwareAppSchema(article, url, config));
+  } else {
+    schemas.push(generateArticleSchema(article, url, config));
+  }
 
   // Add FAQPage schema if article has FAQ
   if (article.faq && article.faq.length > 0) {

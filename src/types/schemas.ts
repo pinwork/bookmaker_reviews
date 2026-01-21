@@ -234,6 +234,19 @@ export const ComparisonTableSchema = z.object({
   linkedResourceType: ResourceTypeSchema.optional(),
 });
 
+// Review context for Rich Snippets (SoftwareApplication rating in Google)
+export const ReviewContextSchema = z.object({
+  objectType: z.literal('SoftwareApplication'),
+  applicationCategory: z.string(), // e.g., "SportsApplication"
+  operatingSystem: z.string(), // e.g., "iOS, Android, Web"
+  rating: z.number().min(1).max(5),
+  bestRating: z.number().optional(), // defaults to 5 in SEO code
+  worstRating: z.number().optional(), // defaults to 1 in SEO code
+  reviewCount: z.number().optional(), // defaults to 1 in SEO code
+  price: z.string().optional(), // "Free", "9.99"
+  priceCurrency: z.string().optional(), // defaults to "GBP" in SEO code
+});
+
 // Base schema with shared fields for all content types (guides, tool reviews, etc.)
 export const BaseContentSchema = z.object({
   slug: z.string().min(1),
@@ -252,6 +265,8 @@ export const BaseContentSchema = z.object({
   collections: z.array(z.enum(['guides', 'bettor-resources'])).optional(),
   linkedResources: z.array(LinkedResourceSchema).optional(),
   comparisonTables: z.array(ComparisonTableSchema).optional(),
+  // For Rich Snippets (star ratings in Google)
+  reviewContext: ReviewContextSchema.optional(),
 });
 
 // Tool Review schema - for app reviews, betting tools, etc.
