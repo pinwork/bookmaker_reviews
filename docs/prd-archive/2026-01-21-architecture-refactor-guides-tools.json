@@ -1,0 +1,73 @@
+{
+  "featureName": "Architecture Refactor: Separate Guides and Tools",
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Refactor Content Schemas",
+      "acceptanceCriteria": [
+        "In src/types/schemas.ts, create BaseContentSchema with shared fields (slug, h1, meta, intro, etc.)",
+        "Create ToolReviewSchema extending BaseContentSchema with specific fields (relatedAppId, verdict, pros, cons)",
+        "Create GuideSchema extending BaseContentSchema (equivalent to current IndustryReport)",
+        "Export new types in src/types/index.ts",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/types/schemas.ts", "src/types/index.ts"]
+    },
+    {
+      "id": 2,
+      "title": "Update Data Access Layer",
+      "acceptanceCriteria": [
+        "Update data fetching logic (likely in src/data/index.ts or src/utils/index.ts) to support multiple content sources",
+        "Create function getToolReviewBySlug(slug, region) that looks in 'reviews/tools' directory",
+        "Ensure getArticleBySlug still works for existing guides",
+        "npm run lint passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/data/toolReviews.ts", "src/data/index.ts", "src/data/articles.ts"]
+    },
+    {
+      "id": 3,
+      "title": "Migrate Live Score Guide to Tool Review",
+      "acceptanceCriteria": [
+        "Create directory src/data/regions/gb/en/reviews/tools/",
+        "Move src/data/regions/gb/en/articles/best-live-score-stats-apps.ts to the new directory",
+        "Refactor the file content to match new ToolReview type",
+        "Update 'collections' property to include 'tools' instead of 'guides'",
+        "Verify imports are correct after move",
+        "npm run lint passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/data/regions/gb/en/reviews/tools/best-live-score-stats-apps.ts", "src/data/regions/gb/en/reviews/tools/index.ts", "src/data/regions/gb/en/index.ts", "src/data/toolReviews.ts", "src/data/articles.ts"]
+    },
+    {
+      "id": 4,
+      "title": "Implement Tools Route",
+      "acceptanceCriteria": [
+        "Create new route src/app/[region]/tools/[slug]/page.tsx",
+        "Implement generateMetadata using getToolReviewBySlug",
+        "Implement page component optimized for tools (e.g., specific header, download buttons if applicable)",
+        "Reuse UnifiedComparisonTable for the review content",
+        "Verify /gb/tools/best-live-score-stats-apps-2026 loads correctly",
+        "npm run build passes"
+      ],
+      "priority": 4,
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/app/[region]/tools/[slug]/page.tsx"]
+    }
+  ],
+  "postFeatureReview": {
+    "summary": "Architecture refactored to separate Guides and Tools content types. Created BaseContentSchema, ToolReviewSchema, and ContentGuideSchema with proper inheritance. Tool reviews now have their own data access layer (toolReviews.ts) and dedicated route (/[region]/tools/[slug]).",
+    "impact": "Changes affect: types (schemas.ts, index.ts), data layer (toolReviews.ts, articles.ts, index.ts), regional data (gb/en/index.ts, reviews/tools/), and routing (new tools/[slug] route). Existing guides functionality preserved via backwards-compatible IndustryReportSchema alias.",
+    "issues": "None identified. All lint and build checks pass. The tool review page reuses existing article components to maintain consistency.",
+    "recommendations": "1. Add tools listing page at /[region]/tools similar to /[region]/guides. 2. Consider adding tools to navigation menu. 3. Future tool reviews can be added to src/data/regions/[region]/en/reviews/tools/ and registered in toolReviews.ts."
+  }
+}
