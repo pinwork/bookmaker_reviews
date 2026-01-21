@@ -4,7 +4,7 @@ import { DEFAULT_REGION } from './constants';
 import * as gbArticles from './regions/gb/en';
 import * as ieArticles from './regions/ie/en';
 
-type CollectionType = 'guides' | 'bettor-resources' | 'featured' | 'responsible-gambling';
+type CollectionType = 'guides' | 'tools' | 'bettor-resources' | 'featured' | 'responsible-gambling';
 
 function getAllArticles(region: string): IndustryReport[] {
   if (region === 'ie') {

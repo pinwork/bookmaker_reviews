@@ -24,6 +24,10 @@ export {
 } from './articles';
 
 export {
+  getToolReviewsByCollection, getAllToolReviewsForRegion, getToolReviewBySlug, getFeaturedToolReviews,
+} from './toolReviews';
+
+export {
   DEFAULT_REGION, getRegion, isValidRegion, getAllRegions, getRegionOrDefault,
   getCurrencySymbol, isBookmakerEnabledInRegion,
   type RegionCode, type RegionConfig, type LegalInfo,
