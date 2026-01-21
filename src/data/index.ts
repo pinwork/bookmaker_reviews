@@ -20,13 +20,9 @@ export {
 } from './extraPromotions';
 
 export {
+  getGuides, getBettorResources, getGuideBySlug, getBettorResourceBySlug,
   getArticlesByCollection, getAllArticlesForRegion, getArticleBySlug,
 } from './articles';
-
-export {
-  getToolReviewsByCollection, getAllToolReviewsForRegion, getToolReviewBySlug,
-  getToolReviews,
-} from './toolReviews';
 
 export {
   DEFAULT_REGION, getRegion, isValidRegion, getAllRegions, getRegionOrDefault,

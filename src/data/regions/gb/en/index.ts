@@ -10,11 +10,11 @@ import { sports } from './sports';
 import { staticPages } from './staticPages';
 import { events as allGbEvents } from './events';
 
-import { ultimateBonusGuide as bonusGuideData } from './articles/uk-ultimate-bonus-guide';
-import { responsibleGamblingBible as responsibleGamblingData } from './articles/responsible-gambling-uk-bible';
-import { bettingShopsBible as bettingShopsData } from './articles/uk-betting-shops-bible';
-import { bettingIndustryBible as industryReportData } from './articles/uk-betting-industry-report';
-import { liveScoreAppsReview as liveScoreAppsData } from './reviews/tools';
+import { ultimateBonusGuide as bonusGuideData } from './articles/guides/uk-ultimate-bonus-guide';
+import { responsibleGamblingBible as responsibleGamblingData } from './articles/guides/responsible-gambling-uk-bible';
+import { bettingShopsBible as bettingShopsData } from './articles/guides/uk-betting-shops-bible';
+import { bettingIndustryBible as industryReportData } from './articles/guides/uk-betting-industry-report';
+import { liveScoreAppsArticle as liveScoreAppsData } from './articles/bettor-resources/best-live-score-stats-apps';
 
 const gbReviews: Record<string, BookmakerReview> = {
   bet365: reviewsList.bet365Review,

@@ -1,7 +1,7 @@
 import path from 'path';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { isValidRegion, getToolReviewBySlug } from '@/data';
+import { isValidRegion, getBettorResourceBySlug } from '@/data';
 import { getSiteConfig } from '@/data/regions';
 import { generateArticleSchemas } from '@/utils/seo';
 import { getPartnerLogoPath, getJpgBackgroundColor } from '@/utils/images';
@@ -28,37 +28,37 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
-  const toolReview = getToolReviewBySlug(slug, region);
+  const article = getBettorResourceBySlug(slug, region);
 
-  if (!toolReview) {
+  if (!article) {
     return {};
   }
 
   return {
-    title: toolReview.metaTitle,
-    description: toolReview.metaDescription,
+    title: article.metaTitle,
+    description: article.metaDescription,
   };
 }
 
-export default async function ToolReviewPage({ params }: PageProps) {
+export default async function BettorResourcePage({ params }: PageProps) {
   const { region, slug } = await params;
 
   if (!isValidRegion(region)) {
     return notFound();
   }
 
-  const toolReview = getToolReviewBySlug(slug, region);
+  const article = getBettorResourceBySlug(slug, region);
 
-  if (!toolReview) {
+  if (!article) {
     return notFound();
   }
 
   const siteConfig = getSiteConfig(region);
-  const pageUrl = siteConfig ? `${siteConfig.url}/${region}/tools/${slug}` : '';
-  const schemas = siteConfig ? generateArticleSchemas(toolReview, pageUrl, siteConfig) : [];
+  const articleUrl = siteConfig ? `${siteConfig.url}/${region}/bettor-resources/${slug}` : '';
+  const schemas = siteConfig ? generateArticleSchemas(article, articleUrl, siteConfig) : [];
 
   // Process linkedResources
-  const activeResources = getActiveLinkedResources(toolReview.linkedResources);
+  const activeResources = getActiveLinkedResources(article.linkedResources);
   const externalResources = resolveExternalResources(activeResources);
   const activeResourceIds = new Set(activeResources.map((r) => r.id));
 
@@ -94,13 +94,13 @@ export default async function ToolReviewPage({ params }: PageProps) {
       )}
       <main className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8 font-sans">
         <ArticleHeader
-          h1={toolReview.h1}
-          introTitle={toolReview.intro.title}
-          introContent={toolReview.intro.content}
-          lastUpdated={toolReview.footer?.lastUpdated}
+          h1={article.h1}
+          introTitle={article.intro.title}
+          introContent={article.intro.content}
+          lastUpdated={article.footer?.lastUpdated}
         />
 
-        {toolReview.comparisonTables?.map((table) => (
+        {article.comparisonTables?.map((table) => (
           <UnifiedComparisonTable
             key={table.id}
             table={table}
@@ -108,14 +108,14 @@ export default async function ToolReviewPage({ params }: PageProps) {
           />
         ))}
 
-        {toolReview.groups && (
+        {article.groups && (
           <ArticleGroups
-            groups={toolReview.groups
+            groups={article.groups
               .map((group) => ({
                 ...group,
                 // Filter items: show if active OR not linked to any resource
                 items: group.items.filter((item) => {
-                  const linkedResource = toolReview.linkedResources?.find((r) => r.id === item.id);
+                  const linkedResource = article.linkedResources?.find((r) => r.id === item.id);
                   return !linkedResource || activeResourceIds.has(item.id);
                 }),
               }))
@@ -124,13 +124,13 @@ export default async function ToolReviewPage({ params }: PageProps) {
           />
         )}
 
-        {toolReview.faq && toolReview.faq.length > 0 && (
-          <ArticleFAQ faq={toolReview.faq} />
+        {article.faq && article.faq.length > 0 && (
+          <ArticleFAQ faq={article.faq} />
         )}
 
         <ArticleFooter
-          lastUpdated={toolReview.footer?.lastUpdated}
-          dataSource={toolReview.footer?.dataSource}
+          lastUpdated={article.footer?.lastUpdated}
+          dataSource={article.footer?.dataSource}
         />
       </main>
     </>

@@ -1,0 +1,132 @@
+{
+  "featureName": "Refactor: File-System Based Content Routing",
+  "description": "Reorganize articles into subfolders where folder = URL = menu. Remove collections-based routing confusion.",
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Create folder structure for GB articles",
+      "acceptanceCriteria": [
+        "Create src/data/regions/gb/en/articles/guides/ folder",
+        "Create src/data/regions/gb/en/articles/bettor-resources/ folder",
+        "Move uk-ultimate-bonus-guide.ts to guides/",
+        "Move uk-betting-shops-bible.ts to guides/",
+        "Move responsible-gambling-uk-bible.ts to guides/",
+        "Move uk-betting-industry-report.ts to guides/",
+        "Move best-live-score-stats-apps.ts from reviews/tools/ to articles/bettor-resources/",
+        "Delete empty reviews/tools/ folder",
+        "Update src/data/regions/gb/en/index.ts imports"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-21T12:45:00Z",
+      "filesChanged": [
+        "src/data/regions/gb/en/articles/guides/uk-ultimate-bonus-guide.ts",
+        "src/data/regions/gb/en/articles/guides/uk-betting-shops-bible.ts",
+        "src/data/regions/gb/en/articles/guides/responsible-gambling-uk-bible.ts",
+        "src/data/regions/gb/en/articles/guides/uk-betting-industry-report.ts",
+        "src/data/regions/gb/en/articles/bettor-resources/best-live-score-stats-apps.ts",
+        "src/data/regions/gb/en/index.ts"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Create folder structure for IE articles",
+      "acceptanceCriteria": [
+        "Create src/data/regions/ie/en/articles/guides/ folder",
+        "Create src/data/regions/ie/en/articles/bettor-resources/ folder (empty for now)",
+        "Move ie-ultimate-bonus-guide.ts to guides/",
+        "Move ie-betting-shops-bible.ts to guides/",
+        "Move responsible-gambling-ie-bible.ts to guides/",
+        "Move ie-betting-industry-report.ts to guides/",
+        "Update src/data/regions/ie/en/index.ts imports"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-21T12:48:00Z",
+      "filesChanged": [
+        "src/data/regions/ie/en/articles/guides/ie-ultimate-bonus-guide.ts",
+        "src/data/regions/ie/en/articles/guides/ie-betting-shops-bible.ts",
+        "src/data/regions/ie/en/articles/guides/responsible-gambling-ie-bible.ts",
+        "src/data/regions/ie/en/articles/guides/ie-betting-industry-report.ts",
+        "src/data/regions/ie/en/index.ts"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Update data access layer for folder-based routing",
+      "acceptanceCriteria": [
+        "Update src/data/articles.ts to read from guides/ subfolder",
+        "Delete src/data/toolReviews.ts (merged into articles.ts)",
+        "Change ToolReview back to IndustryReport type for best-live-score",
+        "Add getGuides(), getBettorResources(), getGuideBySlug(), getBettorResourceBySlug()",
+        "Keep getArticlesByCollection for backwards compatibility",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "completedAt": "2026-01-21T12:55:00Z",
+      "filesChanged": [
+        "src/data/articles.ts",
+        "src/data/index.ts",
+        "src/data/regions/gb/en/articles/bettor-resources/best-live-score-stats-apps.ts"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Create bettor-resources detail page route",
+      "acceptanceCriteria": [
+        "Create src/app/[region]/bettor-resources/[slug]/page.tsx",
+        "Implement generateMetadata using getBettorResourceBySlug",
+        "Reuse article components (ArticleHeader, FAQ, etc.)",
+        "Route /gb/bettor-resources/best-live-score-stats-apps-2026 works correctly"
+      ],
+      "priority": 4,
+      "passes": true,
+      "completedAt": "2026-01-21T13:00:00Z",
+      "filesChanged": [
+        "src/app/[region]/bettor-resources/[slug]/page.tsx"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Clean up: Remove tools route and simplify",
+      "acceptanceCriteria": [
+        "Delete src/app/[region]/tools/ folder entirely",
+        "Update bettor-resources listing page to use getBettorResources()",
+        "Update guides/[slug] to use getGuideBySlug()",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 5,
+      "passes": true,
+      "completedAt": "2026-01-21T13:05:00Z",
+      "filesChanged": [
+        "src/app/[region]/bettor-resources/page.tsx",
+        "src/app/[region]/guides/[slug]/page.tsx"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Verify all routes work correctly",
+      "acceptanceCriteria": [
+        "/gb/guides/ shows list of guides",
+        "/gb/guides/uk-betting-bonus-guide-2026 renders correctly",
+        "/gb/bettor-resources/ shows list including live score article",
+        "/gb/bettor-resources/best-live-score-stats-apps-2026 renders correctly",
+        "/ie/guides/ shows IE guides",
+        "npm run build passes with no errors"
+      ],
+      "priority": 6,
+      "passes": true,
+      "completedAt": "2026-01-21T13:10:00Z",
+      "filesChanged": []
+    }
+  ],
+  "postFeatureReview": {
+    "summary": "Restructured content architecture from collections-based to file-system-based routing. Articles are now organized in subfolders (guides/, bettor-resources/) that directly map to URL routes.",
+    "impact": "Data layer (articles.ts), routes (guides, bettor-resources), and region data files (gb/en, ie/en) were updated. toolReviews.ts was removed as redundant.",
+    "issues": "None. Build passes cleanly.",
+    "recommendations": "Update CONTENT_GUIDE.md to reflect new folder-based structure. Consider removing 'collections' field from schemas if no longer needed for menu purposes."
+  }
+}

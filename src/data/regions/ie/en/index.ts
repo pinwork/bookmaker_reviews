@@ -1,10 +1,10 @@
 import * as gbData from '../../gb/en';
 import { adaptObjectToRegion } from '@/utils';
 import { ieBookmakerData } from './bookmakerData';
-import { ieBonusGuide } from './articles/ie-ultimate-bonus-guide';
-import { responsibleGamblingIrelandBible } from './articles/responsible-gambling-ie-bible';
-import { ieBettingShopsBible } from './articles/ie-betting-shops-bible';
-import { ieBettingIndustryReport } from './articles/ie-betting-industry-report';
+import { ieBonusGuide } from './articles/guides/ie-ultimate-bonus-guide';
+import { responsibleGamblingIrelandBible } from './articles/guides/responsible-gambling-ie-bible';
+import { ieBettingShopsBible } from './articles/guides/ie-betting-shops-bible';
+import { ieBettingIndustryReport } from './articles/guides/ie-betting-industry-report';
 
 export const welcomeOffers = adaptObjectToRegion(gbData.welcomeOffers, 'ie');
 export const extraPromotions = adaptObjectToRegion(gbData.extraPromotions, 'ie');

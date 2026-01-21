@@ -1,7 +1,7 @@
 import path from 'path';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { isValidRegion, getArticleBySlug } from '@/data';
+import { isValidRegion, getGuideBySlug } from '@/data';
 import { getSiteConfig } from '@/data/regions';
 import { generateArticleSchemas } from '@/utils/seo';
 import { getPartnerLogoPath, getJpgBackgroundColor } from '@/utils/images';
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
-  const article = getArticleBySlug(slug, region);
+  const article = getGuideBySlug(slug, region);
 
   if (!article) {
     return {};
@@ -47,7 +47,7 @@ export default async function ArticlePage({ params }: PageProps) {
     return notFound();
   }
 
-  const article = getArticleBySlug(slug, region);
+  const article = getGuideBySlug(slug, region);
 
   if (!article) {
     return notFound();

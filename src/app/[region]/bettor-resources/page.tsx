@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { isValidRegion, getArticlesByCollection, getToolReviewsByCollection } from '@/data';
+import { isValidRegion, getBettorResources } from '@/data';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 
@@ -21,10 +21,7 @@ export default async function BettorResourcesPage({
     return notFound();
   }
 
-  const articles = getArticlesByCollection('bettor-resources', region);
-  const toolReviews = getToolReviewsByCollection('bettor-resources', region);
-
-  const hasContent = articles.length > 0 || toolReviews.length > 0;
+  const resources = getBettorResources(region);
 
   return (
     <main className="max-w-4xl mx-auto p-8 font-sans">
@@ -35,53 +32,26 @@ export default async function BettorResourcesPage({
         </p>
       </div>
 
-      {hasContent ? (
+      {resources.length > 0 ? (
         <div className="space-y-4">
-          {/* Tool Reviews - link to /tools/ */}
-          {toolReviews.map((tool) => (
+          {resources.map((resource) => (
             <Link
-              key={tool.slug}
-              href={`/${region}/tools/${tool.slug}`}
+              key={resource.slug}
+              href={`/${region}/bettor-resources/${resource.slug}`}
               className="block group"
             >
               <Card className="transition-shadow hover:shadow-md">
                 <CardHeader>
                   <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">
-                    {tool.h1}
+                    {resource.h1}
                   </CardTitle>
                   <CardDescription className="text-base">
-                    {tool.metaDescription}
+                    {resource.metaDescription}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <span className="inline-flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-700">
-                    Read review
-                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-
-          {/* Articles - link to /guides/ */}
-          {articles.map((article) => (
-            <Link
-              key={article.slug}
-              href={`/${region}/guides/${article.slug}`}
-              className="block group"
-            >
-              <Card className="transition-shadow hover:shadow-md">
-                <CardHeader>
-                  <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">
-                    {article.h1}
-                  </CardTitle>
-                  <CardDescription className="text-base">
-                    {article.metaDescription}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <span className="inline-flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-700">
-                    Read guide
+                    Read article
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </CardContent>
