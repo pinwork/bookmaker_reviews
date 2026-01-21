@@ -27,6 +27,11 @@ export function getAllToolReviewsForRegion(region: string = DEFAULT_REGION): Too
   return getAllToolReviews(region);
 }
 
+// Alias for simpler API
+export function getToolReviews(region: string = DEFAULT_REGION): ToolReview[] {
+  return getAllToolReviews(region);
+}
+
 export function getToolReviewBySlug(slug: string, region: string = DEFAULT_REGION): ToolReview | undefined {
   return getAllToolReviews(region).find(tool => tool.slug === slug);
 }

@@ -25,6 +25,7 @@ export {
 
 export {
   getToolReviewsByCollection, getAllToolReviewsForRegion, getToolReviewBySlug, getFeaturedToolReviews,
+  getToolReviews,
 } from './toolReviews';
 
 export {
