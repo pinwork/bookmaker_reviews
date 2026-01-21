@@ -133,6 +133,7 @@ Articles in `/bettor-resources/` are affiliate product reviews. This section cov
 | `keyStats` | 2 items | Quick scanning |
 | `faq` | 3 questions | SEO + user doubts |
 | `quickVerdict` | ≤10 words | Fits header layout |
+| `bestFor` | Required | Qualifying filter - user decides instantly if this is for them |
 
 ### D. Field Guidelines
 
@@ -151,6 +152,23 @@ Choose metrics popular in the niche. Context determines what matters:
 * **Racing tools:** Price, Coverage, Data type, History
 * **Stats platforms:** Price, Leagues, Players, Metrics
 
+#### bestFor Field
+
+1-2 sentences describing the ideal user persona. Extract from content, do not duplicate in markdown.
+
+* *Good:* "Multi-sport live bettors who prioritize speed above all else. Essential for in-play betting where seconds matter."
+* *Bad:* "Good for people who bet" (too vague, no persona)
+
+#### badge Field
+
+Use sparingly — max 1-2 badges per article. Badges appear as yellow ribbon above the card.
+
+| Badge Value | When to Use |
+| :--- | :--- |
+| `Editor's Pick` | #1 overall choice in the article |
+| `Best Free` | Best free option (when paid alternatives exist) |
+| `Best Value` | Best price/quality ratio |
+
 ### E. Content Structure: Micro-Review Format
 
 Each `content` field is a **Micro-Review** (Wirecutter/TechRadar style). Target: **150-250 words**.
@@ -163,12 +181,11 @@ Each `content` field is a **Micro-Review** (Wirecutter/TechRadar style). Target:
 - **Feature Name:** Benefit to user
 - **Feature Name:** Benefit to user
 
-### Best For
-[1-2 sentences: specific persona who should choose this]
-
 ### Price
 [Pricing details: Free, £X/mo, Freemium model]
 ```
+
+**Note:** `Best For` is now a separate field (`bestFor`), not part of markdown content.
 
 ### F. Editorial Style & Formatting
 

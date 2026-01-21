@@ -131,9 +131,9 @@
         "npm run build passes"
       ],
       "priority": 3,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-21",
+      "filesChanged": ["src/data/regions/gb/en/articles/bettor-resources/best-live-score-stats-apps.ts"]
     },
     {
       "id": 8,
