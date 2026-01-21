@@ -1,0 +1,114 @@
+{
+  "featureName": "Guides Data Cleanup",
+  "description": "Refactor all guides (GB + IE) to comply with new GuideArticle schema and CONTENT_GUIDE.md rules: remove badge, convert markdown tables to prose, remove emojis, consolidate groups logically.",
+  "affectedFiles": [
+    "src/data/regions/gb/en/articles/guides/uk-betting-industry-report.ts",
+    "src/data/regions/gb/en/articles/guides/uk-ultimate-bonus-guide.ts",
+    "src/data/regions/gb/en/articles/guides/uk-betting-shops-bible.ts",
+    "src/data/regions/gb/en/articles/guides/responsible-gambling-uk-bible.ts",
+    "src/data/regions/ie/en/articles/guides/ie-betting-industry-report.ts",
+    "src/data/regions/ie/en/articles/guides/ie-ultimate-bonus-guide.ts",
+    "src/data/regions/ie/en/articles/guides/ie-betting-shops-bible.ts",
+    "src/data/regions/ie/en/articles/guides/responsible-gambling-ie-bible.ts"
+  ],
+  "constraints": [
+    "No content loss - rewrite tables as prose, integrate badge info into title/content",
+    "Keep all factual data intact",
+    "Groups should be major chapters (3-7 per article)"
+  ],
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Clean up GB guides: uk-betting-industry-report.ts",
+      "acceptanceCriteria": [
+        "Remove all badge fields (integrate into title if needed)",
+        "Convert markdown tables to prose or move to comparisonTables",
+        "No emojis in content or titles",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/gb/en/articles/guides/uk-betting-industry-report.ts"]
+    },
+    {
+      "id": 2,
+      "title": "Clean up GB guides: uk-ultimate-bonus-guide.ts",
+      "acceptanceCriteria": [
+        "Remove all badge fields",
+        "Remove emojis from titles and content",
+        "Convert any markdown tables to prose",
+        "Consolidate groups if too fragmented",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": []
+    },
+    {
+      "id": 3,
+      "title": "Clean up GB guides: uk-betting-shops-bible.ts and responsible-gambling-uk-bible.ts",
+      "acceptanceCriteria": [
+        "Remove all badge fields",
+        "Convert markdown tables to prose",
+        "No emojis",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": [
+        "src/data/regions/gb/en/articles/guides/uk-betting-shops-bible.ts",
+        "src/data/regions/gb/en/articles/guides/responsible-gambling-uk-bible.ts"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Clean up IE guides: ie-betting-industry-report.ts",
+      "acceptanceCriteria": [
+        "Remove badge fields (integrate into title)",
+        "Convert markdown tables in content to prose",
+        "npm run build passes"
+      ],
+      "priority": 4,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/ie/en/articles/guides/ie-betting-industry-report.ts"]
+    },
+    {
+      "id": 5,
+      "title": "Clean up IE guides: ie-ultimate-bonus-guide.ts",
+      "acceptanceCriteria": [
+        "Remove emojis from titles",
+        "npm run build passes"
+      ],
+      "priority": 5,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/ie/en/articles/guides/ie-ultimate-bonus-guide.ts"]
+    },
+    {
+      "id": 6,
+      "title": "Clean up IE guides: ie-betting-shops-bible.ts and responsible-gambling-ie-bible.ts",
+      "acceptanceCriteria": [
+        "Remove badge fields (integrate into title)",
+        "Convert markdown tables to prose",
+        "npm run build passes"
+      ],
+      "priority": 6,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": [
+        "src/data/regions/ie/en/articles/guides/ie-betting-shops-bible.ts",
+        "src/data/regions/ie/en/articles/guides/responsible-gambling-ie-bible.ts"
+      ]
+    }
+  ],
+  "postFeatureReview": {
+    "summary": "Cleaned up all 8 guide articles across GB and IE regions to comply with the new GuideArticle schema. Removed all badge fields (integrated context into titles), converted markdown tables to prose bullet lists, and removed emojis from titles.",
+    "impact": "All guide articles in src/data/regions/*/en/articles/guides/ now follow consistent patterns: no badge fields, no markdown tables in content, no emojis. The comparisonTables field remains available for structured data that needs tabular rendering.",
+    "issues": "None. All changes maintain content integrity while improving schema compliance.",
+    "recommendations": "Consider consolidating some groups in uk-betting-industry-report.ts and ie-betting-industry-report.ts which have 6-7 groups. Future guides should aim for 3-5 groups maximum."
+  }
+}

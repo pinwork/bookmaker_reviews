@@ -97,14 +97,12 @@ export const bettingShopsBible: IndustryReport = {
 
 ### Timeline
 
-| Year | Event | Details |
-|------|-------|---------|
-| **1961** | Legalisation | 10,000 shops opened in 6 months. Windows had to be blacked out; no seating or TVs allowed. |
-| **1986** | The Great Deregulation | Chairs, live TV, and refreshments finally allowed. The "funeral parlour" era ends. |
-| **1994** | Sunday Trading | Sunday betting becomes legal 31 years after the first shops opened. |
-| **2002** | Tax Abolished | Gordon Brown removes the 10% betting tax on winnings. |
-| **2019** | The FOBT Crash | Max stakes cut from £100 to £2. 1,209 shops close within a year. |
-| **2025** | The Digi-Hub Era | Entain rolls out 200 "Digi-Hubs" with interactive screens and premium Wi-Fi. |`
+- **1961 — Legalisation:** 10,000 shops opened in 6 months. Windows had to be blacked out; no seating or TVs allowed.
+- **1986 — The Great Deregulation:** Chairs, live TV, and refreshments finally allowed. The "funeral parlour" era ends.
+- **1994 — Sunday Trading:** Sunday betting becomes legal 31 years after the first shops opened.
+- **2002 — Tax Abolished:** Gordon Brown removes the 10% betting tax on winnings.
+- **2019 — The FOBT Crash:** Max stakes cut from £100 to £2. 1,209 shops close within a year.
+- **2025 — The Digi-Hub Era:** Entain rolls out 200 "Digi-Hubs" with interactive screens and premium Wi-Fi.`
         }
       ]
     },
@@ -113,16 +111,14 @@ export const bettingShopsBible: IndustryReport = {
       items: [
         {
           id: 'fred-done',
-          title: 'Fred & Peter Done',
-          badge: 'Betfred Founders',
+          title: 'Fred & Peter Done (Betfred Founders)',
           content: `Fred Done started Betfred in 1967 with money won from a bet on England to win the 1966 World Cup. He famously invented the "Lucky 15" bet in 1984. Today, Fred Done's net worth is estimated at **£2.29 billion**.
 
 Betfred remains the UK's largest independent bookmaker with ~1,300 shops.`
         },
         {
           id: 'john-boyle',
-          title: 'John Boyle',
-          badge: 'BoyleSports Founder',
+          title: 'John Boyle (BoyleSports Founder)',
           content: `Founded in 1982 in Markethill, Co. Armagh. John Boyle grew the company into Ireland's largest independent bookmaker, expanding significantly into the UK Midlands and Northern Ireland.
 
 Currently operates 277 shops in Ireland, 45 in Northern Ireland, and 46 in the UK mainland.`

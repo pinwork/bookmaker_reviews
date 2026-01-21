@@ -80,8 +80,7 @@ export const ieBettingIndustryReport: IndustryReport = {
       items: [
         {
           id: 'john-boyle',
-          title: 'John Boyle',
-          badge: 'BoyleSports Founder',
+          title: 'John Boyle (BoyleSports Founder)',
           content: `In 1982, after being sacked from his bread van driver job at age 25, Boyle borrowed **£6,000** from his father and £12,000 from the bank to buy a single betting shop in Markethill, County Armagh.
 
 BoyleSports is now Ireland's largest independent bookmaker with **300+ shops** and 2,700 employees. He announced a £100m UK investment in 2025.
@@ -90,8 +89,7 @@ BoyleSports is now Ireland's largest independent bookmaker with **300+ shops** a
         },
         {
           id: 'paddy-power-merger',
-          title: 'The 1988 Paddy Power Merger',
-          badge: 'Kenny, Power & Corcoran',
+          title: 'The 1988 Paddy Power Merger (Kenny, Power & Corcoran)',
           content: `When British bookmakers began invading Irish high streets in the late 1980s, three independent rivals decided to fight back by merging their **40 shops** to focus on market share, not short-term profits.
 
 From 8% of the Irish market in 1988 to the **world's largest online betting company** (Flutter Entertainment).
@@ -106,16 +104,14 @@ From 8% of the Irish market in 1988 to the **world's largest online betting comp
         {
           id: 'regulatory-timeline',
           title: 'Key Milestones',
-          content: `| Year | Event | Description |
-|------|-------|-------------|
-| **1926** | First in Europe | Irish Free State legalises betting shops — 35 years before Britain. |
-| **1931** | Betting Act | The law that governed Irish gambling for 93 years. |
-| **1982** | BoyleSports Founded | John Boyle opens his first shop in County Armagh. |
-| **1988** | Paddy Power Merger | Kenny, Power and Corcoran merge 40 shops to fight British invaders. |
-| **2015** | Betting Amendment Act | First attempt to regulate online; remote operators pay Irish tax. |
-| **2024** | Gambling Regulation Act | Signed by President Higgins. Creates GRAI and modern licensing. |
-| **2025** | GRAI Operational | March: GRAI becomes statutory. December: B2C licensing opens. |
-| **2026** | Full Licensing | Licensing scheme expected in full by mid-2026. |`
+          content: `- **1926 — First in Europe:** Irish Free State legalises betting shops — 35 years before Britain.
+- **1931 — Betting Act:** The law that governed Irish gambling for 93 years.
+- **1982 — BoyleSports Founded:** John Boyle opens his first shop in County Armagh.
+- **1988 — Paddy Power Merger:** Kenny, Power and Corcoran merge 40 shops to fight British invaders.
+- **2015 — Betting Amendment Act:** First attempt to regulate online; remote operators pay Irish tax.
+- **2024 — Gambling Regulation Act:** Signed by President Higgins. Creates GRAI and modern licensing.
+- **2025 — GRAI Operational:** March: GRAI becomes statutory. December: B2C licensing opens.
+- **2026 — Full Licensing:** Licensing scheme expected in full by mid-2026.`
         }
       ]
     },
@@ -127,12 +123,10 @@ From 8% of the Irish market in 1988 to the **world's largest online betting comp
           title: 'Betting Volume by Sport',
           content: `Unlike the UK where football dominates (50%), Ireland's betting culture remains rooted in horse racing.
 
-| Sport | Share | Note |
-|-------|-------|------|
-| **Horse Racing** | ~40% | The heartland. Cheltenham is a national pilgrimage. |
-| **Football** | ~30% | Premier League dominates online volume. |
-| **GAA** | ~15% | Massive seasonal spikes during summer championships. |
-| **Other** | ~15% | Golf, rugby, greyhounds, tennis. |
+- **Horse Racing (~40%):** The heartland. Cheltenham is a national pilgrimage.
+- **Football (~30%):** Premier League dominates online volume.
+- **GAA (~15%):** Massive seasonal spikes during summer championships.
+- **Other (~15%):** Golf, rugby, greyhounds, tennis.
 
 *Note: These are industry estimates; GRAI has not yet published official sport-by-sport data.*`
         }

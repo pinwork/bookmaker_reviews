@@ -70,12 +70,10 @@ export const bettingIndustryBible: IndustryReport = {
 - **600,000+** registered on GAMSTOP (1% of adult population)
 
 ### Demographics
-| Group | Percentage |
-|-------|------------|
-| Adults gambling (past year) | 60% |
-| Gender split (M vs F) | 51% vs 44% |
-| Mobile usage (18-24s) | 76% |
-| Youth problem gambling | 1.5% (doubled in 2024) |`
+- **60%** of adults gambled in the past year
+- **51% vs 44%** gender split (male vs female)
+- **76%** mobile usage among 18-24s
+- **1.5%** youth problem gambling rate (doubled in 2024)`
         }
       ]
     },
@@ -84,32 +82,28 @@ export const bettingIndustryBible: IndustryReport = {
       items: [
         {
           id: 'flutter',
-          title: 'Flutter Entertainment',
-          badge: '~30% Market Share',
+          title: 'Flutter Entertainment (~30% Market Share)',
           content: `**Brands:** Paddy Power, Sky Bet, Betfair, Tombola
 
 Now listed on the NYSE with $14bn global revenue, Flutter is the "Amazon of Gambling". Their scale allows them to absorb tax hikes that kill smaller rivals. Sky Bet remains the recreational punter's favorite app, while Betfair controls the exchange market.`
         },
         {
           id: 'bet365',
-          title: 'bet365 Group',
-          badge: '~20% Market Share',
+          title: 'bet365 Group (~20% Market Share)',
           content: `**Brands:** bet365
 
 Unique among giants, bet365 remains a **private company** owned by the Coates family in Stoke. They paid £481.5m in UK taxes alone last year. Without shareholder pressure, they offer the most consistent odds and highest limits.`
         },
         {
           id: 'entain',
-          title: 'Entain plc',
-          badge: '~15% Market Share',
+          title: 'Entain plc (~15% Market Share)',
           content: `**Brands:** Ladbrokes, Coral, BetMGM (UK partnership)
 
 Possessing a massive retail estate (3,000+ shops), Entain is struggling to modernize its legacy tech stack compared to Flutter. They are increasingly reliant on their US joint venture, while UK growth has stalled.`
         },
         {
           id: 'evoke',
-          title: 'Evoke plc (formerly 888)',
-          badge: '~8% Market Share',
+          title: 'Evoke plc (~8% Market Share)',
           content: `**Brands:** William Hill, 888sport
 
 The rebrand to "Evoke" hasn't hidden the disaster of the William Hill acquisition. With shares down **95%** and £168m in losses, aggressive cost-cutting is expected. We predict significant shop closures for William Hill in 2026.`
@@ -121,16 +115,14 @@ The rebrand to "Evoke" hasn't hidden the disaster of the William Hill acquisitio
       items: [
         {
           id: 'denise-coates',
-          title: 'Denise Coates (bet365)',
-          badge: 'Founder & Co-CEO',
+          title: 'Denise Coates, bet365 Founder & Co-CEO',
           content: `In 2000, Denise Coates mortgaged her father's entire chain of betting shops to secure a **£15 million loan** from RBS. She used the money to build bet365.com from a temporary Portakabin in a Stoke-on-Trent car park. Critics called it reckless.
 
 Today, bet365 generates **£4bn annually**. Denise is Britain's highest-paid executive and the single largest taxpayer in the UK, contributing over **£480m** to the Treasury in 2024.`
         },
         {
           id: 'fred-done',
-          title: 'Fred Done (Betfred)',
-          badge: 'Co-Founder',
+          title: 'Fred Done, Betfred Co-Founder',
           content: `In 1967, Fred and his brother Peter bet on England to win the World Cup in 1966. They used the winnings to open a single betting shop in Salford. Unlike competitors, Fred focused on bonuses, inventing the "Lucky 15" bet.
 
 Betfred remains one of the few large independent operators, with over **1,300 shops**, though they nearly sold the entire estate in 2025 due to tax hikes.`
@@ -145,12 +137,10 @@ Betfred remains one of the few large independent operators, with over **1,300 sh
           title: 'Revenue Breakdown',
           content: `While horse racing built the industry, football now powers it.
 
-| Sport | Revenue | Share | Note |
-|-------|---------|-------|------|
-| **Football** | £1.3 Billion | 50% | Premier League & In-Play dominate |
-| **Horse Racing** | £767 Million | 30% | Declining but vital for daytime |
-| **Tennis** | £180 Million | 7% | High volume in-play point betting |
-| **Other Sports** | £350 Million | 13% | Greyhounds, Cricket, Golf, Esports |`
+- **Football:** £1.3 Billion (50%) — Premier League & In-Play dominate
+- **Horse Racing:** £767 Million (30%) — Declining but vital for daytime
+- **Tennis:** £180 Million (7%) — High volume in-play point betting
+- **Other Sports:** £350 Million (13%) — Greyhounds, Cricket, Golf, Esports`
         }
       ]
     },
@@ -160,14 +150,12 @@ Betfred remains one of the few large independent operators, with over **1,300 sh
         {
           id: 'regulatory-timeline',
           title: 'Key Milestones',
-          content: `| Year | Event | Description |
-|------|-------|-------------|
-| **1961** | Legalisation | Betting shops legalised. Windows must be blacked out; no TV allowed. |
-| **2001** | Tax Free Era | Gordon Brown abolishes Betting Duty (9%). UK becomes global hub. |
-| **2005** | Gambling Act | The "Tony Blair Act" liberalises advertising on TV and football shirts. |
-| **2019** | FOBT Crackdown | Max stake cut from £100 to £2. Mass shop closures follow. |
-| **2025** | White Paper Era | Affordability checks, slot limits, statutory levy introduced. |
-| **2026** | Tax Bomb | Remote Gaming Duty doubles to 40% (April 1st). |`
+          content: `- **1961 — Legalisation:** Betting shops legalised. Windows must be blacked out; no TV allowed.
+- **2001 — Tax Free Era:** Gordon Brown abolishes Betting Duty (9%). UK becomes global hub.
+- **2005 — Gambling Act:** The "Tony Blair Act" liberalises advertising on TV and football shirts.
+- **2019 — FOBT Crackdown:** Max stake cut from £100 to £2. Mass shop closures follow.
+- **2025 — White Paper Era:** Affordability checks, slot limits, statutory levy introduced.
+- **2026 — Tax Bomb:** Remote Gaming Duty doubles to 40% (April 1st).`
         }
       ]
     },

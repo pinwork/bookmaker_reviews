@@ -107,24 +107,21 @@ The Keogh Family, whose son Lewis died by suicide in 2013 due to hidden debts, n
       items: [
         {
           id: 'oisin-mcconville',
-          title: 'Oisín McConville',
-          badge: 'Armagh GAA Legend',
+          title: 'Oisín McConville (Armagh GAA Legend)',
           content: `The All-Ireland winner accumulated over **€140,000 in debt** and contemplated suicide multiple times. He has been gamble-free since 2005.
 
 Now a qualified counsellor and GamblingCare ambassador, he is the most prominent voice for recovery in Irish sport.`
         },
         {
           id: 'tony-oreilly',
-          title: 'Tony O\'Reilly ("Tony 10")',
-          badge: 'Former An Post Manager',
+          title: 'Tony O\'Reilly ("Tony 10", Former An Post Manager)',
           content: `Stole **€1.75 million** from his branch to fund a gambling addiction that saw him bet over €10 million total.
 
 After serving time, he co-authored "Tony 10" and now works as an addiction counsellor.`
         },
         {
           id: 'niall-mcnamee',
-          title: 'Niall McNamee',
-          badge: 'Offaly GAA Footballer',
+          title: 'Niall McNamee (Offaly GAA Footballer)',
           content: `Spent over **€200,000 on gambling** and accumulated €80,000 in debt before seeking help in 2011.
 
 Now an ambassador for Extern Problem Gambling, focusing on youth education.`

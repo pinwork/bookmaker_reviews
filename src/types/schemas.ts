@@ -227,10 +227,9 @@ export const GuideItemSchema = z.object({
   title: z.string(),
   content: z.string(), // Markdown prose
   keyStats: z.array(KeyStatSchema).optional(), // Optional stats display
-  badge: z.string().optional(), // Contextual label (e.g., "Age 24", "Founder")
   quickVerdict: z.string().optional(), // Optional subtitle
   pros: z.array(z.string()).optional(), // Rare, only for specific guide items
-  recommendedBookmakers: z.array(z.string()).optional(), // Links to bookmakers
+  recommendedBookmakers: z.array(z.string()).optional(), // Internal: for banner linking
 });
 
 const GuideSectionSchema = z.object({

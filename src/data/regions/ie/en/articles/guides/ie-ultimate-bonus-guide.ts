@@ -110,13 +110,13 @@ export const ieBonusGuide: IndustryReport = {
       items: [
         {
           id: 'vip_schemes',
-          title: '❌ VIP & High Roller Schemes',
+          title: 'VIP & High Roller Schemes (BANNED)',
           content: 'Targeted offers based on how much you lose are prohibited to prevent "chasing losses". Do not expect a personal account manager in 2026.',
           recommendedBookmakers: []
         },
         {
           id: 'loyalty_ie',
-          title: '⚠️ Loyalty Clubs (Grey Area)',
+          title: 'Loyalty Clubs (Grey Area)',
           content: 'GRAI has not issued specific guidance yet. **Likely Legal:** Programs with identical rewards for ALL who opt-in. **Likely Banned:** Tiered programs based on spend.',
           recommendedBookmakers: []
         },

@@ -10,7 +10,6 @@ interface GuideItem {
   title: string;
   content: string;
   keyStats?: KeyStat[];
-  badge?: string;
 }
 
 interface GuideSection {
@@ -25,18 +24,11 @@ export interface GuideSectionsProps {
 function GuideCard({ item }: { item: GuideItem }) {
   return (
     <article className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-      {/* Header with title and optional badge */}
+      {/* Header with title */}
       <header className="p-4 border-b border-gray-100 bg-gray-50">
-        <div className="flex items-center gap-3">
-          <h3 className="text-xl font-bold text-gray-900 flex-1">
-            {item.title}
-          </h3>
-          {item.badge && (
-            <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">
-              {item.badge}
-            </span>
-          )}
-        </div>
+        <h3 className="text-xl font-bold text-gray-900">
+          {item.title}
+        </h3>
       </header>
 
       {/* Key Stats Row */}

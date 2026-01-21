@@ -7,6 +7,7 @@
 * **Formatting:**
     * No "walls of text". Use bullet points every 2-3 paragraphs.
     * Use **Bold** for key takeaways, not for entire sentences.
+    * **No emojis.** Never use emojis in article content. Use text symbols (✓ ✗) only for pros/cons lists.
 
 ---
 
@@ -30,6 +31,14 @@ Educational content with flexible structure. No affiliate links or product ratin
 * **Rendering:** Prose sections with h2 headers, no collapsible cards
 * **Structure:** Multiple `groups` (sections), each with `items` containing markdown `content`
 
+**Group Usage:**
+Groups are **major chapters**, not fine divisions. Use sparingly (3-7 per article).
+
+* *Good:* "Part 1: The Kickstart", "Part 2: Ongoing Rewards", "Part 3: Protection"
+* *Bad:* Creating a new group for every small topic
+
+Within `content`, use markdown for structure: `###` headers, bullet lists, bold text. Don't create multiple groups where one group with rich markdown would work better.
+
 ### B. Tool Reviews (ToolReviewArticle)
 
 Affiliate product reviews with strict structure. Each item requires rating, pros, cons, affiliate URL.
@@ -38,6 +47,15 @@ Affiliate product reviews with strict structure. Each item requires rating, pros
 * **SEO:** Target "Best [App] for...", "Review", "Comparison"
 * **Rendering:** Review cards with collapsible details, "Visit Site" buttons, star ratings
 * **Structure:** Single `groups` entry named "Reviews", items have strict required fields
+
+### C. Global: No Markdown Tables in `content`
+
+**Applies to both Guides and Tool Reviews.**
+
+ReactMarkdown does not render tables. Use `comparisonTables` field instead (renders after intro).
+
+* *Good:* Write pricing in prose: `"Three tiers: Lite (€17/mo), Deluxe (€37/mo), Platinum (€77/mo)."`
+* *Bad:* `"| Tier | Price |..."` → renders as raw text
 
 ---
 
@@ -197,11 +215,6 @@ Each `content` field is a **Micro-Review** (Wirecutter/TechRadar style). Target:
 ```
 
 **Note:** `Best For` is now a separate field (`bestFor`), not part of markdown content.
-
-**No markdown tables in `content` field.** ReactMarkdown does not render tables by default. For pricing information, write in prose:
-
-* *Good:* `"Three tiers: Lite (€17/mo), Deluxe (€37/mo), Platinum (€77/mo). 7-day free trial included."`
-* *Bad:* `"| Tier | Price |..."` (renders as raw text)
 
 ### D. Editorial Style & Formatting
 

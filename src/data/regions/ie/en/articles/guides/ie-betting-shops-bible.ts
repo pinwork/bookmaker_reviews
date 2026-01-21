@@ -104,15 +104,13 @@ Ladbrokes Grid and Paddy Power Onside allow customers to deposit cash in-shop an
         {
           id: 'history-timeline',
           title: 'From the Free State to the Digital Age',
-          content: `| Year | Event | Details |
-|------|-------|---------|
-| **1926** | Betting Act Passed | First legislation to regulate bookies in the Irish Free State. |
-| **1931** | The Sunday Ban | Betting Act 1931 bans Sunday opening. This archaic law is STILL active 95 years later. |
-| **1975** | Yellow Sam Coup | Barney Curley wins IR£300,000 by blocking the only phone line at Bellewstown. |
-| **2016** | Hackett's Collapse | Ireland's largest independent (65 shops) enters liquidation. |
-| **2019** | Duty Doubled | Betting tax rises from 1% to 2%. IBA warns of "accelerated closures". |
-| **2025** | GRAI Established | March 5th: The new regulator formally commences operations. |
-| **2027** | Full Licensing | Expected completion of transition from Revenue to GRAI licensing. |`
+          content: `- **1926 — Betting Act Passed:** First legislation to regulate bookies in the Irish Free State.
+- **1931 — The Sunday Ban:** Betting Act 1931 bans Sunday opening. This archaic law is STILL active 95 years later.
+- **1975 — Yellow Sam Coup:** Barney Curley wins IR£300,000 by blocking the only phone line at Bellewstown.
+- **2016 — Hackett's Collapse:** Ireland's largest independent (65 shops) enters liquidation.
+- **2019 — Duty Doubled:** Betting tax rises from 1% to 2%. IBA warns of "accelerated closures".
+- **2025 — GRAI Established:** March 5th: The new regulator formally commences operations.
+- **2027 — Full Licensing:** Expected completion of transition from Revenue to GRAI licensing.`
         }
       ]
     },
@@ -121,24 +119,21 @@ Ladbrokes Grid and Paddy Power Onside allow customers to deposit cash in-shop an
       items: [
         {
           id: 'barney-curley',
-          title: 'Barney Curley',
-          badge: 'Professional Gambler',
+          title: 'Barney Curley (Professional Gambler)',
           content: `The mastermind behind the Yellow Sam coup. He once said, "The bookmakers have the best of it 364 days a year. I just want one day." Bookies paid him out in single notes, filling 108 bags in protest.
 
 His actions forced bookmakers to change the rules on how bets are reported from the track.`
         },
         {
           id: 'stewart-kenny',
-          title: 'Stewart Kenny',
-          badge: 'Paddy Power Co-Founder',
+          title: 'Stewart Kenny (Paddy Power Co-Founder)',
           content: `In 1988, Kenny masterminded the merger of three struggling independent bookmakers (Kenny, Power, and Corcoran). He realized individual shops would die against British chains like Coral, so they united under the "Paddy Power" brand.
 
 He created what is now Flutter Entertainment, the world's largest gambling company.`
         },
         {
           id: 'john-boyle',
-          title: 'John Boyle',
-          badge: 'BoyleSports Founder',
+          title: 'John Boyle (BoyleSports Founder)',
           content: `Founded his empire in 1982 in Markethill. Unlike competitors who sold out to UK giants, Boyle aggressively acquired rivals (Bruce Betting, Tully).
 
 He built the largest independent retail chain in Ireland, keeping ownership domestic.`

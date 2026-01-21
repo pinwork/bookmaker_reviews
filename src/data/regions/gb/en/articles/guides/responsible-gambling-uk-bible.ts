@@ -93,8 +93,7 @@ export const responsibleGamblingBible: IndustryReport = {
         {
           id: 'jack-ritchie',
           title: 'Jack Ritchie (1993-2017)',
-          badge: 'Age 24',
-          content: `Jack started at 17 on FOBTs. He won £1,000 in less than 35 seconds — the trigger for a 7-year addiction. His death led to the first-ever Article 2 inquest examining the state's role in gambling harm. The coroner ruled that regulation was "woefully inadequate."
+          content: `Jack started at 17 on FOBTs. He won £1,000 in less than 35 seconds — the trigger for a 7-year addiction. His death at age 24 led to the first-ever Article 2 inquest examining the state's role in gambling harm. The coroner ruled that regulation was "woefully inadequate."
 
 His parents founded "Gambling With Lives" and were awarded MBEs in 2023.
 
@@ -103,8 +102,7 @@ His parents founded "Gambling With Lives" and were awarded MBEs in 2023.
         {
           id: 'luke-ashton',
           title: 'Luke Ashton (1981-2021)',
-          badge: 'Age 40',
-          content: `A father of two who placed over 100 bets per day in his final weeks. He accumulated £18,000 in debt and lost £5,000 in his last month alone.
+          content: `A father of two who placed over 100 bets per day in his final weeks. He accumulated £18,000 in debt and lost £5,000 in his last month alone, dying at age 40.
 
 First inquest in UK history to officially record "gambling disorder" as cause of death by suicide. Betfair was named as an "Interested Person".
 
@@ -112,8 +110,7 @@ First inquest in UK history to officially record "gambling disorder" as cause of
         },
         {
           id: 'paul-merson',
-          title: 'Paul Merson',
-          badge: 'Public Advocate',
+          title: 'Paul Merson (Public Advocate)',
           content: `The former Arsenal legend publicly disclosed losing **£7 million over 35 years**. He has been married three times, with gambling contributing to each breakdown. He now lives in rented accommodation.
 
 > "I've been addicted to alcohol and cocaine, but the most destructive addiction is gambling. It's already in you, just waiting."
@@ -123,7 +120,6 @@ First inquest in UK history to officially record "gambling disorder" as cause of
         {
           id: 'chris-bruney',
           title: 'Chris Bruney',
-          badge: 'Deceased',
           content: `Lost **£119,000 in five days**. The operator sent him a £400 "bonus" hours before his death. Suicide note: "It was the gambling."
 
 Playtech paid a £3.5 million settlement to the family. The coroner ruled the death was caused in part by "the shame of gambling".
@@ -132,8 +128,7 @@ Playtech paid a £3.5 million settlement to the family. The coroner ruled the de
         },
         {
           id: 'tony-adams',
-          title: 'Tony Adams',
-          badge: 'Recovery Advocate',
+          title: 'Tony Adams (Recovery Advocate)',
           content: `The former Arsenal captain founded Sporting Chance Clinic in 2000 to help athletes with addiction.
 
 > "We get more gambling addicts through the clinic now than alcoholics. Gambling is epidemic in professional football."
@@ -199,16 +194,16 @@ Thinking errors like the Gambler's Fallacy ("I'm due for a win"), Illusion of Co
             { label: 'Largest Fine', value: '£19.2M' },
             { label: 'Cases', value: '26' }
           ],
-          content: `| Rank | Operator | Amount | Date | Violation |
-|------|----------|--------|------|-----------|
-| 1 | William Hill | £19.2M | Mar 2023 | Customer deposited £23k in 20 mins without checks |
-| 2 | Entain (Ladbrokes/Coral) | £17M | Aug 2022 | Social housing resident deposited £186k without checks |
-| 3 | Caesars Entertainment | £13M | Apr 2020 | Systemic failures across 11 UK casinos |
-| 4 | Betway | £11.6M | Mar 2020 | VIP customer lost £4m without meaningful interaction |
-| 5 | Platinum Gaming | £10M | Oct 2025 | Social responsibility and AML failures |
-| 6 | 888 Holdings | £9.4M | Mar 2022 | Checks only triggered after £40,000 losses |
-| 7 | 888 Holdings | £7.8M | Aug 2017 | 7,000+ self-excluded customers accessed accounts |
-| 8 | Bet365 | £582k | Apr 2024 | Ineffective KYC triggers and AML failures |`
+          content: `The largest UKGC enforcement actions demonstrate the scale of industry failures:
+
+- **William Hill — £19.2M (Mar 2023):** Customer deposited £23k in 20 mins without checks.
+- **Entain (Ladbrokes/Coral) — £17M (Aug 2022):** Social housing resident deposited £186k without checks.
+- **Caesars Entertainment — £13M (Apr 2020):** Systemic failures across 11 UK casinos.
+- **Betway — £11.6M (Mar 2020):** VIP customer lost £4m without meaningful interaction.
+- **Platinum Gaming — £10M (Oct 2025):** Social responsibility and AML failures.
+- **888 Holdings — £9.4M (Mar 2022):** Checks only triggered after £40,000 losses.
+- **888 Holdings — £7.8M (Aug 2017):** 7,000+ self-excluded customers accessed accounts.
+- **Bet365 — £582k (Apr 2024):** Ineffective KYC triggers and AML failures.`
         }
       ]
     },
