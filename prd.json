@@ -1,0 +1,98 @@
+{
+  "featureName": "Compact Cards & Improved FAQ",
+  "branchName": "feat/compact-cards-faq",
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Install shadcn Accordion component",
+      "acceptanceCriteria": [
+        "Run: npx shadcn@latest add accordion",
+        "Verify src/components/ui/accordion.tsx exists",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 2,
+      "title": "Refactor ArticleFAQ with shadcn Accordion and Show More",
+      "acceptanceCriteria": [
+        "Refactor src/components/article/ArticleFAQ.tsx",
+        "Use shadcn/ui Accordion component with type='single' collapsible",
+        "Show first 3 FAQ items by default (INITIAL_VISIBLE_COUNT = 3)",
+        "First item expanded by default (defaultValue prop)",
+        "If faq.length > 3: show 'Show X more questions' button below",
+        "Button click reveals all remaining questions (no page reload)",
+        "Button text changes to 'Show fewer questions' when expanded",
+        "HelpCircle icon remains on questions",
+        "Smooth animation on expand/collapse (built into shadcn)",
+        "All FAQ content remains in HTML for SEO (hidden via CSS, not removed from DOM)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 3,
+      "title": "Install shadcn Collapsible component",
+      "acceptanceCriteria": [
+        "Run: npx shadcn@latest add collapsible",
+        "Verify src/components/ui/collapsible.tsx exists",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 4,
+      "title": "Refactor ArticleGroups card to compact layout with expandable content",
+      "acceptanceCriteria": [
+        "Refactor src/components/article/ArticleGroups.tsx",
+        "Card split into 2 sections: Summary (always visible) + Details (collapsible)",
+        "Summary section contains: Badge, Header (title, rating, logo), Key Stats, Best For, Pros/Cons",
+        "Details section contains: ReactMarkdown content (Overview, Key Features, Price)",
+        "Use shadcn/ui Collapsible for expandable details",
+        "Footer with 2 buttons side-by-side: 'Read full review' (ghost/outline) + 'Visit Site' (green, narrower ~50% width)",
+        "'Read full review' toggles Collapsible open/closed",
+        "Button shows ChevronDown icon, rotates 180deg when open",
+        "Button text changes to 'Hide review' when expanded",
+        "Details content remains in HTML for SEO (uses CSS height animation, not conditional render)",
+        "First card in list has details expanded by default",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    },
+    {
+      "id": 5,
+      "title": "Visual polish and spacing adjustments",
+      "acceptanceCriteria": [
+        "CTA 'Visit Site' button: max-w-[200px] or w-1/2, not full width",
+        "'Read full review' button: variant='ghost' or 'outline', neutral color",
+        "Buttons aligned with gap-3 between them",
+        "Collapsible content has pt-4 border-t border-gray-100 when expanded",
+        "Smooth transition on Collapsible (duration-200)",
+        "Verify cards look balanced when collapsed (not too tall, not too short)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "completedAt": null,
+      "filesChanged": []
+    }
+  ],
+  "postFeatureReview": null
+}
