@@ -161,50 +161,45 @@ export function ArticleGroups({ groups, logoPaths, bgColors }: ArticleGroupsProp
 
                   {/* Content */}
                   <div className="p-6">
-                    {/* Two-column layout: pros/cons LEFT, CTA RIGHT on desktop */}
-                    <div className="grid grid-cols-1 lg:grid-cols-[1fr,auto] gap-6">
-                      {/* LEFT: Pros & Cons */}
-                      <div>
-                        {/* Pros */}
-                        {item.pros && item.pros.length > 0 && (
-                          <ul className="mb-4 space-y-1">
-                            {item.pros.map((pro, proIndex) => (
-                              <li key={proIndex} className="flex items-start gap-2 text-sm text-gray-700">
-                                <span className="text-green-600 flex-shrink-0">✓</span>
-                                {pro}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
+                    {/* Pros & Cons */}
+                    <div className="mb-4">
+                      {/* Pros */}
+                      {item.pros && item.pros.length > 0 && (
+                        <ul className="mb-4 space-y-1">
+                          {item.pros.map((pro, proIndex) => (
+                            <li key={proIndex} className="flex items-start gap-2 text-sm text-gray-700">
+                              <span className="text-green-600 flex-shrink-0">✓</span>
+                              {pro}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
 
-                        {/* Cons */}
-                        {item.cons && item.cons.length > 0 && (
-                          <ul className="space-y-1">
-                            {item.cons.map((con, conIndex) => (
-                              <li key={conIndex} className="flex items-start gap-2 text-sm text-gray-700">
-                                <span className="text-red-600 flex-shrink-0">✗</span>
-                                {con}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-
-                      {/* RIGHT: CTA Button (desktop: vertically centered, mobile: full width centered) */}
-                      {item.url && (
-                        <div className="flex items-center justify-center lg:items-center">
-                          <a
-                            href={item.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap w-full lg:w-auto"
-                          >
-                            Visit Site
-                            <ExternalLinkIcon className="h-4 w-4" />
-                          </a>
-                        </div>
+                      {/* Cons */}
+                      {item.cons && item.cons.length > 0 && (
+                        <ul className="space-y-1">
+                          {item.cons.map((con, conIndex) => (
+                            <li key={conIndex} className="flex items-start gap-2 text-sm text-gray-700">
+                              <span className="text-red-600 flex-shrink-0">✗</span>
+                              {con}
+                            </li>
+                          ))}
+                        </ul>
                       )}
                     </div>
+
+                    {/* CTA Button - full width, centered */}
+                    {item.url && (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors w-full"
+                      >
+                        Visit Site
+                        <ExternalLinkIcon className="h-4 w-4" />
+                      </a>
+                    )}
 
                     <div className="prose prose-sm prose-gray max-w-none prose-headings:text-lg prose-headings:font-semibold prose-headings:mt-6 prose-headings:mb-3 mt-6">
                       <ReactMarkdown>{item.content}</ReactMarkdown>
