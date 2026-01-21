@@ -29,13 +29,13 @@ export function ArticleFAQ({ faq }: ArticleFAQProps) {
   if (faq.length === 0) return null;
 
   return (
-    <section className="mb-10">
+    <section className="mb-10 mt-12">
       <h2 className="flex items-center gap-2 text-xl font-bold text-gray-900 mb-6">
-        <HelpCircle className="h-6 w-6 text-blue-600" />
+        <HelpCircle className="h-5 w-5 text-blue-600" />
         Frequently Asked Questions
       </h2>
 
-      <Accordion type="single" collapsible defaultValue="faq-0" className="space-y-3">
+      <Accordion type="single" collapsible className="space-y-2">
         {faq.map((item, index) => {
           const isHidden = !showAll && index >= INITIAL_VISIBLE_COUNT;
 
@@ -49,14 +49,14 @@ export function ArticleFAQ({ faq }: ArticleFAQProps) {
                 isHidden && 'hidden'
               )}
             >
-              <AccordionTrigger className="w-full flex items-center justify-between gap-3 px-5 py-5 text-left hover:bg-gray-100 hover:no-underline transition-colors [&>svg]:text-gray-500">
-                <span className="flex items-start gap-3 text-lg font-semibold text-gray-900">
+              <AccordionTrigger className="w-full flex items-center justify-between gap-3 p-4 text-left hover:bg-gray-100 hover:no-underline transition-colors [&>svg]:text-gray-500">
+                <span className="flex items-start gap-3 text-base font-semibold text-gray-900">
                   <HelpCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
                   {item.q}
                 </span>
               </AccordionTrigger>
-              <AccordionContent className="px-5 pb-5 pt-0">
-                <p className="text-gray-600 pl-8 leading-relaxed">
+              <AccordionContent className="px-4 pb-4 pt-0">
+                <p className="text-gray-600 pl-7 leading-relaxed">
                   {item.a}
                 </p>
               </AccordionContent>

@@ -1,0 +1,136 @@
+{
+  "featureName": "Card Header Redesign + FAQ Polish",
+  "branchName": "feat/card-header-faq-polish",
+  "userStories": [
+    {
+      "id": 1,
+      "title": "First card collapsed by default",
+      "acceptanceCriteria": [
+        "Update src/components/article/ArticleGroups.tsx",
+        "Remove logic that expands first card by default",
+        "All cards start with Collapsible closed",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-21T12:00:00Z",
+      "filesChanged": ["src/components/article/ArticleGroups.tsx"],
+      "note": "Already implemented in previous session - useState(false) ensures all cards start collapsed"
+    },
+    {
+      "id": 2,
+      "title": "Center badge above card",
+      "acceptanceCriteria": [
+        "Update badge positioning in src/components/article/ArticleGroups.tsx",
+        "Badge centered horizontally: absolute left-1/2 -translate-x-1/2 -top-3",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-21T12:00:00Z",
+      "filesChanged": ["src/components/article/ArticleGroups.tsx"],
+      "note": "Already implemented - badge has 'absolute -top-3 left-1/2 -translate-x-1/2'"
+    },
+    {
+      "id": 3,
+      "title": "Redesign card header with logo left layout",
+      "acceptanceCriteria": [
+        "Refactor header in src/components/article/ArticleGroups.tsx",
+        "Layout: Logo (left) | Title+Verdict (center) | Rating (right)",
+        "Logo: increase to h-14 w-24, proportional (not square), object-contain, p-2",
+        "Logo container: clickable, rounded-lg border border-gray-200",
+        "Title: text-xl font-bold text-gray-900, NOT clickable (remove link)",
+        "Rating (stars): vertically centered to logo block height (items-center)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-21T12:00:00Z",
+      "filesChanged": ["src/components/article/ArticleGroups.tsx"],
+      "note": "Already implemented - header has logo/title/rating layout with all specifications"
+    },
+    {
+      "id": 4,
+      "title": "QuickVerdict with Quote icon styling",
+      "acceptanceCriteria": [
+        "Update quickVerdict in src/components/article/ArticleGroups.tsx",
+        "Add Quote icon (lucide-react) before text: h-3.5 w-3.5 text-blue-500",
+        "Text: text-sm text-gray-600 italic",
+        "Layout: flex items-start gap-1.5 mt-1",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-21T12:00:00Z",
+      "filesChanged": ["src/components/article/ArticleGroups.tsx"],
+      "note": "Already implemented - Quote icon with specified styling"
+    },
+    {
+      "id": 5,
+      "title": "Polish FAQ section styling",
+      "acceptanceCriteria": [
+        "Update src/components/article/ArticleFAQ.tsx",
+        "Add HelpCircle icon before title (h-5 w-5 text-blue-600)",
+        "Title: text-xl font-bold (reduce from text-2xl)",
+        "REMOVE border-b under h2 title",
+        "Add mt-12 to section for spacing from content above",
+        "Reduce space-y-3 to space-y-2 between FAQ items",
+        "Reduce padding: AccordionTrigger p-4, AccordionContent px-4 pb-4",
+        "ALL items closed by default (remove defaultValue from Accordion)",
+        "Answer text: pl-7 to align with question text",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-21T12:15:00Z",
+      "filesChanged": ["src/components/article/ArticleFAQ.tsx"]
+    },
+    {
+      "id": 6,
+      "title": "ArticleFooter with collapsible Sources",
+      "acceptanceCriteria": [
+        "Refactor src/components/article/ArticleFooter.tsx to 'use client'",
+        "Layout: 'Last updated: {date}' left, 'Sources' button right",
+        "Sources button: text-sm text-gray-400 hover:text-gray-600, ChevronDown icon",
+        "Click toggles dataSource visibility below",
+        "ChevronDown rotates 180deg when open (transition-transform)",
+        "DataSource: text-xs text-gray-400 mt-2",
+        "Keep content in DOM for SEO (use height/opacity animation, not conditional)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-21T12:20:00Z",
+      "filesChanged": ["src/components/article/ArticleFooter.tsx"]
+    },
+    {
+      "id": 7,
+      "title": "Responsive adjustments",
+      "acceptanceCriteria": [
+        "Card header: on mobile logo h-12 w-20",
+        "Title: truncate class for long names",
+        "QuickVerdict: line-clamp-2 on mobile",
+        "Test at 375px width",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-21T12:00:00Z",
+      "filesChanged": ["src/components/article/ArticleGroups.tsx"],
+      "note": "Already implemented - responsive logo sizes, truncate on title, line-clamp-2 on quickVerdict"
+    }
+  ],
+  "postFeatureReview": {
+    "summary": "Implemented card header redesign with logo-left layout and FAQ polish. Stories 1-4 and 7 were already completed from previous session. Added mt-12 spacing to FAQ, reduced padding/gaps for compact look, removed defaultValue so all FAQ items start closed. ArticleFooter now has collapsible Sources button with SEO-friendly max-height animation.",
+    "impact": "Article components: ArticleFAQ.tsx (compact styling), ArticleFooter.tsx (collapsible sources). Previous session already handled ArticleGroups.tsx changes.",
+    "issues": "None encountered. All lint/build checks pass.",
+    "recommendations": "Consider testing the collapsible Sources animation on slower devices to ensure smooth transitions."
+  }
+}
