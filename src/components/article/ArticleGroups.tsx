@@ -82,11 +82,11 @@ export function ArticleGroups({ groups, logoPaths, bgColors }: ArticleGroupsProp
               return (
                 <article
                   key={itemIndex}
-                  className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm relative"
+                  className="bg-white border border-gray-200 rounded-xl overflow-visible shadow-sm relative"
                 >
-                  {/* Badge in top-right corner */}
+                  {/* Badge ribbon above card */}
                   {item.badge && (
-                    <div className="absolute top-3 right-3 bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded">
+                    <div className="absolute -top-3 left-4 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1.5 rounded-md shadow-sm z-10">
                       {item.badge}
                     </div>
                   )}
