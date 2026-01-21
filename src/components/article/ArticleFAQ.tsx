@@ -30,7 +30,8 @@ export function ArticleFAQ({ faq }: ArticleFAQProps) {
 
   return (
     <section className="mb-10">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
+      <h2 className="flex items-center gap-2 text-xl font-bold text-gray-900 mb-6">
+        <HelpCircle className="h-6 w-6 text-blue-600" />
         Frequently Asked Questions
       </h2>
 
