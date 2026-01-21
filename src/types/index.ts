@@ -31,7 +31,10 @@ export type SportCategory = z.infer<typeof schemas.SportCategorySchema>;
 export type Competition = z.infer<typeof schemas.CompetitionSchema>;
 export type SportEvent = z.infer<typeof schemas.SportEventSchema>;
 
-export type IndustryReport = z.infer<typeof schemas.IndustryReportSchema>;
+export type BaseContent = z.infer<typeof schemas.BaseContentSchema>;
+export type ToolReview = z.infer<typeof schemas.ToolReviewSchema>;
+export type ContentGuide = z.infer<typeof schemas.ContentGuideSchema>;
+export type IndustryReport = z.infer<typeof schemas.IndustryReportSchema>; // Legacy alias
 export type ExternalLink = z.infer<typeof schemas.ExternalLinkSchema>;
 export type LinkedResource = z.infer<typeof schemas.LinkedResourceSchema>;
 export type ComparisonTable = z.infer<typeof schemas.ComparisonTableSchema>;

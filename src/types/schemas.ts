@@ -234,7 +234,8 @@ export const ComparisonTableSchema = z.object({
   linkedResourceType: ResourceTypeSchema.optional(),
 });
 
-export const IndustryReportSchema = z.object({
+// Base schema with shared fields for all content types (guides, tool reviews, etc.)
+export const BaseContentSchema = z.object({
   slug: z.string().min(1),
   h1: z.string().min(1),
   metaTitle: z.string().min(1),
@@ -248,7 +249,21 @@ export const IndustryReportSchema = z.object({
     lastUpdated: z.string().optional(),
     dataSource: z.string().optional()
   }).optional(),
-  collections: z.array(z.enum(['guides', 'bettor-resources', 'featured', 'responsible-gambling'])).optional(),
+  collections: z.array(z.enum(['guides', 'tools', 'bettor-resources', 'featured', 'responsible-gambling'])).optional(),
   linkedResources: z.array(LinkedResourceSchema).optional(),
   comparisonTables: z.array(ComparisonTableSchema).optional(),
 });
+
+// Tool Review schema - for app reviews, betting tools, etc.
+export const ToolReviewSchema = BaseContentSchema.extend({
+  relatedAppId: z.string().optional(),
+  verdict: z.string().optional(),
+  pros: z.array(z.string()).optional(),
+  cons: z.array(z.string()).optional(),
+});
+
+// Guide schema - alias for guides/articles (same as BaseContentSchema)
+export const ContentGuideSchema = BaseContentSchema;
+
+// Legacy alias - IndustryReportSchema for backwards compatibility
+export const IndustryReportSchema = BaseContentSchema;
