@@ -1,14 +1,9 @@
-import path from 'path';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isValidRegion, getGuideBySlug } from '@/data';
 import { getSiteConfig } from '@/data/regions';
 import { generateArticleSchemas } from '@/utils/seo';
-import { getPartnerLogoPath, getJpgBackgroundColor } from '@/utils/images';
-import {
-  getActiveLinkedResources,
-  resolveExternalResources,
-} from '@/utils/linkedResources';
+import { getPartnerLogoPath } from '@/utils/images';
 import {
   ArticleHeader,
   UnifiedComparisonTable,
@@ -40,7 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function ArticlePage({ params }: PageProps) {
+export default async function GuidePage({ params }: PageProps) {
   const { region, slug } = await params;
 
   if (!isValidRegion(region)) {
@@ -57,32 +52,15 @@ export default async function ArticlePage({ params }: PageProps) {
   const articleUrl = siteConfig ? `${siteConfig.url}/${region}/guides/${slug}` : '';
   const schemas = siteConfig ? generateArticleSchemas(article, articleUrl, siteConfig) : [];
 
-  // Process linkedResources
-  const activeResources = getActiveLinkedResources(article.linkedResources);
-  const externalResources = resolveExternalResources(activeResources);
-  const activeResourceIds = new Set(activeResources.map((r) => r.id));
-
-  // Pre-process external resources with logo paths and auto-detect JPG background colors
-  const processedExternalResources = await Promise.all(
-    externalResources.map(async (resource) => {
-      const logoPath = getPartnerLogoPath(resource.id);
-      let bgColor = resource.bgColor || '#ffffff';
-
-      // Auto-detect background color from JPG if not specified
-      if (!resource.bgColor && logoPath && (logoPath.endsWith('.jpg') || logoPath.endsWith('.jpeg'))) {
-        const fullPath = path.join(process.cwd(), 'public', logoPath);
-        bgColor = await getJpgBackgroundColor(fullPath);
+  // Build logo paths map from article groups
+  const logoPaths: Record<string, string | null> = {};
+  if (article.groups) {
+    for (const group of article.groups) {
+      for (const item of group.items) {
+        logoPaths[item.id] = getPartnerLogoPath(item.id);
       }
-
-      return {
-        id: resource.id,
-        name: resource.name,
-        url: resource.url,
-        logoPath,
-        bgColor,
-      };
-    })
-  );
+    }
+  }
 
   return (
     <>
@@ -104,23 +82,13 @@ export default async function ArticlePage({ params }: PageProps) {
           <UnifiedComparisonTable
             key={table.id}
             table={table}
-            resources={table.linkedResourceType === 'external' ? externalResources : undefined}
           />
         ))}
 
         {article.groups && (
           <ArticleGroups
-            groups={article.groups
-              .map((group) => ({
-                ...group,
-                // Filter items: show if active OR not linked to any resource
-                items: group.items.filter((item) => {
-                  const linkedResource = article.linkedResources?.find((r) => r.id === item.id);
-                  return !linkedResource || activeResourceIds.has(item.id);
-                }),
-              }))
-              .filter((group) => group.items.length > 0)}
-            externalResources={processedExternalResources}
+            groups={article.groups}
+            logoPaths={logoPaths}
           />
         )}
 

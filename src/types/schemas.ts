@@ -197,6 +197,8 @@ const KeyStatSchema = z.object({
 export const BonusGroupItemSchema = z.object({
   id: z.string(),
   title: z.string(),
+  url: z.string().url().optional(), // Direct affiliate link
+  bgColor: z.string().optional(), // Brand background color for logo
   quickVerdict: z.string().optional(),
   rating: z.number().min(1).max(5).optional(),
   badge: z.string().optional(),
@@ -226,11 +228,25 @@ export const LinkedResourceSchema = z.object({
   active: z.boolean(),
 });
 
+// Comparison table row - supports both legacy (string array) and new format (with id)
+const ComparisonTableRowSchema = z.object({
+  id: z.string(), // Links to article item id for URL lookup
+  cells: z.array(z.string()), // Display values: [Display Name, Value1, Value2, ...]
+});
+
 export const ComparisonTableSchema = z.object({
   id: z.string().min(1),
   title: z.string().min(1),
   headers: z.array(z.string()).max(4),
-  rows: z.array(z.array(z.string())).optional(),
+  // Supports both formats:
+  // - Legacy: [['Name', 'Value1', 'Value2']]
+  // - New: [{ id: 'item-id', cells: ['Display Name', 'Value1', 'Value2'] }]
+  rows: z.array(
+    z.union([
+      z.array(z.string()), // Legacy format
+      ComparisonTableRowSchema, // New format with id
+    ])
+  ).optional(),
   linkedResourceType: ResourceTypeSchema.optional(),
 });
 

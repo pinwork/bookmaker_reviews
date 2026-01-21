@@ -1,7 +1,7 @@
 'use client';
 
 import ReactMarkdown from 'react-markdown';
-import { ExternalLink as ExternalLinkIcon } from 'lucide-react';
+import { ExternalLink as ExternalLinkIcon, Star } from 'lucide-react';
 
 interface KeyStat {
   label: string;
@@ -11,6 +11,8 @@ interface KeyStat {
 interface GroupItem {
   id: string;
   title: string;
+  url?: string; // Direct affiliate link from article data
+  bgColor?: string; // Brand background color from article data
   quickVerdict?: string;
   rating?: number;
   badge?: string;
@@ -25,27 +27,10 @@ interface Group {
   items: GroupItem[];
 }
 
-interface ProcessedExternalLink {
-  id: string;
-  name: string;
-  url: string;
-  bgColor?: string;
-  logoPath: string | null;
-  resolvedBgColor: string;
-}
-
-export interface ProcessedExternalResource {
-  id: string;
-  name: string;
-  url: string;
-  logoPath: string | null;
-  bgColor: string;
-}
-
 export interface ArticleGroupsProps {
   groups: Group[];
-  externalLinks?: ProcessedExternalLink[];
-  externalResources?: ProcessedExternalResource[];
+  logoPaths?: Record<string, string | null>; // Map of item.id -> logo path
+  bgColors?: Record<string, string>; // Map of item.id -> background color (includes auto-detected for JPG)
 }
 
 function StarRating({ rating }: { rating: number }) {
@@ -54,57 +39,45 @@ function StarRating({ rating }: { rating: number }) {
   const emptyStars = 5 - fullStars - (hasHalf ? 1 : 0);
 
   return (
-    <span className="text-yellow-500 text-sm ml-2" aria-label={`Rating: ${rating} out of 5`}>
-      {'★'.repeat(fullStars)}
-      {hasHalf && '½'}
-      {'☆'.repeat(emptyStars)}
+    <span className="inline-flex items-center ml-2" aria-label={`Rating: ${rating} out of 5`}>
+      {Array.from({ length: fullStars }).map((_, i) => (
+        <Star key={`full-${i}`} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+      ))}
+      {hasHalf && (
+        <span className="relative h-4 w-4">
+          <Star className="absolute h-4 w-4 fill-none text-yellow-400" />
+          <span className="absolute overflow-hidden w-1/2">
+            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+          </span>
+        </span>
+      )}
+      {Array.from({ length: emptyStars }).map((_, i) => (
+        <Star key={`empty-${i}`} className="h-4 w-4 fill-none text-yellow-400" />
+      ))}
     </span>
   );
 }
 
-export function ArticleGroups({ groups, externalLinks, externalResources }: ArticleGroupsProps) {
-  // Get resource data - prefer externalResources (new system) over externalLinks (legacy)
-  const getResourceData = (id: string): { url: string; name: string; logoPath: string | null; bgColor: string } | null => {
-    // Try new externalResources first
-    if (externalResources) {
-      const resource = externalResources.find((r) => r.id === id);
-      if (resource) {
-        return {
-          url: resource.url,
-          name: resource.name,
-          logoPath: resource.logoPath,
-          bgColor: resource.bgColor,
-        };
-      }
-    }
-
-    // Fall back to legacy externalLinks
-    if (externalLinks) {
-      const link = externalLinks.find((l) => l.id === id);
-      if (link) {
-        return {
-          url: link.url,
-          name: link.name,
-          logoPath: link.logoPath,
-          bgColor: link.resolvedBgColor,
-        };
-      }
-    }
-
-    return null;
-  };
+export function ArticleGroups({ groups, logoPaths, bgColors }: ArticleGroupsProps) {
+  // Check if this is a flat list (single group with generic name like "Reviews")
+  const isFlatList = groups.length === 1 && groups[0].groupName.toLowerCase() === 'reviews';
 
   return (
     <div className="space-y-12">
       {groups.map((group, groupIndex) => (
         <section key={groupIndex}>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
-            {group.groupName}
-          </h2>
+          {/* Hide group header for flat lists */}
+          {!isFlatList && (
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
+              {group.groupName}
+            </h2>
+          )}
 
           <div className="space-y-8">
             {group.items.map((item, itemIndex) => {
-              const resourceData = getResourceData(item.id);
+              const logoPath = logoPaths?.[item.id] ?? null;
+              // Priority: bgColors map (includes auto-detected) > item.bgColor > default white
+              const bgColor = bgColors?.[item.id] || item.bgColor || '#ffffff';
 
               return (
                 <article
@@ -122,15 +95,15 @@ export function ArticleGroups({ groups, externalLinks, externalResources }: Arti
                   <header className="flex items-center justify-between p-4 border-b border-gray-100 bg-gray-50">
                     <div className="flex-1 min-w-0 pr-4">
                       <div className="flex items-center">
-                        {resourceData ? (
+                        {item.url ? (
                           <a
-                            href={resourceData.url}
+                            href={item.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-xl font-bold text-blue-600 hover:text-blue-800 transition-colors"
+                            className="group inline-flex items-center gap-2 text-xl font-bold text-blue-600 hover:text-blue-800 transition-colors"
                           >
                             {item.title}
-                            <ExternalLinkIcon className="h-4 w-4 flex-shrink-0" />
+                            <ExternalLinkIcon className="h-4 w-4 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
                           </a>
                         ) : (
                           <h3 className="text-xl font-bold text-gray-900">
@@ -148,18 +121,18 @@ export function ArticleGroups({ groups, externalLinks, externalResources }: Arti
                     </div>
 
                     {/* Logo */}
-                    {resourceData?.logoPath && (
+                    {logoPath && (
                       <a
-                        href={resourceData.url}
+                        href={item.url || '#'}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-shrink-0 w-24 h-12 flex items-center justify-center rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
-                        style={{ backgroundColor: resourceData.bgColor }}
+                        style={{ backgroundColor: bgColor }}
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={resourceData.logoPath}
-                          alt={resourceData.name}
+                          src={logoPath}
+                          alt={item.title}
                           className="max-h-8 max-w-20 object-contain"
                         />
                       </a>

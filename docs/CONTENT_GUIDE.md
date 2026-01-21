@@ -17,7 +17,7 @@ We distinguish between **Learning** and **Buying** intents.
 | Content Type | TypeScript Type | Route | Schema (SEO) | Intent |
 | :--- | :--- | :--- | :--- | :--- |
 | **Guide** | `IndustryReport` | `/guides/[slug]` | `Article` | Informational (Learning) |
-| **Tool Review** | `ToolReview` | `/tools/[slug]` | `SoftwareApplication` | Transactional (Buying) |
+| **Tool Review** | `IndustryReport` | `/bettor-resources/[slug]` | `SoftwareApplication` | Transactional (Buying) |
 
 ### A. Guides Focus
 * **Focus:** Storytelling, strategies, psychology, explaining "How it works".
@@ -30,14 +30,30 @@ We distinguish between **Learning** and **Buying** intents.
 
 ---
 
-## 3. "Evergreen" Intro Strategy (CRITICAL)
+## 3. Intro & Examples Strategy: Real-World Specificity
 
-**Rule:** Never mention dynamic rankings or specific brand names in the `intro.content` field.
+**Philosophy:** Users trust specific examples over abstract theory.
+**Rule:** Use real brand names, real numbers, and real scenarios in ALL content.
 
-* **Bad:** *"Flashscore is the best app in 2026, followed by SofaScore..."*
-    * *Reason:* If rankings change next month, this text becomes outdated/false.
-* **Good:** *"Speed is the #1 factor for live betting. We tested 10 apps to find which API delivers data faster than the TV broadcast..."*
-    * *Reason:* This educational context remains valid regardless of which app is currently #1 in the table.
+### A. Tool Reviews → Editor's Choice
+
+Name the winner immediately in the Intro.
+
+* **Good:** *"After testing 10 apps, **Flashscore** remains #1 for speed in 2026."*
+* **Bad:** *"We tested many apps and found a good one..."* (too vague)
+
+### B. Guides → Real Examples
+
+Use specific brands to explain features.
+
+* **Good:** *"To understand Asian Handicaps, let's look at the market on **Bet365**..."*
+* **Bad:** *"Look for this market on your preferred bookmaker..."* (abstract)
+
+### Maintenance Commitment
+
+By using specific names, we commit to manual updates.
+* If a partner changes → update text references
+* Benefit: Higher engagement, better SEO, more trust
 
 ---
 
@@ -84,3 +100,100 @@ Use the `collections` array to control **which listing page** the content appear
 **Simple Rule:**
 * If you write a Guide -> use `['guides']`.
 * If you write a Tool Review -> use `['bettor-resources']`.
+
+---
+
+## 7. Bettor Resources: Editorial Standards
+
+**Schema reference:** `src/types/schemas.ts` → `BonusGroupItemSchema`, `ComparisonTableSchema`
+
+Articles in `/bettor-resources/` are affiliate product reviews. This section covers **editorial minimums** not enforced by schema.
+
+### A. Structure
+
+* `groups`: use single group `{ groupName: 'Reviews', items: [...] }`
+* `comparisonTables`: use new format `{ id: 'item-id', cells: [...] }` for URL linking
+* `reviewContext`: required for Google Rich Snippets (star ratings)
+
+### B. Item Count & Order
+
+**Order:** Ranked by editorial rating. Best item (#1) appears first.
+
+**Count:**
+* **Minimum:** 2 items (for niche topics with few quality options)
+* **Optimal:** 5-7 items (covers the market without overwhelming)
+* **Maximum:** 10+ items (only if explicitly requested or market demands it)
+
+### C. Editorial Minimums
+
+| Field | Minimum | Why |
+| :--- | :--- | :--- |
+| `pros` | 3 items | Builds trust |
+| `cons` | 1 item | Honesty signal |
+| `keyStats` | 2 items | Quick scanning |
+| `faq` | 3 questions | SEO + user doubts |
+| `quickVerdict` | ≤10 words | Fits header layout |
+
+### D. Field Guidelines
+
+#### quickVerdict Formula
+
+Use the pattern: **"The [Adjective] [Noun] for [Persona/Use-Case]."**
+
+* *Good:* "The fastest live score app with the widest sport coverage."
+* *Good:* "The best free statistics app with live xG and dropping odds."
+* *Bad:* "Great app, highly recommended!" (no specifics)
+
+#### keyStats Labels
+
+Choose metrics popular in the niche. Context determines what matters:
+* **Apps:** Price, Users, Sports, Speed
+* **Racing tools:** Price, Coverage, Data type, History
+* **Stats platforms:** Price, Leagues, Players, Metrics
+
+### E. Content Structure: Micro-Review Format
+
+Each `content` field is a **Micro-Review** (Wirecutter/TechRadar style). Target: **150-250 words**.
+
+```markdown
+### Overview
+[3-4 sentences: what it is, reputation, key differentiator]
+
+### Key Features
+- **Feature Name:** Benefit to user
+- **Feature Name:** Benefit to user
+
+### Best For
+[1-2 sentences: specific persona who should choose this]
+
+### Price
+[Pricing details: Free, £X/mo, Freemium model]
+```
+
+### F. Editorial Style & Formatting
+
+**Clean Bold Rule:**
+* Bold only at the **start** of bullet points (feature names, labels)
+* Never bold inside sentences or mid-text
+
+*Good:*
+```markdown
+- **Speed:** Updates arrive 5-20 seconds after live events
+- **Follow Player:** Track up to 100 individual players
+```
+
+*Bad:*
+```markdown
+- Updates arrive **5-20 seconds** after live events — the fastest in testing
+```
+
+**Feature: Benefit Logic:**
+Every Key Feature bullet must answer: "What does the user gain?"
+* *Good:* "**Live xG:** Expected goals updated in real-time during matches"
+* *Bad:* "**Live xG:** Shows xG data" (no benefit explained)
+
+### G. Logo & bgColor
+
+* `id` matches filename: `public/images/partners/{id}.svg` or `.jpg`
+* JPG logos: bgColor auto-detected from edge pixel
+* SVG/PNG: use `bgColor` from article, default `#ffffff`

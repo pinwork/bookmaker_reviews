@@ -6,10 +6,6 @@ import { getSiteConfig } from '@/data/regions';
 import { generateArticleSchemas } from '@/utils/seo';
 import { getPartnerLogoPath, getJpgBackgroundColor } from '@/utils/images';
 import {
-  getActiveLinkedResources,
-  resolveExternalResources,
-} from '@/utils/linkedResources';
-import {
   ArticleHeader,
   UnifiedComparisonTable,
   ArticleGroups,
@@ -57,32 +53,39 @@ export default async function BettorResourcePage({ params }: PageProps) {
   const articleUrl = siteConfig ? `${siteConfig.url}/${region}/bettor-resources/${slug}` : '';
   const schemas = siteConfig ? generateArticleSchemas(article, articleUrl, siteConfig) : [];
 
-  // Process linkedResources
-  const activeResources = getActiveLinkedResources(article.linkedResources);
-  const externalResources = resolveExternalResources(activeResources);
-  const activeResourceIds = new Set(activeResources.map((r) => r.id));
+  // Build logo paths, bgColors, and item URLs from article groups
+  const logoPaths: Record<string, string | null> = {};
+  const bgColors: Record<string, string> = {};
+  const itemUrls: Record<string, string> = {};
 
-  // Pre-process external resources with logo paths and auto-detect JPG background colors
-  const processedExternalResources = await Promise.all(
-    externalResources.map(async (resource) => {
-      const logoPath = getPartnerLogoPath(resource.id);
-      let bgColor = resource.bgColor || '#ffffff';
-
-      // Auto-detect background color from JPG if not specified
-      if (!resource.bgColor && logoPath && (logoPath.endsWith('.jpg') || logoPath.endsWith('.jpeg'))) {
-        const fullPath = path.join(process.cwd(), 'public', logoPath);
-        bgColor = await getJpgBackgroundColor(fullPath);
+  if (article.groups) {
+    // Collect logo paths and URLs (by id for reliable matching)
+    for (const group of article.groups) {
+      for (const item of group.items) {
+        logoPaths[item.id] = getPartnerLogoPath(item.id);
+        if (item.url) {
+          itemUrls[item.id] = item.url;
+        }
       }
+    }
 
-      return {
-        id: resource.id,
-        name: resource.name,
-        url: resource.url,
-        logoPath,
-        bgColor,
-      };
-    })
-  );
+    // Determine bgColors based on logo format
+    for (const group of article.groups) {
+      for (const item of group.items) {
+        const logoPath = logoPaths[item.id];
+
+        if (logoPath?.endsWith('.jpg') || logoPath?.endsWith('.jpeg')) {
+          // JPG: ALWAYS auto-detect from edge pixel (ignore article bgColor)
+          const fullPath = path.join(process.cwd(), 'public', logoPath);
+          bgColors[item.id] = await getJpgBackgroundColor(fullPath);
+        } else if (item.bgColor) {
+          // SVG/PNG: use brand color from article if specified
+          bgColors[item.id] = item.bgColor;
+        }
+        // If neither: ArticleGroups defaults to #ffffff
+      }
+    }
+  }
 
   return (
     <>
@@ -104,23 +107,15 @@ export default async function BettorResourcePage({ params }: PageProps) {
           <UnifiedComparisonTable
             key={table.id}
             table={table}
-            resources={table.linkedResourceType === 'external' ? externalResources : undefined}
+            itemUrls={itemUrls}
           />
         ))}
 
         {article.groups && (
           <ArticleGroups
-            groups={article.groups
-              .map((group) => ({
-                ...group,
-                // Filter items: show if active OR not linked to any resource
-                items: group.items.filter((item) => {
-                  const linkedResource = article.linkedResources?.find((r) => r.id === item.id);
-                  return !linkedResource || activeResourceIds.has(item.id);
-                }),
-              }))
-              .filter((group) => group.items.length > 0)}
-            externalResources={processedExternalResources}
+            groups={article.groups}
+            logoPaths={logoPaths}
+            bgColors={bgColors}
           />
         )}
 
