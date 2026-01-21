@@ -15,6 +15,7 @@ interface GroupItem {
   bgColor?: string; // Brand background color from article data
   quickVerdict?: string;
   rating?: number;
+  bestFor?: string;
   badge?: string;
   pros?: string[];
   cons?: string[];
@@ -149,6 +150,13 @@ export function ArticleGroups({ groups, logoPaths, bgColors }: ArticleGroupsProp
                         </div>
                       ))}
                     </div>
+                  )}
+
+                  {/* Best For */}
+                  {item.bestFor && (
+                    <p className="px-6 py-3 text-sm text-gray-700 bg-gray-50 border-b border-gray-100">
+                      <span className="font-semibold">Best For:</span> {item.bestFor}
+                    </p>
                   )}
 
                   {/* Content */}
