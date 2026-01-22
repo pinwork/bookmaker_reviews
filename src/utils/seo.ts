@@ -1,11 +1,13 @@
 // src/utils/seo.ts
-import { IndustryReport, SiteConfig } from '@/types';
+import { GuideArticle, ToolReviewArticle, SiteConfig } from '@/types';
+
+type Article = GuideArticle | ToolReviewArticle;
 
 /**
- * Generate Article schema for Industry Reports and Guides
+ * Generate Article schema for Guides and Tool Reviews
  */
 export const generateArticleSchema = (
-  article: IndustryReport,
+  article: Article,
   url: string,
   config: SiteConfig
 ) => {
@@ -87,11 +89,11 @@ export const generateReviewSchema = (
  * Used when article has reviewContext with objectType: 'SoftwareApplication'
  */
 export const generateSoftwareAppSchema = (
-  article: IndustryReport,
+  article: ToolReviewArticle,
   url: string,
   config: SiteConfig
 ) => {
-  const ctx = article.reviewContext!;
+  const ctx = article.reviewContext;
 
   return {
     '@context': 'https://schema.org',
@@ -146,7 +148,7 @@ const generateFAQSchema = (faq: Array<{ q: string; a: string }>) => {
  * Returns array: [Article/SoftwareApp schema, FAQPage schema (if faq exists)]
  */
 export const generateArticleSchemas = (
-  article: IndustryReport,
+  article: Article,
   url: string,
   config: SiteConfig
 ): object[] => {
@@ -154,8 +156,8 @@ export const generateArticleSchemas = (
 
   // Use SoftwareApplication schema if reviewContext exists (for Rich Snippets with stars)
   // Otherwise fall back to standard Article schema
-  if (article.reviewContext?.objectType === 'SoftwareApplication') {
-    schemas.push(generateSoftwareAppSchema(article, url, config));
+  if ('reviewContext' in article && article.reviewContext?.objectType === 'SoftwareApplication') {
+    schemas.push(generateSoftwareAppSchema(article as ToolReviewArticle, url, config));
   } else {
     schemas.push(generateArticleSchema(article, url, config));
   }

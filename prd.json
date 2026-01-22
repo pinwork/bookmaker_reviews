@@ -149,9 +149,9 @@
         "npm run build passes"
       ],
       "priority": 2,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/articles.ts"]
     },
     {
       "id": 10,
@@ -167,9 +167,9 @@
         "npm run build passes"
       ],
       "priority": 3,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/types/schemas.ts", "src/types/index.ts", "src/utils/seo.ts"]
     },
     {
       "id": 11,

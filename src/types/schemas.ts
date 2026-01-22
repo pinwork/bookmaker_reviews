@@ -337,8 +337,6 @@ export const ToolReviewSchema = BaseContentSchema.extend({
 // Guide schema - alias for guides/articles (same as BaseContentSchema)
 export const ContentGuideSchema = BaseContentSchema;
 
-// Legacy alias - IndustryReportSchema for backwards compatibility
-export const IndustryReportSchema = BaseContentSchema;
 
 // ============================================
 // STRICT ARTICLE SCHEMAS (new)
