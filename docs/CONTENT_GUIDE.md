@@ -1,17 +1,12 @@
 # Content Guide & Strategy
 
-## 1. Global Rules (Voice & Tone)
+**Purpose:** Rules for WHAT to write — structure, fields, SEO, affiliate linking.
 
-* **Language:** British English (en-GB). Use terms like "Punter", "Bookie", "Accumulator", "Cheque".
-* **Tone:** Expert, "Geeky" but accessible. We are the "nerdy friend" who knows the math behind the bet.
-* **Formatting:**
-    * No "walls of text". Use bullet points every 2-3 paragraphs.
-    * Use **Bold** for key takeaways, not for entire sentences.
-    * **No emojis.** Never use emojis in article content. Use text symbols (✓ ✗) only for pros/cons lists.
+**Companion:** See `WRITING_STYLE.md` for HOW to write (voice, banned words, bold rules, rhythm).
 
 ---
 
-## 2. Content Types Strategy
+## 1. Content Types Strategy
 
 We have **two distinct article types** for different user intents:
 
@@ -41,7 +36,7 @@ Groups are **major chapters**, not fine divisions. Use sparingly (3-7 per articl
 
 Within `content`, use markdown for structure: `###` headers, bullet lists, bold text. Don't create multiple groups where one group with rich markdown would work better.
 
-**Field Guidelines:** See Section 8 for `keyStats`, `quickVerdict`, and Content Block details.
+**Field Guidelines:** See Section 6 for `keyStats`, `quickVerdict`, and Content Block details.
 
 **linkedResources (reserved):** Article-level array for future contextual bookmaker banners. Structure: `{ id: 'bet365', type: 'bookmaker', active: true }`. Not currently rendered.
 
@@ -83,7 +78,7 @@ Second paragraph flush left.`
 
 ---
 
-## 3. Intro & Examples Strategy: Real-World Specificity
+## 2. Intro & Examples Strategy: Real-World Specificity
 
 **Philosophy:** Users trust specific examples over abstract theory.
 **Rule:** Use real brand names, real numbers, and real scenarios in ALL content.
@@ -110,7 +105,7 @@ By using specific names, we commit to manual updates.
 
 ---
 
-## 4. Editorial Rating System (E-E-A-T)
+## 3. Editorial Rating System (E-E-A-T)
 
 We use **ReviewRating** (Editorial), not AggregateRating. Be honest to build trust.
 
@@ -128,7 +123,7 @@ Must be 2-3 short sentences summarizing *why* the rating was given.
 
 ---
 
-## 5. Comparison Table Logic
+## 4. Comparison Table Logic
 
 Tables drive clicks. Optimize for scanning.
 
@@ -141,7 +136,7 @@ Tables drive clicks. Optimize for scanning.
 
 ---
 
-## 6. Bettor Resources: Editorial Standards
+## 5. Bettor Resources: Editorial Standards
 
 **Schema:** `src/types/schemas.ts` → `ToolReviewArticleSchema`, `ReviewItemSchema`
 
@@ -227,20 +222,7 @@ Each `content` field is a **Micro-Review** (Wirecutter/TechRadar style). Target:
 
 ### D. Editorial Style & Formatting
 
-**Clean Bold Rule:**
-* Bold only at the **start** of bullet points (feature names, labels)
-* Never bold inside sentences or mid-text
-
-*Good:*
-```markdown
-- **Speed:** Updates arrive 5-20 seconds after live events
-- **Follow Player:** Track up to 100 individual players
-```
-
-*Bad:*
-```markdown
-- Updates arrive **5-20 seconds** after live events — the fastest in testing
-```
+**See `WRITING_STYLE.md`** for bold rules, list formatting, and sentence structure.
 
 **Feature: Benefit Logic:**
 Every Key Feature bullet must answer: "What does the user gain?"
@@ -255,7 +237,7 @@ Every Key Feature bullet must answer: "What does the user gain?"
 
 ---
 
-## 7. Guides: Editorial Standards
+## 6. Guides: Editorial Standards
 
 **Schema:** `src/types/schemas.ts` → `GuideArticleSchema`, `GuideItemSchema`
 
@@ -310,7 +292,7 @@ One-line teaser shown below the title. Use when title alone is too short or abst
 
 Unlike Tool Reviews (strict micro-review format), Guides use **flexible prose**.
 
-Use `###` headers within `content` for subsections. Include real brand names and specific numbers (see Section 3). Group guidelines already covered in Section 2.A.
+Use `###` headers within `content` for subsections. Include real brand names and specific numbers (see Section 2). Group guidelines already covered in Section 1.A.
 
 ### D. faq (required, min 3)
 
@@ -323,7 +305,7 @@ FAQ in guides serves as **quick clarifications** — explaining terms, edge case
 
 ---
 
-## 8. Footer Standards
+## 7. Footer Standards
 
 ### A. lastUpdated
 
@@ -342,7 +324,7 @@ Array of source names for credibility signals. No URLs needed.
 
 ---
 
-## 9. Key Takeaways
+## 8. Key Takeaways
 
 Summary block after ArticleHeader. Complements intro (context) with facts (verdict).
 
@@ -396,7 +378,7 @@ keyTakeaways: [
 
 ---
 
-## 10. Partner Lifecycle (Activation/Deactivation)
+## 9. Partner Lifecycle (Activation/Deactivation)
 
 When a partner (bookmaker, tool, app) is removed from the affiliate program or becomes unavailable, you must update content manually.
 
@@ -452,7 +434,7 @@ keyTakeaways: [
 
 ---
 
-## 11. Inline Affiliate Linking
+## 10. Inline Affiliate Linking
 
 When bookmaker names appear in article text, we can link them to our affiliate redirect system. This section defines when and how to do it.
 
@@ -572,7 +554,7 @@ They can coexist in an article:
 - `linkedResources: [{ id: 'bet365', type: 'bookmaker' }]` for future card rendering
 - `[Bet365](/gb/go/bet365)` in markdown for text links
 
-### H. Checklist for Content Authors
+### I. Checklist for Content Authors
 
 Before publishing, verify:
 
@@ -581,72 +563,4 @@ Before publishing, verify:
 3. ✓ No links in negative contexts (fines, scandals, layoffs)
 4. ✓ Max 1 link per brand per item (content unit)
 5. ✓ First mention linked, subsequent mentions plain text
-6. ✓ Affiliate links are bold: `**[Brand](/region/go/slug)**` (Section 12)
-
----
-
-## 12. Formatting Strategy: Bold Text & Visual Anchors
-
-**Philosophy:** Precision over density. Use bolding sparingly to guide the eye, not to decorate.
-
-### A. The 3 Strict Rules
-
-1. **Paragraphs (The "One Hit" Rule):**
-   - ⚠️ **STRICTLY 1 data bold per paragraph — NEVER more**
-   - If nothing is crucial (no data/metric), bold nothing
-   - **Target:** Specific data points (numbers like `€100`, `24/7`) or unique entities
-   - **Ban:** Never bold entire sentences or marketing fluff ("great", "recommended")
-   - **Note:** Affiliate links (`**[Brand](/go/...)**`) are EXEMPT — they are CTAs, not data highlights
-
-   ```markdown
-   // ❌ BAD — 3 bolds in one paragraph
-   Problem gamblers represent **2.7%** of adults. Youth rate is **10.2%**. Children: **1.5%**.
-
-   // ✅ GOOD — 1 bold, most impactful number
-   Problem gamblers represent **2.7% of UK adults**. Youth rate is 10.2%. Children: 1.5%.
-   ```
-
-2. **Lists (Front-Loading):**
-   - Always bold the **label/key phrase** at the start of a bullet point (before the colon)
-   - Example: `- **Withdrawal Speed:** 2-4 hours...`
-   - This leverages F-pattern scanning behavior (+18-22% engagement)
-
-3. **Affiliate Links (CTA Visibility):**
-   - **Always bold** the primary affiliate link (Bookmaker Name)
-   - Syntax: `**[Bet365](/gb/go/bet365)**`
-   - Reason: Treats the link as a visual Call-to-Action, not just inline text
-
-### B. What NOT to Bold
-
-| ❌ Bad | ✅ Good | Why |
-|--------|---------|-----|
-| `**amazing bonus**` | `**€50 bonus**` | Data > adjectives |
-| `**we recommend**` | `**[Bet365](/gb/go/bet365)**` | Brand > verb |
-| `**fast and reliable**` | `**24/7 support**` | Specific > vague |
-| Multiple bolds in one paragraph | Single bold per paragraph | Avoid visual chaos |
-
-### C. Mobile Optimization
-
-- Prefer bullet lists over long paragraphs wherever possible
-- Lists naturally trigger the "Front-Loading" rule
-- Short paragraphs (2-3 sentences max) allow single bold to stand out
-
-### D. List Symmetry (Visual Rhythm)
-
-**Rule:** Items in a bulleted list or timeline must have comparable length.
-**Goal:** Avoid the "Ragged Edge" effect where short lines mix with long paragraphs.
-
-- **Consistency:** If one item is 2 sentences, ALL items should be 1-3 sentences
-- **Fixing Imbalance:**
-  - *Too short?* Add context or specific metrics
-  - *Too long?* Split into two bullets or trim fluff
-
-```markdown
-// ❌ BAD — Asymmetrical (1 word vs 3 sentences)
-- **1961:** Legalisation.
-- **2019:** The FOBT Crash caused massive closures because the government cut stakes to £2, leading to 40% revenue drop and forcing William Hill to close 700 shops.
-
-// ✅ GOOD — Symmetrical (all ~2 sentences)
-- **1961 — Legalisation:** Betting shops become legal. 10,000 stores open within 6 months.
-- **2019 — The FOBT Crash:** Max stakes cut to £2. This triggered 1,209 closures in a single year.
-```
+6. ✓ Affiliate links are bold: `**[Brand](/region/go/slug)**` (see `WRITING_STYLE.md`)
