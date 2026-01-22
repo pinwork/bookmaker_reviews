@@ -88,7 +88,7 @@
 
 **Topic:** [Назва теми]
 
-**Type:** [Industry Report / Bonus Guide / How-To / Responsible Gambling]
+**Type:** [Industry Report / Bonus Guide / How-To / Responsible Gambling] etc
 
 **Definition:** [2-3 речення — що це, для кого, яку проблему вирішує]
 
@@ -681,10 +681,3 @@ Data Source: ESRI (Oct 2023), GRAI (2024 Act), HRI Annual Report 2024
 
 ### SEO
 - [ ] H1 contains primary keyword
-
-### Handoff Instruction
-```
-Create guide article from this Data Pack.
-Follow schema: GuideArticleSchema
-Output: src/data/regions/[region]/en/articles/guides/[slug].ts
-```

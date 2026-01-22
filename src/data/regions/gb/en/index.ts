@@ -14,6 +14,7 @@ import { ultimateBonusGuide as bonusGuideData } from './articles/guides/uk-ultim
 import { responsibleGamblingBible as responsibleGamblingData } from './articles/guides/responsible-gambling-uk-bible';
 import { bettingShopsBible as bettingShopsData } from './articles/guides/uk-betting-shops-bible';
 import { bettingIndustryBible as industryReportData } from './articles/guides/uk-betting-industry-report';
+import { bettingAccountRestrictionsGubbingGuide as gubbingGuideData } from './articles/guides/betting-account-restrictions-gubbing-guide';
 import { liveScoreAppsArticle as liveScoreAppsData } from './articles/bettor-resources/best-live-score-stats-apps';
 import { inPlayScannersArticle as inPlayScannersData } from './articles/bettor-resources/best-in-play-betting-scanners';
 import { matchedBettingSoftwareArticle as matchedBettingData } from './articles/bettor-resources/best-matched-betting-software';
@@ -54,6 +55,7 @@ export const ultimateBonusGuide = bonusGuideData;
 export const responsibleGamblingBible = responsibleGamblingData;
 export const bettingShopsBible = bettingShopsData;
 export const bettingIndustryReport = industryReportData;
+export const gubbingGuide = gubbingGuideData;
 export const liveScoreAppsGuide = liveScoreAppsData;
 export const inPlayScannersGuide = inPlayScannersData;
 export const matchedBettingGuide = matchedBettingData;

@@ -43,6 +43,7 @@ function getGuidesData(region: string): GuideArticle[] {
     gbArticles.bettingIndustryReport,
     gbArticles.bettingShopsBible,
     gbArticles.responsibleGamblingBible,
+    gbArticles.gubbingGuide,
   ];
 }
 
