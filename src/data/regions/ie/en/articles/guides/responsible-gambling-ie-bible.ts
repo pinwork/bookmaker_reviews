@@ -82,7 +82,7 @@ export const responsibleGamblingIrelandBible: IndustryReport = {
       ]
     },
     {
-      groupName: 'Gambling and Suicide in Ireland',
+      groupName: 'Irish Stories & Impact',
       items: [
         {
           id: 'suicide-study',
@@ -99,12 +99,7 @@ export const responsibleGamblingIrelandBible: IndustryReport = {
 The Keogh Family, whose son Lewis died by suicide in 2013 due to hidden debts, now leads national calls for reform, mirroring the Ritchie family's work in the UK.
 
 *Source: IPH Jan 2025 Suicide Report*`
-        }
-      ]
-    },
-    {
-      groupName: 'Irish Recovery: GAA Legends & Public Figures',
-      items: [
+        },
         {
           id: 'oisin-mcconville',
           title: 'Oisín McConville (Armagh GAA Legend)',
@@ -157,8 +152,7 @@ Now an ambassador for Extern Problem Gambling, focusing on youth education.`
       items: [
         {
           id: 'grai-powers',
-          title: 'The New Regulator',
-          badge: 'Operational March 2025',
+          title: 'The New Regulator (Operational March 2025)',
           content: `### Powers
 - **Administrative Fines:** Up to €20m or 10% of turnover
 - **Credit Card Ban:** Section 165 (Enforcement pending licensing)

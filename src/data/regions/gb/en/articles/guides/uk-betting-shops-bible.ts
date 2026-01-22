@@ -38,7 +38,7 @@ export const bettingShopsBible: IndustryReport = {
 
   groups: [
     {
-      groupName: 'UK Betting Shops by the Numbers',
+      groupName: 'UK Betting Shops: Stats & Locations',
       items: [
         {
           id: 'industry-statistics',
@@ -67,12 +67,7 @@ export const bettingShopsBible: IndustryReport = {
             { label: 'Betfred Staff', value: '~7,500' }
           ],
           content: `If another 2,000 shops close as predicted, over **10,000 jobs** could be at risk. William Hill and Betfred alone employ over 15,000 people across their retail networks.`
-        }
-      ]
-    },
-    {
-      groupName: 'Official Store Locators',
-      items: [
+        },
         {
           id: 'store-locators',
           title: 'Find Your Nearest Betting Shop',
@@ -88,7 +83,7 @@ export const bettingShopsBible: IndustryReport = {
       ]
     },
     {
-      groupName: 'The Dark Origins: 65 Years of History',
+      groupName: 'History & Founders',
       items: [
         {
           id: 'history-timeline',
@@ -103,12 +98,7 @@ export const bettingShopsBible: IndustryReport = {
 - **2002 — Tax Abolished:** Gordon Brown removes the 10% betting tax on winnings.
 - **2019 — The FOBT Crash:** Max stakes cut from £100 to £2. 1,209 shops close within a year.
 - **2025 — The Digi-Hub Era:** Entain rolls out 200 "Digi-Hubs" with interactive screens and premium Wi-Fi.`
-        }
-      ]
-    },
-    {
-      groupName: 'The Men Behind the Counter',
-      items: [
+        },
         {
           id: 'fred-done',
           title: 'Fred & Peter Done (Betfred Founders)',
@@ -163,18 +153,13 @@ Category B2 machines are now limited to £2 spins, significantly reducing indust
       ]
     },
     {
-      groupName: 'The Future',
+      groupName: 'The Future & Trivia',
       items: [
         {
           id: 'future-outlook',
           title: 'Survival of the Fittest',
           content: `Analysts predict another **2,000-3,000 closures by 2030**. Operators like Entain are pivoting to "Digi-Hubs"—premium venues with high-brightness screens, bet builders, and digital window displays to attract a younger audience.`
-        }
-      ]
-    },
-    {
-      groupName: 'Betting Shop Trivia',
-      items: [
+        },
         {
           id: 'trivia',
           title: 'Things You Didn\'t Know',

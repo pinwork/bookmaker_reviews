@@ -47,7 +47,7 @@ export const responsibleGamblingBible: IndustryReport = {
 
   groups: [
     {
-      groupName: 'The Reality of Gambling Harm in the UK',
+      groupName: 'The Scale of Gambling Harm',
       items: [
         {
           id: 'problem-gambling-stats',
@@ -84,12 +84,7 @@ export const responsibleGamblingBible: IndustryReport = {
           content: `Gambling is estimated to cause **117-496 suicides annually** in England. Problem gamblers are **6x more likely** to have suicidal thoughts and **15x more likely** to attempt suicide than the general population. 66% of treatment clients carry gambling debt.
 
 *Sources: OHID 2023, University of Bristol 2025, GambleAware NGSN 2023/24*`
-        }
-      ]
-    },
-    {
-      groupName: 'Real Lives Affected by Gambling',
-      items: [
+        },
         {
           id: 'jack-ritchie',
           title: 'Jack Ritchie (1993-2017)',
@@ -138,7 +133,7 @@ Playtech paid a £3.5 million settlement to the family. The coroner ruled the de
       ]
     },
     {
-      groupName: 'Am I Addicted? NHS Screening',
+      groupName: 'Understanding Addiction',
       items: [
         {
           id: 'nhs-screening',
@@ -160,12 +155,7 @@ Playtech paid a £3.5 million settlement to the family. The coroner ruled the de
 - **0-1 Yes**: Low risk. Stay aware of your habits.
 - **2-3 Yes**: Moderate risk. Use tools like deposit limits.
 - **4+ Yes**: High risk. Contact GamCare: **0808 8020 133**`
-        }
-      ]
-    },
-    {
-      groupName: 'The Science Behind Gambling Addiction',
-      items: [
+        },
         {
           id: 'psychology',
           title: 'How Addiction Works',
@@ -208,7 +198,7 @@ Thinking errors like the Gambler's Fallacy ("I'm due for a win"), Illusion of Co
       ]
     },
     {
-      groupName: 'Self-Exclusion Systems',
+      groupName: 'Help & Recovery Tools',
       items: [
         {
           id: 'gamstop-complete',
@@ -233,12 +223,7 @@ TalkBanStop is a collaborative approach that combines:
 
 ### Real Impact
 Gamban is provided **FREE** through this partnership (Standard cost £24.99/yr). To date, over 12,000+ free licenses have been issued, creating a multi-layered safety net that prevents both licensed and offshore access.`
-        }
-      ]
-    },
-    {
-      groupName: 'Support Services',
-      items: [
+        },
         {
           id: 'gamcare-complete',
           title: 'GamCare Support Network',

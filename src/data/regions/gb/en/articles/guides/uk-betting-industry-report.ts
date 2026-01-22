@@ -78,7 +78,7 @@ export const bettingIndustryBible: IndustryReport = {
       ]
     },
     {
-      groupName: 'The Great Consolidation: Who Owns the Odds?',
+      groupName: 'Industry Players & Founders',
       items: [
         {
           id: 'flutter',
@@ -107,12 +107,7 @@ Possessing a massive retail estate (3,000+ shops), Entain is struggling to moder
           content: `**Brands:** William Hill, 888sport
 
 The rebrand to "Evoke" hasn't hidden the disaster of the William Hill acquisition. With shares down **95%** and £168m in losses, aggressive cost-cutting is expected. We predict significant shop closures for William Hill in 2026.`
-        }
-      ]
-    },
-    {
-      groupName: 'The People Behind the Billions',
-      items: [
+        },
         {
           id: 'denise-coates',
           title: 'Denise Coates, bet365 Founder & Co-CEO',
@@ -126,21 +121,6 @@ Today, bet365 generates **£4bn annually**. Denise is Britain's highest-paid exe
           content: `In 1967, Fred and his brother Peter bet on England to win the World Cup in 1966. They used the winnings to open a single betting shop in Salford. Unlike competitors, Fred focused on bonuses, inventing the "Lucky 15" bet.
 
 Betfred remains one of the few large independent operators, with over **1,300 shops**, though they nearly sold the entire estate in 2025 due to tax hikes.`
-        }
-      ]
-    },
-    {
-      groupName: 'Where the Money Goes: Betting by Sport',
-      items: [
-        {
-          id: 'sport-breakdown',
-          title: 'Revenue Breakdown',
-          content: `While horse racing built the industry, football now powers it.
-
-- **Football:** £1.3 Billion (50%) — Premier League & In-Play dominate
-- **Horse Racing:** £767 Million (30%) — Declining but vital for daytime
-- **Tennis:** £180 Million (7%) — High volume in-play point betting
-- **Other Sports:** £350 Million (13%) — Greyhounds, Cricket, Golf, Esports`
         }
       ]
     },
@@ -180,8 +160,18 @@ Betfred remains one of the few large independent operators, with over **1,300 sh
       ]
     },
     {
-      groupName: 'Industry Trivia',
+      groupName: 'Betting Breakdown & Trivia',
       items: [
+        {
+          id: 'sport-breakdown',
+          title: 'Revenue by Sport',
+          content: `While horse racing built the industry, football now powers it.
+
+- **Football:** £1.3 Billion (50%) — Premier League & In-Play dominate
+- **Horse Racing:** £767 Million (30%) — Declining but vital for daytime
+- **Tennis:** £180 Million (7%) — High volume in-play point betting
+- **Other Sports:** £350 Million (13%) — Greyhounds, Cricket, Golf, Esports`
+        },
         {
           id: 'trivia',
           title: 'Facts You Didn\'t Know',

@@ -64,12 +64,10 @@ export const ieBettingIndustryReport: IndustryReport = {
           content: `Ireland has **3.3%** problem gambling rate (~130,000 adults) with another **7.1%** (~279,000) showing moderate risk. Betting shops have declined **47% since 2008** from 1,385 to just 721.
 
 ### Irish Betting Profile
-| Group | Percentage |
-|-------|------------|
-| Regular Bettors | 44% of Adults |
-| Mobile Usage | 88% |
-| Childhood Exposure | 64% gambled before 18 |
-| Youth Participation | 22.9% of 16-year-olds |
+- **Regular Bettors:** 44% of Adults
+- **Mobile Usage:** 88%
+- **Childhood Exposure:** 64% gambled before 18
+- **Youth Participation:** 22.9% of 16-year-olds
 
 *Source: ESRI (Oct 2023), HRI (2024)*`
         }
@@ -116,23 +114,6 @@ From 8% of the Irish market in 1988 to the **world's largest online betting comp
       ]
     },
     {
-      groupName: 'Where Irish Punters Bet',
-      items: [
-        {
-          id: 'sport-breakdown',
-          title: 'Betting Volume by Sport',
-          content: `Unlike the UK where football dominates (50%), Ireland's betting culture remains rooted in horse racing.
-
-- **Horse Racing (~40%):** The heartland. Cheltenham is a national pilgrimage.
-- **Football (~30%):** Premier League dominates online volume.
-- **GAA (~15%):** Massive seasonal spikes during summer championships.
-- **Other (~15%):** Golf, rugby, greyhounds, tennis.
-
-*Note: These are industry estimates; GRAI has not yet published official sport-by-sport data.*`
-        }
-      ]
-    },
-    {
       groupName: 'The GRAI Reality: 2026 Update',
       items: [
         {
@@ -153,8 +134,20 @@ From 8% of the Irish market in 1988 to the **world's largest online betting comp
       ]
     },
     {
-      groupName: 'Industry Trivia',
+      groupName: 'Betting Breakdown & Trivia',
       items: [
+        {
+          id: 'sport-breakdown',
+          title: 'Betting Volume by Sport',
+          content: `Unlike the UK where football dominates (50%), Ireland's betting culture remains rooted in horse racing.
+
+- **Horse Racing (~40%):** The heartland. Cheltenham is a national pilgrimage.
+- **Football (~30%):** Premier League dominates online volume.
+- **GAA (~15%):** Massive seasonal spikes during summer championships.
+- **Other (~15%):** Golf, rugby, greyhounds, tennis.
+
+*Note: These are industry estimates; GRAI has not yet published official sport-by-sport data.*`
+        },
         {
           id: 'trivia',
           title: 'Did You Know?',

@@ -35,7 +35,7 @@ export const ieBettingShopsBible: IndustryReport = {
 
   groups: [
     {
-      groupName: 'The Numbers: A Steep Decline',
+      groupName: 'Irish Betting Shops: Stats & Locations',
       items: [
         {
           id: 'industry-statistics',
@@ -64,12 +64,7 @@ export const ieBettingShopsBible: IndustryReport = {
             { label: 'Recent Losses', value: '119' }
           ],
           content: `BoyleSports employs 2,700 across all jurisdictions. The October 2025 Paddy Power closures resulted in 119 job losses.`
-        }
-      ]
-    },
-    {
-      groupName: 'Official Store Locators',
-      items: [
+        },
         {
           id: 'store-locators',
           title: 'Find Your Nearest Betting Shop',
@@ -141,20 +136,7 @@ He built the largest independent retail chain in Ireland, keeping ownership dome
       ]
     },
     {
-      groupName: 'Did You Know?',
-      items: [
-        {
-          id: 'trivia',
-          title: 'Irish Betting Shop Trivia',
-          content: `- **The Yellow Sam Coup**: In 1975, Barney Curley organized a scheme that netted €1.7m (adjusted). He planted a man in the only phone box at Bellewstown racecourse, preventing off-course bookies from laying off bets.
-- **Closed on Sundays**: Due to the 1931 Act, Irish betting shops in the Republic are legally required to close on Sundays. Northern Ireland lifted this ban in 2022.
-- **Good Friday**: While pubs were allowed to open on Good Friday in 2018, betting shops remain closed by law.
-- **Machine Free**: Ireland has zero FOBTs. The 2013 Gambling Control Bill strictly prohibited them, saving Ireland from the addiction crisis seen in the UK.`
-        }
-      ]
-    },
-    {
-      groupName: 'The Future',
+      groupName: 'The Future & Trivia',
       items: [
         {
           id: 'grai-future',
@@ -164,6 +146,14 @@ He built the largest independent retail chain in Ireland, keeping ownership dome
 The statutory credit card ban is now in force (Section 165), and the National Gambling Exclusion Register is the regulator's top priority.
 
 With independent shops facing profit margins of just **€7k**, further consolidation by BoyleSports or Bar One seems inevitable.`
+        },
+        {
+          id: 'trivia',
+          title: 'Irish Betting Shop Trivia',
+          content: `- **The Yellow Sam Coup**: In 1975, Barney Curley organized a scheme that netted €1.7m (adjusted). He planted a man in the only phone box at Bellewstown racecourse, preventing off-course bookies from laying off bets.
+- **Closed on Sundays**: Due to the 1931 Act, Irish betting shops in the Republic are legally required to close on Sundays. Northern Ireland lifted this ban in 2022.
+- **Good Friday**: While pubs were allowed to open on Good Friday in 2018, betting shops remain closed by law.
+- **Machine Free**: Ireland has zero FOBTs. The 2013 Gambling Control Bill strictly prohibited them, saving Ireland from the addiction crisis seen in the UK.`
         }
       ]
     }

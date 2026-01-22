@@ -1,0 +1,110 @@
+{
+  "featureName": "Guides Group Consolidation",
+  "description": "Consolidate groups in guide articles to follow the 3-7 rule (target: 5 groups per article). Merge logically related sections while preserving all content.",
+  "affectedFiles": [
+    "src/data/regions/gb/en/articles/guides/uk-betting-industry-report.ts",
+    "src/data/regions/gb/en/articles/guides/uk-betting-shops-bible.ts",
+    "src/data/regions/gb/en/articles/guides/responsible-gambling-uk-bible.ts",
+    "src/data/regions/ie/en/articles/guides/ie-betting-industry-report.ts",
+    "src/data/regions/ie/en/articles/guides/ie-betting-shops-bible.ts",
+    "src/data/regions/ie/en/articles/guides/responsible-gambling-ie-bible.ts"
+  ],
+  "constraints": [
+    "No content loss - only merge groups, preserve all items",
+    "Target 5 groups per article (max 6)",
+    "Group names should be major chapter titles",
+    "Bonus guides (uk/ie-ultimate-bonus-guide.ts) are already well-structured - skip"
+  ],
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Consolidate uk-betting-industry-report.ts (7→5)",
+      "acceptanceCriteria": [
+        "Merge 'The Great Consolidation' + 'The People Behind' → 'Industry Players & Founders'",
+        "Merge 'Where the Money Goes' + 'Industry Trivia' → 'Betting Breakdown & Trivia'",
+        "Result: 5 groups",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/gb/en/articles/guides/uk-betting-industry-report.ts"]
+    },
+    {
+      "id": 2,
+      "title": "Consolidate uk-betting-shops-bible.ts (8→5)",
+      "acceptanceCriteria": [
+        "Merge 'UK Betting Shops by Numbers' + 'Official Store Locators' → 'UK Betting Shops: Stats & Locations'",
+        "Merge 'The Dark Origins' + 'The Men Behind' → 'History & Founders'",
+        "Merge 'The Future' + 'Betting Shop Trivia' → 'The Future & Trivia'",
+        "Result: 5 groups",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/gb/en/articles/guides/uk-betting-shops-bible.ts"]
+    },
+    {
+      "id": 3,
+      "title": "Consolidate responsible-gambling-uk-bible.ts (8→5)",
+      "acceptanceCriteria": [
+        "Merge 'The Reality of Harm' + 'Real Lives' → 'The Scale of Gambling Harm'",
+        "Merge 'Am I Addicted?' + 'The Science' → 'Understanding Addiction'",
+        "Merge 'Self-Exclusion' + 'Support Services' → 'Help & Recovery Tools'",
+        "Result: 5 groups",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/gb/en/articles/guides/responsible-gambling-uk-bible.ts"]
+    },
+    {
+      "id": 4,
+      "title": "Consolidate ie-betting-industry-report.ts (6→5)",
+      "acceptanceCriteria": [
+        "Merge 'Where Irish Punters Bet' + 'Industry Trivia' → 'Betting Breakdown & Trivia'",
+        "Result: 5 groups",
+        "npm run build passes"
+      ],
+      "priority": 4,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/ie/en/articles/guides/ie-betting-industry-report.ts"]
+    },
+    {
+      "id": 5,
+      "title": "Consolidate ie-betting-shops-bible.ts (7→5)",
+      "acceptanceCriteria": [
+        "Merge 'The Numbers' + 'Official Store Locators' → 'Irish Betting Shops: Stats & Locations'",
+        "Merge 'Did You Know?' + 'The Future' → 'The Future & Trivia'",
+        "Result: 5 groups",
+        "npm run build passes"
+      ],
+      "priority": 5,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/ie/en/articles/guides/ie-betting-shops-bible.ts"]
+    },
+    {
+      "id": 6,
+      "title": "Consolidate responsible-gambling-ie-bible.ts (6→5)",
+      "acceptanceCriteria": [
+        "Merge 'Gambling and Suicide' + 'Irish Recovery' → 'Irish Stories & Impact'",
+        "Result: 5 groups",
+        "npm run build passes"
+      ],
+      "priority": 6,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/ie/en/articles/guides/responsible-gambling-ie-bible.ts"]
+    }
+  ],
+  "postFeatureReview": {
+    "summary": "Consolidated all 6 guide articles from 6-8 groups down to 5 groups each. Merged logically related sections while preserving all content. Also fixed remaining markdown table in ie-betting-industry-report.ts and removed a lingering badge field in responsible-gambling-ie-bible.ts.",
+    "impact": "All guides now follow the 3-7 groups guideline documented in CONTENT_GUIDE.md. The bonus guides (uk/ie-ultimate-bonus-guide.ts) were already at 4-5 groups and didn't need changes.",
+    "issues": "None encountered.",
+    "recommendations": "Future guide writers should aim for 5 groups per article and use the consolidation patterns established here (e.g., 'Stats & Locations', 'History & Founders', 'Future & Trivia')."
+  }
+}
