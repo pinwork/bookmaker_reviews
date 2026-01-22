@@ -9,11 +9,14 @@ import {
   ArticleHeader,
   KeyTakeaways,
   ReadingProgress,
+  TableOfContents,
+  slugify,
   UnifiedComparisonTable,
   ArticleGroups,
   ArticleFAQ,
   ArticleFooter,
 } from '@/components/article';
+import type { TocSection } from '@/components/article';
 
 interface PageProps {
   params: Promise<{ region: string; slug: string }>;
@@ -89,6 +92,15 @@ export default async function BettorResourcePage({ params }: PageProps) {
     }
   }
 
+  // Build ToC sections from article groups (excluding flat lists)
+  const isFlatList = article.groups?.length === 1 && article.groups[0].groupName.toLowerCase() === 'reviews';
+  const tocSections: TocSection[] = article.groups && !isFlatList
+    ? article.groups.map((group) => ({
+        id: slugify(group.groupName),
+        title: group.groupName,
+      }))
+    : [];
+
   return (
     <>
       <ReadingProgress />
@@ -104,6 +116,8 @@ export default async function BettorResourcePage({ params }: PageProps) {
           introTitle={article.intro.title}
           introContent={article.intro.content}
         />
+
+        <TableOfContents sections={tocSections} />
 
         {article.keyTakeaways && (
           <KeyTakeaways items={article.keyTakeaways} />

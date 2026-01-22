@@ -9,6 +9,7 @@ import {
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
 import { cn } from '@/lib/utils';
+import { slugify } from './TableOfContents';
 
 interface KeyStat {
   label: string;
@@ -231,7 +232,10 @@ export function ArticleGroups({ groups, logoPaths, bgColors }: ArticleGroupsProp
         <section key={groupIndex}>
           {/* Hide group header for flat lists */}
           {!isFlatList && (
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200 text-pretty">
+            <h2
+              id={slugify(group.groupName)}
+              className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200 text-pretty scroll-mt-16"
+            >
               {group.groupName}
             </h2>
           )}

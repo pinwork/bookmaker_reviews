@@ -7,11 +7,14 @@ import {
   ArticleHeader,
   KeyTakeaways,
   ReadingProgress,
+  TableOfContents,
+  slugify,
   UnifiedComparisonTable,
   GuideSections,
   ArticleFAQ,
   ArticleFooter,
 } from '@/components/article';
+import type { TocSection } from '@/components/article';
 
 interface PageProps {
   params: Promise<{ region: string; slug: string }>;
@@ -53,6 +56,14 @@ export default async function GuidePage({ params }: PageProps) {
   const articleUrl = siteConfig ? `${siteConfig.url}/${region}/guides/${slug}` : '';
   const schema = siteConfig ? generateArticleSchemas(article, articleUrl, siteConfig) : null;
 
+  // Build ToC sections from article groups
+  const tocSections: TocSection[] = article.groups
+    ? article.groups.map((group) => ({
+        id: slugify(group.groupName),
+        title: group.groupName,
+      }))
+    : [];
+
   return (
     <>
       <ReadingProgress />
@@ -68,6 +79,8 @@ export default async function GuidePage({ params }: PageProps) {
           introTitle={article.intro.title}
           introContent={article.intro.content}
         />
+
+        <TableOfContents sections={tocSections} />
 
         {article.keyTakeaways && (
           <KeyTakeaways items={article.keyTakeaways} />

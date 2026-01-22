@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown';
+import { slugify } from './TableOfContents';
 
 interface KeyStat {
   label: string;
@@ -58,7 +59,10 @@ export function GuideSections({ sections }: GuideSectionsProps) {
     <div className="space-y-12">
       {sections.map((section, sectionIndex) => (
         <section key={sectionIndex}>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200 text-pretty">
+          <h2
+            id={slugify(section.groupName)}
+            className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200 text-pretty scroll-mt-16"
+          >
             {section.groupName}
           </h2>
 
