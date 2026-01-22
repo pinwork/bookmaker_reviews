@@ -20,7 +20,7 @@ export const bettingIndustryBible: IndustryReport = {
     title: 'A £16.8 Billion Industry at a Crossroads',
     content: `The UK gambling industry generated £16.8 billion in gross gambling yield (GGY) in the last fiscal year, cementing its status as the world's largest regulated online market. Yet, these headline figures mask a brutal reality: the "Golden Age" of easy growth is over.
 
-    From April 2026, a punishing 40% Remote Gaming Duty will reshape the landscape, forcing smaller operators out of business and consolidating power among the "Big Two" conglomerates. At the same time, the Gambling Commission's new affordability checks (£150 net deposit threshold) have fundamentally changed the relationship between bookmaker and bettor. This report cuts through the corporate PR to explain who really owns your bookmaker, where your money goes, and why the odds you see today might be gone tomorrow.`
+From April 2026, a punishing 40% Remote Gaming Duty will reshape the landscape, forcing smaller operators out of business and consolidating power among the "Big Two" conglomerates. At the same time, the Gambling Commission's new affordability checks (£150 net deposit threshold) have fundamentally changed the relationship between bookmaker and bettor. This report cuts through the corporate PR to explain who really owns your bookmaker, where your money goes, and why the odds you see today might be gone tomorrow.`
   },
 
   comparisonTables: [
@@ -204,7 +204,6 @@ Betfred remains one of the few large independent operators, with over **1,300 sh
   ],
 
   footer: {
-    helpline: 'If gambling stops being fun, stop. National Gambling Helpline: 0808 8020 133 (24/7, Free).',
     dataSource: 'Data sourced from UK Gambling Commission Industry Statistics FY 2024-25 and Regulus Partners Analysis.',
     lastUpdated: '2026-01-20'
   }

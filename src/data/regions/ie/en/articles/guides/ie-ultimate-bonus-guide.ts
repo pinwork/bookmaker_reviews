@@ -48,14 +48,12 @@ export const ieBonusGuide: IndustryReport = {
           id: 'bet_get_ie',
           title: 'Bet & Get (Standard)',
           content: 'The classic "Bet €10, Get €30/€40". Legal because it is a general acquisition offer available to the public. \n\n**Note:** In Ireland, winnings from free bets are completely tax-free.',
-          quickVerdict: 'The best value for new accounts.',
-          recommendedBookmakers: ['boylesports', 'ladbrokes', 'william-hill']
+          quickVerdict: 'The best value for new accounts.'
         },
         {
           id: 'risk_free_ie',
           title: 'Money Back as Cash',
-          content: 'If your first bet loses, you get a refund. Paddy Power is famous for this in Ireland. \n\n**Pro Tip:** Look for offers that refund as CASH, not a Free Bet. Cash can be withdrawn instantly.',
-          recommendedBookmakers: ['paddy-power', 'unibet']
+          content: 'If your first bet loses, you get a refund. Paddy Power is famous for this in Ireland. \n\n**Pro Tip:** Look for offers that refund as CASH, not a Free Bet. Cash can be withdrawn instantly.'
         }
       ]
     },
@@ -65,20 +63,17 @@ export const ieBonusGuide: IndustryReport = {
         {
           id: 'cashback_ie',
           title: 'Cashback Offers (Universal)',
-          content: '**Universal cashback = LEGAL.** If ALL customers get the same % (e.g., QuinnBet 25% weekly), it\'s a general offer.\n\n**Targeted cashback = BANNED.** If the % varies by VIP tier or betting history, it\'s illegal targeting.\n\n**QuinnBet remains fully operational** in Ireland with its 25% weekly cashback model.',
-          recommendedBookmakers: ['quinnbet']
+          content: '**Universal cashback = LEGAL.** If ALL customers get the same % (e.g., QuinnBet 25% weekly), it\'s a general offer.\n\n**Targeted cashback = BANNED.** If the % varies by VIP tier or betting history, it\'s illegal targeting.\n\n**QuinnBet remains fully operational** in Ireland with its 25% weekly cashback model.'
         },
         {
           id: 'refer_friend_ie',
           title: 'Refer a Friend',
-          content: '**Likely Legal.** This is a general public offer available to any customer, not targeted based on losses. Example: Paddy Power pays €20 when your friend places their first bet.',
-          recommendedBookmakers: ['paddy-power', 'betfair']
+          content: '**Likely Legal.** This is a general public offer available to any customer, not targeted based on losses. Example: Paddy Power pays €20 when your friend places their first bet.'
         },
         {
           id: 'free_to_play_ie',
           title: 'Free-to-Play Games',
-          content: 'Prediction games remain fully legal as they don\'t involve real money stakes.\n\n**Sky Sports Super 6:** Predict 6 scores for a £250k jackpot. Available to ROI residents.\n**Bet365 6 Scores Challenge:** €1m jackpot pool.',
-          recommendedBookmakers: ['sky-bet', 'bet365']
+          content: 'Prediction games remain fully legal as they don\'t involve real money stakes.\n\n**Sky Sports Super 6:** Predict 6 scores for a £250k jackpot. Available to ROI residents.\n**Bet365 6 Scores Challenge:** €1m jackpot pool.'
         }
       ]
     },
@@ -88,20 +83,17 @@ export const ieBonusGuide: IndustryReport = {
         {
           id: 'acca_insurance_ie',
           title: 'Acca Insurance',
-          content: 'If one leg of your 5+ fold accumulator fails, you get your stake back. This is a universal product feature, not a targeted inducement, so it remains fully legal.\n\n**Best for:** Betfred (often refunds as CASH), Ladbrokes, BoyleSports.',
-          recommendedBookmakers: ['betfred', 'ladbrokes', 'boylesports']
+          content: 'If one leg of your 5+ fold accumulator fails, you get your stake back. This is a universal product feature, not a targeted inducement, so it remains fully legal.\n\n**Best for:** Betfred (often refunds as CASH), Ladbrokes, BoyleSports.'
         },
         {
           id: 'early_payout',
           title: '2-Up Early Payout',
-          content: 'Considered a product feature. If your football team goes 2 goals up, you win instantly. Applies to Premier League, Champions League, and League of Ireland.',
-          recommendedBookmakers: ['bet365', 'paddy-power']
+          content: 'Considered a product feature. If your football team goes 2 goals up, you win instantly. Applies to Premier League, Champions League, and League of Ireland.'
         },
         {
           id: 'bog_ie',
           title: 'Best Odds Guaranteed (BOG)',
-          content: 'Essential for Irish Racing. If SP is higher than your price, you get the bigger odds. \n\n**Warning:** Many firms exclude Skrill/Neteller deposits from BOG.',
-          recommendedBookmakers: ['boylesports', 'bet365']
+          content: 'Essential for Irish Racing. If SP is higher than your price, you get the bigger odds. \n\n**Warning:** Many firms exclude Skrill/Neteller deposits from BOG.'
         }
       ]
     },
@@ -111,20 +103,17 @@ export const ieBonusGuide: IndustryReport = {
         {
           id: 'vip_schemes',
           title: 'VIP & High Roller Schemes (BANNED)',
-          content: 'Targeted offers based on how much you lose are prohibited to prevent "chasing losses". Do not expect a personal account manager in 2026.',
-          recommendedBookmakers: []
+          content: 'Targeted offers based on how much you lose are prohibited to prevent "chasing losses". Do not expect a personal account manager in 2026.'
         },
         {
           id: 'loyalty_ie',
           title: 'Loyalty Clubs (Grey Area)',
-          content: 'GRAI has not issued specific guidance yet. **Likely Legal:** Programs with identical rewards for ALL who opt-in. **Likely Banned:** Tiered programs based on spend.',
-          recommendedBookmakers: []
+          content: 'GRAI has not issued specific guidance yet. **Likely Legal:** Programs with identical rewards for ALL who opt-in. **Likely Banned:** Tiered programs based on spend.'
         },
         {
           id: 'grai_timeline',
           title: 'GRAI Enforcement Timeline (2025-2026)',
-          content: 'While the Act is passed, full enforcement is phased. B2C license applications opened in Dec 2025. **Compliance monitoring is scheduled to begin in July 2026**, with the full enforcement framework operational by **Q3 2026**. Currently, no fines have been issued, but operators are already removing targeted VIP schemes to ensure compliance.',
-          recommendedBookmakers: []
+          content: 'While the Act is passed, full enforcement is phased. B2C license applications opened in Dec 2025. **Compliance monitoring is scheduled to begin in July 2026**, with the full enforcement framework operational by **Q3 2026**. Currently, no fines have been issued, but operators are already removing targeted VIP schemes to ensure compliance.'
         }
       ]
     }
@@ -140,7 +129,6 @@ export const ieBonusGuide: IndustryReport = {
   ],
 
   footer: {
-    helpline: 'GamblingCare.ie: 1800 936 725. Bonuses are for 18+ only.',
     lastUpdated: 'January 2026'
   }
 };

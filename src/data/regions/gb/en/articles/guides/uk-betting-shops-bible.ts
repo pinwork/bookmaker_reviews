@@ -189,7 +189,6 @@ Category B2 machines are now limited to £2 spins, significantly reducing indust
   ],
 
   footer: {
-    helpline: 'If you need to talk, call the National Gambling Helpline: 0808 8020 133.',
     lastUpdated: '2026-01-20'
   }
 };

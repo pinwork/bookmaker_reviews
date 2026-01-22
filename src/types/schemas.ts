@@ -57,7 +57,7 @@ export const BookmakerDisplaySchema = z.object({
 
 export const BookmakerContentSchema = z.object({
   tagline: z.string().min(1), summary: z.string().min(10), h1: z.string().min(1),
-  metaTitle: z.string().min(10).max(70), metaDescription: z.string().min(50).max(160),
+  metaTitle: z.string().min(10), metaDescription: z.string().min(50),
   pros: z.array(z.string()).min(1), cons: z.array(z.string()).min(1), highlights: z.array(z.string()),
 });
 
@@ -90,14 +90,14 @@ export const FAQSchema = z.object({
 export const GuideCategorySchema = z.enum(['basics', 'bet-types', 'features', 'strategy', 'sports']);
 export const GuideSchema = z.object({
   slug: z.string().min(1), title: z.string().min(5), h1: z.string().min(5), excerpt: z.string().min(20),
-  metaTitle: z.string().min(10).max(70), metaDescription: z.string().min(50).max(160), category: GuideCategorySchema,
+  metaTitle: z.string().min(10), metaDescription: z.string().min(50), category: GuideCategorySchema,
   readingTime: z.number().int().positive(), isFeatured: z.boolean(), order: z.number().int().nonnegative(),
   content: z.string().min(100), relatedGuides: z.array(z.string()), lastUpdated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
 });
 
 export const StaticPageSchema = z.object({
   slug: z.string().min(1), title: z.string().min(3), h1: z.string().min(3),
-  metaTitle: z.string().min(10).max(70), metaDescription: z.string().min(50).max(160),
+  metaTitle: z.string().min(10), metaDescription: z.string().min(50),
   content: z.string().min(50), lastUpdated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
 });
 
@@ -115,8 +115,8 @@ export const SiteConfigSchema = z.object({
 
 export const SportCategorySchema = z.object({
   slug: z.string().min(1), name: z.string().min(2), h1: z.string().min(5), description: z.string().min(20),
-  metaTitle: z.string().min(10).max(70), metaDescription: z.string().min(50).max(160),
-  recommendedBookmakers: z.array(z.string()), isPopular: z.boolean(), order: z.number().int().nonnegative(),
+  metaTitle: z.string().min(10), metaDescription: z.string().min(50),
+  isPopular: z.boolean(), order: z.number().int().nonnegative(),
 });
 
 export const CompetitionSchema = z.object({
@@ -124,7 +124,7 @@ export const CompetitionSchema = z.object({
   isMajor: z.boolean(), order: z.number().int().nonnegative(), promotionalTags: z.array(z.string()),
   content: z.object({
     h1: z.string().min(5), excerpt: z.string().min(20), body: z.string().min(50),
-    metaTitle: z.string().min(10).max(70), metaDescription: z.string().min(50).max(160),
+    metaTitle: z.string().min(10), metaDescription: z.string().min(50),
   }),
 });
 
@@ -228,8 +228,6 @@ export const GuideItemSchema = z.object({
   content: z.string(), // Markdown prose
   keyStats: z.array(KeyStatSchema).optional(), // Optional stats display
   quickVerdict: z.string().optional(), // Optional subtitle
-  pros: z.array(z.string()).optional(), // Rare, only for specific guide items
-  recommendedBookmakers: z.array(z.string()).optional(), // Internal: for banner linking
 });
 
 const GuideSectionSchema = z.object({
@@ -250,7 +248,6 @@ export const BonusGroupItemSchema = z.object({
   pros: z.array(z.string()).optional(),
   cons: z.array(z.string()).optional(),
   keyStats: z.array(KeyStatSchema).optional(),
-  recommendedBookmakers: z.array(z.string()).optional(),
   content: z.string(),
 });
 
@@ -319,7 +316,6 @@ export const BaseContentSchema = z.object({
   groups: z.array(BonusGroupSchema).optional(),
   faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
   footer: z.object({
-    helpline: z.string().optional(),
     lastUpdated: z.string().optional(),
     dataSource: z.string().optional()
   }).optional(),
@@ -377,9 +373,8 @@ export const GuideArticleSchema = z.object({
   linkedResources: z.array(LinkedResourceSchema).optional(),
   comparisonTables: z.array(ComparisonTableSchema).optional(),
   groups: z.array(GuideSectionSchema).min(1), // One or more sections
-  faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
+  faq: z.array(z.object({ q: z.string(), a: z.string() })).min(3), // Required: min 3 FAQs
   footer: z.object({
-    helpline: z.string().optional(),
     lastUpdated: z.string().optional(),
     dataSource: z.string().optional(),
   }).optional(),

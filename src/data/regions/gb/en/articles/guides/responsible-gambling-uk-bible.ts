@@ -294,7 +294,6 @@ Triggered at **£150 net deposits** per 30 days. Uses public data (bankruptcies,
   ],
 
   footer: {
-    helpline: 'National Gambling Helpline: 0808 8020 133 (24/7, free).',
     lastUpdated: '2026-01-20'
   }
 };

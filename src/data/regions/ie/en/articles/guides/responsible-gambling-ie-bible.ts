@@ -192,7 +192,6 @@ Now an ambassador for Extern Problem Gambling, focusing on youth education.`
   ],
 
   footer: {
-    helpline: 'Free National Gambling Helpline (IE): 1800 936 725.',
     dataSource: 'Data from ESRI Oct 2023 Study, IPH Jan 2025 Suicide Report, and GRAI 2025 Operational Updates.',
     lastUpdated: '2026-01-20'
   }

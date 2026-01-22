@@ -55,7 +55,6 @@ export const ultimateBonusGuide: IndustryReport = {
           id: 'deposit_bonus',
           title: 'Deposit & Match Bonuses',
           quickVerdict: 'The biggest bankroll booster for new registrations.',
-          recommendedBookmakers: ['william-hill', 'betfred', '10bet'],
           content: `### What is a Deposit Bonus?
 A deposit bonus matches your initial deposit with a percentage (usually 100% or 200%) in bonus funds. In the UK, "Bet £10 Get £30-£50" is the standard.
 
@@ -71,7 +70,6 @@ Using PayPal/Skrill usually voids the bonus. Stick to Debit Cards. Minimum odds 
           id: 'no_deposit_bonus',
           title: 'No Deposit Bonuses',
           quickVerdict: 'Pure risk-free betting with zero financial commitment.',
-          recommendedBookmakers: ['dabble', 'bet365'],
           content: `### Risk-Free Exploration
 A No Deposit bonus provides a small token (£5-£10) just for registering. 
 
@@ -82,7 +80,6 @@ You get a £10 free bet, win £50 profit. You can't withdraw £500 immediately; 
           id: 'free_bet',
           title: 'Free Bets (SNR Mechanics)',
           quickVerdict: 'A betting token where you keep only the profit, not the stake.',
-          recommendedBookmakers: ['betfred', 'sky-bet', 'william-hill'],
           content: `### SNR: Stake Not Returned
 The most common bonus type in the UK. Unlike a cash bet, the stake of a free bet is never returned to you; you only receive the winnings.
 
@@ -98,7 +95,6 @@ Since the stake is not returned, free bets are mathematically most valuable when
           id: 'refer_a_friend',
           title: 'Refer a Friend',
           quickVerdict: 'Earn bonuses by inviting your friends to join.',
-          recommendedBookmakers: ['paddy-power', 'unibet', 'betfair'],
           content: `### Social Betting Rewards
 You share a unique link/code. Once your friend joins, deposits, and bets, you both get a reward.
 
@@ -117,7 +113,6 @@ Most UK bookies cap this at **5 friends per month**. The friend must be a totall
           id: 'reload_bonus',
           title: 'Reload Bonuses',
           quickVerdict: 'Bonuses for existing players on subsequent deposits.',
-          recommendedBookmakers: ['10bet', 'betway', 'bet365'],
           content: `### Keeping the Balance Full
 Reloads are aimed at existing customers. They often appear during major events like the **Cheltenham Festival** or the **Grand National**.
 
@@ -129,7 +124,6 @@ A "50% Reload up to £20" means if you deposit £40, you get £20 extra.
           id: 'cashback',
           title: 'Cashback Offers',
           quickVerdict: 'A percentage refund on your net losses.',
-          recommendedBookmakers: ['all-british-sports', 'quinnbet'],
           content: `### Net Loss Protection
 Cashback softens losing streaks. **QuinnBet** offers **25% weekly cashback** (up to £50), while **All British Sports** provides a flat **10% daily** real cash refund.
 
@@ -140,7 +134,6 @@ Lose £100 over a week. Receive £10-£25 back. Real cash cashback has no wageri
           id: 'loyalty_program',
           title: 'Loyalty Clubs',
           quickVerdict: 'Recurring weekly rewards for consistent activity.',
-          recommendedBookmakers: ['sky-bet', 'paddy-power', 'coral'],
           content: `### Weekly Free Bet Clubs
 Stake a set amount (e.g., £25-£30) between Monday and Sunday. **Sky Bet Club** offers the most flexibility, with rewards lasting up to **365 days**, compared to the industry standard of **7 days**.`
         },
@@ -148,7 +141,6 @@ Stake a set amount (e.g., £25-£30) between Monday and Sunday. **Sky Bet Club**
           id: 'bet_boost',
           title: 'Price Boosts (Enhanced Odds)',
           quickVerdict: 'Artificially inflated odds on popular events.',
-          recommendedBookmakers: ['sky-bet', 'ladbrokes', 'william-hill'],
           content: `### Finding Value
 Bookmakers manually increase the odds of a favorite. 
 - **Universal Boost:** Available to everyone on the homepage.
@@ -166,7 +158,6 @@ A horse is 2.0. The boost makes it **2.50**. Stake is usually capped at **£10-�
           id: 'early_payout',
           title: 'Early Payout (2-Goal Lead)',
           quickVerdict: 'Your bet wins instantly if your team takes a 2-goal lead.',
-          recommendedBookmakers: ['bet365', 'paddy-power', 'sky-bet'],
           content: `### The Comeback Killer
 If your team goes 2-0 up, the bet is settled as a winner. **Bet365** leads the market as it works on **accumulators** and multiple sports (NBA 20pts, NFL 17pts).
 
@@ -177,7 +168,6 @@ Back Liverpool. They go 2-0 up, then draw 2-2. You get paid in full. Cashing out
           id: 'acca_insurance',
           title: 'Acca Insurance',
           quickVerdict: 'Refund if your acca loses by exactly one leg.',
-          recommendedBookmakers: ['betfred', 'ladbrokes', 'boylesports'],
           content: `### Near-Miss Protection
 Place a 5-fold+ accumulator. If 4 teams win but 1 draws/loses, you get your stake back.
 
@@ -188,7 +178,6 @@ You bet £10 on a 5-fold. 4 legs win, 1 loses. You get **£10 back**. **Betfred*
           id: 'player_protection',
           title: 'Player Protection (Super Sub)',
           quickVerdict: 'Bet stays live if your player is substituted.',
-          recommendedBookmakers: ['paddy-power', 'bet365', 'william-hill'],
           content: `### Super Sub & VAR
 In 2026, **Paddy Power** and **Bet365** protect you if your goalscorer is subbed. The bet transfers to the replacement. It also covers VAR: if a goal is disallowed, most "Super Sub" markets remain active for the replacement.`
         }
@@ -201,7 +190,6 @@ In 2026, **Paddy Power** and **Bet365** protect you if your goalscorer is subbed
           id: 'acca_boost',
           title: 'Acca Boosts',
           quickVerdict: 'Extra profit added to winning accumulators.',
-          recommendedBookmakers: ['bet365', '10bet'],
           content: `### Scaling Profits
 Winnings increase based on legs: **5% for a treble (3 legs)** up to **70-100% for 14+ legs**. If one leg is voided, your boost drops to the lower tier automatically.`
         },
@@ -209,7 +197,6 @@ Winnings increase based on legs: **5% for a treble (3 legs)** up to **70-100% fo
           id: 'bet_builder',
           title: 'Bet Builders',
           quickVerdict: 'Combine multiple selections from the same match.',
-          recommendedBookmakers: ['paddy-power', 'sky-bet', 'bet365'],
           content: `### Same Game Multis
 Combine corners, cards, and scorers in one match. 
 
@@ -220,7 +207,6 @@ If a player doesn't start: **Bet365** voids the whole builder. **Paddy Power** r
           id: 'odds_guarantee',
           title: 'Best Odds Guaranteed (BOG)',
           quickVerdict: 'Always get the best price on Horse Racing.',
-          recommendedBookmakers: ['bet365', 'coral', 'william-hill'],
           content: `### Timing is Everything
 If you take 4/1 and SP is 6/1, you get 6/1. BOG starts at **8:00 AM** (Bet365, Coral, William Hill) or **9:00 AM** (Sky Bet). It never applies to Ante-Post bets.`
         }
@@ -233,7 +219,6 @@ If you take 4/1 and SP is 6/1, you get 6/1. BOG starts at **8:00 AM** (Bet365, C
           id: 'free_to_play',
           title: 'Free Prediction Games',
           quickVerdict: 'Win jackpots without spending a penny.',
-          recommendedBookmakers: ['sky-bet', 'bet365', 'ladbrokes'],
           content: `### Jackpots for Everyone
 Predict 6 scores (Super 6) for a **£250k-£1m jackpot**. **Ladbrokes 1-2-Free** is the easiest to win, requiring only 3 correct scores for a £100 cash prize.`
         }

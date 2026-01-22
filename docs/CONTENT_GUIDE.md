@@ -39,6 +39,10 @@ Groups are **major chapters**, not fine divisions. Use sparingly (3-7 per articl
 
 Within `content`, use markdown for structure: `###` headers, bullet lists, bold text. Don't create multiple groups where one group with rich markdown would work better.
 
+**Field Guidelines:** See Section 8 for `keyStats`, `quickVerdict`, and Content Block details.
+
+**linkedResources (reserved):** Article-level array for future contextual bookmaker banners. Structure: `{ id: 'bet365', type: 'bookmaker', active: true }`. Not currently rendered.
+
 ### B. Tool Reviews (ToolReviewArticle)
 
 Affiliate product reviews with strict structure. Each item requires rating, pros, cons, affiliate URL.
@@ -56,6 +60,24 @@ ReactMarkdown does not render tables. Use `comparisonTables` field instead (rend
 
 * *Good:* Write pricing in prose: `"Three tiers: Lite (€17/mo), Deluxe (€37/mo), Platinum (€77/mo)."`
 * *Bad:* `"| Tier | Price |..."` → renders as raw text
+
+### D. Global: No Indented Paragraphs in Template Literals
+
+**CRITICAL:** In markdown, 4+ spaces at line start = code block (`<pre><code>`).
+
+When using template literals (backticks) in `.ts` files, **do NOT indent continuation paragraphs** for code readability — it breaks rendering.
+
+```typescript
+// ❌ BAD — second paragraph has 4 spaces, renders as code block
+content: `First paragraph here.
+
+    Second paragraph with indentation for "nice" code formatting.`
+
+// ✅ GOOD — no indentation on continuation
+content: `First paragraph here.
+
+Second paragraph flush left.`
+```
 
 ---
 
@@ -243,3 +265,67 @@ Every Key Feature bullet must answer: "What does the user gain?"
 * `id` matches filename: `public/images/partners/{id}.svg` or `.jpg`
 * JPG logos: bgColor auto-detected from edge pixel
 * SVG/PNG: use `bgColor` from article, default `#ffffff`
+
+---
+
+## 8. Guides: Editorial Standards
+
+**Schema:** `src/types/schemas.ts` → `GuideArticleSchema`, `GuideItemSchema`
+
+### A. Understanding the Item: Content Block
+
+In Guides, an `item` is a **Content Block** — a topic or concept within a chapter.
+
+| Aspect | Tool Review (Review Card) | Guide (Content Block) |
+| :--- | :--- | :--- |
+| **Purpose** | Compare → Choose → Click | Explain → Teach |
+| **Represents** | A product/service | A topic/concept |
+| **Example** | "Flashscore", "OddsMonkey" | "Deposit Bonus", "The 1988 Merger" |
+
+**Visual:** Content Blocks render as simple cards (title + optional keyStats + prose). No collapsible sections — all text visible immediately.
+
+### B. Field Guidelines
+
+#### keyStats (optional)
+
+Use for **quantifiable facts** that benefit from visual emphasis.
+
+* **Use when:** Industry stats, market data, comparisons with numbers
+* **Skip when:** Conceptual explanations, narratives, strategies without hard metrics
+
+*Good:*
+```typescript
+keyStats: [
+  { label: 'Active Shops', value: '721' },
+  { label: 'Peak (2008)', value: '1,385' }
+]
+```
+
+*Bad:* Adding keyStats to "How Betting Odds Work" — no meaningful metrics to display.
+
+#### quickVerdict (optional)
+
+One-line teaser shown below the title. Use when title alone is too short or abstract.
+
+* **Use when:** Generic title needs context ("Deposit Bonus" → "The biggest bankroll booster")
+* **Skip when:** Title is self-explanatory ("Industry Statistics 2025")
+
+**Formula:** `[What it is] — [key benefit or context]`
+
+* *Good:* `"The classic risk-free start — get your stake back if first bet loses"`
+* *Bad:* `"A great bonus type"` (no specifics)
+
+### C. Content Structure
+
+Unlike Tool Reviews (strict micro-review format), Guides use **flexible prose**.
+
+Use `###` headers within `content` for subsections. Include real brand names and specific numbers (see Section 3). Group guidelines already covered in Section 2.A.
+
+### D. faq (required, min 3)
+
+FAQ in guides serves as **quick clarifications** — explaining terms, edge cases, or common misunderstandings.
+
+**Purpose:** Answer questions that arise *while reading* the article.
+
+* *Good:* "What happens if my bet is voided?", "How is rollover calculated?"
+* *Bad:* "Which bookmaker is best?" (that's Tool Review territory)

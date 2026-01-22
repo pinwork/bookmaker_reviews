@@ -169,7 +169,6 @@ With independent shops facing profit margins of just **€7k**, further consolid
   ],
 
   footer: {
-    helpline: 'GamblingCare.ie: 1800 936 725. Please gamble responsibly.',
     lastUpdated: '2026-01-20'
   }
 };
