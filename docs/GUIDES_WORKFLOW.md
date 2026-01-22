@@ -387,6 +387,24 @@ Meta Description: [SEO description]
 
 ---
 
+### Key Takeaways (3-5 items)
+
+```
+1. [Most important stat or insight — often the headline number]
+2. [Second key point — a recommendation or standout finding]
+3. [Third key point — practical implication for reader]
+4. [Optional: surprising fact or counter-intuitive insight]
+5. [Optional: call to action or "bottom line"]
+```
+
+**What makes good takeaways:**
+- Scannable bullets that work standalone (reader skips article, still gets value)
+- Include specific numbers where possible ("€5.5B market" not "large market")
+- Mix of facts and recommendations
+- No fluff — every word earns its place
+
+---
+
 ### Intro Section
 
 ```
@@ -674,6 +692,7 @@ Data Source: ESRI (Oct 2023), GRAI (2024 Act), HRI Annual Report 2024
 - [ ] comparisonTables have max 4 columns
 
 ### Required Fields
+- [ ] keyTakeaways has 3-5 items
 - [ ] FAQ has minimum 3 questions
 - [ ] FAQ questions add value (not duplicate content)
 - [ ] footer.lastUpdated is set

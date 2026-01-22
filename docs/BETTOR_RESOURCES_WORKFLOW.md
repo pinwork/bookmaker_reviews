@@ -398,6 +398,24 @@ Editorial Ranking (with ratings):
 
 ---
 
+### Key Takeaways (3-5 items)
+
+```
+1. [Best overall pick with key differentiator — e.g., "OddsMonkey: Best for beginners with 500K+ users"]
+2. [Best value/budget pick — e.g., "Profit Accumulator: £1 trial, best for testing"]
+3. [Key category insight — e.g., "All platforms require Betfair/Smarkets exchange account"]
+4. [Optional: warning or limitation — e.g., "Free tiers limited to 2-3 bookmakers"]
+5. [Optional: practical tip — e.g., "Start with welcome offers before reload promos"]
+```
+
+**What makes good takeaways:**
+- Scannable bullets that work standalone (reader skips article, still gets value)
+- Lead with product name + "Best for X" format
+- Include specific numbers (prices, counts, percentages)
+- Mix of recommendations and practical insights
+
+---
+
 ### Category Intro
 
 ```
@@ -532,6 +550,7 @@ Best for [niche persona]: [Tool] — [reason]
 ### Structure
 - [ ] Comparison table has max 4 data columns
 - [ ] Tools ordered by editorial ranking (#1 first)
+- [ ] keyTakeaways has 3-5 items
 - [ ] FAQ has 3+ questions with answers
 - [ ] FAQ questions add value (not duplicate content)
 
