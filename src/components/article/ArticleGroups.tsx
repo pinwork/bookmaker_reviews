@@ -71,14 +71,18 @@ interface CardItemProps {
   item: GroupItem;
   logoPath: string | null;
   bgColor: string;
+  sectionId?: string; // For ToC navigation in flat lists
 }
 
-function CardItem({ item, logoPath, bgColor }: CardItemProps) {
+function CardItem({ item, logoPath, bgColor, sectionId }: CardItemProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-      <article className="bg-white border border-gray-200 rounded-xl overflow-visible shadow-sm relative">
+      <article
+        id={sectionId}
+        className="bg-white border border-gray-200 rounded-xl overflow-visible shadow-sm relative scroll-mt-16"
+      >
         {/* Badge ribbon above card (centered) */}
         {item.badge && (
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1.5 rounded-md shadow-sm z-10">
@@ -252,6 +256,7 @@ export function ArticleGroups({ groups, logoPaths, bgColors }: ArticleGroupsProp
                   item={item}
                   logoPath={logoPath}
                   bgColor={bgColor}
+                  sectionId={isFlatList ? slugify(item.title) : undefined}
                 />
               );
             })}

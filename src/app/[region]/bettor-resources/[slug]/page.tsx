@@ -92,13 +92,18 @@ export default async function BettorResourcePage({ params }: PageProps) {
     }
   }
 
-  // Build ToC sections from article groups (excluding flat lists)
+  // Build ToC sections: from items for flat lists, from groups otherwise
   const isFlatList = article.groups?.length === 1 && article.groups[0].groupName.toLowerCase() === 'reviews';
-  const tocSections: TocSection[] = article.groups && !isFlatList
-    ? article.groups.map((group) => ({
-        id: slugify(group.groupName),
-        title: group.groupName,
-      }))
+  const tocSections: TocSection[] = article.groups
+    ? isFlatList
+      ? article.groups[0].items.map((item) => ({
+          id: slugify(item.title),
+          title: item.title,
+        }))
+      : article.groups.map((group) => ({
+          id: slugify(group.groupName),
+          title: group.groupName,
+        }))
     : [];
 
   return (
