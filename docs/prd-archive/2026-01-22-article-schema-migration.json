@@ -1,0 +1,198 @@
+{
+  "featureName": "Article Schema Migration & Validation",
+  "branchName": "feat/article-schema-migration",
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Update GuideArticleSchema to enforce required fields",
+      "acceptanceCriteria": [
+        "In src/types/schemas.ts: GuideArticleSchema footer.lastUpdated is z.string() (required, not optional)",
+        "In src/types/schemas.ts: GuideArticleSchema footer is required (remove .optional() from footer object)",
+        "GuideItemSchema allows only: id, title, content, keyStats?, quickVerdict? (no pros, cons, rating, url, bestFor, badge)",
+        "Export GuideArticle type in src/types/index.ts",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/types/schemas.ts"]
+    },
+    {
+      "id": 2,
+      "title": "Update ToolReviewArticleSchema to match documentation",
+      "acceptanceCriteria": [
+        "In src/types/schemas.ts: ReviewItemSchema.quickVerdict has max(75) validation",
+        "In src/types/schemas.ts: ReviewItemSchema.pros has min(3) validation",
+        "In src/types/schemas.ts: ReviewItemSchema.cons has min(1) validation",
+        "In src/types/schemas.ts: ReviewItemSchema.keyStats has min(2) validation",
+        "Export ToolReviewArticle type in src/types/index.ts",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": []
+    },
+    {
+      "id": 3,
+      "title": "Fix uk-ultimate-bonus-guide to pass GuideArticleSchema",
+      "acceptanceCriteria": [
+        "Change type from IndustryReport to GuideArticle",
+        "Add footer: { lastUpdated: '2026-01-20' }",
+        "Verify all items in groups have only: id, title, content, keyStats?, quickVerdict?",
+        "Run GuideArticleSchema.parse() in test to confirm validation passes",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/gb/en/articles/guides/uk-ultimate-bonus-guide.ts"]
+    },
+    {
+      "id": 4,
+      "title": "Fix uk-betting-shops-bible to pass GuideArticleSchema",
+      "acceptanceCriteria": [
+        "Change type from IndustryReport to GuideArticle",
+        "Remove pros array from 'reasons-to-visit' item",
+        "Move pros content into markdown content field as bullet list",
+        "Verify all items have only valid GuideItemSchema fields",
+        "Run GuideArticleSchema.parse() in test to confirm validation passes",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/gb/en/articles/guides/uk-betting-shops-bible.ts"]
+    },
+    {
+      "id": 5,
+      "title": "Fix ie-ultimate-bonus-guide to pass GuideArticleSchema",
+      "acceptanceCriteria": [
+        "Change type from IndustryReport to GuideArticle",
+        "Change footer.lastUpdated from 'January 2026' to '2026-01-20' (ISO format)",
+        "Verify all items have only valid GuideItemSchema fields",
+        "Run GuideArticleSchema.parse() in test to confirm validation passes",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/ie/en/articles/guides/ie-ultimate-bonus-guide.ts"]
+    },
+    {
+      "id": 6,
+      "title": "Migrate remaining 5 guides to GuideArticle type",
+      "acceptanceCriteria": [
+        "Change uk-betting-industry-report type to GuideArticle",
+        "Change responsible-gambling-uk-bible type to GuideArticle",
+        "Change ie-betting-industry-report type to GuideArticle",
+        "Change ie-betting-shops-bible type to GuideArticle",
+        "Change responsible-gambling-ie-bible type to GuideArticle",
+        "All 5 files pass GuideArticleSchema.parse() validation",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/gb/en/articles/guides/uk-betting-industry-report.ts", "src/data/regions/gb/en/articles/guides/responsible-gambling-uk-bible.ts", "src/data/regions/ie/en/articles/guides/ie-betting-industry-report.ts", "src/data/regions/ie/en/articles/guides/ie-betting-shops-bible.ts", "src/data/regions/ie/en/articles/guides/responsible-gambling-ie-bible.ts"]
+    },
+    {
+      "id": 7,
+      "title": "Migrate bettor-resources articles to ToolReviewArticle type",
+      "acceptanceCriteria": [
+        "Change best-live-score-stats-apps type to ToolReviewArticle",
+        "Change best-in-play-betting-scanners type to ToolReviewArticle",
+        "Change best-matched-betting-software type to ToolReviewArticle",
+        "All 3 files pass ToolReviewArticleSchema.parse() validation",
+        "Fix any validation errors (quickVerdict max 75 chars, pros min 3, cons min 1, keyStats min 2)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/gb/en/articles/bettor-resources/best-live-score-stats-apps.ts", "src/data/regions/gb/en/articles/bettor-resources/best-in-play-betting-scanners.ts", "src/data/regions/gb/en/articles/bettor-resources/best-matched-betting-software.ts"]
+    },
+    {
+      "id": 8,
+      "title": "Update data layer to use new article types",
+      "acceptanceCriteria": [
+        "In src/data/articles.ts: getGuides() returns GuideArticle[]",
+        "In src/data/articles.ts: getBettorResources() returns ToolReviewArticle[]",
+        "In src/data/regions/gb/en/index.ts: export guides with GuideArticle type",
+        "In src/data/regions/ie/en/index.ts: export guides with GuideArticle type",
+        "Update src/data/index.ts public API types accordingly",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/articles.ts"]
+    },
+    {
+      "id": 9,
+      "title": "Add runtime validation for articles in development mode",
+      "acceptanceCriteria": [
+        "In src/data/articles.ts: add validateGuide() function using GuideArticleSchema.safeParse()",
+        "In src/data/articles.ts: add validateToolReview() function using ToolReviewArticleSchema.safeParse()",
+        "In getGuides(): if NODE_ENV === 'development', validate each guide and console.error on failure",
+        "In getBettorResources(): if NODE_ENV === 'development', validate each article and console.error on failure",
+        "Validation errors include slug and specific Zod issues",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/articles.ts"]
+    },
+    {
+      "id": 10,
+      "title": "Remove legacy IndustryReportSchema and clean up types",
+      "acceptanceCriteria": [
+        "Remove IndustryReportSchema from src/types/schemas.ts",
+        "Remove IndustryReport type export from src/types/index.ts",
+        "Remove BaseContentSchema if no longer used",
+        "Remove BonusGroupItemSchema if no longer used (replaced by GuideItemSchema and ReviewItemSchema)",
+        "Update any remaining imports in codebase that reference IndustryReport",
+        "All page components use GuideArticle or ToolReviewArticle types",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/types/schemas.ts", "src/types/index.ts", "src/utils/seo.ts"]
+    },
+    {
+      "id": 11,
+      "title": "Update CONTENT_GUIDE.md with migration notes",
+      "acceptanceCriteria": [
+        "Add section explaining GuideArticle vs ToolReviewArticle distinction",
+        "Document required fields for each schema with examples",
+        "Remove any references to IndustryReport type",
+        "Add note about runtime validation in development mode",
+        "Add footer.lastUpdated ISO format requirement (YYYY-MM-DD)",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["docs/CONTENT_GUIDE.md"]
+    }
+  ],
+  "postFeatureReview": {
+    "summary": "Completed Article Schema Migration & Validation feature. Migrated all guides to GuideArticle type and bettor-resources to ToolReviewArticle type with strict Zod validation. Added runtime validation in development mode and removed legacy IndustryReport type.",
+    "impact": "Types: GuideArticle and ToolReviewArticle are now the only article types. Data layer: articles.ts validates at runtime in dev. SEO: seo.ts updated to use union type. 8 guide files and 3 bettor-resource files migrated. Legacy IndustryReport type removed.",
+    "issues": "BaseContentSchema and BonusGroupItemSchema kept as they are still referenced by other legacy schemas (ToolReviewSchema, ContentGuideSchema) that may be used indirectly.",
+    "recommendations": "Consider removing ToolReviewSchema, ContentGuideSchema, BonusGroupItemSchema, and BaseContentSchema in a future cleanup if confirmed unused."
+  }
+}
