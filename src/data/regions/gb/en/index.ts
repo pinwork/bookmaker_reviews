@@ -16,6 +16,7 @@ import { bettingShopsBible as bettingShopsData } from './articles/guides/uk-bett
 import { bettingIndustryBible as industryReportData } from './articles/guides/uk-betting-industry-report';
 import { liveScoreAppsArticle as liveScoreAppsData } from './articles/bettor-resources/best-live-score-stats-apps';
 import { inPlayScannersArticle as inPlayScannersData } from './articles/bettor-resources/best-in-play-betting-scanners';
+import { matchedBettingSoftwareArticle as matchedBettingData } from './articles/bettor-resources/best-matched-betting-software';
 
 const gbReviews: Record<string, BookmakerReview> = {
   bet365: reviewsList.bet365Review,
@@ -55,6 +56,7 @@ export const bettingShopsBible = bettingShopsData;
 export const bettingIndustryReport = industryReportData;
 export const liveScoreAppsGuide = liveScoreAppsData;
 export const inPlayScannersGuide = inPlayScannersData;
+export const matchedBettingGuide = matchedBettingData;
 
 export const reviews = gbReviews;
 

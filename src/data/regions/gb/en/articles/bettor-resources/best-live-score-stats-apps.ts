@@ -57,7 +57,7 @@ This guide compares the most popular live score apps, statistics platforms, and 
           rating: 4.8,
           bestFor: 'Multi-sport live bettors who prioritize speed above all else. Essential for in-play betting where seconds matter.',
           badge: "Editor's Pick",
-          quickVerdict: 'The fastest live score app with the widest sport coverage.',
+          quickVerdict: 'The speed king — 5-20 second updates across 38 sports.',
           pros: [
             'Fastest update speed in the market (5-20 seconds)',
             'Covers 38 sports and 1,000+ leagues',
@@ -93,7 +93,7 @@ Free with ads. No premium tier.`
           bgColor: '#374DF5',
           rating: 4.7,
           bestFor: 'Bettors who base decisions on statistics rather than gut feeling. Excellent for pre-match research and identifying value through dropping odds.',
-          quickVerdict: 'The best free statistics app with live xG and dropping odds.',
+          quickVerdict: 'The stats powerhouse — 300+ metrics with live xG free.',
           pros: [
             'Best free statistics available anywhere',
             'Dropping odds feature excellent for value hunting',
@@ -129,7 +129,7 @@ Free with ads. SofaScore Club (premium) removes ads and adds some features.`
           bgColor: '#ffffff',
           rating: 4.6,
           bestFor: 'Football purists who want the best overall experience. If you only bet on football, this should be your primary app.',
-          quickVerdict: 'The most polished football app — worth paying for.',
+          quickVerdict: 'The polish champion — best football UX at £9.99/year.',
           pros: [
             'Best user interface of any live score app',
             'Apple ecosystem integration is class-leading',
@@ -165,7 +165,7 @@ Free with ads. **FotMob Pro: £9.99/year** removes ads and provides faster updat
           bgColor: '#ffffff',
           rating: 4.7,
           bestFor: 'Deep statistical research, player prop bets, and anyone who wants professional-level data without paying.',
-          quickVerdict: 'Professional-grade statistics powered by StatsBomb.',
+          quickVerdict: 'The pro database — free StatsBomb data for 152 leagues.',
           pros: [
             'StatsBomb data is gold standard',
             'Completely free — no premium tier',
@@ -201,7 +201,7 @@ FBref is the most comprehensive free football statistics database, covering 48 c
           bgColor: '#000000',
           rating: 4.3,
           bestFor: 'Bettors who focus on niche leagues where bookmaker lines are soft. Essential for corners/cards betting and strategy backtesting.',
-          quickVerdict: 'Niche league coverage and backtesting for strategy builders.',
+          quickVerdict: 'The niche hunter — 1,500+ leagues with backtesting.',
           pros: [
             'Unmatched coverage of 1,500+ lower leagues',
             'Backtesting feature is unique and valuable',
@@ -237,7 +237,7 @@ Free basic tier. **Premium: £19.99/month** for full features.`
           bgColor: '#ffffff',
           rating: 4.8,
           bestFor: 'Anyone betting seriously on horse racing. The cost is justified by the depth of data. No free alternative comes close.',
-          quickVerdict: 'The industry standard — essential for serious racing bettors.',
+          quickVerdict: 'The industry standard — RPR ratings trusted by pros.',
           pros: [
             'Industry standard — used by professionals',
             'RPR ratings are trusted and accurate',
@@ -273,7 +273,7 @@ Racing Post is the industry standard for horse racing data. Professional punters
           bgColor: '#000000',
           rating: 4.6,
           bestFor: 'Professional racing bettors and exchange traders. If you\'re betting at this level, Timeform ratings are essential intelligence.',
-          quickVerdict: 'Gold-standard ratings used by professionals since 1948.',
+          quickVerdict: 'The gold standard — professional ratings since 1948.',
           pros: [
             'Most respected ratings in the industry',
             '75+ years of methodology refinement',
@@ -309,7 +309,7 @@ Timeform has been the gold standard in racing analysis since 1948. Their ratings
           bgColor: '#ffffff',
           rating: 4.2,
           bestFor: 'Tennis betting research. The betting ranking feature alone makes it worth bookmarking.',
-          quickVerdict: 'Comprehensive tennis statistics with unique betting metrics.',
+          quickVerdict: 'The tennis specialist — betting rankings for 35K+ players.',
           pros: [
             'Betting ranking is unique and useful',
             'Comprehensive H2H data',
@@ -345,7 +345,7 @@ Tennis Explorer covers 35,000+ players with detailed match statistics and a uniq
           bgColor: '#ffffff',
           rating: 4.5,
           bestFor: 'NBA betting research, especially player props. Essential for anyone betting American basketball seriously.',
-          quickVerdict: 'The definitive NBA statistics database.',
+          quickVerdict: 'The NBA bible — complete stats since 1946.',
           pros: [
             'Most comprehensive NBA data anywhere',
             'Advanced metrics (PER, TS%, etc.)',

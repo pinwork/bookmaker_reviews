@@ -28,11 +28,11 @@ function getGuidesData(region: string): IndustryReport[] {
 function getBettorResourcesData(region: string): IndustryReport[] {
   if (region === 'ie') {
     // IE inherits GB bettor resources (universal content)
-    return [gbArticles.liveScoreAppsGuide, gbArticles.inPlayScannersGuide];
+    return [gbArticles.liveScoreAppsGuide, gbArticles.inPlayScannersGuide, gbArticles.matchedBettingGuide];
   }
 
   // Default to GB
-  return [gbArticles.liveScoreAppsGuide, gbArticles.inPlayScannersGuide];
+  return [gbArticles.liveScoreAppsGuide, gbArticles.inPlayScannersGuide, gbArticles.matchedBettingGuide];
 }
 
 // Public API

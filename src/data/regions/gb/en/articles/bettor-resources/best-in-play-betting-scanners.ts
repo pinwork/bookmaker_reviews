@@ -60,7 +60,7 @@ export const inPlayScannersArticle: IndustryReport = {
           bgColor: '#f8f9fa',
           rating: 4.6,
           bestFor: 'Intermediate to advanced traders who want momentum-based strategy automation. Perfect entry point for serious beginners due to unlimited free tier.',
-          badge: 'Highest Rated',
+          badge: "Editor's Pick",
           quickVerdict: 'Best overall — unlimited free tier with 30,000+ members.',
           pros: [
             'Largest community: 30,000+ active members sharing strategies',
@@ -176,7 +176,7 @@ Footy Amigo combines AI/machine learning with a unique social feature—the **Am
           rating: 4.7,
           bestFor: 'Budget-conscious bettors and Betfair exchange traders who want professional features without premium pricing.',
           badge: 'Best Value',
-          quickVerdict: 'Professional features at £10/month — unbeatable price-to-feature ratio.',
+          quickVerdict: 'Best budget pick — pro features at just £10/month.',
           pros: [
             'Unbeatable value: £10/month vs competitors at £20-77',
             'Color-coded scanner spots high-intensity games instantly',
