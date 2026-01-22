@@ -6,6 +6,7 @@ import { generateArticleSchemas } from '@/utils/seo';
 import {
   ArticleHeader,
   KeyTakeaways,
+  ReadingProgress,
   UnifiedComparisonTable,
   GuideSections,
   ArticleFAQ,
@@ -54,6 +55,7 @@ export default async function GuidePage({ params }: PageProps) {
 
   return (
     <>
+      <ReadingProgress />
       {schema && (
         <script
           type="application/ld+json"

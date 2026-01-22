@@ -8,6 +8,7 @@ import { getPartnerLogoPath, getJpgBackgroundColor } from '@/utils/images';
 import {
   ArticleHeader,
   KeyTakeaways,
+  ReadingProgress,
   UnifiedComparisonTable,
   ArticleGroups,
   ArticleFAQ,
@@ -90,6 +91,7 @@ export default async function BettorResourcePage({ params }: PageProps) {
 
   return (
     <>
+      <ReadingProgress />
       {schema && (
         <script
           type="application/ld+json"
