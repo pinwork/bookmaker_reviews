@@ -469,32 +469,18 @@ User clicks [Bet365](/gb/go/bet365)
 
 **Why region in URL?** Affiliate programs differ by market. GB and IE may have different tracking IDs. The explicit region ensures correct attribution.
 
-### B. Available Bookmaker Slugs
+### B. Valid Bookmaker Slugs
 
-Only these slugs work with the `/go/` system:
+**Source of Truth:** `src/data/bookmakers.ts` → `bookmakerConfigs` array
 
-| Slug | Brand Name |
-|------|------------|
-| `bet365` | bet365 |
-| `betfair` | Betfair |
-| `william-hill` | William Hill |
-| `paddy-power` | Paddy Power |
-| `sky-bet` | Sky Bet |
-| `betfred` | Betfred |
-| `888sport` | 888sport |
-| `unibet` | Unibet |
-| `betvictor` | BetVictor |
-| `boylesports` | BoyleSports |
-| `ladbrokes` | Ladbrokes |
-| `coral` | Coral |
-| `virgin-bet` | Virgin Bet |
-| `betway` | Betway |
-| `matchbook` | Matchbook |
-| `netbet` | NetBet |
-| `smarkets` | Smarkets |
-| `bwin` | bwin |
+Each bookmaker has:
+- `slug` - URL identifier (e.g., `bet365`, `paddy-power`)
+- `name` - Display name
+- `display.isActive` - Whether bookmaker is active
 
-**Unknown slug → 404.** Always verify slug exists before using.
+**Before linking:** Check that the bookmaker exists and `isActive: true`.
+
+**Unknown or inactive slug → 404.**
 
 ### C. Syntax
 
