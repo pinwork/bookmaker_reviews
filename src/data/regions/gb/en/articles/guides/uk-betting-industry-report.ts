@@ -92,7 +92,7 @@ Now listed on the NYSE with $14bn global revenue, Flutter is the "Amazon of Gamb
           title: 'bet365 Group (~20% Market Share)',
           content: `**Brands:** bet365
 
-Unique among giants, bet365 remains a **private company** owned by the Coates family in Stoke. They paid £481.5m in UK taxes alone last year. Without shareholder pressure, they offer the most consistent odds and highest limits.`
+Unique among giants, bet365 remains a **private company** owned by the Coates family in Stoke. They paid £265m in UK taxes alone last year. Without shareholder pressure, they offer the most consistent odds and highest limits.`
         },
         {
           id: 'entain',
@@ -113,7 +113,7 @@ The rebrand to "Evoke" hasn't hidden the disaster of the William Hill acquisitio
           title: 'Denise Coates, bet365 Founder & Co-CEO',
           content: `In 2000, Denise Coates mortgaged her father's entire chain of betting shops to secure a **£15 million loan** from RBS. She used the money to build bet365.com from a temporary Portakabin in a Stoke-on-Trent car park. Critics called it reckless.
 
-Today, bet365 generates **£4bn annually**. Denise is Britain's highest-paid executive and the single largest taxpayer in the UK, contributing over **£480m** to the Treasury in 2024.`
+Today, bet365 generates **£3.7bn annually**. Denise was Britain's highest taxpayer from 2019-2022, contributing over **£2.4 billion** to the Treasury over 15 years.`
         },
         {
           id: 'fred-done',
@@ -205,6 +205,12 @@ Betfred remains one of the few large independent operators, with over **1,300 sh
 
   footer: {
     lastUpdated: '2026-01-20',
-    sources: ['UKGC Industry Statistics 2024-25', 'Regulus Partners']
+    sources: [
+      'UKGC Industry Statistics 2024-25',
+      'HMRC Gambling Duties (Nov 2025)',
+      'Sunday Times Tax List 2025',
+      'Regulus Partners',
+      'Company filings (bet365, Entain, Flutter)'
+    ]
   }
 };

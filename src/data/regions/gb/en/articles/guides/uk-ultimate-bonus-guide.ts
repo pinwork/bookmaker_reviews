@@ -55,6 +55,12 @@ export const ultimateBonusGuide: GuideArticle = {
           id: 'deposit_bonus',
           title: 'Deposit & Match Bonuses',
           quickVerdict: 'The biggest bankroll booster for new registrations.',
+          keyStats: [
+            { label: 'Avg Value', value: '£30-£50' },
+            { label: 'Min Odds', value: '1.50 (1/2)' },
+            { label: 'Expiry', value: '7 Days' },
+            { label: 'Wager Req', value: '1x - 3x' }
+          ],
           content: `### What is a Deposit Bonus?
 A deposit bonus matches your initial deposit with a percentage (usually 100% or 200%) in bonus funds. In the UK, "Bet £10 Get £30-£50" is the standard.
 
@@ -70,6 +76,11 @@ Using PayPal/Skrill usually voids the bonus. Stick to Debit Cards. Minimum odds 
           id: 'no_deposit_bonus',
           title: 'No Deposit Bonuses',
           quickVerdict: 'Pure risk-free betting with zero financial commitment.',
+          keyStats: [
+            { label: 'Avg Value', value: '£5-£10' },
+            { label: 'Max Win', value: '£100-£200' },
+            { label: 'Rarity', value: 'Very High' }
+          ],
           content: `### Risk-Free Exploration
 A No Deposit bonus provides a small token (£5-£10) just for registering. 
 
@@ -125,7 +136,7 @@ A "50% Reload up to £20" means if you deposit £40, you get £20 extra.
           title: 'Cashback Offers',
           quickVerdict: 'A percentage refund on your net losses.',
           content: `### Net Loss Protection
-Cashback softens losing streaks. **QuinnBet** offers **25% weekly cashback** (up to £50), while **All British Sports** provides a flat **10% daily** real cash refund.
+Cashback softens losing streaks. **QuinnBet** offers **25% weekly cashback** (up to £50) paid as a **Free Bet**, while **All British Sports** provides a flat **10% daily** real cash refund.
 
 ### Real-World Example
 Lose £100 over a week. Receive £10-£25 back. Real cash cashback has no wagering; free bet cashback must be used within **7 days**.`
@@ -135,7 +146,7 @@ Lose £100 over a week. Receive £10-£25 back. Real cash cashback has no wageri
           title: 'Loyalty Clubs',
           quickVerdict: 'Recurring weekly rewards for consistent activity.',
           content: `### Weekly Free Bet Clubs
-Stake a set amount (e.g., £25-£30) between Monday and Sunday. **Sky Bet Club** offers the most flexibility, with rewards lasting up to **365 days**, compared to the industry standard of **7 days**.`
+Stake a set amount (e.g., £25-£30) between Monday and Sunday. **Sky Bet Club** offers the most flexibility, with rewards that typically **do not expire** as long as you remain an active club member.`
         },
         {
           id: 'bet_boost',
@@ -172,14 +183,16 @@ Back Liverpool. They go 2-0 up, then draw 2-2. You get paid in full. Cashing out
 Place a 5-fold+ accumulator. If 4 teams win but 1 draws/loses, you get your stake back.
 
 ### Example
-You bet £10 on a 5-fold. 4 legs win, 1 loses. You get **£10 back**. **Betfred** is the leader here as they often refund in **CASH**, while others give free bets.`
+You bet £10 on a 5-fold. 4 legs win, 1 loses. You get **£10 back**. **Betfred's "Acca Flex"** is the market leader here as it refunds in **CASH** (up to £10), whereas most competitors only refund as Free Bets.`
         },
         {
           id: 'player_protection',
           title: 'Player Protection (Super Sub)',
           quickVerdict: 'Bet stays live if your player is substituted.',
-          content: `### Super Sub & VAR
-In 2026, **Paddy Power** and **Bet365** protect you if your goalscorer is subbed. The bet transfers to the replacement. It also covers VAR: if a goal is disallowed, most "Super Sub" markets remain active for the replacement.`
+          content: `### Super Sub & Sub On Play On
+In 2026, both **Paddy Power (Super Sub)** and **Bet365 (Sub On Play On)** protect you if your player is subbed. The bet transfers to the replacement player.
+
+It also covers VAR: if a goal is disallowed, most "Super Sub" markets remain active for the replacement player.`
         }
       ]
     },
@@ -220,7 +233,7 @@ If you take 4/1 and SP is 6/1, you get 6/1. BOG starts at **8:00 AM** (Bet365, C
           title: 'Free Prediction Games',
           quickVerdict: 'Win jackpots without spending a penny.',
           content: `### Jackpots for Everyone
-Predict 6 scores (Super 6) for a **£250k-£1m jackpot**. **Ladbrokes 1-2-Free** is the easiest to win, requiring only 3 correct scores for a £100 cash prize.`
+Predict 6 scores (Super 6) for a **£250k-£1m jackpot**. **Ladbrokes 1-2-Free** is the easiest to win, requiring only 3 correct scores for a **£100 cash prize**.`
         }
       ]
     }
@@ -262,6 +275,14 @@ Predict 6 scores (Super 6) for a **£250k-£1m jackpot**. **Ladbrokes 1-2-Free**
   ],
 
   footer: {
-    lastUpdated: '2026-01-20'
+    lastUpdated: '2026-01-22',
+    sources: [
+      'Betfred Acca Flex Terms 2026',
+      'Bet365 Sub On Play On Rules',
+      'Paddy Power Super Sub Guide',
+      'QuinnBet Quarterback Promotion T&Cs',
+      'Ladbrokes 1-2-Free Terms',
+      'UKGC Licensing Conditions (LCCP)'
+    ]
   }
 };

@@ -29,7 +29,7 @@ export const ieBonusGuide: GuideArticle = {
         ['Targeted Reloads', '❌ BANNED', 'N/A', 'Individual loss-based offers'],
         ['Refer a Friend', '✅ Legal', '0%', 'Public offer available to all'],
         ['Early Payout', '✅ Legal', '0%', '2-up you win feature'],
-        ['Universal Loyalty', '⚠️ Grey', '0%', 'Awaiting GRAI guidance'],
+        ['Universal Loyalty', '⚠️ Grey', '0%', 'Must be open to public (Opt-in)'],
         ['Free-to-Play', '✅ Legal', '0%', 'Super 6, Score Challenge'],
       ]
     }
@@ -108,12 +108,12 @@ export const ieBonusGuide: GuideArticle = {
         {
           id: 'loyalty_ie',
           title: 'Loyalty Clubs (Grey Area)',
-          content: 'GRAI has not issued specific guidance yet. **Likely Legal:** Programs with identical rewards for ALL who opt-in. **Likely Banned:** Tiered programs based on spend.'
+          content: 'GRAI has not issued specific guidance yet. \n\n- **Likely Legal:** Programs open to everyone (Opt-in required).\n- **Likely Banned:** Invite-only "VIP" tiers based on spend.'
         },
         {
           id: 'grai_timeline',
           title: 'GRAI Enforcement Timeline (2025-2026)',
-          content: 'While the Act is passed, full enforcement is phased. B2C license applications opened in Dec 2025. **Compliance monitoring is scheduled to begin in July 2026**, with the full enforcement framework operational by **Q3 2026**. Currently, no fines have been issued, but operators are already removing targeted VIP schemes to ensure compliance.'
+          content: 'While the Act is passed, full enforcement is phased. B2C license applications opened in Dec 2025. **Compliance monitoring is scheduled to begin in Q3 2026**, once the new licensing regime is fully operational. Currently, operators are pre-emptively removing targeted VIP schemes to ensure compliance.'
         }
       ]
     }
@@ -122,13 +122,19 @@ export const ieBonusGuide: GuideArticle = {
   faq: [
     { q: 'Why did I stop getting emails with free bets?', a: 'Under Section 157 of the 2024 Act, targeted inducements based on your activity are banned. Bookies can no longer email you personally to encourage betting.' },
     { q: 'Is cashback legal in Ireland?', a: 'Yes, IF it is universal (same % for everyone, like QuinnBet). Tiered cashback based on VIP status or losses is banned as a targeted inducement.' },
-    { q: 'Can I use Sky Bet in Ireland?', a: 'Yes. Sky Bet holds Irish Remote Bookmaker\'s Licences and accepts customers from the Republic of Ireland.' },
+    { q: 'Can I use Sky Bet in Ireland?', a: 'Yes. Sky Bet accepts customers from the Republic of Ireland and is fully compliant with EU/Irish regulations.' },
     { q: 'When will GRAI start enforcing bonus rules?', a: 'Full enforcement is expected by Q3 2026. Currently, we are in a transition period, and no fines have been issued yet.' },
     { q: 'Are free-to-play games legal?', a: 'Yes. Prediction games like Super 6 don\'t involve real money stakes and remain fully legal.' },
-    { q: 'How is Ireland different from the UK?', a: 'In the UK, targeted inducements are allowed WITH consent. In Ireland, they are BANNED entirely regardless of consent, making Ireland one of the strictest markets in Europe.' }
+    { q: 'How is Ireland different from the UK?', a: 'In the UK, targeted inducements are allowed (with affordability checks). In Ireland, they are BANNED entirely regardless of consent.' }
   ],
 
   footer: {
-    lastUpdated: '2026-01-20'
+    lastUpdated: '2026-01-22',
+    sources: [
+      'Gambling Regulation Act 2024 (Section 157)',
+      'GRAI Strategy Statement 2025-2027',
+      'ESRI "Behavioural Research on Gambling Inducements" (2023)',
+      'Department of Justice Implementation Plan'
+    ]
   }
 };

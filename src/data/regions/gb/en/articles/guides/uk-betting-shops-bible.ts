@@ -190,6 +190,13 @@ Category B2 machines are now limited to £2 spins, significantly reducing indust
   ],
 
   footer: {
-    lastUpdated: '2026-01-20'
+    lastUpdated: '2026-01-20',
+    sources: [
+      'UKGC Industry Statistics 2024-25',
+      'Sunday Times Rich List 2025',
+      'Gordon Moody Annual Report',
+      'Campaign for Fairer Gambling (Density Data)',
+      'Association of British Bookmakers (Historical Data)'
+    ]
   }
 };

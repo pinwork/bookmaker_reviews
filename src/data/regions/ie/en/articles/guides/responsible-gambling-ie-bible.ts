@@ -32,7 +32,7 @@ export const responsibleGamblingIrelandBible: GuideArticle = {
       headers: ['Bank', 'Cooling-Off', 'Note'],
       rows: [
         ['AIB', '3 working days', 'Via "Freeze Card"; requires phone call to lift'],
-        ['Bank of Ireland', '2 business days', 'Vulnerable Customer policy (May 2025)'],
+        ['Bank of Ireland', '48 hours', 'Voluntary block feature (Launched May 2025)'],
         ['Permanent TSB', '48 hours', 'Only pillar bank with full in-app toggle'],
         ['Revolut Ireland', '48 hours', 'Most used among Irish 18-34s'],
         ['EBS', '3 working days', 'Requires manual customer service intervention']
@@ -92,13 +92,11 @@ export const responsibleGamblingIrelandBible: GuideArticle = {
             { label: 'Male', value: '91%' },
             { label: 'Avg Age', value: '38.7' }
           ],
-          content: `In January 2025, the Institute of Public Health and HSE published the first national study on gambling-related suicides in Ireland.
+          content: `In January 2025, the Institute of Public Health and HSE published the first national study on gambling-related suicides in Ireland (analyzing coroner data 2015-2020).
 
-**Key Finding:** Cases are significantly **under-reported** due to stigma preventing gambling from being noted in many coroner reports.
+**Key Finding:** Cases are significantly **under-reported** due to stigma preventing gambling from being noted in many coroner reports. Gambling was officially documented in 23 deaths (0.6% of suicides), but researchers warn the true figure is likely much higher.
 
-The Keogh Family, whose son Lewis died by suicide in 2013 due to hidden debts, now leads national calls for reform, mirroring the Ritchie family's work in the UK.
-
-*Source: IPH Jan 2025 Suicide Report*`
+*Source: IPH "Gambling documented in coronial files" (Jan 2025)*`
         },
         {
           id: 'oisin-mcconville',
@@ -113,13 +111,6 @@ Now a qualified counsellor and GamblingCare ambassador, he is the most prominent
           content: `Stole **€1.75 million** from his branch to fund a gambling addiction that saw him bet over €10 million total.
 
 After serving time, he co-authored "Tony 10" and now works as an addiction counsellor.`
-        },
-        {
-          id: 'niall-mcnamee',
-          title: 'Niall McNamee (Offaly GAA Footballer)',
-          content: `Spent over **€200,000 on gambling** and accumulated €80,000 in debt before seeking help in 2011.
-
-Now an ambassador for Extern Problem Gambling, focusing on youth education.`
         }
       ]
     },
@@ -186,13 +177,18 @@ Now an ambassador for Extern Problem Gambling, focusing on youth education.`
 
   faq: [
     { q: 'Is the National Exclusion Register working?', a: 'It is established by law but currently in development. Full launch is expected later in 2026 once GRAI licensing is complete.' },
-    { q: 'Are free bets banned in Ireland?', a: 'Under the 2024 Act, "promotional inducements" (free bets) are prohibited. This is being phased in during 2025-26.' },
+    { q: 'Are free bets banned in Ireland?', a: 'Only "targeted" inducements (personalized offers based on losses) are prohibited under Section 157. General public offers remain legal.' },
     { q: 'Is treatment free?', a: 'Yes. HSE-funded programs at the Rutland Centre and Helplink provide free clinical support.' },
     { q: 'Does MABS help with gambling debt?', a: 'Yes, MABS provides specialized budgeting for gambling-related insolvency, though they do not track these cases separately in public data.' }
   ],
 
   footer: {
-    lastUpdated: '2026-01-20',
-    sources: ['ESRI Oct 2023', 'IPH Jan 2025', 'GRAI 2025']
+    lastUpdated: '2026-01-22',
+    sources: [
+      'Institute of Public Health Suicide Study (Jan 2025)',
+      'ESRI Problem Gambling Report (Oct 2023)',
+      'Rutland Centre Clinical Reports 2025',
+      'GRAI Strategy Statement'
+    ]
   }
 };

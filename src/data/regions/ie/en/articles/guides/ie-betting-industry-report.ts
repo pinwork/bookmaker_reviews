@@ -20,7 +20,7 @@ export const ieBettingIndustryReport: GuideArticle = {
     title: "Ireland's Gambling Revolution: From 1926 to 2026",
     content: `For 93 years, Irish gambling operated under laws written before television existed. That era is over. The full implementation of the Gambling Regulatory Authority of Ireland (GRAI) marks the most significant change since the Irish Free State became the first in Europe to legalise betting shops in 1926.
 
-While the "Wild West" era is ending, full licensing under the new regime is still rolling out through mid-2026. This report examines Ireland's unique €5.5 billion annual gambling spend, the legal status of bonuses, and why homegrown brands like BoyleSports and Paddy Power still dominate the cultural narrative.`
+While the "Wild West" era is ending, full licensing under the new regime is rolling out through 2026. This report examines Ireland's unique €5.5 billion annual gambling spend, the legal status of bonuses, and why homegrown brands like BoyleSports and Paddy Power still dominate the cultural narrative.`
   },
 
   comparisonTables: [
@@ -30,8 +30,8 @@ While the "Wild West" era is ending, full licensing under the new regime is stil
       headers: ['Feature', 'United Kingdom', 'Ireland'],
       rows: [
         ['Tax Model', '15-40% on Operator Profit', '2% on All Turnover'],
-        ['Credit Card Ban', 'Enforced', 'Section 165 (pending)'],
-        ['Ad Watershed', 'No daytime ban', '5:30am - 9pm ban'],
+        ['Credit Card Ban', 'Enforced', 'Enacted (Commencement 2026)'],
+        ['Ad Watershed', 'No daytime ban', '5:30am - 9:00pm ban'],
         ['Primary Sport', 'Football (50%)', 'Horse Racing (~40%)'],
         ['Inducements', 'Legal & Taxed', 'Targeted Bonuses Banned']
       ]
@@ -43,7 +43,7 @@ While the "Wild West" era is ending, full licensing under the new regime is stil
       rows: [
         ['Turnover Tax', '2% of Stakes', 'Margins tighter on every bet'],
         ['Winnings Tax', '0%', '100% tax-free winnings'],
-        ['Social Impact Fund', '1.1% of GGY', 'Funds HSE treatment & research']
+        ['Social Impact Fund', 'Levy on Turnover (TBC)', 'Funds addiction treatment (min €14m/yr)']
       ]
     }
   ],
@@ -61,7 +61,7 @@ While the "Wild West" era is ending, full licensing under the new regime is stil
             { label: 'Active Shops', value: '721' },
             { label: 'Racing Betting', value: '€141m' }
           ],
-          content: `Ireland has **3.3%** problem gambling rate (~130,000 adults) with another **7.1%** (~279,000) showing moderate risk. Betting shops have declined **47% since 2008** from 1,385 to just 721.
+          content: `Ireland has a **3.3%** problem gambling rate (~130,000 adults) with another **7.1%** (~279,000) showing moderate risk. Betting shops have declined **47% since 2008** from a peak of 1,385 to just 721 in 2025.
 
 ### Irish Betting Profile
 - **Regular Bettors:** 44% of Adults
@@ -69,7 +69,7 @@ While the "Wild West" era is ending, full licensing under the new regime is stil
 - **Childhood Exposure:** 64% gambled before 18
 - **Youth Participation:** 22.9% of 16-year-olds
 
-*Source: ESRI (Oct 2023), HRI (2024)*`
+*Source: ESRI (Oct 2023), IBA (July 2025)*`
         }
       ]
     },
@@ -81,7 +81,7 @@ While the "Wild West" era is ending, full licensing under the new regime is stil
           title: 'John Boyle (BoyleSports Founder)',
           content: `In 1982, after being sacked from his bread van driver job at age 25, Boyle borrowed **£6,000** from his father and £12,000 from the bank to buy a single betting shop in Markethill, County Armagh.
 
-BoyleSports is now Ireland's largest independent bookmaker with **300+ shops** and 2,700 employees. He announced a £100m UK investment in 2025.
+BoyleSports is now Ireland's largest independent bookmaker with **300+ shops**. In July 2025, the company announced a massive **£100m investment** to open 200 new shops across the UK.
 
 > "I remember coming home and telling all my friends: I'm going to be a millionaire."`
         },
@@ -107,9 +107,9 @@ From 8% of the Irish market in 1988 to the **world's largest online betting comp
 - **1982 — BoyleSports Founded:** John Boyle opens his first shop in County Armagh.
 - **1988 — Paddy Power Merger:** Kenny, Power and Corcoran merge 40 shops to fight British invaders.
 - **2015 — Betting Amendment Act:** First attempt to regulate online; remote operators pay Irish tax.
-- **2024 — Gambling Regulation Act:** Signed by President Higgins. Creates GRAI and modern licensing.
-- **2025 — GRAI Operational:** March: GRAI becomes statutory. December: B2C licensing opens.
-- **2026 — Full Licensing:** Licensing scheme expected in full by mid-2026.`
+- **2024 — Gambling Regulation Act:** Enacted in October. Creates GRAI and modern licensing.
+- **2025 — GRAI Strategy:** First Strategy Statement (2025-2027) published in October.
+- **2026 — Full Licensing:** New licensing regime commences on a phased basis from early 2026.`
         }
       ]
     },
@@ -119,7 +119,7 @@ From 8% of the Irish market in 1988 to the **world's largest online betting comp
         {
           id: 'targeted-inducements',
           title: 'Targeted Inducements Banned',
-          content: `Personalized free bets and VIP bonuses targeted at individuals are banned under the 2024 Act. **General promotional offers** for the public remain legal but strictly regulated. Full enforcement starts mid-2026.`
+          content: `Personalized free bets and VIP bonuses targeted at individuals are banned under the 2024 Act. **General promotional offers** for the public remain legal but strictly regulated. Full enforcement is rolling out throughout 2026.`
         },
         {
           id: 'watershed-rules',
@@ -163,24 +163,29 @@ From 8% of the Irish market in 1988 to the **world's largest online betting comp
   faq: [
     {
       q: 'Are all free bets banned in Ireland?',
-      a: 'No. Only "targeted" inducements (personalized offers) are banned. General sign-up bonuses for the public are still legal but regulated by GRAI.'
+      a: 'No. Only "targeted" inducements (personalized offers based on losses/activity) are banned. General sign-up bonuses for the public are still legal but regulated by GRAI.'
     },
     {
       q: 'Is there a tax on winnings?',
-      a: 'No. Punter winnings are tax-free. Operators pay a 2% tax on total stakes.'
+      a: 'No. Punter winnings are tax-free. Operators pay a 2% tax on total turnover (stakes).'
     },
     {
       q: 'When does the new licensing start?',
-      a: 'The full licensing regime and strict enforcement of ad bans are expected to be in full effect by mid-2026.'
+      a: 'The full licensing regime and strict enforcement are commencing on a phased basis starting early 2026.'
     },
     {
       q: 'Does GamStop work in Ireland?',
-      a: "No, GamStop is UK-only. Ireland is developing its own National Exclusion Register under the GRAI."
+      a: "No, GamStop is UK-only. GRAI is developing a National Exclusion Register which will launch as part of the new licensing system."
     }
   ],
 
   footer: {
-    lastUpdated: '2026-01-20',
-    sources: ['IBA July 2025', 'ESRI Oct 2023', 'HRI 2024', 'GRAI 2025']
+    lastUpdated: '2026-01-22',
+    sources: [
+      'IBA Pre-Budget Submission (July 2025)',
+      'ESRI Problem Gambling Report (Oct 2023)',
+      'GRAI Strategy Statement 2025-2027',
+      'Gambling Regulation Act 2024'
+    ]
   }
 };

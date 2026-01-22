@@ -15,7 +15,7 @@ export const ieBettingShopsBible: GuideArticle = {
 
   intro: {
     title: 'An Industry Halved: The Reality of Irish Retail',
-    content: `Ireland was the first country in Europe to legalise betting shops in 1926—decades before the UK. However, the sector has halved since its peak in 2008. As of July 2025, just 721 retail outlets remain—down from 1,385. This 47% decline reflects a "perfect storm" of doubled betting duty (2%), shifting consumer habits, and regulatory pressure. Yet, despite the closures, these shops remain deeply embedded in Irish communities, employing over 6,000 people and contributing €170 million annually to the Exchequer. With the Gambling Regulation Act 2024 now in force, the sector faces its most significant overhaul since 1931.`
+    content: `Ireland was the first country in Europe to legalise betting shops in 1926—decades before the UK. However, the sector has halved since its peak in 2008. As of January 2026, just 721 retail outlets remain—down from 1,385. This 47% decline reflects a "perfect storm" of doubled betting duty (2%), shifting consumer habits, and regulatory pressure. Yet, despite the closures, these shops remain deeply embedded in Irish communities, employing over 6,000 people and contributing €170 million annually to the Exchequer. With the Gambling Regulation Act 2024 now in force, the sector faces its most significant overhaul since 1931.`
   },
 
   comparisonTables: [
@@ -25,10 +25,10 @@ export const ieBettingShopsBible: GuideArticle = {
       headers: ['Chain', 'ROI Shops', 'HQ', 'Recent News'],
       rows: [
         ['BoyleSports', '277', 'Dundalk', 'Bought Bruce, WH NI, Tully'],
-        ['Paddy Power', '202', 'Dublin', 'Closed 28 shops (Oct 2025)'],
-        ['Ladbrokes', '108', 'London', 'May sell to Bar One'],
-        ['Bar One Racing', '~57', 'Dundalk', '€17m profit, growing'],
-        ['Independents', '~330', 'Various', 'Facing existential threat']
+        ['Paddy Power', '174', 'Dublin', 'Closed 28 shops (Oct 2025)'],
+        ['Ladbrokes', '108', 'London', 'Future of IE estate uncertain'],
+        ['BAR 1 Betting', '~60', 'Dundalk', 'Rebranded Nov 2025 (was Bar One)'],
+        ['Independents', '~302', 'Various', 'Facing existential threat']
       ]
     }
   ],
@@ -46,12 +46,12 @@ export const ieBettingShopsBible: GuideArticle = {
             { label: 'Employment', value: '6,000+' },
             { label: 'Tax Contribution', value: '€170m+' }
           ],
-          content: `The sector has lost **134 shops since 2019**. Average shop profitability has collapsed from €92,000 (2018) to just **€7,000** today.
+          content: `The sector has lost **134 shops since 2019**. Average shop profitability has collapsed from **€92,000 (2018)** to just **€7,000** today, making survival impossible for many independents.
 
 ### Economic Reality
 
 - **Duty Impact**: Tax doubled from 1% to 2% in 2019, accelerating closures
-- **Independent Survival**: Margins wiped out by overheads
+- **Independent Survival**: Margins wiped out by overheads and regulation costs
 - **Cash-to-Online**: 50%+ of Paddy Power's IE online deposits start as shop cash`
         },
         {
@@ -60,10 +60,10 @@ export const ieBettingShopsBible: GuideArticle = {
           keyStats: [
             { label: 'Total Sector Jobs', value: '6,000+' },
             { label: 'BoyleSports Staff', value: '2,700' },
-            { label: 'Bar One Staff', value: '350' },
+            { label: 'BAR 1 Staff', value: '350+' },
             { label: 'Recent Losses', value: '119' }
           ],
-          content: `BoyleSports employs 2,700 across all jurisdictions. The October 2025 Paddy Power closures resulted in 119 job losses.`
+          content: `BoyleSports remains a major employer with 2,700 staff. However, the October 2025 Paddy Power closures resulted in **119 confirmed job losses**, shrinking the talent pool.`
         },
         {
           id: 'store-locators',
@@ -83,13 +83,13 @@ export const ieBettingShopsBible: GuideArticle = {
           id: 'technology',
           title: 'SSBTs, FOBTs & Omnichannel',
           content: `### FOBT Ban
-**CRITICAL DIFFERENCE**: Fixed Odds Betting Terminals are completely **BANNED in Ireland**. UK shops rely on machines; Irish shops rely on sport.
+**CRITICAL DIFFERENCE**: Fixed Odds Betting Terminals (Slots/Roulette) are completely **BANNED in Ireland** under the 2013 Gambling Control Bill. While UK shops rely on machines for profit, Irish shops rely entirely on sports turnover.
 
 ### SSBT Dominance
-Self-Service Betting Terminals fill the void. BoyleSports operates 1,000+ terminals. Paddy Power upgraded 500+ shops with Amino H200 screens in Nov 2024.
+Self-Service Betting Terminals fill the void. BoyleSports operates 1,000+ terminals. Paddy Power upgraded 500+ shops with **Amino H200 screens** in late 2024 to modernize the experience.
 
 ### Omnichannel
-Ladbrokes Grid and Paddy Power Onside allow customers to deposit cash in-shop and use it online instantly.`
+Ladbrokes Grid and Paddy Power Onside allow customers to deposit cash in-shop and use it online instantly—vital for bypassing bank statement checks.`
         }
       ]
     },
@@ -100,11 +100,12 @@ Ladbrokes Grid and Paddy Power Onside allow customers to deposit cash in-shop an
           id: 'history-timeline',
           title: 'From the Free State to the Digital Age',
           content: `- **1926 — Betting Act Passed:** First legislation to regulate bookies in the Irish Free State.
-- **1931 — The Sunday Ban:** Betting Act 1931 bans Sunday opening. This archaic law is STILL active 95 years later.
+- **1931 — The Sunday Ban:** Betting Act 1931 bans Sunday opening. This archaic law is STILL active 95 years later in the Republic.
 - **1975 — Yellow Sam Coup:** Barney Curley wins IR£300,000 by blocking the only phone line at Bellewstown.
 - **2016 — Hackett's Collapse:** Ireland's largest independent (65 shops) enters liquidation.
 - **2019 — Duty Doubled:** Betting tax rises from 1% to 2%. IBA warns of "accelerated closures".
 - **2025 — GRAI Established:** March 5th: The new regulator formally commences operations.
+- **2025 — Bar One Rebrand:** November: Bar One Racing rebrands to **BAR 1 Betting** to target younger demographics.
 - **2027 — Full Licensing:** Expected completion of transition from Revenue to GRAI licensing.`
         }
       ]
@@ -145,7 +146,7 @@ He built the largest independent retail chain in Ireland, keeping ownership dome
 
 The statutory credit card ban is now in force (Section 165), and the National Gambling Exclusion Register is the regulator's top priority.
 
-With independent shops facing profit margins of just **€7k**, further consolidation by BoyleSports or Bar One seems inevitable.`
+With independent shops facing profit margins of just **€7k**, further consolidation by BoyleSports or BAR 1 Betting seems inevitable.`
         },
         {
           id: 'trivia',
@@ -165,10 +166,16 @@ With independent shops facing profit margins of just **€7k**, further consolid
     { q: 'What happened to Hackett\'s Bookmakers?', a: 'Once a major independent with 65 shops, Hackett\'s entered liquidation in 2016 due to high costs and online competition.' },
     { q: 'Can I use a credit card?', a: 'No. The Gambling Regulation Act 2024 strictly bans credit cards for all gambling payments.' },
     { q: 'When will GRAI take full control?', a: 'GRAI opened in March 2025, but full retail licensing control is a phased process expected to complete by 2027.' },
-    { q: 'Who is Bar One Racing?', a: 'A rapidly growing independent bookmaker based in Dundalk (50+ shops). Reports in 2025 suggest they may acquire Ladbrokes\' Irish estate.' }
+    { q: 'Who is BAR 1 Betting?', a: 'Formerly "Bar One Racing", the Dundalk-based independent rebranded in November 2025. They operate ~60 shops and are actively expanding.' }
   ],
 
   footer: {
-    lastUpdated: '2026-01-20'
+    lastUpdated: '2026-01-22',
+    sources: [
+      'Irish Bookmakers Association (IBA) Pre-Budget Submission',
+      'Flutter Entertainment PLC Annual Report 2024',
+      'The Journal (Oct 2025 Shop Closures)',
+      'Gambling Regulation Act 2024'
+    ]
   }
 };

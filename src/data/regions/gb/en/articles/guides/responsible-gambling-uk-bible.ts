@@ -106,6 +106,10 @@ First inquest in UK history to officially record "gambling disorder" as cause of
         {
           id: 'paul-merson',
           title: 'Paul Merson (Public Advocate)',
+          keyStats: [
+            { label: 'Lost', value: '£7M' },
+            { label: 'Years', value: '35' }
+          ],
           content: `The former Arsenal legend publicly disclosed losing **£7 million over 35 years**. He has been married three times, with gambling contributing to each breakdown. He now lives in rented accommodation.
 
 > "I've been addicted to alcohol and cocaine, but the most destructive addiction is gambling. It's already in you, just waiting."
@@ -294,6 +298,15 @@ Triggered at **£150 net deposits** per 30 days. Uses public data (bankruptcies,
   ],
 
   footer: {
-    lastUpdated: '2026-01-20'
+    lastUpdated: '2026-01-20',
+    sources: [
+      'GSGB 2024 (Gambling Survey for Great Britain)',
+      'UKGC Young People and Gambling 2024',
+      'OHID 2023 (Gambling-Related Harms Report)',
+      'GambleAware NGSN Annual Statistics 2023/24',
+      'Gordon Moody Treatment Outcomes 2024',
+      'UKGC Enforcement Actions 2022-2025',
+      'Gambling With Lives'
+    ]
   }
 };
