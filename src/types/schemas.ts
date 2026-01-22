@@ -350,7 +350,7 @@ export const ToolReviewArticleSchema = z.object({
   metaTitle: z.string().min(1),
   metaDescription: z.string().min(1),
   intro: z.object({ title: z.string(), content: z.string() }),
-  keyTakeaways: z.array(z.string()).length(3).optional(), // 3 bullet points for quick scanning (required after migration)
+  keyTakeaways: z.array(z.string()).length(3), // 3 bullet points for quick scanning
   reviewContext: ReviewContextSchema, // Required for Rich Snippets
   comparisonTables: z.array(ComparisonTableSchema).optional(),
   groups: z.array(ReviewGroupSchema).length(1), // Single "Reviews" group
@@ -369,7 +369,7 @@ export const GuideArticleSchema = z.object({
   metaTitle: z.string().min(1),
   metaDescription: z.string().min(1),
   intro: z.object({ title: z.string(), content: z.string() }),
-  keyTakeaways: z.array(z.string()).length(3).optional(), // 3 bullet points for quick scanning (required after migration)
+  keyTakeaways: z.array(z.string()).length(3), // 3 bullet points for quick scanning
   linkedResources: z.array(LinkedResourceSchema).optional(),
   comparisonTables: z.array(ComparisonTableSchema).optional(),
   groups: z.array(GuideSectionSchema).min(1), // One or more sections
