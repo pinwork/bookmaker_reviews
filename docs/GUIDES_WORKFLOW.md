@@ -685,7 +685,8 @@ Data Source: ESRI (Oct 2023), GRAI (2024 Act), HRI Annual Report 2024
 ### Handoff Instruction
 ```
 Create guide article from this Data Pack.
-Follow schema: GuideArticleSchema  
-Follow style: docs/CONTENT_GUIDE.md Section 8
+Follow schema: GuideArticleSchema
+Follow structure: docs/CONTENT_GUIDE.md Section 6 (Guides Editorial Standards)
+Follow writing: docs/WRITING_STYLE.md
 Output: src/data/regions/[region]/en/articles/guides/[slug].ts
 ```
