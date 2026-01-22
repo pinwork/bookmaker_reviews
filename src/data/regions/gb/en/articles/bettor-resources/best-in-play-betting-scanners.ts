@@ -22,6 +22,12 @@ export const inPlayScannersArticle: ToolReviewArticle = {
 **This guide covers 7 qualifying scanners** with custom alert builders, live betting-specific statistics, Telegram integration, and backtesting capabilities.`
   },
 
+  keyTakeaways: [
+    'StatisticSports: Best backtesting (50,000+ games of data) from €17/month',
+    'InPlayGuru: Only scanner with unlimited free tier — ideal for beginners',
+    'Essential for monitoring 200+ simultaneous matches where value hides',
+  ],
+
   // Rich Snippets: SoftwareApplication rating for Google stars
   reviewContext: {
     objectType: 'SoftwareApplication',

@@ -27,6 +27,12 @@ export const matchedBettingSoftwareArticle: ToolReviewArticle = {
 **This guide covers 5 qualifying platforms** with OddsMatchers, betting calculators, daily offer tracking, and exchange integration.`
   },
 
+  keyTakeaways: [
+    'OddsMonkey: Industry leader at £20/month with 0% commission on 4 exchanges',
+    'Matched Betting Blog: Best free option with calculator, guides, and community',
+    'Realistic return: £500-1,500/month for committed beginners in first 3 months',
+  ],
+
   // Rich Snippets: SoftwareApplication rating for Google stars
   reviewContext: {
     objectType: 'SoftwareApplication',

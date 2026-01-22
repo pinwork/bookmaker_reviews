@@ -5,6 +5,7 @@ import { getSiteConfig } from '@/data/regions';
 import { generateArticleSchemas } from '@/utils/seo';
 import {
   ArticleHeader,
+  KeyTakeaways,
   UnifiedComparisonTable,
   GuideSections,
   ArticleFAQ,
@@ -65,6 +66,10 @@ export default async function GuidePage({ params }: PageProps) {
           introTitle={article.intro.title}
           introContent={article.intro.content}
         />
+
+        {article.keyTakeaways && (
+          <KeyTakeaways items={article.keyTakeaways} />
+        )}
 
         {article.comparisonTables?.map((table) => (
           <UnifiedComparisonTable

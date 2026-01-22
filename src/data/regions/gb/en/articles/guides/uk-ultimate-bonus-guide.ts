@@ -47,6 +47,12 @@ export const ultimateBonusGuide: GuideArticle = {
     content: `In 2026, the gap between a casual punter and a pro is defined by how they use bonuses. Bookmakers have shifted from simple cash gifts to complex protections. This guide is the result of 100+ hours of research into UKGC regulations and bookmaker terms. We break down 14 mechanics across 5 logical stages of your betting journey.`
   },
 
+  keyTakeaways: [
+    '14 bonus mechanics explained: from Deposit Offers to Acca Insurance and Price Boosts',
+    'Early Payout (2-Up) offers best EV — win on 2-goal lead at Paddy Power and bet365',
+    'Best Odds Guaranteed (BOG) is mandatory for horse racing — never skip it',
+  ],
+
   groups: [
     {
       groupName: 'Part 1: The Kickstart (New Customer Offers)',

@@ -7,6 +7,7 @@ import { generateArticleSchemas } from '@/utils/seo';
 import { getPartnerLogoPath, getJpgBackgroundColor } from '@/utils/images';
 import {
   ArticleHeader,
+  KeyTakeaways,
   UnifiedComparisonTable,
   ArticleGroups,
   ArticleFAQ,
@@ -101,6 +102,10 @@ export default async function BettorResourcePage({ params }: PageProps) {
           introTitle={article.intro.title}
           introContent={article.intro.content}
         />
+
+        {article.keyTakeaways && (
+          <KeyTakeaways items={article.keyTakeaways} />
+        )}
 
         {article.comparisonTables?.map((table) => (
           <UnifiedComparisonTable

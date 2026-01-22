@@ -23,6 +23,12 @@ export const bettingIndustryBible: GuideArticle = {
 From April 2026, a punishing 40% Remote Gaming Duty will reshape the landscape, forcing smaller operators out of business and consolidating power among the "Big Two" conglomerates. At the same time, the Gambling Commission's new affordability checks (£150 net deposit threshold) have fundamentally changed the relationship between bookmaker and bettor. This report cuts through the corporate PR to explain who really owns your bookmaker, where your money goes, and why the odds you see today might be gone tomorrow.`
   },
 
+  keyTakeaways: [
+    '£16.8bn market dominated by Flutter (30%) and bet365 (20%) — the Big Two control half',
+    '40% Remote Gaming Duty from April 2026 will squeeze bonuses and tighten odds industry-wide',
+    'New £150 net deposit affordability checks reshape the bettor-bookmaker relationship',
+  ],
+
   comparisonTables: [
     {
       id: 'uk-operators-2026',

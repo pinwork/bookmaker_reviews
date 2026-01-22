@@ -18,6 +18,12 @@ export const ieBettingShopsBible: GuideArticle = {
     content: `Ireland was the first country in Europe to legalise betting shops in 1926—decades before the UK. However, the sector has halved since its peak in 2008. As of January 2026, just 721 retail outlets remain—down from 1,385. This 47% decline reflects a "perfect storm" of doubled betting duty (2%), shifting consumer habits, and regulatory pressure. Yet, despite the closures, these shops remain deeply embedded in Irish communities, employing over 6,000 people and contributing €170 million annually to the Exchequer. With the Gambling Regulation Act 2024 now in force, the sector faces its most significant overhaul since 1931.`
   },
 
+  keyTakeaways: [
+    '721 shops remain (down from 1,385 peak in 2008) — 47% decline in 18 years',
+    'BoyleSports leads with 277 shops; Paddy Power closed 28 outlets in October 2025',
+    'Average shop profit collapsed from €92,000 (2018) to €7,000 — independents face extinction',
+  ],
+
   comparisonTables: [
     {
       id: 'ie-betting-chains-2026',

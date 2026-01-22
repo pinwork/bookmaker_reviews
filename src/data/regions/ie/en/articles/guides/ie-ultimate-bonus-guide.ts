@@ -40,6 +40,12 @@ export const ieBonusGuide: GuideArticle = {
     content: `The Gambling Regulation Act 2024 has fundamentally changed how bonuses work in Ireland. Under **Section 157**, "targeted inducements"—bonuses offered personally to you based on your betting history or losses—are now illegal. This means the end of VIP managers and "loss-chasing" emails. However, public offers available to everyone (like Welcome Bonuses and Early Payouts) remain fully legal. ESRI research commissioned by GRAI found that free bets increase spending by 10%+, supporting this strict ban on targeting.`
   },
 
+  keyTakeaways: [
+    'Targeted inducements (VIP bonuses based on your losses) are now illegal under GRAI Section 157',
+    'Welcome offers and public bonuses remain 100% legal — and winnings are tax-free',
+    'QuinnBet 25% universal cashback is Ireland\'s best ongoing legal offer',
+  ],
+
   groups: [
     {
       groupName: 'Part 1: Legal Welcome Offers (Public)',

@@ -402,3 +402,63 @@ footer: {
   sources: ['Official websites', 'Hands-on testing'],
 }
 ```
+
+---
+
+## 10. Key Takeaways (Required)
+
+Summary block displayed after ArticleHeader. **3 bullet points** for quick scanning.
+
+### A. Purpose & Relationship to Intro
+
+| Field | Purpose | Style |
+|-------|---------|-------|
+| `intro` | Context, hook, "why this matters" | Narrative prose, 2-3 paragraphs |
+| `keyTakeaways` | Facts, numbers, verdict | Telegraphic bullets, scannable |
+
+**Complementary, not duplicative.** Intro sets context; takeaways deliver the "so what."
+
+### B. Rules
+
+* **Exactly 3 items** (enforced by schema)
+* **Telegraphic style:** Facts over fluff. Include numbers/metrics.
+* **No overlap with intro:** Different information, not rephrased intro.
+
+### C. Formula by Content Type
+
+**Guides:**
+1. Key legal/factual answer
+2. Most important statistic
+3. Practical recommendation
+
+**Tool Reviews:**
+1. Editor's Pick + key metric
+2. Best free/budget alternative
+3. Who it's for or key limitation
+
+### D. Examples
+
+**Guide (Industry Report):**
+```typescript
+keyTakeaways: [
+  '£16.8bn market dominated by Flutter (30%) and bet365 (20%)',
+  '40% Remote Gaming Duty from April 2026 will squeeze bonuses',
+  'New £150 affordability checks reshape bettor-bookmaker relationship',
+]
+```
+
+**Tool Review:**
+```typescript
+keyTakeaways: [
+  'Flashscore leads for in-play speed (5-20 second updates)',
+  'SofaScore offers unique betting features: live xG, dropping odds',
+  'Power users combine 2-3 apps: speed + stats + sport-specific',
+]
+```
+
+### E. Anti-Patterns
+
+* ❌ `"Great guide for bettors"` — no specifics
+* ❌ Repeating intro text verbatim
+* ❌ Generic claims without numbers
+* ❌ More than 3 items

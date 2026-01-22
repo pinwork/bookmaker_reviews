@@ -12,6 +12,12 @@ export const responsibleGamblingBible: GuideArticle = {
     content: `In 2025, the UK Gambling Commission recorded 1.4 million problem gamblers—a number that doesn't include the millions more affected as family members, partners, and friends. This guide is not marketing material. It is a factual database of every tool, statistic, and support system available to anyone touched by gambling harm in the United Kingdom. We document real stories, expose industry fines, and explain the psychology behind addiction so you can make informed decisions.`
   },
 
+  keyTakeaways: [
+    '1.4 million UK problem gamblers (UKGC 2025) — plus millions more affected as family',
+    'GamStop blocks UK sites only; Gamban (£24.99/yr) blocks 100k+ global sites including offshore',
+    'Every major UK bank now offers gambling blocks with 48-72 hour cooling-off periods',
+  ],
+
   comparisonTables: [
     {
       id: 'gamstop-gamban-comparison',

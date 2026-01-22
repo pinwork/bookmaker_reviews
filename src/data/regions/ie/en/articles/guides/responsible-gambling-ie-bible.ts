@@ -12,6 +12,12 @@ export const responsibleGamblingIrelandBible: GuideArticle = {
     content: `Ireland is undergoing its most significant gambling reform since 1926. With the Gambling Regulation Act 2024, the landscape has shifted from outdated 20th-century laws to a modern framework under the Gambling Regulatory Authority of Ireland (GRAI). However, the transition is ongoing. While new protections like the credit card ban are written in law, the National Exclusion Register is still in development. This guide provides verified data on Ireland's €5.5bn gambling spend, real stories of recovery, and the clinical support systems now available via the HSE.`
   },
 
+  keyTakeaways: [
+    '3.3% problem gambling rate (ESRI 2023) — over 150,000 Irish adults affected',
+    'National Exclusion Register coming 2026; Gamban available free via GamblingCare.ie now',
+    'All major Irish banks offer gambling blocks with 48-hour to 3-day cooling periods',
+  ],
+
   comparisonTables: [
     {
       id: 'ie-exclusion-tools-comparison',

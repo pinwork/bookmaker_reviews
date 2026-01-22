@@ -21,6 +21,12 @@ export const bettingShopsBible: GuideArticle = {
     content: `In 1961, betting shops were legalised to move gambling off the streets, but they were designed to be as unwelcoming as possible—blacked-out windows and no chairs were the law. Fast forward to 2026, and despite a 36% decline in store numbers since 2012, the "bookies" remains a British institution. With 5,789 shops still active and 13% of the population visiting monthly, we explore the evolution from "smoky funeral parlours" to high-tech Digi-Hubs.`
   },
 
+  keyTakeaways: [
+    '5,789 shops remain (down from 16,000+ peak) — 36% decline since 2012',
+    'FOBT stake cut to £2 (April 2019) caused 1,209 closures in a single year',
+    '13% of UK adults still visit monthly — cash betting remains significant',
+  ],
+
   comparisonTables: [
     {
       id: 'uk-betting-chains-2026',

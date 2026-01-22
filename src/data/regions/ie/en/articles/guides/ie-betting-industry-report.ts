@@ -23,6 +23,12 @@ export const ieBettingIndustryReport: GuideArticle = {
 While the "Wild West" era is ending, full licensing under the new regime is rolling out through 2026. This report examines Ireland's unique €5.5 billion annual gambling spend, the legal status of bonuses, and why homegrown brands like BoyleSports and Paddy Power still dominate the cultural narrative.`
   },
 
+  keyTakeaways: [
+    'Ireland was first in Europe to legalise betting shops (1926) — 93-year-old laws now replaced by GRAI',
+    '€5.5 billion annual gambling spend: 2% turnover tax on operators, 0% tax on your winnings',
+    'Targeted inducements banned, but welcome offers remain legal for all punters',
+  ],
+
   comparisonTables: [
     {
       id: 'uk-vs-ie-comparison',
