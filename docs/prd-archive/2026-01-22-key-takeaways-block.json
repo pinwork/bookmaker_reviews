@@ -1,0 +1,127 @@
+{
+  "featureName": "Key Takeaways Block",
+  "description": "UX-focused summary block (3 bullet points) at article start. No speakable schema - pure UX value.",
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Add keyTakeaways field to schemas",
+      "acceptanceCriteria": [
+        "GuideArticleSchema has keyTakeaways: z.array(z.string()).length(3)",
+        "ToolReviewArticleSchema has keyTakeaways: z.array(z.string()).length(3)",
+        "Types exported in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-22T12:00:00Z",
+      "filesChanged": ["src/types/schemas.ts"]
+    },
+    {
+      "id": 2,
+      "title": "Create KeyTakeaways UI component",
+      "acceptanceCriteria": [
+        "Component at src/components/article/KeyTakeaways.tsx",
+        "Renders 3 bullet points with visual emphasis",
+        "Uses Lucide icon (Lightbulb or similar)",
+        "Tailwind styling: subtle background, left accent border",
+        "Exported from src/components/article/index.ts",
+        "npm run lint passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-22T12:05:00Z",
+      "filesChanged": ["src/components/article/KeyTakeaways.tsx", "src/components/article/index.ts"]
+    },
+    {
+      "id": 3,
+      "title": "Integrate component into page templates",
+      "acceptanceCriteria": [
+        "KeyTakeaways renders in guides/[slug]/page.tsx after ArticleHeader",
+        "KeyTakeaways renders in bettor-resources/[slug]/page.tsx after ArticleHeader",
+        "Component only renders if keyTakeaways exists",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "completedAt": "2026-01-22T12:10:00Z",
+      "filesChanged": ["src/app/[region]/guides/[slug]/page.tsx", "src/app/[region]/bettor-resources/[slug]/page.tsx"]
+    },
+    {
+      "id": 4,
+      "title": "Add keyTakeaways to GB Tool Reviews",
+      "acceptanceCriteria": [
+        "best-live-score-stats-apps.ts has keyTakeaways (3 items)",
+        "best-in-play-betting-scanners.ts has keyTakeaways (3 items)",
+        "best-matched-betting-software.ts has keyTakeaways (3 items)",
+        "Content complements intro, no duplication",
+        "npm run build passes"
+      ],
+      "priority": 4,
+      "passes": true,
+      "completedAt": "2026-01-22T12:15:00Z",
+      "filesChanged": ["src/data/regions/gb/en/articles/bettor-resources/best-live-score-stats-apps.ts", "src/data/regions/gb/en/articles/bettor-resources/best-in-play-betting-scanners.ts", "src/data/regions/gb/en/articles/bettor-resources/best-matched-betting-software.ts"]
+    },
+    {
+      "id": 5,
+      "title": "Add keyTakeaways to IE Guides (Part 1)",
+      "acceptanceCriteria": [
+        "ie-ultimate-bonus-guide.ts has keyTakeaways (3 items)",
+        "ie-betting-industry-report.ts has keyTakeaways (3 items)",
+        "Content complements intro, no duplication",
+        "npm run build passes"
+      ],
+      "priority": 5,
+      "passes": true,
+      "completedAt": "2026-01-22T12:20:00Z",
+      "filesChanged": ["src/data/regions/ie/en/articles/guides/ie-ultimate-bonus-guide.ts", "src/data/regions/ie/en/articles/guides/ie-betting-industry-report.ts"]
+    },
+    {
+      "id": 6,
+      "title": "Add keyTakeaways to IE Guides (Part 2)",
+      "acceptanceCriteria": [
+        "ie-betting-shops-bible.ts has keyTakeaways (3 items)",
+        "responsible-gambling-ie-bible.ts has keyTakeaways (3 items)",
+        "Content complements intro, no duplication",
+        "npm run build passes"
+      ],
+      "priority": 6,
+      "passes": true,
+      "completedAt": "2026-01-22T12:25:00Z",
+      "filesChanged": ["src/data/regions/ie/en/articles/guides/ie-betting-shops-bible.ts", "src/data/regions/ie/en/articles/guides/responsible-gambling-ie-bible.ts"]
+    },
+    {
+      "id": 7,
+      "title": "Add keyTakeaways to GB Guides",
+      "acceptanceCriteria": [
+        "All GB guide articles have keyTakeaways (3 items each)",
+        "Content complements intro, no duplication",
+        "npm run build passes"
+      ],
+      "priority": 7,
+      "passes": true,
+      "completedAt": "2026-01-22T12:30:00Z",
+      "filesChanged": ["src/data/regions/gb/en/articles/guides/uk-ultimate-bonus-guide.ts", "src/data/regions/gb/en/articles/guides/uk-betting-industry-report.ts", "src/data/regions/gb/en/articles/guides/uk-betting-shops-bible.ts", "src/data/regions/gb/en/articles/guides/responsible-gambling-uk-bible.ts"]
+    },
+    {
+      "id": 8,
+      "title": "Update CONTENT_GUIDE.md with methodology",
+      "acceptanceCriteria": [
+        "New section explaining keyTakeaways vs intro relationship",
+        "Clear rules: intro = context/hook, keyTakeaways = facts/verdict",
+        "Examples for both Guides and Tool Reviews",
+        "Anti-patterns documented (what NOT to do)",
+        "Follows existing doc style (concise, no repetition)"
+      ],
+      "priority": 8,
+      "passes": true,
+      "completedAt": "2026-01-22T12:35:00Z",
+      "filesChanged": ["docs/CONTENT_GUIDE.md"]
+    }
+  ],
+  "postFeatureReview": {
+    "summary": "Implemented Key Takeaways feature: 3-bullet summary block displayed after ArticleHeader. Added Zod schema validation, React component with amber accent styling, integration in both page templates, and content for all 11 articles across GB and IE regions.",
+    "impact": "Schema layer (types/schemas.ts), UI layer (new component), page templates (guides + bettor-resources), all article data files, content documentation",
+    "issues": "keyTakeaways is currently optional in schema to allow incremental migration. Should be made required once confirmed all articles have content.",
+    "recommendations": "1) Remove .optional() from keyTakeaways schema to enforce 3-item requirement. 2) Consider adding keyTakeaways to article listing cards for better discoverability. 3) Monitor Google Search Console for any rich snippet improvements."
+  }
+}
