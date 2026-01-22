@@ -45,7 +45,7 @@ function GuideCard({ item }: { item: GuideItem }) {
 
       {/* Content - always visible, no collapsible */}
       <div className="p-6">
-        <div className="prose prose-sm prose-gray max-w-none prose-headings:text-lg prose-headings:font-semibold prose-headings:mt-4 prose-headings:mb-3 prose-table:text-sm">
+        <div className="prose prose-gray max-w-none prose-headings:text-lg prose-headings:font-semibold prose-headings:mt-4 prose-headings:mb-3 prose-headings:text-pretty">
           <ReactMarkdown>{item.content}</ReactMarkdown>
         </div>
       </div>
@@ -58,7 +58,7 @@ export function GuideSections({ sections }: GuideSectionsProps) {
     <div className="space-y-12">
       {sections.map((section, sectionIndex) => (
         <section key={sectionIndex}>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200 text-pretty">
             {section.groupName}
           </h2>
 

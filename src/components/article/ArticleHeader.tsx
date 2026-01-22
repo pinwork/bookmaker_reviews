@@ -11,7 +11,7 @@ interface ArticleHeaderProps {
 export function ArticleHeader({ h1, introTitle, introContent }: ArticleHeaderProps) {
   return (
     <header className="mb-10">
-      <h1 className="text-4xl font-black text-gray-900 mb-3 leading-tight">
+      <h1 className="text-4xl font-black text-gray-900 mb-3 leading-tight text-pretty">
         {h1}
       </h1>
 

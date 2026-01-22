@@ -211,7 +211,7 @@ function CardItem({ item, logoPath, bgColor }: CardItemProps) {
         {/* === DETAILS SECTION (collapsible) === */}
         <CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
           <div className="px-6 pb-6 pt-4 border-t border-gray-100">
-            <div className="prose prose-sm prose-gray max-w-none prose-headings:text-lg prose-headings:font-semibold prose-headings:mt-4 prose-headings:mb-3">
+            <div className="prose prose-gray max-w-none prose-headings:text-lg prose-headings:font-semibold prose-headings:mt-4 prose-headings:mb-3 prose-headings:text-pretty">
               <ReactMarkdown>{item.content}</ReactMarkdown>
             </div>
           </div>
@@ -231,7 +231,7 @@ export function ArticleGroups({ groups, logoPaths, bgColors }: ArticleGroupsProp
         <section key={groupIndex}>
           {/* Hide group header for flat lists */}
           {!isFlatList && (
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200 text-pretty">
               {group.groupName}
             </h2>
           )}
