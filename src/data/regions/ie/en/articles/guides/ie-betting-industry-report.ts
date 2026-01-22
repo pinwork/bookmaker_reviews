@@ -20,7 +20,7 @@ export const ieBettingIndustryReport: GuideArticle = {
     title: "Ireland's Gambling Revolution: From 1926 to 2026",
     content: `For 93 years, Irish gambling operated under laws written before television existed. That era is over. The full implementation of the Gambling Regulatory Authority of Ireland (GRAI) marks the most significant change since the Irish Free State became the first in Europe to legalise betting shops in 1926.
 
-While the "Wild West" era is ending, full licensing under the new regime is rolling out through 2026. This report examines Ireland's unique €5.5 billion annual gambling spend, the legal status of bonuses, and why homegrown brands like BoyleSports and Paddy Power still dominate the cultural narrative.`
+While the "Wild West" era is ending, full licensing under the new regime is rolling out through 2026. This report examines Ireland's unique €5.5 billion annual gambling spend, the legal status of bonuses, and why homegrown brands like **[BoyleSports](/ie/go/boylesports)** and **[Paddy Power](/ie/go/paddy-power)** still dominate the cultural narrative.`
   },
 
   keyTakeaways: [

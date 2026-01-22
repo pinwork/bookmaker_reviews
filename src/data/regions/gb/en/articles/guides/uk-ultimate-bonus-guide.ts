@@ -44,7 +44,7 @@ export const ultimateBonusGuide: GuideArticle = {
 
   intro: {
     title: 'Navigating the 2026 Betting Bonus Landscape',
-    content: `In 2026, the gap between a casual punter and a pro is defined by how they use bonuses. Bookmakers have shifted from simple cash gifts to complex protections. This guide is the result of 100+ hours of research into UKGC regulations and bookmaker terms. We break down 14 mechanics across 5 logical stages of your betting journey.`
+    content: `In 2026, the gap between a casual punter and a pro is defined by how they use bonuses. Bookmakers have shifted from simple cash gifts to complex protections. This guide is the result of **100+ hours of research** into UKGC regulations and bookmaker terms. We break down 14 mechanics across 5 logical stages of your betting journey.`
   },
 
   keyTakeaways: [
@@ -71,12 +71,12 @@ export const ultimateBonusGuide: GuideArticle = {
 A deposit bonus matches your initial deposit with a percentage (usually 100% or 200%) in bonus funds. In the UK, "Bet £10 Get £30-£50" is the standard.
 
 ### Real-World Example
-Deposit £10 with **Betfred** and place a qualifying bet. Once settled, you receive **£50 in bonuses**. 
+Deposit £10 with **[Betfred](/gb/go/betfred)** and place a qualifying bet. Once settled, you receive **£50 in bonuses**.
 - **Wagering:** If a requirement is 3x, you must bet £150 total before withdrawing.
-- **Expiry:** Usually **7 days**, but **Bet365** gives you **30 days** to claim and **90 days** to use credits.
+- **Expiry:** Usually **7 days**, but **[bet365](/gb/go/bet365)** gives you **30 days** to claim and **90 days** to use credits.
 
 ### Common Mistakes
-Using PayPal/Skrill usually voids the bonus. Stick to Debit Cards. Minimum odds are typically **1.50 (1/2)**, but **BoyleSports** allows as low as **1.20 (1/5)**.`
+Using PayPal/Skrill usually voids the bonus. Stick to Debit Cards. Minimum odds are typically **1.50 (1/2)**, but **[BoyleSports](/gb/go/boylesports)** allows as low as **1.20 (1/5)**.`
         },
         {
           id: 'no_deposit_bonus',
@@ -116,7 +116,7 @@ Since the stake is not returned, free bets are mathematically most valuable when
 You share a unique link/code. Once your friend joins, deposits, and bets, you both get a reward.
 
 ### Example
-You refer a friend to **Paddy Power**. They stake £10. You receive **£20 cash** (real withdrawable money).
+You refer a friend to **[Paddy Power](/gb/go/paddy-power)**. They stake £10. You receive **£20 cash** (real withdrawable money).
 
 ### Limitations
 Most UK bookies cap this at **5 friends per month**. The friend must be a totally new customer and cannot share your IP address or household.`
@@ -142,7 +142,7 @@ A "50% Reload up to £20" means if you deposit £40, you get £20 extra.
           title: 'Cashback Offers',
           quickVerdict: 'A percentage refund on your net losses.',
           content: `### Net Loss Protection
-Cashback softens losing streaks. **QuinnBet** offers **25% weekly cashback** (up to £50) paid as a **Free Bet**, while **All British Sports** provides a flat **10% daily** real cash refund.
+Cashback softens losing streaks. QuinnBet offers **25% weekly cashback** (up to £50) paid as a Free Bet, while All British Sports provides a flat 10% daily real cash refund.
 
 ### Real-World Example
 Lose £100 over a week. Receive £10-£25 back. Real cash cashback has no wagering; free bet cashback must be used within **7 days**.`
@@ -152,7 +152,7 @@ Lose £100 over a week. Receive £10-£25 back. Real cash cashback has no wageri
           title: 'Loyalty Clubs',
           quickVerdict: 'Recurring weekly rewards for consistent activity.',
           content: `### Weekly Free Bet Clubs
-Stake a set amount (e.g., £25-£30) between Monday and Sunday. **Sky Bet Club** offers the most flexibility, with rewards that typically **do not expire** as long as you remain an active club member.`
+Stake a set amount (e.g., £25-£30) between Monday and Sunday. **[Sky Bet](/gb/go/sky-bet)** Club offers the most flexibility, with rewards that typically **do not expire** as long as you remain an active club member.`
         },
         {
           id: 'bet_boost',
@@ -176,10 +176,10 @@ A horse is 2.0. The boost makes it **2.50**. Stake is usually capped at **£10-�
           title: 'Early Payout (2-Goal Lead)',
           quickVerdict: 'Your bet wins instantly if your team takes a 2-goal lead.',
           content: `### The Comeback Killer
-If your team goes 2-0 up, the bet is settled as a winner. **Bet365** leads the market as it works on **accumulators** and multiple sports (NBA 20pts, NFL 17pts).
+If your team goes 2-0 up, the bet is settled as a winner. **[bet365](/gb/go/bet365)** leads the market as it works on accumulators and multiple sports (NBA 20pts, NFL 17pts).
 
 ### Example
-Back Liverpool. They go 2-0 up, then draw 2-2. You get paid in full. Cashing out early **disqualifies** you from this feature.`
+Back Liverpool. They go 2-0 up, then draw 2-2. You get paid in full. Cashing out early disqualifies you from this feature.`
         },
         {
           id: 'acca_insurance',
@@ -189,14 +189,14 @@ Back Liverpool. They go 2-0 up, then draw 2-2. You get paid in full. Cashing out
 Place a 5-fold+ accumulator. If 4 teams win but 1 draws/loses, you get your stake back.
 
 ### Example
-You bet £10 on a 5-fold. 4 legs win, 1 loses. You get **£10 back**. **Betfred's "Acca Flex"** is the market leader here as it refunds in **CASH** (up to £10), whereas most competitors only refund as Free Bets.`
+You bet £10 on a 5-fold. 4 legs win, 1 loses. You get **£10 back**. **[Betfred's](/gb/go/betfred)** "Acca Flex" is the market leader here as it refunds in **CASH** (up to £10), whereas most competitors only refund as Free Bets.`
         },
         {
           id: 'player_protection',
           title: 'Player Protection (Super Sub)',
           quickVerdict: 'Bet stays live if your player is substituted.',
           content: `### Super Sub & Sub On Play On
-In 2026, both **Paddy Power (Super Sub)** and **Bet365 (Sub On Play On)** protect you if your player is subbed. The bet transfers to the replacement player.
+In 2026, both **[Paddy Power](/gb/go/paddy-power)** (Super Sub) and **[bet365](/gb/go/bet365)** (Sub On Play On) protect you if your player is subbed. The bet transfers to the replacement player.
 
 It also covers VAR: if a goal is disallowed, most "Super Sub" markets remain active for the replacement player.`
         }
@@ -220,14 +220,14 @@ Winnings increase based on legs: **5% for a treble (3 legs)** up to **70-100% fo
 Combine corners, cards, and scorers in one match. 
 
 ### Void Rules
-If a player doesn't start: **Bet365** voids the whole builder. **Paddy Power** removes the leg and adjusts the odds. Most builders require at least 2 or 3 selections.`
+If a player doesn't start: **[bet365](/gb/go/bet365)** voids the whole builder. **[Paddy Power](/gb/go/paddy-power)** removes the leg and adjusts the odds. Most builders require at least 2 or 3 selections.`
         },
         {
           id: 'odds_guarantee',
           title: 'Best Odds Guaranteed (BOG)',
           quickVerdict: 'Always get the best price on Horse Racing.',
           content: `### Timing is Everything
-If you take 4/1 and SP is 6/1, you get 6/1. BOG starts at **8:00 AM** (Bet365, Coral, William Hill) or **9:00 AM** (Sky Bet). It never applies to Ante-Post bets.`
+If you take 4/1 and SP is 6/1, you get 6/1. BOG starts at **8:00 AM** (**[bet365](/gb/go/bet365)**, **[Coral](/gb/go/coral)**, **[William Hill](/gb/go/william-hill)**) or **9:00 AM** (**[Sky Bet](/gb/go/sky-bet)**). It never applies to Ante-Post bets.`
         }
       ]
     },
@@ -239,7 +239,7 @@ If you take 4/1 and SP is 6/1, you get 6/1. BOG starts at **8:00 AM** (Bet365, C
           title: 'Free Prediction Games',
           quickVerdict: 'Win jackpots without spending a penny.',
           content: `### Jackpots for Everyone
-Predict 6 scores (Super 6) for a **£250k-£1m jackpot**. **Ladbrokes 1-2-Free** is the easiest to win, requiring only 3 correct scores for a **£100 cash prize**.`
+Predict 6 scores (Super 6) for a **£250k-£1m jackpot**. **[Ladbrokes](/gb/go/ladbrokes)** 1-2-Free is the easiest to win, requiring only 3 correct scores for a **£100 cash prize**.`
         }
       ]
     }

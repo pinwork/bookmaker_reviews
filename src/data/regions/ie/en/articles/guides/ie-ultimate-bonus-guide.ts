@@ -59,7 +59,7 @@ export const ieBonusGuide: GuideArticle = {
         {
           id: 'risk_free_ie',
           title: 'Money Back as Cash',
-          content: 'If your first bet loses, you get a refund. Paddy Power is famous for this in Ireland. \n\n**Pro Tip:** Look for offers that refund as CASH, not a Free Bet. Cash can be withdrawn instantly.'
+          content: 'If your first bet loses, you get a refund. **[Paddy Power](/ie/go/paddy-power)** is famous for this in Ireland. \n\n**Pro Tip:** Look for offers that refund as CASH, not a Free Bet. Cash can be withdrawn instantly.'
         }
       ]
     },
@@ -74,12 +74,12 @@ export const ieBonusGuide: GuideArticle = {
         {
           id: 'refer_friend_ie',
           title: 'Refer a Friend',
-          content: '**Likely Legal.** This is a general public offer available to any customer, not targeted based on losses. Example: Paddy Power pays €20 when your friend places their first bet.'
+          content: '**Likely Legal.** This is a general public offer available to any customer, not targeted based on losses. Example: **[Paddy Power](/ie/go/paddy-power)** pays €20 when your friend places their first bet.'
         },
         {
           id: 'free_to_play_ie',
           title: 'Free-to-Play Games',
-          content: 'Prediction games remain fully legal as they don\'t involve real money stakes.\n\n**Sky Sports Super 6:** Predict 6 scores for a £250k jackpot. Available to ROI residents.\n**Bet365 6 Scores Challenge:** €1m jackpot pool.'
+          content: 'Prediction games remain fully legal as they don\'t involve real money stakes.\n\n**Sky Sports Super 6:** Predict 6 scores for a £250k jackpot. Available to ROI residents.\n****[bet365](/ie/go/bet365)** 6 Scores Challenge:** €1m jackpot pool.'
         }
       ]
     },
@@ -89,7 +89,7 @@ export const ieBonusGuide: GuideArticle = {
         {
           id: 'acca_insurance_ie',
           title: 'Acca Insurance',
-          content: 'If one leg of your 5+ fold accumulator fails, you get your stake back. This is a universal product feature, not a targeted inducement, so it remains fully legal.\n\n**Best for:** Betfred (often refunds as CASH), Ladbrokes, BoyleSports.'
+          content: 'If one leg of your 5+ fold accumulator fails, you get your stake back. This is a universal product feature, not a targeted inducement, so it remains fully legal.\n\n**Best for:** **[Betfred](/ie/go/betfred)** (often refunds as CASH), **[Ladbrokes](/ie/go/ladbrokes)**, **[BoyleSports](/ie/go/boylesports)**.'
         },
         {
           id: 'early_payout',

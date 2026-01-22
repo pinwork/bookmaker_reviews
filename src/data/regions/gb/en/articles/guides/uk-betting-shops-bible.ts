@@ -18,7 +18,7 @@ export const bettingShopsBible: GuideArticle = {
 
   intro: {
     title: 'More Than Just a High Street Store',
-    content: `In 1961, betting shops were legalised to move gambling off the streets, but they were designed to be as unwelcoming as possible—blacked-out windows and no chairs were the law. Fast forward to 2026, and despite a 36% decline in store numbers since 2012, the "bookies" remains a British institution. With 5,789 shops still active and 13% of the population visiting monthly, we explore the evolution from "smoky funeral parlours" to high-tech Digi-Hubs.`
+    content: `In 1961, betting shops were legalised to move gambling off the streets, but they were designed to be as unwelcoming as possible—blacked-out windows and no chairs were the law. Fast forward to 2026, and despite a 36% decline in store numbers since 2012, the "bookies" remains a British institution. With **5,789 shops** still active and 13% of the population visiting monthly, we explore the evolution from "smoky funeral parlours" to high-tech Digi-Hubs.`
   },
 
   keyTakeaways: [
@@ -55,7 +55,7 @@ export const bettingShopsBible: GuideArticle = {
             { label: 'FOBT Closures 2019', value: '1,209' },
             { label: 'Market GGY', value: '£16.8B' }
           ],
-          content: `The UK betting shop sector has declined **36% since 2012**, with the FOBT stake cut triggering 1,209 closures in just 12 months. However, police callouts dropped **40%** after the £2 stake cap.
+          content: `The UK betting shop sector has declined **36% since 2012**, with the FOBT stake cut triggering 1,209 closures in just 12 months. However, police callouts dropped 40% after the £2 stake cap.
 
 ### Who Still Visits?
 
@@ -72,7 +72,7 @@ export const bettingShopsBible: GuideArticle = {
             { label: 'William Hill Staff', value: '~8,000' },
             { label: 'Betfred Staff', value: '~7,500' }
           ],
-          content: `If another 2,000 shops close as predicted, over **10,000 jobs** could be at risk. William Hill and Betfred alone employ over 15,000 people across their retail networks.`
+          content: `If another 2,000 shops close as predicted, over 10,000 jobs could be at risk. **[William Hill](/gb/go/william-hill)** and **[Betfred](/gb/go/betfred)** alone employ over 15,000 people across their retail networks.`
         },
         {
           id: 'store-locators',
@@ -110,12 +110,12 @@ export const bettingShopsBible: GuideArticle = {
           title: 'Fred & Peter Done (Betfred Founders)',
           content: `Fred Done started Betfred in 1967 with money won from a bet on England to win the 1966 World Cup. He famously invented the "Lucky 15" bet in 1984. Today, Fred Done's net worth is estimated at **£2.29 billion**.
 
-Betfred remains the UK's largest independent bookmaker with ~1,300 shops.`
+**[Betfred](/gb/go/betfred)** remains the UK's largest independent bookmaker with ~1,300 shops.`
         },
         {
           id: 'john-boyle',
           title: 'John Boyle (BoyleSports Founder)',
-          content: `Founded in 1982 in Markethill, Co. Armagh. John Boyle grew the company into Ireland's largest independent bookmaker, expanding significantly into the UK Midlands and Northern Ireland.
+          content: `Founded in 1982 in Markethill, Co. Armagh. John Boyle grew **[BoyleSports](/gb/go/boylesports)** into Ireland's largest independent bookmaker, expanding significantly into the UK Midlands and Northern Ireland.
 
 Currently operates 277 shops in Ireland, 45 in Northern Ireland, and 46 in the UK mainland.`
         }

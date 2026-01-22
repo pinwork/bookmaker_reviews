@@ -9,17 +9,15 @@ export const inPlayScannersArticle: ToolReviewArticle = {
 
   intro: {
     title: 'What Are In-Play Betting Scanners (And Why They Matter)',
-    content: `In-play football betting scanners are **active surveillance systems** designed for serious bettors who place wagers during live matches. Unlike general statistics apps (SofaScore, FlashScore, FotMob) that passively display scores, these tools process massive streams of real-time data to identify betting opportunities the moment they arise.
+    content: `In-play football betting scanners are active surveillance systems designed for serious bettors who place wagers during live matches. Unlike general statistics apps that passively display scores, these tools process massive streams of real-time data to identify betting opportunities.
 
-**The core problem they solve:** A Saturday afternoon might feature 200+ simultaneous matches across the Premier League, Bundesliga, Brazilian Serie B, and Japanese J-League. The human brain cannot monitor this volume. Value—defined as a discrepancy between bookmaker odds and true probability—often hides in obscure leagues where algorithms are slower to react.
+**The core problem:** A Saturday afternoon might feature **200+ simultaneous matches** across the globe. The human brain cannot monitor this volume. Value often hides in obscure leagues where algorithms are slower to react.
 
 **How they work:**
-1. **Data Ingestion:** Pull real-time feeds (1-3 second latency) covering shots, corners, possession, dangerous attacks
-2. **Metric Calculation:** Transform raw data into derivative metrics—Pressure Index, Momentum, Live xG
-3. **Alert Logic:** Build boolean conditions: *IF (Time > 70') AND (Home Losing 0-1) AND (Home Pressure > 70%) THEN ALERT*
-4. **Instant Delivery:** Telegram notifications fire within seconds, allowing execution before odds adjust
-
-**This guide covers 7 qualifying scanners** with custom alert builders, live betting-specific statistics, Telegram integration, and backtesting capabilities.`
+1. **Data Ingestion:** Pull real-time feeds (1-3 second latency) covering shots, corners, possession
+2. **Metric Calculation:** Transform raw data into Pressure Index, Momentum, Live xG
+3. **Alert Logic:** Boolean conditions (e.g., Time > 70' AND Home Losing 0-1)
+4. **Instant Delivery:** Telegram notifications fire within seconds`
   },
 
   keyTakeaways: [
@@ -87,7 +85,7 @@ export const inPlayScannersArticle: ToolReviewArticle = {
             { label: 'Trial', value: 'Unlimited' }
           ],
           content: `### Overview
-InPlayGuru is the **most popular scanner** with **30,000+ active members**—the largest community among qualifying tools. The platform's proprietary **Momentum Model** identifies when match control shifts *before goals appear on the scoreboard*. With coverage across **1,700+ leagues** and an unlimited free tier, it balances sophistication with accessibility.
+InPlayGuru is the market leader with **30,000+ active members**—the largest community among qualifying tools. The platform's proprietary Momentum Model identifies when match control shifts *before goals appear on the scoreboard*. With coverage across **1,700+ leagues** and an unlimited free tier, it balances sophistication with accessibility.
 
 ### Key Features
 - **Momentum Model:** See attacking dominance before it converts to goals—enter positions before market prices adjust
@@ -125,7 +123,7 @@ Free tier available (~50% matches, 5 strategy slots, 5 daily alerts). Pro Monthl
             { label: 'Trial', value: '7 days' }
           ],
           content: `### Overview
-StatisticSports is the **industry veteran**—the longest-operating dedicated in-play scanner with the most robust backtesting capabilities available. Founded in 2013 by Ardevos Ltd. (Estonia), it covers **95% of all in-play matches** offered by major bookmakers globally. The platform prioritizes data depth over visual polish; think Bloomberg terminal for football betting.
+StatisticSports is the industry veteran—the longest-operating dedicated scanner with the most robust backtesting capabilities. Founded in 2013 by Ardevos Ltd., it covers **95% of all in-play matches** offered by major bookmakers globally. The platform prioritizes data depth over visual polish.
 
 ### Key Features
 - **50,000-Game Backtesting:** Validate strategies with massive sample sizes before risking real money—eliminates guesswork
@@ -163,7 +161,7 @@ Three tiers: Lite (€17/mo), Deluxe (€37/mo), Platinum (€77/mo). Yearly pla
             { label: 'Trial', value: '7 days' }
           ],
           content: `### Overview
-Footy Amigo combines AI/machine learning with a unique social feature—the **Amigo Copier**—that lets users **clone winning strategies from profitable members for free**. With **15+ years of historical data** across **1,800+ leagues in 240+ countries**, it offers deep backtesting alongside strategy-sharing. Uniquely combines **pre-match stats WITH in-play criteria** for higher-confidence alerts.
+Footy Amigo combines AI/machine learning with a unique social feature—the Amigo Copier—that lets users clone winning strategies from profitable members for free. With **15+ years of historical data** across 1,800+ leagues in 240+ countries, it offers deep backtesting alongside strategy-sharing. Uniquely combines pre-match stats with in-play criteria for higher-confidence alerts.
 
 ### Key Features
 - **Amigo Copier:** Copy profitable strategies from successful users—bypass months of strategy development
@@ -202,7 +200,7 @@ Footy Amigo combines AI/machine learning with a unique social feature—the **Am
             { label: 'Trial', value: '2 days' }
           ],
           content: `### Overview
-SoccerScanner proves you don't need premium pricing for professional-grade tools. At **£10/month**, it delivers xG, pressure indexes, momentum tracking, and customizable Telegram alerts—features competitors charge **2-7x more** for. Popular among Betfair traders for its clean interface and color-coded statistics.
+SoccerScanner proves you don't need premium pricing for professional-grade tools. At **£10/month**, it delivers xG, pressure indexes, momentum tracking, and customizable Telegram alerts—features competitors charge 2-7x more for. Popular among Betfair traders for its clean interface.
 
 ### Key Features
 - **Color-Coded Scanner:** Green/red/yellow coding lets you scan 50 matches and spot high-intensity games in seconds
@@ -240,7 +238,7 @@ Monthly: £10. Yearly: £100 (save £20). **2-day free trial** (card required, c
             { label: 'API', value: '£70/mo' }
           ],
           content: `### Overview
-OddAlerts differentiates through its **In-Play Funnel**—scanning Bet365 odds **every second** and comparing live price movements against a proprietary probability model. When odds drift (market panic) but the model sees value, alerts fire. This bridges stat-based scanning with odds-focused value hunting.
+OddAlerts differentiates through its In-Play Funnel—scanning Bet365 odds **every second** and comparing live price movements against a proprietary probability model. When odds drift but the model sees value, alerts fire. This bridges stat-based scanning with odds-focused value hunting.
 
 ### Key Features
 - **In-Play Funnel:** Scan 500 live matches; when odds panic but model confirms value, get instant alerts
@@ -278,7 +276,7 @@ Free tier available (5 fixtures max). Pro: £19.99/month. Pro + API: £69.99/mon
             { label: 'Trial', value: '€4.90/2d' }
           ],
           content: `### Overview
-BetBallers focuses on **contextual metrics**—not just "Team A is attacking" but "Team A historically scores 80% of goals when losing." Its proprietary **Pressure Index** (PI1/PI2) combines dangerous attacks, shots, and corners into a weighted dominance indicator. The **Comeback Factor** tracks how often teams recover after falling behind.
+BetBallers focuses on contextual metrics—not just "Team A is attacking" but "Team A historically scores **80% of goals when losing**." Its proprietary Pressure Index (PI1/PI2) combines dangerous attacks, shots, and corners into a weighted dominance indicator. The Comeback Factor tracks how often teams recover after falling behind.
 
 ### Key Features
 - **Pressure Index (PI1/PI2):** Weighted dominance calculation—70%+ pressure with 0-0 signals imminent goal
@@ -316,7 +314,7 @@ Trial: €4.90 (2 days). Gold Baller Monthly: €29.90 (~€24.90 with code "tip
             { label: 'Trial', value: '4 days' }
           ],
           content: `### Overview
-LivePick is the **pioneer** of in-play scanning—claiming to be the "first dedicated football betting scanner ever released." The platform offers the most **advanced filter logic**—over **100 combinable conditions** for building alerts. The unique community feature lets users **share, follow, or sell profitable filters**.
+LivePick is the pioneer of in-play scanning—claiming to be the first dedicated football betting scanner ever released. The platform offers **100+ combinable filter conditions** for building alerts. The unique community feature lets users share, follow, or sell profitable filters.
 
 ### Key Features
 - **100+ Filter Conditions:** Build precisely targeted alerts impossible on simpler platforms

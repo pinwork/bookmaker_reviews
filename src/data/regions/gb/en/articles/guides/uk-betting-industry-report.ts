@@ -18,7 +18,7 @@ export const bettingIndustryBible: GuideArticle = {
 
   intro: {
     title: 'A £16.8 Billion Industry at a Crossroads',
-    content: `The UK gambling industry generated £16.8 billion in gross gambling yield (GGY) in the last fiscal year, cementing its status as the world's largest regulated online market. Yet, these headline figures mask a brutal reality: the "Golden Age" of easy growth is over.
+    content: `The UK gambling industry generated **£16.8 billion** in gross gambling yield (GGY) in the last fiscal year, cementing its status as the world's largest regulated online market. Yet, these headline figures mask a brutal reality: the "Golden Age" of easy growth is over.
 
 From April 2026, a punishing 40% Remote Gaming Duty will reshape the landscape, forcing smaller operators out of business and consolidating power among the "Big Two" conglomerates. At the same time, the Gambling Commission's new affordability checks (£150 net deposit threshold) have fundamentally changed the relationship between bookmaker and bettor. This report cuts through the corporate PR to explain who really owns your bookmaker, where your money goes, and why the odds you see today might be gone tomorrow.`
   },
@@ -91,14 +91,14 @@ From April 2026, a punishing 40% Remote Gaming Duty will reshape the landscape, 
           title: 'Flutter Entertainment (~30% Market Share)',
           content: `**Brands:** Paddy Power, Sky Bet, Betfair, Tombola
 
-Now listed on the NYSE with $14bn global revenue, Flutter is the "Amazon of Gambling". Their scale allows them to absorb tax hikes that kill smaller rivals. Sky Bet remains the recreational punter's favorite app, while Betfair controls the exchange market.`
+Now listed on the NYSE with $14bn global revenue, Flutter is the "Amazon of Gambling". Their scale allows them to absorb tax hikes that kill smaller rivals. **[Sky Bet](/gb/go/sky-bet)** remains the recreational punter's favorite app, while **[Betfair](/gb/go/betfair)** controls the exchange market.`
         },
         {
           id: 'bet365',
           title: 'bet365 Group (~20% Market Share)',
           content: `**Brands:** bet365
 
-Unique among giants, bet365 remains a **private company** owned by the Coates family in Stoke. They paid £265m in UK taxes alone last year. Without shareholder pressure, they offer the most consistent odds and highest limits.`
+Unique among giants, **[bet365](/gb/go/bet365)** remains a private company owned by the Coates family in Stoke. They paid £265m in UK taxes alone last year. Without shareholder pressure, they offer the most consistent odds and highest limits.`
         },
         {
           id: 'entain',
@@ -117,7 +117,7 @@ The rebrand to "Evoke" hasn't hidden the disaster of the William Hill acquisitio
         {
           id: 'denise-coates',
           title: 'Denise Coates, bet365 Founder & Co-CEO',
-          content: `In 2000, Denise Coates mortgaged her father's entire chain of betting shops to secure a **£15 million loan** from RBS. She used the money to build bet365.com from a temporary Portakabin in a Stoke-on-Trent car park. Critics called it reckless.
+          content: `In 2000, Denise Coates mortgaged her father's entire chain of betting shops to secure a **£15 million loan** from RBS. She used the money to build **[bet365.com](/gb/go/bet365)** from a temporary Portakabin in a Stoke-on-Trent car park. Critics called it reckless.
 
 Today, bet365 generates **£3.7bn annually**. Denise was Britain's highest taxpayer from 2019-2022, contributing over **£2.4 billion** to the Treasury over 15 years.`
         },
@@ -126,7 +126,7 @@ Today, bet365 generates **£3.7bn annually**. Denise was Britain's highest taxpa
           title: 'Fred Done, Betfred Co-Founder',
           content: `In 1967, Fred and his brother Peter bet on England to win the World Cup in 1966. They used the winnings to open a single betting shop in Salford. Unlike competitors, Fred focused on bonuses, inventing the "Lucky 15" bet.
 
-Betfred remains one of the few large independent operators, with over **1,300 shops**, though they nearly sold the entire estate in 2025 due to tax hikes.`
+**[Betfred](/gb/go/betfred)** remains one of the few large independent operators, with over **1,300 shops**, though they nearly sold the entire estate in 2025 due to tax hikes.`
         }
       ]
     },

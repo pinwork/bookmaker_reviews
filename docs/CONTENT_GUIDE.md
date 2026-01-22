@@ -478,36 +478,55 @@ Each bookmaker has:
 - `name` - Display name
 - `display.isActive` - Whether bookmaker is active
 
-**Before linking:** Check that the bookmaker exists and `isActive: true`.
+⚠️ **CRITICAL:** Before adding ANY `/go/` link, you MUST verify the slug exists in `bookmakerConfigs`.
+
+**Common mistake:** An article's `linkedResources` may contain IDs that do NOT exist in `bookmakerConfigs`. The `linkedResources` array is for future UI components and is NOT validated against the bookmaker list. Never assume a brand in `linkedResources` has a valid `/go/` route.
 
 **Unknown or inactive slug → 404.**
 
 ### C. Syntax
 
-**Format:** `[Brand Name](/[region]/go/[slug])`
+**Format:** `**[Brand Name](/[region]/go/[slug])**` (always bold)
 
 **Region Rule:** Match the article's region.
 - Article in `src/data/regions/gb/` → use `/gb/go/...`
 - Article in `src/data/regions/ie/` → use `/ie/go/...`
 
-```markdown
-// GB article
-Рекомендуємо [Bet365](/gb/go/bet365) для live betting.
+**Context Rule:** Include relevant context INSIDE the link text, not outside.
 
-// IE article
-Спробуйте [Paddy Power](/ie/go/paddy-power) для акумуляторів.
+```markdown
+// ❌ BAD — context outside link
+She built **[bet365](/gb/go/bet365)**.com from scratch.
+Join the **[Sky Bet](/gb/go/sky-bet)** Club for rewards.
+
+// ✅ GOOD — context inside link
+She built **[bet365.com](/gb/go/bet365)** from scratch.
+Join the **[Sky Bet Club](/gb/go/sky-bet)** for rewards.
 ```
 
-### D. When to Link (✓)
+### D. Field Restrictions (Where Links Can Go)
+
+**✅ Allowed:**
+- `intro.content` — High visibility, natural CTA placement
+- `content` fields — Markdown sections in groups/items where context flows
+
+**❌ Not Allowed:**
+- `faq` answers — Keep clean, quick-answer format; links clutter
+- `keyTakeaways` — Bullets only, no markdown links
+- `quickVerdict` — Short summary text, no links
+
+**Rationale:** FAQ and takeaways serve informational purposes. Affiliate links there feel spammy and break reading flow.
+
+### E. When to Link (✓)
 
 | Context | Example | Why Link |
 |---------|---------|----------|
-| **First mention** | "For live betting, [Bet365](/gb/go/bet365) offers..." | High intent, user just met the brand |
-| **Recommendation** | "We recommend [Sky Bet](/gb/go/sky-bet) for..." | Direct call to action |
-| **Specific offer** | "Claim [Betfred's welcome bonus](/gb/go/betfred)..." | Transactional intent |
-| **Comparison winner** | "In our tests, [Unibet](/gb/go/unibet) came first..." | Editorial endorsement |
+| **First mention** | "For live betting, **[Bet365](/gb/go/bet365)** offers..." | High intent, user just met the brand |
+| **Recommendation** | "We recommend **[Sky Bet](/gb/go/sky-bet)** for..." | Direct call to action |
+| **Specific offer** | "Claim **[Betfred's](/gb/go/betfred)** welcome bonus..." | Transactional intent |
+| **Comparison winner** | "In our tests, **[Unibet](/gb/go/unibet)** came first..." | Editorial endorsement |
 
-### E. When NOT to Link (✗)
+### F. When NOT to Link (✗)
 
 | Context | Example | Why No Link |
 |---------|---------|-------------|
@@ -516,32 +535,40 @@ Each bookmaker has:
 | **Generic context** | "Sites like Bet365 exist..." | No clear user intent |
 | **Competitor comparison** | "Unlike 888sport, Betfair..." | Don't link the "loser" |
 
-### F. Frequency Rule
+### G. Frequency Rule
 
-**Max 1 link per brand per section (Group).**
+**Max 1 link per brand per content unit (item).**
 
-Link the first meaningful mention. Use plain text for subsequent mentions.
+Article structure: `groups[]` → `items[]` (cards). The smallest content unit is an **item** (card), not the group.
+
+Link the first meaningful mention within each item. Use plain text for subsequent mentions in the same item.
 
 ```markdown
-// ✓ Good
-[Bet365](/gb/go/bet365) offers the best live interface.
-Bet365 also has excellent odds on football.  // No link, same section
+// ✓ Good (same item)
+**[Bet365](/gb/go/bet365)** offers the best live interface.
+Bet365 also has excellent odds on football.  // No link, same item
 
-// ✗ Bad
-[Bet365](/gb/go/bet365) is great. We love [Bet365](/gb/go/bet365)
-because [Bet365](/gb/go/bet365) works well.  // Spam
+// ✓ Good (different items in same group)
+// Item 1: "**[Bet365](/gb/go/bet365)** leads early payout..."
+// Item 2: "**[Bet365](/gb/go/bet365)** voids the whole builder..."  // OK, different item
+
+// ✗ Bad (same item)
+**[Bet365](/gb/go/bet365)** is great. We love **[Bet365](/gb/go/bet365)**
+because **[Bet365](/gb/go/bet365)** works well.  // Spam
 ```
 
-### G. linkedResources vs Inline Links
+### H. linkedResources vs Inline Links
 
-**Two separate systems:**
+**Two separate systems with DIFFERENT validation:**
 
-| Mechanism | Purpose | Location |
-|-----------|---------|----------|
-| `linkedResources` | Structured data for UI components (bonus cards, comparison tables) | Article data field |
-| Inline `/go/` links | Text mentions in markdown content | Inside `content` strings |
+| Mechanism | Purpose | Validation |
+|-----------|---------|------------|
+| `linkedResources` | Future UI components | NOT validated - can contain any ID |
+| Inline `/go/` links | Text links in markdown | MUST exist in `bookmakerConfigs` |
 
-They don't conflict. An article can have both:
+⚠️ **WARNING:** `linkedResources` may contain IDs (e.g., `quinnbet`) that do NOT have a `/go/` route. Never copy IDs from `linkedResources` to create `/go/` links without verifying they exist in `bookmakerConfigs`.
+
+They can coexist in an article:
 - `linkedResources: [{ id: 'bet365', type: 'bookmaker' }]` for future card rendering
 - `[Bet365](/gb/go/bet365)` in markdown for text links
 
@@ -552,5 +579,74 @@ Before publishing, verify:
 1. ✓ All `/go/` slugs exist in the bookmaker list (Section B)
 2. ✓ Region in URL matches article region (`/gb/` for GB articles)
 3. ✓ No links in negative contexts (fines, scandals, layoffs)
-4. ✓ Max 1 link per brand per section
+4. ✓ Max 1 link per brand per item (content unit)
 5. ✓ First mention linked, subsequent mentions plain text
+6. ✓ Affiliate links are bold: `**[Brand](/region/go/slug)**` (Section 12)
+
+---
+
+## 12. Formatting Strategy: Bold Text & Visual Anchors
+
+**Philosophy:** Precision over density. Use bolding sparingly to guide the eye, not to decorate.
+
+### A. The 3 Strict Rules
+
+1. **Paragraphs (The "One Hit" Rule):**
+   - ⚠️ **STRICTLY 1 data bold per paragraph — NEVER more**
+   - If nothing is crucial (no data/metric), bold nothing
+   - **Target:** Specific data points (numbers like `€100`, `24/7`) or unique entities
+   - **Ban:** Never bold entire sentences or marketing fluff ("great", "recommended")
+   - **Note:** Affiliate links (`**[Brand](/go/...)**`) are EXEMPT — they are CTAs, not data highlights
+
+   ```markdown
+   // ❌ BAD — 3 bolds in one paragraph
+   Problem gamblers represent **2.7%** of adults. Youth rate is **10.2%**. Children: **1.5%**.
+
+   // ✅ GOOD — 1 bold, most impactful number
+   Problem gamblers represent **2.7% of UK adults**. Youth rate is 10.2%. Children: 1.5%.
+   ```
+
+2. **Lists (Front-Loading):**
+   - Always bold the **label/key phrase** at the start of a bullet point (before the colon)
+   - Example: `- **Withdrawal Speed:** 2-4 hours...`
+   - This leverages F-pattern scanning behavior (+18-22% engagement)
+
+3. **Affiliate Links (CTA Visibility):**
+   - **Always bold** the primary affiliate link (Bookmaker Name)
+   - Syntax: `**[Bet365](/gb/go/bet365)**`
+   - Reason: Treats the link as a visual Call-to-Action, not just inline text
+
+### B. What NOT to Bold
+
+| ❌ Bad | ✅ Good | Why |
+|--------|---------|-----|
+| `**amazing bonus**` | `**€50 bonus**` | Data > adjectives |
+| `**we recommend**` | `**[Bet365](/gb/go/bet365)**` | Brand > verb |
+| `**fast and reliable**` | `**24/7 support**` | Specific > vague |
+| Multiple bolds in one paragraph | Single bold per paragraph | Avoid visual chaos |
+
+### C. Mobile Optimization
+
+- Prefer bullet lists over long paragraphs wherever possible
+- Lists naturally trigger the "Front-Loading" rule
+- Short paragraphs (2-3 sentences max) allow single bold to stand out
+
+### D. List Symmetry (Visual Rhythm)
+
+**Rule:** Items in a bulleted list or timeline must have comparable length.
+**Goal:** Avoid the "Ragged Edge" effect where short lines mix with long paragraphs.
+
+- **Consistency:** If one item is 2 sentences, ALL items should be 1-3 sentences
+- **Fixing Imbalance:**
+  - *Too short?* Add context or specific metrics
+  - *Too long?* Split into two bullets or trim fluff
+
+```markdown
+// ❌ BAD — Asymmetrical (1 word vs 3 sentences)
+- **1961:** Legalisation.
+- **2019:** The FOBT Crash caused massive closures because the government cut stakes to £2, leading to 40% revenue drop and forcing William Hill to close 700 shops.
+
+// ✅ GOOD — Symmetrical (all ~2 sentences)
+- **1961 — Legalisation:** Betting shops become legal. 10,000 stores open within 6 months.
+- **2019 — The FOBT Crash:** Max stakes cut to £2. This triggered 1,209 closures in a single year.
+```

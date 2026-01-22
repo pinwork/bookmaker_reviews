@@ -9,7 +9,7 @@ export const responsibleGamblingBible: GuideArticle = {
 
   intro: {
     title: 'Why This Guide Exists',
-    content: `In 2025, the UK Gambling Commission recorded 1.4 million problem gamblers—a number that doesn't include the millions more affected as family members, partners, and friends. This guide is not marketing material. It is a factual database of every tool, statistic, and support system available to anyone touched by gambling harm in the United Kingdom. We document real stories, expose industry fines, and explain the psychology behind addiction so you can make informed decisions.`
+    content: `In 2025, the UK Gambling Commission recorded **1.4 million problem gamblers**—a number that doesn't include the millions more affected as family members, partners, and friends. This guide is not marketing material. It is a factual database of every tool, statistic, and support system available to anyone touched by gambling harm in the United Kingdom. We document real stories, expose industry fines, and explain the psychology behind addiction so you can make informed decisions.`
   },
 
   keyTakeaways: [
@@ -63,7 +63,7 @@ export const responsibleGamblingBible: GuideArticle = {
             { label: 'Youth (18-24)', value: '10.2%' },
             { label: 'Children (11-17)', value: '1.5%' }
           ],
-          content: `Problem gamblers (PGSI 8+) represent **2.7% of UK adults** (~1.4 million people). Youth aged 18-24 have the highest rate at **10.2%**. Child problem gambling (11-17) has doubled from 0.7% in 2023 to **1.5%** today.
+          content: `Problem gamblers (PGSI 8+) represent **2.7% of UK adults** (~1.4 million people). Youth aged 18-24 have the highest rate at 10.2%. Child problem gambling (11-17) has doubled from 0.7% in 2023 to 1.5% today.
 
 *Sources: GSGB 2024, UKGC Oct 2025, Gambling Commission*`
         },
@@ -75,7 +75,7 @@ export const responsibleGamblingBible: GuideArticle = {
             { label: 'Gamblers in Debt', value: '3.3M' },
             { label: 'Annual GGY', value: '£16.8B' }
           ],
-          content: `Treatment-seeking problem gamblers carry an average debt of **£17,000**. 18% of UK online gamblers (3.3 million) are in debt. **86% of online profits** come from just 5% of customers.
+          content: `Treatment-seeking problem gamblers carry an average debt of **£17,000**. 18% of UK online gamblers (3.3 million) are in debt. 86% of online profits come from just 5% of customers.
 
 *Sources: Gordon Moody Research, Citizens Advice, Social Market Foundation, Gambling Commission*`
         },
@@ -87,7 +87,7 @@ export const responsibleGamblingBible: GuideArticle = {
             { label: 'Suicidal Thoughts', value: '6x higher' },
             { label: 'Suicide Attempts', value: '15x higher' }
           ],
-          content: `Gambling is estimated to cause **117-496 suicides annually** in England. Problem gamblers are **6x more likely** to have suicidal thoughts and **15x more likely** to attempt suicide than the general population. 66% of treatment clients carry gambling debt.
+          content: `Gambling is estimated to cause **117-496 suicides annually** in England. Problem gamblers are 6x more likely to have suicidal thoughts and 15x more likely to attempt suicide than the general population. 66% of treatment clients carry gambling debt.
 
 *Sources: OHID 2023, University of Bristol 2025, GambleAware NGSN 2023/24*`
         },
@@ -217,7 +217,7 @@ Thinking errors like the Gambler's Fallacy ("I'm due for a win"), Illusion of Co
 Mandatory for all UK licensed operators since March 2020. Once you provide your details (Name, DOB, Email), your ID is synced across the entire industry database.
 
 ### Mandatory Waiting Periods
-Exclusions of 6 months, 1 year, or 5 years cannot be cancelled under any circumstances. Once the period ends, you must manually call **0800 138 6518** to deactivate. A mandatory **24-hour cooling-off wait** is applied before access is restored.
+Exclusions of 6 months, 1 year, or 5 years cannot be cancelled under any circumstances. Once the period ends, you must manually call **0800 138 6518** to deactivate. A mandatory 24-hour cooling-off wait is applied before access is restored.
 
 ### The 7-Year Rule
 Even after expiry, GamStop retains your data and continues to inform operators for an additional 7 years unless a removal request is successfully processed.`
@@ -250,7 +250,7 @@ GamCare offers FREE face-to-face therapy and CBT. They also manage moderated for
 The UK's only residential provider for severe cases. Programmes include a 6-week immersion followed by extensive aftercare (~182 days total).
 
 ### Clinical Success
-Centres in Dudley, Manchester, and Wolverhampton (women-only). Average PGSI score of participants drops significantly from **21.2 (extreme)** to **5.9 (moderate/low)** post-treatment.`
+Centres in Dudley, Manchester, and Wolverhampton (women-only). Average PGSI score of participants drops significantly from **21.2 (extreme)** to 5.9 (moderate/low) post-treatment.`
         }
       ]
     },

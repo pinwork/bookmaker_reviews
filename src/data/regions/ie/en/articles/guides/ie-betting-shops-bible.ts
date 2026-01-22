@@ -58,7 +58,7 @@ export const ieBettingShopsBible: GuideArticle = {
 
 - **Duty Impact**: Tax doubled from 1% to 2% in 2019, accelerating closures
 - **Independent Survival**: Margins wiped out by overheads and regulation costs
-- **Cash-to-Online**: 50%+ of Paddy Power's IE online deposits start as shop cash`
+- **Cash-to-Online**: 50%+ of **[Paddy Power](/ie/go/paddy-power)**'s IE online deposits start as shop cash`
         },
         {
           id: 'employment-data',
@@ -69,7 +69,7 @@ export const ieBettingShopsBible: GuideArticle = {
             { label: 'BAR 1 Staff', value: '350+' },
             { label: 'Recent Losses', value: '119' }
           ],
-          content: `BoyleSports remains a major employer with 2,700 staff. However, the October 2025 Paddy Power closures resulted in **119 confirmed job losses**, shrinking the talent pool.`
+          content: `**[BoyleSports](/ie/go/boylesports)** remains a major employer with 2,700 staff. However, the October 2025 Paddy Power closures resulted in **119 confirmed job losses**, shrinking the talent pool.`
         },
         {
           id: 'store-locators',
@@ -92,7 +92,7 @@ export const ieBettingShopsBible: GuideArticle = {
 **CRITICAL DIFFERENCE**: Fixed Odds Betting Terminals (Slots/Roulette) are completely **BANNED in Ireland** under the 2013 Gambling Control Bill. While UK shops rely on machines for profit, Irish shops rely entirely on sports turnover.
 
 ### SSBT Dominance
-Self-Service Betting Terminals fill the void. BoyleSports operates 1,000+ terminals. Paddy Power upgraded 500+ shops with **Amino H200 screens** in late 2024 to modernize the experience.
+Self-Service Betting Terminals fill the void. **[BoyleSports](/ie/go/boylesports)** operates 1,000+ terminals. Paddy Power upgraded 500+ shops with **Amino H200 screens** in late 2024 to modernize the experience.
 
 ### Omnichannel
 Ladbrokes Grid and Paddy Power Onside allow customers to deposit cash in-shop and use it online instantly—vital for bypassing bank statement checks.`
@@ -129,7 +129,7 @@ His actions forced bookmakers to change the rules on how bets are reported from 
         {
           id: 'stewart-kenny',
           title: 'Stewart Kenny (Paddy Power Co-Founder)',
-          content: `In 1988, Kenny masterminded the merger of three struggling independent bookmakers (Kenny, Power, and Corcoran). He realized individual shops would die against British chains like Coral, so they united under the "Paddy Power" brand.
+          content: `In 1988, Kenny masterminded the merger of three struggling independent bookmakers (Kenny, Power, and Corcoran). He realized individual shops would die against British chains like Coral, so they united under the "**[Paddy Power](/ie/go/paddy-power)**" brand.
 
 He created what is now Flutter Entertainment, the world's largest gambling company.`
         },
@@ -138,7 +138,7 @@ He created what is now Flutter Entertainment, the world's largest gambling compa
           title: 'John Boyle (BoyleSports Founder)',
           content: `Founded his empire in 1982 in Markethill. Unlike competitors who sold out to UK giants, Boyle aggressively acquired rivals (Bruce Betting, Tully).
 
-He built the largest independent retail chain in Ireland, keeping ownership domestic.`
+He built **[BoyleSports](/ie/go/boylesports)** into the largest independent retail chain in Ireland, keeping ownership domestic.`
         }
       ]
     },

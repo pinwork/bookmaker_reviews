@@ -90,7 +90,7 @@ export const matchedBettingSoftwareArticle: ToolReviewArticle = {
             { label: 'Trial', value: 'Unlimited' }
           ],
           content: `### Overview
-OddsMonkey is the **UK's largest matched betting platform** and creator of the original OddsMatcher tool. Founded in 2011, the platform has over **500,000 total signups** and covers **90-100+ bookmakers** with real-time odds scanning. It integrates directly with 4 betting exchanges for one-click lay betting and includes 2UP Matcher at entry tier—a feature competitors charge extra for.
+OddsMonkey is the UK's largest matched betting platform and creator of the original OddsMatcher tool. Founded in 2011, the platform has over **500,000 total signups** and covers 90-100+ bookmakers with real-time odds scanning. It integrates directly with 4 betting exchanges for one-click lay betting and includes 2UP Matcher at entry tier—a feature competitors charge extra for.
 
 ### Key Features
 - **OddsMatcher (90-100+ bookies):** Finds profitable matches across all major UK bookmakers; sorted by rating and SNR percentage
