@@ -1,9 +1,18 @@
 // src/data/articles.ts
+// Public API for articles - implements language-first architecture with regional overrides
+// Lookup order: 1. Regional override → 2. Language master
+
 import { GuideArticle, ToolReviewArticle } from '@/types';
 import { GuideArticleSchema, ToolReviewArticleSchema } from '@/types/schemas';
 import { DEFAULT_REGION } from './constants';
-import * as gbArticles from './regions/gb/en';
-import * as ieArticles from './regions/ie/en';
+
+// Import universal English articles (shared across all EN regions)
+import * as enGuides from './articles/en/guides';
+import * as enBettorResources from './articles/en/bettor-resources';
+
+// Import regional overrides
+import * as gbGuideOverrides from './articles/overrides/gb/en/guides';
+import * as ieGuideOverrides from './articles/overrides/ie/en/guides';
 
 // Runtime validation helpers (only active in development)
 function validateGuide(guide: unknown): boolean {
@@ -26,36 +35,45 @@ function validateToolReview(article: unknown): boolean {
   return true;
 }
 
-// Get guides from guides/ folder
+// Get guides for a region
+// Architecture: Universal EN guides + Regional override guides
 function getGuidesData(region: string): GuideArticle[] {
+  // Universal guides (available to all EN regions)
+  const universalGuides: GuideArticle[] = [
+    enGuides.gubbingGuide,
+  ];
+
+  // Regional override guides
   if (region === 'ie') {
     return [
-      ieArticles.ultimateBonusGuide,
-      ieArticles.bettingIndustryReport,
-      ieArticles.bettingShopsBible,
-      ieArticles.responsibleGamblingBible,
+      ...universalGuides,
+      ieGuideOverrides.ieBonusGuide,
+      ieGuideOverrides.ieBettingIndustryReport,
+      ieGuideOverrides.ieBettingShopsBible,
+      ieGuideOverrides.responsibleGamblingIrelandBible,
     ];
   }
 
   // Default to GB
   return [
-    gbArticles.ultimateBonusGuide,
-    gbArticles.bettingIndustryReport,
-    gbArticles.bettingShopsBible,
-    gbArticles.responsibleGamblingBible,
-    gbArticles.gubbingGuide,
+    ...universalGuides,
+    gbGuideOverrides.ultimateBonusGuide,
+    gbGuideOverrides.bettingIndustryBible,
+    gbGuideOverrides.bettingShopsBible,
+    gbGuideOverrides.responsibleGamblingBible,
   ];
 }
 
-// Get bettor resources from bettor-resources/ folder
+// Get bettor resources for a region
+// Architecture: All bettor resources are universal EN content (no regional overrides)
 function getBettorResourcesData(region: string): ToolReviewArticle[] {
-  if (region === 'ie') {
-    // IE inherits GB bettor resources (universal content)
-    return [gbArticles.liveScoreAppsGuide, gbArticles.inPlayScannersGuide, gbArticles.matchedBettingGuide];
-  }
-
-  // Default to GB
-  return [gbArticles.liveScoreAppsGuide, gbArticles.inPlayScannersGuide, gbArticles.matchedBettingGuide];
+  // All bettor resources are universal - same for all EN regions
+  void region; // Unused for now, but kept for API consistency
+  return [
+    enBettorResources.liveScoreAppsGuide,
+    enBettorResources.inPlayScannersGuide,
+    enBettorResources.matchedBettingGuide,
+  ];
 }
 
 // Public API

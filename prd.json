@@ -1,0 +1,292 @@
+{
+  "featureName": "Language-First Article Architecture",
+  "description": "Migrate articles from region-based folders to language-based folders with automatic inheritance across regions",
+  "architectureNotes": {
+    "currentState": {
+      "universalArticles": [
+        "betting-account-restrictions-gubbing-guide.ts",
+        "best-live-score-stats-apps.ts",
+        "best-in-play-betting-scanners.ts",
+        "best-matched-betting-software.ts"
+      ],
+      "gbSpecificArticles": [
+        "uk-ultimate-bonus-guide.ts",
+        "uk-betting-industry-report.ts",
+        "uk-betting-shops-bible.ts",
+        "responsible-gambling-uk-bible.ts"
+      ],
+      "ieSpecificArticles": [
+        "ie-ultimate-bonus-guide.ts",
+        "ie-betting-industry-report.ts",
+        "ie-betting-shops-bible.ts",
+        "responsible-gambling-ie-bible.ts"
+      ]
+    },
+    "targetState": {
+      "articlesEnFolder": "Universal articles - available to all EN regions",
+      "overridesGbEnFolder": "GB-specific guides - only for GB",
+      "overridesIeEnFolder": "IE-specific guides - only for IE",
+      "lookupOrder": "1. overrides/{region}/{lang}/ 2. articles/{lang}/"
+    }
+  },
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Audit current article dependencies",
+      "acceptanceCriteria": [
+        "Document all files that import articles",
+        "Categorize articles: universal vs region-specific",
+        "List import chains: articles.ts → region/index.ts → article files",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-23T01:30:00Z",
+      "filesChanged": [],
+      "auditResults": {
+        "keyImporters": [
+          "src/data/articles.ts",
+          "src/data/regions/gb/en/index.ts",
+          "src/data/regions/ie/en/index.ts"
+        ],
+        "universalArticles": [
+          "betting-account-restrictions-gubbing-guide.ts (guides)",
+          "best-live-score-stats-apps.ts (bettor-resources)",
+          "best-in-play-betting-scanners.ts (bettor-resources)",
+          "best-matched-betting-software.ts (bettor-resources)"
+        ],
+        "gbOnlyArticles": [
+          "uk-ultimate-bonus-guide.ts",
+          "uk-betting-industry-report.ts",
+          "uk-betting-shops-bible.ts",
+          "responsible-gambling-uk-bible.ts"
+        ],
+        "ieOnlyArticles": [
+          "ie-ultimate-bonus-guide.ts",
+          "ie-betting-industry-report.ts",
+          "ie-betting-shops-bible.ts",
+          "responsible-gambling-ie-bible.ts"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "title": "Create regionConfig system",
+      "acceptanceCriteria": [
+        "Create src/data/regions/config.ts",
+        "Define RegionConfig type with languages array",
+        "Configure gb: ['en'], ie: ['en']",
+        "Export getRegionLanguages(region) helper",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-23T01:32:00Z",
+      "filesChanged": ["src/data/regions/config.ts"]
+    },
+    {
+      "id": 3,
+      "title": "Create new folder structure",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/guides/",
+        "Create src/data/articles/en/bettor-resources/",
+        "Create src/data/articles/overrides/gb/en/guides/",
+        "Create src/data/articles/overrides/ie/en/guides/",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "completedAt": "2026-01-23T01:34:00Z",
+      "filesChanged": [
+        "src/data/articles/en/index.ts",
+        "src/data/articles/en/guides/index.ts",
+        "src/data/articles/en/bettor-resources/index.ts",
+        "src/data/articles/overrides/gb/en/index.ts",
+        "src/data/articles/overrides/gb/en/guides/index.ts",
+        "src/data/articles/overrides/ie/en/index.ts",
+        "src/data/articles/overrides/ie/en/guides/index.ts",
+        "src/data/articles/index.ts"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Migrate universal articles to articles/en/",
+      "acceptanceCriteria": [
+        "Move betting-account-restrictions-gubbing-guide.ts to articles/en/guides/",
+        "Move best-live-score-stats-apps.ts to articles/en/bettor-resources/",
+        "Move best-in-play-betting-scanners.ts to articles/en/bettor-resources/",
+        "Move best-matched-betting-software.ts to articles/en/bettor-resources/",
+        "Use git mv to preserve history",
+        "Create index.ts files with exports",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 4,
+      "passes": true,
+      "completedAt": "2026-01-23T01:36:00Z",
+      "filesChanged": [
+        "src/data/articles/en/guides/betting-account-restrictions-gubbing-guide.ts",
+        "src/data/articles/en/bettor-resources/best-live-score-stats-apps.ts",
+        "src/data/articles/en/bettor-resources/best-in-play-betting-scanners.ts",
+        "src/data/articles/en/bettor-resources/best-matched-betting-software.ts"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Migrate GB-specific guides to overrides/gb/en/",
+      "acceptanceCriteria": [
+        "Move uk-ultimate-bonus-guide.ts → overrides/gb/en/guides/",
+        "Move uk-betting-industry-report.ts → overrides/gb/en/guides/",
+        "Move uk-betting-shops-bible.ts → overrides/gb/en/guides/",
+        "Move responsible-gambling-uk-bible.ts → overrides/gb/en/guides/",
+        "Use git mv to preserve history",
+        "Create index.ts with exports",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 5,
+      "passes": true,
+      "completedAt": "2026-01-23T01:38:00Z",
+      "filesChanged": [
+        "src/data/articles/overrides/gb/en/guides/uk-ultimate-bonus-guide.ts",
+        "src/data/articles/overrides/gb/en/guides/uk-betting-industry-report.ts",
+        "src/data/articles/overrides/gb/en/guides/uk-betting-shops-bible.ts",
+        "src/data/articles/overrides/gb/en/guides/responsible-gambling-uk-bible.ts",
+        "src/data/articles/overrides/gb/en/guides/index.ts"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Migrate IE-specific guides to overrides/ie/en/",
+      "acceptanceCriteria": [
+        "Move ie-ultimate-bonus-guide.ts → overrides/ie/en/guides/",
+        "Move ie-betting-industry-report.ts → overrides/ie/en/guides/",
+        "Move ie-betting-shops-bible.ts → overrides/ie/en/guides/",
+        "Move responsible-gambling-ie-bible.ts → overrides/ie/en/guides/",
+        "Use git mv to preserve history",
+        "Create index.ts with exports",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 6,
+      "passes": true,
+      "completedAt": "2026-01-23T01:40:00Z",
+      "filesChanged": [
+        "src/data/articles/overrides/ie/en/guides/ie-ultimate-bonus-guide.ts",
+        "src/data/articles/overrides/ie/en/guides/ie-betting-industry-report.ts",
+        "src/data/articles/overrides/ie/en/guides/ie-betting-shops-bible.ts",
+        "src/data/articles/overrides/ie/en/guides/responsible-gambling-ie-bible.ts",
+        "src/data/articles/overrides/ie/en/guides/index.ts"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Rewrite articles.ts with new lookup logic",
+      "acceptanceCriteria": [
+        "Import from new articles/en/ and overrides/ locations",
+        "Implement getGuidesForRegion(region) with override-first logic",
+        "getBettorResources returns universal articles for all regions",
+        "Maintain existing function signatures for backwards compatibility",
+        "getGuides('gb') returns GB overrides + universal guides",
+        "getGuides('ie') returns IE overrides + universal guides",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 7,
+      "passes": true,
+      "completedAt": "2026-01-23T01:42:00Z",
+      "filesChanged": ["src/data/articles.ts"]
+    },
+    {
+      "id": 8,
+      "title": "Update region index files for backwards compatibility",
+      "acceptanceCriteria": [
+        "Update regions/gb/en/index.ts to remove old article imports",
+        "Update regions/ie/en/index.ts to remove old article imports",
+        "Add comments directing to new articles.ts API",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 8,
+      "passes": true,
+      "completedAt": "2026-01-23T01:44:00Z",
+      "filesChanged": [
+        "src/data/regions/gb/en/index.ts",
+        "src/data/regions/ie/en/index.ts"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Clean up old article folders",
+      "acceptanceCriteria": [
+        "Remove empty regions/gb/en/articles/ folder",
+        "Remove empty regions/ie/en/articles/ folder",
+        "Verify no orphaned imports",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 9,
+      "passes": true,
+      "completedAt": "2026-01-23T01:46:00Z",
+      "filesChanged": []
+    },
+    {
+      "id": 10,
+      "title": "Update CLAUDE.md documentation",
+      "acceptanceCriteria": [
+        "Document new articles/ folder structure",
+        "Document overrides/ folder purpose",
+        "Update Data Layer section with new paths",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 10,
+      "passes": true,
+      "completedAt": "2026-01-23T01:48:00Z",
+      "filesChanged": ["CLAUDE.md"]
+    },
+    {
+      "id": 11,
+      "title": "Update CONTENT_GUIDE.md Section 11",
+      "acceptanceCriteria": [
+        "Update folder paths in Section 11.A",
+        "Update override paths in Section 11.E",
+        "Ensure all examples match new structure",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 11,
+      "passes": true,
+      "completedAt": "2026-01-23T01:50:00Z",
+      "filesChanged": ["docs/CONTENT_GUIDE.md"]
+    },
+    {
+      "id": 12,
+      "title": "Full integration test",
+      "acceptanceCriteria": [
+        "/gb/guides/ shows GB-specific + universal guides",
+        "/ie/guides/ shows IE-specific + universal guides",
+        "/gb/guides/betting-account-restrictions-gubbing-guide shows universal guide",
+        "/ie/guides/betting-account-restrictions-gubbing-guide shows same universal guide",
+        "/gb/bettor-resources/ shows all bettor resources",
+        "/ie/bettor-resources/ shows same bettor resources",
+        "All SEO metadata renders correctly",
+        "npm run lint passes",
+        "npm run build passes"
+      ],
+      "priority": 12,
+      "passes": true,
+      "completedAt": "2026-01-23T01:52:00Z",
+      "filesChanged": []
+    }
+  ],
+  "postFeatureReview": {
+    "summary": "Successfully migrated articles to language-first architecture. Universal articles (gubbing guide, bettor resources) now live in articles/en/ and are automatically shared across all EN regions. Region-specific guides (UK/IE bonus guides, industry reports, betting shops guides, responsible gambling guides) moved to overrides/{region}/en/.",
+    "impact": "Changed: src/data/articles.ts (new import paths and lookup logic), src/data/regions/gb/en/index.ts, src/data/regions/ie/en/index.ts (removed article exports), CLAUDE.md, docs/CONTENT_GUIDE.md. Added: src/data/articles/ folder structure, src/data/regions/config.ts",
+    "issues": "None. All 12 articles migrated successfully with git history preserved. Build passes, lint passes.",
+    "recommendations": "1. When adding new articles, decide if universal (articles/en/) or region-specific (overrides/{region}/en/). 2. For future languages (de, fr), create articles/{lang}/ folders. 3. regionConfig.ts is ready for new regions - just add to the config."
+  }
+}

@@ -564,3 +564,145 @@ Before publishing, verify:
 4. ✓ Max 1 link per brand per item (content unit)
 5. ✓ First mention linked, subsequent mentions plain text
 6. ✓ Affiliate links are bold: `**[Brand](/region/go/slug)**` (see `WRITING_STYLE.md`)
+
+---
+
+## 11. Regional Content Scope
+
+Articles are organized by **language first, region second**. Understanding when content is universal vs region-specific determines whether you need separate versions.
+
+### A. Architecture: Language-First Inheritance
+
+```
+src/data/articles/
+  en/                              ← Universal English content (shared by GB, IE, etc.)
+    guides/
+      betting-account-restrictions-gubbing-guide.ts
+    bettor-resources/
+      best-live-score-stats-apps.ts
+      best-in-play-betting-scanners.ts
+      best-matched-betting-software.ts
+  overrides/
+    gb/en/                         ← GB-specific English overrides
+      guides/
+        uk-ultimate-bonus-guide.ts
+        uk-betting-industry-report.ts
+    ie/en/                         ← IE-specific English overrides
+      guides/
+        ie-ultimate-bonus-guide.ts
+        ie-betting-industry-report.ts
+```
+
+**Lookup Order (Strict Mode):**
+1. Regional override (`overrides/gb/en/`) — if GB needs different content
+2. Language master (`en/`) — universal content for all EN regions
+
+**Note:** No fallback to other languages. Content only shows if matching language version exists.
+
+**Result:** Write once in `en/` → automatically available in GB, IE, and any future EN region.
+
+### B. When Content is Universal (Same Language)
+
+Most content is **universal within a language**. One English article serves all English-speaking regions.
+
+| Content Type | Usually Universal? | Example |
+|--------------|-------------------|---------|
+| Tool Reviews (bettor-resources) | ✅ Yes | In-play scanners, matched betting software |
+| Technical Guides | ✅ Yes | Gubbing guide, betting strategies |
+| Industry Explainers | ✅ Yes | How odds work, betting terminology |
+
+**Universal content characteristics:**
+- No region-specific regulations
+- No region-specific brands/bookmakers as primary focus
+- No region-specific statistics or data
+- Currency-neutral or easily adaptable (€ vs £)
+
+### C. When Content Needs Regional Version
+
+Create a **separate regional version** when:
+
+| Trigger | Example | Action |
+|---------|---------|--------|
+| **Regulatory differences** | UKGC rules vs Irish Revenue rules | IE version with different compliance text |
+| **Region-specific data** | "UK betting industry £16.8bn" | IE version with Irish market data |
+| **Different bookmaker landscape** | UK has bet365, IE has Paddy Power dominance | Different "Best For" recommendations |
+| **SEO title targeting** | "Best Betting Sites UK" vs "Best Betting Sites Ireland" | Separate articles for search intent |
+| **Legal nuances** | Gambling Act 2005 (UK) vs Betting Act 2015 (IE) | Different legal references |
+
+### D. Decision Flowchart
+
+```
+Is content about specific regulations/laws?
+  └─ YES → Regional version needed
+  └─ NO ↓
+
+Does content cite region-specific statistics?
+  └─ YES → Regional version needed
+  └─ NO ↓
+
+Is SEO targeting region-specific keywords?
+  └─ YES → Regional version needed
+  └─ NO ↓
+
+Are recommended products different per region?
+  └─ YES → Regional version (or adapt recommendations)
+  └─ NO → Universal content ✓
+```
+
+### E. Creating Regional Overrides
+
+**Scenario:** Universal English guide exists, but IE needs different stats.
+
+1. Create override file: `src/data/articles/overrides/ie/en/guides/betting-industry-report.ts`
+2. Export from override index: `src/data/articles/overrides/ie/en/guides/index.ts`
+3. Update `src/data/articles.ts` to include the new override in `getGuidesData()`
+4. Copy structure from universal article
+5. Update region-specific fields:
+   - `metaTitle` / `metaDescription` (SEO targeting)
+   - Statistics and data points
+   - Regulatory references
+   - Brand recommendations if different
+
+**Override inherits nothing** — it's a complete replacement. Copy all required fields.
+
+### F. Marking Regional Scope in Data Pack
+
+When preparing content via workflow documents, indicate scope:
+
+```markdown
+## Article Metadata
+
+Regional Scope: Universal EN | GB-only | IE-specific
+Reasoning: [Why this scope was chosen]
+```
+
+**For Universal:** No special action needed — master English serves all.
+
+**For Region-Specific:** Specify which regions need versions and what differs:
+```markdown
+Regional Scope: GB + IE (separate versions)
+Reasoning: Different regulatory bodies (UKGC vs Irish Revenue),
+           different market statistics, different SEO titles
+GB-specific: UKGC data, £ currency, UK betting shops
+IE-specific: Irish Revenue data, € currency, Irish market context
+```
+
+### G. Currency & Localization
+
+**Currency in content:**
+- Universal articles: Use € (more neutral) or state both ("£10 / €12")
+- GB-specific: Use £
+- IE-specific: Use €
+
+**Localization utility:** `src/utils/localization.ts` handles runtime transformations (£→€, UK→Ireland) for text that can be automatically adapted. Use for simple substitutions, not for substantive content differences.
+
+### H. Checklist for Content Authors
+
+Before writing, determine:
+
+1. ✓ Is this universal or region-specific? (Use flowchart D)
+2. ✓ If universal, no region code in slug
+3. ✓ If region-specific, document what differs in Data Pack
+4. ✓ For SEO: Does each region need separate title/description?
+5. ✓ For stats: Are you citing region-specific data?
+6. ✓ For recommendations: Do "Best For" picks change by region?

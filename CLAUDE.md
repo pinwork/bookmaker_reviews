@@ -121,10 +121,12 @@ Default to Server Components unless you need:
 
 - Use `cn()` for conditional classNames
 - Always use `@/` import aliases
-- Articles stored in `src/data/regions/[region]/en/articles/`
 - Use `git mv` to rename folders to preserve git history
 
-**Articles:** See `docs/CONTENT_GUIDE.md` for article structure, collections, SEO requirements.
+**Articles:** Language-first architecture. See `docs/CONTENT_GUIDE.md` for article structure, collections, SEO requirements.
+- Universal articles: `src/data/articles/en/`
+- Regional overrides: `src/data/articles/overrides/{region}/en/`
+- Public API: `src/data/articles.ts`
 
 ---
 
