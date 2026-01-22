@@ -141,22 +141,7 @@ Tables drive clicks. Optimize for scanning.
 
 ---
 
-## 6. Collections Strategy
-
-Use the `collections` array to control **which listing page** the content appears on.
-
-| Collection | Corresponding Listing Page | Intended Content |
-| :--- | :--- | :--- |
-| `guides` | `/guides/` | Guides only |
-| `bettor-resources` | `/bettor-resources/` | Tool Reviews only |
-
-**Simple Rule:**
-* If you write a Guide -> use `['guides']`.
-* If you write a Tool Review -> use `['bettor-resources']`.
-
----
-
-## 7. Bettor Resources: Editorial Standards
+## 6. Bettor Resources: Editorial Standards
 
 **Schema:** `src/types/schemas.ts` → `ToolReviewArticleSchema`, `ReviewItemSchema`
 
@@ -270,7 +255,7 @@ Every Key Feature bullet must answer: "What does the user gain?"
 
 ---
 
-## 8. Guides: Editorial Standards
+## 7. Guides: Editorial Standards
 
 **Schema:** `src/types/schemas.ts` → `GuideArticleSchema`, `GuideItemSchema`
 
@@ -338,93 +323,40 @@ FAQ in guides serves as **quick clarifications** — explaining terms, edge case
 
 ---
 
-## 9. Footer Standards
+## 8. Footer Standards
 
-Both `GuideArticle` and `ToolReviewArticle` require a `footer` object.
-
-### A. Required Fields
-
-#### lastUpdated (required)
-
-ISO date format. Update when content changes.
-```typescript
-footer: {
-  lastUpdated: '2026-01-20',  // YYYY-MM-DD format
-}
-```
+### A. lastUpdated
 
 **When to update:** Any content edit, price change, or fact verification.
 
-### B. Optional Fields
+### B. sources (optional)
 
-#### sources (optional)
-
-Array of source names. No URLs needed — this is for credibility signals, not clickable references.
-```typescript
-footer: {
-  lastUpdated: '2026-01-20',
-  sources: ['UKGC 2024-25', 'ESRI Oct 2023'],
-}
-```
-
-**When to include:**
-- Industry reports with statistics → cite data sources
-- Responsible gambling content → cite research
-- Tool reviews → `['Official websites', 'Hands-on testing']`
-
-**When to skip:**
-- Bonus guides explaining mechanics (general knowledge)
-
-### C. Templates by Content Type
+Array of source names for credibility signals. No URLs needed.
 
 | Content Type | sources Example |
 |--------------|-----------------|
-| Industry Report | `['UKGC 2024-25', 'Regulus Partners', 'Company filings']` |
-| Responsible Gambling | `['ESRI 2023', 'GambleAware', 'NHS England']` |
-| Betting Shops | `['IBA 2025', 'Company reports']` |
-| Bonus Guide | `['Bookmaker T&Cs']` or omit |
+| Industry Report | `['UKGC 2024-25', 'Regulus Partners']` |
+| Responsible Gambling | `['ESRI 2023', 'GambleAware']` |
 | Tool Reviews | `['Official websites', 'Hands-on testing']` |
-
-### D. Examples
-
-**Guide footer:**
-```typescript
-footer: {
-  lastUpdated: '2026-01-20',
-  sources: ['UKGC Industry Statistics 2024-25', 'ESRI Gambling Study Oct 2023'],
-}
-```
-
-**Tool Review footer:**
-```typescript
-footer: {
-  lastUpdated: '2026-01-21',
-  sources: ['Official websites', 'Hands-on testing'],
-}
-```
+| Bonus Guide | Omit (general knowledge) |
 
 ---
 
-## 10. Key Takeaways (Required)
+## 9. Key Takeaways
 
-Summary block displayed after ArticleHeader. **3 bullet points** for quick scanning.
-
-### A. Purpose & Relationship to Intro
+Summary block after ArticleHeader. Complements intro (context) with facts (verdict).
 
 | Field | Purpose | Style |
 |-------|---------|-------|
-| `intro` | Context, hook, "why this matters" | Narrative prose, 2-3 paragraphs |
-| `keyTakeaways` | Facts, numbers, verdict | Telegraphic bullets, scannable |
+| `intro` | Context, hook, "why this matters" | Narrative prose |
+| `keyTakeaways` | Facts, numbers, verdict | Telegraphic bullets |
 
-**Complementary, not duplicative.** Intro sets context; takeaways deliver the "so what."
+### A. Rules
 
-### B. Rules
-
-* **Exactly 3 items** (enforced by schema)
 * **Telegraphic style:** Facts over fluff. Include numbers/metrics.
 * **No overlap with intro:** Different information, not rephrased intro.
 
-### C. Formula by Content Type
+### B. Formula by Content Type
 
 **Guides:**
 1. Key legal/factual answer
@@ -436,7 +368,7 @@ Summary block displayed after ArticleHeader. **3 bullet points** for quick scann
 2. Best free/budget alternative
 3. Who it's for or key limitation
 
-### D. Examples
+### C. Examples
 
 **Guide (Industry Report):**
 ```typescript
@@ -456,16 +388,15 @@ keyTakeaways: [
 ]
 ```
 
-### E. Anti-Patterns
+### D. Anti-Patterns
 
 * ❌ `"Great guide for bettors"` — no specifics
 * ❌ Repeating intro text verbatim
 * ❌ Generic claims without numbers
-* ❌ More than 3 items
 
 ---
 
-## 11. Partner Lifecycle (Activation/Deactivation)
+## 10. Partner Lifecycle (Activation/Deactivation)
 
 When a partner (bookmaker, tool, app) is removed from the affiliate program or becomes unavailable, you must update content manually.
 
