@@ -1,6 +1,6 @@
-import { IndustryReport } from '@/types';
+import { GuideArticle } from '@/types';
 
-export const bettingShopsBible: IndustryReport = {
+export const bettingShopsBible: GuideArticle = {
   slug: 'uk-betting-shops-guide',
   collections: ['guides'],
   h1: 'The 2026 UK Betting Shop Bible: History, Stats & Store Locators',
@@ -121,13 +121,14 @@ Currently operates 277 shops in Ireland, 45 in Northern Ireland, and 46 in the U
         {
           id: 'reasons-to-visit',
           title: 'The Case for Physical Shops',
-          pros: [
-            'Anonymity & Cash: No digital footprint, no bank statements, no KYC for small bets',
-            'Instant Payouts: Collect winnings in cash immediately, no 3-5 day processing',
-            'Social Community: A place to watch racing and chat with regulars',
-            'No Technology Required: Accessible to those who prefer paper slips over apps'
-          ],
-          content: `Despite the rise of mobile betting, **13% of UK adults** still visit betting shops monthly. For many, it's about more than just placing a bet—it's a social ritual.`
+          content: `Despite the rise of mobile betting, **13% of UK adults** still visit betting shops monthly. For many, it's about more than just placing a bet—it's a social ritual.
+
+### Why Bettors Choose Shops
+
+- **Anonymity & Cash:** No digital footprint, no bank statements, no KYC for small bets
+- **Instant Payouts:** Collect winnings in cash immediately, no 3-5 day processing
+- **Social Community:** A place to watch racing and chat with regulars
+- **No Technology Required:** Accessible to those who prefer paper slips over apps`
         }
       ]
     },
