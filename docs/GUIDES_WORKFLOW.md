@@ -381,8 +381,8 @@ Type: [Industry Report / Bonus Guide / How-To / RG]
 Region: [gb / ie]
 Target audience: [Who reads this]
 
-Meta Title: [SEO title, max 60 chars]
-Meta Description: [SEO description, max 155 chars]
+Meta Title: [SEO title]
+Meta Description: [SEO description]
 ```
 
 ---
@@ -680,8 +680,6 @@ Data Source: ESRI (Oct 2023), GRAI (2024 Act), HRI Annual Report 2024
 - [ ] collections: ['guides']
 
 ### SEO
-- [ ] metaTitle under 60 chars
-- [ ] metaDescription under 155 chars
 - [ ] H1 contains primary keyword
 
 ### Handoff Instruction

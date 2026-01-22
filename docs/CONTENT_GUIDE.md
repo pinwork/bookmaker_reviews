@@ -317,6 +317,10 @@ One-line teaser shown below the title. Use when title alone is too short or abst
 
 ### C. Content Structure
 
+**Two-Level Reading Principle:**
+- **Level 1 (Scanners):** H1 + Intro + keyStats + Tables + FAQ — must deliver value in 30 seconds
+- **Level 2 (Readers):** Full prose in `content` for those who want depth
+
 Unlike Tool Reviews (strict micro-review format), Guides use **flexible prose**.
 
 Use `###` headers within `content` for subsections. Include real brand names and specific numbers (see Section 3). Group guidelines already covered in Section 2.A.
