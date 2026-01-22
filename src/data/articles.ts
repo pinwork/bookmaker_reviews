@@ -1,8 +1,30 @@
 // src/data/articles.ts
 import { GuideArticle, ToolReviewArticle } from '@/types';
+import { GuideArticleSchema, ToolReviewArticleSchema } from '@/types/schemas';
 import { DEFAULT_REGION } from './constants';
 import * as gbArticles from './regions/gb/en';
 import * as ieArticles from './regions/ie/en';
+
+// Runtime validation helpers (only active in development)
+function validateGuide(guide: unknown): boolean {
+  const result = GuideArticleSchema.safeParse(guide);
+  if (!result.success) {
+    const slug = (guide as { slug?: string })?.slug ?? 'unknown';
+    console.error(`[Guide Validation] "${slug}" failed:`, result.error.issues.map(i => `${i.path.join('.')}: ${i.message}`).join(', '));
+    return false;
+  }
+  return true;
+}
+
+function validateToolReview(article: unknown): boolean {
+  const result = ToolReviewArticleSchema.safeParse(article);
+  if (!result.success) {
+    const slug = (article as { slug?: string })?.slug ?? 'unknown';
+    console.error(`[ToolReview Validation] "${slug}" failed:`, result.error.issues.map(i => `${i.path.join('.')}: ${i.message}`).join(', '));
+    return false;
+  }
+  return true;
+}
 
 // Get guides from guides/ folder
 function getGuidesData(region: string): GuideArticle[] {
@@ -37,11 +59,19 @@ function getBettorResourcesData(region: string): ToolReviewArticle[] {
 
 // Public API
 export function getGuides(region: string = DEFAULT_REGION): GuideArticle[] {
-  return getGuidesData(region);
+  const guides = getGuidesData(region);
+  if (process.env.NODE_ENV === 'development') {
+    guides.forEach(validateGuide);
+  }
+  return guides;
 }
 
 export function getBettorResources(region: string = DEFAULT_REGION): ToolReviewArticle[] {
-  return getBettorResourcesData(region);
+  const articles = getBettorResourcesData(region);
+  if (process.env.NODE_ENV === 'development') {
+    articles.forEach(validateToolReview);
+  }
+  return articles;
 }
 
 export function getGuideBySlug(slug: string, region: string = DEFAULT_REGION): GuideArticle | undefined {
