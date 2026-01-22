@@ -449,3 +449,122 @@ keyTakeaways: [
   'Power users combine 2-3 apps for complete coverage',
 ]
 ```
+
+---
+
+## 11. Inline Affiliate Linking
+
+When bookmaker names appear in article text, we can link them to our affiliate redirect system. This section defines when and how to do it.
+
+### A. Architecture Overview
+
+**Route:** `/[region]/go/[slug]` → 307 Redirect → Affiliate URL
+
+```
+User clicks [Bet365](/gb/go/bet365)
+  → Server looks up bet365 in GB config
+  → Returns 307 redirect to affiliate link
+  → User lands on bet365.com with tracking
+```
+
+**Why region in URL?** Affiliate programs differ by market. GB and IE may have different tracking IDs. The explicit region ensures correct attribution.
+
+### B. Available Bookmaker Slugs
+
+Only these slugs work with the `/go/` system:
+
+| Slug | Brand Name |
+|------|------------|
+| `bet365` | bet365 |
+| `betfair` | Betfair |
+| `william-hill` | William Hill |
+| `paddy-power` | Paddy Power |
+| `sky-bet` | Sky Bet |
+| `betfred` | Betfred |
+| `888sport` | 888sport |
+| `unibet` | Unibet |
+| `betvictor` | BetVictor |
+| `boylesports` | BoyleSports |
+| `ladbrokes` | Ladbrokes |
+| `coral` | Coral |
+| `virgin-bet` | Virgin Bet |
+| `betway` | Betway |
+| `matchbook` | Matchbook |
+| `netbet` | NetBet |
+| `smarkets` | Smarkets |
+| `bwin` | bwin |
+
+**Unknown slug → 404.** Always verify slug exists before using.
+
+### C. Syntax
+
+**Format:** `[Brand Name](/[region]/go/[slug])`
+
+**Region Rule:** Match the article's region.
+- Article in `src/data/regions/gb/` → use `/gb/go/...`
+- Article in `src/data/regions/ie/` → use `/ie/go/...`
+
+```markdown
+// GB article
+Рекомендуємо [Bet365](/gb/go/bet365) для live betting.
+
+// IE article
+Спробуйте [Paddy Power](/ie/go/paddy-power) для акумуляторів.
+```
+
+### D. When to Link (✓)
+
+| Context | Example | Why Link |
+|---------|---------|----------|
+| **First mention** | "For live betting, [Bet365](/gb/go/bet365) offers..." | High intent, user just met the brand |
+| **Recommendation** | "We recommend [Sky Bet](/gb/go/sky-bet) for..." | Direct call to action |
+| **Specific offer** | "Claim [Betfred's welcome bonus](/gb/go/betfred)..." | Transactional intent |
+| **Comparison winner** | "In our tests, [Unibet](/gb/go/unibet) came first..." | Editorial endorsement |
+
+### E. When NOT to Link (✗)
+
+| Context | Example | Why No Link |
+|---------|---------|-------------|
+| **Negative news** | "William Hill was fined £19m for..." | Don't monetize bad press |
+| **Every mention** | "Bet365 is great. Bet365 also..." | Spam, hurts readability |
+| **Generic context** | "Sites like Bet365 exist..." | No clear user intent |
+| **Competitor comparison** | "Unlike 888sport, Betfair..." | Don't link the "loser" |
+
+### F. Frequency Rule
+
+**Max 1 link per brand per section (Group).**
+
+Link the first meaningful mention. Use plain text for subsequent mentions.
+
+```markdown
+// ✓ Good
+[Bet365](/gb/go/bet365) offers the best live interface.
+Bet365 also has excellent odds on football.  // No link, same section
+
+// ✗ Bad
+[Bet365](/gb/go/bet365) is great. We love [Bet365](/gb/go/bet365)
+because [Bet365](/gb/go/bet365) works well.  // Spam
+```
+
+### G. linkedResources vs Inline Links
+
+**Two separate systems:**
+
+| Mechanism | Purpose | Location |
+|-----------|---------|----------|
+| `linkedResources` | Structured data for UI components (bonus cards, comparison tables) | Article data field |
+| Inline `/go/` links | Text mentions in markdown content | Inside `content` strings |
+
+They don't conflict. An article can have both:
+- `linkedResources: [{ id: 'bet365', type: 'bookmaker' }]` for future card rendering
+- `[Bet365](/gb/go/bet365)` in markdown for text links
+
+### H. Checklist for Content Authors
+
+Before publishing, verify:
+
+1. ✓ All `/go/` slugs exist in the bookmaker list (Section B)
+2. ✓ Region in URL matches article region (`/gb/` for GB articles)
+3. ✓ No links in negative contexts (fines, scandals, layoffs)
+4. ✓ Max 1 link per brand per section
+5. ✓ First mention linked, subsequent mentions plain text
