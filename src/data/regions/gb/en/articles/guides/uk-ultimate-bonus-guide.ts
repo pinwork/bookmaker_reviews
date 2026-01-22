@@ -1,6 +1,6 @@
-import { IndustryReport } from '@/types';
+import { GuideArticle } from '@/types';
 
-export const ultimateBonusGuide: IndustryReport = {
+export const ultimateBonusGuide: GuideArticle = {
   slug: 'uk-betting-bonus-guide-2026',
   collections: ['guides'],
   h1: 'The Ultimate Betting Bonus Bible 2026: Master Every Offer',
@@ -259,5 +259,9 @@ Predict 6 scores (Super 6) for a **£250k-£1m jackpot**. **Ladbrokes 1-2-Free**
       q: 'Why was my bonus rejected?',
       a: 'Common reasons include using an excluded payment method (PayPal/Skrill), depositing below the minimum (£5-£10), or having a duplicate account at the same address.'
     }
-  ]
+  ],
+
+  footer: {
+    lastUpdated: '2026-01-20'
+  }
 };
