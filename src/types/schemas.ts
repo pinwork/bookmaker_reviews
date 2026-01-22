@@ -375,7 +375,7 @@ export const GuideArticleSchema = z.object({
   groups: z.array(GuideSectionSchema).min(1), // One or more sections
   faq: z.array(z.object({ q: z.string(), a: z.string() })).min(3), // Required: min 3 FAQs
   footer: z.object({
-    lastUpdated: z.string().optional(),
+    lastUpdated: z.string(),
     dataSource: z.string().optional(),
-  }).optional(),
+  }),
 });
