@@ -180,7 +180,7 @@ From 8% of the Irish market in 1988 to the **world's largest online betting comp
   ],
 
   footer: {
-    dataSource: 'Data: IBA (July 2025), ESRI (Oct 2023), HRI (2024), and GRAI Operational Updates.',
-    lastUpdated: '2026-01-20'
+    lastUpdated: '2026-01-20',
+    sources: ['IBA July 2025', 'ESRI Oct 2023', 'HRI 2024', 'GRAI 2025']
   }
 };

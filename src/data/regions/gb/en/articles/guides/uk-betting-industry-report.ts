@@ -204,7 +204,7 @@ Betfred remains one of the few large independent operators, with over **1,300 sh
   ],
 
   footer: {
-    dataSource: 'Data sourced from UK Gambling Commission Industry Statistics FY 2024-25 and Regulus Partners Analysis.',
-    lastUpdated: '2026-01-20'
+    lastUpdated: '2026-01-20',
+    sources: ['UKGC Industry Statistics 2024-25', 'Regulus Partners']
   }
 };

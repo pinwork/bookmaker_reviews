@@ -358,6 +358,6 @@ Monthly: €13.90. Yearly: €99.60 (€8.30/mo effective). Pay-As-You-Go: €0.
 
   footer: {
     lastUpdated: '2026-01-21',
-    dataSource: 'Information compiled from official websites and hands-on testing. Pricing verified January 2026.'
+    sources: ['Official websites', 'Hands-on testing']
   }
 };

@@ -83,7 +83,7 @@ export default async function GuidePage({ params }: PageProps) {
 
         <ArticleFooter
           lastUpdated={article.footer?.lastUpdated}
-          dataSource={article.footer?.dataSource}
+          sources={article.footer?.sources}
         />
       </main>
     </>

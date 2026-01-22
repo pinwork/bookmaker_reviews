@@ -6,13 +6,13 @@ import { cn } from '@/lib/utils';
 
 interface ArticleFooterProps {
   lastUpdated?: string;
-  dataSource?: string;
+  sources?: string[];
 }
 
-export function ArticleFooter({ lastUpdated, dataSource }: ArticleFooterProps) {
+export function ArticleFooter({ lastUpdated, sources }: ArticleFooterProps) {
   const [isSourcesOpen, setIsSourcesOpen] = useState(false);
 
-  if (!lastUpdated && !dataSource) return null;
+  if (!lastUpdated && (!sources || sources.length === 0)) return null;
 
   return (
     <footer className="mt-12 pt-6 border-t border-gray-200">
@@ -26,7 +26,7 @@ export function ArticleFooter({ lastUpdated, dataSource }: ArticleFooterProps) {
         )}
 
         {/* Sources button - right */}
-        {dataSource && (
+        {sources && sources.length > 0 && (
           <button
             onClick={() => setIsSourcesOpen(!isSourcesOpen)}
             className="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 transition-colors"
@@ -43,14 +43,14 @@ export function ArticleFooter({ lastUpdated, dataSource }: ArticleFooterProps) {
       </div>
 
       {/* Collapsible sources content - SEO friendly (always in DOM) */}
-      {dataSource && (
+      {sources && sources.length > 0 && (
         <div
           className={cn(
             'overflow-hidden transition-all duration-200',
             isSourcesOpen ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'
           )}
         >
-          <p className="text-xs text-gray-400">{dataSource}</p>
+          <p className="text-xs text-gray-400">{sources.join(' • ')}</p>
         </div>
       )}
     </footer>

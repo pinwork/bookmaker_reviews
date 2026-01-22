@@ -356,7 +356,7 @@ export const ToolReviewArticleSchema = z.object({
   faq: z.array(z.object({ q: z.string(), a: z.string() })).min(3),
   footer: z.object({
     lastUpdated: z.string(),
-    dataSource: z.string().optional(),
+    sources: z.array(z.string()).optional(),
   }),
 });
 
@@ -374,6 +374,6 @@ export const GuideArticleSchema = z.object({
   faq: z.array(z.object({ q: z.string(), a: z.string() })).min(3), // Required: min 3 FAQs
   footer: z.object({
     lastUpdated: z.string(),
-    dataSource: z.string().optional(),
+    sources: z.array(z.string()).optional(),
   }),
 });

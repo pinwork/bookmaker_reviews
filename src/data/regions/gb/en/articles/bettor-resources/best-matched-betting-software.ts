@@ -286,6 +286,6 @@ Free tier includes all calculators and basic OddsMatcher. Premium pricing not pr
 
   footer: {
     lastUpdated: '2026-01-21',
-    dataSource: 'Information compiled from official websites and community research. Pricing verified January 2026.'
+    sources: ['Official websites', 'Hands-on testing']
   }
 };

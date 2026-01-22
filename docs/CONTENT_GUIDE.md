@@ -338,28 +338,67 @@ FAQ in guides serves as **quick clarifications** — explaining terms, edge case
 
 ---
 
-## 9. Footer Requirements
+## 9. Footer Standards
 
 Both `GuideArticle` and `ToolReviewArticle` require a `footer` object.
 
-### lastUpdated (required)
+### A. Required Fields
 
-**Format:** ISO date string `YYYY-MM-DD`
+#### lastUpdated (required)
 
+ISO date format. Update when content changes.
 ```typescript
 footer: {
-  lastUpdated: '2026-01-22',  // ✅ Correct: ISO format
-  dataSource: 'Information compiled from official sources.'
+  lastUpdated: '2026-01-20',  // YYYY-MM-DD format
 }
 ```
 
-**Common mistakes:**
-* ❌ `'January 2026'` — Human-readable format, not ISO
-* ❌ `'22/01/2026'` — UK date format, not ISO
-* ❌ `'2026-1-22'` — Missing leading zeros
+**When to update:** Any content edit, price change, or fact verification.
 
-**Why ISO format:** Used for Schema.org `datePublished` and `dateModified` in SEO metadata. Must parse correctly for search engines.
+### B. Optional Fields
 
-### dataSource (optional)
+#### sources (optional)
 
-Attribution text displayed in the article footer. Include when content relies on external data or studies.
+Array of source names. No URLs needed — this is for credibility signals, not clickable references.
+```typescript
+footer: {
+  lastUpdated: '2026-01-20',
+  sources: ['UKGC 2024-25', 'ESRI Oct 2023'],
+}
+```
+
+**When to include:**
+- Industry reports with statistics → cite data sources
+- Responsible gambling content → cite research
+- Tool reviews → `['Official websites', 'Hands-on testing']`
+
+**When to skip:**
+- Bonus guides explaining mechanics (general knowledge)
+
+### C. Templates by Content Type
+
+| Content Type | sources Example |
+|--------------|-----------------|
+| Industry Report | `['UKGC 2024-25', 'Regulus Partners', 'Company filings']` |
+| Responsible Gambling | `['ESRI 2023', 'GambleAware', 'NHS England']` |
+| Betting Shops | `['IBA 2025', 'Company reports']` |
+| Bonus Guide | `['Bookmaker T&Cs']` or omit |
+| Tool Reviews | `['Official websites', 'Hands-on testing']` |
+
+### D. Examples
+
+**Guide footer:**
+```typescript
+footer: {
+  lastUpdated: '2026-01-20',
+  sources: ['UKGC Industry Statistics 2024-25', 'ESRI Gambling Study Oct 2023'],
+}
+```
+
+**Tool Review footer:**
+```typescript
+footer: {
+  lastUpdated: '2026-01-21',
+  sources: ['Official websites', 'Hands-on testing'],
+}
+```

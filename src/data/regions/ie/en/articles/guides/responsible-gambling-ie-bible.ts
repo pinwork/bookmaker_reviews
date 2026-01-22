@@ -192,7 +192,7 @@ Now an ambassador for Extern Problem Gambling, focusing on youth education.`
   ],
 
   footer: {
-    dataSource: 'Data from ESRI Oct 2023 Study, IPH Jan 2025 Suicide Report, and GRAI 2025 Operational Updates.',
-    lastUpdated: '2026-01-20'
+    lastUpdated: '2026-01-20',
+    sources: ['ESRI Oct 2023', 'IPH Jan 2025', 'GRAI 2025']
   }
 };
