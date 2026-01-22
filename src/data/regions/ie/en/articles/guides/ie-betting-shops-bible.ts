@@ -1,6 +1,6 @@
-import { IndustryReport } from '@/types';
+import { GuideArticle } from '@/types';
 
-export const ieBettingShopsBible: IndustryReport = {
+export const ieBettingShopsBible: GuideArticle = {
   slug: 'ireland-betting-shops-guide',
   collections: ['guides'],
   h1: 'The 2026 Ireland Betting Shop Bible: Closures, Laws & The GRAI Era',

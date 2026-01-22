@@ -1,6 +1,6 @@
-import { IndustryReport } from '@/types';
+import { GuideArticle } from '@/types';
 
-export const ieBettingIndustryReport: IndustryReport = {
+export const ieBettingIndustryReport: GuideArticle = {
   slug: 'ireland-betting-market-analysis-2026',
   collections: ['guides'],
   h1: 'The 2026 Ireland Betting Report: GRAI, Taxes & A New Era',

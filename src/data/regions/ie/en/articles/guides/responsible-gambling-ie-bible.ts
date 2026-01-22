@@ -1,6 +1,6 @@
-import { IndustryReport } from '@/types';
+import { GuideArticle } from '@/types';
 
-export const responsibleGamblingIrelandBible: IndustryReport = {
+export const responsibleGamblingIrelandBible: GuideArticle = {
   slug: 'responsible-gambling-ireland-guide',
   collections: ['guides'],
   h1: 'The 2026 Ireland Responsible Gambling Bible: Tools, Data & Recovery',
