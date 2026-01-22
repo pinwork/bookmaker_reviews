@@ -64,9 +64,9 @@
         "npm run build passes"
       ],
       "priority": 2,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/gb/en/articles/guides/uk-betting-shops-bible.ts"]
     },
     {
       "id": 5,

@@ -1,6 +1,6 @@
-import { IndustryReport } from '@/types';
+import { GuideArticle } from '@/types';
 
-export const ieBonusGuide: IndustryReport = {
+export const ieBonusGuide: GuideArticle = {
   slug: 'ie-betting-bonus-guide-2026',
   collections: ['guides'],
   h1: 'Ireland Betting Bonus Guide 2026: What is Legal Under GRAI?',
@@ -129,6 +129,6 @@ export const ieBonusGuide: IndustryReport = {
   ],
 
   footer: {
-    lastUpdated: 'January 2026'
+    lastUpdated: '2026-01-20'
   }
 };
