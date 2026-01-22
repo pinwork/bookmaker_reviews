@@ -51,7 +51,7 @@ export default async function BettorResourcePage({ params }: PageProps) {
 
   const siteConfig = getSiteConfig(region);
   const articleUrl = siteConfig ? `${siteConfig.url}/${region}/bettor-resources/${slug}` : '';
-  const schemas = siteConfig ? generateArticleSchemas(article, articleUrl, siteConfig) : [];
+  const schema = siteConfig ? generateArticleSchemas(article, articleUrl, siteConfig) : null;
 
   // Build logo paths, bgColors, and item URLs from article groups
   const logoPaths: Record<string, string | null> = {};
@@ -89,10 +89,10 @@ export default async function BettorResourcePage({ params }: PageProps) {
 
   return (
     <>
-      {schemas.length > 0 && (
+      {schema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       )}
       <main className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8 font-sans">

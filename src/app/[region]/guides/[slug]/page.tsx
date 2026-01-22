@@ -49,14 +49,14 @@ export default async function GuidePage({ params }: PageProps) {
 
   const siteConfig = getSiteConfig(region);
   const articleUrl = siteConfig ? `${siteConfig.url}/${region}/guides/${slug}` : '';
-  const schemas = siteConfig ? generateArticleSchemas(article, articleUrl, siteConfig) : [];
+  const schema = siteConfig ? generateArticleSchemas(article, articleUrl, siteConfig) : null;
 
   return (
     <>
-      {schemas.length > 0 && (
+      {schema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       )}
       <main className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8 font-sans">

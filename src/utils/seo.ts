@@ -4,14 +4,29 @@ import { GuideArticle, ToolReviewArticle, SiteConfig } from '@/types';
 type Article = GuideArticle | ToolReviewArticle;
 
 /**
- * Generate Article schema for Guides and Tool Reviews
+ * Helper to generate FAQ items array for Schema
+ * Maps FAQ format to Google's Question/Answer structure
+ */
+const generateFAQItems = (faq: Array<{ q: string; a: string }>) => {
+  return faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a
+    }
+  }));
+};
+
+/**
+ * Generate Article schema with NESTED FAQ and E-E-A-T Author
  */
 export const generateArticleSchema = (
   article: Article,
   url: string,
   config: SiteConfig
 ) => {
-  return {
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.h1,
@@ -19,21 +34,43 @@ export const generateArticleSchema = (
     image: article.slug ? `${config.url}/images/${article.slug}.jpg` : undefined,
     datePublished: article.footer?.lastUpdated || new Date().toISOString(),
     dateModified: article.footer?.lastUpdated || new Date().toISOString(),
+
+    // E-E-A-T: Person as Author
     author: {
+      '@type': 'Person',
+      name: config.defaultAuthor?.name || config.name,
+      url: config.url
+    },
+    // Brand as Publisher
+    publisher: {
       '@type': 'Organization',
       name: config.name,
-      url: config.url
+      logo: {
+        '@type': 'ImageObject',
+        url: `${config.url}/logo.png`
+      }
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': url
     }
   };
+
+  // Nest FAQ inside Article via hasPart
+  if (article.faq && article.faq.length > 0) {
+    schema.hasPart = [
+      {
+        '@type': 'FAQPage',
+        mainEntity: generateFAQItems(article.faq)
+      }
+    ];
+  }
+
+  return schema;
 };
 
 /**
  * Generate Organization schema for Bookmakers
- * Works with data from BookmakerComplete type
  */
 export const generateBookmakerSchema = (
   name: string,
@@ -55,7 +92,6 @@ export const generateBookmakerSchema = (
 
 /**
  * Generate Review schema for Bookmaker Reviews
- * Simplified version without rating (can be added later when rating system is implemented)
  */
 export const generateReviewSchema = (
   bookmakerName: string,
@@ -74,13 +110,14 @@ export const generateReviewSchema = (
       description: tagline
     },
     author: {
-      '@type': 'Organization',
-      name: config.name,
+      '@type': 'Person',
+      name: config.defaultAuthor?.name || config.name,
       url: config.url
     },
     reviewBody: verdict,
     datePublished: lastUpdated,
-    dateModified: lastUpdated
+    dateModified: lastUpdated,
+    url: url
   };
 };
 
@@ -95,7 +132,7 @@ export const generateSoftwareAppSchema = (
 ) => {
   const ctx = article.reviewContext;
 
-  return {
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: article.h1,
@@ -116,56 +153,37 @@ export const generateSoftwareAppSchema = (
       price: ctx.price === 'Free' ? '0' : (ctx.price?.replace(/[^0-9.]/g, '') ?? '0'),
       priceCurrency: ctx.priceCurrency ?? 'GBP',
     },
+    // E-E-A-T Author for Reviews
     author: {
-      '@type': 'Organization',
-      name: config.name,
-      url: config.url
+      '@type': 'Person',
+      name: config.defaultAuthor?.name || config.name,
     },
     image: article.slug ? `${config.url}/images/${article.slug}.jpg` : undefined,
   };
-};
 
-/**
- * Generate FAQPage schema from article FAQ
- */
-const generateFAQSchema = (faq: Array<{ q: string; a: string }>) => {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faq.map((item) => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.a
+  // Nest FAQ in Reviews as well
+  if (article.faq && article.faq.length > 0) {
+    schema.hasPart = [
+      {
+        '@type': 'FAQPage',
+        mainEntity: generateFAQItems(article.faq)
       }
-    }))
-  };
+    ];
+  }
+
+  return schema;
 };
 
 /**
- * Generate all relevant schemas for an article
- * Returns array: [Article/SoftwareApp schema, FAQPage schema (if faq exists)]
+ * Main Entry Point - returns a SINGLE nested schema object
  */
 export const generateArticleSchemas = (
   article: Article,
   url: string,
   config: SiteConfig
-): object[] => {
-  const schemas: object[] = [];
-
-  // Use SoftwareApplication schema if reviewContext exists (for Rich Snippets with stars)
-  // Otherwise fall back to standard Article schema
+): object => {
   if ('reviewContext' in article && article.reviewContext?.objectType === 'SoftwareApplication') {
-    schemas.push(generateSoftwareAppSchema(article as ToolReviewArticle, url, config));
-  } else {
-    schemas.push(generateArticleSchema(article, url, config));
+    return generateSoftwareAppSchema(article as ToolReviewArticle, url, config);
   }
-
-  // Add FAQPage schema if article has FAQ
-  if (article.faq && article.faq.length > 0) {
-    schemas.push(generateFAQSchema(article.faq));
-  }
-
-  return schemas;
+  return generateArticleSchema(article, url, config);
 };
