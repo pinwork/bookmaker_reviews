@@ -130,11 +130,3 @@ export function TableOfContents({ sections }: TableOfContentsProps) {
     </div>
   );
 }
-
-// Helper function to generate slug from section title
-export function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-}

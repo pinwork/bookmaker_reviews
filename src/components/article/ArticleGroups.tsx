@@ -9,7 +9,7 @@ import {
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
 import { cn } from '@/lib/utils';
-import { slugify } from './TableOfContents';
+import { slugify } from '@/utils/slugify';
 
 interface KeyStat {
   label: string;

@@ -2,7 +2,8 @@
 export { ArticleHeader } from './ArticleHeader';
 export { KeyTakeaways } from './KeyTakeaways';
 export { ReadingProgress } from './ReadingProgress';
-export { TableOfContents, slugify } from './TableOfContents';
+export { TableOfContents } from './TableOfContents';
+export { slugify } from '@/utils/slugify';
 export type { TocSection } from './TableOfContents';
 export { UnifiedComparisonTable } from './UnifiedComparisonTable';
 export { ArticleGroups } from './ArticleGroups';

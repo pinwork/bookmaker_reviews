@@ -1,5 +1,5 @@
 import ReactMarkdown from 'react-markdown';
-import { slugify } from './TableOfContents';
+import { slugify } from '@/utils/slugify';
 
 interface KeyStat {
   label: string;
