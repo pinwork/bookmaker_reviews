@@ -1,0 +1,99 @@
+{
+  "featureName": "Mobile UX Optimization",
+  "description": "Two-phase UX improvement: Phase 1 fixes critical mobile issues (tables, typography), Phase 2 adds engagement features (ToC, progress bar).",
+  "userStories": [
+    {
+      "id": 1,
+      "title": "[Phase 1] Responsive Comparison Tables - Card View",
+      "acceptanceCriteria": [
+        "UnifiedComparisonTable.tsx renders as standard table on desktop (≥768px)",
+        "On mobile (<768px): Each row transforms into a Card with Header:Value pairs",
+        "No horizontal scrolling on any screen size",
+        "Remove min-w-[600px] constraint",
+        "Card view preserves clickable links for first column",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-22T00:00:00Z",
+      "filesChanged": ["src/components/article/UnifiedComparisonTable.tsx"]
+    },
+    {
+      "id": 2,
+      "title": "[Phase 1] Typography & Readability Tuning",
+      "acceptanceCriteria": [
+        "Article prose uses prose (16px base) instead of prose-sm",
+        "Add text-pretty or text-balance to headings for better line breaks",
+        "Verify line-height is 1.6+ (prose default is good)",
+        "GuideSections and ArticleGroups updated with consistent typography",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-22T00:00:00Z",
+      "filesChanged": ["src/components/article/ArticleGroups.tsx", "src/components/article/GuideSections.tsx", "src/components/article/ArticleHeader.tsx"]
+    },
+    {
+      "id": 3,
+      "title": "[Phase 2] Reading Progress Bar",
+      "acceptanceCriteria": [
+        "Component: src/components/article/ReadingProgress.tsx",
+        "Fixed at top of viewport (position: fixed, z-50)",
+        "3px height, brand color (amber-500 or primary)",
+        "Width updates based on scroll position relative to <main> content",
+        "Uses useEffect + scroll listener (robust cross-browser)",
+        "Exported from src/components/article/index.ts",
+        "Integrated into both page templates",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "completedAt": "2026-01-22T00:00:00Z",
+      "filesChanged": ["src/components/article/ReadingProgress.tsx", "src/components/article/index.ts", "src/app/[region]/guides/[slug]/page.tsx", "src/app/[region]/bettor-resources/[slug]/page.tsx"]
+    },
+    {
+      "id": 4,
+      "title": "[Phase 2] Sticky Table of Contents (Mobile)",
+      "acceptanceCriteria": [
+        "Component: src/components/article/TableOfContents.tsx",
+        "Only renders when article has 3+ groups/sections",
+        "Sticky below header on mobile (<768px), hidden on desktop",
+        "Shows current section name (IntersectionObserver)",
+        "Tap expands dropdown with all section links",
+        "Smooth scroll to section on tap",
+        "Exported and integrated into page templates",
+        "npm run build passes"
+      ],
+      "priority": 4,
+      "passes": true,
+      "completedAt": "2026-01-22T00:00:00Z",
+      "filesChanged": ["src/components/article/TableOfContents.tsx", "src/components/article/index.ts", "src/components/article/ArticleGroups.tsx", "src/components/article/GuideSections.tsx", "src/app/[region]/guides/[slug]/page.tsx", "src/app/[region]/bettor-resources/[slug]/page.tsx"]
+    }
+  ],
+  "phases": {
+    "phase1": {
+      "name": "Critical Fixes",
+      "priority": "Must Have",
+      "stories": [1, 2],
+      "description": "Fix mobile UX bugs: eliminate horizontal scroll, improve readability"
+    },
+    "phase2": {
+      "name": "Engagement Enhancements",
+      "priority": "Should Have",
+      "stories": [3, 4],
+      "description": "Add navigation aids for long-form content consumption"
+    }
+  },
+  "technicalNotes": {
+    "responsiveTables": "Use CSS Grid with grid-template-columns for desktop, stack vertically on mobile. Consider @container queries for future-proofing.",
+    "progressBar": "Prefer scroll event listener over CSS scroll-timeline due to Safari support (~85%). Throttle with requestAnimationFrame.",
+    "toc": "Use IntersectionObserver with rootMargin to detect current section. Store section refs in context or pass as props.",
+    "typography": "Tailwind prose plugin handles most defaults. Focus on prose size upgrade and heading balance."
+  },
+  "postFeatureReview": {
+    "summary": "Implemented two-phase Mobile UX Optimization: Phase 1 fixed critical issues (responsive tables with card view, typography upgrade), Phase 2 added engagement features (reading progress bar, sticky mobile ToC)",
+    "impact": "Article pages (guides, bettor-resources), UnifiedComparisonTable, ArticleGroups, GuideSections, ArticleHeader components",
+    "issues": "None identified during implementation",
+    "recommendations": "Consider adding ToC to desktop as sidebar for very long articles; consider persisting ToC expanded/collapsed state"
+  }
+}
