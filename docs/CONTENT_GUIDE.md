@@ -22,6 +22,8 @@ We have **two distinct article types** for different user intents:
 
 **Schema Reference:** See `src/types/schemas.ts` for field requirements and validation.
 
+**Runtime Validation:** In development mode (`npm run dev`), all articles are validated against their schema on load. Check the console for validation errors including the slug and specific field issues.
+
 ### A. Guides (GuideArticle)
 
 Educational content with flexible structure. No affiliate links or product ratings.
@@ -333,3 +335,31 @@ FAQ in guides serves as **quick clarifications** — explaining terms, edge case
 
 * *Good:* "What happens if my bet is voided?", "How is rollover calculated?"
 * *Bad:* "Which bookmaker is best?" (that's Tool Review territory)
+
+---
+
+## 9. Footer Requirements
+
+Both `GuideArticle` and `ToolReviewArticle` require a `footer` object.
+
+### lastUpdated (required)
+
+**Format:** ISO date string `YYYY-MM-DD`
+
+```typescript
+footer: {
+  lastUpdated: '2026-01-22',  // ✅ Correct: ISO format
+  dataSource: 'Information compiled from official sources.'
+}
+```
+
+**Common mistakes:**
+* ❌ `'January 2026'` — Human-readable format, not ISO
+* ❌ `'22/01/2026'` — UK date format, not ISO
+* ❌ `'2026-1-22'` — Missing leading zeros
+
+**Why ISO format:** Used for Schema.org `datePublished` and `dateModified` in SEO metadata. Must parse correctly for search engines.
+
+### dataSource (optional)
+
+Attribution text displayed in the article footer. Include when content relies on external data or studies.
