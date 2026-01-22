@@ -8,7 +8,7 @@ export function KeyTakeaways({ items }: KeyTakeawaysProps) {
   if (!items || items.length === 0) return null;
 
   return (
-    <section className="my-6 p-5 bg-slate-50 border border-slate-200 rounded-xl relative overflow-hidden">
+    <section className="mt-6 mb-10 p-5 bg-slate-50 border border-slate-200 rounded-xl relative overflow-hidden">
       {/* Left accent border */}
       <div className="absolute top-0 left-0 w-1 h-full bg-amber-500" />
 
