@@ -462,3 +462,59 @@ keyTakeaways: [
 * ❌ Repeating intro text verbatim
 * ❌ Generic claims without numbers
 * ❌ More than 3 items
+
+---
+
+## 11. Partner Lifecycle (Activation/Deactivation)
+
+When a partner (bookmaker, tool, app) is removed from the affiliate program or becomes unavailable, you must update content manually.
+
+### A. What `active: false` Controls
+
+Setting `active: false` in `linkedResources` or removing an item from `groups` **only** affects:
+- Review cards (hidden)
+- Comparison table rows (hidden)
+- Banner placements (hidden)
+
+### B. What Requires Manual Update
+
+These sections **are NOT automatically filtered** and must be edited manually:
+
+| Section | Action Required |
+|---------|-----------------|
+| `intro` | Remove brand mentions, update "Editor's Pick" claims |
+| `keyTakeaways` | Remove specific recommendations (e.g., "Flashscore leads...") |
+| `content` | Remove brand references in prose |
+| `faq` | Update answers mentioning the partner |
+| SEO `reviewContext` | Update if deactivated partner was the primary review subject |
+
+### C. Deactivation Checklist
+
+When deactivating a partner:
+
+1. Set `active: false` in `linkedResources` (or remove from `groups`)
+2. Search article for brand name mentions
+3. Update `intro` if partner was highlighted
+4. Update `keyTakeaways` if partner was recommended
+5. Update `footer.lastUpdated` to current date
+6. Run `npm run build` to verify no broken references
+
+### D. Example
+
+**Before deactivation (Flashscore removed):**
+```typescript
+keyTakeaways: [
+  'Flashscore leads for in-play speed (5-20 second updates)',  // ❌ Must update
+  'SofaScore offers unique betting features: live xG',
+  'Power users combine 2-3 apps for complete coverage',
+]
+```
+
+**After deactivation:**
+```typescript
+keyTakeaways: [
+  'SofaScore leads for in-play speed with live xG updates',  // ✅ Updated
+  'FotMob excels for football-specific deep stats',
+  'Power users combine 2-3 apps for complete coverage',
+]
+```
