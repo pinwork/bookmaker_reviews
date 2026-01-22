@@ -1,6 +1,6 @@
-import { IndustryReport } from '@/types';
+import { ToolReviewArticle } from '@/types';
 
-export const inPlayScannersArticle: IndustryReport = {
+export const inPlayScannersArticle: ToolReviewArticle = {
   slug: 'best-in-play-betting-scanners-2026',
   collections: ['bettor-resources'],
   h1: 'Best In-Play Football Betting Scanners (2026)',

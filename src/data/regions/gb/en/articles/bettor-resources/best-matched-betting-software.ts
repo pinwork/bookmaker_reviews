@@ -1,6 +1,6 @@
-import { IndustryReport } from '@/types';
+import { ToolReviewArticle } from '@/types';
 
-export const matchedBettingSoftwareArticle: IndustryReport = {
+export const matchedBettingSoftwareArticle: ToolReviewArticle = {
   slug: 'best-matched-betting-software-uk',
   collections: ['bettor-resources'],
   h1: 'Best Matched Betting Software UK (2026)',

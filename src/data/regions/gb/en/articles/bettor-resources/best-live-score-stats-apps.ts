@@ -1,6 +1,6 @@
-import { IndustryReport } from '@/types';
+import { ToolReviewArticle } from '@/types';
 
-export const liveScoreAppsArticle: IndustryReport = {
+export const liveScoreAppsArticle: ToolReviewArticle = {
   slug: 'best-live-score-stats-apps-2026',
   collections: ['bettor-resources'],
   h1: 'Best Live Score & Stats Apps for Sports Bettors (2026)',

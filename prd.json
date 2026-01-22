@@ -98,9 +98,9 @@
         "npm run build passes"
       ],
       "priority": 2,
-      "passes": false,
-      "completedAt": null,
-      "filesChanged": []
+      "passes": true,
+      "completedAt": "2026-01-22",
+      "filesChanged": ["src/data/regions/gb/en/articles/guides/uk-betting-industry-report.ts", "src/data/regions/gb/en/articles/guides/responsible-gambling-uk-bible.ts", "src/data/regions/ie/en/articles/guides/ie-betting-industry-report.ts", "src/data/regions/ie/en/articles/guides/ie-betting-shops-bible.ts", "src/data/regions/ie/en/articles/guides/responsible-gambling-ie-bible.ts"]
     },
     {
       "id": 7,
