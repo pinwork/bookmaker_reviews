@@ -381,12 +381,20 @@ Slug: [e.g., "best-in-play-betting-scanners-2026"]
 Target audience: [Who reads this?]
 Article rating: [Overall rating for reviewContext, e.g., 4.4]
 
-Editorial Ranking:
-#1: [Product] — Editor's Pick
-#2: [Product] — Best Value  
-#3: [Product]
+Editorial Ranking (with ratings):
+#1: [Product] — Editor's Pick — 4.7
+#2: [Product] — Best Value — 4.5
+#3: [Product] — 4.3
+#4: [Product] — 4.0
 ...
 ```
+
+**Rating Scale (1-5):**
+- **4.5-5.0:** Exceptional — clear market leader, minimal flaws
+- **4.0-4.4:** Strong — recommended with minor reservations
+- **3.5-3.9:** Decent — works for specific use cases
+- **3.0-3.4:** Weak — significant limitations, include only if niche lacks alternatives
+- **Below 3.0:** Don't include — not worth recommending
 
 ---
 
@@ -423,6 +431,7 @@ Scope: [What qualifies]
 ### Basic Info
 - Official website URL:
 - Brand primary color (hex): #XXXXXX
+- Rating: [1-5, e.g., 4.5]
 - Year founded:
 - Company/owner:
 
@@ -515,6 +524,7 @@ Best for [niche persona]: [Tool] — [reason]
 ### Data Quality
 - [ ] All tools have hex color (not "blue/green")
 - [ ] All tools have official URL
+- [ ] All tools have rating (1-5 scale)
 - [ ] All tools have pricing (verified current)
 - [ ] Each tool has 3+ pros, 1+ cons
 - [ ] Pros/cons based on real user feedback, not marketing
