@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isValidRegion, getBettorResourceBySlug } from '@/data';
 import { getSiteConfig } from '@/data/regions';
-import { generateArticleSchemas } from '@/utils/seo';
+import { generateArticleSchemas, generateArticleHreflang } from '@/utils/seo';
 import { getPartnerLogoPath, getJpgBackgroundColor } from '@/utils/images';
 import {
   ArticleHeader,
@@ -30,14 +30,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const article = getBettorResourceBySlug(slug, region);
+  const siteConfig = getSiteConfig(region);
 
-  if (!article) {
+  if (!article || !siteConfig) {
     return {};
   }
+
+  const hreflang = generateArticleHreflang(slug, 'bettor-resources', siteConfig.url);
 
   return {
     title: article.metaTitle,
     description: article.metaDescription,
+    alternates: Object.keys(hreflang).length > 1 ? { languages: hreflang } : undefined,
   };
 }
 

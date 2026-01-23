@@ -11,3 +11,8 @@ export { GuideSections } from './GuideSections';
 export { ArticleFAQ } from './ArticleFAQ';
 export { ExternalLinksGrid } from './ExternalLinksGrid';
 export { ArticleFooter } from './ArticleFooter';
+export { QuickFactsBox } from './QuickFactsBox';
+export { PopularMarkets } from './PopularMarkets';
+export { MicroMarkets } from './MicroMarkets';
+export { EdgePatterns } from './EdgePatterns';
+export { MarkdownBody } from './MarkdownBody';

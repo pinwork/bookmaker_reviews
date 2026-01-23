@@ -1,7 +1,7 @@
 import { GuideArticle } from '@/types';
 
 export const ieBonusGuide: GuideArticle = {
-  slug: 'ie-betting-bonus-guide-2026',
+  slug: 'ireland-betting-bonus-guide',
   collections: ['guides'],
   h1: 'Ireland Betting Bonus Guide 2026: What is Legal Under GRAI?',
   metaTitle: 'Ireland Betting Bonuses 2026 | Free Bets, GRAI Rules & Tax Free Winnings',

@@ -1,7 +1,7 @@
 import { GuideArticle } from '@/types';
 
 export const bettingIndustryBible: GuideArticle = {
-  slug: 'uk-betting-market-analysis-2026',
+  slug: 'uk-betting-market-analysis',
   collections: ['guides'],
   h1: 'The 2026 UK Betting Industry Report: Money, Power & Regulation',
   metaTitle: 'UK Betting Industry Analysis 2026 | Market Share, Taxes & Trends',

@@ -21,8 +21,20 @@ export {
 
 export {
   getGuides, getBettorResources, getGuideBySlug, getBettorResourceBySlug,
+  getCompetitionArticles, getCompetitionArticleBySlug,
   getArticlesByCollection, getAllArticlesForRegion, getArticleBySlug,
 } from './articles';
+
+export {
+  getCompetitions, getCompetitionById, getCompetitionBySlug,
+  getCompetitionsBySport, getMajorCompetitions, getMajorCompetitionsBySport,
+  getSportsWithCompetitions,
+} from './competitions';
+
+export {
+  getSports, getSportBySlug, getPopularSports, getNavSports,
+  searchSports, getSportIconPath,
+} from './sports';
 
 export {
   DEFAULT_REGION, getRegion, isValidRegion, getAllRegions, getRegionOrDefault,

@@ -2,17 +2,21 @@
 // Public API for articles - implements language-first architecture with regional overrides
 // Lookup order: 1. Regional override → 2. Language master
 
-import { GuideArticle, ToolReviewArticle } from '@/types';
-import { GuideArticleSchema, ToolReviewArticleSchema } from '@/types/schemas';
+import { GuideArticle, ToolReviewArticle, CompetitionArticle } from '@/types';
+import { GuideArticleSchema, ToolReviewArticleSchema, CompetitionArticleSchema } from '@/types/schemas';
 import { DEFAULT_REGION } from './constants';
 
 // Import universal English articles (shared across all EN regions)
 import * as enGuides from './articles/en/guides';
 import * as enBettorResources from './articles/en/bettor-resources';
+import * as enCompetitions from './articles/en/competitions';
 
 // Import regional overrides
 import * as gbGuideOverrides from './articles/overrides/gb/en/guides';
 import * as ieGuideOverrides from './articles/overrides/ie/en/guides';
+// Competition overrides (empty for now)
+// import * as gbCompetitionOverrides from './articles/overrides/gb/en/competitions';
+// import * as ieCompetitionOverrides from './articles/overrides/ie/en/competitions';
 
 // Runtime validation helpers (only active in development)
 function validateGuide(guide: unknown): boolean {
@@ -30,6 +34,16 @@ function validateToolReview(article: unknown): boolean {
   if (!result.success) {
     const slug = (article as { slug?: string })?.slug ?? 'unknown';
     console.error(`[ToolReview Validation] "${slug}" failed:`, result.error.issues.map(i => `${i.path.join('.')}: ${i.message}`).join(', '));
+    return false;
+  }
+  return true;
+}
+
+function validateCompetitionArticle(article: unknown): boolean {
+  const result = CompetitionArticleSchema.safeParse(article);
+  if (!result.success) {
+    const slug = (article as { slug?: string })?.slug ?? 'unknown';
+    console.error(`[CompetitionArticle Validation] "${slug}" failed:`, result.error.issues.map(i => `${i.path.join('.')}: ${i.message}`).join(', '));
     return false;
   }
   return true;
@@ -76,6 +90,85 @@ function getBettorResourcesData(region: string): ToolReviewArticle[] {
   ];
 }
 
+// Get competition articles for a region
+// Architecture: Universal EN articles + Regional overrides
+function getCompetitionArticlesData(region: string): CompetitionArticle[] {
+  // Universal competition articles
+  const universalArticles: CompetitionArticle[] = [
+    // Football
+    enCompetitions.premierLeagueBettingGuide,
+    enCompetitions.championsLeagueBettingGuide,
+    enCompetitions.laLigaBettingGuide,
+    enCompetitions.bundesligaBettingGuide,
+    enCompetitions.serieABettingGuide,
+    enCompetitions.ligue1BettingGuide,
+    enCompetitions.faCupBettingGuide,
+    enCompetitions.worldCupBettingGuide,
+    enCompetitions.eurosBettingGuide,
+    // Tennis
+    enCompetitions.wimbledonBettingGuide,
+    enCompetitions.australianOpenBettingGuide,
+    enCompetitions.frenchOpenBettingGuide,
+    enCompetitions.usOpenTennisBettingGuide,
+    // Horse Racing
+    enCompetitions.cheltenhamFestivalBettingGuide,
+    enCompetitions.grandNationalBettingGuide,
+    enCompetitions.royalAscotBettingGuide,
+    enCompetitions.epsomDerbyBettingGuide,
+    enCompetitions.kentuckyDerbyBettingGuide,
+    // Golf
+    enCompetitions.theMastersBettingGuide,
+    enCompetitions.theOpenBettingGuide,
+    enCompetitions.pgaChampionshipBettingGuide,
+    enCompetitions.usOpenGolfBettingGuide,
+    enCompetitions.ryderCupBettingGuide,
+    // Cricket
+    enCompetitions.theAshesBettingGuide,
+    enCompetitions.cricketWorldCupBettingGuide,
+    enCompetitions.t20WorldCupBettingGuide,
+    enCompetitions.iplBettingGuide,
+    // American Football
+    enCompetitions.nflBettingGuide,
+    enCompetitions.superBowlBettingGuide,
+    // Basketball
+    enCompetitions.nbaBettingGuide,
+    enCompetitions.nbaFinalsBettingGuide,
+    enCompetitions.marchMadnessBettingGuide,
+    enCompetitions.euroleagueBettingGuide,
+    // Rugby
+    enCompetitions.sixNationsBettingGuide,
+    enCompetitions.rugbyWorldCupBettingGuide,
+    // Darts
+    enCompetitions.pdcWorldChampionshipBettingGuide,
+    enCompetitions.premierLeagueDartsBettingGuide,
+    // Snooker
+    enCompetitions.worldSnookerChampionshipBettingGuide,
+    enCompetitions.mastersSnookerBettingGuide,
+    enCompetitions.ukChampionshipSnookerBettingGuide,
+    // Boxing
+    enCompetitions.heavyweightBoxingBettingGuide,
+    // Baseball
+    enCompetitions.mlbBettingGuide,
+    enCompetitions.worldSeriesBettingGuide,
+    // Ice Hockey
+    enCompetitions.nhlBettingGuide,
+    enCompetitions.stanleyCupBettingGuide,
+    // Motorsport
+    enCompetitions.f1WorldChampionshipBettingGuide,
+    // MMA
+    enCompetitions.ufcBettingGuide,
+    // Esports
+    enCompetitions.leagueOfLegendsWorldsBettingGuide,
+    enCompetitions.cs2MajorBettingGuide,
+    enCompetitions.theInternationalBettingGuide,
+    enCompetitions.valorantChampionsBettingGuide,
+  ];
+
+  // Regional overrides (none for now)
+  void region;
+  return universalArticles;
+}
+
 // Public API
 export function getGuides(region: string = DEFAULT_REGION): GuideArticle[] {
   const guides = getGuidesData(region);
@@ -101,21 +194,36 @@ export function getBettorResourceBySlug(slug: string, region: string = DEFAULT_R
   return getBettorResourcesData(region).find(article => article.slug === slug);
 }
 
+export function getCompetitionArticles(region: string = DEFAULT_REGION): CompetitionArticle[] {
+  const articles = getCompetitionArticlesData(region);
+  if (process.env.NODE_ENV === 'development') {
+    articles.forEach(validateCompetitionArticle);
+  }
+  return articles;
+}
+
+export function getCompetitionArticleBySlug(slug: string, region: string = DEFAULT_REGION): CompetitionArticle | undefined {
+  return getCompetitionArticlesData(region).find(article => article.slug === slug);
+}
+
 // Legacy aliases for backwards compatibility
 export function getArticlesByCollection(
-  collection: 'guides' | 'bettor-resources',
+  collection: 'guides' | 'bettor-resources' | 'competitions',
   region: string = DEFAULT_REGION
-): (GuideArticle | ToolReviewArticle)[] {
+): (GuideArticle | ToolReviewArticle | CompetitionArticle)[] {
   if (collection === 'guides') {
     return getGuides(region);
+  }
+  if (collection === 'competitions') {
+    return getCompetitionArticles(region);
   }
   return getBettorResources(region);
 }
 
-export function getAllArticlesForRegion(region: string = DEFAULT_REGION): (GuideArticle | ToolReviewArticle)[] {
-  return [...getGuidesData(region), ...getBettorResourcesData(region)];
+export function getAllArticlesForRegion(region: string = DEFAULT_REGION): (GuideArticle | ToolReviewArticle | CompetitionArticle)[] {
+  return [...getGuidesData(region), ...getBettorResourcesData(region), ...getCompetitionArticlesData(region)];
 }
 
-export function getArticleBySlug(slug: string, region: string = DEFAULT_REGION): (GuideArticle | ToolReviewArticle) | undefined {
+export function getArticleBySlug(slug: string, region: string = DEFAULT_REGION): (GuideArticle | ToolReviewArticle | CompetitionArticle) | undefined {
   return getAllArticlesForRegion(region).find(article => article.slug === slug);
 }

@@ -1,7 +1,7 @@
 import { ToolReviewArticle } from '@/types';
 
 export const inPlayScannersArticle: ToolReviewArticle = {
-  slug: 'best-in-play-betting-scanners-2026',
+  slug: 'best-in-play-betting-scanners',
   collections: ['bettor-resources'],
   h1: 'Best In-Play Football Betting Scanners (2026)',
   metaTitle: 'Best In-Play Betting Scanners 2026 | StatisticSports, InPlayGuru & More',

@@ -3,3 +3,4 @@
 
 export * from './guides';
 export * from './bettor-resources';
+export * from './competitions';

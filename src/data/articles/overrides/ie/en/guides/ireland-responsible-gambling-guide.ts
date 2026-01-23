@@ -1,7 +1,7 @@
 import { GuideArticle } from '@/types';
 
 export const responsibleGamblingIrelandBible: GuideArticle = {
-  slug: 'responsible-gambling-ireland-guide',
+  slug: 'ireland-responsible-gambling-guide',
   collections: ['guides'],
   h1: 'The 2026 Ireland Responsible Gambling Bible: Tools, Data & Recovery',
   metaTitle: 'Ireland Responsible Gambling Guide 2026 | ESRI Stats, GRAI & HSE Support',

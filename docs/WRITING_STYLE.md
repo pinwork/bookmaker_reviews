@@ -4,7 +4,14 @@
 
 **Companion:** See `CONTENT_GUIDE.md` for WHAT to write (structure, fields, SEO).
 
+**Scope:** This guide covers all article types:
+- `GuideArticle` — Educational content (`/guides`)
+- `CompetitionArticle` — Betting guides per competition (`/competitions`)
+- `ToolReviewArticle` — Product reviews (`/bettor-resources`)
+
 ---
+
+# Part 1: Shared Rules (All Article Types)
 
 ## 1. Identity & Voice
 
@@ -20,7 +27,7 @@
 
 * **British English (en-GB):** Use "Punter", "Bookie", "Accumulator", "Cheque", "Favourite"
 * **No emojis:** Never in article content. Use text symbols (✓ ✗) only for pros/cons lists
-* **No walls of text:** Use bullet points every 2-3 paragraphs
+* **No walls of text:** Use bullet lists every 2-3 paragraphs
 
 ---
 
@@ -186,7 +193,7 @@ Always bold the **label/key phrase** at the start of a bullet point (before the 
 
 ---
 
-## 7. Pre-Output Checklist
+## 7. Pre-Output Checklist (All Types)
 
 Before finalizing any content block, verify:
 
@@ -197,3 +204,316 @@ Before finalizing any content block, verify:
 5. ✓ One Hit Rule — max 1 data bold per paragraph (Section 4.A)
 6. ✓ Lists front-loaded — labels bold at start (Section 4.B)
 7. ✓ List symmetry — items have comparable length (Section 5)
+
+---
+
+# Part 2: Guide-Specific Rules
+
+**Applies to:** `GuideArticle` (`src/data/articles/en/guides`)
+
+## 8. Guide Content Style
+
+**Full shared rules apply to:** `intro.content`, `groups[].items[].content`, `faq[].a`
+
+**Raw data (no prose styling):** `keyTakeaways`, `keyStats`, `comparisonTables`
+
+### A. Group Philosophy
+
+Groups are **major chapters**, not fine divisions. Use sparingly (3-7 per article).
+
+* *Good:* "Part 1: The Kickstart", "Part 2: Ongoing Rewards", "Part 3: Protection"
+* *Bad:* Creating a new group for every small topic
+
+Within `content`, use markdown `###` headers for subsections.
+
+### B. Item Content Length
+
+**Target:** 150-400 words per item.
+
+- Short items feel incomplete
+- Long items should be split or use `###` subheaders
+
+### C. FAQ Style
+
+**Purpose:** Quick clarifications — explaining terms, edge cases, common misunderstandings.
+
+**Format:** Question in natural language, answer in 2-4 sentences, direct, no hedging.
+
+```typescript
+// ✅ GOOD
+{
+  q: 'Why was I limited when I\'m actually losing money?',
+  a: 'Because you\'re beating the Closing Line Value (CLV). The bookmaker\'s model predicts that your betting style will become profitable long-term, so they restrict preemptively.'
+}
+
+// ❌ BAD — too vague
+{
+  q: 'What is gubbing?',
+  a: 'It means getting restricted by a bookmaker.'
+}
+```
+
+---
+
+# Part 3: Competition-Specific Rules
+
+**Applies to:** `CompetitionArticle` (`src/data/articles/en/competitions`)
+
+## 9. Competition Content Style
+
+**Full shared rules apply to:** `intro.content`, `body`, `faq[].a`
+
+**Raw data (no prose styling):** `quickFacts`, `popularMarkets`, `microMarkets`, `comparisonTables`
+
+### A. Edge Patterns Format
+
+**Edge Patterns are NOT prose.** They are structured data statements.
+
+**Formula:** `[WHO] + [SITUATION] + [OUTCOME] + [PERCENTAGE]`
+
+**Rules:**
+- No bold (data is already the highlight)
+- No hedging ("tends to", "often") — state the percentage
+- One claim per pattern
+
+```typescript
+// ✅ GOOD
+{
+  pattern: 'Big 6 teams cover -1.5 Asian Handicap in 68% of home matches vs newly promoted teams',
+  source: 'FBref',
+  period: '2019-2024',
+  sampleSize: 94,
+}
+
+// ❌ BAD — hedging, no specifics
+{
+  pattern: 'Top teams often win by more than one goal at home',
+  source: 'General observation',
+  period: 'Recent seasons',
+  sampleSize: 50,
+}
+```
+
+### B. Body Structure
+
+Structure with `##` headers. Recommended sections:
+1. `## Understanding [Sport/Format] Betting` — market explanations
+2. `## Competition-Specific Factors` — what makes THIS competition unique
+3. `## Seasonal/Timing Patterns` — when to bet, line movements
+4. `## Micro-Markets Strategy` — deep dive on niche props
+
+**Word count:** 800-1500 words total.
+
+### C. Market Explanations
+
+Explain WHEN to use, not just WHAT it is:
+
+```markdown
+// ✅ GOOD
+### Asian Handicap
+Removes the draw outcome by applying goal handicaps. Essential for value betting on heavy favourites.
+
+**When to use:** Matches with clear favourite but unpredictable margin.
+**When to avoid:** Heavy favourites (use -1.5 AH instead for better value).
+
+// ❌ BAD — just definition
+### Asian Handicap
+Asian Handicap is a type of bet that removes the draw option.
+```
+
+### D. Data Integration
+
+Reference specific numbers from `edgePatterns` and `comparisonTables` inline:
+
+```markdown
+// ✅ GOOD
+BTTS lands in approximately **54% of Premier League matches** — higher than La Liga (48%) or Serie A (51%).
+
+// ❌ BAD — vague
+BTTS is popular in the Premier League because teams score a lot.
+```
+
+### E. FAQ Style (Competitions)
+
+**Focus:** Practical betting questions — best bookmaker, market-specific, timing, rules.
+
+```typescript
+// ✅ GOOD — specific, actionable
+{
+  q: 'Which bookmaker has the best Premier League odds?',
+  a: 'Betfair Exchange offers the best odds (0% margin on exchange). For traditional betting, Bet365 and Pinnacle consistently offer competitive pricing on Asian Handicap markets.'
+}
+
+// ❌ BAD — generic
+{
+  q: 'Where should I bet on football?',
+  a: 'There are many good bookmakers available.'
+}
+```
+
+### F. Quick Facts Selection
+
+Include **betting-relevant data** (Founded, Teams, Matches, Avg Goals, Season dates). Avoid trivia (Official Sponsor, TV Rights Holder, Stadium capacity).
+
+```typescript
+// ✅ GOOD — betting-relevant
+{ label: 'Avg. Goals per Game', value: '2.85' }
+{ label: 'Matches per Season', value: '380' }
+
+// ❌ BAD — trivia
+{ label: 'Official Sponsor', value: 'Barclays' }
+{ label: 'Stadium', value: 'Wembley' }
+```
+
+## 10. Pre-Output Checklist (Competition Articles)
+
+In addition to shared checklist (Section 7):
+
+8. ✓ Edge Patterns follow formula: WHO + SITUATION + OUTCOME + %
+9. ✓ Edge Patterns have source + period + sample size
+10. ✓ Body includes `##` section headers
+11. ✓ Body references specific data from tables/patterns
+12. ✓ FAQ answers are betting-focused, not generic
+13. ✓ No hedging in Edge Patterns ("often", "tends to")
+14. ✓ Quick Facts are betting-relevant (not trivia)
+
+---
+
+# Part 4: Bettor-Resources-Specific Rules
+
+**Applies to:** `ToolReviewArticle` (`src/data/articles/en/bettor-resources`)
+
+## 11. Bettor-Resources Content Style
+
+**Full shared rules apply to:** `intro.content`, `groups[].items[].content`, `faq[].a`
+
+**Raw data (no prose styling):** `keyTakeaways`, `keyStats`, `comparisonTables`, `reviewContext`
+
+### A. Intro Format (Problem-Solution)
+
+```markdown
+[1-2 sentences: Define what this tool category IS]
+
+**The core problem:** [What problem does this category solve?]
+
+**How it works:**
+1. [Step/Function 1]
+2. [Step/Function 2]
+3. [Step/Function 3]
+
+[Optional: **What X is NOT:** - clarify misconceptions]
+```
+
+**Rules:**
+- First paragraph MUST contain bolded metric
+- "How it works" uses numbered list with bold labels
+- Keep intro under 200 words before the numbered list
+
+### B. quickVerdict Formula
+
+**Format:** `[Descriptor] — [metric or proof point]`
+
+**Max length:** 75 characters
+
+```typescript
+// ✅ GOOD
+quickVerdict: 'Best overall — unlimited free tier with 30,000+ members.'
+quickVerdict: 'The industry veteran — 50,000 games of backtesting data.'
+
+// ❌ BAD — no metric
+quickVerdict: 'Great tool for serious bettors.'
+```
+
+### C. Micro-Review Content Format
+
+**Target:** 150-250 words per item. Strict structure:
+
+```markdown
+### Overview
+[3-4 sentences: What it is + reputation + key differentiator. ONE bold metric.]
+
+### Key Features
+- **Feature Name:** Benefit to user — specific detail
+- **Feature Name:** Benefit to user — specific detail
+
+### Pricing
+[Tiers with prices. Trial info. Money-back guarantee if applicable.]
+```
+
+**Key Features rules:**
+- 4-5 bullets
+- **Bold the feature name**, not the benefit
+- Every bullet MUST answer: "What does the user gain?"
+
+### D. bestFor Field
+
+**Structure:** 2 sentences — primary user persona + secondary context.
+
+```typescript
+// ✅ GOOD
+bestFor: 'Experienced matched bettors seeking maximum feature depth. Users comfortable with data-heavy interfaces who want the widest bookmaker coverage.'
+
+// ❌ BAD — too vague
+bestFor: 'Anyone who wants to bet better.'
+```
+
+### E. Pros/Cons Format
+
+**Format:** `[Feature/Capability]: [specific benefit/drawback with metric if possible]`
+
+```typescript
+// ✅ GOOD
+pros: [
+  '2UP Matcher included at entry tier — competitors charge £80-150/month extra',
+  'Widest 0% commission network: Smarkets, Matchbook, Betdaq, BetConnect',
+]
+
+// ❌ BAD — generic
+pros: [
+  'Good features',
+  'Nice interface',
+]
+```
+
+### F. Badge Usage
+
+**Max 2-3 badges per article.** Only ONE `Editor's Pick` per article.
+
+| Badge | When to Use |
+|-------|-------------|
+| `Editor's Pick` | #1 overall recommendation |
+| `Best Value` | Best price/quality ratio |
+| `Best Free` | Best free option |
+| `Best for Beginners` | Easiest onboarding |
+
+### G. FAQ Style (Bettor-Resources)
+
+**Focus:** Practical comparison and buying decisions.
+
+```typescript
+// ✅ GOOD — comparative, actionable
+{
+  q: 'OddsMonkey vs Outplayed — which should I choose?',
+  a: 'OddsMonkey for value and tools (2UP at entry tier, 0% on 4 exchanges). Outplayed for support and simplicity (phone support, better onboarding). Both owned by same company—quality is comparable.'
+}
+
+// ❌ BAD — vague
+{
+  q: 'Which platform is best?',
+  a: 'It depends on your needs. Try them and see which works for you.'
+}
+```
+
+## 12. Pre-Output Checklist (Bettor-Resources)
+
+In addition to shared checklist (Section 7):
+
+8. ✓ Intro follows Problem-Solution format with bold metric
+9. ✓ quickVerdict follows formula: `[Descriptor] — [metric]`
+10. ✓ quickVerdict under 75 characters
+11. ✓ Micro-review has Overview → Key Features → Pricing structure
+12. ✓ Key Features use `**Feature:** Benefit` format
+13. ✓ bestFor has 2 sentences (persona + context)
+14. ✓ Pros include metrics, not generic praise
+15. ✓ Only 1 `Editor's Pick` badge per article
+16. ✓ FAQ answers are comparative and actionable

@@ -1,7 +1,7 @@
 import { GuideArticle } from '@/types';
 
 export const ieBettingIndustryReport: GuideArticle = {
-  slug: 'ireland-betting-market-analysis-2026',
+  slug: 'ireland-betting-market-analysis',
   collections: ['guides'],
   h1: 'The 2026 Ireland Betting Report: GRAI, Taxes & A New Era',
   metaTitle: 'Ireland Betting Industry 2026 | GRAI Rules, GAA & Market Analysis',

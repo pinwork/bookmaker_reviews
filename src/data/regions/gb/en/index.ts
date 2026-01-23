@@ -9,7 +9,6 @@ import { gbBookmakerData } from './bookmakerData';
 import { welcomeOffers } from './welcomeOffers';
 import { extraPromotions } from './extraPromotions';
 import { siteConfig } from './siteConfig';
-import { sports } from './sports';
 import { staticPages } from './staticPages';
 import { events as allGbEvents } from './events';
 
@@ -35,7 +34,6 @@ const gbReviews: Record<string, BookmakerReview> = {
 };
 
 export {
-  sports,
   staticPages,
   gbBookmakerData,
   welcomeOffers,

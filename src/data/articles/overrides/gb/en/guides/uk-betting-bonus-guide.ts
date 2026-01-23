@@ -1,7 +1,7 @@
 import { GuideArticle } from '@/types';
 
 export const ultimateBonusGuide: GuideArticle = {
-  slug: 'uk-betting-bonus-guide-2026',
+  slug: 'uk-betting-bonus-guide',
   collections: ['guides'],
   h1: 'The Ultimate Betting Bonus Bible 2026: Master Every Offer',
   metaTitle: 'Betting Bonus Guide 2026 | Comprehensive Rules & Mechanics',

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isValidRegion, getGuideBySlug } from '@/data';
 import { getSiteConfig } from '@/data/regions';
-import { generateArticleSchemas } from '@/utils/seo';
+import { generateArticleSchemas, generateArticleHreflang } from '@/utils/seo';
 import {
   ArticleHeader,
   KeyTakeaways,
@@ -28,14 +28,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const article = getGuideBySlug(slug, region);
+  const siteConfig = getSiteConfig(region);
 
-  if (!article) {
+  if (!article || !siteConfig) {
     return {};
   }
+
+  const hreflang = generateArticleHreflang(slug, 'guides', siteConfig.url);
 
   return {
     title: article.metaTitle,
     description: article.metaDescription,
+    alternates: Object.keys(hreflang).length > 1 ? { languages: hreflang } : undefined,
   };
 }
 

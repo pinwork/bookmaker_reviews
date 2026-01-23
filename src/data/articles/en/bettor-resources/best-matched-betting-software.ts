@@ -1,7 +1,7 @@
 import { ToolReviewArticle } from '@/types';
 
 export const matchedBettingSoftwareArticle: ToolReviewArticle = {
-  slug: 'best-matched-betting-software-uk',
+  slug: 'best-matched-betting-software',
   collections: ['bettor-resources'],
   h1: 'Best Matched Betting Software UK (2026)',
   metaTitle: 'Best Matched Betting Software UK 2026 | OddsMonkey, Outplayed & More',

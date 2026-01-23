@@ -1,7 +1,7 @@
 import { ToolReviewArticle } from '@/types';
 
 export const liveScoreAppsArticle: ToolReviewArticle = {
-  slug: 'best-live-score-stats-apps-2026',
+  slug: 'best-live-score-stats-apps',
   collections: ['bettor-resources'],
   h1: 'Best Live Score & Stats Apps for Sports Bettors (2026)',
   metaTitle: 'Best Live Score Apps 2026 | Flashscore, SofaScore & More',

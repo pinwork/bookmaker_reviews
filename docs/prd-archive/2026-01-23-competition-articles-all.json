@@ -1,0 +1,760 @@
+{
+  "featureName": "Competition Articles - All Competitions",
+  "description": "Create CompetitionArticle for all competitions in src/data/competitions.ts",
+  "context": {
+    "existingArticles": [
+      "premier-league-betting-guide.ts",
+      "wimbledon-betting-guide.ts"
+    ],
+    "totalCompetitions": 51,
+    "remainingArticles": 49,
+    "guidelines": [
+      "docs/CONTENT_GUIDE.md",
+      "docs/WRITING_STYLE.md"
+    ],
+    "note": "Facts can be approximate from internal knowledge - articles will be refined later"
+  },
+  "userStories": [
+    {
+      "id": 1,
+      "title": "Football: Champions League betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/champions-league-betting-guide.ts",
+        "competitionId: 'ucl'",
+        "Include quickFacts, popularMarkets, microMarkets, edgePatterns, comparisonTables, body, faq",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 2,
+      "title": "Football: La Liga betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/la-liga-betting-guide.ts",
+        "competitionId: 'laliga'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 3,
+      "title": "Football: Bundesliga betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/bundesliga-betting-guide.ts",
+        "competitionId: 'bundesliga'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 4,
+      "title": "Football: Serie A betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/serie-a-betting-guide.ts",
+        "competitionId: 'seriea'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 4,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 5,
+      "title": "Football: Ligue 1 betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/ligue-1-betting-guide.ts",
+        "competitionId: 'ligue1'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 5,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 6,
+      "title": "Football: FA Cup betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/fa-cup-betting-guide.ts",
+        "competitionId: 'facup'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 6,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 7,
+      "title": "Football: FIFA World Cup betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/world-cup-betting-guide.ts",
+        "competitionId: 'fifawc'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 7,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 8,
+      "title": "Football: UEFA Euros betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/euros-betting-guide.ts",
+        "competitionId: 'euro'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 8,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 9,
+      "title": "Tennis: Australian Open betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/australian-open-betting-guide.ts",
+        "competitionId: 'ausopen'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 9,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 10,
+      "title": "Tennis: French Open betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/french-open-betting-guide.ts",
+        "competitionId: 'rolandgarros'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 10,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 11,
+      "title": "Tennis: US Open betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/us-open-tennis-betting-guide.ts",
+        "competitionId: 'usopen'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 11,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 12,
+      "title": "Horse Racing: Cheltenham Festival betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/cheltenham-festival-betting-guide.ts",
+        "competitionId: 'cheltenham'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 12,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 13,
+      "title": "Horse Racing: Grand National betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/grand-national-betting-guide.ts",
+        "competitionId: 'grandnational'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 13,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 14,
+      "title": "Horse Racing: Royal Ascot betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/royal-ascot-betting-guide.ts",
+        "competitionId: 'royalascot'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 14,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 15,
+      "title": "Horse Racing: Epsom Derby betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/epsom-derby-betting-guide.ts",
+        "competitionId: 'derby'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 15,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 16,
+      "title": "Horse Racing: Kentucky Derby betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/kentucky-derby-betting-guide.ts",
+        "competitionId: 'kentucky'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 16,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 17,
+      "title": "Golf: The Masters betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/the-masters-betting-guide.ts",
+        "competitionId: 'masters'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 17,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 18,
+      "title": "Golf: The Open Championship betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/the-open-betting-guide.ts",
+        "competitionId: 'theopen'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 18,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 19,
+      "title": "Golf: PGA Championship betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/pga-championship-betting-guide.ts",
+        "competitionId: 'uspga'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 19,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 20,
+      "title": "Golf: US Open Golf betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/us-open-golf-betting-guide.ts",
+        "competitionId: 'usgopen'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 20,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 21,
+      "title": "Golf: Ryder Cup betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/ryder-cup-betting-guide.ts",
+        "competitionId: 'rydercup'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 21,
+      "passes": true,
+      "completedAt": "2026-01-23T14:58:14.422Z",
+      "filesChanged": []
+    },
+    {
+      "id": 22,
+      "title": "Cricket: The Ashes betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/the-ashes-betting-guide.ts",
+        "competitionId: 'ashes'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 22,
+      "passes": true,
+      "completedAt": "2026-01-23T15:04:20.848Z",
+      "filesChanged": []
+    },
+    {
+      "id": 23,
+      "title": "Cricket: Cricket World Cup betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/cricket-world-cup-betting-guide.ts",
+        "competitionId: 'cwc'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 23,
+      "passes": true,
+      "completedAt": "2026-01-23T15:04:20.848Z",
+      "filesChanged": []
+    },
+    {
+      "id": 24,
+      "title": "Cricket: T20 World Cup betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/t20-world-cup-betting-guide.ts",
+        "competitionId: 't20wc'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 24,
+      "passes": true,
+      "completedAt": "2026-01-23T15:04:20.848Z",
+      "filesChanged": []
+    },
+    {
+      "id": 25,
+      "title": "Cricket: IPL betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/ipl-betting-guide.ts",
+        "competitionId: 'ipl'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 25,
+      "passes": true,
+      "completedAt": "2026-01-23T15:04:20.848Z",
+      "filesChanged": []
+    },
+    {
+      "id": 26,
+      "title": "American Football: NFL betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/nfl-betting-guide.ts",
+        "competitionId: 'nfl'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 26,
+      "passes": true,
+      "completedAt": "2026-01-23T15:09:56.785Z",
+      "filesChanged": []
+    },
+    {
+      "id": 27,
+      "title": "American Football: Super Bowl betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/super-bowl-betting-guide.ts",
+        "competitionId: 'superbowl'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 27,
+      "passes": true,
+      "completedAt": "2026-01-23T15:09:56.785Z",
+      "filesChanged": []
+    },
+    {
+      "id": 28,
+      "title": "Basketball: NBA betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/nba-betting-guide.ts",
+        "competitionId: 'nba'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 28,
+      "passes": true,
+      "completedAt": "2026-01-23T15:09:56.785Z",
+      "filesChanged": []
+    },
+    {
+      "id": 29,
+      "title": "Basketball: NBA Finals betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/nba-finals-betting-guide.ts",
+        "competitionId: 'nbafinals'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 29,
+      "passes": true,
+      "completedAt": "2026-01-23T15:09:56.785Z",
+      "filesChanged": []
+    },
+    {
+      "id": 30,
+      "title": "Basketball: March Madness betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/march-madness-betting-guide.ts",
+        "competitionId: 'ncaa'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 30,
+      "passes": true,
+      "completedAt": "2026-01-23T15:09:56.785Z",
+      "filesChanged": []
+    },
+    {
+      "id": 31,
+      "title": "Basketball: EuroLeague betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/euroleague-betting-guide.ts",
+        "competitionId: 'euroleague'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 31,
+      "passes": true,
+      "completedAt": "2026-01-23T15:09:56.785Z",
+      "filesChanged": []
+    },
+    {
+      "id": 32,
+      "title": "Rugby: Six Nations betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/six-nations-betting-guide.ts",
+        "competitionId: 'sixnations'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 32,
+      "passes": true,
+      "completedAt": "2026-01-23T15:16:11.186Z",
+      "filesChanged": []
+    },
+    {
+      "id": 33,
+      "title": "Rugby: Rugby World Cup betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/rugby-world-cup-betting-guide.ts",
+        "competitionId: 'rwc'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 33,
+      "passes": true,
+      "completedAt": "2026-01-23T15:16:11.186Z",
+      "filesChanged": []
+    },
+    {
+      "id": 34,
+      "title": "Darts: PDC World Championship betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/pdc-world-championship-betting-guide.ts",
+        "competitionId: 'pdcwc'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 34,
+      "passes": true,
+      "completedAt": "2026-01-23T15:16:11.186Z",
+      "filesChanged": []
+    },
+    {
+      "id": 35,
+      "title": "Darts: Premier League Darts betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/premier-league-darts-betting-guide.ts",
+        "competitionId: 'pldarts'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 35,
+      "passes": true,
+      "completedAt": "2026-01-23T15:16:11.186Z",
+      "filesChanged": []
+    },
+    {
+      "id": 36,
+      "title": "Snooker: World Snooker Championship betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/world-snooker-championship-betting-guide.ts",
+        "competitionId: 'wsc'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 36,
+      "passes": true,
+      "completedAt": "2026-01-23T15:16:11.186Z",
+      "filesChanged": []
+    },
+    {
+      "id": 37,
+      "title": "Snooker: Masters Snooker betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/masters-snooker-betting-guide.ts",
+        "competitionId: 'masterssn'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 37,
+      "passes": true,
+      "completedAt": "2026-01-23T15:16:11.186Z",
+      "filesChanged": []
+    },
+    {
+      "id": 38,
+      "title": "Snooker: UK Championship betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/uk-championship-snooker-betting-guide.ts",
+        "competitionId: 'ukchamp'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 38,
+      "passes": true,
+      "completedAt": "2026-01-23T15:16:11.186Z",
+      "filesChanged": []
+    },
+    {
+      "id": 39,
+      "title": "Boxing: Heavyweight Boxing betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/heavyweight-boxing-betting-guide.ts",
+        "competitionId: 'heavyweight'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 39,
+      "passes": true,
+      "completedAt": "2026-01-23T15:25:13.982Z",
+      "filesChanged": []
+    },
+    {
+      "id": 40,
+      "title": "Baseball: MLB betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/mlb-betting-guide.ts",
+        "competitionId: 'mlb'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 40,
+      "passes": true,
+      "completedAt": "2026-01-23T15:25:13.982Z",
+      "filesChanged": []
+    },
+    {
+      "id": 41,
+      "title": "Baseball: World Series betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/world-series-betting-guide.ts",
+        "competitionId: 'worldseries'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 41,
+      "passes": true,
+      "completedAt": "2026-01-23T15:25:13.982Z",
+      "filesChanged": []
+    },
+    {
+      "id": 42,
+      "title": "Ice Hockey: NHL betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/nhl-betting-guide.ts",
+        "competitionId: 'nhl'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 42,
+      "passes": true,
+      "completedAt": "2026-01-23T15:25:13.982Z",
+      "filesChanged": []
+    },
+    {
+      "id": 43,
+      "title": "Ice Hockey: Stanley Cup betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/stanley-cup-betting-guide.ts",
+        "competitionId: 'stanleycup'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 43,
+      "passes": true,
+      "completedAt": "2026-01-23T15:25:13.982Z",
+      "filesChanged": []
+    },
+    {
+      "id": 44,
+      "title": "Formula 1: F1 World Championship betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/f1-world-championship-betting-guide.ts",
+        "competitionId: 'f1wc'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 44,
+      "passes": true,
+      "completedAt": "2026-01-23T15:25:13.982Z",
+      "filesChanged": []
+    },
+    {
+      "id": 45,
+      "title": "MMA: UFC betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/ufc-betting-guide.ts",
+        "competitionId: 'ufc'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 45,
+      "passes": true,
+      "completedAt": "2026-01-23T15:25:13.982Z",
+      "filesChanged": []
+    },
+    {
+      "id": 46,
+      "title": "Esports: League of Legends Worlds betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/league-of-legends-worlds-betting-guide.ts",
+        "competitionId: 'lolworlds'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 46,
+      "passes": true,
+      "completedAt": "2026-01-23T15:25:13.982Z",
+      "filesChanged": []
+    },
+    {
+      "id": 47,
+      "title": "Esports: CS2 Major betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/cs2-major-betting-guide.ts",
+        "competitionId: 'csmajor'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 47,
+      "passes": true,
+      "completedAt": "2026-01-23T15:25:13.982Z",
+      "filesChanged": []
+    },
+    {
+      "id": 48,
+      "title": "Esports: The International (Dota 2) betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/the-international-betting-guide.ts",
+        "competitionId: 'ti'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 48,
+      "passes": true,
+      "completedAt": "2026-01-23T15:25:13.982Z",
+      "filesChanged": []
+    },
+    {
+      "id": 49,
+      "title": "Esports: Valorant Champions betting guide",
+      "acceptanceCriteria": [
+        "Create src/data/articles/en/competitions/valorant-champions-betting-guide.ts",
+        "competitionId: 'valorantchamps'",
+        "Follow CompetitionArticle schema",
+        "Export in index.ts",
+        "npm run build passes"
+      ],
+      "priority": 49,
+      "passes": true,
+      "completedAt": "2026-01-23T15:25:13.982Z",
+      "filesChanged": []
+    }
+  ],
+  "postFeatureReview": {
+    "summary": "Created 49 CompetitionArticle betting guides covering all competitions in competitions.ts. Articles include Football (9), Tennis (4), Horse Racing (5), Golf (5), Cricket (4), American Football (2), Basketball (4), Rugby (2), Darts (2), Snooker (3), Boxing (1), Baseball (2), Ice Hockey (2), Motorsport (1), MMA (1), and Esports (4).",
+    "impact": "Added 49 new article files in src/data/articles/en/competitions/. Updated index.ts exports and articles.ts universalArticles array. All articles follow CompetitionArticle schema with quickFacts, popularMarkets, microMarkets, edgePatterns, comparisonTables, body (markdown), and FAQ.",
+    "issues": "Facts in articles are approximate from internal knowledge and should be verified/updated with real data before production use.",
+    "recommendations": "Consider adding regional overrides for market-specific articles (e.g., Six Nations for GB/IE, NFL/Super Bowl for US expansion). Review edgePatterns data for accuracy."
+  }
+}

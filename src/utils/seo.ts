@@ -1,7 +1,9 @@
 // src/utils/seo.ts
-import { GuideArticle, ToolReviewArticle, SiteConfig } from '@/types';
+import { GuideArticle, ToolReviewArticle, CompetitionArticle, SiteConfig } from '@/types';
+import { getGuideBySlug, getBettorResourceBySlug, getCompetitionArticleBySlug } from '@/data/articles';
+import { getSupportedRegions } from '@/data/regions/config';
 
-type Article = GuideArticle | ToolReviewArticle;
+type Article = GuideArticle | ToolReviewArticle | CompetitionArticle;
 
 /**
  * Helper to generate FAQ items array for Schema
@@ -186,4 +188,35 @@ export const generateArticleSchemas = (
     return generateSoftwareAppSchema(article as ToolReviewArticle, url, config);
   }
   return generateArticleSchema(article, url, config);
+};
+
+/**
+ * Generate hreflang alternates for articles
+ * Only includes regions where the same slug exists (universal articles)
+ */
+export const generateArticleHreflang = (
+  slug: string,
+  collection: 'guides' | 'bettor-resources' | 'competitions',
+  baseUrl: string
+): Record<string, string> => {
+  const regions = getSupportedRegions();
+  const alternates: Record<string, string> = {};
+
+  for (const region of regions) {
+    let article;
+    if (collection === 'guides') {
+      article = getGuideBySlug(slug, region);
+    } else if (collection === 'bettor-resources') {
+      article = getBettorResourceBySlug(slug, region);
+    } else {
+      article = getCompetitionArticleBySlug(slug, region);
+    }
+
+    if (article && article.slug === slug) {
+      // Same slug exists in this region = universal article
+      alternates[`en-${region}`] = `${baseUrl}/${region}/${collection}/${slug}`;
+    }
+  }
+
+  return alternates;
 };

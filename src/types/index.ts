@@ -44,6 +44,9 @@ export type ReviewItem = z.infer<typeof schemas.ReviewItemSchema>;
 export type GuideItem = z.infer<typeof schemas.GuideItemSchema>;
 export type ToolReviewArticle = z.infer<typeof schemas.ToolReviewArticleSchema>;
 export type GuideArticle = z.infer<typeof schemas.GuideArticleSchema>;
+export type QuickFact = z.infer<typeof schemas.QuickFactSchema>;
+export type EdgePattern = z.infer<typeof schemas.EdgePatternSchema>;
+export type CompetitionArticle = z.infer<typeof schemas.CompetitionArticleSchema>;
 
 export interface BookmakerComplete extends Bookmaker, RegionalBookmakerData {
   welcomeOffers: WelcomeOffer[];

@@ -13,5 +13,5 @@ export const events = adaptObjectToRegion(gbData.events, 'ie');
 
 export const bookmakerData = ieBookmakerData;
 
-export { sports, staticPages } from '../../gb/en';
+export { staticPages } from '../../gb/en';
 export { siteConfig, mainNavigation } from './siteConfig';

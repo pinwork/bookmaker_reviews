@@ -113,19 +113,22 @@ export const SiteConfigSchema = z.object({
   defaultAuthor: AuthorSchema, fullDisclaimer: z.string().min(50),
 });
 
+// Sport - simplified global entity (SEO content lives in articles)
 export const SportCategorySchema = z.object({
-  slug: z.string().min(1), name: z.string().min(2), h1: z.string().min(5), description: z.string().min(20),
-  metaTitle: z.string().min(10), metaDescription: z.string().min(50),
-  isPopular: z.boolean(), order: z.number().int().nonnegative(),
+  slug: z.string().min(1),
+  name: z.string().min(2),
+  isPopular: z.boolean(),
+  order: z.number().int().nonnegative(),
 });
 
+// Competition - simplified global entity (content lives in CompetitionArticle)
 export const CompetitionSchema = z.object({
-  id: z.string().min(1), slug: z.string().min(1), sportSlug: z.string().min(1), name: z.string().min(2),
-  isMajor: z.boolean(), order: z.number().int().nonnegative(), promotionalTags: z.array(z.string()),
-  content: z.object({
-    h1: z.string().min(5), excerpt: z.string().min(20), body: z.string().min(50),
-    metaTitle: z.string().min(10), metaDescription: z.string().min(50),
-  }),
+  id: z.string().min(1),
+  slug: z.string().min(1),
+  sportSlug: z.string().min(1),
+  name: z.string().min(2),
+  isMajor: z.boolean(),
+  order: z.number().int().nonnegative(),
 });
 
 export const SportEventSchema = z.object({
@@ -374,6 +377,46 @@ export const GuideArticleSchema = z.object({
   comparisonTables: z.array(ComparisonTableSchema).optional(),
   groups: z.array(GuideSectionSchema).min(1), // One or more sections
   faq: z.array(z.object({ q: z.string(), a: z.string() })).min(3), // Required: min 3 FAQs
+  footer: z.object({
+    lastUpdated: z.string(),
+    sources: z.array(z.string()).optional(),
+  }),
+});
+
+// Quick Fact schema for Competition Articles
+export const QuickFactSchema = z.object({
+  label: z.string().min(1),
+  value: z.string().min(1),
+});
+
+// Edge Pattern - data-backed betting insight with source and sample size
+export const EdgePatternSchema = z.object({
+  pattern: z.string().min(10), // The insight with percentage, e.g., "Big 6 teams cover -1.5 AH in 68% of home matches vs newly promoted"
+  source: z.string().min(1), // Data source, e.g., "FBref", "Opta"
+  period: z.string().min(1), // Time period, e.g., "2019-2024"
+  sampleSize: z.number().int().positive(), // n=X
+});
+
+// Competition Article - for betting guides on sports competitions
+export const CompetitionArticleSchema = z.object({
+  slug: z.string().min(1),
+  competitionId: z.string().min(1), // Links to Competition entity
+  h1: z.string().min(1),
+  metaTitle: z.string().min(1),
+  metaDescription: z.string().min(1),
+  intro: z.object({ title: z.string(), content: z.string() }),
+  quickFacts: z.array(QuickFactSchema).min(3), // At a Glance box
+
+  // Markets - split into main and micro
+  popularMarkets: z.array(z.string()).min(1), // Main betting markets (required)
+  microMarkets: z.array(z.string()).optional(), // Niche/prop markets (SEO opportunity)
+
+  // Data-driven sections
+  edgePatterns: z.array(EdgePatternSchema).optional(), // Statistical insights with sources
+  comparisonTables: z.array(ComparisonTableSchema).optional(), // Season stats, hit rates
+
+  body: z.string().min(100), // Main markdown content
+  faq: z.array(z.object({ q: z.string(), a: z.string() })).min(1), // FAQ (required)
   footer: z.object({
     lastUpdated: z.string(),
     sources: z.array(z.string()).optional(),
