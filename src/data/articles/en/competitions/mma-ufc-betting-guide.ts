@@ -228,8 +228,8 @@ Fighters priced between -100 and -199 win just **58-65%** of fights—often lowe
       a: 'Method of Victory combined with fighter selection offers superior odds to straight moneylines. Division-specific patterns create edge: heavyweight KO/TKO bets cash 52% of the time versus 30% in flyweight. Back decisions in technical divisions, finishes in power divisions.',
     },
     {
-      q: 'Do underdog champions retain their titles?',
-      a: 'At surprisingly high rates. Of 19 underdog champions defending titles throughout UFC history, 12 retained—a 63% success rate that generated +2.93 units profit and 24.4% ROI. Champions possess 5-round experience and conditioning advantages that closing odds fail to capture.',
+      q: 'Why do my favourite parlays keep losing?',
+      a: 'Light favourites (-100 to -199) convert at just 58-65%—often below break-even after juice. A 4-leg parlay of -150 favourites has only 18% probability of hitting despite feeling "safe". Either back heavy favourites (-400+) who convert at 88-93%, or avoid parlaying favourites entirely. Single bets on short underdogs (+100 to +150) at 52% win rate offer better risk-adjusted returns.',
     },
   ],
 
