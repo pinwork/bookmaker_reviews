@@ -251,8 +251,8 @@ Markets typically offer +210 on 6-game outcomes and +220 on 7-game outcomes. Giv
       a: 'Teams holding 3-2 leads convert at just 66.7%—not the 75% markets imply. The 8.3pp deviation reflects psychological complacency from leaders and desperation intensity from trailing teams. Umpire reluctance to make series-clinching calls also aids underdogs. Lay favourites at 3-2; back trailing teams at +160 or higher.',
     },
     {
-      q: 'Are NRFI bets profitable in the World Series?',
-      a: 'Yes, with conditions. Both pitchers must have sub-2.50 first-inning ERA AND both teams must average below 0.55 first-inning runs. When aligned, NRFI hits at 79% for qualifying profiles. Check first-inning-specific data rather than overall ERA. The edge is conditional—pass when either condition fails.',
+      q: 'Why do my World Series favourites keep losing?',
+      a: 'World Series favourites face structural headwinds markets ignore. Teams holding 3-2 leads convert at just 66.7%—not the 75% implied. Home teams in Game 7 win only 48% despite 58% series advantage. When public handle exceeds 90% on favourites (like 96.7% on Dodgers in 2025), sportsbooks shade odds against them. Back underdogs at +160 or higher when trailing 3-2, especially with strong pitching remaining.',
     },
   ],
 
