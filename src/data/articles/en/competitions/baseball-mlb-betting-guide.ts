@@ -255,8 +255,8 @@ Back overs immediately if wind shifts to tailwind post-opening line; back unders
       a: 'Back unders when both starting pitchers exceed 65% first-pitch strike rate, when cold weather is forecast, or when wind blows in at hitter-friendly parks. Historical data shows unders hit 50.7% versus overs at 49.3% from 2007-2021. The edge is small but consistent when you identify favourable conditions.',
     },
     {
-      q: 'Are April underdogs actually profitable?',
-      a: 'Yes. Early season creates systematic value because bookmakers use preseason projections that diverge from actual roster composition. A specific system tracking underdogs +105 or greater in 0-2 series deficit situations produced +12.0% ROI across 207 games over ten seasons. Road underdogs with losing records in April-May also show +7.2% ROI historically.',
+      q: 'Why do my favourite parlays keep busting in MLB?',
+      a: 'Favourites win 56% of MLB games—the lowest rate among major sports. A 4-leg parlay of -150 favourites has just 18% hit probability. The 162-game marathon creates daily variance that parlays cannot survive. Back single-game underdogs at +100 to +150 where edge is documented (+7-12% ROI), or stick to 2-leg parlays maximum with road favourites covering -1.5 (44% hit rate).',
     },
   ],
 
