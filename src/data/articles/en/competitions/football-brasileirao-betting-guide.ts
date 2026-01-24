@@ -10,7 +10,7 @@ export const brasileiraoBettingGuide: CompetitionArticle = {
 
   intro: {
     title: 'South Americas Largest Domestic League',
-    content: `The Brasileirão operates under fundamentally different conditions than European football. Teams face **2,000+ km travel distances** for away fixtures, play concurrent tournaments across January to December, and navigate a 47% home win rate that dwarfs the Premier Leagues 44%. These structural factors create betting inefficiencies absent in mature European markets.
+    content: `The Brasileirão operates under fundamentally different conditions than European football. Teams face **2,000+ km travel distances** for away fixtures, play concurrent tournaments across January to December, and face a 47% home win rate that dwarfs the Premier Leagues 44%. These structural factors create betting inefficiencies absent in mature European markets.
 
 The 2026 season runs January 28 to December 2 with a World Cup break from June 1 to July 20. State Championships overlap the opening eight rounds (January 11 to March 8), forcing squad rotations that European bettors rarely encounter. Top clubs like Flamengo and Palmeiras play 60-75 matches annually across four competitions—fixture congestion that exceeds anything in England or Spain.
 
