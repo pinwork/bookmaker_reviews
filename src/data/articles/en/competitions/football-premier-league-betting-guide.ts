@@ -304,7 +304,7 @@ Research across 11,585 player-level first goal bets on Betfair showed laying fir
   ],
 
   footer: {
-    lastUpdated: '2026-01-23',
+    lastUpdated: '2026-01-24',
     sources: [
       'Premier League Official Statistics',
       'Journal of Functional Morphology and Kinesiology (2020)',

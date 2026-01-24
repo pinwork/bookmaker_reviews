@@ -12,6 +12,8 @@ export const conferenceLeagueBettingGuide: CompetitionArticle = {
     title: 'The Third-Tier Competition Where Market Inefficiency Thrives',
     content: `The UEFA Conference League operates in a sweet spot for informed punters. Sharp money floods the Champions League. Professional syndicates target Europa League. But the Conference League—with its mix of Premier League reserves, Eastern European powerhouses, and first-time qualifiers—attracts far less sophisticated betting volume.
 
+The Conference League rewards underdog progression. Teams like Bodø/Glimt and AEK Larnaca reached semi-finals despite being priced at 50/1+ pre-tournament—the competition's structure gives weaker leagues genuine pathways.
+
 That attention gap creates exploitable edges. The 2024-25 season produced **2.95 goals per match** across 153 fixtures, with 56% finishing over 2.5. Chelsea scored a record 42 goals in 13 matches, demolishing FC Noah 8-0—the largest margin in competition history. Yet first-time finalists Real Betis collapsed 1-4 in the final, extending a pattern where newcomers lose 71% of European finals.
 
 This guide synthesises research across four Conference League seasons, the new 36-team league phase format, and micro-market analysis. The findings reveal systematic mispricings: Eastern European home sides cover -1.5 Asian Handicap at 64% versus 58% baseline. The new format reduced draws to 19.6%—yet bookmakers still price double-chance markets as if 22% draw likelihood holds.`,
@@ -46,32 +48,28 @@ This guide synthesises research across four Conference League seasons, the new 3
 
   edgePatterns: [
     {
-      pattern:
-        'New league phase format reduced draws to 19.6% vs historical 22-24%—bookmakers still price double-chance as if 22% draw likelihood holds',
-      source: 'UEFA Official Statistics / arXiv Analysis',
+      pattern: 'Four different clubs won first four UECL titles—no repeat champions yet',
+      source: 'UEFA Official',
+      period: '2022-2025',
+      sampleSize: 4,
+    },
+    {
+      pattern: 'Over 2.5 goals lands in 56% of UECL matches—higher than early-round expectations',
+      source: 'UEFA Stats',
       period: '2024-2025',
       sampleSize: 153,
     },
     {
-      pattern:
-        'Teams winning 2+ of their first 3 league phase matches advance to R16 at 89% rate; teams starting 0-3 advance at just 4%',
-      source: 'UEFA Conference League Historical Database',
+      pattern: 'BTTS occurs in 50-54% of matches—near-parity creates team-specific value plays',
+      source: 'UEFA Stats',
       period: '2024-2025',
-      sampleSize: 36,
+      sampleSize: 153,
     },
     {
-      pattern:
-        'Eastern European and Balkan home teams cover -1.5 Asian Handicap at 64% vs 58% baseline when hosting Western European opponents',
-      source: 'FootyStats / UEFA Match Reports',
+      pattern: 'English clubs (West Ham, Chelsea) won 50% of titles—Premier League quality dominates',
+      source: 'UEFA Records',
       period: '2022-2025',
-      sampleSize: 42,
-    },
-    {
-      pattern:
-        'First-time European finalists lose 71% of finals—Real Betis (2025) lost 1-4, Fiorentina lost consecutive finals (2023, 2024)',
-      source: 'UEFA Finals Analysis',
-      period: '2022-2025',
-      sampleSize: 7,
+      sampleSize: 4,
     },
   ],
 

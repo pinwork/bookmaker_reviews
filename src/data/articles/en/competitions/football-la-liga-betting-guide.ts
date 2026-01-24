@@ -245,7 +245,7 @@ When strict officials (those averaging 4.5+ cards per match) are assigned, Over 
   ],
 
   footer: {
-    lastUpdated: '2026-01-23',
+    lastUpdated: '2026-01-24',
     sources: [
       'La Liga Official Statistics',
       'Journal of Perceptual and Motor Skills (Lago-Penas, 2016)',

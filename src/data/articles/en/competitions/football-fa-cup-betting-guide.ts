@@ -246,7 +246,7 @@ Historical data shows each-way place bets in this odds range hit at **48%** vers
   ],
 
   footer: {
-    lastUpdated: '2026-01-23',
+    lastUpdated: '2026-01-24',
     sources: [
       'FA Cup Official Records (1871-2026)',
       'Opta Sports Data',

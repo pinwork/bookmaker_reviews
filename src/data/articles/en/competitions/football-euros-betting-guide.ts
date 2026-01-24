@@ -254,7 +254,7 @@ Combo bets carry **4× the margin** of singles. At Euro 2024, accumulators repre
   ],
 
   footer: {
-    lastUpdated: '2026-01-23',
+    lastUpdated: '2026-01-24',
     sources: [
       'UEFA Official Statistics (2016-2024)',
       'UEFA Euro 2024 Tournament Report',
