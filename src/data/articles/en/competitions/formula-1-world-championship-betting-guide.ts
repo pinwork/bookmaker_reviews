@@ -257,8 +257,8 @@ The 2025 rule change removed the championship point for fastest lap. Drivers now
       a: 'It depends on driver psychology. Verstappen shows +9.21 boost at Zandvoort (75% win rate). Russell shows -4.39 negative boost at Silverstone (under 20% win rate). Aggressive drivers thrive under home crowd pressure. Methodical drivers underperform. Factor driver personality into home race bets.',
     },
     {
-      q: 'Why is constructor betting more reliable than driver betting?',
-      a: 'Academic research found that 88% of race outcome variance is explained by the car, only 12% by driver skill. Two different drivers in the same McLaren produce more similar results than the same driver in two different cars. Constructor championship bets eliminate driver inconsistency from the equation.',
+      q: 'Why do my pole position bets keep losing?',
+      a: 'Pole conversion rates vary dramatically by driver. Verstappen converts at 75%, justifying odds up to -300. Norris converts at just 33%—fair odds are +200, yet markets price him similarly to elite converters. Leclerc and 2019 Ferrari secured 9 poles but won only 3 races. Check driver-specific conversion history before backing any pole-sitter. The overall 43% conversion rate masks enormous individual variance.',
     },
   ],
 
