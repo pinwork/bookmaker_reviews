@@ -117,7 +117,7 @@ BTTS converts at 55.6% versus the European average of 51-52%. Corners average 9.
 
 Home advantage dominates Brazilian football at rates exceeding European norms. The **47% home win rate** compares to 44% in the Premier League and 46% in La Liga. Draw frequency sits at 27%—higher than European leagues where draws occur 24-26% of the time. This creates systematic Double Chance value on home teams.
 
-The mechanism is geographic. Brazil spans 8.5 million square kilometres. Away teams flying from Rio de Janeiro to Manaus (2,400 km) face 4-5 hour flights, altitude adjustments, and tropical heat acclimatisation. Research documents measurable physical output reduction following 2,000+ km travel.
+The mechanism is geographic. Brazil spans 8.5 million square kilometres. Away teams flying from Rio de Janeiro to Manaus (2,400 km) face 4-5 hour flights, altitude adjustments, and tropical heat acclimatisation. Travel distances amplify home advantage. When teams travel >2,000km (e.g., Grêmio to Fortaleza), home win rate increases to 54% vs 46% for local derbies.
 
 **When to use:** Back 1X (Home or Draw) on elite teams (Flamengo, Palmeiras, São Paulo) at home against mid-table opponents. The 75% home win rate for top-4 clubs far exceeds the 47% league average.
 
@@ -235,6 +235,14 @@ First Half Under 1.5 goals hits **69.7%** of matches—a significant gap from 50
     {
       q: 'When is the best time to bet on Brasileirão?',
       a: 'April through August offers maximum line efficiency after early-season volatility stabilises. Avoid January-March when State Championship overlap creates rotation uncertainty. Late season (September-December) offers underdog value on relegation-threatened home teams.',
+    },
+    {
+      q: 'What bankroll do I need for Brasileirão betting?',
+      a: 'Start with 100 units minimum. Never stake more than 1-2% per bet (1-2 units). For a £1,000 bankroll, bet £10-20 per match. This allows you to survive 20-30 consecutive losses without going bust—a realistic worst-case scenario even for sharp bettors. Track ROI over 500+ bets before increasing stakes.',
+    },
+    {
+      q: 'Why do my accumulators keep losing?',
+      a: 'Bookmaker margins compound. A 5-leg accumulator with 5% margin per leg carries an effective 22.5% margin—making long-term profit mathematically impossible. Single bets at 2-3% margin offer better value. If you must bet accumulators, limit to 2-3 legs maximum and focus on correlated outcomes (e.g., favourite + Under).',
     },
   ],
 

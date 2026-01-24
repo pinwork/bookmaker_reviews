@@ -46,6 +46,12 @@ This guide synthesises research across 306 matches from 2024-25, multi-season ma
 
   edgePatterns: [
     {
+      pattern: 'Big 3 (Benfica, Porto, Sporting) win 89% of matches vs bottom-6 teams',
+      source: 'Liga Portugal Official',
+      period: '2022-2025',
+      sampleSize: 216,
+    },
+    {
       pattern:
         'Big 3 have won 89 of 91 Primeira Liga titles (97.8%) since 1934—only Belenenses (1946) and Boavista (2001) broke the dominance',
       source: 'Liga Portugal Official Records',
@@ -65,13 +71,6 @@ This guide synthesises research across 306 matches from 2024-25, multi-season ma
       source: 'FBref / BeSoccer',
       period: '2024-25',
       sampleSize: 18,
-    },
-    {
-      pattern:
-        'Teams playing UEFA Europa League showed superior domestic performance across 20 seasons—contradicting the Thursday-Sunday fatigue narrative',
-      source: 'Journal of Functional Morphology and Kinesiology',
-      period: '2001-2021',
-      sampleSize: 61000,
     },
   ],
 
@@ -246,6 +245,14 @@ Research shows **69% of Primeira Liga matches** feature at least one goal before
     {
       q: 'What is the best value market for Primeira Liga betting?',
       a: 'Bottom-table pairings offer the clearest edge. Under 2.5 goals hits at 64-71% for relegation-zone teams, yet bookmakers price at 48-52% implied probability. Asian Handicap on Big 3 home matches also offers value—they cover -1.5 at rates 7-10 percentage points above market pricing.',
+    },
+    {
+      q: 'What bankroll do I need for Primeira Liga betting?',
+      a: 'Start with 100 units minimum. Never stake more than 1-2% per bet (1-2 units). For a £1,000 bankroll, bet £10-20 per match. This allows you to survive 20-30 consecutive losses without going bust—a realistic worst-case scenario even for sharp bettors. Track ROI over 500+ bets before increasing stakes.',
+    },
+    {
+      q: 'Why do my accumulators keep losing?',
+      a: 'Bookmaker margins compound. A 5-leg accumulator with 5% margin per leg carries an effective 22.5% margin—making long-term profit mathematically impossible. Single bets at 2-3% margin offer better value. If you must bet accumulators, limit to 2-3 legs maximum and focus on correlated outcomes (e.g., favourite + Under).',
     },
   ],
 

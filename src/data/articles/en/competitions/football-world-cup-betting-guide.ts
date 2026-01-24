@@ -104,11 +104,11 @@ This guide synthesises data from 22 World Cup tournaments (1930-2022), peer-revi
     {
       id: 'worldcup-2026-venues',
       title: '2026 Venue Categories by Altitude',
-      headers: ['Category', 'Venues', 'Impact'],
+      headers: ['Category', 'Cities', 'Impact', 'Betting Edge'],
       rows: [
-        ['High Altitude (2,000m+)', 'Mexico City', '-4 to -6% sprint'],
-        ['Moderate (1,500m)', 'Guadalajara', '-2 to -3% sprint'],
-        ['Sea Level', 'Most USA/Canada', 'No impact'],
+        ['High (2,240m)', 'Mexico City', '-4 to -6% sprint', 'Back Under 3.5 here'],
+        ['Moderate (1,566m)', 'Guadalajara', '-2 to -3% sprint', 'Avoid heavy overs'],
+        ['Sea Level', 'Most USA/Canada', 'No impact', 'Standard analysis'],
       ],
     },
   ],
@@ -247,6 +247,14 @@ Individual referees vary by 3.5+ cards per match. Strict officials average 4.5+ 
     {
       q: 'When is the best time to bet on World Cup outright winner?',
       a: 'Earliest odds (12-18 months pre-tournament) offer best value on established favourites before sharp money compresses margins. Post-draw betting lets you identify favourable knockout paths. During the tournament, bet after group stages when a favourite stutters—their odds lengthen but underlying quality remains.',
+    },
+    {
+      q: 'What bankroll do I need for World Cup betting?',
+      a: 'Start with 100 units minimum. Never stake more than 1-2% per bet (1-2 units). For a £1,000 bankroll, bet £10-20 per match. This allows you to survive 20-30 consecutive losses without going bust—a realistic worst-case scenario even for sharp bettors. Track ROI over 500+ bets before increasing stakes.',
+    },
+    {
+      q: 'Why do my accumulators keep losing?',
+      a: 'Bookmaker margins compound. A 5-leg accumulator with 5% margin per leg carries an effective 22.5% margin—making long-term profit mathematically impossible. Single bets at 2-3% margin offer better value. If you must bet accumulators, limit to 2-3 legs maximum and focus on correlated outcomes (e.g., favourite + Under).',
     },
   ],
 

@@ -165,6 +165,8 @@ The "best third-placed" calculation particularly distorts final group games. Tea
 
 The most exploitable edge in AFCON betting. Knockout matches produce Under 2.5 in **75% of fixtures** (approximately 12 of 16 games per edition).
 
+Teams prioritise NOT conceding in elimination rounds—defensive conservatism drives the Under 2.5 pattern. The risk of conceding first outweighs the benefit of attacking, creating cagey matches that rarely exceed three total goals.
+
 The 2025 knockout stage exemplified this: Senegal beat Mali 1-0, Egypt 1-0, and Morocco 1-0 (after extra time). Morocco beat Tanzania 1-0, Cameroon 2-0, and drew 0-0 with Nigeria before winning on penalties. Of eight knockout matches involving the two finalists, seven finished Under 2.5 in regulation.
 
 **Application:** Back Under 2.5 in every AFCON knockout fixture from Round of 16 onwards. Consider Under 2.0 Asian totals for quarter-finals and beyond where defensive solidity peaks.
@@ -225,6 +227,14 @@ AFCON rewards patient in-play bettors. The erratic quality of early-tournament m
     {
       q: 'When is the best time to bet on AFCON matches?',
       a: 'Avoid early group-stage openers where unpredictability peaks. The knockout stage produces the clearest patterns: 75% unders, 63% half-time draws. For in-play, wait 15-25 minutes to assess tempo before entering totals markets. Late corners spike in final 15 minutes as chasing teams push forward.',
+    },
+    {
+      q: 'What bankroll do I need for AFCON betting?',
+      a: 'Start with 100 units minimum. Never stake more than 1-2% per bet (1-2 units). For a £1,000 bankroll, bet £10-20 per match. This allows you to survive 20-30 consecutive losses without going bust—a realistic worst-case scenario even for sharp bettors. Track ROI over 500+ bets before increasing stakes.',
+    },
+    {
+      q: 'Why do my accumulators keep losing?',
+      a: 'Bookmaker margins compound. A 5-leg accumulator with 5% margin per leg carries an effective 22.5% margin—making long-term profit mathematically impossible. Single bets at 2-3% margin offer better value. If you must bet accumulators, limit to 2-3 legs maximum and focus on correlated outcomes (e.g., favourite + Under).',
     },
   ],
 

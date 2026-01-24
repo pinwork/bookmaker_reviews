@@ -238,6 +238,14 @@ In CL specifically, overturning multi-goal first-leg deficits is extraordinarily
       q: 'When is the best time to bet on Champions League matches?',
       a: 'For match betting, odds become most accurate 15-30 minutes before kickoff once lineups are confirmed. For finding value, bet early in the cycle (Monday-Tuesday for midweek matches) before sharp money shapes lines. For outright markets, August prices before the draw offer the best each-way value on dark horses.',
     },
+    {
+      q: 'What bankroll do I need for Champions League betting?',
+      a: 'Start with 100 units minimum. Never stake more than 1-2% per bet (1-2 units). For a £1,000 bankroll, bet £10-20 per match. This allows you to survive 20-30 consecutive losses without going bust—a realistic worst-case scenario even for sharp bettors. Track ROI over 500+ bets before increasing stakes.',
+    },
+    {
+      q: 'Why do my accumulators keep losing?',
+      a: 'Bookmaker margins compound. A 5-leg accumulator with 5% margin per leg carries an effective 22.5% margin—making long-term profit mathematically impossible. Single bets at 2-3% margin offer better value. If you must bet accumulators, limit to 2-3 legs maximum and focus on correlated outcomes (e.g., favourite + Under).',
+    },
   ],
 
   footer: {

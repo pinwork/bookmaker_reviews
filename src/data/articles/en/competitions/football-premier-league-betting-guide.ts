@@ -301,6 +301,14 @@ Research across 11,585 player-level first goal bets on Betfair showed laying fir
       q: 'Are team anomalies reliable betting edges?',
       a: 'When the gap exceeds 15 percentage points, yes. Chelsea win 17pp more away than expected. Brentford show +17pp home advantage above baseline. Tottenham score 12pp fewer first-half goals than expected. These patterns persist across multiple seasons and represent systematic market mispricing.',
     },
+    {
+      q: 'What bankroll do I need for Premier League betting?',
+      a: 'Start with 100 units minimum. Never stake more than 1-2% per bet (1-2 units). For a £1,000 bankroll, bet £10-20 per match. This allows you to survive 20-30 consecutive losses without going bust—a realistic worst-case scenario even for sharp bettors. Track ROI over 500+ bets before increasing stakes.',
+    },
+    {
+      q: 'Why do my accumulators keep losing?',
+      a: 'Bookmaker margins compound. A 5-leg accumulator with 5% margin per leg carries an effective 22.5% margin—making long-term profit mathematically impossible. Single bets at 2-3% margin offer better value. If you must bet accumulators, limit to 2-3 legs maximum and focus on correlated outcomes (e.g., favourite + Under).',
+    },
   ],
 
   footer: {

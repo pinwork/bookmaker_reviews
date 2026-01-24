@@ -261,6 +261,14 @@ Turkish referees issue cards at volatile rates: 2.08 to 2.85 yellow cards per te
       q: 'Should I avoid Turkish Super Lig betting entirely?',
       a: 'No—but target micro-markets where edges exist. Main 1X2 markets are efficiently priced for top teams. Value exists in second-half goals (56.4% hit rate), relegation-zone BTTS (88%), and team-specific corners. Avoid early-season chaos (Weeks 1-3) and post-winter-break fixtures until form stabilises.',
     },
+    {
+      q: 'What bankroll do I need for Süper Lig betting?',
+      a: 'Start with 100 units minimum. Never stake more than 1-2% per bet (1-2 units). For a £1,000 bankroll, bet £10-20 per match. This allows you to survive 20-30 consecutive losses without going bust—a realistic worst-case scenario even for sharp bettors. Track ROI over 500+ bets before increasing stakes.',
+    },
+    {
+      q: 'Why do my accumulators keep losing?',
+      a: 'Bookmaker margins compound. A 5-leg accumulator with 5% margin per leg carries an effective 22.5% margin—making long-term profit mathematically impossible. Single bets at 2-3% margin offer better value. If you must bet accumulators, limit to 2-3 legs maximum and focus on correlated outcomes (e.g., favourite + Under).',
+    },
   ],
 
   footer: {

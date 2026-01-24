@@ -269,6 +269,18 @@ The 0-0 rarity is actionable. Bookmakers price correct score 0-0 at 8-10% implie
       q: 'When is the best time to bet on Bundesliga matches?',
       a: 'Pre-match lines open Tuesday for weekend fixtures; sharp money moves Wednesday-Thursday when injury news emerges. Avoid August-September (high variance from settling formations). Target February-March for consistency. April-May offers high-variance opportunities when title and relegation races create market panic.',
     },
+    {
+      q: 'Why is Bundesliga harder to bet than Premier League?',
+      a: 'Higher volatility. Bundesliga shows 9.4% halftime comeback rate vs Premier League 7.2%. Open, attacking football creates more late goals and defensive collapses. Markets price based on expected patterns but Bundesliga reality deviates more. This variance helps sharp bettors but punishes casual ones who expect predictable outcomes.',
+    },
+    {
+      q: 'What bankroll do I need for Bundesliga betting?',
+      a: 'Start with 100 units minimum. Never stake more than 1-2% per bet (1-2 units). For a £1,000 bankroll, bet £10-20 per match. This allows you to survive 20-30 consecutive losses without going bust—a realistic worst-case scenario even for sharp bettors. Track ROI over 500+ bets before increasing stakes.',
+    },
+    {
+      q: 'Why do my accumulators keep losing?',
+      a: 'Bookmaker margins compound. A 5-leg accumulator with 5% margin per leg carries an effective 22.5% margin—making long-term profit mathematically impossible. Single bets at 2-3% margin offer better value. If you must bet accumulators, limit to 2-3 legs maximum and focus on correlated outcomes (e.g., favourite + Under).',
+    },
   ],
 
   footer: {

@@ -241,6 +241,14 @@ Under 1.5 First Half hits at approximately 70-75% in league phase matches involv
       q: 'When do Europa League odds offer the best value?',
       a: 'Odds open 7-10 days before matches with loose pricing. Sharp money moves lines 48-72 hours pre-match. Best value windows: immediately after opening (before adjustment), and post-lineup announcement (90 minutes before kickoff) when rotation becomes clear. For outrights, bet after the league phase draw reveals path difficulty.',
     },
+    {
+      q: 'What bankroll do I need for Europa League betting?',
+      a: 'Start with 100 units minimum. Never stake more than 1-2% per bet (1-2 units). For a £1,000 bankroll, bet £10-20 per match. This allows you to survive 20-30 consecutive losses without going bust—a realistic worst-case scenario even for sharp bettors. Track ROI over 500+ bets before increasing stakes.',
+    },
+    {
+      q: 'Why do my accumulators keep losing?',
+      a: 'Bookmaker margins compound. A 5-leg accumulator with 5% margin per leg carries an effective 22.5% margin—making long-term profit mathematically impossible. Single bets at 2-3% margin offer better value. If you must bet accumulators, limit to 2-3 legs maximum and focus on correlated outcomes (e.g., favourite + Under).',
+    },
   ],
 
   footer: {

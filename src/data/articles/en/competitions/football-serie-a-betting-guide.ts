@@ -275,6 +275,18 @@ Once European spots and relegation are mathematically settled (typically Matchda
       q: 'When is the best time to bet on Serie A matches?',
       a: 'Two windows offer value. First: immediately post-FIFA break when upset rates spike 4-6pp and bookmakers price normal probabilities. Second: Tuesday-Wednesday for weekend matches before Thursday team news shifts lines. For live betting, the 70-75 minute window offers 3-4pp value on trailing teams as algorithms lag in recalculating next-goal probability.',
     },
+    {
+      q: 'Why does Juventus draw so much?',
+      a: 'Juventus draws 38% of matches—9pp above the Serie A average of 29%. Their defensive structure (0.96 xGA per match, best in league) prevents losses but conservative attacking patterns (60% possession, low shot volume) fail to convert dominance into wins. Back Draw at 3.20+ when Juventus face defensive mid-table opposition.',
+    },
+    {
+      q: 'What bankroll do I need for Serie A betting?',
+      a: 'Start with 100 units minimum. Never stake more than 1-2% per bet (1-2 units). For a £1,000 bankroll, bet £10-20 per match. This allows you to survive 20-30 consecutive losses without going bust—a realistic worst-case scenario even for sharp bettors. Track ROI over 500+ bets before increasing stakes.',
+    },
+    {
+      q: 'Why do my accumulators keep losing?',
+      a: 'Bookmaker margins compound. A 5-leg accumulator with 5% margin per leg carries an effective 22.5% margin—making long-term profit mathematically impossible. Single bets at 2-3% margin offer better value. If you must bet accumulators, limit to 2-3 legs maximum and focus on correlated outcomes (e.g., favourite + Under).',
+    },
   ],
 
   footer: {

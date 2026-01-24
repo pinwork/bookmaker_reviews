@@ -243,6 +243,14 @@ Historical data shows each-way place bets in this odds range hit at **48%** vers
       q: 'Is backing favourites profitable in the FA Cup?',
       a: 'Depends on the round. Favourite conversion drops to 73% in Rounds 1-2 versus 82% in league play when rotation is present. From quarter-finals onwards, conversion rises to 88-91% as serious teams field full-strength sides. Back favourites selectively in early rounds; more aggressively from the fifth round.',
     },
+    {
+      q: 'What bankroll do I need for FA Cup betting?',
+      a: 'Start with 100 units minimum. Never stake more than 1-2% per bet (1-2 units). For a £1,000 bankroll, bet £10-20 per match. This allows you to survive 20-30 consecutive losses without going bust—a realistic worst-case scenario even for sharp bettors. Track ROI over 500+ bets before increasing stakes.',
+    },
+    {
+      q: 'Why do my accumulators keep losing?',
+      a: 'Bookmaker margins compound. A 5-leg accumulator with 5% margin per leg carries an effective 22.5% margin—making long-term profit mathematically impossible. Single bets at 2-3% margin offer better value. If you must bet accumulators, limit to 2-3 legs maximum and focus on correlated outcomes (e.g., favourite + Under).',
+    },
   ],
 
   footer: {
