@@ -649,6 +649,20 @@ src/data/articles/
 | No years | ✓ `uk-betting-bonus-guide` ❌ `uk-betting-bonus-guide-2026` |
 | Regional prefix for SEO | Universal: none, GB: `uk-`, IE: `ireland-` |
 
+**Competition Article Naming Convention:**
+
+Competition articles follow a strict `{sportSlug}-{competitionSlug}-betting-guide` pattern:
+
+| Component | Source | Example |
+|-----------|--------|---------|
+| `sportSlug` | From `competitions.ts` grouping | `football`, `tennis`, `horse-racing` |
+| `competitionSlug` | Cleaned competition slug (no sport suffix) | `premier-league`, `us-open`, `heavyweight` |
+
+**Deduplication rules:**
+- Remove sport from competition slug if redundant: `us-open-tennis` → `tennis-us-open`
+- Remove sport suffix: `heavyweight-boxing` → `boxing-heavyweight`
+- Keep sport if part of official name: `rugby-world-cup` → `rugby-world-cup`
+
 ### D. Creating Regional Override
 
 1. Create: `overrides/{region}/en/guides/{filename}.ts`

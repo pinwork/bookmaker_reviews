@@ -700,3 +700,12 @@ Data Source: ESRI (Oct 2023), GRAI (2024 Act), HRI Annual Report 2024
 
 ### SEO
 - [ ] H1 contains primary keyword
+
+### Handoff Instruction
+```
+Create guide article from this Data Pack.
+Follow schema: GuideArticleSchema
+Follow structure: docs/CONTENT_GUIDE.md Section 6 (Guides Editorial Standards)
+Follow writing: docs/WRITING_STYLE.md
+Output: src/data/articles/en/guides/[slug].ts
+```

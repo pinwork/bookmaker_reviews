@@ -13,6 +13,7 @@
 
 # Part 1: Shared Rules (All Article Types)
 
+
 ## 1. Identity & Voice
 
 ### A. The Persona
