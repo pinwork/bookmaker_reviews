@@ -12,7 +12,7 @@ export const footballSerieABettingGuide: CompetitionArticle = {
     title: 'The League Where Draws Pay',
     content: `Serie A has undergone a fundamental transformation. The 2025/26 season tracks at **29% draws**—up from 22% in 2019/20—while bookmakers continue pricing draws at 20-23% implied probability. That systematic misprice creates persistent value across 380 annual fixtures.
 
-The tactical shift runs deeper than draw frequency. Average goals sit at 2.56 per match as 3-5-2 formations dominate and managers prioritise structural solidity over attacking ambition. Pisa, returning after 34 years in lower leagues, have drawn 52% of their matches—the highest rate in Serie A history for a promoted team.
+The 2024/25 season confirmed the trend: Napoli won the title by a single point over Inter, with 27% of matches ending in draws. The defensive tactical shift shows no signs of reverting.
 
 This guide synthesises data from 1,900+ matches across five seasons, current form metrics, and team-specific anomalies. The findings challenge conventional handicapping: promoted teams collapse predictably on away fixtures, home advantage stratifies sharply by quality tier, and late-goal concentration creates live betting windows worth 3-5 percentage points.`,
   },
@@ -46,6 +46,12 @@ This guide synthesises data from 1,900+ matches across five seasons, current for
 
   edgePatterns: [
     {
+      pattern: 'Juventus draw 38% of matches under conservative management—highest in Serie A',
+      source: 'FBref',
+      period: '2024-2025',
+      sampleSize: 38,
+    },
+    {
       pattern:
         'Draws occur at 29% frequency in 2025/26 while bookmakers price at 20-23% implied probability (6-9pp systematic misprice)',
       source: 'FootyStats Serie A Data',
@@ -65,13 +71,6 @@ This guide synthesises data from 1,900+ matches across five seasons, current for
       source: 'Serie A Historical Records',
       period: '2019-2025',
       sampleSize: 285,
-    },
-    {
-      pattern:
-        'Top-6 teams win 52-58% at home vs bottom-tier 28-35%; market prices uniform home advantage',
-      source: 'SportyTrader League Statistics',
-      period: '2020-2025',
-      sampleSize: 1900,
     },
   ],
 
@@ -99,13 +98,13 @@ This guide synthesises data from 1,900+ matches across five seasons, current for
       ],
     },
     {
-      id: 'seriea-promoted-trajectory',
-      title: 'Promoted Team Performance Arc',
-      headers: ['Phase', 'Home PPG', 'Away PPG', 'Notes'],
+      id: 'seriea-promoted-teams',
+      title: 'Promoted Team First-Season Performance',
+      headers: ['Team', 'PPG Weeks 1-10', 'PPG Weeks 11-38', 'Trend'],
       rows: [
-        ['MD 1-10', '1.4-1.6', '0.8-1.0', 'Early confidence'],
-        ['MD 11-25', '1.2-1.4', '0.5-0.7', 'Away collapse begins'],
-        ['MD 26-38', '1.0-1.3', '0.4-0.6', 'Relegation zone typical'],
+        ['Como 2024/25', '1.4', '0.9', '↓ -36%'],
+        ['Parma 2024/25', '1.1', '0.7', '↓ -36%'],
+        ['Venezia 2024/25', '0.9', '0.6', '↓ -33%'],
       ],
     },
   ],

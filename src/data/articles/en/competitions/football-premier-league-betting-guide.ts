@@ -22,7 +22,7 @@ This guide focuses on where value actually exists: team-specific anomalies where
     { label: 'Teams', value: '20' },
     { label: 'Matches per Season', value: '380' },
     { label: 'Season', value: 'August – May' },
-    { label: 'Avg Goals (2024/25)', value: '2.95' },
+    { label: 'Avg Goals (2024/25)', value: '2.85' },
     { label: 'Home Win Rate', value: '45%' },
   ],
 
@@ -81,11 +81,11 @@ This guide focuses on where value actually exists: team-specific anomalies where
       title: 'Premier League Market Hit Rates (Last 5 Seasons)',
       headers: ['Season', 'Home Win %', 'BTTS %', 'Over 2.5 %'],
       rows: [
+        ['2025/26*', '46%', '53%', '52%'],
         ['2024/25', '45%', '55%', '54%'],
         ['2023/24', '47%', '53%', '59%'],
         ['2022/23', '48%', '48%', '47%'],
         ['2021/22', '43%', '53%', '54%'],
-        ['2020/21', '38%', '53%', '53%'],
       ],
     },
     {
@@ -139,7 +139,7 @@ Removes the draw outcome by applying goal handicaps. Research from Football-Data
 
 ### Chelsea: Better Away Than Home
 
-Chelsea scored 9 more goals away than home through mid-2024/25 season—a **17 percentage point gap** between expected and actual away win rate. The pattern defies conventional home advantage logic.
+Chelsea scored 9 more goals away than home through mid-2024/25 season—a **17 percentage point gap** between expected and actual away win rate. The pattern persisted into 2025/26 with Chelsea recording 58% away win rate through December.
 
 The driver appears psychological. Chelsea perform better without home crowd pressure, particularly in matches where early goals shift momentum. Nottingham Forest showed a similar pattern with 48-52% away win rates versus 35-40% home despite a top-half finish.
 

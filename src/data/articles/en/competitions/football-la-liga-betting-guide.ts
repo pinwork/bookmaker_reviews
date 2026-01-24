@@ -197,6 +197,10 @@ Copa del Rey adds fixture congestion. Top teams rotate for domestic cup matches�
 
 Title races typically resolve by Matchday 35. Check motivation levels obsessively—teams with nothing to play for show measurable performance drops. Relegated teams paradoxically improve in dead rubbers (pressure relief). Back confirmed relegated sides at inflated odds in their final home matches.
 
+### El Clásico Market Behaviour
+
+Real Madrid vs Barcelona matches show 68% BTTS rate (last 25 meetings) vs 52% league average. The fixture generates 3.2 average goals—back Over 2.5 at any odds above 1.70.
+
 ## Micro-Markets Strategy
 
 ### Time of First Goal
