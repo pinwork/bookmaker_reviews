@@ -16,3 +16,4 @@ export { PopularMarkets } from './PopularMarkets';
 export { MicroMarkets } from './MicroMarkets';
 export { EdgePatterns } from './EdgePatterns';
 export { MarkdownBody } from './MarkdownBody';
+export { CollapsibleArticleBody } from './CollapsibleArticleBody';

@@ -11,9 +11,11 @@ export interface TocSection {
 
 interface TableOfContentsProps {
   sections: TocSection[];
+  /** Called before navigating to a section. Use to expand collapsed content. */
+  onBeforeNavigate?: () => void;
 }
 
-export function TableOfContents({ sections }: TableOfContentsProps) {
+export function TableOfContents({ sections, onBeforeNavigate }: TableOfContentsProps) {
   const [currentSection, setCurrentSection] = useState<string>(sections[0]?.id || '');
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -66,10 +68,19 @@ export function TableOfContents({ sections }: TableOfContentsProps) {
 
   const handleSectionClick = (sectionId: string) => {
     setIsOpen(false);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Call onBeforeNavigate to expand content if needed
+    if (onBeforeNavigate) {
+      onBeforeNavigate();
     }
+
+    // Small delay to allow content to expand before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 50);
   };
 
   const currentTitle = sections.find((s) => s.id === currentSection)?.title || sections[0]?.title;
@@ -80,14 +91,11 @@ export function TableOfContents({ sections }: TableOfContentsProps) {
   }
 
   return (
-    <div
-      ref={dropdownRef}
-      className="md:hidden sticky top-1 z-40 mx-4 mt-4"
-    >
+    <div ref={dropdownRef} className="md:hidden mb-6 relative">
       {/* Trigger button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between gap-2 px-4 py-3 bg-white border border-gray-200 rounded-lg shadow-sm text-left"
+        className="w-full flex items-center justify-between gap-2 px-4 py-2.5 bg-white border border-gray-200 rounded-lg shadow-sm text-left"
         aria-expanded={isOpen}
         aria-haspopup="listbox"
       >
@@ -106,7 +114,7 @@ export function TableOfContents({ sections }: TableOfContentsProps) {
       {/* Dropdown menu */}
       {isOpen && (
         <div
-          className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden"
+          className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden max-h-[60vh] overflow-y-auto z-50"
           role="listbox"
         >
           {sections.map((section) => (

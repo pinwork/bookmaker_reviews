@@ -1,4 +1,11 @@
-import { BarChart3 } from 'lucide-react';
+'use client';
+
+import { BarChart3, Info } from 'lucide-react';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 import type { EdgePattern } from '@/types';
 
 interface EdgePatternsProps {
@@ -22,13 +29,31 @@ export function EdgePatterns({ patterns, title = 'Edge Patterns' }: EdgePatterns
             key={i}
             className="p-4 bg-amber-50 border border-amber-200 rounded-lg"
           >
-            <p className="text-slate-800 font-medium leading-snug mb-2">
-              {pattern.pattern}
-            </p>
-            <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500">
-              <span>Source: {pattern.source}</span>
-              <span>{pattern.period}</span>
-              <span className="font-medium text-amber-700">n={pattern.sampleSize}</span>
+            <div className="flex items-start justify-between gap-2">
+              <p className="text-slate-800 font-medium leading-snug">
+                {pattern.pattern}
+              </p>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    type="button"
+                    className="flex-shrink-0 p-1 text-amber-600 hover:text-amber-800 rounded-full hover:bg-amber-100 transition-colors"
+                    aria-label="View source details"
+                  >
+                    <Info className="w-4 h-4" />
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent
+                  side="top"
+                  className="max-w-xs bg-slate-900 text-white p-3"
+                >
+                  <div className="space-y-1 text-xs">
+                    <p><span className="text-slate-400">Source:</span> {pattern.source}</p>
+                    <p><span className="text-slate-400">Period:</span> {pattern.period}</p>
+                    <p><span className="text-slate-400">Sample Size:</span> {pattern.sampleSize.toLocaleString()}</p>
+                  </div>
+                </TooltipContent>
+              </Tooltip>
             </div>
           </div>
         ))}

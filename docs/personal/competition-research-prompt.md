@@ -1,225 +1,310 @@
 # Research Prompt: Competition Betting Guide
 
+## Before You Start
+
+**You may only ask to clarify the competition name** if genuinely ambiguous between different competitions (e.g., "Champions League" — UEFA or AFC?). Provide options for user to pick.
+
+**Do NOT ask about:**
+- Year/edition
+- Men's/Women's
+- Senior/Youth
+- "What's your focus?"
+
+**Default assumption:** Major, senior, men's version. User would specify otherwise.
+
+Everything else is clear from the prompt. Start researching immediately.
+
 ## Your Task
 
-You are researching **[COMPETITION NAME]** to gather factual data for a betting guide. Your research will be used by a content writer to create an authoritative, data-driven article.
+You are researching **[World Snooker Championship]** to gather factual data for a betting guide. Your research will be used by a content writer to create an authoritative, data-driven article.
 
 ---
 
-## What to Research
+## 1. Quick Facts
 
-### 1. Quick Facts
 Find verified factual information:
-- When was this competition founded?
-- How many teams/players participate?
-- What is the format? (matches, rounds, duration)
-- When does it take place? (season dates)
-- Where is it held? (venue/country)
-- Key statistics (avg goals per game, avg aces per match, etc.)
+- Founded / first edition
+- Number of teams/players
+- Format (matches, rounds, duration)
+- Season dates / when it takes place
+- Venue / country
+- Key statistics (avg goals, avg total points, service hold %, etc.)
 
 **Sources:** Official competition website, Wikipedia, established sports databases.
 
 ---
 
-### 2. Betting Markets Overview
+## 2. Betting Markets
 
-**A. Main Markets (Popular)**
-List the most common, high-volume betting markets:
-- Which markets do bookmakers prominently feature?
-- Which markets are most popular among casual bettors?
+### A. Main Markets
+List high-volume markets that bookmakers prominently feature.
 
-**B. Micro-markets / Props (Low Competition)**
-Find niche, player-level or event-specific markets:
-- Player props (fouls, shots, aces, rushing yards, 180s)
-- Situational markets (corners, cards, tiebreaks)
-- Exotic markets (first scorer method, checkout color, exact score)
+### B. Micro-Markets (Opportunity Analysis)
 
-**C. Market Opportunity Analysis**
-For each micro-market, assess:
-- Is there existing content from competitors about this market? (Yes/No)
-- Do bettors discuss this market on Reddit/forums? (High/Medium/Low interest)
-- Is data available to analyze this market? (Yes/Partial/No)
+Find niche markets with potential edge. Assess each:
 
-**Format:**
-```
 | Market | Type | Competitor Content | Bettor Interest | Data Available | Opportunity |
 |--------|------|-------------------|-----------------|----------------|-------------|
-| Match Winner | Main | Saturated | High | Yes | Low |
-| Player Fouls | Micro | Sparse | Medium | Yes | HIGH |
-| Corners O/U | Micro | Some | Medium | Yes | Medium |
-```
+| [Market] | Micro | Sparse/Some/Saturated | High/Med/Low | Yes/Partial/No | HIGH/Med/Low |
 
-**What makes a HIGH opportunity micro-market:**
-- Low competitor coverage (few guides explain it)
-- Medium-High bettor interest (people search for it)
-- Data available (can create Edge Patterns)
+**HIGH opportunity = Low competitor coverage + Medium-High bettor interest + Data available**
 
-**Sources:** Major bookmakers (bet365, Betfair, DraftKings), betting forums, Reddit discussions.
+**Sources:** bet365, Betfair, DraftKings menus; Reddit r/sportsbook; betting forums.
 
 ---
 
-### 3. Edge Patterns (CRITICAL)
+## 3. Edge Patterns (CRITICAL)
 
-**What is an Edge Pattern?**
-An Edge Pattern is a specific, data-backed statistical trend that creates potential betting value. It's NOT generic knowledge ("home teams win more") — it's specific, actionable insight with numbers.
+An Edge Pattern is a specific, data-backed statistical trend that creates betting value.
 
-**Format for Edge Patterns:**
+### Format
 ```
 [WHO] + [SITUATION] + [OUTCOME] + [PERCENTAGE] + [SAMPLE SIZE]
 ```
 
-**Examples:**
-- "Liverpool covers -1.5 Asian Handicap in 72% of home matches vs bottom-6 teams (last 5 seasons, n=47)"
-- "First-time Grand Slam finalists lose Wimbledon final 78% of time (Open Era, n=23)"
-- "Teams coming off bye week cover NFL spread 58% (2015-2024, n=312)"
-- "UK players at PDC World Championship Round 1 beat European opponents 67% (2018-2024, n=89)"
+### Examples
+- "Home favourites win 70.5% vs road favourites at 58.4% (n=1,498)"
+- "Stalls 7-12 produced 10/13 Derby winners since 2003 (76.9%)"
+- "First-time Grand Slam finalists lose 78% of finals (Open Era, n=23)"
+- "Teams playing Thursday Europa then Sunday average 1.27 PPG vs 1.68 league average (n=27,000)"
 
-**What to look for:**
+### NOT Edge Patterns (generic, already priced in)
+- ❌ "Home teams win more" — no specifics
+- ❌ "Favourites usually cover" — no situation, no %
+- ❌ "Top seeds advance more often" — obvious
+- ❌ "Form matters" — vague, not actionable
+- ❌ "Defence wins championships" — cliché
+
+### Sample Size Guidelines
+- **n < 20:** Flag as "limited sample" — include only if pattern is very strong
+- **n = 20-50:** Acceptable for rare events (annual finals, single races)
+- **n = 50-200:** Good for seasonal patterns
+- **n > 200:** Strong for market-wide trends
+
+### What to Look For
 - Home/away splits by team quality tier
 - Performance in specific situations (after loss, in playoffs, vs top/bottom opponents)
-- Historical trends in specific markets (BTTS, Over/Under, handicaps)
-- Player/team performance vs specific opponent types
-- Weather/conditions impact (if applicable)
-- Referee/official tendencies (cards, fouls, penalties)
 - Tournament stage patterns (early rounds vs finals)
-- Seasonal timing patterns (start of season, end of season, fixture congestion)
+- Seasonal timing (start of season, fixture congestion, dead rubbers)
+- Surface/venue/conditions impact
+- Rest days / travel impact
 
-**Sources:** 
-- Statistical databases (FBref, Transfermarkt, ESPN Stats, Opta)
-- Academic sports analytics articles
-- Betting community discussions (Reddit r/sportsbook, r/SoccerBetting, Covers forums)
-- Sports analytics Twitter/X accounts
-- Historical results databases
-
-**Important:** Include sample size (n=X) and time period for every Edge Pattern. Without this, the data is not credible.
+**Sources:** FBref, Transfermarkt, ESPN Stats, Opta, official competition stats, academic papers, Reddit betting communities.
 
 ---
 
-### 4. Competition-Specific Betting Factors
+## 4. Counter-Intuitive Findings (HIGH VALUE)
 
-What makes betting on THIS competition unique compared to similar ones?
+Search for patterns that contradict common assumptions:
+- Market overvalues obvious metrics (serve speed, goal-scoring form, seed ranking)
+- "Obvious" leads convert at lower rates than expected
+- Underdogs outperform in specific situations
+- Secondary metrics predict better than primary metrics
 
-**Examples of what to find:**
-- **Premier League vs La Liga:** Different pace, physicality, referee styles
-- **Wimbledon vs US Open:** Grass vs hard court changes serve dominance
-- **NFL vs College Football:** Sharper lines, different spread sizes
-- **PDC Darts vs BDO:** Different player pools, venue factors
+### Examples
+- "Mid-price each-way bets (8-14/1) have worst place rate — 12.5% vs 55% for short prices"
+- "Slower-paced teams have higher offensive efficiency (negative correlation)"
+- "Away teams in double-week scheduling cover better than home teams (53% vs 50%)"
+- "Leaders entering the straight win only 11% — market overprices positional advantage"
 
-**Look for:**
-- Surface/venue impact
-- Scheduling factors (fixture congestion, rest days, travel)
-- Competition format implications (knockout vs league, best-of-3 vs best-of-5)
-- External factors (weather, altitude, crowd)
-- Rule differences that affect betting markets
+### Format
+```
+[Finding] — contradicts assumption that [X]
+```
 
 ---
 
-### 5. Seasonal/Timing Patterns
+## 5. Anomalies (Entities Behaving Opposite to Expectations)
 
-When are the best times to bet on this competition?
+Search for teams/players with 15%+ deviation from expected:
 
-**Find:**
-- When do odds open? (futures, pre-tournament, pre-match)
-- When do lines move most? (sharp money timing)
-- Seasonal trends (early season unpredictability, late season motivation)
-- Event timing within competition (Round 1 upsets vs Final predictability)
+| Entity | Expected | Actual | Gap | Possible Driver |
+|--------|----------|--------|-----|-----------------|
+| [Team/Player] | X% | Y% | ±Zpp | [Hypothesis] |
 
----
-
-### 6. Common Bettor Questions
-
-What do real bettors ask about this competition?
-
-**Where to find:**
-- Reddit threads (r/sportsbook, sport-specific subreddits)
-- Google "People Also Ask" for "[competition] betting"
-- Betting forums (OLBG, Covers, Betting Expert community)
-- Bookmaker FAQ sections
-
-**Capture:**
-- The exact question
-- The quality of existing answers (good/weak/missing)
-- Whether this represents a content opportunity
+### Examples
+- Team performs better away than home
+- Player wins fewer matches but covers more spreads
+- High-scoring team has low BTTS rate
+- Favourite underperforms in specific situation
 
 ---
 
-### 7. Statistical Tables Data
+## 6. Comeback & Momentum Data
 
-**Purpose:** Collect raw data that can be formatted into comparison tables and stat blocks in the article. Tables add credibility, improve SEO (featured snippets), and provide quick-reference value.
+Research win probability from various lead positions:
 
-**Types of tables to research:**
+| Lead Position | Conversion Rate | Market Implied | Edge |
+|---------------|-----------------|----------------|------|
+| [Position] | X% | Y% | ±Zpp on [side] |
 
-**A. Season/Year-by-Year Performance**
-```
-| Season | Home Win % | Draw % | Away Win % | BTTS % | Over 2.5 % |
-|--------|-----------|--------|------------|--------|------------|
-| 2024/25 | 44.2% | 26.1% | 29.7% | 53.4% | 51.8% |
-| 2023/24 | ... | ... | ... | ... | ... |
-```
+### CRITICAL: Break Down by Quality Tier
+Markets price all leads similarly. Tier breakdown reveals edge:
+- Top-tier teams converting leads: X%
+- Mid-tier teams: Y%
+- Bottom-tier teams: Z%
 
-**B. Competition Quick Facts**
-```
-| Stat | Value |
-|------|-------|
-| Founded | 1992 |
-| Teams | 20 |
-| Matches per Season | 380 |
-| Avg Goals per Game | 2.8 |
-```
-
-**C. Market Hit Rates**
-```
-| Market | Hit Rate | Sample Size | Notes |
-|--------|----------|-------------|-------|
-| BTTS Yes | 54.7% | 380 matches | Higher than La Liga (48%) |
-| Over 2.5 | 52.3% | 380 matches | Consistent across seasons |
-```
-
-**D. Team/Player Rankings (where relevant)**
-```
-| Team | Home AH Cover % | Away AH Cover % | Best Market |
-|------|-----------------|-----------------|-------------|
-| Liverpool | 72% | 58% | Home -1.5 AH |
-| Man City | 68% | 71% | Away -1.5 AH |
-```
-
-**E. Round/Stage Breakdown (for tournaments)**
-```
-| Round | Favourite Win % | Upset Rate | Avg Games/Sets |
-|-------|----------------|------------|----------------|
-| Round 1 | 82% | 18% | 3.2 sets |
-| Quarter Final | 71% | 29% | 3.8 sets |
-```
-
-**What to collect:**
-- Minimum 3 seasons/years of data where possible
-- Always include sample size (n=X)
-- Note data source
-- Flag any anomalies (COVID seasons, rule changes)
-
-**Sources:**
-- Official competition statistics
-- FBref, Transfermarkt, ESPN Stats
-- Historical results databases
-- Bookmaker settlement data (if available)
+### What to Research
+- At what point do leads become "safe"?
+- Momentum shift triggers (break of serve, first goal, power play)
+- Fatigue/psychology in extended play (5th sets, overtime)
 
 ---
 
-### 8. Historical Data Points
+## 7. Context Factors
 
-Find specific historical statistics that add credibility:
+### A. Format & Rules Affecting Betting
+- Match length (40 min vs 48 min, best-of-3 vs best-of-5)
+- Scoring/tiebreak rules
+- Retirement/abandonment policies
+- Weather/conditions protocols
 
-- Win rates by seed/ranking
-- Upset frequencies by round
-- Market-specific hit rates (BTTS %, Over 2.5 %, etc.)
-- Dominant teams/players historical records
-- Records and streaks
+### B. Venue & Surface
+- Surface characteristics (speed, bounce, grip)
+- Venue-specific data (altitude, indoor/outdoor, crowd capacity)
+- How technical factors shift advantage between styles
+
+### C. Home Advantage (Quantified)
+- Home win rate with specific number
+- Crowd effect (with vs without fans if data exists)
+- Venue-specific advantages (hostile crowds, travel distances)
+
+### D. Preparation & Form Correlations
+- Warm-up event correlation with main event
+- Impact of skipping preparation events
+- Recent form vs season form — which is more predictive?
+- Travel / timezone adjustment impact
+
+---
+
+## 8. Official/Referee Patterns
+
+**Skip if:** Individual sports (tennis, golf, darts), racing, esports
+
+**Research by NAME, not aggregate:**
+
+| Official | Cards/Game | Fouls/Game | Home Bias | Notes |
+|----------|------------|------------|-----------|-------|
+| [Name] | X | Y | ±Z% | [Style note] |
+
+### What to Track
+- Strictest vs most lenient officials (with numbers)
+- Home team bias by official
+- Big match vs routine fixture tendencies
+- VAR/review tendencies
+
+---
+
+## 9. Manager/Coach Impact
+
+**Skip if:** Individual sports, events without coaches
+
+| Manager | Style | Market Affected | Edge |
+|---------|-------|-----------------|------|
+| [Name] | [Style description] | [Market] | [Specific edge] |
+
+### What to Research
+- Tactical tendencies creating predictable patterns
+- New manager bounce duration
+- Manager vs specific opponents (H2H)
+- Cup vs league performance differences
+
+---
+
+## 10. Live Betting Windows
+
+For each window, provide:
+- **Trigger:** What event starts the window
+- **Duration:** How long edge lasts (seconds/minutes)
+- **Edge:** What to bet
+- **Mechanism:** Why algorithm/market lags
+
+### Examples
+```
+Trigger: Red card shown
+Duration: 90-180 seconds
+Edge: Back trailing team
+Mechanism: Algorithms take 90+ seconds to recalculate win probability
+
+Trigger: Roof closure (tennis)
+Duration: 2-3 minutes
+Edge: Back server
+Mechanism: Models lag in adjusting serve hold probability (+3-5%)
+
+Trigger: Leader at Tattenham Corner (Derby)
+Duration: Until 2f out
+Edge: Lay leader
+Mechanism: Crowd/visual bias overrates positional advantage; leaders win only 11%
+```
+
+---
+
+## 11. Seasonal/Timing Patterns
+
+- When do odds open and move? (sharp money timing)
+- Seasonal trends (early season unpredictability, late motivation)
+- Round/stage patterns (Round 1 upsets vs Final predictability)
+- Day of week / time of day patterns
+- Key dates when lines shift (draw announcements, injury news windows)
+
+---
+
+## 12. FAQ Research (Dual Strategy)
+
+### A. SEO Questions (for traffic)
+Questions with search volume that could trigger Featured Snippets:
+- "Which bookmaker is best for [X]?"
+- "How many [goals/points/games] in [competition]?"
+- "When does [competition] start?"
+- "What is [specific rule/market]?"
+
+### B. Pain Point Questions (for trust)
+Real frustrations from betting communities:
+- "Why does [pattern] always fail?"
+- "Is [market] still profitable?"
+- Questions where people share losing experiences
+
+| Question | Type | Volume/Freq | Existing Answers | Priority |
+|----------|------|-------------|------------------|----------|
+| [Question] | SEO/Pain | High/Med/Low | Good/Weak/Missing | HIGH/Med/Low |
+
+**HIGH priority = High volume/frequency + Weak or missing existing answers**
+
+---
+
+## 13. Statistical Tables Data
+
+Collect raw data for tables. Include:
+- Minimum 3 seasons/years where possible
+- Sample size (n=X) for each dataset
+- Source citation
+- Flag anomalies (COVID seasons, rule changes)
+
+### Types Needed
+
+**Season-by-Season:**
+```
+| Season | Metric 1 | Metric 2 | Metric 3 |
+```
+
+**Market Hit Rates:**
+```
+| Market | Hit Rate | Sample | Notes |
+```
+
+**Team/Player Tiers:**
+```
+| Tier | Win % | Cover % | Best Market |
+```
+
+**Round/Stage Breakdown:**
+```
+| Round | Favourite Win % | Upset Rate | Avg Duration |
+```
 
 ---
 
 ## Output Format
-
-Structure your research as:
 
 ```
 ## [COMPETITION NAME] Research Findings
@@ -227,78 +312,66 @@ Structure your research as:
 ### Quick Facts
 - Fact 1: [value]
 - Fact 2: [value]
-...
 
-### Popular Markets (Main)
-1. Market name - description
-2. Market name - description
-...
+### Popular Markets
+1. [Market] — [description]
 
-### Micro-markets Opportunity Analysis
+### Micro-Markets Opportunity Analysis
 | Market | Type | Competitor Content | Bettor Interest | Data Available | Opportunity |
-|--------|------|-------------------|-----------------|----------------|-------------|
-| Market 1 | Micro | Sparse/Some/Saturated | High/Med/Low | Yes/Partial/No | HIGH/Med/Low |
-...
 
 ### Edge Patterns Found
-1. [Pattern statement with %] (Source: X, Period: Y, Sample: n=Z)
-2. [Pattern statement with %] (Source: X, Period: Y, Sample: n=Z)
-...
+1. [Pattern with %] (Source: X, Period: Y, n=Z)
+2. ...
 
-### Competition-Specific Factors
-- Factor 1: explanation
-- Factor 2: explanation
-...
+### Counter-Intuitive Findings
+1. [Finding] — contradicts [assumption]
+2. ...
+
+### Anomalies Detected
+| Entity | Expected | Actual | Gap | Driver |
+
+### Comeback / Momentum Data
+| Lead Position | Conversion Rate | Market Implied | Edge |
+
+### Context Factors
+- [Factor]: [data]
+
+### Official/Referee Patterns (if applicable)
+| Name | Metric | Home Bias | Notes |
+
+### Manager Impact (if applicable)
+| Manager | Style | Market | Edge |
+
+### Live Betting Windows
+- Trigger: [X] | Duration: [Y] | Edge: [Z] | Mechanism: [W]
 
 ### Timing Patterns
-- Pattern 1
-- Pattern 2
-...
+- [Pattern]
 
-### Common Questions
-| Question | Current Answer Quality | Opportunity |
-|----------|----------------------|-------------|
-| Question 1 | Good/Weak/Missing | High/Medium/Low |
-...
-
-### Historical Data
-- Stat 1
-- Stat 2
-...
+### FAQ Questions
+| Question | Type | Volume | Existing | Priority |
 
 ### Statistical Tables Data
-
-**Quick Facts:**
-| Stat | Value |
-|------|-------|
-| ... | ... |
-
-**Season-by-Season:**
-| Season | Metric 1 | Metric 2 | ... |
-|--------|----------|----------|-----|
-| ... | ... | ... | ... |
-
-**Market Hit Rates:**
-| Market | Hit Rate | Sample | Notes |
-|--------|----------|--------|-------|
-| ... | ... | ... | ... |
+[Raw data in table format]
 
 ### Sources Used
-- Source 1 (URL)
-- Source 2 (URL)
-...
+- [Source] (URL)
 ```
 
 ---
 
 ## Quality Checklist
 
-Before submitting research, verify:
+Before submitting:
 
-- [ ] All Edge Patterns have percentage AND sample size
-- [ ] Sources are cited for key claims
-- [ ] Data is recent (within last 2-3 years unless historical)
-- [ ] Competition-specific factors are genuinely unique (not generic)
-- [ ] Questions are from real bettor communities, not assumed
-- [ ] Micro-markets include opportunity assessment (not just list of markets)
-- [ ] Statistical tables have minimum 3 seasons/years of data where possible
+- [ ] All Edge Patterns have % AND sample size (n=X)
+- [ ] Sample sizes flagged if n < 20
+- [ ] At least 3 counter-intuitive findings
+- [ ] Anomalies identified (15%+ deviation from expected)
+- [ ] Comeback data broken down by quality tier
+- [ ] Live betting windows have trigger + duration + mechanism
+- [ ] Officials/Managers researched by NAME (if applicable)
+- [ ] FAQ has both SEO and pain point questions
+- [ ] Tables have 3+ data points
+- [ ] Sources cited for key claims
+- [ ] No generic insights presented as edge patterns

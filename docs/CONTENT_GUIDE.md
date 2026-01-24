@@ -663,6 +663,14 @@ Competition articles follow a strict `{sportSlug}-{competitionSlug}-betting-guid
 - Remove sport suffix: `heavyweight-boxing` → `boxing-heavyweight`
 - Keep sport if part of official name: `rugby-world-cup` → `rugby-world-cup`
 
+**Examples:**
+
+| Old Slug | New Slug | Reason |
+|----------|----------|--------|
+| `premier-league-betting-guide` | `football-premier-league-betting-guide` | Added sport prefix |
+| `us-open-tennis-betting-guide` | `tennis-us-open-betting-guide` | Prefix + removed `-tennis` suffix |
+| `world-snooker-championship-betting-guide` | `snooker-world-championship-betting-guide` | Prefix + removed `snooker-` from middle |
+
 ### D. Creating Regional Override
 
 1. Create: `overrides/{region}/en/guides/{filename}.ts`

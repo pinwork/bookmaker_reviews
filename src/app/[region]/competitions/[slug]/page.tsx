@@ -6,13 +6,12 @@ import { generateArticleSchemas, generateArticleHreflang } from '@/utils/seo';
 import {
   ArticleHeader,
   ReadingProgress,
-  TableOfContents,
   QuickFactsBox,
   PopularMarkets,
   MicroMarkets,
   EdgePatterns,
   UnifiedComparisonTable,
-  MarkdownBody,
+  CollapsibleArticleBody,
   ArticleFAQ,
   ArticleFooter,
 } from '@/components/article';
@@ -120,9 +119,10 @@ export default async function CompetitionArticlePage({ params }: PageProps) {
           </div>
         )}
 
-        <TableOfContents sections={tocSections} />
-
-        <MarkdownBody content={article.body} />
+        <CollapsibleArticleBody
+          content={article.body}
+          tocSections={tocSections}
+        />
 
         <ArticleFAQ faq={article.faq} />
 
