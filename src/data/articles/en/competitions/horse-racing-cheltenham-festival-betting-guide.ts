@@ -270,7 +270,7 @@ In the Festival Trophy Handicap Chase:
     },
     {
       q: 'Is Trials Day a reliable guide to Festival winners?',
-      a: 'No. Since 2015, just 9% of Trials Day runners (26/296) won at that years Festival. The exception: specific races like the Cleeve Hurdle (11% conversion to Stayers Hurdle winners, +22% ROI) and Timeform Novices Chase (40% of last 10 winners doubled up). Ignore generic Trials Day hype; target these specific form lines.',
+      a: "No. Since 2015, just 9% of Trials Day runners (26/296) won at that year's Festival. The exception: specific races like the Cleeve Hurdle (11% conversion to Stayers Hurdle winners, +22% ROI) and Timeform Novices Chase (40% of last 10 winners doubled up). Ignore generic Trials Day hype; target these specific form lines.",
     },
     {
       q: 'Should I back front-runners at Cheltenham?',
@@ -279,7 +279,7 @@ In the Festival Trophy Handicap Chase:
   ],
 
   footer: {
-    lastUpdated: '2026-01-23',
+    lastUpdated: '2026-01-24',
     sources: [
       'Racing Post Festival Statistics (2000-2025)',
       'Geegeez Pace Bias Analysis',

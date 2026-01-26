@@ -142,7 +142,7 @@ Churchill Downs forces 20 horses into a gate, then funnels them toward the first
 Post position data from 1930 onwards reveals dramatic variance from the theoretical 5% baseline:
 
 - **Post 5:** 10 winners, 10.5% win rate, 29.5% ITM rate
-- **Post 10:** 9 winners, 9.7% win rate, highest ITM percentage at 29%
+- **Post 10:** 10 winners, 10.5% win rate, 28.4% ITM rate
 - **Post 20:** 2 winners but only 19 starts—11.1% win rate
 - **Post 17:** Zero winners in 45+ starts, worst ITM rate at 6.7%
 
@@ -182,6 +182,37 @@ When rain probability exceeds 60% in the forecast:
 - Downgrade pure closers who rely on a clear run—kickback eliminates their final surge
 - Favour tactical speed (pressing or stalking positions) over deep closers
 - Check inside post horses more carefully—rail can become slower in slop
+
+## Live Betting Strategy
+
+### The :46 Half-Mile Trigger
+
+This is the most reliable in-race indicator. When the half-mile split clocks under **:46.00**, early leaders collapse at approximately **90% rate**. The pace is simply unsustainable over 10 furlongs.
+
+**Historical examples:**
+- Songandaprayer (2001): Led through :44.86 half—finished 13th
+- Summer Is Tomorrow (2022): Led through :45.36—finished last
+- Twenty races with sub-:46 halves show front-runners winning just 10%
+
+**Application:** Monitor the teletimer. If the half-mile flashes under :46, back horses sitting 10+ lengths off the pace. Deep closers become viable—Rich Strike (2022), Mage (2023), and Mystik Dan (2024) all won from double-digit lengths back when pace collapsed.
+
+### Position at Stretch Call
+
+Horses in 1st or 2nd at the top of the stretch (2 furlongs out) win approximately **75% of Derbies**. This correlation is stronger than any pre-race factor. If your selection is top-2 at stretch call, their probability has doubled from starting odds.
+
+**Conversely:** If a 3-1 favourite is 10+ lengths back at the stretch call after a fast pace, their actual win probability has dropped to approximately 15-20%—not the 25% the market implies.
+
+### The Stalker Sweet Spot
+
+When pace is moderate (:46-:47 half), stalkers in 2nd-4th position win at elite rates. From 2014-2022, **8 of 9 winners (88.9%)** were top-3 at the half-mile. This pattern broke 2022-2024 with extreme pace scenarios, but moderate pace still rewards stalkers.
+
+**Application:** Track the pace scenario as it develops. Moderate pace = back stalkers. Hot pace (sub-:46) = back closers. Slow pace (:47.5+) = back speed horses to wire the field.
+
+### Track Position Edge
+
+Churchill Downs rail shows consistent negative bias. Winners typically make their stretch run **3-5 paths wide**, not on the fence. The 2021 Kentucky Oaks undercard showed every winner running wide in the stretch.
+
+**In-running application:** A horse stuck on the rail at the quarter pole faces a structural disadvantage regardless of how much horse they have left. Back horses angling 3-5 wide for their stretch run.
 
 ## Timing and Market Dynamics
 
@@ -253,8 +284,8 @@ The Kentucky Oaks runs the day before the Derby with a similar field size of 3-y
       a: 'For UK punters, Bet365 offers Derby markets with competitive overrounds. Betfair provides exchange liquidity for trading positions. For US bettors, TwinSpires is the official Churchill Downs platform with the deepest pools. FanDuel and DraftKings offer fixed-odds alternatives. TVG provides rebates on high-volume exotic wagering.',
     },
     {
-      q: 'Should I bet the favourite to win the Kentucky Derby?',
-      a: 'Not as a default strategy. Favourites win just 33% of Derbies—below public expectation of 50-60%. However, favourites finish 1st or 2nd in 65% of recent renewals, making place bets on chalk significantly more reliable than win bets. Back favourites to place, not to win.',
+      q: 'Why do favourites keep disappointing at the Kentucky Derby?',
+      a: 'Favourites win just 33% of Derbies—below the 50-60% public expectation. The 20-horse field creates chaos that neutralises class advantages. Traffic problems, pace collapses, and the inside rail compression eliminate contenders regardless of talent. However, favourites finish 1st or 2nd 65% of the time—back them to place, not to win.',
     },
     {
       q: 'What is the best post position for the Kentucky Derby?',
@@ -275,14 +306,14 @@ The Kentucky Oaks runs the day before the Derby with a similar field size of 3-y
   ],
 
   footer: {
-    lastUpdated: '2026-01-23',
+    lastUpdated: '2026-01-24',
     sources: [
       'Churchill Downs Official Records (1930-2025)',
       'Equibase Historical Database',
       'TwinSpires Kentucky Derby Statistics',
+      'TwinSpires Edge Pace Analysis',
       'Daily Racing Form',
       'Blood Horse Post Position Analysis',
-      'America\'s Best Racing',
     ],
   },
 };

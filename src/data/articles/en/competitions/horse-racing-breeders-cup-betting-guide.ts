@@ -3,14 +3,14 @@ import { CompetitionArticle } from '@/types';
 export const breedersCupBettingGuide: CompetitionArticle = {
   slug: 'horse-racing-breeders-cup-betting-guide',
   competitionId: 'breederscup',
-  h1: 'Breeders\' Cup Betting Guide 2026',
-  metaTitle: 'Breeders\' Cup Betting Guide 2026 | Data-Backed Patterns',
+  h1: "Breeders' Cup Betting Guide 2026",
+  metaTitle: "Breeders' Cup Betting Guide 2026 | Data-Backed Patterns",
   metaDescription:
-    'Breeders\' Cup betting guide with verified edge patterns from 40+ years. Mile wire-to-wire drought, Del Mar draw bias, and payout premiums up to 914%.',
+    "Breeders' Cup betting guide with verified edge patterns from 40+ years. Mile wire-to-wire drought, Del Mar draw bias, and payout premiums up to 914%.",
 
   intro: {
     title: 'Where Running Style and Draw Bias Create Systematic Edges',
-    content: `The Breeders\' Cup is the single richest betting event in North American horse racing. Fourteen Grade I races across two days, **$34+ million in purses**, and exotic pools that dwarf typical track handles. Average payouts run 64% higher than North American baseline for win bets. Superfectas pay 566% more. Pick 6 pools explode to 914% above normal.
+    content: `The Breeders' Cup is the single richest betting event in North American horse racing. Fourteen Grade I races across two days, **$34+ million in purses**, and exotic pools that dwarf typical track handles. Average payouts run 64% higher than North American baseline for win bets. Superfectas pay 566% more. Pick 6 pools explode to 914% above normal.
 
 That payout premium exists because competitive fields create genuine uncertainty. Friday favourites win at 43%. Saturday favourites collapse to just 22%. The market cannot efficiently price 14-horse fields featuring international raiders, surface transitions, and venue-specific biases.
 
@@ -53,7 +53,7 @@ This guide focuses on the exploitable patterns: the Mile has not produced a wire
     {
       pattern:
         'Friday juvenile favourites win 43% vs Saturday mature race favourites at 22% (21 percentage point gap)',
-      source: 'Breeders\' Cup Historical Data',
+      source: "Breeders' Cup Historical Data",
       period: '2015-2024',
       sampleSize: 70,
     },
@@ -111,11 +111,11 @@ This guide focuses on the exploitable patterns: the Mile has not produced a wire
     },
   ],
 
-  body: `## Understanding Breeders\' Cup Betting Markets
+  body: `## Understanding Breeders' Cup Betting Markets
 
 ### Pari-Mutuel Reality
 
-Unlike fixed-odds betting, Breeders\' Cup pools are pari-mutuel. Final odds are determined by total wagering, not bookmaker pricing. This creates specific opportunities:
+Unlike fixed-odds betting, Breeders' Cup pools are pari-mutuel. Final odds are determined by total wagering, not bookmaker pricing. This creates specific opportunities:
 
 - **Early money moves lines:** Sharp bettors who identify value early influence closing odds
 - **Large pools reduce variance:** Pick 6 pools exceeding $3 million guarantee allow larger tickets without crushing odds
@@ -125,7 +125,7 @@ Unlike fixed-odds betting, Breeders\' Cup pools are pari-mutuel. Final odds are 
 
 ### Win Betting Strategy
 
-The 64% payout premium on win bets reflects field quality, not soft markets. Favourites at the Breeders\' Cup face stiffer competition than at any other event.
+The 64% payout premium on win bets reflects field quality, not soft markets. Favourites at the Breeders' Cup face stiffer competition than at any other event.
 
 - **Friday (juveniles):** 43% favourite win rate justifies moderate confidence in top choices
 - **Saturday (mature horses):** 22% favourite win rate demands spreading risk
@@ -136,7 +136,7 @@ The 64% payout premium on win bets reflects field quality, not soft markets. Fav
 
 ### The Mile: 32 Years Without a Front-Runner
 
-The Breeders\' Cup Mile represents the most extreme running style bias in major American racing. Since Lure won wire-to-wire in 1993, **zero front-runners have won in 32 consecutive editions**.
+The Breeders' Cup Mile represents the most extreme running style bias in major American racing. Since Lure won wire-to-wire in 1993, **zero front-runners have won in 32 consecutive editions**.
 
 The data is unambiguous:
 
@@ -160,7 +160,7 @@ The short Del Mar stretch (1.4 furlongs) theoretically favours speed. It does no
 
 ### The Turf: European Closers Dominate
 
-European horses have won 5 of the last 7 Breeders\' Cup Turf editions. The pattern compounds because European trainers specifically target this race with horses suited to its demands.
+European horses have won 5 of the last 7 Breeders' Cup Turf editions. The pattern compounds because European trainers specifically target this race with horses suited to its demands.
 
 - **80% of recent winners rallied from 5th or worse** at the half-mile
 - **Only 3 American-based winners since 2007:** Little Mike (2012), Main Sequence (2014), Bricks and Mortar (2019)
@@ -168,6 +168,14 @@ European horses have won 5 of the last 7 Breeders\' Cup Turf editions. The patte
 **Why Europeans excel:** They race exclusively on turf. American turf horses often compete on dirt between grass starts, disrupting their rhythm. European shippers arrive at peak grass fitness.
 
 **Betting edge:** Back European closers at value odds. Fade American speed horses regardless of morning line.
+
+### Filly & Mare Sprint: Zero Wire-to-Wire Winners
+
+The most dramatic anti-speed pattern in sprint racing. In 18 runnings, **zero horses have won wire-to-wire**—a 0-for-51 record for front-running attempts.
+
+At Del Mar specifically, all three runnings produced closers at big prices: Bar of Gold (2017, $136.40), Ce Ce (2021, $14.40), Soul of an Angel (2024, $41.60).
+
+**Application:** Eliminate any F&M Sprint contender with pure front-running style. Back late-runners at double-digit odds, especially at Del Mar.
 
 ### Juvenile Fillies: Prep Race Lineage
 
@@ -182,11 +190,45 @@ Running style also matters:
 
 **Betting filter:** Prioritise Frizette winners with early tactical speed. Eliminate mid-odds contenders lacking prep race credentials.
 
+## Live Betting Strategy
+
+### The Mile: Lay Any Leader
+
+This is the single most reliable in-play edge in American horse racing. With 32 consecutive races producing no wire-to-wire winner, any horse leading at the quarter-mile or half-mile is a systematic lay.
+
+**Trigger:** Horse takes lead at any point
+**Action:** Lay aggressively on Betfair; back closers
+**Data:** Winners average 5.65-5.75 lengths back after opening quarter. 16 of 25 winners positioned 7th or worse at first call.
+
+### The Classic: Back Early Position
+
+The Classic shows the opposite pattern to the Mile. **100% of the last 12 BC Classic winners** were within 3.5 lengths of the lead after the opening quarter-mile. Six of those 12 actually led.
+
+**Trigger:** Horse within 3.5 lengths at first call
+**Action:** Back horses in top 3; fade deep closers
+**Data:** All 12 recent winners were 2nd or better at top of stretch. True closers virtually never win.
+
+### The Sprint: Quarter-Pole Position
+
+**All 20 BC Sprint winners from 1999-2018 were top 3 at the stretch call.** Average winner only 1.5 lengths back at quarter pole.
+
+**Venue-specific adjustment:**
+- **Santa Anita:** 4 of 5 BC Sprints won by pacesetters/press types
+- **Del Mar:** Last 4 BC Sprints won by closers—more volatile pattern
+
+### The Turf: Wait for Half-Mile
+
+**12 of the last 15 BC Turf winners** rallied from 5th or farther back at halfway. Only Highland Reel (2016) won wire-to-wire recently.
+
+**Trigger:** Horse positioned 5th+ at half-mile
+**Action:** Back closers; lay early leaders
+**Application:** If your selection is travelling mid-pack at the half, maintain position. If leading, consider hedging.
+
 ## Venue-Specific Factors
 
 ### Del Mar Turf Draw Bias (2025, 2028+)
 
-Del Mar hosts the Breeders\' Cup in alternating years. When racing returns there, the turf draw bias creates systematic mispricing.
+Del Mar hosts the Breeders' Cup in alternating years. When racing returns there, the turf draw bias creates systematic mispricing.
 
 **5-furlong turf sprints:**
 
@@ -217,7 +259,7 @@ Keeneland offers a fairer playing field than Del Mar. The turf course features:
 
 ### Pick 4 and Pick 6 Architecture
 
-Breeders\' Cup multi-race pools generate life-changing payouts. The 2023 Friday Pick 6 paid **$773,865** for a $2 ticket. Saturday Pick 6: $419,245.
+Breeders' Cup multi-race pools generate life-changing payouts. The 2023 Friday Pick 6 paid **$773,865** for a $2 ticket. Saturday Pick 6: $419,245.
 
 **Ticket construction principles:**
 
@@ -228,7 +270,7 @@ Breeders\' Cup multi-race pools generate life-changing payouts. The 2023 Friday 
 
 ### Guaranteed Pool Timing
 
-Breeders\' Cup guarantees specific pool minimums:
+Breeders' Cup guarantees specific pool minimums:
 
 - **Friday Pick 5:** $500,000 guaranteed
 - **Friday Pick 6:** $1,000,000 guaranteed
@@ -276,20 +318,20 @@ American horses dominate dirt because European runners rarely encounter the surf
 
   faq: [
     {
-      q: 'Why are Breeders\' Cup payouts so much higher than normal?',
+      q: "Why are Breeders' Cup payouts so much higher than normal?",
       a: 'Competitive 14-horse Grade I fields create genuine uncertainty. Favourites win only 22% on Saturday versus 33% at typical tracks. This uncertainty inflates exotic pools: superfectas pay 566% above North American average, Pick 6 pools 914% higher. Large fields plus quality competition equals oversized payouts.',
     },
     {
-      q: 'Should I back favourites at the Breeders\' Cup?',
+      q: "Should I back favourites at the Breeders' Cup?",
       a: 'Friday yes, Saturday no. Juvenile race favourites win 43% (concentrated 2-year-old talent). Saturday mature race favourites win just 22% (deeper fields, international competition). On Saturday, spread multi-race tickets across 4-6 contenders per race rather than singling favourites.',
     },
     {
-      q: 'Which running style wins the Mile?',
-      a: 'Deep closers. Zero front-runners have won the Mile in 32 consecutive editions since 1993. Winners average 5.75 lengths back after the opening quarter. Eliminate any Mile contender whose optimal style involves leading or pressing the pace.',
+      q: "Why do speed horses always fail in the Breeders' Cup Mile?",
+      a: 'Zero front-runners have won the Mile in 32 consecutive editions since 1993. Winners average 5.75 lengths back after the opening quarter. The pace becomes suicidal as multiple speed horses contest the lead on turf. This is the most reliable lay opportunity in American racing—eliminate any Mile contender whose optimal style involves leading.',
     },
     {
       q: 'How much does post position matter at Del Mar?',
-      a: 'In turf sprints, posts 1-5 produce 11.3% winners versus 6.8% for posts 6+. That is a 40% inside advantage. In mile turf races, posts 1-2 win at 12.9% versus significantly lower for outside posts. Wide-drawn horses in turf events face near-impossible geometry due to Del Mar\'s short 1.4-furlong stretch.',
+      a: "In turf sprints, posts 1-5 produce 11.3% winners versus 6.8% for posts 6+. That is a 40% inside advantage. In mile turf races, posts 1-2 win at 12.9% versus significantly lower for outside posts. Wide-drawn horses in turf events face near-impossible geometry due to Del Mar's short 1.4-furlong stretch.",
     },
     {
       q: 'Should I back European horses?',
@@ -304,11 +346,12 @@ American horses dominate dirt because European runners rarely encounter the surf
   footer: {
     lastUpdated: '2026-01-24',
     sources: [
-      'Breeders\' Cup Official Statistics',
+      "Breeders' Cup Official Statistics",
       'Americas Best Racing Historical Analysis',
       'Thoroughbred Racing Commentary (Del Mar Bias Study)',
       'US Racing Mile and Distaff Trend Data',
       'Equibase Speed Figures',
+      'Stakes-Profiles.com Database',
     ],
   },
 };

@@ -81,7 +81,7 @@ This guide synthesises 164 years of results, barrier statistics since automatic 
       title: 'Barrier Performance Since 1924 (Selected Gates)',
       headers: ['Barrier', 'Wins', 'Last Winner', 'Drought'],
       rows: [
-        ['Barrier 5', '10', 'Knight\'s Choice (2024)', 'None'],
+        ['Barrier 5', '10', "Knight's Choice (2024)", 'None'],
         ['Barrier 11', '9', 'Americain (2010)', '15 years'],
         ['Barrier 7', '1', 'Blackwood (1924)', '101 years'],
         ['Barrier 6', '1', 'Light Fingers (1965)', '60 years'],
@@ -106,7 +106,7 @@ This guide synthesises 164 years of results, barrier statistics since automatic 
         ['Under $8', '4', 'Fiorente 2013 last fav winner'],
         ['$8-$20', '9', 'Most common winning range'],
         ['$21-$50', '3', 'Mid-range value zone'],
-        ['$51+', '4', 'Knight\'s Choice $91 (2024)'],
+        ['$51+', '4', "Knight's Choice $91 (2024)"],
       ],
     },
   ],
@@ -244,8 +244,8 @@ Record your selections versus outcomes. The Melbourne Cup teaches humility—eve
       a: 'Betfair Exchange provides the best odds through commission-based pricing (typically 2-5% versus 15-20% overround at traditional books). For fixed odds, Sportsbet and TAB offer competitive pricing on exotics. Compare trifecta pools—TAB pools are largest, meaning better liquidity for unusual combinations.',
     },
     {
-      q: 'Should I back the favourite in the Melbourne Cup?',
-      a: 'No. Favourites win just 21% of Melbourne Cups with the last winner Fiorente in 2013. The handicap structure—8-9kg weight spread across the field—neutralises class advantages over 3,200 metres. Fade favourites under $6.00 carrying 56kg+. Historical strike rate for this profile sits at approximately 5%.',
+      q: 'Why do my Melbourne Cup favourites always lose?',
+      a: 'Favourites win just 21% of Melbourne Cups—the last winner was Fiorente in 2013. The handicap structure neutralises class advantages: topweights carry 58-59kg while lightweights carry 50-51kg. That 8-9kg spread compounds over 3,200 metres. Fade favourites under $6.00 carrying 56kg+. Historical strike rate for this profile sits at approximately 5%.',
     },
     {
       q: 'Does the barrier draw really matter?',
@@ -257,11 +257,11 @@ Record your selections versus outcomes. The Melbourne Cup teaches humility—eve
     },
     {
       q: 'When is the best time to bet on the Melbourne Cup?',
-      a: 'Sharp money moves Monday 5pm-midnight AEDT when rain forecasts firm. Barrier draw Saturday evening creates 10-15% movements within 30 minutes for horses drawing 5 or 11. Avoid betting in the final hour—retail surge (66,000 bets/minute) creates noise without value. Position early if you have conviction.',
+      a: "Sharp money moves Monday 5pm-midnight AEDT when rain forecasts firm. Barrier draw Saturday evening creates 10-15% movements within 30 minutes for horses drawing 5 or 11. Avoid betting in the final hour—retail surge (66,000 bets/minute) creates noise without value. Position early if you have conviction.",
     },
     {
       q: 'Is the Caulfield Cup a good form guide for the Melbourne Cup?',
-      a: 'Critically important. Caulfield Cup placegetters (2nd and 3rd) show 37.5% strike rate for Melbourne Cup success or placings. Winners often carry penalty weight that negates advantage. Knight\'s Choice ran 4th in the 2024 Caulfield Cup at 100/1 before winning the Melbourne Cup at $91. The form line was visible.',
+      a: "Critically important. Caulfield Cup placegetters (2nd and 3rd) show 37.5% strike rate for Melbourne Cup success or placings. Winners often carry penalty weight that negates advantage. Knight's Choice ran 4th in the 2024 Caulfield Cup at 100/1 before winning the Melbourne Cup at $91. The form line was visible.",
     },
   ],
 

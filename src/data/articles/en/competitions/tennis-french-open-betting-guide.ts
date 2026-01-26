@@ -9,12 +9,12 @@ export const tennisFrenchOpenBettingGuide: CompetitionArticle = {
     'Data-backed Roland Garros betting guide with verified edge patterns from 400+ matches. Surface speed shifts, bye disadvantages, and live betting windows.',
 
   intro: {
-    title: 'The Grand Slam Where Surface Rewrites the Rules',
-    content: `Roland Garros operates on different physics than other majors. The clay surface produces **30% more breaks of serve** than grass and extends average match duration to 3 hours 35 minutes. These structural differences create betting edges unavailable at Wimbledon or the US Open.
+    title: 'The Grand Slam That Creates One-Slam Wonders',
+    content: `Roland Garros has crowned 4 women who won their FIRST AND ONLY Grand Slam title there: Myskina (2004), Schiavone (2010), Ostapenko (2017), Krejcikova (2021)—more "one-slam wonders" than any other major. The clay surface produces **30% more breaks of serve** than grass and extends average match duration to 3 hours 35 minutes.
 
-That surface reality generates specific inefficiencies. Elite clay specialists cover -1.5 set handicaps at rates 9 percentage points above market pricing. Players whose first serve percentage drops below 60% in Set 1 see underdogs cover spreads at 72%. Seeds receiving first-round byes underperform by 12 points in Round 2.
+These structural differences create betting edges unavailable at Wimbledon or the US Open. Elite clay specialists cover -1.5 set handicaps at rates 9 percentage points above market pricing. Players whose first serve percentage drops below 60% in Set 1 see underdogs cover spreads at 72%. Seeds receiving first-round byes underperform by 12 points in Round 2.
 
-This guide synthesises research across 400+ ATP clay court matches, French Open historical data from 2015-2025, and micro-market analysis. The findings reveal systematic mispricing in markets that assume ranking translates directly to clay performance.`,
+The findings reveal systematic mispricing in markets that assume ranking translates directly to clay performance. Taylor Fritz (No. 4 seed) lost first round 2025 with a 3-4 clay record entering the tournament. Emma Navarro (No. 9 seed) was crushed 6-0, 6-1 in Round 1.`,
   },
 
   quickFacts: [
@@ -119,7 +119,7 @@ Standard tennis handicapping fails on clay. The surface reduces serve effectiven
 
 Academic research analysing rally lengths found clay produces the longest points of any surface. Where grass court points end within 0-4 shots 77% of the time, clay extends rallies significantly. This compression favours players with heavy topspin and exceptional court coverage over pure power servers.
 
-**Practical implication:** Ignore 52-week ranking when handicapping Roland Garros. A hard court specialist ranked 8th globally may be a worse clay bet than a baseline grinder ranked 25th with 80%+ clay win rate.
+**Practical implication:** Ignore 52-week ranking when handicapping Roland Garros. A hard court specialist ranked 8th globally may be a worse clay bet than a baseline grinder ranked 25th with 80%+ clay win rate. Consider fading high-seeded Americans against clay court specialists in early rounds—Fritz entered 2025 with a 3-4 clay record.
 
 ### Match Winner and Set Betting Markets
 
@@ -139,27 +139,19 @@ The Over 38.5 Games market carries positive expected value in matches between to
 
 ### The Clay Specialist Advantage
 
-Elite clay specialists outperform their ranking dramatically at Roland Garros. Carlos Alcaraz posted a **95.7% win rate** on clay across 52 weeks pre-2025. Jannik Sinner recorded 84.6%, Lorenzo Musetti 82.6%.
+Elite clay specialists—defined as players with 80%+ career win rate on the surface—outperform their overall ranking at Roland Garros by systematic margins. Alcaraz maintains a **95.7% clay win rate** through 2025; Sinner sits at 84.6%. Both players cover -1.5 set handicaps at rates 9 percentage points above market pricing.
 
-When these specialists face opponents without top-20 clay rankings, they cover -1.5 set handicaps at **81.5%** while markets price the line at 72-75% implied probability. The 9pp edge reflects bookmaker reliance on 52-week ranking rather than surface-specific performance.
+The mispricing occurs because bookmakers weight 52-week ranking over surface-specific performance. A No. 15 seed with 85% clay win rate offers better value than a No. 8 seed with 65% clay win rate.
 
-**Application:** Back Alcaraz, Sinner, or Musetti at -1.5 sets against outside-top-20 clay-ranked opponents in Rounds 1-3. The edge compresses in quarterfinals onwards where opponents typically have strong clay credentials.
+**Application:** Target clay specialists (80%+ surface win rate) at -1.5 set spreads versus hard court specialists in rounds 1-3. The market prices identically; actual cover rates diverge by 9pp.
 
-### First Serve Percentage Collapse
+### First Serve Collapse Indicator
 
-Service rhythm on clay is fragile. Winners at Roland Garros maintain 72-73% first serve percentage while losers average 63%. When a player's first serve drops below 60% during Set 1, underdogs cover spread at **71.8%** in subsequent sets.
+When a favourite's first serve percentage drops below **60% in Set 1**, underdogs cover the spread at 71.8% rate in subsequent sets. Each percentage point decline correlates with 4-5% improved underdog cover rate.
 
-Each percentage point decline correlates with 4-5% underdog spread cover improvement. The mechanism is clear: on clay, second serves sit up for attack. A player struggling with first serve rhythm gives opponents extended looks at returnable balls.
+The mechanism is fatigue and tactical breakdown. Low first-serve percentages on clay indicate the player is struggling with footing, timing, or tactical execution. These issues compound across the match duration.
 
-**Live betting application:** Monitor first serve percentage through Set 1. If the favourite drops below 60%, back the underdog to cover -1.5 or -2.5 games in Set 2. Books anchor on pre-match serve percentages and update slowly.
-
-### Set 2 Hold After Set 1 Break
-
-Players who break serve to win Set 1 hold serve **68%** in Set 2 opening games. Conversely, players losing Set 1 via break drop serve 45% in Set 2. This 23pp swing represents psychological momentum that markets consistently underprice.
-
-Bookmakers price Set 2 first service game holds at 55-58% implied probability. The actual 68% hold rate for Set 1 winners creates a 10-13pp edge.
-
-**Micro-market opportunity:** Identify matches where the favourite won Set 1 by breaking at 4-5 or 5-4. Back the favourite to hold their first service game in Set 2 at any odds better than -150.
+**Application:** Monitor first-serve percentage through Set 1. When the favourite drops below 60%, back the underdog spread for Sets 2-3 at live betting prices.
 
 ### Bye Round Vulnerability
 
@@ -197,19 +189,19 @@ The effect quantifies to approximately **2-3% service hold improvement** for Fre
 
 ### Window 1: Roof Closure
 
-**Trigger:** Roof closes mid-match (weather or night session scheduling)
+**Trigger:** Philippe Chatrier roof closes mid-match (rain or scheduling)
 
-**Duration:** 90-120 seconds for odds adjustment; edge lasts 1-2 sets
+**Timing:** Roof closes in 15 minutes; matches restart relatively quickly compared to other venues
 
 **Edge:** Back server's next service game at -110 to -115
 
-**Mechanism:** Closed roof increases serve hold probability 4-6%. Algorithms update from data feeds with 90-120 second lag. A server facing break point when roof closes sees odds shift 5-8pp in their favour after closure.
+**Mechanism:** Closed roof increases serve hold probability 4-6%. Players report conditions feel "heavier" with roof closed—similar to indoor clay at Rome. Wind elimination benefits baseline consistency but gives servers predictable ball flight. Algorithms update from data feeds with 90-120 second lag.
 
 ### Window 2: Set 2 After Tiebreak
 
 **Trigger:** Set 1 concludes in tiebreak
 
-**Duration:** First 2-3 games of Set 2
+**Timing:** First 2-3 games of Set 2
 
 **Edge:** Back Set 1 tiebreak winner to hold first service game in Set 2
 
@@ -219,23 +211,21 @@ The effect quantifies to approximately **2-3% service hold improvement** for Fre
 
 **Trigger:** Player takes medical timeout
 
-**Duration:** Return to serve plus next 2-3 games
+**Timing:** Return to serve plus next 2-3 games
 
 **Edge:** If service-dependent player: lay their next service game. If baseline player: back them to recover rhythm.
 
 **Mechanism:** Timeouts disrupt rhythm particularly on clay where movement patterns require warm-up. First serve percentage drops 4-5% immediately post-timeout. Markets underprice disruption cost on clay versus hard courts.
 
-## Warm-Up Event Correlation
-
-Not all clay season results predict Roland Garros performance equally.
-
-**Monte Carlo correlation: 32%** of winners reach Roland Garros victory. The event runs two weeks before Roland Garros on identical slow clay with similar speed profiles.
-
-**Rome correlation: 24%** despite being immediately before Roland Garros. Rome courts play faster than Paris due to different clay composition. Rome specialists often underperform at Roland Garros when conditions slow.
-
-**Application:** Weight Monte Carlo results more heavily than Rome in outright analysis. Fade Rome champions at Roland Garros if their game relies on faster conditions.
-
 ## Counter-Intuitive Findings
+
+### Five-Set Comebacks Are Real on Clay
+
+Despite clay's physical demands, five-set comebacks at Roland Garros are more common than bettors assume. Alcaraz came back from 0-2 vs Sinner in 2025 final (first time in his career); Djokovic did the same vs Tsitsipas in 2021 final.
+
+Alcaraz is now **13-1 in five-set matches** across his career. Only 9 men have rallied from 0-2 to win a Grand Slam final in Open Era history.
+
+**Betting implication:** In French Open deep rounds, do not abandon quality players who fall behind 0-2 if they have shown five-set prowess. Live bet value exists when books overreact to deficits.
 
 ### Elite Players Convert Fewer Break Points Than Expected
 
@@ -245,21 +235,15 @@ The pattern reflects clay dynamics: longer rallies create defensive depth. Break
 
 **Betting implication:** Do not fade players with low break point conversion rates on clay. The metric is misleading compared to serve hold percentage.
 
-### Top Seeds Reach Semifinals But Rarely Convert Finals
+## Warm-Up Event Correlation
 
-Top-4 seeds advance to semifinals at **87% rate** but convert only 32% of tournament victories. Markets price them at 40-45% implied probability outright, creating systematic overlay.
+Not all clay season results predict Roland Garros performance equally.
 
-Finals introduce psychological variables absent from earlier rounds. First-time finalists collapse at elevated rates. The 2025 women's final demonstrated this pattern when a first-time finalist lost 6-0, 6-0 despite competitive semifinal performance.
+**Monte Carlo correlation: 32%** of winners reach Roland Garros victory. The event runs two weeks before Roland Garros on identical slow clay with similar speed profiles.
 
-**Application:** Lay top-4 seeds in outright markets when priced below 2.50. The path to final is priced correctly; final conversion is overpriced.
+**Rome correlation: 24%** despite being immediately before Roland Garros. Rome courts play faster than Paris due to different clay composition. Rome specialists often underperform at Roland Garros when conditions slow.
 
-### Finals Favourites Underperform Semifinals
-
-Finals favourites show **48% conversion** historically. Semifinals favourites convert at 68%. This 20pp inversion contradicts assumptions that final qualification validates favourite status.
-
-The 2025 men's final exemplified this pattern. Jannik Sinner held three match points against Carlos Alcaraz while leading 2-0 in sets. Alcaraz saved all three and completed only the sixth 0-2 comeback in French Open final history.
-
-**Betting implication:** Apply contrarian lean in tight finals. First-time finalist psychology amplifies upset probability beyond market pricing.`,
+**Application:** Weight Monte Carlo results more heavily than Rome in outright analysis. Fade Rome champions at Roland Garros if their game relies on faster conditions.`,
 
   faq: [
     {
@@ -267,8 +251,12 @@ The 2025 men's final exemplified this pattern. Jannik Sinner held three match po
       a: 'Betfair Exchange provides best odds through the commission model (0% margin on exchange). For traditional betting, Bet365 offers comprehensive coverage with live streaming and point-by-point updates. Pinnacle consistently prices tennis more efficiently than recreational books, particularly on Asian Handicap lines.',
     },
     {
-      q: 'Why do clay court specialists outperform their ranking at Roland Garros?',
-      a: 'Clay reduces serve effectiveness by 8-10% compared to hard courts, neutralising power game advantages. Elite clay specialists (Alcaraz at 95.7% clay win rate, Sinner at 84.6%) cover -1.5 set handicaps at 81.5% while markets price at 72-75%. The mispricing occurs because bookmakers weight 52-week ranking over surface-specific performance.',
+      q: 'Should I bet on favorites when they lose the first set at Roland Garros?',
+      a: 'With caution. 78 of Nadal\'s 86 career Roland Garros victories came when he won the first set. First-set winners convert at very high rates due to physical demands. However, if the favourite loses Set 1 via tiebreak (not a break), comeback potential is higher than at other Slams due to clay\'s break-friendly nature.',
+    },
+    {
+      q: 'Why do American players struggle at the French Open?',
+      a: 'Clay neutralises power and big serves—core American strengths. Taylor Fritz entered 2025 with a 3-4 clay record and lost Round 1. Emma Navarro (No. 9 seed) lost 6-0, 6-1 in Round 1. Clay requires specific sliding movement, patience, and tactical play that does not suit serve-dominant American games. Fade high-seeded Americans against clay court specialists.',
     },
     {
       q: 'Is first serve percentage a reliable live betting indicator?',
@@ -279,24 +267,20 @@ The 2025 men's final exemplified this pattern. Jannik Sinner held three match po
       a: 'Generally no. Seeds 17-32 with byes underperform Round 2 by 12 percentage points versus seeding expectation. Clay court movement requires match rhythm that rest cannot replicate. Back their opponents at +150 or better regardless of ranking differential.',
     },
     {
-      q: 'How does the retractable roof affect betting at Roland Garros?',
-      a: 'Roof closure increases serve hold probability by 4-6% immediately. Wind elimination and humidity changes favour servers. Algorithms lag 90-120 seconds in adjustment, creating live betting windows. Back the server in their next service game when roof closes mid-match.',
-    },
-    {
       q: 'Which clay season warm-up event best predicts Roland Garros success?',
-      a: 'Monte Carlo at 32% winner correlation outperforms Rome at 24%. Despite Rome being closer to Roland Garros chronologically, its faster court conditions create misleading form signals. Weight Monte Carlo results more heavily and consider fading Rome champions whose game relies on faster clay.',
+      a: 'Monte Carlo at 32% winner correlation outperforms Rome at 24%. Despite Rome being closer chronologically, its faster court conditions create misleading form signals. Weight Monte Carlo results more heavily and consider fading Rome champions whose game relies on faster clay.',
     },
   ],
 
   footer: {
-    lastUpdated: '2026-01-23',
+    lastUpdated: '2026-01-24',
     sources: [
       'French Open Official Statistics',
       'ATP/WTA Tour Data',
       'Tennis Abstract - Surface Speed Analysis',
       'Grand Slam Historical Database (2015-2025)',
-      'Journal of Human Sport and Exercise',
       'TennisRatio Performance Analytics',
+      'NBC Sports - Five-Set Analysis',
     ],
   },
 };

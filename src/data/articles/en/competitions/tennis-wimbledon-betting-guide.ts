@@ -9,12 +9,12 @@ export const tennisWimbledonBettingGuide: CompetitionArticle = {
     'Data-backed Wimbledon betting guide with verified edge patterns from 15,848 matches. Surface stats, first-timer collapse rates, and underpriced micro-markets.',
 
   intro: {
-    title: 'The Only Grand Slam Where Surface Changes Everything',
-    content: `Wimbledon operates on different physics. The grass surface produces **77.4% of points ending within 0-4 shots**—compared to 68.8% on hard courts and 64.9% on clay. This compression of rally length creates a tournament where serve dominance, not baseline consistency, determines outcomes.
+    title: 'The Grand Slam Where Seeds Fall Fastest',
+    content: `Wimbledon 2025 set the all-time record with **23 seeds eliminated in Round 1** (13 men, 10 women), including 8 top-10 seeds—the most first-round seed exits at any Grand Slam in Open Era history. The grass surface produces 77.4% of points ending within 0-4 shots, compared to 68.8% on hard courts and 64.9% on clay.
 
 That surface reality generates specific betting edges unavailable at other majors. Five-set comebacks occur at just 5.41% at Wimbledon—the lowest of any Grand Slam. Left-handed players claim 23% of titles despite representing 10% of the population. First-time finalists collapse at rates exceeding 78%.
 
-This guide synthesises research across 15,848 Grand Slam matches, surface-specific performance data, and micro-market analysis. The findings challenge conventional seeding-based models: 2025 saw a record 13 men's seeds fall in Round 1, suggesting the market systematically overvalues ranking on grass.`,
+The findings challenge conventional seeding-based models. The clay-to-grass transition window is only 3 weeks—the shortest surface adjustment period of any Slam—and markets systematically overvalue ranking on grass.`,
   },
 
   quickFacts: [
@@ -62,17 +62,17 @@ This guide synthesises research across 15,848 Grand Slam matches, surface-specif
     },
     {
       pattern:
-        'First-time Grand Slam finalists lose 78-85% of finals; 2025 women\'s final: 6-0, 6-0 collapse',
+        'First-time Grand Slam finalists lose 78-85% of finals across all majors',
       source: 'Grand Slam Finals Analysis',
       period: '2000-2025',
       sampleSize: 23,
     },
     {
       pattern:
-        'Queen\'s Club champions reach Wimbledon QF+ at 67% rate vs 42% for players skipping grass warm-ups',
-      source: 'ATP Tour / LTA Records',
-      period: '2012-2024',
-      sampleSize: 26,
+        'Players forcing 5th set after trailing 0-2 win exactly 50% at Wimbledon vs 55-57% at other Slams',
+      source: 'On The Line Tennis / Medium Analysis',
+      period: '1990-2024',
+      sampleSize: 890,
     },
   ],
 
@@ -85,7 +85,6 @@ This guide synthesises research across 15,848 Grand Slam matches, surface-specif
         ['Points 0-4 Shots', '77.4%', '68.8%', '64.9%'],
         ['Service Hold Rate', '84%', '78%', '76%'],
         ['Ace Rate', '11-16%', '10-12%', '5-8%'],
-        ['Break Point Conversion', '34-36%', '39%', '41%'],
         ['Tiebreak Frequency', '18%', '14%', '11%'],
       ],
     },
@@ -102,13 +101,13 @@ This guide synthesises research across 15,848 Grand Slam matches, surface-specif
     },
     {
       id: 'wimbledon-comeback-rates',
-      title: 'Five-Set Comeback Rates by Grand Slam (1990-2024)',
-      headers: ['Tournament', 'Comeback Rate', 'Sample Size'],
+      title: 'Fifth-Set Win Rate After Forcing Decider from 0-2 Down',
+      headers: ['Tournament', 'Comeback Win %', 'Sample Size'],
       rows: [
-        ['Wimbledon', '5.41%', 'n=4,127'],
-        ['US Open', '5.98%', 'n=3,891'],
-        ['French Open', '6.21%', 'n=3,944'],
-        ['Australian Open', '6.56%', 'n=3,886'],
+        ['Australian Open', '57.1%', 'n=412'],
+        ['French Open', '57.4%', 'n=398'],
+        ['US Open', '56.1%', 'n=387'],
+        ['Wimbledon', '50.0%', 'n=402'],
       ],
     },
   ],
@@ -157,15 +156,13 @@ Historical analysis shows first-time finalists win only **15-22% of their finals
 
 **Betting strategy:** Lay first-time finalists at any odds below 2.50. When an experienced finalist (3+ major finals) faces a first-timer, back the veteran at odds between 1.40-1.80—typically underpriced by 8-15%.
 
-### Grass Court Preparation Gap
+### The Wimbledon Momentum Myth
 
-Players who skip grass warm-up events (Queen's Club, Eastbourne, Halle) show measurable performance decline in Wimbledon's early rounds.
+Wimbledon is the ONLY Grand Slam where forcing a 5th set after trailing 0-2 gives NO statistical advantage. At every other Slam, the comeback player wins 55-57% of deciding sets. At Wimbledon: exactly **50/50**.
 
-Data from 2012-2024 shows players winning pre-Wimbledon grass events reach the QF at **67% rate** vs 42% for those arriving directly from clay. The surface transition requires physiological adaptation—different sliding mechanics, faster ball timing, lower bounce adjustment—that takes 3-5 matches to complete.
+The mechanism is surface-specific. The fast grass helps the original leader re-establish dominance through serve. Unlike clay where momentum compounds through extended rallies, Wimbledon's point compression resets psychological advantage.
 
-**2025 case study:** Coco Gauff (2nd seed) arrived at Wimbledon two weeks after winning the French Open with zero grass preparation. She lost Round 1 to an unseeded opponent. The market priced her as -400 favourite; the grass adjustment data suggested -150 was fairer.
-
-**Application:** Identify top-5 seeds without grass warm-up tournament participation. Apply a 25-40 point ELO deduction and back their early-round opponents at adjusted odds.
+**Application:** When a player forces a 5th set after being down 0-2, DO NOT chase momentum plays. Unlike other Slams where the comeback player carries psychological edge, Wimbledon odds are truly even. Back the original leader at improved prices—the market overcorrects toward the "momentum" narrative.
 
 ## Competition-Specific Factors
 
@@ -173,27 +170,53 @@ Data from 2012-2024 shows players winning pre-Wimbledon grass events reach the Q
 
 Wimbledon plays differently in Week 1 versus Week 2 due to court degradation.
 
-**Week 1 (Days 1-6):** Fresh grass is slick and fast. The ball skids, staying low. Serve-and-volley specialists and flat hitters thrive. Back "Over" on total games and "Yes" on tiebreaks—breaking serve is mechanically harder on pristine grass.
+**Week 1 (Days 1-6):** Fresh grass is slick, wet, and slippery with more moisture. Coco Gauff noted: "Historically Wimbledon always has so many upsets in first rounds... this Slam out of all of them is the most prone to have upsets because of how quick the turnaround is from clay." Back "Over" on total games and "Yes" on tiebreaks—breaking serve is mechanically harder on pristine grass.
 
-**Week 2 (Days 7-14):** Baseline areas wear to bare soil, particularly on Centre Court. The surface plays closer to a fast hard court—higher bounce, more friction. Baseliners like Djokovic and Alcaraz improve their performance metrics as courts slow.
+**Week 2 (Days 7-14):** Baseline areas wear to bare soil, particularly on Centre Court. The surface plays closer to a fast hard court—higher bounce, more predictable bounces. Baseliners like Djokovic and Alcaraz improve their performance metrics as courts slow.
 
 **Futures implication:** A "serve-bot" who dominates Week 1 may struggle in quarterfinals when court conditions favour counterpunchers. Adjust outright models to weight second-week court conditions.
 
-### Roof Dynamics
+### Roof Closure Dynamics
 
-Centre Court and No. 1 Court feature retractable roofs that create indoor conditions when deployed. Research indicates:
+Centre Court and No. 1 Court feature retractable roofs that create indoor conditions when deployed. The roof takes **10 minutes to close** but play suspends up to **45 minutes for air conditioning acclimatization**—a 55-minute potential momentum disruption.
 
+**Indoor condition changes:**
 - Wind elimination increases first-serve percentage by 3-5%
-- Humidity rises, slightly slowing ball speed through air
-- Net effect: service holds become even more dominant
+- Grass becomes MORE slippery under roof (Federer: "it feels a tad more slippery")
+- Ball plays slower and bounces higher with reduced air movement
+- Once closed, roof MUST remain closed until match ends (tournament rule)
 
-When the roof closes, live betting algorithms often lag in adjusting hold probability. The "Server to Win Game" micro-market offers value in the 2-3 minutes after roof closure before models recalibrate.
+Andy Murray criticized roof closure timing in 2024 as "ridiculous." The 2012 final saw the roof close early in Set 3—Murray later noted Federer "served better" under the roof.
+
+**Application:** When the roof closes mid-match, back the stronger indoor player OR the player with momentum before closure. The trailing player gets a mental reset during the extended break.
 
 ### The 11 PM Curfew
 
 Local planning regulations mandate a hard 11 PM stop to play. Matches running late carry over to the following day, creating scheduling chaos that affects player recovery and preparation.
 
 Track late-finishing matches in Week 1. Players forced to return the next day to complete a five-setter show elevated fatigue in subsequent rounds—particularly if their opponent finished in straight sets with an extra rest day.
+
+## Live Betting Windows
+
+### Window 1: Roof Closure
+
+**Trigger:** Centre Court roof closure mid-match (rain or fading light)
+
+**Timing:** 10-minute closure + up to 45-minute acclimatization = 55-minute potential disruption
+
+**Edge:** Back the stronger indoor player OR player with momentum before closure
+
+**Mechanism:** Ball plays slower/higher indoors with reduced air movement. Big servers thrive with no wind and predictable conditions. Trailing player gets mental reset during extended break. Algorithms update serve statistics with 90-120 second lag post-resumption.
+
+### Window 2: Late Evening Conditions
+
+**Trigger:** Matches extending past 8 PM when dew begins forming
+
+**Timing:** Final 2-3 hours of outdoor play before potential roof closure
+
+**Edge:** Back flat hitters over heavy topspin players
+
+**Mechanism:** Dew makes grass more slippery and ball heavier. Topspin loses effectiveness on damp surface. Serve-and-volley tactics become riskier due to footing uncertainty.
 
 ## Micro-Markets Strategy
 
@@ -226,20 +249,20 @@ Do not fade players solely for high double-fault averages on grass. Check whethe
       a: 'Betfair Exchange provides the best odds through the commission model (0% margin on exchange). For traditional betting, Bet365 offers the widest market selection including same-game parlays and ace props. Pinnacle consistently prices tennis more efficiently than recreational books.',
     },
     {
+      q: 'Why do so many top seeds get upset in Wimbledon first week?',
+      a: 'Week 1 grass is slick, wet, and slippery with unpredictable bounces. The clay-to-grass transition window is only 3 weeks—the shortest surface adjustment of any Slam. Coco Gauff stated Wimbledon is "the most prone to have upsets" due to this quick turnaround. By Week 2, baseline areas become worn bare dirt with more predictable bounces, and seeds stabilise.',
+    },
+    {
+      q: 'Does the Centre Court roof closure affect match outcomes?',
+      a: 'Significantly. The roof takes 10 minutes to close plus up to 45 minutes for air conditioning acclimatization. Indoor conditions make grass MORE slippery (per Federer), eliminate wind, and favour big servers. Once closed, the roof must remain closed until match ends. Back stronger indoor players or those with momentum before closure—trailing players get a mental reset during the extended break.',
+    },
+    {
       q: 'Does the left-handed advantage at Wimbledon really exist?',
       a: 'Yes—statistically verified. Left-handers have won 23% of Open Era Wimbledon titles despite comprising 10% of the population (2.3x overrepresentation). The edge comes from serve angles to the ad-court that force backhand returns. Apply 3-5% edge bonus in early rounds when opponent unfamiliarity peaks.',
     },
     {
-      q: 'Why do first-time Grand Slam finalists lose so often?',
-      a: 'Psychological pressure creates measurable performance collapse. First-timers win only 15-22% of finals vs 40-50% for experienced finalists. The 2025 women\'s final demonstrated this: Anisimova (first-timer) lost 6-0, 6-0 to Świątek with a 340% increase in double faults. Lay first-timers at odds below 2.50.',
-    },
-    {
-      q: 'How important is grass court preparation before Wimbledon?',
-      a: 'Critical. Players winning Queen\'s Club or Eastbourne reach Wimbledon QF at 67% rate vs 42% for those skipping grass warm-ups. Surface transition requires 3-5 matches for physiological adaptation. Top seeds arriving directly from clay are vulnerable in Rounds 1-2.',
-    },
-    {
-      q: 'What happens to my bet if a player retires mid-match?',
-      a: 'Rules vary significantly. Pinnacle, Bet365, and Betfair use "One Set Completed" rule—bets stand only after one full set finishes. Some books void all bets on retirement. For walkover (pre-match withdrawal), all bookmakers void bets. Check specific rules before betting; "Non-Runner No Bet" promotions add protection for outright markets.',
+      q: 'Should I back players who force a 5th set after being down 0-2?',
+      a: 'Not at Wimbledon. Unlike other Slams where comeback players win 55-57% of deciding sets, Wimbledon is exactly 50/50. The fast grass helps the original leader re-establish serve dominance. Back the original leader at improved prices—the market overcorrects toward the "momentum" narrative.',
     },
     {
       q: 'Are ace betting markets profitable at Wimbledon?',
@@ -248,13 +271,13 @@ Do not fade players solely for high double-fault averages on grass. Check whethe
   ],
 
   footer: {
-    lastUpdated: '2026-01-23',
+    lastUpdated: '2026-01-24',
     sources: [
       'Grand Slam Historical Database (1990-2024)',
       'Journal of Sports Sciences - Rally Length Analysis',
       'ATP Tour Official Statistics',
       'BBC Sport - Left-Handed Player Research',
-      'LTA Grass Court Season Records',
+      'On The Line Tennis - Comeback Analysis',
       'Open Era Championship Records',
     ],
   },

@@ -95,8 +95,8 @@ This guide synthesises research from 50+ years of Grand National history, fence-
       title: 'Fence Fall Distribution (1984-2024)',
       headers: ['Fence', 'Total Falls', '% of All Falls'],
       rows: [
-        ['Becher\'s (6th & 22nd)', '68', '22%'],
-        ['First Fence', '40+', '13%'],
+        ["Becher's (6th & 22nd)", '67', '21.5%'],
+        ['First Fence', '60', '19.3%'],
         ['The Chair (15th)', '25', '8%'],
         ['Canal Turn (8th & 24th)', '20', '6.5%'],
       ],
@@ -170,12 +170,12 @@ This is not coincidence. Irish yards dominate National Hunt racing generally, bu
 
 ### The Fence Challenge
 
-The Grand National course features 30 fences across two circuits—16 on the first lap (including The Chair and Water Jump), then 14 on the second. Becher's Brook alone accounts for **22% of all falls**, with its severe drop landing demanding precise jumping technique.
+The Grand National course features 30 fences across two circuits—16 on the first lap (including The Chair and Water Jump), then 14 on the second. Becher's Brook alone accounts for **21.5% of all falls**, with its severe drop landing demanding precise jumping technique.
 
 Fall distribution follows a pattern:
 
-- **First fence (13% of falls):** Early speed, fresh horses, inexperience
-- **Becher's Brook (22% of falls):** Drop landing punishes poor technique
+- **First fence (19.3% of falls):** Early speed, fresh horses, inexperience—60 of 62 first fence fallers occurred on the first circuit
+- **Becher's Brook (21.5% of falls):** Drop landing punishes poor technique
 - **The Chair (8% of falls):** Tallest fence at 5ft 2in, jumped once only
 - **Canal Turn (6.5% of falls):** 90-degree turn on landing causes pile-ups
 
@@ -190,6 +190,36 @@ April weather at Liverpool produces variable going. Historical data shows:
 - **Heavy:** Increases fall rate to 28.8%—back proven jumpers only
 
 Check the going report 48 hours before the race. If soft or heavy ground is forecast, increase weighting toward proven stayers over speed merchants. The pace difference alone can swing value by 3-5 points on each-way odds.
+
+## Live Betting Strategy
+
+### The Survival Reality
+
+This is the most important in-play consideration. Only **39.3% of starters complete the course** (580 of 1,475 starters from 1984-2023). The worst year saw just 10% finish (4 of 40 in 2001). Most horses will not finish—build your strategy around this reality.
+
+**Application:** On Betfair, laying short-priced horses throughout the race captures value as the field reduces. Rather than laying at sub-2.0 (typical strategy), lay at the **3.0-5.0 range** where more horses trade due to extreme volatility.
+
+### Fence-by-Fence Danger Zones
+
+**First Fence (30-40 seconds in):**
+Expect 2-4 horses eliminated immediately. Horses race too keenly at the start—adrenaline causes jumping errors. Prices compress rapidly on survivors.
+
+**Becher's Brook First Circuit (Fence 6, ~3 minutes in):**
+The drop landing claims more victims than any other obstacle. If your selection clears Becher's cleanly first time, their completion probability increases by approximately 15%.
+
+**Becher's Brook Second Circuit (Fence 22, ~7 minutes in):**
+Tired horses make mistakes here. A horse travelling well at Fence 20 can still fall at Becher's second time due to fatigue-induced jumping errors.
+
+**The Chair (Fence 15, ~5 minutes in):**
+At 5ft 2in, the tallest fence on the course. Only jumped once. Horses who clear it have passed the halfway survival test.
+
+### Ground Conditions Amplify Risk
+
+On heavy going, fall rates approach **29%** versus 17% on Good-to-Soft. Lay short-priced horses more aggressively when ground is testing—the completion probability differential widens significantly.
+
+### The BSP Edge
+
+In some recent years, backing all runners at Betfair Starting Price would have guaranteed profit due to the book percentage dipping below 100%. Monitor BSP markets in final minutes before the off—the Grand National occasionally offers this arbitrage opportunity due to extreme market uncertainty.
 
 ## Timing and Market Strategy
 
@@ -233,8 +263,8 @@ Corach Rambler exemplifies this. He won the Ultima Chase at Cheltenham 2023, the
       a: 'Betfred pays 7 places at 1/5 odds for 2026—unmatched in the market. Coral and Bet365 offer 5-6 places at 1/4-1/5. For a 34-runner field, the extra 1-2 places from Betfred represent significant edge on each-way outsiders. Combine with Best Odds Guaranteed from 8am on race day.',
     },
     {
-      q: 'Is Grand National betting actually profitable?',
-      a: 'Yes—with the right approach. Backing 20/1+ outsiders each-way with specific profiles (Irish trainer, 10st 4lb-10st 12lb weight, 16-42 days rest) outperforms blind favourite backing by 40%+ ROI over 20 years. The favourite strike rate of 16-22% is half normal racing—the market systematically overprices short-odds runners.',
+      q: 'Why do favourites never win the Grand National?',
+      a: 'Favourites win just 16-22% of Grand Nationals—half the rate of normal racing. The 30-fence, 4-mile course creates execution risk that neutralises class advantages. Only 39.3% of starters even complete the course. The chaos compression means backing 20/1+ outsiders with correct profiles (Irish trainer, 10st 4lb-10st 12lb, 16-42 days rest) outperforms favourites by 40%+ ROI over 20 years.',
     },
     {
       q: 'What is the ideal Grand National horse profile?',
@@ -255,13 +285,14 @@ Corach Rambler exemplifies this. He won the Ultima Chase at Cheltenham 2023, the
   ],
 
   footer: {
-    lastUpdated: '2026-01-23',
+    lastUpdated: '2026-01-24',
     sources: [
       'Grand National Official Records (1839-2024)',
       'Aintree Racecourse Historical Data',
       'Racing Post Statistical Analysis',
+      'Bettingoffers.org.uk Fall Analysis (1984-2023)',
+      'Betfair Trading Blog',
       'The Jockey Club Festival Records',
-      'Timeform Performance Database',
     ],
   },
 };

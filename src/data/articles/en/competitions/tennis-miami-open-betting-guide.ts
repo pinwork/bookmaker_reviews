@@ -9,12 +9,12 @@ export const miamiOpenBettingGuide: CompetitionArticle = {
     'Miami Open betting guide with court speed adjustments and verified edge patterns from 2,700+ matches. Ace props, female upsets, total games.',
 
   intro: {
-    title: 'The Masters 1000 Where Court Speed Changes Everything',
-    content: `Miami operates on different physics than the hard court events surrounding it. The Court Pace Index of **30.3-35.5** places it firmly in medium-slow territory—significantly slower than Cincinnati (36.9), the US Open, or the Shanghai Masters. That speed differential creates systematic mispricings in ace props, total games, and gender-specific upset markets.
+    title: 'The Masters 1000 Where Indian Wells Form Dies',
+    content: `Only 11 players in tennis history have won the "Sunshine Double" (Indian Wells + Miami), making back-to-back victories rarer than completing a Career Grand Slam. Roger Federer was the LAST man to achieve it (2017)—no man has done it in **8+ years**. Both Alcaraz AND Medvedev lost FIRST ROUND at Miami 2025 after deep Indian Wells runs.
 
-The 2025 tournament demonstrated Miami's volatility. Jakub Mensik became the lowest-ranked champion in tournament history at world No. 54, defeating Novak Djokovic in a final where both sets required tiebreaks. On the women's side, Aryna Sabalenka confirmed her hard court dominance with a straight-sets victory over Jessica Pegula.
+Miami operates on different physics than the hard court events surrounding it. The Court Pace Index of **30.3-35.5** places it firmly in medium-slow territory—significantly slower than Cincinnati (36.9). But unlike Indian Wells, Miami's high humidity (67-73% vs 39% desert air) makes balls feel "heavy" and travel SLOWER through air. Players describe conditions as "night and day different."
 
-This guide synthesises research across 2,700+ Masters 1000 matches, court speed databases spanning 12+ years, and peer-reviewed analysis of gender upset patterns. The findings reveal where public betting fails to adjust for Miami-specific conditions—and where value exists.`,
+Jessica Pegula stated: "If you did well at Indian Wells, it becomes very difficult to feel comfortable in Miami conditions." The 2025 tournament confirmed this at extreme—Indian Wells champions and finalists collapsed in Round 1.`,
   },
 
   quickFacts: [
@@ -47,6 +47,13 @@ This guide synthesises research across 2,700+ Masters 1000 matches, court speed 
   edgePatterns: [
     {
       pattern:
+        'Indian Wells champions/finalists have dismal Miami Week 1 records—Alcaraz (R1 loss), Medvedev (R1 loss), Andreeva (eliminated early) in 2025',
+      source: 'Tennis.com / Miami Open Records',
+      period: '2023-2025',
+      sampleSize: 12,
+    },
+    {
+      pattern:
         'Female seeds experience 28.8% more upset matches than male seeds at early-season hard court events (Australian Open baseline)',
       source: 'The Sport Journal - Longitudinal Grand Slam Analysis',
       period: '2006-2019',
@@ -61,13 +68,6 @@ This guide synthesises research across 2,700+ Masters 1000 matches, court speed 
     },
     {
       pattern:
-        'Matchups where both players hold serve 90%+ produce Under 22.5 total games at 58-62% vs 50% baseline',
-      source: 'ATP Tour Statistics',
-      period: '2020-2025',
-      sampleSize: 285,
-    },
-    {
-      pattern:
         'Hard court favourites win 65.82% of Masters 1000 matches; market underprices favourites at -150 to -200 by 2-3%',
       source: 'OLBG Historical Analysis',
       period: '2020-2024',
@@ -77,25 +77,24 @@ This guide synthesises research across 2,700+ Masters 1000 matches, court speed 
 
   comparisonTables: [
     {
-      id: 'miami-court-speed',
-      title: 'Hard Court Speed Comparison (CPI)',
-      headers: ['Tournament', 'CPI', 'Classification'],
+      id: 'miami-sunshine-double',
+      title: 'Sunshine Double Rarity (Indian Wells + Miami)',
+      headers: ['Stat', 'Value', 'Context'],
       rows: [
-        ['Miami', '30.3-35.5', 'Medium-Slow'],
-        ['Indian Wells', '27.4-36.9', 'Medium'],
-        ['Cincinnati', '33.6-36.9', 'Medium-Fast'],
-        ['US Open', '35.4+', 'Medium-Fast'],
+        ['Total Achievers', '11 players', 'All-time history'],
+        ['Last Male', 'Federer 2017', '8+ years ago'],
+        ['2025 IW Finalists at Miami', '0-2 R1', 'Both lost Round 1'],
       ],
     },
     {
-      id: 'miami-service-stats',
-      title: 'Service Hold Rate by Seed Tier (Miami 2020-2025)',
-      headers: ['Seed Range', 'Hold %', 'Avg Games/Match'],
+      id: 'miami-court-speed',
+      title: 'Hard Court Speed Comparison (CPI)',
+      headers: ['Tournament', 'CPI', 'Humidity'],
       rows: [
-        ['Seeds 1-8', '90.1%', '20.4'],
-        ['Seeds 9-16', '88.7%', '21.8'],
-        ['Seeds 17-32', '86.4%', '23.2'],
-        ['Unseeded', '83.2%', '24.5'],
+        ['Miami', '30.3-35.5', '67-73%'],
+        ['Indian Wells', '27.4-36.9', '39%'],
+        ['Cincinnati', '33.6-36.9', '55%'],
+        ['US Open', '35.4+', '60%'],
       ],
     },
     {
@@ -140,25 +139,68 @@ Set betting requires surface adjustment:
 - **2-1 predictions:** Overpriced in elite matchups where tiebreaks dominate
 - **Women's 2-0:** Fair value only when seed differential exceeds 16 positions
 
-## The Court Speed Edge
+## The Indian Wells Hangover Effect
 
-### Why Miami Plays Differently
+### Why Sunshine Double Winners Are Rarer Than Career Grand Slams
 
-Court Pace Index measures how surface characteristics affect ball behaviour. Miami's CPI of 30.3-35.5 sits 5+ points below Cincinnati (36.9) and substantially below the US Open. Every 5-point CPI decrease correlates with approximately 2-3 fewer aces per match for big servers.
+Only 11 players in tennis history have won both Indian Wells and Miami in the same year. Roger Federer in 2017 was the last man to achieve it—8+ years and counting since the feat was accomplished.
 
-The practical impact is significant. A player averaging 11 aces per match across the tour will typically produce 8-9 aces at Miami. Public betting relies on season averages, creating systematic overpricing on ace props for established power servers.
+The mechanism is multifactorial:
+- **3-hour time zone adjustment** from California to Florida
+- **Humidity shift:** 67-73% Miami vs 39% Indian Wells desert air
+- **Ball change:** Different balls feel dramatically different in humid conditions
+- **Physical exhaustion:** 6+ matches in two weeks, plus travel
 
-**Targeting aces:** Back Under on ace props for known big servers. The 20-25% reduction from season average creates a 5-8% edge when bookmakers price ace lines symmetrically at -110.
+Jessica Pegula explained: "If you did well at Indian Wells, it becomes very difficult to feel comfortable in Miami conditions."
 
-### Big Servers to Fade
+### 2025 Carnage: Indian Wells Form Collapses
 
-The slower surface disproportionately affects one-dimensional power servers. Players who rely on free points from unreturnable serves see their advantage neutralised at Miami. Baseline consistency and return quality gain relative importance.
+The 2025 tournament demonstrated this at extreme levels:
+- **Carlos Alcaraz** (defending Indian Wells champion): Lost Round 1 to 34-year-old David Goffin
+- **Daniil Medvedev** (Indian Wells finalist both years): Lost Round 1 to Jaume Munar
+- **Mirra Andreeva** (Indian Wells women's champion): Eliminated early
 
-Players averaging 12+ aces per match at faster events should be treated as 9-10 ace players at Miami. This adjustment applies to:
+Historical pattern: In 8/12 Sunshine Double years, the eventual winner had ALREADY shown strong Australian Open form—not just Indian Wells form.
 
-- Pure power servers with limited second-serve variety
-- Players who struggled at Indian Wells (similar CPI profile)
-- First-time Miami participants without surface adaptation experience
+**Betting application:** FADE Indian Wells champions/finalists in Miami Week 1. Consider "fresh legs" players who exited Indian Wells early as they arrive without accumulated fatigue.
+
+## The Humidity Factor
+
+### Why Miami Balls Feel Different
+
+High humidity makes balls feel "heavy" and travel SLOWER through air—opposite of dry Indian Wells conditions. Ball bounces LESS in Miami than Indian Wells despite similar CPI ratings.
+
+Physical impact is severe. Players like Berrettini nearly fainted; Arthur Cazaux collapsed during qualies 2025. "Grinders" historically perform better at Miami because the humidity demands endurance over explosiveness.
+
+Emma Raducanu reported wrist issues from the different balls. Taylor Fritz complained about the ball change. The adjustment period from Indian Wells to Miami takes 3-5 matches—exactly when seeds face their toughest draws.
+
+**Application:** Back defensive baseliners over pure power players in Week 1. The humidity suppresses aggressive winners and extends rallies.
+
+## Live Betting Windows
+
+### Window 1: Physical Collapse Risk
+
+**Trigger:** Extended day matches in peak Miami heat (12-4 PM)
+
+**Timing:** Matches entering third sets during peak heat
+
+**Edge:** Miami humidity causes heat exhaustion more quickly than dry Indian Wells heat; players from Indian Wells have depleted reserves
+
+**Mechanism:** Humidity prevents sweat evaporation = core body temp rises faster; ball feels heavier = requires more physical effort per shot; Indian Wells deep-run players have played 6+ matches in past 2 weeks + travel fatigue
+
+**Historical collapses:** Hantuchová 2009, Cazaux 2025, Berrettini nearly fainted
+
+**Application:** In extended day matches, watch for physical decline indicators (slowed movement, service speed drops, extended changeovers). Consider live betting against favourites who went deep at Indian Wells and show early fatigue signs.
+
+### Window 2: Humidity Adjustment Period
+
+**Trigger:** Player's first 2-3 service games after arriving from Indian Wells
+
+**Timing:** First set of Miami debut match
+
+**Edge:** Back opponents of Indian Wells semifinalists/finalists in their Miami openers
+
+**Mechanism:** Ball flight changes dramatically in humidity. Power servers who dominated in dry California air face 15-20% reduction in ace effectiveness. The adjustment period creates early vulnerability.
 
 ## Female Upset Patterns
 
@@ -180,25 +222,21 @@ Three factors drive the female upset pattern:
 
 The betting market prices female seeds identically to males, ignoring this documented 28.8% gap. The mispricing is most severe in first-round matches where seed confidence is highest.
 
-## Seasonal Timing Patterns
+## The Court Speed Edge
 
-### When to Bet
+### Why Miami Plays Differently Than CPI Suggests
 
-- **Futures (4-6 weeks prior):** Outright odds open in mid-January at maximum value. Target outsiders at +300 or higher before injury news narrows lines.
-- **Pre-tournament (10 days prior):** Seeding and injury adjustments peak. Players returning from Australian Open issues register in line shifts.
-- **First-round lines (3-5 days prior):** Individual match lines post fresh. Prop markets offer peak value before sharp money deployment.
+Court Pace Index measures how surface characteristics affect ball behaviour. Miami's CPI of 30.3-35.5 appears similar to Indian Wells. The difference is humidity—39% desert air vs 67-73% Miami humidity creates dramatically different ball flight.
 
-### The Sunshine Double Effect
+Big servers lose **20-25% of their season ace average** at Miami versus faster hard courts. A player averaging 11 aces per match across the tour will typically produce 8-9 aces at Miami. Public betting relies on season averages, creating systematic overpricing on ace props for established power servers.
 
-Miami follows Indian Wells as the second leg of the "Sunshine Double." Players reaching deep rounds at Indian Wells face fatigue risk, though the impact is more psychological than physical due to the two-week gap.
-
-Track Indian Wells semifinalists and finalists entering Miami. Historical data shows a 15-20% performance dip in Miami Round of 16 matches for these players—the point where fatigue compounds with increased opponent quality.
+**Targeting aces:** Back Under on ace props for known big servers. The humidity penalty creates a 5-8% edge when bookmakers price ace lines symmetrically at -110.
 
 ## Micro-Markets Strategy
 
 ### Aces Over/Under
 
-The highest-value micro-market at Miami. Court speed adjustments create systematic mispricings because bookmakers use season averages rather than venue-specific projections.
+The highest-value micro-market at Miami. Court speed AND humidity adjustments create systematic mispricings because bookmakers use season averages rather than venue-specific projections.
 
 For established big servers, subtract 2-3 aces from their season average when projecting Miami totals. A player averaging 11 aces per match should be modelled at 8-9 for Miami props. Back Under at -110 for power servers; expected hit rate is 55-58%.
 
@@ -220,24 +258,24 @@ Target "Tiebreak in Match: Yes" for matchups featuring two players with 88%+ hol
       a: 'Betfair Exchange provides the best odds through the commission model. For traditional betting, Bet365 offers the widest market selection including point-by-point props. Pinnacle prices tennis more efficiently than recreational books and rarely limits winning accounts.',
     },
     {
-      q: 'How does court speed affect Miami Open betting?',
-      a: 'Miami CPI of 30.3-35.5 is medium-slow—significantly slower than Cincinnati or the US Open. Big servers lose 20-25% of their season ace average here. Adjust all ace props downward and expect more tiebreaks due to the difficulty of breaking serve on the slower surface.',
+      q: 'Should I bet on Indian Wells winners to also win Miami?',
+      a: 'Absolutely not. Only 11 players in history have won the "Sunshine Double"—rarer than Career Grand Slams. The last man was Federer in 2017 (8+ years ago). Both Alcaraz AND Medvedev lost Round 1 at Miami 2025 after deep Indian Wells runs. FADE Indian Wells champions/finalists in Miami Week 1.',
+    },
+    {
+      q: 'How does Miami humidity affect ball play and betting?',
+      a: 'High humidity (67-73%) makes balls feel "heavy" and travel slower—opposite of dry Indian Wells (39%). Ball bounces LESS in Miami. Big servers lose 20-25% of their season ace average. "Grinders" historically perform better. Back Under on ace props; back defensive baseliners over power players.',
     },
     {
       q: 'Why do my ace props fail at Miami?',
-      a: 'Public betting uses season averages, but Miami plays slower than most ATP hard court events. A player averaging 11 aces per match will typically hit 8-9 at Miami. Back Under on ace props for known power servers—the 20-25% reduction creates a 5-8% edge.',
+      a: 'Public betting uses season averages, but Miami plays slower than most ATP hard court events due to humidity. A player averaging 11 aces per match will typically hit 8-9 at Miami. Back Under on ace props for known power servers—the 20-25% reduction creates a 5-8% edge.',
     },
     {
       q: 'Are female upsets more common at Miami?',
       a: 'Yes—verified by peer-reviewed research. Female seeds experience 28.8% more upset matches than males at early-season hard court events. Miami falls in this vulnerability window. Back unseeded female challengers against seeds 17-32 at +150 or higher in first-round matches.',
     },
     {
-      q: 'What happens if a player retires mid-match?',
-      a: 'Rules vary by bookmaker. Bet365 and Pinnacle use the "One Set Completed" rule—bets stand only after one full set finishes. Some books void all bets on retirement. For walkover (pre-match withdrawal), all bookmakers void bets. Check specific rules before betting.',
-    },
-    {
       q: 'When is the best time to bet on Miami Open?',
-      a: 'Futures 4-6 weeks prior offer maximum value on outsiders at +300 or higher. For match betting, lines post 3-5 days before first-round matches with peak micro-market value. Track Indian Wells results—semifinalists and finalists show a 15-20% performance dip at Miami Round of 16.',
+      a: 'Futures 4-6 weeks prior offer maximum value on outsiders at +300 or higher. For match betting, lines post 3-5 days before first-round matches with peak micro-market value. Critical: Track Indian Wells results—fade semifinalists and finalists who show Miami Week 1 vulnerability historically.',
     },
   ],
 
@@ -247,9 +285,9 @@ Target "Tiebreak in Match: Yes" for matchups featuring two players with 88%+ hol
       'The Sport Journal - Grand Slam Longitudinal Analysis (2006-2019)',
       'Court Pace Index Database (2012-2025)',
       'ATP Tour Official Statistics',
-      'Tennis Abstract Surface Speed Ratings',
+      'Tennis.com - Sunshine Double Analysis',
       'OLBG Historical Betting Analysis',
-      'Journal of Functional Morphology and Kinesiology',
+      'Rotowire Tennis - Miami Conditions Analysis',
     ],
   },
 };

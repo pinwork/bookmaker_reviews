@@ -239,25 +239,25 @@ Monitor exchange markets from 11:00am. Significant shortening without obvious ne
       a: 'Royal Ascot handicaps attract well-prepared horses from top operations. The market efficiently identifies outclassed horses—40/1+ shots have produced 0/204 winners across six years. These prices genuinely reflect no realistic chance. The value lies in the 14/1-25/1 band where place rates (18%) exceed market pricing.',
     },
     {
-      q: 'How important is the draw at Royal Ascot?',
-      a: 'Critical in straight-course sprints (5f-6f), where ground conditions determine bias. Good to Soft favours high draws (stalls 10+); Good to Firm favours low draws (1-5). The Royal Hunt Cup specifically punishes low draws—stalls 1-5 have won just 2% over a decade. Round course races favour high draws in staying handicaps (32% of placed horses from stalls 15+).',
+      q: 'Why do my each-way bets at 8/1-12/1 keep losing?',
+      a: 'The 8/1-12/1 band is the dead zone at Royal Ascot. These horses place at just 12.5%—worse than both shorter-priced runners (55% at 4/1 or less) and mid-price longshots (18% at 14/1-25/1). Either back short for security or go wider for value. Avoid the middle ground.',
     },
     {
-      q: 'Should I back Aidan O Brien runners at Royal Ascot?',
-      a: 'Selectively. Ballydoyle entries show 15.3% strike rate with +£75.75 profit overall, but runners under 3/1 win just 12%—below market expectation. The value lies in backing O Brien horses at 5/1-10/1 where stable popularity creates overlay rather than underlays. Avoid short-priced Ballydoyle entries.',
+      q: 'How important is the draw at Royal Ascot?',
+      a: "Critical in straight-course sprints (5f-6f), where ground conditions determine bias. Good to Soft favours high draws (stalls 10+); Good to Firm favours low draws (1-5). The Royal Hunt Cup specifically punishes low draws—stalls 1-5 have won just 2% over a decade. Round course races favour high draws in staying handicaps (32% of placed horses from stalls 15+).",
+    },
+    {
+      q: 'Should I back Aidan O\'Brien runners at Royal Ascot?',
+      a: "Selectively. Ballydoyle entries show 15.3% strike rate with +£75.75 profit overall, but runners under 3/1 win just 12%—below market expectation. The value lies in backing O'Brien horses at 5/1-10/1 where stable popularity creates overlay rather than underlays. Avoid short-priced Ballydoyle entries.",
     },
     {
       q: 'Which trainers should I avoid at Royal Ascot?',
-      a: 'William Haggas (0/71) and Roger Varian (1/65) show persistent underperformance despite high profiles. The market prices their runners as if overall reputation transfers to Royal Ascot—it doesn\'t. Apply 20-30% odds discounts to their entries until records improve. Conversely, Stoute\'s 4yo+ handicappers (27.5% SR) are systematically underpriced.',
-    },
-    {
-      q: 'When is the best time to bet on Royal Ascot?',
-      a: 'Ante-post value peaks 6-8 weeks before the meeting when stable intentions are clear but casual money hasn\'t compressed prices. Daily, monitor exchange markets from 11:00am—horses shortening 10%+ before the 60-minute mark win 23% above expectation. Thursday (Gold Cup Day) offers highest volatility with average winning SP at 18/1.',
+      a: "William Haggas (0/71) and Roger Varian (1/65) show persistent underperformance despite high profiles. The market prices their runners as if overall reputation transfers to Royal Ascot—it doesn't. Apply 20-30% odds discounts to their entries until records improve. Conversely, Stoute's 4yo+ handicappers (27.5% SR) are systematically underpriced.",
     },
   ],
 
   footer: {
-    lastUpdated: '2026-01-23',
+    lastUpdated: '2026-01-24',
     sources: [
       'Narrowing The Field (2018-2024)',
       'Geegeez Royal Ascot Analysis',

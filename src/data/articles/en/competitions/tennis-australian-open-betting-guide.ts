@@ -9,12 +9,12 @@ export const tennisAustralianOpenBettingGuide: CompetitionArticle = {
     'Data-backed Australian Open betting guide with verified edge patterns from 2,400+ five-setters. Return game metrics, 10-point tiebreak volatility, and underpriced micro-markets.',
 
   intro: {
-    title: 'The Goldilocks Grand Slam: Where Return Game Wins Titles',
-    content: `The Australian Open operates on different physics to Wimbledon and Roland Garros. Melbourne's hard courts produce **31% break conversion rates**—between grass (23%) and clay (35%)—creating a surface where serve dominance alone cannot guarantee victory.
+    title: 'The Grand Slam Where Comebacks Actually Work',
+    content: `The Australian Open has the highest 0-2 comeback rate of any Grand Slam—**6.56%** (approximately 1 in 15 matches)—compared to 5.41% at Wimbledon (1 in 18.5 matches). Melbourne's hard courts produce 31% break conversion rates, sitting precisely between grass (23%) and clay (35%), creating a surface where serve dominance alone cannot guarantee victory.
 
-That balanced dynamic generates specific betting edges unavailable at other majors. Jannik Sinner won the 2025 final without facing a single break point, yet his victory came from return game superiority, not serve power. His 68% return rate crushed Zverev's 69% first-serve points won—a counterintuitive result the market routinely misprices.
+That balanced dynamic generates specific betting edges unavailable at other majors. Jannik Sinner won the 2025 final without facing a single break point, yet his victory came from return game superiority, not serve power. His 68% return rate crushed Zverev's serve—a counterintuitive result the market routinely misprices.
 
-This guide synthesises research across 2,400+ five-set Grand Slam matches, surface-specific performance data, and micro-market analysis. The findings challenge conventional seeding-based models: return game quality predicts hard court success more accurately than ace counts or serve speed.`,
+Daniil Medvedev is the ONLY player in the Open Era to lose TWO Grand Slam finals from 2 sets up—both at the Australian Open (2022 vs Nadal, 2024 vs Sinner). The tournament's comeback-friendly conditions create unique volatility that rewards patient live bettors.`,
   },
 
   quickFacts: [
@@ -48,7 +48,7 @@ This guide synthesises research across 2,400+ five-set Grand Slam matches, surfa
   edgePatterns: [
     {
       pattern:
-        'Return game specialists (68%+ return rate) outperform pure servers by 4-7% match win probability at Australian Open due to 31% break conversion vs 23% on grass',
+        'Return game specialists (68%+ return rate) outperform pure servers by 4-7% match win probability due to 31% break conversion vs 23% on grass',
       source: 'ATP Tour Stats / Tennis Abstract',
       period: '2019-2025',
       sampleSize: 2000,
@@ -62,10 +62,10 @@ This guide synthesises research across 2,400+ five-set Grand Slam matches, surfa
     },
     {
       pattern:
-        'Top-8 seeds reach QF at 82% rate at Australian Open vs 65% at Wimbledon (25% lower upset rate on hard courts)',
-      source: 'Grand Slam Historical Data',
-      period: '2015-2025',
-      sampleSize: 160,
+        'Players forcing 5th set after trailing 0-2 win 57.1% at Australian Open—highest of any Grand Slam',
+      source: 'On The Line Tennis Analysis',
+      period: '1990-2024',
+      sampleSize: 412,
     },
     {
       pattern:
@@ -89,14 +89,14 @@ This guide synthesises research across 2,400+ five-set Grand Slam matches, surfa
       ],
     },
     {
-      id: 'ausopen-seed-performance',
-      title: 'Seed Performance by Round (2019-2025)',
-      headers: ['Seed Range', 'R1 Win %', 'R2 Win %', 'QF+ Rate'],
+      id: 'ausopen-comeback-comparison',
+      title: 'Fifth-Set Win Rate After Forcing Decider from 0-2 Down',
+      headers: ['Tournament', 'Comeback Win %', 'Sample Size'],
       rows: [
-        ['1-4', '95%', '91%', '82%'],
-        ['5-8', '89%', '80%', '52%'],
-        ['9-16', '82%', '68%', '24%'],
-        ['17-32', '71%', '52%', '9%'],
+        ['Australian Open', '57.1%', 'n=412'],
+        ['French Open', '57.4%', 'n=398'],
+        ['US Open', '56.1%', 'n=387'],
+        ['Wimbledon', '50.0%', 'n=402'],
       ],
     },
     {
@@ -151,7 +151,7 @@ Research shows players with 65%+ return rates gain 4-7% systematic advantage on 
 
 Casual bettors dramatically overvalue two-set leads. Open Era data demonstrates players up 2-0 convert only **56% of five-setters**—approximately 1 in 1.8 matches. Djokovic's exceptional 79% record (34/43 wins) obscures how much the average player struggles to close.
 
-Hard court specifics reinforce this pattern. Shorter rally lengths (3.8 shots) prevent psychological momentum from compounding the way it does on clay. Break conversion remains constant across all five sets—no fatigue-induced collapse patterns emerge.
+The Australian Open is particularly comeback-friendly. Players who force a 5th set after trailing 0-2 win **57.1% of the time**—the highest rate of any Grand Slam. Medvedev has trailed 0-2 six times at Grand Slams since 2024 and forced a 5th set every time.
 
 **Betting strategy:** Lay 2-0 leaders at odds below 1.50 (true probability 56%, often priced 1.15-1.25). Back 0-2 down players at 4.0+ when implied probability sits around 20% and true probability exceeds 40%.
 
@@ -160,11 +160,6 @@ Hard court specifics reinforce this pattern. Shorter rally lengths (3.8 shots) p
 The Australian Open introduced first-to-10-point final-set tiebreaks in 2019—unique among Grand Slams until 2022 standardisation. This extended format creates momentum swings impossible in standard 7-point tiebreaks.
 
 The 2024 Blinkova vs Rybakina second-round match demonstrated this at extremes: **42 points** (22-20 Blinkova), with the underdog saving six match points before converting her tenth. The tiebreak alone lasted 31 minutes. Rybakina entered as the No. 3 seed and Brisbane champion; she exited in Round 2.
-
-**Mechanics worth pricing:**
-- **Extended pressure windows:** First-to-10 creates more mini-break scenarios than first-to-7
-- **Serve-first advantage reduced:** 53-55% win rate vs 54-58% in standard tiebreaks
-- **Comeback potential:** 0-5 deficits remain recoverable in ways impossible with first-to-7
 
 **Application:** In live betting, lay heavy favourites facing final-set tiebreaks. The extended format introduces variance that benefits lower-ranked players with mental fortitude. Back underdogs at 2.0+ odds when tiebreaks begin—true probability often exceeds 40%.
 
@@ -180,11 +175,17 @@ This creates Week 1 edges unavailable at other majors:
 - **Players without warm-up tournaments:** Fade in early rounds; 25-40 ELO point deduction warranted
 - **European-based players:** 8-10 hour time zone adjustment impacts performance through Week 1
 
-The 2025 data supports this: Gauff (no hard court warm-up, French Open hangover) lost Round 1 as a top-5 seed. Markets priced her at -400; adjusted odds suggested -150.
+### Heat Factor and Extreme Heat Protocol
 
-### Heat Factor and Roof Dynamics
+Melbourne summer temperatures (26-38°C) create physiological stress absent at other hard court majors. The AO Heat Stress Scale measures radiant heat, air temperature, humidity, and wind speed:
 
-Melbourne summer temperatures (26-38°C) create physiological stress absent at other hard court majors. The Extreme Heat Policy suspends play above 40°C, but conditions below that threshold still impact performance.
+- **Level 4:** Triggers 10-minute break between Sets 2-3 (women/juniors) or Sets 3-4 (men)
+- **Level 5:** Suspends play entirely
+- **Three show courts** (RLA, MCA, JCA) have retractable roofs
+
+Casper Ruud specifically requested night sessions to avoid heat; temperatures can drop from 40°C (day) to mid-teens (night). Day session matches on outside courts have NO roof protection and highest upset potential.
+
+### Roof Closure Effects
 
 **Roof closure effects on Rod Laver Arena:**
 - Humidity rises, slightly slowing ball speed through air
@@ -200,6 +201,28 @@ In live betting, "Server to Win Game" micro-markets offer value immediately afte
 De Minaur has reached the QF in three consecutive years (2023-2025). His 68% return rate plays perfectly on Melbourne's medium-pace courts. The market systematically underprices his deep runs.
 
 **Application:** Apply +1.5-2.5% edge to Australian seeds vs non-Australians in Rounds 1-2. The effect dissipates by QF stage when crowds become neutralised.
+
+## Live Betting Windows
+
+### Window 1: Heat Break Reset
+
+**Trigger:** Heat Stress Scale reaching Level 4 mid-match
+
+**Timing:** 10-minute mandatory break between Sets 2-3 (women) or Sets 3-4 (men)
+
+**Edge:** Back the player who was trailing OR appeared to be fatiguing
+
+**Mechanism:** Trailing players can physically recover, rehydrate, and mentally reset. Leading players lose momentum and rhythm. No coaching allowed during break—purely physical recovery. Players who were cramping get a lifeline.
+
+### Window 2: Day-to-Night Transition
+
+**Trigger:** Matches starting in afternoon heat that extend into cooler evening conditions
+
+**Timing:** Matches scheduled 2-5 PM that run past 7 PM
+
+**Edge:** Back players who struggled in heat as conditions cool
+
+**Mechanism:** Temperature drops of 15-20°C dramatically change physicality demands. Players showing heat stress in early sets often recover when conditions moderate. Evening sessions favour baseline ralliers over power players who relied on heat-induced shorter points.
 
 ## Micro-Markets Strategy
 
@@ -231,36 +254,36 @@ Melbourne's medium-pace surface produces fewer aces than expected. Elite servers
       a: 'Betfair Exchange provides the best odds through commission-based pricing (0% margin on exchange). For traditional betting, Bet365 offers the widest market selection including same-game parlays and return game props. Pinnacle consistently prices tennis more efficiently than recreational books. Australian punters can access competitive local markets through Sportsbet and TAB.',
     },
     {
-      q: 'Why does return game matter more than serve at the Australian Open?',
-      a: "Melbourne's hard courts produce 31% break conversion rates—between grass (23%) and clay (35%). This creates a surface where serve dominance alone cannot guarantee victory. Sinner won the 2025 final with 84% first-serve points won yet didn't face a single break point—his 68% return rate neutralised Zverev's serve. Back players with 65%+ return rates; fade pure servers.",
+      q: 'How does the Australian Open extreme heat rule work?',
+      a: 'The AO Heat Stress Scale measures radiant heat, air temperature, humidity, and wind speed. Level 4 triggers a 10-minute break between Sets 2-3 (women) or Sets 3-4 (men). Level 5 suspends play entirely. Three show courts have retractable roofs. Players receive 30 minutes notice before resumption. This creates live betting value—trailing players get physical recovery time.',
     },
     {
-      q: 'How does the 10-point tiebreak affect betting?',
-      a: 'The Australian Open uses first-to-10-point tiebreaks in deciding sets (introduced 2019). This extended format produces more momentum swings than standard first-to-7. The 2024 Blinkova-Rybakina match featured 42 points (22-20). Lay heavy favourites in final-set tiebreak scenarios; the extended format introduces variance favouring underdogs.',
+      q: 'Should I bet differently for night sessions vs day sessions?',
+      a: 'Yes. Night sessions (starting 7pm local) feature cooler temperatures (15-20°C vs 30-40°C day). Roof can remain open without heat concerns. Conditions favour baseline ralliers over power players in heat. Day session matches on outside courts have NO roof protection and highest upset potential. Back grinders in day sessions; pure servers perform better at night.',
+    },
+    {
+      q: 'Why does return game matter more than serve at the Australian Open?',
+      a: "Melbourne's hard courts produce 31% break conversion rates—between grass (23%) and clay (35%). Serve dominance alone cannot guarantee victory. Sinner won the 2025 final with 84% first-serve points yet didn't face a single break point—his 68% return rate neutralised Zverev's serve. Back players with 65%+ return rates; fade pure servers.",
     },
     {
       q: 'Are comeback bets profitable at the Australian Open?',
-      a: 'Yes—research across 2,400+ five-setters shows players leading 2-0 win only 56%, not the market-implied 70%+. Hard court rally lengths (3.8 shots) prevent momentum compounding. Lay 2-0 leaders at odds below 1.50; back 0-2 down players at 4.0+ for value.',
-    },
-    {
-      q: 'What happens to my bet if a player retires mid-match?',
-      a: "Rules vary by bookmaker. Pinnacle, Bet365, and Betfair use 'One Set Completed' rule—bets stand only after one full set finishes. Some books void all bets on retirement regardless of timing. For walkover (pre-match withdrawal), all bookmakers void bets. Check specific rules before betting; 'Non-Runner No Bet' promotions add protection for outright markets.",
+      a: 'Yes—research across 2,400+ five-setters shows players leading 2-0 win only 56%, not the market-implied 70%+. The Australian Open has the HIGHEST comeback rate of any Slam—players forcing a 5th set after trailing 0-2 win 57.1%. Lay 2-0 leaders at odds below 1.50; back trailing players at 4.0+ for value.',
     },
     {
       q: 'When is the best time to bet on Australian Open matches?',
-      a: 'Early odds (48-72 hours before matches) offer value before sharps move lines. For live betting, the 60-75 minute window offers value when trailing favourites begin pressing—hard court break conversion supports comebacks. Final-set tiebreak entry points favour underdogs at 2.0+ odds.',
+      a: 'Early odds (48-72 hours before matches) offer value before sharps move lines. For live betting, heat breaks provide the best entry points—back trailing players who get physical recovery time. Final-set tiebreak entry points favour underdogs at 2.0+ odds due to the extended 10-point format volatility.',
     },
   ],
 
   footer: {
-    lastUpdated: '2026-01-23',
+    lastUpdated: '2026-01-24',
     sources: [
       'ATP Tour Official Statistics',
       'Open Era Grand Slam Database (1990-2024)',
+      'On The Line Tennis - Comeback Analysis',
       'Tennis Abstract / Match Charting Project',
-      'Journal of Sports Sciences - Rally Length Analysis',
       'Australian Open Official Statistics',
-      'WTA Tour Data',
+      'Tennis Australia Heat Protocol Documentation',
     ],
   },
 };

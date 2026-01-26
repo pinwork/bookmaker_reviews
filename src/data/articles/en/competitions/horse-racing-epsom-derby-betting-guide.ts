@@ -104,7 +104,7 @@ This guide synthesises research across 23 renewals, 287 runners, and detailed dr
       title: 'Trainer Strike Rate (Last 20 Years)',
       headers: ['Trainer', 'Wins', 'Runners'],
       rows: [
-        ['Aidan O\'Brien', '11', '86+'],
+        ["Aidan O'Brien", '11', '86+'],
         ['Sir Michael Stoute', '3', '12'],
         ['Charlie Appleby', '2', '8'],
         ['John Gosden', '2', '15'],
@@ -191,7 +191,7 @@ Derby winners are **almost always unexposed**. Of the last 23 winners:
 
 The market overvalues "proven stayers" who have already won at 12 furlongs. Derby winners are typically stepping up to the trip for the first time, with latent stamina from pedigree rather than demonstrated form.
 
-## In-Running Strategy: Lay the Leader
+## Live Betting Strategy: Lay the Leader
 
 This is the most actionable edge for exchange traders.
 
@@ -257,7 +257,7 @@ Combine SP band props with draw analysis. A genuine outsider at 20/1 drawn in st
   ],
 
   footer: {
-    lastUpdated: '2026-01-23',
+    lastUpdated: '2026-01-24',
     sources: [
       'Geegeez Derby Trends (2002-2024)',
       'Coral Historical Analysis (287 runners)',

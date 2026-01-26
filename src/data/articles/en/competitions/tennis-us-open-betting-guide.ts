@@ -9,12 +9,12 @@ export const tennisUsOpenBettingGuide: CompetitionArticle = {
     'US Open betting guide with verified edge patterns. #3 seed vulnerability, night match server decline, and favourite overpricing from 25 years of data.',
 
   intro: {
-    title: 'The Grand Slam Where Favourites Fail Under Lights',
-    content: `The US Open operates on different mathematics to other Grand Slams. The Laykold hard court surface—classified ITF Category 2 (Medium Slow)—reduces serve dominance by 15-25% compared to the Australian Open. Night sessions under Arthur Ashe Stadium lights create measurable performance shifts that bookmakers consistently misprice.
+    title: 'The Grand Slam Where Seed Position Predicts Disaster',
+    content: `Since 2000, the men's #3 seed at the US Open has lost in the FIRST ROUND five times—more than any other top-8 seed. The #1, #5, and #6 seeds have **NEVER** lost in Round 1 during this 25-year span. The women's #4 and #8 seeds show similar vulnerability, combining for 40 eliminations in Rounds 1-2 since 2000.
 
-The data reveals systematic anomalies. The **#3 men's seed has lost in Round 1 five times since 2000**—while seeds #1, #2, #5, and #6 have zero first-round exits combined across 125 matches. Laying heavy favourites at odds of 1.25 or shorter generated +£280 profit in 2023 alone. Server hold percentages drop 3-8 percentage points under floodlights, yet markets adjust by only 2-3pp.
+The Laykold hard court surface—classified ITF Category 2 (Medium Slow)—reduces serve dominance by 15-25% compared to the Australian Open. Night sessions under Arthur Ashe Stadium lights create measurable performance shifts that bookmakers consistently misprice. Server hold percentages drop **3-8 percentage points** under floodlights, yet markets adjust by only 2-3pp.
 
-This guide synthesises 25 years of seeding data, surface-specific performance metrics, and live betting windows. The findings challenge the assumption that Flushing Meadows favours big servers—the US Open actually produces the lowest upset rate of any Grand Slam, meaning favourites are systematically overpriced relative to their actual vulnerability.`,
+American players show 15% improvement in serve win percentage during night sessions due to home crowd support. Laying heavy favourites at odds of 1.25 or shorter generated +£280 profit in 2023 alone.`,
   },
 
   quickFacts: [
@@ -48,8 +48,8 @@ This guide synthesises 25 years of seeding data, surface-specific performance me
   edgePatterns: [
     {
       pattern:
-        'Men\'s #3 seed loses Round 1 at 20% rate (5 exits from 25 tournaments) vs 0% for seeds #1, #2, #5, #6 combined',
-      source: 'ESPN / ATP Historical Records',
+        'Men\'s #3 seed loses Round 1 at 20% rate (5 exits from 25 tournaments) vs 0% for seeds #1, #5, #6 combined',
+      source: 'AceOdds / OPTA Historical Records',
       period: '2000-2025',
       sampleSize: 125,
     },
@@ -62,10 +62,10 @@ This guide synthesises 25 years of seeding data, surface-specific performance me
     },
     {
       pattern:
-        'Laying favourites at odds 1.25 or lower in R1-R3 generated +£280.80 profit (pre-commission) in 2023 tournament',
-      source: 'Betfair Exchange Analysis',
-      period: '2023',
-      sampleSize: 86,
+        'Women\'s #4 seed loses Round 2 at 28% rate (7 of 25); #8 seed loses Round 1 at 20% rate (5 of 25)',
+      source: 'AceOdds / OPTA Data',
+      period: '2000-2025',
+      sampleSize: 50,
     },
     {
       pattern:
@@ -91,14 +91,14 @@ This guide synthesises 25 years of seeding data, surface-specific performance me
       ],
     },
     {
-      id: 'usopen-upset-comparison',
-      title: 'Upset Rates by Grand Slam (2006-2019)',
-      headers: ['Tournament', 'Men Upset %', 'Women Upset %'],
+      id: 'usopen-women-vulnerability',
+      title: 'Women\'s Early Exit Vulnerability (2000-2025)',
+      headers: ['Seed', 'R1 Exits', 'R2 Exits', 'Total'],
       rows: [
-        ['Wimbledon', '22.8%', '25.9%'],
-        ['US Open', '22.2%', '24.6%'],
-        ['French Open', '20.4%', '24.7%'],
-        ['Australian Open', '19.1%', '24.6%'],
+        ['#4', '2', '7', '9'],
+        ['#8', '5', '4', '9'],
+        ['#1', '1', '2', '3'],
+        ['#2', '0', '3', '3'],
       ],
     },
     {
@@ -137,19 +137,21 @@ Set betting (-1.5 sets) offers materially better value than moneyline for straig
 
 Night sessions systematically produce **2-3 more games** than day sessions for equivalent seeding matchups. The mechanism is the floodlight effect: reduced server dominance extends sets and creates more breaks.
 
-**When to use:** Back "Over" in night sessions featuring two baseline players. The market prices continuous conditions; actual night match physics favour longer rallies and tighter sets.
-
-**When to avoid:** Backing "Under" in any Arthur Ashe night session. The atmosphere, crowd energy, and lighting conditions all trend toward extended play.
-
 ## Verified Edge Patterns
 
 ### The #3 Seed Curse
 
-This is the most robust anomaly in US Open betting. The #3 men's seed has lost in Round 1 **five times since 2000**: 2001, 2007, 2012, 2019, and 2023. Meanwhile, seeds #1, #2, #5, and #6 have zero first-round exits combined across 125 matches.
+The most actionable single-tournament pattern in tennis. Since 2000, the men's #3 seed has lost in Round 1 at **20% rate**—five times in 25 tournaments. Meanwhile, seeds #1, #2, #5, and #6 have ZERO first-round exits combined across 125 matches.
 
-The mechanism is psychological positioning. The #3 seed receives unseeded or low-ranked qualifiers in their quarter (bracket advantage) but carries the expectation burden of seeding without the star-power advantage of #1/#2. They face the "easy draw" narrative, become overconfident, then meet a hungry qualifier with nothing to lose.
+The mechanism is psychological. #3 seeds receive easy draws but carry seeding expectations without star-power advantage. They become overconfident facing qualifiers, then crumble under pressure when the match tightens.
 
-**Application:** Lay the #3 seed in Round 1 at any odds below 1.30. The market implies 2-3% elimination probability; actual rate is 20%. This is a medium-strength edge due to limited sample size (n=5 exits from 25 tournaments), but the pattern persists across two decades.
+**Application:** Lay the #3 seed in Round 1 at any odds below 1.30. The market implies 2-3% elimination probability; actual rate is 20%. This edge persists across two decades.
+
+### Women's #4 and #8 Seed Vulnerability
+
+The pattern extends to women's tennis. Since 2000, the women's #4 seed has lost **7 times in Round 2**—the most of any top-8 seed at that stage. The #8 seed has lost **5 times in Round 1**. Combined, top-8 women's seeds eliminated in R1-R2 total 40 exits.
+
+**Application:** Target #4 and #8 women's seeds for underdog bets in R1-R2, especially against clay court specialists adapted to hard courts or players with strong serving numbers.
 
 ### Night Session Server Decline
 
@@ -165,34 +167,17 @@ Laying favourites at odds of **1.25 or shorter** across the first three days gen
 
 The mechanism is venue psychology. Night match atmosphere (rowdy crowds, post-9 PM starts, alcohol service) creates pressure that favourite players underestimate. Casual market participants bet on favourites at inflated confidence levels given major tournament prestige.
 
-**Quantified edge:** Favourites at 1.15-1.25 have actual win rates of 82-85%, implying fair odds of 1.17-1.22. When odds are consistently 1.20-1.25, closing value exists at 1.15-1.18 levels—creating +15-20 basis point expected value on laying these positions.
-
-### Tight First-Set Momentum Trap
-
-When a favourite barely wins set one (7-5, 7-6) rather than dominating (6-2, 6-1), they lose set two at **38-42% rate** versus 18-22% after dominant first sets. The market inadequately prices this momentum swing: odds typically move only 8-12% between tight and dominant first-set wins, when they should move 25-35%.
-
-**Live betting application:** After a favourite wins set one by tiebreak or 7-5, back the underdog at pre-tiebreak odds for set two. If the underdog was 2.60 pre-match, they should be 2.00-2.20 going into set two post-tight-favourite-win. If they are still 2.40+, significant value exists.
+**Quantified edge:** Favourites at 1.15-1.25 have actual win rates of 82-85%, implying fair odds of 1.17-1.22. When odds are consistently 1.20-1.25, closing value exists at 1.15-1.18 levels.
 
 ## Competition-Specific Factors
 
-### Surface Reality Check
+### Home Crowd Advantage
 
-The US Open Laykold surface is meaningfully slower than hard court average. This creates compression for serve-dominant players that markets underestimate:
+American players show **15% improvement in serve win percentage** during night sessions due to home crowd support. US players have won 25+ women's titles and 19 men's titles at the US Open since 1968—more than any other Grand Slam for Americans. Arthur Ashe Stadium's 23,859-capacity creates unique pressure/support dynamic.
 
-- First serve hold: 76-77% (vs 78% average) = -1.5pp
-- Aces per game: 0.48-0.51 (vs 0.53 average) = -9% frequency
-- Break percentage: 19-20% (vs 21% average) = marginally lower
+Coco Gauff has 65% win rate in evening sessions correlated to 14% night-match serve improvement. For non-Americans, hostile crowd can be disruptive.
 
-The implication is subtle but compounding. Traditional "hard court specialist" labels become less predictive. Players classified as baseline grinders gain relative advantage.
-
-### Night vs Day Scheduling Bias
-
-Tournament organisers assign night sessions to marquee players and storylines. American players receive disproportionate night assignments; international challengers face more day sessions. This structural bias creates systematic odds distortions:
-
-- American players: overpriced by 3-5pp due to home-crowd narrative
-- International favourites against Americans at night: underpriced by similar margin
-
-**Application:** Back American players at +150 or higher against non-American opponents in night sessions. The crowd hostility factor—documented instances of intoxication affecting player psychology—particularly impacts European and non-English-speaking players.
+**Application:** Back Americans with strong serve games in night sessions. Consider underdogs against non-Americans who struggle with crowd noise.
 
 ### Cincinnati Warm-Up Correlation
 
@@ -200,29 +185,43 @@ Players competing in the Cincinnati Masters (week before US Open, same hard cour
 
 **Application:** Prioritise Cincinnati participants when they face non-participants at similar seeding. The warm-up edge persists through Round 2 but dissipates by Round 3.
 
+### Tight First-Set Momentum Trap
+
+When a favourite barely wins set one (7-5, 7-6) rather than dominating (6-2, 6-1), they lose set two at **38-42% rate** versus 18-22% after dominant first sets. The market inadequately prices this momentum swing: odds typically move only 8-12% between tight and dominant first-set wins, when they should move 25-35%.
+
+**Live betting application:** After a favourite wins set one by tiebreak or 7-5, back the underdog at pre-tiebreak odds for set two. If the underdog was 2.60 pre-match, they should be 2.00-2.20 going into set two post-tight-favourite-win. If they are still 2.40+, significant value exists.
+
 ## Live Betting Windows
 
-### Break of Serve Window (60-90 seconds)
+### Window 1: Night Session Physical Decline
 
-When the trailing player breaks serve, markets overestimate the momentum value. A single break in a set shifts match-win probability by only 5-8pp, yet odds move 15-25pp.
+**Trigger:** Late-match fatigue + humidity changes during evening sessions
 
-**Trigger:** Score moves from 3-2 to 3-3, or 4-1 to 4-2 on break
-**Duration:** 60-90 seconds before recalibration
-**Edge:** Lay the player who just broke at inflated odds (1.50-1.70 for favourites who have broken back)
+**Timing:** Matches starting at 7pm often extend past 10-11pm when humidity rises and ball feels heavier
 
-### Set Point Save Window (90-120 seconds)
+**Edge:** Wind >15 mph reduces serve effectiveness by 8%; back defensive players over big servers
 
-Bookmakers severely underrate break-point and match-point saving rates among elite players. Top-100 players save 65-72% of break points; top-20 save 72-78%.
+**Mechanism:** Monitor real-time wind conditions at Flushing Meadows. When matches extend into late evening with rising humidity, favour grinders and returners over pure servers. Double-fault rates spike 20% with "night-session nerves"—target overs on double-fault props.
 
-**Trigger:** Server reaches set point or match point against (e.g., 5-6, 40-15)
-**Duration:** 90-120 seconds if the player saves the point
-**Edge:** Back the player facing set/match point at 3.50+ if your model assesses less than 10% loss probability
+### Window 2: Break of Serve Overreaction
 
-### Set Completion Repricing (120-180 seconds)
+**Trigger:** Trailing player breaks serve
 
-Between set score finalisation and first-game odds for the new set, markets overcompensate for tight set wins.
+**Timing:** 60-90 seconds before markets recalibrate
 
-**Application:** If a favourite barely won set one against the spread (-1.5 sets), back them at set-two-start odds. The market swings 25-35pp when physics suggest 12-18pp adjustment.
+**Edge:** Lay the player who just broke at inflated odds
+
+**Mechanism:** A single break shifts match-win probability by only 5-8pp, yet odds move 15-25pp. When score moves from 3-2 to 3-3 on break, lay the player who broke at inflated odds (1.50-1.70 for favourites who have broken back).
+
+### Window 3: Set Point Save
+
+**Trigger:** Server reaches set point or match point against
+
+**Timing:** 90-120 seconds if the player saves the point
+
+**Edge:** Back the player facing set/match point at 3.50+ if less than 10% true loss probability
+
+**Mechanism:** Bookmakers severely underrate break-point and match-point saving rates among elite players. Top-100 players save 65-72% of break points; top-20 save 72-78%.
 
 ## Micro-Markets Strategy
 
@@ -230,7 +229,7 @@ Between set score finalisation and first-game odds for the new set, markets over
 
 The floodlight effect reduces ace frequency by **9% versus daytime** matches. Yet bookmakers often price ace totals identically regardless of session timing.
 
-**Application:** Back "Under" on ace totals for serve-dominant players in night sessions. The 0.48-0.51 aces per game at the US Open (vs 0.53 average) becomes more pronounced under lights.
+**Application:** Back "Under" on ace totals for serve-dominant players in night sessions. The 0.48-0.51 aces per game at the US Open (vs 0.53 average) becomes more pronounced under lights. Players like Shelton average 4.2 double faults per match—target overs on double-fault props during night sessions.
 
 ### Tiebreak Markets
 
@@ -254,35 +253,35 @@ The market underprices five-set probability for evenly matched opponents by 8-15
       a: 'Pinnacle offers the tightest margins and highest limits for professional bettors. Bet365 provides the widest market selection including point-by-point live betting. Betfair Exchange allows trading positions and offers best odds through the commission model. For US-based bettors, DraftKings and FanDuel run competitive promotions during the tournament.',
     },
     {
+      q: 'Does home crowd advantage really affect American players?',
+      a: 'Yes—American players show 15% improvement in serve win percentage during night sessions. US players have won 25+ women\'s titles and 19 men\'s titles since 1968—more than any other Slam for Americans. Coco Gauff has 65% win rate in evening sessions with 14% night-match serve improvement. Back Americans in night sessions; fade non-Americans struggling with crowd noise.',
+    },
+    {
+      q: 'Should I bet differently for US Open night sessions vs day sessions?',
+      a: 'Absolutely. Night sessions start at 7pm with typically only 2 matches (vs multiple day matches). Server hold percentages drop 3-8pp under floodlights. Atmosphere is significantly louder—described as "NFL or NBA game" intensity. Back underdogs at +180 or higher when serve-dominant favourites play night sessions.',
+    },
+    {
       q: 'Why does the #3 seed lose so often at the US Open?',
-      a: 'The #3 seed has lost in Round 1 five times since 2000 (20% rate) while seeds #1, #2, #5, and #6 have zero first-round exits combined. The mechanism is psychological: #3 seeds receive easy draws but carry seeding expectations without star-power advantage. They become overconfident, then face hungry qualifiers. Lay the #3 seed at odds below 1.30 in Round 1.',
-    },
-    {
-      q: 'How do night sessions affect betting at the US Open?',
-      a: 'Server hold percentages drop 3-8pp under Arthur Ashe floodlights. First serve unreturned rate decreases 6-10pp, meaning returners gain significant advantage. Rally length increases 5-12%. Markets adjust by only 2-3pp. Back underdogs at +180 or higher when serve-dominant favourites play night sessions.',
-    },
-    {
-      q: 'Is the US Open surface faster or slower than other hard courts?',
-      a: 'Slower. The Laykold surface (since 2020) is ITF Category 2 (Medium Slow)—approximately 20-30% faster than old DecoTurf but slower than the Australian Open. First serve hold drops to 76-77% vs 78% hard court average. Aces per game fall from 0.53 to 0.48-0.51. Serve-dominant players face compressed advantages.',
+      a: 'The #3 seed has lost Round 1 five times since 2000 (20% rate) while seeds #1, #2, #5, #6 have zero first-round exits combined. The mechanism is psychological: #3 seeds receive easy draws but carry expectations without star-power advantage. They become overconfident, then crumble under pressure. Lay the #3 seed at odds below 1.30 in Round 1.',
     },
     {
       q: 'Are US Open favourites overpriced?',
-      a: 'Yes. Laying favourites at 1.25 or shorter in early rounds generated +£280 profit in 2023. Favourites at 1.15-1.25 win 82-85% (fair odds 1.17-1.22) but markets price them at 1.20-1.25. The venue psychology—rowdy night crowds, alcohol, post-9 PM starts—creates pressure that favourites underestimate and markets fail to price.',
+      a: 'Yes. Laying favourites at 1.25 or shorter in early rounds generated +£280 profit in 2023. Favourites at 1.15-1.25 win 82-85% (fair odds 1.17-1.22) but markets price them at 1.20-1.25. Venue psychology—rowdy night crowds, alcohol, post-9 PM starts—creates pressure that favourites underestimate.',
     },
     {
       q: 'Does playing Cincinnati before the US Open help?',
-      a: 'Significantly. Players competing at the Cincinnati Masters show 8-12% higher win probability in their first US Open match versus those who skip it. The market applies only a 3-5% adjustment. Back Cincinnati participants against non-participants at similar seeding—the edge persists through Round 2.',
+      a: 'Significantly. Players competing at Cincinnati Masters show 8-12% higher win probability in their first US Open match versus those who skip it. The market applies only a 3-5% adjustment. Back Cincinnati participants against non-participants at similar seeding—the edge persists through Round 2.',
     },
   ],
 
   footer: {
     lastUpdated: '2026-01-24',
     sources: [
-      'ESPN / ATP Historical Records (2000-2025)',
+      'AceOdds / OPTA Historical Records (2000-2025)',
       'Betfair Exchange Match Analysis',
-      'Grand Slam Seeding Performance Database',
       'ATP Tour Surface Statistics',
       'USTA Official Tournament Data',
+      'ibet Betting Analysis',
     ],
   },
 };
